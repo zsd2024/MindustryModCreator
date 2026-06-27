@@ -1,0 +1,9 @@
+node_modules
+dist
+build
+coverage
+.git
+*.md
+package-lock.json
+yarn.lock
+bun.lockb
