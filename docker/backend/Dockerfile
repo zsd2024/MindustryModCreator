@@ -1,4 +1,4 @@
-FROM node:18-alpine as build
+FROM node:24-alpine as build
 
 WORKDIR /app
 
@@ -19,7 +19,7 @@ COPY packages/backend/ ./packages/backend/
 RUN bun run build
 
 # 生产阶段
-FROM node:18-alpine
+FROM node:24-alpine
 
 WORKDIR /app
 
