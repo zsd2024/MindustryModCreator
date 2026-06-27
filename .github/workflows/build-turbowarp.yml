@@ -36,11 +36,11 @@ jobs:
 
       - name: Install dependencies
         working-directory: packages/turbowarp
-        run: npm install
+        run: npm install --prefer-offline --no-audit --no-fund
 
       - name: Build TurboWarp
         working-directory: packages/turbowarp
-        run: npm run build
+        run: NODE_ENV=production npm run build
         env:
           NODE_OPTIONS: '--max-old-space-size=4096'
 
