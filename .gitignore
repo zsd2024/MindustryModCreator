@@ -6,9 +6,11 @@ node_modules/
 # Testing
 coverage/
 
-# Production
+# Production (排除 turbowarp 编译产物)
 dist/
 build/
+!packages/turbowarp/build/
+!packages/turbowarp/dist/
 
 # Environment variables
 .env

@@ -1,0 +1,47 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build frontend
+        uses: oven-sh/setup-bun@v1
+        with:
+          bun-version: latest
+      - run: bun install
+      - run: bun run build
+        working-directory: packages/frontend
+
+      - name: Build backend
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+      - run: npm install
+        working-directory: packages/backend
+      - run: npm run build
+        working-directory: packages/backend
+
+      - name: Create archives
+        run: |
+          tar -czf frontend-dist.tar.gz -C packages/frontend/dist .
+          tar -czf backend-dist.tar.gz -C packages/backend/dist .
+
+      - name: Create Pre-Release
+        uses: softprops/action-gh-release@v1
+        with:
+          prerelease: true
+          generate_release_notes: true
+          files: |
+            frontend-dist.tar.gz
+            backend-dist.tar.gz

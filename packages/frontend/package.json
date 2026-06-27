@@ -10,7 +10,10 @@
     "preview": "bun run vite preview",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "test": "vitest",
-    "clean": "rm -rf dist node_modules"
+    "clean": "rm -rf dist node_modules",
+    "turbowarp:install": "cd ../turbowarp && npm install",
+    "turbowarp:build": "cd ../turbowarp && npm run build",
+    "turbowarp:dev": "cd ../turbowarp && npm start"
   },
   "dependencies": {
     "react": "^18.2.0",
