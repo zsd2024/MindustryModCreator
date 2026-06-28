@@ -48,26 +48,31 @@
 ### 安装依赖
 
 ```bash
+# 安装后端依赖
 bun install
+
+# 安装 TurboWarp 前端依赖
+npm run turbowarp:install
 ```
 
 ### 开发模式
 
 ```bash
-# 同时启动前端和后端开发服务器
+# 启动 TurboWarp 前端开发服务器
+npm run turbowarp:dev
+
+# 启动后端开发服务器（另一个终端）
 bun run dev
 ```
 
 ### 构建项目
 
 ```bash
+# 构建后端
 bun run build
-```
 
-### 运行测试
-
-```bash
-bun run test
+# 构建 TurboWarp 前端
+npm run turbowarp:build
 ```
 
 ## 项目结构
@@ -75,16 +80,14 @@ bun run test
 ```
 mindustry-mod-creator/
 ├── packages/
-│   ├── frontend/          # 前端 React 应用
+│   ├── turbowarp/         # 魔改 TurboWarp (scratch-gui) 前端
 │   │   ├── src/
-│   │   ├── public/
 │   │   └── package.json
 │   └── backend/           # 后端 NestJS 应用
 │       ├── src/
 │       ├── test/
 │       └── package.json
 ├── docker/                # Docker 相关配置
-│   ├── frontend/
 │   ├── backend/
 │   └── compiler/          # 编译沙箱镜像
 ├── docs/                  # 项目文档

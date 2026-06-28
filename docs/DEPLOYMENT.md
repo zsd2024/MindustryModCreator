@@ -57,7 +57,7 @@ docker-compose up -d
 
 ### 4. 访问服务
 
-- 前端: http://localhost
+- TurboWarp 前端: http://localhost:8601 (dev server)
 - 后端 API: http://localhost:3000
 - API 文档: http://localhost:3000/api
 - MinIO 控制台: http://localhost:9001

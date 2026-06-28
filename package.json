@@ -4,14 +4,17 @@
   "description": "Mindustry-Scratch 在线图形化 Mod 编辑器",
   "private": true,
   "workspaces": [
-    "packages/*"
+    "packages/backend"
   ],
   "scripts": {
-    "dev": "bun run --filter '*' dev",
-    "build": "bun run --filter '*' build",
-    "lint": "bun run --filter '*' lint",
-    "test": "bun run --filter '*' test",
-    "clean": "bun run --filter '*' clean"
+    "dev": "bun run --filter backend dev",
+    "build": "bun run --filter backend build",
+    "lint": "bun run --filter backend lint",
+    "test": "bun run --filter backend test",
+    "clean": "bun run --filter backend clean",
+    "turbowarp:install": "cd packages/turbowarp && npm install",
+    "turbowarp:build": "cd packages/turbowarp && npm run build",
+    "turbowarp:dev": "cd packages/turbowarp && npm start"
   },
   "devDependencies": {
     "typescript": "^5.3.0",
