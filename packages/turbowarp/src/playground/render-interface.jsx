@@ -223,6 +223,7 @@ class Interface extends React.Component {
         } = this.props;
         const isHomepage = isPlayerOnly && !isFullScreen;
         const isEditor = !isPlayerOnly;
+        const mindustryType = new URLSearchParams(location.search).get('mindustry');
         return (
             <div
                 className={classNames(styles.container, {
@@ -253,6 +254,7 @@ class Interface extends React.Component {
                     <GUI
                         onClickAddonSettings={handleClickAddonSettings}
                         onUpdateProjectTitle={this.handleUpdateProjectTitle}
+                        selectedContentType={mindustryType}
                         backpackVisible
                         backpackHost="_local_"
                         {...props}
