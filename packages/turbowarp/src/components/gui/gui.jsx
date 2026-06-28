@@ -203,6 +203,10 @@ const GUIComponent = props => {
     const dragStartW = useRef(0);
     const rightPanelRef = useRef(null);
 
+    useEffect(() => {
+        window.dispatchEvent(new Event('resize'));
+    }, [rightWidth]);
+
     const onDragStart = useCallback((e) => {
         e.preventDefault();
         const el = rightPanelRef.current;
