@@ -1,0 +1,165 @@
+@import "../../css/units.css";
+@import "../../css/colors.css";
+
+.tree {
+  width: 180px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: $ui-secondary;
+  user-select: none;
+  border-right: 1px solid $ui-tertiary;
+  flex-shrink: 0;
+}
+
+.treeHeader {
+  padding: 10px 12px;
+  background: $ui-primary;
+  border-bottom: 1px solid $ui-tertiary;
+  flex-shrink: 0;
+}
+
+.treeTitle {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: $text-primary;
+}
+
+.treeBody {
+  flex: 1;
+  overflow-y: auto;
+  padding: 4px 0;
+}
+
+.treeFooter {
+  padding: 6px 10px;
+  border-top: 1px solid $ui-tertiary;
+  flex-shrink: 0;
+}
+
+.addFolderBtn {
+  width: 100%;
+  padding: 5px 8px;
+  border: 1px dashed $ui-tertiary;
+  border-radius: 5px;
+  background: transparent;
+  color: $text-primary;
+  font-size: 0.78rem;
+  cursor: pointer;
+  transition: all 0.15s;
+  text-align: center;
+  opacity: 0.6;
+}
+
+.addFolderBtn:hover {
+  opacity: 1;
+  border-color: $motion-primary;
+  color: $motion-primary;
+}
+
+/* ── folder items ── */
+
+.folder {
+  cursor: pointer;
+}
+
+.folderHeader {
+  display: flex;
+  align-items: center;
+  padding: 6px 10px;
+  gap: 4px;
+  transition: background 0.12s;
+  border-left: 3px solid transparent;
+}
+
+.folderHeader:hover {
+  background: $ui-primary;
+}
+
+.folderActive {
+  background: $ui-primary;
+  border-left-color: $motion-primary;
+}
+
+.folderArrow {
+  font-size: 8px;
+  color: $text-primary;
+  opacity: 0.4;
+  width: 10px;
+  flex-shrink: 0;
+}
+
+.folderIcon {
+  font-size: 0.8rem;
+  opacity: 0.6;
+  flex-shrink: 0;
+}
+
+.folderName {
+  font-size: 0.82rem;
+  color: $text-primary;
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.folderCount {
+  font-size: 0.7rem;
+  color: $text-primary;
+  opacity: 0.35;
+  margin-left: auto;
+  padding-left: 4px;
+}
+
+.children {
+  padding-left: 16px;
+}
+
+/* ── inline rename input ── */
+.renameInput {
+  flex: 1;
+  padding: 2px 4px;
+  border: 1px solid $motion-primary;
+  border-radius: 3px;
+  background: $ui-primary;
+  color: $text-primary;
+  font-size: 0.82rem;
+  outline: none;
+  min-width: 0;
+}
+
+/* ── context menu ── */
+.contextMenu {
+  position: fixed;
+  background: $ui-secondary;
+  border: 1px solid $ui-tertiary;
+  border-radius: 6px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+  z-index: 3000;
+  padding: 4px 0;
+  min-width: 130px;
+}
+
+.contextMenuItem {
+  padding: 6px 14px;
+  font-size: 0.8rem;
+  color: $text-primary;
+  cursor: pointer;
+  transition: background 0.1s;
+}
+
+.contextMenuItem:hover {
+  background: $motion-primary;
+  color: $ui-white;
+}
+
+.contextMenuDanger {
+  composes: contextMenuItem;
+  color: $error-primary;
+}
+
+.contextMenuDanger:hover {
+  background: $error-primary;
+  color: $ui-white;
+}

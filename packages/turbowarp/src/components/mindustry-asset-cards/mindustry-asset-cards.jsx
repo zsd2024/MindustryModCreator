@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import {getZhLabel} from '../../lib/mindustry/resolve-schema';
-import styles from './mindustry-asset-tree.css';
+import styles from './mindustry-asset-cards.css';
 
 const IGNORED_TYPES = new Set([
   'DrawArcSmelt', 'DrawBlockParts', 'DrawBlurSpin', 'DrawBubbles',
@@ -39,22 +39,19 @@ const CATEGORIES = [
   {types: ['Weather'], label: '天气'},
 ];
 
-const TYPE_TO_CATEGORY = {};
-for (const cat of CATEGORIES) {
-  for (const t of cat.types) {
-    TYPE_TO_CATEGORY[t] = cat.label;
-  }
+function kindIcon(kind) {
+  return kind === 'content' ? '📄' : '☕';
 }
 
-function getCategoryForContentType(type) {
-  return TYPE_TO_CATEGORY[type] || '其他';
+function kindBadge(kind) {
+  if (kind === 'content') return {text: 'JSON', cls: styles.badgeJson};
+  return {text: 'Java', cls: styles.badgeJava};
 }
 
-class MindustryAssetTree extends React.Component {
+class AssetCards extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      collapsed: new Set(),
       dialogOpen: false,
       dialogName: '',
       dialogType: null,
@@ -62,17 +59,7 @@ class MindustryAssetTree extends React.Component {
     };
   }
 
-  toggleCategory(label) {
-    this.setState(prev => {
-      const collapsed = new Set(prev.collapsed);
-      if (collapsed.has(label)) collapsed.delete(label);
-      else collapsed.add(label);
-      return {collapsed};
-    });
-  }
-
-  // ── 添加内容对话框 ──
-  openAddDialog() {
+  openDialog() {
     this.setState({dialogOpen: true, dialogName: '', dialogType: null, dialogSearch: ''});
   }
 
@@ -87,7 +74,6 @@ class MindustryAssetTree extends React.Component {
     this.closeDialog();
   }
 
-  // ── 添加 Java ──
   promptAddJava() {
     const name = prompt('请输入 Java 类名：');
     if (name && name.trim()) {
@@ -95,7 +81,6 @@ class MindustryAssetTree extends React.Component {
     }
   }
 
-  // ── 渲染选择器列表 ──
   renderPicker() {
     const {dialogType, dialogSearch} = this.state;
     const filtered = CATEGORIES.map(cat => ({
@@ -139,67 +124,36 @@ class MindustryAssetTree extends React.Component {
   render() {
     const {assets, selectedId, onSelect} = this.props;
 
-    // group user assets by category
-    const groupMap = {};
-    for (const asset of assets) {
-      const cat = asset.kind === 'content'
-        ? getCategoryForContentType(asset.contentType)
-        : 'Java 文件';
-      if (!groupMap[cat]) groupMap[cat] = [];
-      groupMap[cat].push(asset);
-    }
-    const catLabels = Object.keys(groupMap).sort((a, b) => {
-      if (a === 'Java 文件') return 1;
-      if (b === 'Java 文件') return -1;
-      return 0;
-    });
-
     return (
-      <div className={styles.tree}>
-        <div className={styles.treeHeader}>
-          <span className={styles.treeTitle}>Mod 内容</span>
+      <div className={styles.cardsPane}>
+        <div className={styles.cardsHeader}>
+          <span className={styles.cardsTitle}>资源</span>
         </div>
-        <div className={styles.treeBody}>
+        <div className={styles.cardsBody}>
           {assets.length === 0 && (
             <div className={styles.emptyHint}>
-              暂无内容，点击下方按钮添加
+              暂无资源，点击下方按钮添加
             </div>
           )}
-          {catLabels.map(cat => {
-            const items = groupMap[cat];
-            const isCollapsed = this.state.collapsed.has(cat);
+          {assets.map(asset => {
+            const badge = kindBadge(asset.kind);
             return (
-              <div className={styles.category} key={cat}>
-                <div
-                  className={styles.categoryHeader}
-                  onClick={() => this.toggleCategory(cat)}
-                >
-                  <span className={styles.arrow}>{isCollapsed ? '▶' : '▼'}</span>
-                  <span className={styles.catLabel}>{cat}</span>
-                  <span className={styles.catCount}>{items.length}</span>
-                </div>
-                {!isCollapsed && (
-                  <div className={styles.categoryBody}>
-                    {items.map(item => (
-                      <div
-                        key={item.id}
-                        className={`${styles.item} ${selectedId === item.id ? styles.itemActive : ''}`}
-                        onClick={() => onSelect(item.id)}
-                      >
-                        <span className={styles.itemName}>{item.name}</span>
-                        <span className={styles.itemType}>
-                          {item.kind === 'content' ? item.contentType : '.java'}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-                )}
+              <div
+                key={asset.id}
+                className={`${styles.card} ${selectedId === asset.id ? styles.cardActive : ''}`}
+                onClick={() => onSelect(asset.id)}
+              >
+                <span className={styles.cardIcon}>{kindIcon(asset.kind)}</span>
+                <span className={styles.cardName}>{asset.name}</span>
+                <span className={`${styles.cardBadge} ${badge.cls}`}>
+                  {badge.text}
+                </span>
               </div>
             );
           })}
         </div>
-        <div className={styles.treeFooter}>
-          <button className={styles.addBtn} onClick={() => this.openAddDialog()}>
+        <div className={styles.cardsFooter}>
+          <button className={styles.addBtn} onClick={() => this.openDialog()}>
             + 添加内容
           </button>
           <button className={styles.addBtn} onClick={() => this.promptAddJava()}>
@@ -207,7 +161,6 @@ class MindustryAssetTree extends React.Component {
           </button>
         </div>
 
-        {/* 添加内容对话框 */}
         {this.state.dialogOpen && (
           <div className={styles.overlay} onClick={() => this.closeDialog()}>
             <div className={styles.dialog} onClick={e => e.stopPropagation()}>
@@ -252,17 +205,12 @@ class MindustryAssetTree extends React.Component {
   }
 }
 
-MindustryAssetTree.propTypes = {
-  assets: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.string.isRequired,
-    kind: PropTypes.oneOf(['content', 'java']).isRequired,
-    name: PropTypes.string.isRequired,
-    contentType: PropTypes.string,
-  })).isRequired,
+AssetCards.propTypes = {
+  assets: PropTypes.array.isRequired,
   selectedId: PropTypes.string,
   onSelect: PropTypes.func.isRequired,
   onAddContent: PropTypes.func.isRequired,
   onAddJavaFile: PropTypes.func.isRequired,
 };
 
-export default MindustryAssetTree;
+export default AssetCards;

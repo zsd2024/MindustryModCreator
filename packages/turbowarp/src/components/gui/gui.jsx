@@ -21,7 +21,8 @@ import CostumeLibrary from '../../containers/costume-library.jsx';
 import BackdropLibrary from '../../containers/backdrop-library.jsx';
 import Watermark from '../../containers/watermark.jsx';
 import MindustryJsonEditor from '../mindustry-json-editor/mindustry-json-editor.jsx';
-import MindustryAssetTree from '../mindustry-asset-tree/mindustry-asset-tree.jsx';
+import FolderTree from '../mindustry-folder-tree/mindustry-folder-tree.jsx';
+import AssetCards from '../mindustry-asset-cards/mindustry-asset-cards.jsx';
 
 import Backpack from '../../containers/backpack.jsx';
 import BrowserModal from '../browser-modal/browser-modal.jsx';
@@ -123,11 +124,18 @@ const GUIComponent = props => {
         onContentDataChange,
         selectedAsset,
         assets,
+        filteredAssets,
         selectedAssetId,
         onSelectAsset,
         onAddContent,
         onAddJavaFile,
         contentType,
+        folders,
+        selectedFolderId,
+        onSelectFolder,
+        onAddFolder,
+        onRenameFolder,
+        onDeleteFolder,
         onClickAddonSettings,
         onClickDesktopSettings,
         onClickNewWindow,
@@ -339,6 +347,17 @@ const GUIComponent = props => {
                 />
                 <Box className={styles.bodyWrapper}>
                     <Box className={styles.flexWrapper}>
+                        {selectedAsset ? (
+                            <FolderTree
+                                folders={folders}
+                                assets={assets}
+                                selectedFolderId={selectedFolderId}
+                                onSelectFolder={onSelectFolder}
+                                onAddFolder={onAddFolder}
+                                onRenameFolder={onRenameFolder}
+                                onDeleteFolder={onDeleteFolder}
+                            />
+                        ) : null}
                         <Box className={styles.editorWrapper}>
                             <Tabs
                                 forceRenderTabPanel
@@ -466,8 +485,8 @@ const GUIComponent = props => {
                             />
                             <Box className={styles.targetWrapper}>
                                 {selectedAsset ? (
-                                    <MindustryAssetTree
-                                        assets={assets}
+                                    <AssetCards
+                                        assets={filteredAssets}
                                         selectedId={selectedAssetId}
                                         onSelect={onSelectAsset}
                                         onAddContent={onAddContent}
@@ -566,8 +585,15 @@ GUIComponent.propTypes = {
     selectedAsset: PropTypes.object,
     selectedAssetId: PropTypes.string,
     assets: PropTypes.array,
+    filteredAssets: PropTypes.array,
     contentType: PropTypes.string,
     selectedContentData: PropTypes.object,
+    folders: PropTypes.array,
+    selectedFolderId: PropTypes.string,
+    onSelectFolder: PropTypes.func,
+    onAddFolder: PropTypes.func,
+    onRenameFolder: PropTypes.func,
+    onDeleteFolder: PropTypes.func,
     showComingSoon: PropTypes.bool,
     showOpenFilePicker: PropTypes.func,
     showSaveFilePicker: PropTypes.func,

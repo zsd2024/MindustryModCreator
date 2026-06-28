@@ -205,12 +205,18 @@ class Interface extends React.Component {
                 kind: 'content',
                 name: mindustryType,
                 contentType: mindustryType,
+                folderId: 'root_json',
             });
             initialSelectedId = id;
         }
         this.state = {
+            folders: [
+                {id: 'root_json', name: 'JSON 内容', parentId: null, kind: 'content'},
+                {id: 'root_java', name: 'Java 文件', parentId: null, kind: 'java'},
+            ],
             assets: initialAssets,
             selectedAssetId: initialSelectedId,
+            selectedFolderId: null, // null = show all
             jsonFormData: {},
         };
         this.handleUpdateProjectTitle = this.handleUpdateProjectTitle.bind(this);
@@ -218,14 +224,37 @@ class Interface extends React.Component {
         this.handleJsonFormChange = this.handleJsonFormChange.bind(this);
         this.handleAddContent = this.handleAddContent.bind(this);
         this.handleAddJava = this.handleAddJava.bind(this);
+        this.handleSelectFolder = this.handleSelectFolder.bind(this);
+        this.handleAddFolder = this.handleAddFolder.bind(this);
+        this.handleRenameFolder = this.handleRenameFolder.bind(this);
+        this.handleDeleteFolder = this.handleDeleteFolder.bind(this);
     }
 
     getSelectedAsset() {
         return this.state.assets.find(a => a.id === this.state.selectedAssetId) || null;
     }
 
+    getFilteredAssets() {
+        const {assets, selectedFolderId} = this.state;
+        if (!selectedFolderId) return assets;
+        // include assets in this folder and sub-folders
+        const folderIds = new Set();
+        const collect = (id) => {
+            folderIds.add(id);
+            for (const f of this.state.folders) {
+                if (f.parentId === id) collect(f.id);
+            }
+        };
+        collect(selectedFolderId);
+        return assets.filter(a => folderIds.has(a.folderId));
+    }
+
     handleSelectAsset(assetId) {
         this.setState({selectedAssetId: assetId, jsonFormData: {}});
+    }
+
+    handleSelectFolder(folderId) {
+        this.setState({selectedFolderId: folderId});
     }
 
     handleJsonFormChange(data) {
@@ -238,6 +267,10 @@ class Interface extends React.Component {
             kind: 'content',
             name,
             contentType: type,
+            folderId: this.state.selectedFolderId
+                && !['root_json', 'root_java'].includes(this.state.selectedFolderId)
+                ? this.state.selectedFolderId
+                : 'root_json',
         };
         this.setState(prev => ({
             assets: [...prev.assets, newAsset],
@@ -251,12 +284,68 @@ class Interface extends React.Component {
             id: genId('java'),
             kind: 'java',
             name,
+            folderId: this.state.selectedFolderId
+                && !['root_json', 'root_java'].includes(this.state.selectedFolderId)
+                ? this.state.selectedFolderId
+                : 'root_java',
         };
         this.setState(prev => ({
             assets: [...prev.assets, newAsset],
             selectedAssetId: newAsset.id,
             jsonFormData: {},
         }));
+    }
+
+    handleAddFolder() {
+        const parentId = this.state.selectedFolderId;
+        const name = prompt('文件夹名：');
+        if (!name || !name.trim()) return;
+        const kind = parentId ? (
+            this.state.folders.find(f => f.id === parentId) || {}
+        ).kind : 'content';
+        const newFolder = {
+            id: genId('folder'),
+            name: name.trim(),
+            parentId: parentId,
+            kind: kind || 'content',
+        };
+        this.setState(prev => ({
+            folders: [...prev.folders, newFolder],
+            selectedFolderId: newFolder.id,
+        }));
+    }
+
+    handleRenameFolder(id, name) {
+        this.setState(prev => ({
+            folders: prev.folders.map(f =>
+                f.id === id ? {...f, name} : f
+            ),
+        }));
+    }
+
+    handleDeleteFolder(id) {
+        if (['root_json', 'root_java'].includes(id)) {
+            alert('不能删除根文件夹');
+            return;
+        }
+        this.setState(prev => {
+            const idsToRemove = new Set();
+            const collect = (fid) => {
+                idsToRemove.add(fid);
+                for (const f of prev.folders) {
+                    if (f.parentId === fid) collect(f.id);
+                }
+            };
+            collect(id);
+            return {
+                folders: prev.folders.filter(f => !idsToRemove.has(f.id)),
+                assets: prev.assets.filter(a => !idsToRemove.has(a.folderId)),
+                selectedFolderId:
+                    prev.selectedFolderId === id ? null : prev.selectedFolderId,
+                selectedAssetId:
+                    idsToRemove.has(prev.selectedAssetId) ? null : prev.selectedAssetId,
+            };
+        });
     }
     componentDidUpdate (prevProps) {
         if (prevProps.isLoading && !this.props.isLoading) {
@@ -321,6 +410,7 @@ class Interface extends React.Component {
                         onClickAddonSettings={handleClickAddonSettings}
                         onUpdateProjectTitle={this.handleUpdateProjectTitle}
                         selectedAsset={this.getSelectedAsset()}
+                        filteredAssets={this.getFilteredAssets()}
                         assets={this.state.assets}
                         selectedAssetId={this.state.selectedAssetId}
                         onSelectAsset={this.handleSelectAsset}
@@ -329,6 +419,12 @@ class Interface extends React.Component {
                         contentType={this.getSelectedAsset() && this.getSelectedAsset().kind === 'content' ? this.getSelectedAsset().contentType : null}
                         selectedContentData={this.state.jsonFormData}
                         onContentDataChange={this.handleJsonFormChange}
+                        folders={this.state.folders}
+                        selectedFolderId={this.state.selectedFolderId}
+                        onSelectFolder={this.handleSelectFolder}
+                        onAddFolder={this.handleAddFolder}
+                        onRenameFolder={this.handleRenameFolder}
+                        onDeleteFolder={this.handleDeleteFolder}
                         backpackVisible
                         backpackHost="_local_"
                         {...props}
