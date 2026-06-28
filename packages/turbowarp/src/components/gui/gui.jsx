@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import omit from 'lodash.omit';
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, {useState, useCallback, useRef, useEffect} from 'react';
 import {defineMessages, FormattedMessage, injectIntl, intlShape} from 'react-intl';
 import {connect} from 'react-redux';
 import MediaQuery from 'react-responsive';
@@ -197,6 +197,27 @@ const GUIComponent = props => {
         tabPanelSelected: classNames(tabStyles.reactTabsTabPanelSelected, styles.isSelected),
         tabSelected: classNames(tabStyles.reactTabsTabSelected, styles.isSelected)
     };
+
+    const [rightWidth, setRightWidth] = useState(null);
+    const dragStartX = useRef(0);
+    const dragStartW = useRef(0);
+    const rightPanelRef = useRef(null);
+
+    const onDragStart = useCallback((e) => {
+        e.preventDefault();
+        dragStartX.current = e.clientX;
+        dragStartW.current = rightWidth || rightPanelRef.current?.offsetWidth || 400;
+        const onMove = (ev) => {
+            const w = dragStartW.current - (ev.clientX - dragStartX.current);
+            setRightWidth(Math.max(220, Math.min(700, w)));
+        };
+        const onUp = () => {
+            document.removeEventListener('mousemove', onMove);
+            document.removeEventListener('mouseup', onUp);
+        };
+        document.addEventListener('mousemove', onMove);
+        document.addEventListener('mouseup', onUp);
+    }, [rightWidth]);
 
     const unconstrainedWidth = (
         UNCONSTRAINED_NON_STAGE_WIDTH +
@@ -466,9 +487,19 @@ const GUIComponent = props => {
                             {backpackVisible ? (
                                 <Backpack host={backpackHost} />
                             ) : null}
-                        </Box>
+                            </Box>
 
-                        <Box className={classNames(styles.stageAndTargetWrapper, styles[stageSize])}>
+                        {selectedAsset && (
+                            <div
+                                className={styles.resizeHandle}
+                                onMouseDown={onDragStart}
+                            />
+                        )}
+                        <Box
+                            className={classNames(styles.stageAndTargetWrapper, styles[stageSize])}
+                            ref={rightPanelRef}
+                            style={selectedAsset && rightWidth ? {width: rightWidth, flex: 'none'} : {}}
+                        >
                             {selectedAsset ? (
                                 <React.Fragment>
                                     <TranspilePanel
