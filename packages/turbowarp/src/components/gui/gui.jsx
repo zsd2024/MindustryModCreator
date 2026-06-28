@@ -24,6 +24,7 @@ import MindustryJsonEditor from '../mindustry-json-editor/mindustry-json-editor.
 import FolderTree from '../mindustry-folder-tree/mindustry-folder-tree.jsx';
 import AssetCards from '../mindustry-asset-cards/mindustry-asset-cards.jsx';
 import TranspilePanel from '../mindustry-transpile-panel/mindustry-transpile-panel.jsx';
+import ModEditor from '../mindustry-mod-editor/mod-editor.jsx';
 
 import Backpack from '../../containers/backpack.jsx';
 import BrowserModal from '../browser-modal/browser-modal.jsx';
@@ -140,6 +141,8 @@ const GUIComponent = props => {
         onAddFolder,
         onRenameFolder,
         onDeleteFolder,
+        modConfig,
+        onModConfigChange,
         onClickAddonSettings,
         onClickDesktopSettings,
         onClickNewWindow,
@@ -437,7 +440,14 @@ const GUIComponent = props => {
                                     </Tab>
                                 </TabList>
                                 <TabPanel className={tabClassNames.tabPanel}>
-                                    {selectedAsset && selectedAsset.kind === 'content' ? (
+                                    {selectedAsset && selectedAsset.kind === 'modconfig' ? (
+                                        <Box className={styles.blocksWrapper}>
+                                            <ModEditor
+                                                config={modConfig}
+                                                onChange={onModConfigChange}
+                                            />
+                                        </Box>
+                                    ) : selectedAsset && selectedAsset.kind === 'content' ? (
                                         <Box className={styles.blocksWrapper}>
                                             <MindustryJsonEditor
                                                 contentType={selectedAsset.contentType}
@@ -511,6 +521,7 @@ const GUIComponent = props => {
                                     <TranspilePanel
                                         selectedAsset={selectedAsset}
                                         formData={selectedContentData}
+                                        modConfig={modConfig}
                                     />
                                     <Box className={styles.targetWrapper}>
                                         <FolderTree
@@ -649,6 +660,8 @@ GUIComponent.propTypes = {
     onAddFolder: PropTypes.func,
     onRenameFolder: PropTypes.func,
     onDeleteFolder: PropTypes.func,
+    modConfig: PropTypes.object,
+    onModConfigChange: PropTypes.func,
     showComingSoon: PropTypes.bool,
     showOpenFilePicker: PropTypes.func,
     showSaveFilePicker: PropTypes.func,

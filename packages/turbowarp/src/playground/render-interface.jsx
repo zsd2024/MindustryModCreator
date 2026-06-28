@@ -209,15 +209,39 @@ class Interface extends React.Component {
             });
             initialSelectedId = id;
         }
+        const modAsset = {
+            id: '__mod_config__',
+            kind: 'modconfig',
+            name: 'mod.hjson',
+        };
         this.state = {
             folders: [
                 {id: 'root_json', name: 'JSON 内容', parentId: null, kind: 'content'},
                 {id: 'root_java', name: 'Java 文件', parentId: null, kind: 'java'},
             ],
-            assets: initialAssets,
-            selectedAssetId: initialSelectedId,
-            selectedFolderId: null, // null = show all
+            assets: [modAsset, ...initialAssets],
+            selectedAssetId: initialSelectedId || modAsset.id,
+            selectedFolderId: null,
             jsonFormData: {},
+            modConfig: {
+                name: 'my-mod',
+                displayName: 'My Mod',
+                author: '',
+                version: '1.0',
+                subtitle: '',
+                description: '',
+                main: '',
+                repo: '',
+                minGameVersion: '146',
+                dependencies: [],
+                softDependencies: [],
+                hidden: false,
+                java: false,
+                iosCompatible: false,
+                pregenerated: false,
+                legacyCompatible: false,
+                texturescale: 1.0,
+            },
         };
         this.handleUpdateProjectTitle = this.handleUpdateProjectTitle.bind(this);
         this.handleSelectAsset = this.handleSelectAsset.bind(this);
@@ -231,6 +255,7 @@ class Interface extends React.Component {
         this.handleRenameAsset = this.handleRenameAsset.bind(this);
         this.handleDuplicateAsset = this.handleDuplicateAsset.bind(this);
         this.handleDeleteAsset = this.handleDeleteAsset.bind(this);
+        this.handleModConfigChange = this.handleModConfigChange.bind(this);
     }
 
     getSelectedAsset() {
@@ -249,7 +274,7 @@ class Interface extends React.Component {
             }
         };
         collect(selectedFolderId);
-        return assets.filter(a => folderIds.has(a.folderId));
+        return assets.filter(a => !a.folderId || folderIds.has(a.folderId));
     }
 
     handleSelectAsset(assetId) {
@@ -375,9 +400,19 @@ class Interface extends React.Component {
 
     handleDeleteAsset(id) {
         if (id === this.state.assets.find(a => a.id === '__url_param__')?.id) return;
+        if (id === '__mod_config__') {
+            alert('不能删除模组配置文件');
+            return;
+        }
         this.setState(prev => ({
             assets: prev.assets.filter(a => a.id !== id),
             selectedAssetId: prev.selectedAssetId === id ? null : prev.selectedAssetId,
+        }));
+    }
+
+    handleModConfigChange(key, value) {
+        this.setState(prev => ({
+            modConfig: {...prev.modConfig, [key]: value},
         }));
     }
     componentDidUpdate (prevProps) {
@@ -461,6 +496,8 @@ class Interface extends React.Component {
                         onAddFolder={this.handleAddFolder}
                         onRenameFolder={this.handleRenameFolder}
                         onDeleteFolder={this.handleDeleteFolder}
+                        modConfig={this.state.modConfig}
+                        onModConfigChange={this.handleModConfigChange}
                         backpackVisible
                         backpackHost="_local_"
                         {...props}

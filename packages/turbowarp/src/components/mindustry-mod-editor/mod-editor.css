@@ -1,0 +1,199 @@
+@import "../../css/units.css";
+@import "../../css/colors.css";
+
+.editor {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  background: $ui-white;
+  overflow: hidden;
+}
+
+.header {
+  padding: 12px 16px;
+  background: $ui-primary;
+  border-bottom: 1px solid $ui-tertiary;
+  flex-shrink: 0;
+}
+
+.headerTitle {
+  font-weight: 700;
+  font-size: 1rem;
+  color: $text-primary;
+}
+
+.headerHint {
+  font-size: 0.75rem;
+  color: $text-primary;
+  opacity: 0.45;
+  margin-top: 2px;
+}
+
+.body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 12px 16px;
+}
+
+.field {
+  margin-bottom: 14px;
+}
+
+.label {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: $text-primary;
+  margin-bottom: 4px;
+}
+
+.hint {
+  display: block;
+  font-size: 0.7rem;
+  color: $text-primary;
+  opacity: 0.4;
+  margin-bottom: 4px;
+}
+
+.input {
+  width: 100%;
+  padding: 7px 10px;
+  border: 1px solid $ui-tertiary;
+  border-radius: 5px;
+  background: $ui-white;
+  color: $text-primary;
+  font-size: 0.85rem;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.input:focus {
+  border-color: $motion-primary;
+}
+
+.textarea {
+  composes: input;
+  resize: vertical;
+  min-height: 80px;
+  font-family: inherit;
+}
+
+.toggleRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.toggleSwitch {
+  position: relative;
+  display: inline-block;
+  width: 36px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.toggleSwitch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggleSlider {
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  background: $ui-tertiary;
+  border-radius: 20px;
+  transition: 0.2s;
+}
+
+.toggleSlider::before {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  left: 2px;
+  bottom: 2px;
+  background: $ui-white;
+  border-radius: 50%;
+  transition: 0.2s;
+}
+
+.toggleSwitch input:checked + .toggleSlider {
+  background: $motion-primary;
+}
+
+.toggleSwitch input:checked + .toggleSlider::before {
+  transform: translateX(16px);
+}
+
+.toggleLabel {
+  font-size: 0.85rem;
+  color: $text-primary;
+}
+
+/* ── array field (dependencies) ── */
+.arrayRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-bottom: 6px;
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  background: $looks-secondary;
+  color: $ui-white;
+  border-radius: 10px;
+  font-size: 0.75rem;
+}
+
+.tagRemove {
+  cursor: pointer;
+  font-size: 0.7rem;
+  opacity: 0.7;
+}
+
+.tagRemove:hover {
+  opacity: 1;
+}
+
+.arrayAddRow {
+  display: flex;
+  gap: 4px;
+}
+
+.arrayInput {
+  flex: 1;
+  padding: 5px 8px;
+  border: 1px solid $ui-tertiary;
+  border-radius: 4px;
+  background: $ui-white;
+  color: $text-primary;
+  font-size: 0.8rem;
+  outline: none;
+}
+
+.arrayInput:focus {
+  border-color: $motion-primary;
+}
+
+.arrayAddBtn {
+  padding: 5px 10px;
+  border: 1px solid $motion-primary;
+  border-radius: 4px;
+  background: $motion-primary;
+  color: $ui-white;
+  font-size: 0.8rem;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.arrayAddBtn:hover {
+  opacity: 0.9;
+}

@@ -52,7 +52,30 @@ class TranspilePanel extends React.Component {
 
     let code = null;
     if (selectedAsset) {
-      if (selectedAsset.kind === 'content' && formData && Object.keys(formData).length > 0) {
+      if (selectedAsset.kind === 'modconfig' && this.props.modConfig) {
+        const cfg = this.props.modConfig;
+        const lines = [];
+        const push = (k, v) => { if (v !== undefined && v !== null && v !== '') lines.push(`${k}: ${v}`); };
+        const pushArr = (k, arr) => { if (Array.isArray(arr) && arr.length > 0) lines.push(`${k}: [${arr.join(', ')}]`); };
+        push('name', cfg.name);
+        push('displayName', cfg.displayName);
+        push('author', cfg.author);
+        push('version', cfg.version);
+        push('subtitle', cfg.subtitle);
+        if (cfg.description) lines.push(`description:\n'''\n${cfg.description}\n'''`);
+        push('main', cfg.main);
+        push('repo', cfg.repo);
+        push('minGameVersion', cfg.minGameVersion);
+        pushArr('dependencies', cfg.dependencies);
+        pushArr('softDependencies', cfg.softDependencies);
+        if (cfg.hidden) push('hidden', 'true');
+        if (cfg.java) push('java', 'true');
+        if (cfg.iosCompatible) push('iosCompatible', 'true');
+        if (cfg.pregenerated) push('pregenerated', 'true');
+        if (cfg.legacyCompatible) push('legacyCompatible', 'true');
+        if (cfg.texturescale && cfg.texturescale !== 1.0) push('texturescale', String(cfg.texturescale));
+        code = lines.join('\n');
+      } else if (selectedAsset.kind === 'content' && formData && Object.keys(formData).length > 0) {
         const changed = diffData(selectedAsset.contentType, formData);
         if (changed) {
           code = JSON.stringify(changed, null, 2);
@@ -98,6 +121,7 @@ class TranspilePanel extends React.Component {
 TranspilePanel.propTypes = {
   selectedAsset: PropTypes.object,
   formData: PropTypes.object,
+  modConfig: PropTypes.object,
 };
 
 export default TranspilePanel;
