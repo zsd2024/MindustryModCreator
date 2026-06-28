@@ -11,6 +11,7 @@ class FolderTree extends React.Component {
       renameValue: '',
       contextMenu: null,
     };
+    this._ctxEl = null;
     this.treeRef = React.createRef();
   }
 
@@ -23,7 +24,7 @@ class FolderTree extends React.Component {
   }
 
   handleDocClick = (e) => {
-    if (this.state.contextMenu && !this.state.contextMenu.ref?.contains(e.target)) {
+    if (this.state.contextMenu && this._ctxEl && !this._ctxEl.contains(e.target)) {
       this.setState({contextMenu: null});
     }
   }
@@ -151,13 +152,7 @@ class FolderTree extends React.Component {
           <div
             className={styles.contextMenu}
             style={{left: this.state.contextMenu.x, top: this.state.contextMenu.y}}
-            ref={(el) => {
-              if (el && this.state.contextMenu) {
-                this.setState(prev => ({
-                  contextMenu: {...prev.contextMenu, ref: el},
-                }));
-              }
-            }}
+            ref={(el) => {this._ctxEl = el;}}
             onClick={(e) => e.stopPropagation()}
           >
             <div

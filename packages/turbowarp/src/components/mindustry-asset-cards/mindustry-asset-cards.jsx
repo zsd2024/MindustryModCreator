@@ -39,13 +39,23 @@ const CATEGORIES = [
   {types: ['Weather'], label: '天气'},
 ];
 
-function kindIcon(kind) {
-  return kind === 'content' ? '📄' : '☕';
-}
-
-function kindBadge(kind) {
-  if (kind === 'content') return {text: 'JSON', cls: styles.badgeJson};
-  return {text: 'Java', cls: styles.badgeJava};
+function iconForAsset(asset) {
+  if (asset.kind === 'java') return '☕';
+  const ct = asset.contentType;
+  if (['Wall', 'Block', 'Floor', 'Prop'].includes(ct)) return '🧱';
+  if (ct === 'Item' || ct === 'Liquid') return '💎';
+  if (ct.includes('Turret') || ct === 'Weapon') return '🎯';
+  if (ct.includes('Bullet')) return '💥';
+  if (ct.includes('Conveyor') || ct.includes('Duct') || ct.includes('Router') || ct.includes('Sorter')) return '⚙️';
+  if (ct.includes('Drill') || ct.includes('Pump')) return '⛏️';
+  if (ct.includes('Generator') || ct.includes('Reactor') || ct.includes('Battery') || ct.includes('Power')) return '⚡';
+  if (ct.includes('Unit') || ct.includes('Factory') || ct.includes('Assembler') || ct.includes('Reconstructor')) return '🤖';
+  if (ct.includes('Force') || ct.includes('Overdrive') || ct.includes('Shield') || ct.includes('Mine')) return '🛡️';
+  if (ct.includes('Ability')) return '✨';
+  if (ct.includes('Crafter') || ct.includes('Separator') || ct.includes('Fracker') || ct.includes('Incinerator')) return '🏭';
+  if (ct.includes('Bridge') || ct.includes('MassDriver') || ct.includes('Launch')) return '📡';
+  if (ct.includes('Effect') || ct.includes('Weather')) return '🌊';
+  return '📄';
 }
 
 class AssetCards extends React.Component {
@@ -56,9 +66,28 @@ class AssetCards extends React.Component {
       dialogName: '',
       dialogType: null,
       dialogSearch: '',
+      contextMenu: null,
+      renamingId: null,
+      renameValue: '',
     };
+    this._ctxEl = null;
   }
 
+  componentDidMount() {
+    document.addEventListener('click', this._handleDocClick);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('click', this._handleDocClick);
+  }
+
+  _handleDocClick = (e) => {
+    if (this.state.contextMenu && this._ctxEl && !this._ctxEl.contains(e.target)) {
+      this.setState({contextMenu: null});
+    }
+  };
+
+  // ── add dialog ──
   openDialog() {
     this.setState({dialogOpen: true, dialogName: '', dialogType: null, dialogSearch: ''});
   }
@@ -81,6 +110,30 @@ class AssetCards extends React.Component {
     }
   }
 
+  // ── right-click context menu ──
+  handleContextMenu(asset, e) {
+    e.preventDefault();
+    e.stopPropagation();
+    if (asset.id === '__url_param__') return;
+    this.setState({
+      contextMenu: {assetId: asset.id, name: asset.name, x: e.clientX, y: e.clientY},
+    });
+  }
+
+  // ── rename (inline) ──
+  startRename(id, name) {
+    this.setState({renamingId: id, renameValue: name, contextMenu: null});
+  }
+
+  confirmRename() {
+    const {renamingId, renameValue} = this.state;
+    if (renamingId && renameValue.trim()) {
+      this.props.onRenameAsset(renamingId, renameValue.trim());
+    }
+    this.setState({renamingId: null, renameValue: ''});
+  }
+
+  // ── picker ──
   renderPicker() {
     const {dialogType, dialogSearch} = this.state;
     const filtered = CATEGORIES.map(cat => ({
@@ -123,9 +176,10 @@ class AssetCards extends React.Component {
 
   render() {
     const {assets, selectedId, onSelect} = this.props;
+    const {renamingId, renameValue} = this.state;
 
     return (
-      <div className={styles.cardsPane}>
+      <div className={styles.cardsPane} onContextMenu={(e) => e.preventDefault()}>
         <div className={styles.cardsHeader}>
           <span className={styles.cardsTitle}>资源</span>
         </div>
@@ -136,18 +190,39 @@ class AssetCards extends React.Component {
             </div>
           )}
           {assets.map(asset => {
-            const badge = kindBadge(asset.kind);
+            const active = selectedId === asset.id;
+            const isRenaming = renamingId === asset.id;
             return (
               <div
                 key={asset.id}
-                className={`${styles.card} ${selectedId === asset.id ? styles.cardActive : ''}`}
+                className={`${styles.card} ${active ? styles.cardActive : ''}`}
                 onClick={() => onSelect(asset.id)}
+                onContextMenu={(e) => this.handleContextMenu(asset, e)}
               >
-                <span className={styles.cardIcon}>{kindIcon(asset.kind)}</span>
-                <span className={styles.cardName}>{asset.name}</span>
-                <span className={`${styles.cardBadge} ${badge.cls}`}>
-                  {badge.text}
-                </span>
+                <div className={styles.cardIconArea}>
+                  <span className={styles.cardIcon}>{iconForAsset(asset)}</span>
+                </div>
+                <div className={styles.cardInfo}>
+                  {isRenaming ? (
+                    <input
+                      className={styles.renameInput}
+                      value={renameValue}
+                      onChange={(e) => this.setState({renameValue: e.target.value})}
+                      onBlur={() => this.confirmRename()}
+                      onKeyDown={(e) => {
+                        if (e.key === 'Enter') this.confirmRename();
+                        if (e.key === 'Escape') this.setState({renamingId: null, renameValue: ''});
+                      }}
+                      autoFocus
+                      onClick={(e) => e.stopPropagation()}
+                    />
+                  ) : (
+                    <div className={styles.cardName}>{asset.name}</div>
+                  )}
+                  <div className={styles.cardType}>
+                    {asset.kind === 'content' ? asset.contentType : '.java'}
+                  </div>
+                </div>
               </div>
             );
           })}
@@ -161,6 +236,45 @@ class AssetCards extends React.Component {
           </button>
         </div>
 
+        {/* context menu */}
+        {this.state.contextMenu && (
+          <div
+            className={styles.contextMenu}
+            style={{left: this.state.contextMenu.x, top: this.state.contextMenu.y}}
+            ref={(el) => {this._ctxEl = el;}}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div
+              className={styles.menuItem}
+              onClick={() => {
+                const {assetId, name} = this.state.contextMenu;
+                this.startRename(assetId, name);
+              }}
+            >
+              重命名
+            </div>
+            <div
+              className={`${styles.menuItem} ${styles.menuDivider}`}
+              onClick={() => {
+                this.props.onDuplicateAsset(this.state.contextMenu.assetId);
+                this.setState({contextMenu: null});
+              }}
+            >
+              复制
+            </div>
+            <div
+              className={`${styles.menuItemDanger} ${styles.menuDivider}`}
+              onClick={() => {
+                this.props.onDeleteAsset(this.state.contextMenu.assetId);
+                this.setState({contextMenu: null});
+              }}
+            >
+              删除
+            </div>
+          </div>
+        )}
+
+        {/* add dialog */}
         {this.state.dialogOpen && (
           <div className={styles.overlay} onClick={() => this.closeDialog()}>
             <div className={styles.dialog} onClick={e => e.stopPropagation()}>
@@ -211,6 +325,9 @@ AssetCards.propTypes = {
   onSelect: PropTypes.func.isRequired,
   onAddContent: PropTypes.func.isRequired,
   onAddJavaFile: PropTypes.func.isRequired,
+  onRenameAsset: PropTypes.func,
+  onDuplicateAsset: PropTypes.func,
+  onDeleteAsset: PropTypes.func,
 };
 
 export default AssetCards;

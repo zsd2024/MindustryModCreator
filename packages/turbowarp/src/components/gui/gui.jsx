@@ -130,6 +130,9 @@ const GUIComponent = props => {
         onSelectAsset,
         onAddContent,
         onAddJavaFile,
+        onRenameAsset,
+        onDuplicateAsset,
+        onDeleteAsset,
         contentType,
         folders,
         selectedFolderId,
@@ -488,6 +491,9 @@ const GUIComponent = props => {
                                             onSelect={onSelectAsset}
                                             onAddContent={onAddContent}
                                             onAddJavaFile={onAddJavaFile}
+                                            onRenameAsset={onRenameAsset}
+                                            onDuplicateAsset={onDuplicateAsset}
+                                            onDeleteAsset={onDeleteAsset}
                                         />
                                     </Box>
                                 </React.Fragment>
@@ -566,6 +572,9 @@ GUIComponent.propTypes = {
     onClickAddonSettings: PropTypes.func,
     onAddJavaFile: PropTypes.func,
     onAddContent: PropTypes.func,
+    onRenameAsset: PropTypes.func,
+    onDuplicateAsset: PropTypes.func,
+    onDeleteAsset: PropTypes.func,
     onSelectAsset: PropTypes.func,
     onClickDesktopSettings: PropTypes.func,
     onContentDataChange: PropTypes.func,

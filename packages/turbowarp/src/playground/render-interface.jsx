@@ -228,6 +228,9 @@ class Interface extends React.Component {
         this.handleAddFolder = this.handleAddFolder.bind(this);
         this.handleRenameFolder = this.handleRenameFolder.bind(this);
         this.handleDeleteFolder = this.handleDeleteFolder.bind(this);
+        this.handleRenameAsset = this.handleRenameAsset.bind(this);
+        this.handleDuplicateAsset = this.handleDuplicateAsset.bind(this);
+        this.handleDeleteAsset = this.handleDeleteAsset.bind(this);
     }
 
     getSelectedAsset() {
@@ -347,6 +350,36 @@ class Interface extends React.Component {
             };
         });
     }
+
+    handleRenameAsset(id, name) {
+        this.setState(prev => ({
+            assets: prev.assets.map(a => a.id === id ? {...a, name} : a),
+        }));
+    }
+
+    handleDuplicateAsset(id) {
+        this.setState(prev => {
+            const src = prev.assets.find(a => a.id === id);
+            if (!src) return null;
+            const newAsset = {
+                ...src,
+                id: genId(src.kind),
+                name: src.name + '_副本',
+            };
+            return {
+                assets: [...prev.assets, newAsset],
+                selectedAssetId: newAsset.id,
+            };
+        });
+    }
+
+    handleDeleteAsset(id) {
+        if (id === this.state.assets.find(a => a.id === '__url_param__')?.id) return;
+        this.setState(prev => ({
+            assets: prev.assets.filter(a => a.id !== id),
+            selectedAssetId: prev.selectedAssetId === id ? null : prev.selectedAssetId,
+        }));
+    }
     componentDidUpdate (prevProps) {
         if (prevProps.isLoading && !this.props.isLoading) {
             loadServiceWorker();
@@ -416,6 +449,9 @@ class Interface extends React.Component {
                         onSelectAsset={this.handleSelectAsset}
                         onAddContent={this.handleAddContent}
                         onAddJavaFile={this.handleAddJava}
+                        onRenameAsset={this.handleRenameAsset}
+                        onDuplicateAsset={this.handleDuplicateAsset}
+                        onDeleteAsset={this.handleDeleteAsset}
                         contentType={this.getSelectedAsset() && this.getSelectedAsset().kind === 'content' ? this.getSelectedAsset().contentType : null}
                         selectedContentData={this.state.jsonFormData}
                         onContentDataChange={this.handleJsonFormChange}
