@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import {resolveFields} from '../../lib/mindustry/resolve-schema';
-import toHjson from '../../lib/mindustry/to-hjson';
+import hjson from 'hjson';
 import styles from './mindustry-transpile-panel.css';
 
 function parseDefault(field) {
@@ -34,7 +34,7 @@ function diffData(contentType, currentData) {
     if (dv === undefined) {
       // field not in schema — still include it
       result[key] = currentData[key];
-    } else if (toHjson(currentData[key]) !== toHjson(dv)) {
+    } else if (hjson.stringify(currentData[key]) !== hjson.stringify(dv)) {
       result[key] = currentData[key];
     }
   }
@@ -67,11 +67,11 @@ class TranspilePanel extends React.Component {
           if (k === 'legacyCompatible' && !v) continue;
           out[k] = v;
         }
-        code = toHjson(out);
+        code = hjson.stringify(out, {bracesSameLine: false});
       } else if (selectedAsset.kind === 'content' && formData && Object.keys(formData).length > 0) {
         const changed = diffData(selectedAsset.contentType, formData);
         if (changed) {
-          code = toHjson(changed);
+          code = hjson.stringify(changed, {bracesSameLine: false});
         } else {
           code = '// 未修改任何字段\n// 修改字段后此处显示差异';
         }
