@@ -40,8 +40,10 @@ const CATEGORIES = [
 ];
 
 function iconForAsset(asset) {
+  if (asset.kind === 'modconfig') return '⚙️';
   if (asset.kind === 'java') return '☕';
   const ct = asset.contentType;
+  if (!ct) return '📄';
   if (['Wall', 'Block', 'Floor', 'Prop'].includes(ct)) return '🧱';
   if (ct === 'Item' || ct === 'Liquid') return '💎';
   if (ct.includes('Turret') || ct === 'Weapon') return '🎯';
@@ -201,6 +203,14 @@ class AssetCards extends React.Component {
               >
                 <div className={styles.cardIconArea}>
                   <span className={styles.cardIcon}>{iconForAsset(asset)}</span>
+                  <span className={`${styles.cardBadge} ${
+                    asset.kind === 'content' ? styles.badgeJson :
+                    asset.kind === 'modconfig' ? styles.badgeConfig :
+                    styles.badgeJava
+                  }`}>
+                    {asset.kind === 'content' ? 'JSON' :
+                     asset.kind === 'modconfig' ? 'HJSON' : 'Java'}
+                  </span>
                 </div>
                 <div className={styles.cardInfo}>
                   {isRenaming ? (
@@ -220,7 +230,7 @@ class AssetCards extends React.Component {
                     <div className={styles.cardName}>{asset.name}</div>
                   )}
                   <div className={styles.cardType}>
-                    {asset.kind === 'content' ? asset.contentType : '.java'}
+                    {asset.kind === 'content' ? asset.contentType : asset.kind === 'modconfig' ? 'mod.hjson' : '.java'}
                   </div>
                 </div>
               </div>

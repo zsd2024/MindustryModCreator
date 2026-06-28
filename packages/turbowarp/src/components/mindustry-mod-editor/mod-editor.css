@@ -73,10 +73,22 @@
 }
 
 .textarea {
-  composes: input;
+  width: 100%;
+  padding: 7px 10px;
+  border: 1px solid $ui-tertiary;
+  border-radius: 5px;
+  background: $ui-white;
+  color: $text-primary;
+  font-size: 0.85rem;
+  outline: none;
+  box-sizing: border-box;
   resize: vertical;
   min-height: 80px;
   font-family: inherit;
+}
+
+.textarea:focus {
+  border-color: $motion-primary;
 }
 
 .toggleRow {

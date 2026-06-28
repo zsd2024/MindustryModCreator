@@ -83,6 +83,30 @@
   align-items: center;
   justify-content: center;
   padding: 8px 0 4px;
+  position: relative;
+}
+
+.cardBadge {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  font-size: 0.55rem;
+  padding: 1px 6px;
+  border-radius: 8px;
+  color: $ui-white;
+  line-height: 1.5;
+}
+
+.badgeJson {
+  background: $motion-primary;
+}
+
+.badgeJava {
+  background: #e8852e;
+}
+
+.badgeConfig {
+  background: #6b4c9a;
 }
 
 .cardIcon {
