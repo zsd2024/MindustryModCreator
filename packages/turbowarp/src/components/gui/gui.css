@@ -326,18 +326,37 @@ $fade-out-distance: 15px;
 
 /* when in the browser's fullscreen mode, we need to put our own background to avoid just having black */
 .resizeHandle {
-  width: 5px;
+  width: 10px;
   cursor: col-resize;
   flex-shrink: 0;
   background: transparent;
   position: relative;
   z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   transition: background 0.15s;
 }
 
-.resize-handle:hover,
-.resize-handle:active {
-  background: $motion-primary;
+.resizeHandle::after {
+  content: '';
+  display: block;
+  width: 2px;
+  height: 32px;
+  border-radius: 1px;
+  background: $text-primary;
+  opacity: 0.2;
+  transition: opacity 0.15s;
+}
+
+.resizeHandle:hover,
+.resizeHandle:active {
+  background: rgba(76, 151, 255, 0.08);
+}
+
+.resizeHandle:hover::after,
+.resizeHandle:active::after {
+  opacity: 0.6;
 }
 
 .fullscreen-background {

@@ -489,7 +489,7 @@ const GUIComponent = props => {
                             ) : null}
                             </Box>
 
-                        {selectedAsset && (
+                        {assets && assets.length > 0 && (
                             <div
                                 className={styles.resizeHandle}
                                 onMouseDown={onDragStart}
@@ -498,7 +498,7 @@ const GUIComponent = props => {
                         <Box
                             className={classNames(styles.stageAndTargetWrapper, styles[stageSize])}
                             ref={rightPanelRef}
-                            style={selectedAsset && rightWidth ? {width: rightWidth, flex: 'none'} : {}}
+                            style={assets && assets.length > 0 && rightWidth ? {width: rightWidth, flex: 'none'} : {}}
                         >
                             {selectedAsset ? (
                                 <React.Fragment>
