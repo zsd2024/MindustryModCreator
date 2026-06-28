@@ -2,12 +2,6 @@ name: Build TurboWarp & Commit
 
 on:
   workflow_dispatch:
-    inputs:
-      turbowarp_ref:
-        description: 'TurboWarp git ref (branch/tag/commit)'
-        required: false
-        default: 'develop'
-        type: string
 
 concurrency:
   group: turbowarp-build
@@ -30,19 +24,17 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '24'
+          node-version: '22'
           cache: 'npm'
           cache-dependency-path: packages/turbowarp/package-lock.json
 
       - name: Install dependencies
         working-directory: packages/turbowarp
-        run: npm install --prefer-offline --no-audit --no-fund
+        run: npm ci
 
       - name: Build TurboWarp
         working-directory: packages/turbowarp
         run: NODE_ENV=production npm run build
-        env:
-          NODE_OPTIONS: '--max-old-space-size=4096'
 
       - name: Commit & Push
         run: |
