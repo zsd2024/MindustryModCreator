@@ -67,11 +67,11 @@ class TranspilePanel extends React.Component {
           if (k === 'legacyCompatible' && !v) continue;
           out[k] = v;
         }
-        code = hjson.stringify(out, {bracesSameLine: false});
+        code = hjson.stringify(out, {bracesSameLine: false, emitRootBraces: false});
       } else if (selectedAsset.kind === 'content' && formData && Object.keys(formData).length > 0) {
         const changed = diffData(selectedAsset.contentType, formData);
         if (changed) {
-          code = hjson.stringify(changed, {bracesSameLine: false});
+          code = hjson.stringify(changed, {bracesSameLine: false, emitRootBraces: false});
         } else {
           code = '// 未修改任何字段\n// 修改字段后此处显示差异';
         }
