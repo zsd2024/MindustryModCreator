@@ -1,0 +1,137 @@
+@import "../../css/units.css";
+@import "../../css/colors.css";
+
+.tree {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: $ui-secondary;
+  user-select: none;
+}
+
+.treeHeader {
+  padding: 10px 12px;
+  background: $ui-primary;
+  border-bottom: 1px solid $ui-tertiary;
+  flex-shrink: 0;
+}
+
+.treeTitle {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: $text-primary;
+}
+
+.treeBody {
+  flex: 1;
+  overflow-y: auto;
+  padding: 4px 0;
+}
+
+.treeFooter {
+  padding: 8px 10px;
+  border-top: 1px solid $ui-tertiary;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.addBtn {
+  padding: 7px 12px;
+  border: 1px solid $ui-tertiary;
+  border-radius: 6px;
+  background: $ui-primary;
+  color: $text-primary;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.15s;
+  text-align: center;
+}
+
+.addBtn:hover {
+  border-color: $motion-primary;
+  background: $motion-primary;
+  color: $ui-white;
+}
+
+.category {
+  border-bottom: 1px solid $ui-tertiary;
+}
+
+.category:last-child {
+  border-bottom: none;
+}
+
+.categoryHeader {
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  cursor: pointer;
+  gap: 6px;
+  transition: background 0.15s;
+}
+
+.categoryHeader:hover {
+  background: $ui-primary;
+}
+
+.arrow {
+  font-size: 9px;
+  color: $text-primary;
+  opacity: 0.4;
+  width: 10px;
+  flex-shrink: 0;
+}
+
+.catLabel {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: $text-primary;
+  flex: 1;
+}
+
+.catCount {
+  font-size: 0.75rem;
+  color: $text-primary;
+  opacity: 0.4;
+}
+
+.categoryBody {
+  padding: 0 0 4px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  padding: 6px 12px 6px 28px;
+  cursor: pointer;
+  gap: 6px;
+  transition: background 0.12s;
+  border-left: 3px solid transparent;
+}
+
+.item:hover {
+  background: $ui-primary;
+}
+
+.itemActive {
+  background: $ui-primary;
+  border-left-color: $motion-primary;
+}
+
+.itemName {
+  font-size: 0.82rem;
+  color: $text-primary;
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.itemType {
+  font-size: 0.7rem;
+  color: $text-primary;
+  opacity: 0.35;
+  flex-shrink: 0;
+}

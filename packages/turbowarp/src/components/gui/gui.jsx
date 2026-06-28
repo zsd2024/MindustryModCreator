@@ -21,6 +21,7 @@ import CostumeLibrary from '../../containers/costume-library.jsx';
 import BackdropLibrary from '../../containers/backdrop-library.jsx';
 import Watermark from '../../containers/watermark.jsx';
 import MindustryJsonEditor from '../mindustry-json-editor/mindustry-json-editor.jsx';
+import MindustryAssetTree from '../mindustry-asset-tree/mindustry-asset-tree.jsx';
 
 import Backpack from '../../containers/backpack.jsx';
 import BrowserModal from '../browser-modal/browser-modal.jsx';
@@ -120,6 +121,9 @@ const GUIComponent = props => {
         onClickAccountNav,
         onCloseAccountNav,
         onContentDataChange,
+        onSelectContentType,
+        onAddModContent,
+        onAddJavaFile,
         onClickAddonSettings,
         onClickDesktopSettings,
         onClickNewWindow,
@@ -457,10 +461,24 @@ const GUIComponent = props => {
                                 vm={vm}
                             />
                             <Box className={styles.targetWrapper}>
-                                <TargetPane
-                                    stageSize={stageSize}
-                                    vm={vm}
-                                />
+                                {selectedContentType ? (
+                                    <MindustryAssetTree
+                                        onSelectContent={(type, id) => {
+                                            if (onSelectContentType) onSelectContentType(type);
+                                        }}
+                                        onAddContent={() => {
+                                            if (onAddModContent) onAddModContent();
+                                        }}
+                                        onAddJavaFile={() => {
+                                            if (onAddJavaFile) onAddJavaFile();
+                                        }}
+                                    />
+                                ) : (
+                                    <TargetPane
+                                        stageSize={stageSize}
+                                        vm={vm}
+                                    />
+                                )}
                             </Box>
                         </Box>
                     </Box>
@@ -518,6 +536,9 @@ GUIComponent.propTypes = {
     onActivateTab: PropTypes.func,
     onClickAccountNav: PropTypes.func,
     onClickAddonSettings: PropTypes.func,
+    onAddModContent: PropTypes.func,
+    onAddJavaFile: PropTypes.func,
+    onSelectContentType: PropTypes.func,
     onClickDesktopSettings: PropTypes.func,
     onContentDataChange: PropTypes.func,
     onClickNewWindow: PropTypes.func,

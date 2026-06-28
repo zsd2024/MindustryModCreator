@@ -189,7 +189,22 @@ const Footer = () => (
 class Interface extends React.Component {
     constructor (props) {
         super(props);
+        const mindustryType = new URLSearchParams(location.search).get('mindustry');
+        this.state = {
+            selectedContentType: mindustryType || null,
+            selectedContentData: {},
+        };
         this.handleUpdateProjectTitle = this.handleUpdateProjectTitle.bind(this);
+        this.handleSelectContentType = this.handleSelectContentType.bind(this);
+        this.handleContentDataChange = this.handleContentDataChange.bind(this);
+    }
+
+    handleSelectContentType(type) {
+        this.setState({selectedContentType: type, selectedContentData: {}});
+    }
+
+    handleContentDataChange(data) {
+        this.setState({selectedContentData: data});
     }
     componentDidUpdate (prevProps) {
         if (prevProps.isLoading && !this.props.isLoading) {
@@ -223,7 +238,6 @@ class Interface extends React.Component {
         } = this.props;
         const isHomepage = isPlayerOnly && !isFullScreen;
         const isEditor = !isPlayerOnly;
-        const mindustryType = new URLSearchParams(location.search).get('mindustry');
         return (
             <div
                 className={classNames(styles.container, {
@@ -254,7 +268,10 @@ class Interface extends React.Component {
                     <GUI
                         onClickAddonSettings={handleClickAddonSettings}
                         onUpdateProjectTitle={this.handleUpdateProjectTitle}
-                        selectedContentType={mindustryType}
+                        selectedContentType={this.state.selectedContentType}
+                        selectedContentData={this.state.selectedContentData}
+                        onSelectContentType={this.handleSelectContentType}
+                        onContentDataChange={this.handleContentDataChange}
                         backpackVisible
                         backpackHost="_local_"
                         {...props}
