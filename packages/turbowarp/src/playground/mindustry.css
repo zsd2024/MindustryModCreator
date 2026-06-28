@@ -1,0 +1,204 @@
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #333;
+}
+
+.header {
+  background: #1a1a2e;
+  padding: 0 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.headerInner {
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 56px;
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #667eea;
+}
+
+.main {
+  flex: 1;
+}
+
+.hero {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  color: white;
+  text-align: center;
+  padding: 6rem 2rem 5rem;
+}
+
+.heroTitle {
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin: 0 0 1.5rem;
+}
+
+.heroAccent {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.heroSubtitle {
+  font-size: 1.2rem;
+  color: rgba(255,255,255,0.8);
+  line-height: 1.6;
+  margin: 0 0 2.5rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.heroActions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.btnPrimary {
+  display: inline-block;
+  padding: 0.85rem 2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  text-decoration: none;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btnPrimary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102,126,234,0.4);
+}
+
+.btnSecondary {
+  display: inline-block;
+  padding: 0.85rem 2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  border: 2px solid rgba(255,255,255,0.3);
+  cursor: pointer;
+  background: transparent;
+  color: white;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.btnSecondary:hover {
+  background: rgba(255,255,255,0.1);
+}
+
+.features {
+  display: flex;
+  gap: 2rem;
+  padding: 5rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.feature {
+  flex: 1;
+  background: white;
+  border: 1px solid #eaeaea;
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+  transition: box-shadow 0.2s;
+}
+
+.feature:hover {
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+.featureIcon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.feature h3 {
+  font-size: 1.25rem;
+  margin: 0 0 0.75rem;
+  color: #1a1a2e;
+}
+
+.feature p {
+  color: #666;
+  line-height: 1.6;
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.stats {
+  background: #f8f9fa;
+  border-top: 1px solid #eaeaea;
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+  padding: 3rem 2rem;
+}
+
+.stat {
+  text-align: center;
+}
+
+.stat strong {
+  display: block;
+  font-size: 1.3rem;
+  color: #667eea;
+  margin-bottom: 0.4rem;
+}
+
+.stat span {
+  color: #888;
+  font-size: 0.9rem;
+}
+
+.footer {
+  background: #1a1a2e;
+  color: rgba(255,255,255,0.6);
+  padding: 2rem;
+  text-align: center;
+  font-size: 0.85rem;
+}
+
+.footerInner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer p {
+  margin: 0.3rem 0;
+}
+
+@media (max-width: 768px) {
+  .heroTitle {
+    font-size: 2rem;
+  }
+
+  .features {
+    flex-direction: column;
+  }
+
+  .stats {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
