@@ -23,6 +23,7 @@ import Watermark from '../../containers/watermark.jsx';
 import MindustryJsonEditor from '../mindustry-json-editor/mindustry-json-editor.jsx';
 import FolderTree from '../mindustry-folder-tree/mindustry-folder-tree.jsx';
 import AssetCards from '../mindustry-asset-cards/mindustry-asset-cards.jsx';
+import TranspilePanel from '../mindustry-transpile-panel/mindustry-transpile-panel.jsx';
 
 import Backpack from '../../containers/backpack.jsx';
 import BrowserModal from '../browser-modal/browser-modal.jsx';
@@ -347,17 +348,6 @@ const GUIComponent = props => {
                 />
                 <Box className={styles.bodyWrapper}>
                     <Box className={styles.flexWrapper}>
-                        {selectedAsset ? (
-                            <FolderTree
-                                folders={folders}
-                                assets={assets}
-                                selectedFolderId={selectedFolderId}
-                                onSelectFolder={onSelectFolder}
-                                onAddFolder={onAddFolder}
-                                onRenameFolder={onRenameFolder}
-                                onDeleteFolder={onDeleteFolder}
-                            />
-                        ) : null}
                         <Box className={styles.editorWrapper}>
                             <Tabs
                                 forceRenderTabPanel
@@ -476,29 +466,48 @@ const GUIComponent = props => {
                         </Box>
 
                         <Box className={classNames(styles.stageAndTargetWrapper, styles[stageSize])}>
-                            <StageWrapper
-                                isFullScreen={isFullScreen}
-                                isRendererSupported={isRendererSupported()}
-                                isRtl={isRtl}
-                                stageSize={stageSize}
-                                vm={vm}
-                            />
-                            <Box className={styles.targetWrapper}>
-                                {selectedAsset ? (
-                                    <AssetCards
-                                        assets={filteredAssets}
-                                        selectedId={selectedAssetId}
-                                        onSelect={onSelectAsset}
-                                        onAddContent={onAddContent}
-                                        onAddJavaFile={onAddJavaFile}
+                            {selectedAsset ? (
+                                <React.Fragment>
+                                    <TranspilePanel
+                                        selectedAsset={selectedAsset}
+                                        formData={selectedContentData}
                                     />
-                                ) : (
-                                    <TargetPane
+                                    <Box className={styles.targetWrapper}>
+                                        <FolderTree
+                                            folders={folders}
+                                            assets={assets}
+                                            selectedFolderId={selectedFolderId}
+                                            onSelectFolder={onSelectFolder}
+                                            onAddFolder={onAddFolder}
+                                            onRenameFolder={onRenameFolder}
+                                            onDeleteFolder={onDeleteFolder}
+                                        />
+                                        <AssetCards
+                                            assets={filteredAssets}
+                                            selectedId={selectedAssetId}
+                                            onSelect={onSelectAsset}
+                                            onAddContent={onAddContent}
+                                            onAddJavaFile={onAddJavaFile}
+                                        />
+                                    </Box>
+                                </React.Fragment>
+                            ) : (
+                                <React.Fragment>
+                                    <StageWrapper
+                                        isFullScreen={isFullScreen}
+                                        isRendererSupported={isRendererSupported()}
+                                        isRtl={isRtl}
                                         stageSize={stageSize}
                                         vm={vm}
                                     />
-                                )}
-                            </Box>
+                                    <Box className={styles.targetWrapper}>
+                                        <TargetPane
+                                            stageSize={stageSize}
+                                            vm={vm}
+                                        />
+                                    </Box>
+                                </React.Fragment>
+                            )}
                         </Box>
                     </Box>
                 </Box>

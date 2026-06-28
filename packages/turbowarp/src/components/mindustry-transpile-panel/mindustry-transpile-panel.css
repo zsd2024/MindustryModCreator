@@ -1,0 +1,75 @@
+@import "../../css/units.css";
+@import "../../css/colors.css";
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  background: $ui-secondary;
+  border-bottom: 1px solid $ui-tertiary;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  padding: 6px 12px;
+  cursor: pointer;
+  gap: 6px;
+  background: $ui-primary;
+  transition: background 0.12s;
+  flex-shrink: 0;
+}
+
+.header:hover {
+  background: $ui-tertiary;
+}
+
+.arrow {
+  font-size: 9px;
+  color: $text-primary;
+  opacity: 0.4;
+  width: 10px;
+  flex-shrink: 0;
+}
+
+.headerTitle {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: $text-primary;
+  flex: 1;
+}
+
+.headerHint {
+  font-size: 0.7rem;
+  color: $text-primary;
+  opacity: 0.3;
+}
+
+.body {
+  overflow: auto;
+  padding: 8px 12px;
+  max-height: 200px;
+}
+
+.bodyCollapsed {
+  display: none;
+}
+
+.codeBlock {
+  margin: 0;
+  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+  font-size: 0.72rem;
+  line-height: 1.5;
+  color: $text-primary;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+.placeholder {
+  font-size: 0.78rem;
+  color: $text-primary;
+  opacity: 0.35;
+  text-align: center;
+  padding: 12px 0;
+}
