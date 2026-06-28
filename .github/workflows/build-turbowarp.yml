@@ -28,13 +28,22 @@ jobs:
           cache: 'npm'
           cache-dependency-path: packages/turbowarp/package-lock.json
 
+      - name: Copy to temp dir
+        run: cp -r packages/turbowarp /tmp/turbowarp
+
       - name: Install dependencies
-        working-directory: packages/turbowarp
         run: npm ci
+        working-directory: /tmp/turbowarp
 
       - name: Build TurboWarp
-        working-directory: packages/turbowarp
         run: NODE_ENV=production npm run build
+        working-directory: /tmp/turbowarp
+
+      - name: Copy build back
+        run: |
+          rm -rf packages/turbowarp/build packages/turbowarp/dist
+          cp -r /tmp/turbowarp/build packages/turbowarp/
+          cp -r /tmp/turbowarp/dist packages/turbowarp/
 
       - name: Commit & Push
         run: |
@@ -51,8 +60,7 @@ jobs:
             编译信息:
             - 触发者: ${{ github.actor }}
             - 运行编号: ${{ github.run_number }}
-            - 提交 SHA: ${{ github.sha }}
-            - TurboWarp ref: ${{ inputs.turbowarp_ref || 'develop' }}"
+            - 提交 SHA: ${{ github.sha }}"
             
             git push
           fi
