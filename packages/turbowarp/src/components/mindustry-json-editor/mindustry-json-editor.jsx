@@ -3,12 +3,11 @@ import React from 'react';
 import {resolveFields, getFieldLabel, getFieldDoc, getZhLabel, getZhDoc} from '../../lib/mindustry/resolve-schema';
 import styles from './mindustry-json-editor.css';
 
-import {parse} from 'marked';
+import ReactMarkdown from 'react-markdown';
 
 function renderMarkdown(text) {
   if (!text) return null;
-  const html = parse(text, {async: false});
-  return <span dangerouslySetInnerHTML={{__html: html}} />;
+  return <ReactMarkdown>{text}</ReactMarkdown>;
 }
 
 const FRIENDLY_TYPE_NAMES = {

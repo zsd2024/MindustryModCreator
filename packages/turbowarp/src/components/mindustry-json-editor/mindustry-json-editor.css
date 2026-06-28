@@ -69,6 +69,13 @@
   opacity: 0.5;
   line-height: 1.4;
 }
+.sectionDesc p {
+  margin: 0;
+}
+.sectionDesc ul, .sectionDesc ol {
+  margin: 2px 0;
+  padding-left: 16px;
+}
 .sectionDesc code {
   background: rgba(0,0,0,0.08);
   border-radius: 3px;
@@ -121,6 +128,13 @@
   color: $text-primary;
   opacity: 0.55;
   line-height: 1.4;
+}
+.fieldHint p {
+  margin: 0;
+}
+.fieldHint ul, .fieldHint ol {
+  margin: 2px 0;
+  padding-left: 16px;
 }
 .fieldHint code {
   background: rgba(0,0,0,0.08);
