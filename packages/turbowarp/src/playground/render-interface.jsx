@@ -186,25 +186,77 @@ const Footer = () => (
     </footer>
 );
 
+let _assetIdCounter = 0;
+function genId(prefix) {
+    _assetIdCounter += 1;
+    return `${prefix}_${Date.now()}_${_assetIdCounter}`;
+}
+
 class Interface extends React.Component {
     constructor (props) {
         super(props);
         const mindustryType = new URLSearchParams(location.search).get('mindustry');
+        const initialAssets = [];
+        let initialSelectedId = null;
+        if (mindustryType) {
+            const id = genId('content');
+            initialAssets.push({
+                id,
+                kind: 'content',
+                name: mindustryType,
+                contentType: mindustryType,
+            });
+            initialSelectedId = id;
+        }
         this.state = {
-            selectedContentType: mindustryType || null,
-            selectedContentData: {},
+            assets: initialAssets,
+            selectedAssetId: initialSelectedId,
+            jsonFormData: {},
         };
         this.handleUpdateProjectTitle = this.handleUpdateProjectTitle.bind(this);
-        this.handleSelectContentType = this.handleSelectContentType.bind(this);
-        this.handleContentDataChange = this.handleContentDataChange.bind(this);
+        this.handleSelectAsset = this.handleSelectAsset.bind(this);
+        this.handleJsonFormChange = this.handleJsonFormChange.bind(this);
+        this.handleAddContent = this.handleAddContent.bind(this);
+        this.handleAddJava = this.handleAddJava.bind(this);
     }
 
-    handleSelectContentType(type) {
-        this.setState({selectedContentType: type, selectedContentData: {}});
+    getSelectedAsset() {
+        return this.state.assets.find(a => a.id === this.state.selectedAssetId) || null;
     }
 
-    handleContentDataChange(data) {
-        this.setState({selectedContentData: data});
+    handleSelectAsset(assetId) {
+        this.setState({selectedAssetId: assetId, jsonFormData: {}});
+    }
+
+    handleJsonFormChange(data) {
+        this.setState({jsonFormData: data});
+    }
+
+    handleAddContent(name, type) {
+        const newAsset = {
+            id: genId('content'),
+            kind: 'content',
+            name,
+            contentType: type,
+        };
+        this.setState(prev => ({
+            assets: [...prev.assets, newAsset],
+            selectedAssetId: newAsset.id,
+            jsonFormData: {},
+        }));
+    }
+
+    handleAddJava(name) {
+        const newAsset = {
+            id: genId('java'),
+            kind: 'java',
+            name,
+        };
+        this.setState(prev => ({
+            assets: [...prev.assets, newAsset],
+            selectedAssetId: newAsset.id,
+            jsonFormData: {},
+        }));
     }
     componentDidUpdate (prevProps) {
         if (prevProps.isLoading && !this.props.isLoading) {
@@ -268,10 +320,15 @@ class Interface extends React.Component {
                     <GUI
                         onClickAddonSettings={handleClickAddonSettings}
                         onUpdateProjectTitle={this.handleUpdateProjectTitle}
-                        selectedContentType={this.state.selectedContentType}
-                        selectedContentData={this.state.selectedContentData}
-                        onSelectContentType={this.handleSelectContentType}
-                        onContentDataChange={this.handleContentDataChange}
+                        selectedAsset={this.getSelectedAsset()}
+                        assets={this.state.assets}
+                        selectedAssetId={this.state.selectedAssetId}
+                        onSelectAsset={this.handleSelectAsset}
+                        onAddContent={this.handleAddContent}
+                        onAddJavaFile={this.handleAddJava}
+                        contentType={this.getSelectedAsset() && this.getSelectedAsset().kind === 'content' ? this.getSelectedAsset().contentType : null}
+                        selectedContentData={this.state.jsonFormData}
+                        onContentDataChange={this.handleJsonFormChange}
                         backpackVisible
                         backpackHost="_local_"
                         {...props}

@@ -121,9 +121,13 @@ const GUIComponent = props => {
         onClickAccountNav,
         onCloseAccountNav,
         onContentDataChange,
-        onSelectContentType,
-        onAddModContent,
+        selectedAsset,
+        assets,
+        selectedAssetId,
+        onSelectAsset,
+        onAddContent,
         onAddJavaFile,
+        contentType,
         onClickAddonSettings,
         onClickDesktopSettings,
         onClickNewWindow,
@@ -394,10 +398,10 @@ const GUIComponent = props => {
                                     </Tab>
                                 </TabList>
                                 <TabPanel className={tabClassNames.tabPanel}>
-                                    {selectedContentType ? (
+                                    {selectedAsset && selectedAsset.kind === 'content' ? (
                                         <Box className={styles.blocksWrapper}>
                                             <MindustryJsonEditor
-                                                contentType={selectedContentType}
+                                                contentType={selectedAsset.contentType}
                                                 initialData={selectedContentData}
                                                 onChange={onContentDataChange}
                                             />
@@ -461,17 +465,13 @@ const GUIComponent = props => {
                                 vm={vm}
                             />
                             <Box className={styles.targetWrapper}>
-                                {selectedContentType ? (
+                                {selectedAsset ? (
                                     <MindustryAssetTree
-                                        onSelectContent={(type, id) => {
-                                            if (onSelectContentType) onSelectContentType(type);
-                                        }}
-                                        onAddContent={() => {
-                                            if (onAddModContent) onAddModContent();
-                                        }}
-                                        onAddJavaFile={() => {
-                                            if (onAddJavaFile) onAddJavaFile();
-                                        }}
+                                        assets={assets}
+                                        selectedId={selectedAssetId}
+                                        onSelect={onSelectAsset}
+                                        onAddContent={onAddContent}
+                                        onAddJavaFile={onAddJavaFile}
                                     />
                                 ) : (
                                     <TargetPane
@@ -536,9 +536,9 @@ GUIComponent.propTypes = {
     onActivateTab: PropTypes.func,
     onClickAccountNav: PropTypes.func,
     onClickAddonSettings: PropTypes.func,
-    onAddModContent: PropTypes.func,
     onAddJavaFile: PropTypes.func,
-    onSelectContentType: PropTypes.func,
+    onAddContent: PropTypes.func,
+    onSelectAsset: PropTypes.func,
     onClickDesktopSettings: PropTypes.func,
     onContentDataChange: PropTypes.func,
     onClickNewWindow: PropTypes.func,
@@ -563,7 +563,10 @@ GUIComponent.propTypes = {
     onToggleLoginOpen: PropTypes.func,
     renderLogin: PropTypes.func,
     securityManager: PropTypes.shape({}),
-    selectedContentType: PropTypes.string,
+    selectedAsset: PropTypes.object,
+    selectedAssetId: PropTypes.string,
+    assets: PropTypes.array,
+    contentType: PropTypes.string,
     selectedContentData: PropTypes.object,
     showComingSoon: PropTypes.bool,
     showOpenFilePicker: PropTypes.func,

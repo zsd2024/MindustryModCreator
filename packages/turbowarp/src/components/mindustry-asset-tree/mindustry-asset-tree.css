@@ -135,3 +135,150 @@
   opacity: 0.35;
   flex-shrink: 0;
 }
+
+/* --- dialog overlay --- */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dialog {
+  background: $ui-secondary;
+  border: 1px solid $ui-tertiary;
+  border-radius: 10px;
+  width: 420px;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+}
+
+.dialogTitle {
+  padding: 14px 16px 8px;
+  font-weight: 700;
+  font-size: 1rem;
+  color: $text-primary;
+}
+
+.dialogNameRow {
+  padding: 4px 16px 8px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.nameLabel {
+  font-size: 0.85rem;
+  color: $text-primary;
+  white-space: nowrap;
+}
+
+.nameInput {
+  flex: 1;
+  padding: 6px 10px;
+  border: 1px solid $ui-tertiary;
+  border-radius: 5px;
+  background: $ui-primary;
+  color: $text-primary;
+  font-size: 0.85rem;
+  outline: none;
+}
+
+.nameInput:focus {
+  border-color: $motion-primary;
+}
+
+.dialogPicker {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0 16px 8px;
+}
+
+.pickerCategory {
+  margin-bottom: 4px;
+}
+
+.pickerCatLabel {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: $text-primary;
+  padding: 4px 0 2px;
+  opacity: 0.5;
+}
+
+.pickerItem {
+  display: inline-block;
+  padding: 3px 10px;
+  margin: 2px 3px;
+  border: 1px solid $ui-tertiary;
+  border-radius: 14px;
+  font-size: 0.78rem;
+  color: $text-primary;
+  cursor: pointer;
+  transition: all 0.12s;
+  background: $ui-primary;
+}
+
+.pickerItem:hover {
+  border-color: $motion-primary;
+  background: $motion-primary;
+  color: $ui-white;
+}
+
+.pickerItemActive {
+  border-color: $motion-primary;
+  background: $motion-primary;
+  color: $ui-white;
+}
+
+.emptyHint {
+  padding: 16px;
+  text-align: center;
+  font-size: 0.8rem;
+  color: $text-primary;
+  opacity: 0.35;
+}
+
+.dialogActions {
+  padding: 10px 16px;
+  border-top: 1px solid $ui-tertiary;
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.dialogBtn {
+  padding: 6px 18px;
+  border: 1px solid $ui-tertiary;
+  border-radius: 6px;
+  background: $ui-primary;
+  color: $text-primary;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.dialogBtn:hover {
+  border-color: $motion-primary;
+}
+
+.dialogBtnPrimary {
+  composes: dialogBtn;
+  background: $motion-primary;
+  border-color: $motion-primary;
+  color: $ui-white;
+}
+
+.dialogBtnPrimary:hover {
+  opacity: 0.9;
+}
+
+.dialogBtnPrimary:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
