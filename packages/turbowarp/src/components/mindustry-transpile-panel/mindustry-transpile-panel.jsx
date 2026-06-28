@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import {resolveFields} from '../../lib/mindustry/resolve-schema';
+import toHjson from '../../lib/mindustry/to-hjson';
 import styles from './mindustry-transpile-panel.css';
 
 function parseDefault(field) {
@@ -33,7 +34,7 @@ function diffData(contentType, currentData) {
     if (dv === undefined) {
       // field not in schema — still include it
       result[key] = currentData[key];
-    } else if (JSON.stringify(currentData[key]) !== JSON.stringify(dv)) {
+    } else if (toHjson(currentData[key]) !== toHjson(dv)) {
       result[key] = currentData[key];
     }
   }
@@ -53,32 +54,24 @@ class TranspilePanel extends React.Component {
     let code = null;
     if (selectedAsset) {
       if (selectedAsset.kind === 'modconfig' && this.props.modConfig) {
+        const out = {};
         const cfg = this.props.modConfig;
-        const lines = [];
-        const push = (k, v) => { if (v !== undefined && v !== null && v !== '') lines.push(`${k}: ${v}`); };
-        const pushArr = (k, arr) => { if (Array.isArray(arr) && arr.length > 0) lines.push(`${k}: [${arr.join(', ')}]`); };
-        push('name', cfg.name);
-        push('displayName', cfg.displayName);
-        push('author', cfg.author);
-        push('version', cfg.version);
-        push('subtitle', cfg.subtitle);
-        if (cfg.description) lines.push(`description:\n'''\n${cfg.description}\n'''`);
-        push('main', cfg.main);
-        push('repo', cfg.repo);
-        push('minGameVersion', cfg.minGameVersion);
-        pushArr('dependencies', cfg.dependencies);
-        pushArr('softDependencies', cfg.softDependencies);
-        if (cfg.hidden) push('hidden', 'true');
-        if (cfg.java) push('java', 'true');
-        if (cfg.iosCompatible) push('iosCompatible', 'true');
-        if (cfg.pregenerated) push('pregenerated', 'true');
-        if (cfg.legacyCompatible) push('legacyCompatible', 'true');
-        if (cfg.texturescale && cfg.texturescale !== 1.0) push('texturescale', String(cfg.texturescale));
-        code = lines.join('\n');
+        for (const k of Object.keys(cfg)) {
+          const v = cfg[k];
+          if (v === undefined || v === null || v === '' || (Array.isArray(v) && v.length === 0)) continue;
+          if (k === 'texturescale' && v === 1.0) continue;
+          if (k === 'hidden' && !v) continue;
+          if (k === 'java' && !v) continue;
+          if (k === 'iosCompatible' && !v) continue;
+          if (k === 'pregenerated' && !v) continue;
+          if (k === 'legacyCompatible' && !v) continue;
+          out[k] = v;
+        }
+        code = toHjson(out);
       } else if (selectedAsset.kind === 'content' && formData && Object.keys(formData).length > 0) {
         const changed = diffData(selectedAsset.contentType, formData);
         if (changed) {
-          code = JSON.stringify(changed, null, 2);
+          code = toHjson(changed);
         } else {
           code = '// 未修改任何字段\n// 修改字段后此处显示差异';
         }
@@ -95,7 +88,7 @@ class TranspilePanel extends React.Component {
           <span className={styles.arrow}>{collapsed ? '▶' : '▼'}</span>
           <span className={styles.headerTitle}>
             {selectedAsset
-              ? (selectedAsset.kind === 'content' ? 'JSON 输出（仅差异）' : 'Java 输出')
+              ? (selectedAsset.kind === 'content' ? 'HJSON 输出（仅差异）' : selectedAsset.kind === 'modconfig' ? 'mod.hjson' : 'Java 输出')
               : '转译输出'}
           </span>
           <span className={styles.headerHint}>
