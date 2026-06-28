@@ -69,18 +69,24 @@
   opacity: 0.5;
   line-height: 1.4;
 }
-.sectionDesc :global(.md-code),
-.sectionDesc :global(.md-code-block) {
+.sectionDesc code {
   background: rgba(0,0,0,0.08);
   border-radius: 3px;
   padding: 1px 4px;
   font-family: 'Consolas', 'Monaco', monospace;
   font-size: 0.85em;
 }
-.sectionDesc :global(.md-code-block) {
-  display: block;
-  padding: 6px 10px;
+.sectionDesc pre {
+  background: rgba(0,0,0,0.06);
+  border-radius: 4px;
+  padding: 8px 12px;
   margin: 4px 0;
+  overflow-x: auto;
+}
+.sectionDesc pre code {
+  background: none;
+  padding: 0;
+  display: block;
   white-space: pre-wrap;
 }
 
@@ -116,18 +122,24 @@
   opacity: 0.55;
   line-height: 1.4;
 }
-.fieldHint :global(.md-code),
-.fieldHint :global(.md-code-block) {
+.fieldHint code {
   background: rgba(0,0,0,0.08);
   border-radius: 3px;
   padding: 1px 4px;
   font-family: 'Consolas', 'Monaco', monospace;
   font-size: 0.85em;
 }
-.fieldHint :global(.md-code-block) {
-  display: block;
-  padding: 6px 10px;
+.fieldHint pre {
+  background: rgba(0,0,0,0.06);
+  border-radius: 4px;
+  padding: 8px 12px;
   margin: 4px 0;
+  overflow-x: auto;
+}
+.fieldHint pre code {
+  background: none;
+  padding: 0;
+  display: block;
   white-space: pre-wrap;
 }
 

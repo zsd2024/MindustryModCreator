@@ -3,19 +3,11 @@ import React from 'react';
 import {resolveFields, getFieldLabel, getFieldDoc, getZhLabel, getZhDoc} from '../../lib/mindustry/resolve-schema';
 import styles from './mindustry-json-editor.css';
 
+import {parse} from 'marked';
+
 function renderMarkdown(text) {
   if (!text) return null;
-  const escaped = text
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;');
-  const html = escaped
-    .replace(/```([\s\S]*?)```/g, '<code class="md-code-block">$1</code>')
-    .replace(/`([^`]+)`/g, '<code class="md-code">$1</code>')
-    .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
-    .replace(/\*([^*]+)\*/g, '<em>$1</em>')
-    .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noreferrer">$1</a>')
-    .replace(/\n/g, '<br>');
+  const html = parse(text, {async: false});
   return <span dangerouslySetInnerHTML={{__html: html}} />;
 }
 
