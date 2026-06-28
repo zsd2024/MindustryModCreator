@@ -67,9 +67,21 @@
   font-size: 0.8rem;
   color: $text-primary;
   opacity: 0.5;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  line-height: 1.4;
+}
+.sectionDesc :global(.md-code),
+.sectionDesc :global(.md-code-block) {
+  background: rgba(0,0,0,0.08);
+  border-radius: 3px;
+  padding: 1px 4px;
+  font-family: 'Consolas', 'Monaco', monospace;
+  font-size: 0.85em;
+}
+.sectionDesc :global(.md-code-block) {
+  display: block;
+  padding: 6px 10px;
+  margin: 4px 0;
+  white-space: pre-wrap;
 }
 
 .sectionBody {
@@ -103,6 +115,20 @@
   color: $text-primary;
   opacity: 0.55;
   line-height: 1.4;
+}
+.fieldHint :global(.md-code),
+.fieldHint :global(.md-code-block) {
+  background: rgba(0,0,0,0.08);
+  border-radius: 3px;
+  padding: 1px 4px;
+  font-family: 'Consolas', 'Monaco', monospace;
+  font-size: 0.85em;
+}
+.fieldHint :global(.md-code-block) {
+  display: block;
+  padding: 6px 10px;
+  margin: 4px 0;
+  white-space: pre-wrap;
 }
 
 .fieldControl {

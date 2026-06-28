@@ -3,6 +3,22 @@ import React from 'react';
 import {resolveFields, getFieldLabel, getFieldDoc, getZhLabel, getZhDoc} from '../../lib/mindustry/resolve-schema';
 import styles from './mindustry-json-editor.css';
 
+function renderMarkdown(text) {
+  if (!text) return null;
+  const escaped = text
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;');
+  const html = escaped
+    .replace(/```([\s\S]*?)```/g, '<code class="md-code-block">$1</code>')
+    .replace(/`([^`]+)`/g, '<code class="md-code">$1</code>')
+    .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
+    .replace(/\*([^*]+)\*/g, '<em>$1</em>')
+    .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noreferrer">$1</a>')
+    .replace(/\n/g, '<br>');
+  return <span dangerouslySetInnerHTML={{__html: html}} />;
+}
+
 const FRIENDLY_TYPE_NAMES = {
   boolean: '开关',
   int: '数值',
@@ -136,7 +152,7 @@ class MindustryJsonEditor extends React.Component {
       <div className={styles.fieldRow} key={field.name}>
         <div className={styles.fieldHeader}>
           <span className={styles.fieldLabel}>{label}</span>
-          {hint && <span className={styles.fieldHint}>{hint}</span>}
+          {hint && <span className={styles.fieldHint}>{renderMarkdown(hint)}</span>}
         </div>
         <div className={styles.fieldControl}>
           {renderControl()}
@@ -182,7 +198,7 @@ class MindustryJsonEditor extends React.Component {
         >
           <span className={styles.sectionArrow}>{isCollapsed ? '▶' : '▼'}</span>
           <span className={styles.sectionTitle}>{zhLabel}</span>
-          {zhDoc && <span className={styles.sectionDesc}>{zhDoc}</span>}
+          {zhDoc && <span className={styles.sectionDesc}>{renderMarkdown(zhDoc)}</span>}
         </div>
         {!isCollapsed && (
           <div className={styles.sectionBody}>
