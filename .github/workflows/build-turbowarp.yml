@@ -34,7 +34,13 @@ jobs:
         run: cp -r packages/turbowarp /tmp/turbowarp
 
       - name: Install dependencies
-        run: npm ci
+        run: |
+          echo "Attempting strict clean install..."
+          npm ci --ignore-scripts || {
+            echo "⚠️ npm ci failed due to desynced lockfile or peer conflicts."
+            echo "🔄 Falling back to standard npm install..."
+            npm install
+          }
         working-directory: /tmp/turbowarp
 
       - name: Build TurboWarp
