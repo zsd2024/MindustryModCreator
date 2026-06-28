@@ -391,11 +391,13 @@ const GUIComponent = props => {
                                 </TabList>
                                 <TabPanel className={tabClassNames.tabPanel}>
                                     {selectedContentType ? (
-                                        <MindustryJsonEditor
-                                            contentType={selectedContentType}
-                                            initialData={selectedContentData}
-                                            onChange={onContentDataChange}
-                                        />
+                                        <Box className={styles.blocksWrapper}>
+                                            <MindustryJsonEditor
+                                                contentType={selectedContentType}
+                                                initialData={selectedContentData}
+                                                onChange={onContentDataChange}
+                                            />
+                                        </Box>
                                     ) : (
                                         <React.Fragment>
                                             <Box className={styles.blocksWrapper}>

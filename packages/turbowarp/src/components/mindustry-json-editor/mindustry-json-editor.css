@@ -2,7 +2,8 @@
 @import "../../css/colors.css";
 
 .editor {
-  height: 100%;
+  position: absolute;
+  inset: 0;
   display: flex;
   flex-direction: column;
   background: $ui-secondary;
