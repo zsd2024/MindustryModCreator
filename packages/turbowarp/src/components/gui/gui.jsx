@@ -198,15 +198,17 @@ const GUIComponent = props => {
         tabSelected: classNames(tabStyles.reactTabsTabSelected, styles.isSelected)
     };
 
-    const [rightWidth, setRightWidth] = useState(null);
+    const [rightWidth, setRightWidth] = useState(360);
     const dragStartX = useRef(0);
     const dragStartW = useRef(0);
     const rightPanelRef = useRef(null);
 
     const onDragStart = useCallback((e) => {
         e.preventDefault();
+        const el = rightPanelRef.current;
+        const initialW = el ? el.offsetWidth : rightWidth;
         dragStartX.current = e.clientX;
-        dragStartW.current = rightWidth || rightPanelRef.current?.offsetWidth || 400;
+        dragStartW.current = initialW;
         const onMove = (ev) => {
             const w = dragStartW.current - (ev.clientX - dragStartX.current);
             setRightWidth(Math.max(220, Math.min(700, w)));
@@ -497,8 +499,8 @@ const GUIComponent = props => {
                         )}
                         <Box
                             className={classNames(styles.stageAndTargetWrapper, styles[stageSize])}
-                            ref={rightPanelRef}
-                            style={assets && assets.length > 0 && rightWidth ? {width: rightWidth, flex: 'none'} : {}}
+                            componentRef={rightPanelRef}
+                            style={assets && assets.length > 0 ? {width: rightWidth, flex: 'none'} : {}}
                         >
                             {selectedAsset ? (
                                 <React.Fragment>
