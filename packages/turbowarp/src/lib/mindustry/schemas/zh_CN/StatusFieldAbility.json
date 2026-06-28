@@ -1,0 +1,91 @@
+{
+    "type": "StatusFieldAbility",
+    "parentType": "Ability",
+    "localizedName": "状态场能力",
+    "fields": [
+        {
+            "name": "effect",
+            "type": "StatusEffect",
+            "defaultValue": "null",
+            "localizedName": "状态效果",
+            "notes": "**Notes**: 状态效果"
+        },
+        {
+            "name": "duration",
+            "type": "float",
+            "defaultValue": "60.0",
+            "localizedName": "持续时间",
+            "notes": "**Notes**: 持续时间"
+        },
+        {
+            "name": "reload",
+            "type": "float",
+            "defaultValue": "100.0",
+            "localizedName": "装填时间",
+            "notes": "**Notes**: 装填时间"
+        },
+        {
+            "name": "range",
+            "type": "float",
+            "defaultValue": "20.0",
+            "localizedName": "范围",
+            "notes": "**Notes**: 范围"
+        },
+        {
+            "name": "onShoot",
+            "type": "boolean",
+            "defaultValue": "false",
+            "localizedName": "射击时触发",
+            "notes": "**Notes**: 是否仅在射击时触发"
+        },
+        {
+            "name": "applyEffect",
+            "type": "Effect",
+            "defaultValue": "none",
+            "localizedName": "应用效果",
+            "notes": "**Notes**: 应用效果"
+        },
+        {
+            "name": "activeEffect",
+            "type": "Effect",
+            "defaultValue": "overdriveWave",
+            "localizedName": "激活效果",
+            "notes": "**Notes**: 激活效果"
+        },
+        {
+            "name": "effectX",
+            "type": "float",
+            "defaultValue": "0.0",
+            "localizedName": "效果X偏移",
+            "notes": "**Notes**: 效果偏移 X"
+        },
+        {
+            "name": "effectY",
+            "type": "float",
+            "defaultValue": "0.0",
+            "localizedName": "效果Y偏移",
+            "notes": "**Notes**: 效果偏移 Y"
+        },
+        {
+            "name": "parentizeEffects",
+            "type": "boolean",
+            "defaultValue": "false",
+            "localizedName": "继承父级效果",
+            "notes": "**Notes**: 效果是否继承父级"
+        },
+        {
+            "name": "effectSizeParam",
+            "type": "boolean",
+            "defaultValue": "true",
+            "localizedName": "效果尺寸参数",
+            "notes": "**Notes**: 效果尺寸参数"
+        },
+        {
+            "name": "color",
+            "type": "Color",
+            "defaultValue": "ffd37fff",
+            "localizedName": "颜色",
+            "notes": "**Notes**: 颜色"
+        }
+    ]
+}

@@ -1,0 +1,36 @@
+{
+    "type": "TallBlock",
+    "parentType": "Block",
+    "fields": [
+        {
+            "name": "shadowOffset",
+            "type": "float",
+            "defaultValue": "-3.0",
+            "notes": ""
+        },
+        {
+            "name": "layer",
+            "type": "float",
+            "defaultValue": "71.0",
+            "notes": ""
+        },
+        {
+            "name": "shadowLayer",
+            "type": "float",
+            "defaultValue": "69.0",
+            "notes": ""
+        },
+        {
+            "name": "rotationRand",
+            "type": "float",
+            "defaultValue": "20.0",
+            "notes": ""
+        },
+        {
+            "name": "shadowAlpha",
+            "type": "float",
+            "defaultValue": "0.6",
+            "notes": ""
+        }
+    ]
+}

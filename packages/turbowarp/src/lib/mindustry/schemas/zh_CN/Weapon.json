@@ -1,0 +1,511 @@
+{
+    "type": "Weapon",
+    "parentType": "Object",
+    "localizedName": "武器",
+    "fields": [
+        {
+            "name": "name",
+            "type": "String",
+            "localizedName": "武器名称",
+            "defaultValue": "Weapon Name",
+            "notes": "显示的武器纹理区域。\n\n**Notes**: 武器名称，用于加载对应纹理。"
+        },
+        {
+            "name": "bullet",
+            "type": "BulletType",
+            "localizedName": "子弹类型",
+            "defaultValue": "placeholder",
+            "notes": "发射的子弹。\n\n**Notes**: 武器使用的子弹类型。"
+        },
+        {
+            "name": "ejectEffect",
+            "type": "Effect",
+            "localizedName": "弹壳抛射特效",
+            "defaultValue": "none",
+            "notes": "弹壳抛射特效。\n\n**Notes**: 弹壳弹出的视觉特效。"
+        },
+        {
+            "name": "display",
+            "type": "boolean",
+            "localizedName": "显示在统计中",
+            "defaultValue": "true",
+            "notes": "武器是否应出现在具有此武器的单位属性中。\n\n**Notes**: 控制武器是否在单位统计中显示。"
+        },
+        {
+            "name": "mirror",
+            "type": "boolean",
+            "localizedName": "生成镜像武器",
+            "defaultValue": "true",
+            "notes": "初始化时是否创建此武器的翻转副本。默认：true。\n\n**Notes**: 控制是否生成对称武器。"
+        },
+        {
+            "name": "flipSprite",
+            "type": "boolean",
+            "localizedName": "翻转精灵（仅供内部）",
+            "defaultValue": "false",
+            "notes": "渲染时是否翻转武器的精灵。仅供内部使用——请勿设置！\n\n**Notes**: 控制武器精灵是否翻转。"
+        },
+        {
+            "name": "alternate",
+            "type": "boolean",
+            "localizedName": "交替射击",
+            "defaultValue": "true",
+            "notes": "是否在不同臂之间交替射击，而非同时开火；仅当mirror = true时有效。\n\n**Notes**: 控制镜像武器是否交替射击。"
+        },
+        {
+            "name": "rotate",
+            "type": "boolean",
+            "localizedName": "独立旋转",
+            "defaultValue": "false",
+            "notes": "是否独立于单位朝向目标旋转。\n\n**Notes**: 控制武器是否可独立旋转瞄准。"
+        },
+        {
+            "name": "showStatSprite",
+            "type": "boolean",
+            "localizedName": "数据库显示精灵",
+            "defaultValue": "true",
+            "notes": "是否在数据库中显示武器的精灵。\n\n**Notes**: 控制武器精灵在数据库中的显示。"
+        },
+        {
+            "name": "baseRotation",
+            "type": "float",
+            "localizedName": "基础旋转角度",
+            "defaultValue": "0.0",
+            "notes": "武器的起始旋转角度。\n\n**Notes**: 基础旋转角度。"
+        },
+        {
+            "name": "top",
+            "type": "boolean",
+            "localizedName": "顶层绘制轮廓",
+            "defaultValue": "true",
+            "notes": "是否在顶层绘制轮廓。\n\n**Notes**: 控制轮廓绘制层级。"
+        },
+        {
+            "name": "continuous",
+            "type": "boolean",
+            "localizedName": "持续型武器",
+            "defaultValue": "false",
+            "notes": "开火时是否将子弹固定在原位；仍需要装填。\n\n**Notes**: 控制是否为持续型武器（如激光）。"
+        },
+        {
+            "name": "alwaysContinuous",
+            "type": "boolean",
+            "localizedName": "无需装填持续开火",
+            "defaultValue": "false",
+            "notes": "此武器是否使用不装填的持续开火；隐含continuous = true。\n\n**Notes**: 控制是否为无需装填的持续武器。"
+        },
+        {
+            "name": "aimChangeSpeed",
+            "type": "float",
+            "localizedName": "瞄准变化速度",
+            "defaultValue": "Infinity",
+            "notes": "炮塔改变子弹'瞄准'距离的速度。仅用于点激光子弹。\n\n**Notes**: 瞄准变化速度。"
+        },
+        {
+            "name": "controllable",
+            "type": "boolean",
+            "localizedName": "玩家可控",
+            "defaultValue": "true",
+            "notes": "此武器是否可由玩家手动瞄准。\n\n**Notes**: 控制武器是否可被玩家控制。"
+        },
+        {
+            "name": "aiControllable",
+            "type": "boolean",
+            "localizedName": "AI可控",
+            "defaultValue": "true",
+            "notes": "此武器是否可由单位自动瞄准。\n\n**Notes**: 控制武器是否可被AI控制。"
+        },
+        {
+            "name": "alwaysShooting",
+            "type": "boolean",
+            "localizedName": "始终射击",
+            "defaultValue": "false",
+            "notes": "此武器是否始终射击，无视目标或角度锥。\n\n**Notes**: 控制武器是否持续射击。"
+        },
+        {
+            "name": "autoTarget",
+            "type": "boolean",
+            "localizedName": "自动寻找目标",
+            "defaultValue": "false",
+            "notes": "是否在update()中自动瞄准相关单位；仅当controllable = false时有效。\n\n**Notes**: 控制武器是否自动寻找目标。"
+        },
+        {
+            "name": "predictTarget",
+            "type": "boolean",
+            "localizedName": "预测目标",
+            "defaultValue": "true",
+            "notes": "是否执行目标轨迹预测。\n\n**Notes**: 控制是否预测目标提前量。"
+        },
+        {
+            "name": "useAttackRange",
+            "type": "boolean",
+            "localizedName": "计入攻击范围",
+            "defaultValue": "true",
+            "notes": "若为true，此武器用于攻击范围计算。\n\n**Notes**: 控制是否将武器计入攻击范围。"
+        },
+        {
+            "name": "targetInterval",
+            "type": "float",
+            "localizedName": "目标搜索间隔",
+            "defaultValue": "40.0",
+            "notes": "目标搜索之间的等待tick数。\n\n**Notes**: 目标搜索间隔。"
+        },
+        {
+            "name": "targetSwitchInterval",
+            "type": "float",
+            "localizedName": "目标切换间隔",
+            "defaultValue": "70.0",
+            "notes": "目标切换之间的等待tick数。\n\n**Notes**: 目标切换间隔。"
+        },
+        {
+            "name": "rotateSpeed",
+            "type": "float",
+            "localizedName": "旋转速度",
+            "defaultValue": "20.0",
+            "notes": "开启旋转时武器的旋转速度（度/t）。\n\n**Notes**: 武器旋转速度。"
+        },
+        {
+            "name": "reload",
+            "type": "float",
+            "localizedName": "装填时间",
+            "defaultValue": "1.0",
+            "notes": "武器装填时间（帧）。\n\n**Notes**: 装填时间。"
+        },
+        {
+            "name": "inaccuracy",
+            "type": "float",
+            "localizedName": "散布精度",
+            "defaultValue": "0.0",
+            "notes": "每次射击的不精确度（度）。\n\n**Notes**: 射击散布精度。"
+        },
+        {
+            "name": "shake",
+            "type": "float",
+            "localizedName": "震屏强度",
+            "defaultValue": "0.0",
+            "notes": "每次射击的屏幕震动强度和持续时间。\n\n**Notes**: 震屏强度。"
+        },
+        {
+            "name": "recoil",
+            "type": "float",
+            "localizedName": "后坐力",
+            "defaultValue": "1.5",
+            "notes": "视觉武器后坐力。\n\n**Notes**: 后坐力大小。"
+        },
+        {
+            "name": "recoils",
+            "type": "int",
+            "localizedName": "后坐力计数器数",
+            "defaultValue": "-1",
+            "notes": "后坐力的额外计数器数量。\n\n**Notes**: 多barrel后坐力计数器。"
+        },
+        {
+            "name": "recoilTime",
+            "type": "float",
+            "localizedName": "后坐恢复时间",
+            "defaultValue": "-1.0",
+            "notes": "武器恢复到起始位置的tick数，默认使用装填时间。\n\n**Notes**: 后坐力恢复时间。"
+        },
+        {
+            "name": "recoilPow",
+            "type": "float",
+            "localizedName": "后坐力曲线指数",
+            "defaultValue": "1.8",
+            "notes": "应用到视觉后坐力的幂曲线。\n\n**Notes**: 后坐力衰减曲线。"
+        },
+        {
+            "name": "cooldownTime",
+            "type": "float",
+            "localizedName": "冷却时间",
+            "defaultValue": "20.0",
+            "notes": "热力区域冷却的tick数。\n\n**Notes**: 热量冷却时间。"
+        },
+        {
+            "name": "shootX",
+            "type": "float",
+            "localizedName": "射击点X偏移",
+            "defaultValue": "0.0",
+            "notes": "抛射物/特效从武器中心的偏移。\n\n**Notes**: 射击点X偏移。"
+        },
+        {
+            "name": "shootY",
+            "type": "float",
+            "localizedName": "射击点Y偏移",
+            "defaultValue": "3.0",
+            "notes": "抛射物/特效从武器中心的偏移。\n\n**Notes**: 射击点Y偏移。"
+        },
+        {
+            "name": "x",
+            "type": "float",
+            "localizedName": "武器X位置偏移",
+            "defaultValue": "5.0",
+            "notes": "武器在单位上的位置偏移。\n\n**Notes**: 武器X位置偏移。"
+        },
+        {
+            "name": "y",
+            "type": "float",
+            "localizedName": "武器Y位置偏移",
+            "defaultValue": "0.0",
+            "notes": "武器在单位上的位置偏移。\n\n**Notes**: 武器Y位置偏移。"
+        },
+        {
+            "name": "xRand",
+            "type": "float",
+            "localizedName": "X轴随机散布",
+            "defaultValue": "0.0",
+            "notes": "X/Y轴上的随机散布。\n\n**Notes**: X轴随机散布。"
+        },
+        {
+            "name": "yRand",
+            "type": "float",
+            "localizedName": "Y轴随机散布",
+            "defaultValue": "0.0",
+            "notes": "X/Y轴上的随机散布。\n\n**Notes**: Y轴随机散布。"
+        },
+        {
+            "name": "shoot",
+            "type": "ShootPattern",
+            "localizedName": "发射模式",
+            "defaultValue": "new ShootPattern()",
+            "notes": "子弹发射模式。\n\n**Notes**: 发射模式。"
+        },
+        {
+            "name": "shadow",
+            "type": "float",
+            "localizedName": "阴影半径",
+            "defaultValue": "-1.0",
+            "notes": "武器下方阴影的半径；<0禁用。\n\n**Notes**: 武器阴影半径。"
+        },
+        {
+            "name": "velocityRnd",
+            "type": "float",
+            "localizedName": "速度随机比例",
+            "defaultValue": "0.0",
+            "notes": "速度随机化的比例。\n\n**Notes**: 速度随机比例。"
+        },
+        {
+            "name": "extraVelocity",
+            "type": "float",
+            "localizedName": "额外速度加成",
+            "defaultValue": "0.0",
+            "notes": "作为比例添加的额外速度。\n\n**Notes**: 额外速度加成。"
+        },
+        {
+            "name": "shootCone",
+            "type": "float",
+            "localizedName": "射击允许角度",
+            "defaultValue": "5.0",
+            "notes": "开始射击的锥体半半径（度）。\n\n**Notes**: 射击允许角度范围。"
+        },
+        {
+            "name": "rotationLimit",
+            "type": "float",
+            "localizedName": "旋转角度限制",
+            "defaultValue": "361.0",
+            "notes": "武器可绕其基座旋转的锥体范围。\n\n**Notes**: 旋转角度限制。"
+        },
+        {
+            "name": "minWarmup",
+            "type": "float",
+            "localizedName": "最小预热需求",
+            "defaultValue": "0.0",
+            "notes": "开火前的最低武器预热值（不是线性的，请勿使用1！）。\n\n**Notes**: 最小预热需求。"
+        },
+        {
+            "name": "shootWarmupSpeed",
+            "type": "float",
+            "localizedName": "预热速度",
+            "defaultValue": "0.1",
+            "notes": "射击预热的插值速度，仅用于部件。\n\n**Notes**: 预热速度。"
+        },
+        {
+            "name": "smoothReloadSpeed",
+            "type": "float",
+            "localizedName": "平滑装填速度",
+            "defaultValue": "0.15",
+            "notes": "射击预热的插值速度，仅用于部件。\n\n**Notes**: 平滑装填速度。"
+        },
+        {
+            "name": "linearWarmup",
+            "type": "boolean",
+            "localizedName": "线性预热",
+            "defaultValue": "false",
+            "notes": "若为true，预热为线性而非曲线。\n\n**Notes**: 控制预热曲线类型。"
+        },
+        {
+            "name": "soundPitchMin",
+            "type": "float",
+            "localizedName": "音调下限",
+            "defaultValue": "0.8",
+            "notes": "随机音效音调范围。\n\n**Notes**: 音调随机范围下限。"
+        },
+        {
+            "name": "soundPitchMax",
+            "type": "float",
+            "localizedName": "音调上限",
+            "defaultValue": "1.0",
+            "notes": "随机音效音调范围。\n\n**Notes**: 音调随机范围上限。"
+        },
+        {
+            "name": "ignoreRotation",
+            "type": "boolean",
+            "localizedName": "忽略射手旋转",
+            "defaultValue": "false",
+            "notes": "射击时是否忽略射手的旋转。\n\n**Notes**: 是否忽略射手旋转。"
+        },
+        {
+            "name": "noAttack",
+            "type": "boolean",
+            "localizedName": "不能攻击",
+            "defaultValue": "false",
+            "notes": "若为true，此武器不能用于攻击目标。\n\n**Notes**: 控制武器是否不能攻击。"
+        },
+        {
+            "name": "minShootVelocity",
+            "type": "float",
+            "localizedName": "最小射击速度",
+            "defaultValue": "-1.0",
+            "notes": "此武器射击所需的最小速率。\n\n**Notes**: 最小射击速度。"
+        },
+        {
+            "name": "parentizeEffects",
+            "type": "boolean",
+            "localizedName": "特效跟随单位",
+            "defaultValue": "false",
+            "notes": "射击特效是否跟随单位（特效需要设置followParent为true才能生效）。\n\n**Notes**: 控制特效是否跟随单位。"
+        },
+        {
+            "name": "otherSide",
+            "type": "int",
+            "localizedName": "交替侧内部值",
+            "defaultValue": "-1",
+            "notes": "用于交替的内部值——请勿修改！\n\n**Notes**: 交替侧内部值。"
+        },
+        {
+            "name": "layerOffset",
+            "type": "float",
+            "localizedName": "渲染层偏移",
+            "defaultValue": "0.0",
+            "notes": "相对默认值的Z偏移。\n\n**Notes**: 渲染层偏移。"
+        },
+        {
+            "name": "activeSound",
+            "type": "Sound",
+            "localizedName": "持续活动音效",
+            "defaultValue": "none",
+            "notes": "射击时循环的音效。\n\n**Notes**: 持续活动音效。"
+        },
+        {
+            "name": "activeSoundVolume",
+            "type": "float",
+            "localizedName": "活动音量",
+            "defaultValue": "1.0",
+            "notes": "活动音效的音量。\n\n**Notes**: 活动音效音量。"
+        },
+        {
+            "name": "shootSound",
+            "type": "Sound",
+            "localizedName": "射击音效",
+            "defaultValue": "shoot",
+            "notes": "射击时使用的音效。\n\n**Notes**: 射击音效。"
+        },
+        {
+            "name": "shootSoundVolume",
+            "type": "float",
+            "localizedName": "射击音量",
+            "defaultValue": "1.0",
+            "notes": "射击音效的音量。\n\n**Notes**: 射击音效音量。"
+        },
+        {
+            "name": "initialShootSound",
+            "type": "Sound",
+            "localizedName": "首次射击音效",
+            "defaultValue": "none",
+            "notes": "此武器首次开火时使用的音效；仅用于持续武器。\n\n**Notes**: 首次射击音效。"
+        },
+        {
+            "name": "chargeSound",
+            "type": "Sound",
+            "localizedName": "充能音效",
+            "defaultValue": "none",
+            "notes": "用于有延迟武器的音效。\n\n**Notes**: 充能音效。"
+        },
+        {
+            "name": "region",
+            "type": "TextureRegion",
+            "localizedName": "主要纹理",
+            "defaultValue": "null",
+            "notes": "显示的纹理区域（自动加载）。\n\n**Notes**: 武器主要纹理。"
+        },
+        {
+            "name": "heatRegion",
+            "type": "TextureRegion",
+            "localizedName": "过热纹理",
+            "defaultValue": "null",
+            "notes": "热力纹理区域，必须与区域大小相同（可选）。\n\n**Notes**: 过热纹理区域。"
+        },
+        {
+            "name": "cellRegion",
+            "type": "TextureRegion",
+            "localizedName": "队伍标识纹理",
+            "defaultValue": "null",
+            "notes": "队伍标识纹理区域，必须与区域大小相同（可选）。\n\n**Notes**: 队伍标识纹理。"
+        },
+        {
+            "name": "outlineRegion",
+            "type": "TextureRegion",
+            "localizedName": "轮廓纹理",
+            "defaultValue": "null",
+            "notes": "如果top为false，要显示的轮廓纹理区域。\n\n**Notes**: 轮廓纹理。"
+        },
+        {
+            "name": "heatColor",
+            "type": "Color",
+            "localizedName": "过热颜色",
+            "defaultValue": "ab3400ff",
+            "notes": "热力区域色调。\n\n**Notes**: 过热颜色。"
+        },
+        {
+            "name": "shootStatus",
+            "type": "StatusEffect",
+            "localizedName": "射击状态效果",
+            "defaultValue": "none",
+            "notes": "射击时施加的状态效果。\n\n**Notes**: 射击状态效果。"
+        },
+        {
+            "name": "mountType",
+            "type": "Func of Weapon, WeaponMount",
+            "localizedName": "武器挂载类型",
+            "defaultValue": "WeaponMount::new",
+            "notes": "要使用的武器挂载类型。\n\n**Notes**: 武器挂载类型。"
+        },
+        {
+            "name": "shootStatusDuration",
+            "type": "float",
+            "localizedName": "射击状态持续时间",
+            "defaultValue": "300.0",
+            "notes": "射击时状态效果的持续时间。\n\n**Notes**: 射击状态持续时间。"
+        },
+        {
+            "name": "shootOnDeath",
+            "type": "boolean",
+            "localizedName": "死亡时自动开火",
+            "defaultValue": "false",
+            "notes": "此武器是否应在所有者死亡时开火。\n\n**Notes**: 死亡时自动开火。"
+        },
+        {
+            "name": "shootOnDeathEffect",
+            "type": "Effect",
+            "localizedName": "死亡射击特效覆盖",
+            "defaultValue": "null",
+            "notes": "如果不为null且shootOnDeath == true，仅在所有者死亡时覆盖武器的射击特效。\n\n**Notes**: 死亡射击特效覆盖。"
+        },
+        {
+            "name": "parts",
+            "type": "Seq of DrawPart",
+            "localizedName": "额外绘制部件",
+            "defaultValue": "[]",
+            "notes": "额外的动画部件。\n\n**Notes**: 额外绘制部件。"
+        }
+    ]
+}

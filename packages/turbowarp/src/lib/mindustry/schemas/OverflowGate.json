@@ -1,0 +1,18 @@
+{
+    "type": "OverflowGate",
+    "parentType": "Block",
+    "fields": [
+        {
+            "name": "speed",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": ""
+        },
+        {
+            "name": "invert",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": ""
+        }
+    ]
+}

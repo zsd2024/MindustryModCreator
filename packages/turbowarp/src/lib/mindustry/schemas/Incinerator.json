@@ -1,0 +1,18 @@
+{
+    "type": "Incinerator",
+    "parentType": "Block",
+    "fields": [
+        {
+            "name": "effect",
+            "type": "Effect",
+            "defaultValue": "fuelburn",
+            "notes": ""
+        },
+        {
+            "name": "flameColor",
+            "type": "Color",
+            "defaultValue": "ffad9dff",
+            "notes": ""
+        }
+    ]
+}

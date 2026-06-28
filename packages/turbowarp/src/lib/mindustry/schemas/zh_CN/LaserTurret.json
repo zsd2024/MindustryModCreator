@@ -1,0 +1,21 @@
+{
+    "type": "LaserTurret",
+    "parentType": "PowerTurret",
+    "localizedName": "激光炮塔",
+    "fields": [
+        {
+            "name": "firingMoveFract",
+            "type": "float",
+            "localizedName": "开火时旋转比例",
+            "defaultValue": "0.25",
+            "notes": "**Notes**: 激光发射期间炮塔旋转速度的比例。"
+        },
+        {
+            "name": "shootDuration",
+            "type": "float",
+            "localizedName": "射击持续时间",
+            "defaultValue": "100.0",
+            "notes": "**Notes**: 每次激光射击的持续时间，以tick计。"
+        }
+    ]
+}

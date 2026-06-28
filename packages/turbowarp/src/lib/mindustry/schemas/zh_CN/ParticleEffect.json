@@ -1,0 +1,203 @@
+{
+    "type": "ParticleEffect",
+    "parentType": "Effect",
+    "localizedName": "粒子特效",
+    "fields": [
+        {
+            "name": "colorFrom",
+            "localizedName": "起始颜色",
+            "type": "Color",
+            "defaultValue": "ffffffff",
+            "notes": "**Notes**: 粒子起始颜色"
+        },
+        {
+            "name": "colorTo",
+            "localizedName": "结束颜色",
+            "type": "Color",
+            "defaultValue": "ffffffff",
+            "notes": "**Notes**: 粒子结束颜色"
+        },
+        {
+            "name": "particles",
+            "localizedName": "粒子数量",
+            "type": "int",
+            "defaultValue": "6",
+            "notes": "**Notes**: 粒子数量"
+        },
+        {
+            "name": "randLength",
+            "localizedName": "随机长度",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "**Notes**: 是否随机粒子长度"
+        },
+        {
+            "name": "casingFlip",
+            "localizedName": "弹壳翻转",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "为效果启用弹壳式翻转兼容\n\n**Notes**: 为效果启用弹壳式翻转兼容"
+        },
+        {
+            "name": "cone",
+            "localizedName": "扩散角度",
+            "type": "float",
+            "defaultValue": "180.0",
+            "notes": "**Notes**: 粒子扩散角度"
+        },
+        {
+            "name": "length",
+            "localizedName": "最大长度",
+            "type": "float",
+            "defaultValue": "20.0",
+            "notes": "**Notes**: 粒子最大长度"
+        },
+        {
+            "name": "baseLength",
+            "localizedName": "基础长度",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "**Notes**: 粒子基础长度"
+        },
+        {
+            "name": "interp",
+            "localizedName": "插值方式",
+            "type": "Interp",
+            "defaultValue": "linear",
+            "notes": "粒子大小/长度/半径的插值方式\n\n**Notes**: 粒子大小/长度/半径的插值方式"
+        },
+        {
+            "name": "sizeInterp",
+            "localizedName": "大小插值",
+            "type": "Interp",
+            "defaultValue": "null",
+            "notes": "粒子大小插值方式，为null则使用interp\n\n**Notes**: 粒子大小插值方式，为null则使用interp"
+        },
+        {
+            "name": "offsetX",
+            "localizedName": "X轴偏移",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "**Notes**: X轴偏移"
+        },
+        {
+            "name": "offsetY",
+            "localizedName": "Y轴偏移",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "**Notes**: Y轴偏移"
+        },
+        {
+            "name": "lightScl",
+            "localizedName": "光照缩放",
+            "type": "float",
+            "defaultValue": "2.0",
+            "notes": "**Notes**: 光照缩放"
+        },
+        {
+            "name": "lightOpacity",
+            "localizedName": "光照不透明度",
+            "type": "float",
+            "defaultValue": "0.6",
+            "notes": "**Notes**: 光照不透明度"
+        },
+        {
+            "name": "lightColor",
+            "localizedName": "光照颜色",
+            "type": "Color",
+            "defaultValue": "null",
+            "notes": "**Notes**: 光照颜色，为null则使用粒子颜色"
+        },
+        {
+            "name": "spin",
+            "localizedName": "旋转角度",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "每帧旋转角度（度）\n\n**Notes**: 每帧旋转角度（度）"
+        },
+        {
+            "name": "sizeFrom",
+            "localizedName": "起始大小",
+            "type": "float",
+            "defaultValue": "2.0",
+            "notes": "控制精灵的起始和最终大小\n\n**Notes**: 精灵起始大小"
+        },
+        {
+            "name": "sizeTo",
+            "localizedName": "最终大小",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "控制精灵的起始和最终大小\n\n**Notes**: 精灵最终大小"
+        },
+        {
+            "name": "sizeChangeStart",
+            "localizedName": "大小变化延迟",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "控制大小变化前的等待帧数\n\n**Notes**: 控制大小变化前的等待帧数"
+        },
+        {
+            "name": "useRotation",
+            "localizedName": "使用旋转",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "是否与父级旋转角度叠加\n\n**Notes**: 是否与父级旋转角度叠加"
+        },
+        {
+            "name": "offset",
+            "localizedName": "旋转偏移",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "旋转偏移量\n\n**Notes**: 旋转偏移量"
+        },
+        {
+            "name": "region",
+            "localizedName": "精灵纹理",
+            "type": "String",
+            "defaultValue": "\"circle\"",
+            "notes": "要绘制的精灵纹理\n\n**Notes**: 要绘制的精灵纹理"
+        },
+        {
+            "name": "line",
+            "localizedName": "绘制线条",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "**Notes**: 是否绘制线条"
+        },
+        {
+            "name": "strokeFrom",
+            "localizedName": "线条起始宽度",
+            "type": "float",
+            "defaultValue": "2.0",
+            "notes": "**Notes**: 线条起始宽度"
+        },
+        {
+            "name": "strokeTo",
+            "localizedName": "线条最终宽度",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "**Notes**: 线条最终宽度"
+        },
+        {
+            "name": "lenFrom",
+            "localizedName": "线条起始长度",
+            "type": "float",
+            "defaultValue": "4.0",
+            "notes": "**Notes**: 线条起始长度"
+        },
+        {
+            "name": "lenTo",
+            "localizedName": "线条最终长度",
+            "type": "float",
+            "defaultValue": "2.0",
+            "notes": "**Notes**: 线条最终长度"
+        },
+        {
+            "name": "cap",
+            "localizedName": "绘制线帽",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "**Notes**: 是否绘制线帽"
+        }
+    ]
+}

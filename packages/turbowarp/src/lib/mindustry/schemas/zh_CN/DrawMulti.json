@@ -1,0 +1,14 @@
+{
+    "localizedName": "复合绘制",
+    "type": "DrawMulti",
+    "parentType": "DrawBlock",
+    "fields": [
+        {
+            "name": "drawers",
+            "localizedName": "绘制器数组",
+            "type": "DrawBlock[]",
+            "defaultValue": "[]",
+            "notes": "**Notes**: 组合在一起绘制的多个DrawBlock数组。"
+        }
+    ]
+}

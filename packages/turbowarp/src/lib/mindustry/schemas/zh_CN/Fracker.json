@@ -1,0 +1,14 @@
+{
+    "type": "Fracker",
+    "parentType": "SolidPump",
+    "localizedName": "裂解机",
+    "fields": [
+        {
+            "name": "itemUseTime",
+            "type": "float",
+            "localizedName": "物品消耗时间",
+            "defaultValue": "100.0",
+            "notes": "**Notes**: 每次处理消耗一个物品所需的时间"
+        }
+    ]
+}

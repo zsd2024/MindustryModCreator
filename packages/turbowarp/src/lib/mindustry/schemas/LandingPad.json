@@ -1,0 +1,78 @@
+{
+    "type": "LandingPad",
+    "parentType": "Block",
+    "fields": [
+        {
+            "name": "podRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "arrivalDuration",
+            "type": "float",
+            "defaultValue": "150.0",
+            "notes": ""
+        },
+        {
+            "name": "cooldownTime",
+            "type": "float",
+            "defaultValue": "150.0",
+            "notes": ""
+        },
+        {
+            "name": "consumeLiquidAmount",
+            "type": "float",
+            "defaultValue": "100.0",
+            "notes": ""
+        },
+        {
+            "name": "consumeLiquid",
+            "type": "Liquid",
+            "defaultValue": "water",
+            "notes": ""
+        },
+        {
+            "name": "landEffect",
+            "type": "Effect",
+            "defaultValue": "podLandShockwave",
+            "notes": ""
+        },
+        {
+            "name": "coolingEffect",
+            "type": "Effect",
+            "defaultValue": "none",
+            "notes": ""
+        },
+        {
+            "name": "coolingEffectChance",
+            "type": "float",
+            "defaultValue": "0.2",
+            "notes": ""
+        },
+        {
+            "name": "liquidPad",
+            "type": "float",
+            "defaultValue": "2.0",
+            "notes": ""
+        },
+        {
+            "name": "bottomColor",
+            "type": "Color",
+            "defaultValue": "565666ff",
+            "notes": ""
+        },
+        {
+            "name": "landSoundVolume",
+            "type": "float",
+            "defaultValue": "0.75",
+            "notes": ""
+        },
+        {
+            "name": "landSound",
+            "type": "Sound",
+            "defaultValue": "padLand",
+            "notes": ""
+        }
+    ]
+}

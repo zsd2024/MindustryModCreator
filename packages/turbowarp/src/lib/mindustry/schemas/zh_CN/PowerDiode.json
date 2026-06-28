@@ -1,0 +1,14 @@
+{
+    "type": "PowerDiode",
+    "parentType": "Block",
+    "localizedName": "电力二极管",
+    "fields": [
+        {
+            "name": "arrow",
+            "localizedName": "箭头纹理",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": "**Notes**: 箭头纹理区域，用于指示电力方向"
+        }
+    ]
+}

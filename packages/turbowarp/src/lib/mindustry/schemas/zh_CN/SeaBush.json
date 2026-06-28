@@ -1,0 +1,91 @@
+{
+    "type": "SeaBush",
+    "parentType": "Prop",
+    "localizedName": "海灌木",
+    "fields": [
+        {
+            "name": "botRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "localizedName": "底部叶片纹理",
+            "notes": "**Notes**: 底部叶片纹理。"
+        },
+        {
+            "name": "centerRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "localizedName": "中心纹理",
+            "notes": "**Notes**: 中心纹理。"
+        },
+        {
+            "name": "lobesMin",
+            "type": "int",
+            "defaultValue": "7",
+            "localizedName": "最小叶片数",
+            "notes": "**Notes**: 叶片数量的最小值。"
+        },
+        {
+            "name": "lobesMax",
+            "type": "int",
+            "defaultValue": "7",
+            "localizedName": "最大叶片数",
+            "notes": "**Notes**: 叶片数量的最大值。"
+        },
+        {
+            "name": "botAngle",
+            "type": "float",
+            "defaultValue": "60.0",
+            "localizedName": "底部叶片角度",
+            "notes": "**Notes**: 底部叶片的角度阈值。"
+        },
+        {
+            "name": "origin",
+            "type": "float",
+            "defaultValue": "0.1",
+            "localizedName": "旋转原点",
+            "notes": "**Notes**: 叶片旋转的原点偏移。"
+        },
+        {
+            "name": "sclMin",
+            "type": "float",
+            "defaultValue": "30.0",
+            "localizedName": "最小频率",
+            "notes": "**Notes**: 摆动频率的最小值。"
+        },
+        {
+            "name": "sclMax",
+            "type": "float",
+            "defaultValue": "50.0",
+            "localizedName": "最大频率",
+            "notes": "**Notes**: 摆动频率的最大值。"
+        },
+        {
+            "name": "magMin",
+            "type": "float",
+            "defaultValue": "5.0",
+            "localizedName": "最小幅度",
+            "notes": "**Notes**: 摆动幅度的最小值。"
+        },
+        {
+            "name": "magMax",
+            "type": "float",
+            "defaultValue": "15.0",
+            "localizedName": "最大幅度",
+            "notes": "**Notes**: 摆动幅度的最大值。"
+        },
+        {
+            "name": "timeRange",
+            "type": "float",
+            "defaultValue": "40.0",
+            "localizedName": "时间偏移范围",
+            "notes": "**Notes**: 时间偏移的随机范围。"
+        },
+        {
+            "name": "spread",
+            "type": "float",
+            "defaultValue": "0.0",
+            "localizedName": "角度随机偏移",
+            "notes": "**Notes**: 叶片角度的随机偏移范围。"
+        }
+    ]
+}

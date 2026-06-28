@@ -1,0 +1,196 @@
+{
+    "type": "StatusEffect",
+    "parentType": "UnlockableContent",
+    "localizedName": "状态效果",
+    "fields": [
+        {
+            "name": "damageMultiplier",
+            "type": "float",
+            "defaultValue": "1.0",
+            "localizedName": "伤害倍率",
+            "notes": "具有该效果的单位造成的伤害倍率。\n\n**Notes**: 控制单位输出伤害的倍率。"
+        },
+        {
+            "name": "healthMultiplier",
+            "type": "float",
+            "defaultValue": "1.0",
+            "localizedName": "生命倍率",
+            "notes": "单位生命值倍率。\n\n**Notes**: 控制单位的生命值倍率。"
+        },
+        {
+            "name": "speedMultiplier",
+            "type": "float",
+            "defaultValue": "1.0",
+            "localizedName": "速度倍率",
+            "notes": "单位速度倍率。\n\n**Notes**: 控制单位移动速度的倍率。"
+        },
+        {
+            "name": "reloadMultiplier",
+            "type": "float",
+            "defaultValue": "1.0",
+            "localizedName": "装填倍率",
+            "notes": "单位装填倍率。\n\n**Notes**: 控制单位武器装填速度的倍率。"
+        },
+        {
+            "name": "buildSpeedMultiplier",
+            "type": "float",
+            "defaultValue": "1.0",
+            "localizedName": "建造速度倍率",
+            "notes": "单位建造速度倍率。\n\n**Notes**: 控制单位建造速度的倍率。"
+        },
+        {
+            "name": "dragMultiplier",
+            "type": "float",
+            "defaultValue": "1.0",
+            "localizedName": "阻力倍率",
+            "notes": "单位阻力倍率。\n\n**Notes**: 控制单位移动阻力的倍率。"
+        },
+        {
+            "name": "transitionDamage",
+            "type": "float",
+            "defaultValue": "0.0",
+            "localizedName": "转换伤害",
+            "notes": "转换到亲和状态时造成的伤害。\n\n**Notes**: 当两个亲和效果相遇时造成的转换伤害。"
+        },
+        {
+            "name": "disarm",
+            "type": "boolean",
+            "defaultValue": "false",
+            "localizedName": "缴械",
+            "notes": "单位武器被禁用。\n\n**Notes**: 如果为true，单位的武器将被禁用无法攻击。"
+        },
+        {
+            "name": "damage",
+            "type": "float",
+            "defaultValue": "0.0",
+            "localizedName": "持续伤害",
+            "notes": "每帧造成的伤害。\n\n**Notes**: 持续伤害值，负数表示治疗。"
+        },
+        {
+            "name": "intervalDamageTime",
+            "type": "float",
+            "defaultValue": "0.0",
+            "localizedName": "间隔伤害时间",
+            "notes": "间隔伤害的tick间隔。小于等于0时禁用。\n\n**Notes**: 每隔指定tick造成一次间隔伤害。"
+        },
+        {
+            "name": "intervalDamage",
+            "type": "float",
+            "defaultValue": "0.0",
+            "localizedName": "间隔伤害值",
+            "notes": "间隔伤害的伤害值。\n\n**Notes**: 每次间隔伤害造成的伤害量。"
+        },
+        {
+            "name": "intervalDamagePierce",
+            "type": "boolean",
+            "defaultValue": "false",
+            "localizedName": "间隔伤害穿透",
+            "notes": "如果为true，间隔伤害无视护甲。\n\n**Notes**: 控制间隔伤害是否具有穿透护甲的效果。"
+        },
+        {
+            "name": "effectChance",
+            "type": "float",
+            "defaultValue": "0.15",
+            "localizedName": "效果概率",
+            "notes": "效果出现的概率。\n\n**Notes**: 每帧播放粒子效果的概率。"
+        },
+        {
+            "name": "parentizeEffect",
+            "type": "boolean",
+            "defaultValue": "false",
+            "localizedName": "效果跟随父级",
+            "notes": "效果是否应赋予父对象。\n\n**Notes**: 控制粒子效果是否跟随单位移动。"
+        },
+        {
+            "name": "permanent",
+            "type": "boolean",
+            "defaultValue": "false",
+            "localizedName": "永久效果",
+            "notes": "如果为true，该效果永远不会消失。\n\n**Notes**: 永久性效果不会被计时器移除。"
+        },
+        {
+            "name": "reactive",
+            "type": "boolean",
+            "defaultValue": "false",
+            "localizedName": "反应性",
+            "notes": "如果为true，该效果只会与其他效果反应，不能直接施加。\n\n**Notes**: 反应性效果只能通过与其他效果交互来施加。"
+        },
+        {
+            "name": "dynamic",
+            "type": "boolean",
+            "defaultValue": "false",
+            "localizedName": "动态标志",
+            "notes": "带有自定义属性的动态效果类型的特殊标志——请勿使用。\n\n**Notes**: 仅供内部使用的标志位。"
+        },
+        {
+            "name": "show",
+            "type": "boolean",
+            "defaultValue": "true",
+            "localizedName": "显示在图鉴",
+            "notes": "是否在数据库中显示该效果。\n\n**Notes**: 控制效果是否在图鉴中显示。"
+        },
+        {
+            "name": "color",
+            "type": "Color",
+            "defaultValue": "ffffffff",
+            "localizedName": "效果颜色",
+            "notes": "效果的色调颜色。\n\n**Notes**: 粒子效果的颜色。"
+        },
+        {
+            "name": "effect",
+            "type": "Effect",
+            "defaultValue": "none",
+            "localizedName": "粒子效果",
+            "notes": "在受影响单位上方随机发生的效果。\n\n**Notes**: 每帧有一定概率播放的粒子效果。"
+        },
+        {
+            "name": "applyEffect",
+            "type": "Effect",
+            "defaultValue": "none",
+            "localizedName": "施加效果",
+            "notes": "施加到单位时显示一次的效果。\n\n**Notes**: 当效果被施加时播放一次。"
+        },
+        {
+            "name": "applyExtend",
+            "type": "boolean",
+            "defaultValue": "false",
+            "localizedName": "延长时播放",
+            "notes": "即使效果已存在于单位上，apply效果是否仍然显示。\n\n**Notes**: 控制延长效果时是否再次播放施加效果。"
+        },
+        {
+            "name": "applyColor",
+            "type": "Color",
+            "defaultValue": "ffffffff",
+            "localizedName": "施加效果颜色",
+            "notes": "施加效果的色调颜色。\n\n**Notes**: 施加效果的粒子颜色。"
+        },
+        {
+            "name": "parentizeApplyEffect",
+            "type": "boolean",
+            "defaultValue": "false",
+            "localizedName": "施加效果跟随父级",
+            "notes": "施加效果是否应赋予父对象。\n\n**Notes**: 控制施加效果是否跟随单位移动。"
+        },
+        {
+            "name": "affinities",
+            "type": "ObjectSet of StatusEffect",
+            "defaultValue": "new ObjectSet<>()",
+            "localizedName": "亲和效果",
+            "notes": "用于属性显示的状态效果列表。\n\n**Notes**: 亲和效果列表，同时存在时产生特殊交互。"
+        },
+        {
+            "name": "opposites",
+            "type": "ObjectSet of StatusEffect",
+            "defaultValue": "new ObjectSet<>()",
+            "localizedName": "对立效果",
+            "notes": "用于属性显示的状态效果列表。\n\n**Notes**: 对立效果列表，同时存在时相互抵消。"
+        },
+        {
+            "name": "outline",
+            "type": "boolean",
+            "defaultValue": "true",
+            "localizedName": "生成轮廓",
+            "notes": "设置为false以禁用轮廓生成。\n\n**Notes**: 控制是否为该效果的图标生成轮廓。"
+        }
+    ]
+}

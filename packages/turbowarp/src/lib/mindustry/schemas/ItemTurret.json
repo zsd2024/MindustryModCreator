@@ -1,0 +1,12 @@
+{
+    "type": "ItemTurret",
+    "parentType": "Turret",
+    "fields": [
+        {
+            "name": "ammoTypes",
+            "type": "ObjectMap of Item, BulletType",
+            "defaultValue": "new OrderedMap<>()",
+            "notes": ""
+        }
+    ]
+}

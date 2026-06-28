@@ -1,0 +1,35 @@
+{
+    "type": "LongPowerNode",
+    "parentType": "PowerNode",
+    "localizedName": "远程电力节点",
+    "fields": [
+        {
+            "name": "glow",
+            "type": "TextureRegion",
+            "localizedName": "发光纹理区域",
+            "defaultValue": "null",
+            "notes": "**Notes**: 发光纹理区域"
+        },
+        {
+            "name": "glowColor",
+            "type": "Color",
+            "localizedName": "发光颜色",
+            "defaultValue": "cbfd8172",
+            "notes": "**Notes**: 发光颜色"
+        },
+        {
+            "name": "glowScl",
+            "type": "float",
+            "localizedName": "发光缩放",
+            "defaultValue": "16.0",
+            "notes": "**Notes**: 发光缩放"
+        },
+        {
+            "name": "glowMag",
+            "type": "float",
+            "localizedName": "发光幅度",
+            "defaultValue": "0.6",
+            "notes": "**Notes**: 发光幅度"
+        }
+    ]
+}

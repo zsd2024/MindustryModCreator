@@ -1,0 +1,66 @@
+{
+    "type": "UnitAssembler",
+    "parentType": "PayloadBlock",
+    "fields": [
+        {
+            "name": "sideRegion1",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "sideRegion2",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "areaSize",
+            "type": "int",
+            "defaultValue": "11",
+            "notes": ""
+        },
+        {
+            "name": "droneType",
+            "type": "UnitType",
+            "defaultValue": "assemblyDrone",
+            "notes": "Note: The spawned unit MUST have AssemblerAI as a controller and 'tether' (BuildingTetherComp) as a unit component."
+        },
+        {
+            "name": "dronesCreated",
+            "type": "int",
+            "defaultValue": "4",
+            "notes": ""
+        },
+        {
+            "name": "droneConstructTime",
+            "type": "float",
+            "defaultValue": "240.0",
+            "notes": ""
+        },
+        {
+            "name": "capacities",
+            "type": "int[]",
+            "defaultValue": "[]",
+            "notes": ""
+        },
+        {
+            "name": "plans",
+            "type": "Seq of AssemblerUnitPlan",
+            "defaultValue": "[]",
+            "notes": ""
+        },
+        {
+            "name": "createSound",
+            "type": "Sound",
+            "defaultValue": "unitCreateBig",
+            "notes": ""
+        },
+        {
+            "name": "createSoundVolume",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": ""
+        }
+    ]
+}

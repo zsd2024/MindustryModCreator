@@ -1,0 +1,14 @@
+{
+    "type": "PowerTurret",
+    "parentType": "Turret",
+    "localizedName": "电力炮塔",
+    "fields": [
+        {
+            "name": "shootType",
+            "localizedName": "子弹类型",
+            "type": "BulletType",
+            "defaultValue": "null",
+            "notes": "**Notes**: 炮塔发射的子弹类型，由电力驱动。"
+        }
+    ]
+}

@@ -1,0 +1,14 @@
+{
+    "localizedName": "彩色墙壁",
+    "type": "ColoredWall",
+    "parentType": "StaticWall",
+    "fields": [
+        {
+            "name": "defaultColor",
+            "localizedName": "默认颜色",
+            "type": "Color",
+            "defaultValue": "ffffffff",
+            "notes": "**Notes**: 墙壁默认颜色。"
+        }
+    ]
+}

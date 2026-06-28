@@ -1,0 +1,21 @@
+{
+    "type": "Ability",
+    "parentType": "Object",
+    "localizedName": "能力",
+    "fields": [
+        {
+            "name": "display",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "如果为false，该能力不会显示在单位状态中。\n\n**Notes**: 控制能力是否在单位属性界面中显示；当设为false时，该能力仍然会生效但不会被列出。",
+            "localizedName": "显示状态"
+        },
+        {
+            "name": "data",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "**Notes**: 唯一一个同步的数据变量，用于在客户端之间传递能力的运行时状态。",
+            "localizedName": "同步数据变量"
+        }
+    ]
+}

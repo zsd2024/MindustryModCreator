@@ -1,0 +1,49 @@
+{
+    "type": "RadialEffect",
+    "parentType": "Effect",
+    "localizedName": "径向效果",
+    "fields": [
+        {
+            "name": "effect",
+            "type": "Effect",
+            "defaultValue": "none",
+            "localizedName": "效果",
+            "notes": "**Notes**: 要重复渲染的效果"
+        },
+        {
+            "name": "rotationSpacing",
+            "type": "float",
+            "defaultValue": "90.0",
+            "localizedName": "旋转间隔",
+            "notes": "**Notes**: 每次旋转的角度间隔"
+        },
+        {
+            "name": "rotationOffset",
+            "type": "float",
+            "defaultValue": "0.0",
+            "localizedName": "旋转偏移",
+            "notes": "**Notes**: 整体旋转偏移量"
+        },
+        {
+            "name": "effectRotationOffset",
+            "type": "float",
+            "defaultValue": "0.0",
+            "localizedName": "效果旋转偏移",
+            "notes": "**Notes**: 每个效果实例的旋转偏移"
+        },
+        {
+            "name": "lengthOffset",
+            "type": "float",
+            "defaultValue": "0.0",
+            "localizedName": "距离偏移",
+            "notes": "**Notes**: 距中心点的偏移距离"
+        },
+        {
+            "name": "amount",
+            "type": "int",
+            "defaultValue": "4",
+            "localizedName": "数量",
+            "notes": "**Notes**: 效果实例数量"
+        }
+    ]
+}

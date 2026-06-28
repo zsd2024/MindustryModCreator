@@ -1,0 +1,72 @@
+{
+    "type": "PowerNode",
+    "parentType": "PowerBlock",
+    "fields": [
+        {
+            "name": "laser",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "laserEnd",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "laserRange",
+            "type": "float",
+            "defaultValue": "6.0",
+            "notes": ""
+        },
+        {
+            "name": "maxNodes",
+            "type": "int",
+            "defaultValue": "3",
+            "notes": ""
+        },
+        {
+            "name": "autolink",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": ""
+        },
+        {
+            "name": "drawRange",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": ""
+        },
+        {
+            "name": "sameBlockConnection",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": ""
+        },
+        {
+            "name": "laserScale",
+            "type": "float",
+            "defaultValue": "0.25",
+            "notes": ""
+        },
+        {
+            "name": "powerLayer",
+            "type": "float",
+            "defaultValue": "70.0",
+            "notes": ""
+        },
+        {
+            "name": "laserColor1",
+            "type": "Color",
+            "defaultValue": "ffffffff",
+            "notes": ""
+        },
+        {
+            "name": "laserColor2",
+            "type": "Color",
+            "defaultValue": "fbd367ff",
+            "notes": ""
+        }
+    ]
+}

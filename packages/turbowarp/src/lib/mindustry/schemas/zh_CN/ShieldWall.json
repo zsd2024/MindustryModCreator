@@ -1,0 +1,56 @@
+{
+    "type": "ShieldWall",
+    "parentType": "Wall",
+    "localizedName": "护盾墙",
+    "fields": [
+        {
+            "name": "shieldHealth",
+            "type": "float",
+            "defaultValue": "900.0",
+            "localizedName": "护盾生命值",
+            "notes": "**Notes**: 护盾生命值"
+        },
+        {
+            "name": "breakCooldown",
+            "type": "float",
+            "defaultValue": "600.0",
+            "localizedName": "破碎冷却",
+            "notes": "**Notes**: 护盾破碎冷却时间（帧数）"
+        },
+        {
+            "name": "regenSpeed",
+            "type": "float",
+            "defaultValue": "2.0",
+            "localizedName": "恢复速度",
+            "notes": "**Notes**: 护盾恢复速度"
+        },
+        {
+            "name": "glowColor",
+            "type": "Color",
+            "defaultValue": "ff75317f",
+            "localizedName": "发光颜色",
+            "notes": "**Notes**: 发光颜色"
+        },
+        {
+            "name": "glowMag",
+            "type": "float",
+            "defaultValue": "0.6",
+            "localizedName": "发光幅度",
+            "notes": "**Notes**: 发光幅度"
+        },
+        {
+            "name": "glowScl",
+            "type": "float",
+            "defaultValue": "8.0",
+            "localizedName": "发光缩放",
+            "notes": "**Notes**: 发光缩放系数"
+        },
+        {
+            "name": "glowRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "localizedName": "发光纹理",
+            "notes": "**Notes**: 发光纹理"
+        }
+    ]
+}

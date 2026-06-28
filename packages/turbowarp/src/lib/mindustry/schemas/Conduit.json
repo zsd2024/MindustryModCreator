@@ -1,0 +1,72 @@
+{
+    "type": "Conduit",
+    "parentType": "LiquidBlock",
+    "fields": [
+        {
+            "name": "timerFlow",
+            "type": "int",
+            "defaultValue": "1",
+            "notes": ""
+        },
+        {
+            "name": "botColor",
+            "type": "Color",
+            "defaultValue": "565656ff",
+            "notes": ""
+        },
+        {
+            "name": "topRegions",
+            "type": "TextureRegion[]",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "botRegions",
+            "type": "TextureRegion[]",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "capRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "rotateRegions",
+            "type": "TextureRegion[][][]",
+            "defaultValue": "null",
+            "notes": "indices: [rotation] [fluid type] [frame]"
+        },
+        {
+            "name": "padCorners",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "If true, the liquid region is padded at corners, so it doesn't stick out."
+        },
+        {
+            "name": "leaks",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": ""
+        },
+        {
+            "name": "junctionReplacement",
+            "type": "Block",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "bridgeReplacement",
+            "type": "Block",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "rotBridgeReplacement",
+            "type": "Block",
+            "defaultValue": "null",
+            "notes": ""
+        }
+    ]
+}

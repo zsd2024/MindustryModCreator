@@ -1,0 +1,70 @@
+{
+    "type": "ForceFieldAbility",
+    "parentType": "Ability",
+    "localizedName": "力场护盾能力",
+    "fields": [
+        {
+            "name": "radius",
+            "type": "float",
+            "localizedName": "护盾半径",
+            "defaultValue": "60.0",
+            "notes": "护盾半径。\n\n**Notes**: 护盾半径"
+        },
+        {
+            "name": "regen",
+            "type": "float",
+            "localizedName": "护盾恢复速度",
+            "defaultValue": "0.1",
+            "notes": "护盾恢复速度（伤害/tick）。\n\n**Notes**: 护盾恢复速度"
+        },
+        {
+            "name": "max",
+            "type": "float",
+            "localizedName": "最大护盾值",
+            "defaultValue": "200.0",
+            "notes": "最大护盾值。\n\n**Notes**: 最大护盾值"
+        },
+        {
+            "name": "cooldown",
+            "type": "float",
+            "localizedName": "护盾冷却时间",
+            "defaultValue": "300.0",
+            "notes": "护盾破碎后的冷却时间（tick）。\n\n**Notes**: 护盾冷却时间"
+        },
+        {
+            "name": "sides",
+            "type": "int",
+            "localizedName": "护盾多边形边数",
+            "defaultValue": "6",
+            "notes": "护盾多边形边数。\n\n**Notes**: 护盾多边形边数"
+        },
+        {
+            "name": "rotation",
+            "type": "float",
+            "localizedName": "护盾旋转角度",
+            "defaultValue": "0.0",
+            "notes": "护盾的旋转。\n\n**Notes**: 护盾旋转角度"
+        },
+        {
+            "name": "breakSound",
+            "type": "Sound",
+            "localizedName": "护盾破碎音效",
+            "defaultValue": "shieldBreakSmall",
+            "notes": "**Notes**: 护盾破碎音效"
+        },
+        {
+            "name": "hitSound",
+            "type": "Sound",
+            "localizedName": "护盾受击音效",
+            "defaultValue": "shieldHit",
+            "notes": "**Notes**: 护盾受击音效"
+        },
+        {
+            "name": "hitSoundVolume",
+            "type": "float",
+            "localizedName": "受击音效音量",
+            "defaultValue": "0.12",
+            "notes": "**Notes**: 受击音效音量"
+        }
+    ]
+}

@@ -1,0 +1,18 @@
+{
+    "type": "Ability",
+    "parentType": "Object",
+    "fields": [
+        {
+            "name": "display",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "If false, this ability does not show in unit stats."
+        },
+        {
+            "name": "data",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": ""
+        }
+    ]
+}

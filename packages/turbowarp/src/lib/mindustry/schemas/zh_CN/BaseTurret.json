@@ -1,0 +1,70 @@
+{
+    "type": "BaseTurret",
+    "parentType": "Block",
+    "localizedName": "炮塔基类",
+    "fields": [
+        {
+            "name": "range",
+            "type": "float",
+            "defaultValue": "80.0",
+            "notes": "**Notes**: 炮塔的攻击范围，以世界单位计。",
+            "localizedName": "攻击范围"
+        },
+        {
+            "name": "placeOverlapMargin",
+            "type": "float",
+            "defaultValue": "56.0",
+            "notes": "**Notes**: 放置时与其他炮塔范围重叠的检查边距。",
+            "localizedName": "放置重叠边距"
+        },
+        {
+            "name": "rotateSpeed",
+            "type": "float",
+            "defaultValue": "5.0",
+            "notes": "**Notes**: 炮塔旋转速度，度/tick。",
+            "localizedName": "旋转速度"
+        },
+        {
+            "name": "fogRadiusMultiplier",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": "**Notes**: 迷雾揭示半径的倍率。",
+            "localizedName": "迷雾半径倍率"
+        },
+        {
+            "name": "disableOverlapCheck",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "**Notes**: 如果为true，禁用炮塔范围重叠检测。",
+            "localizedName": "禁用重叠检测"
+        },
+        {
+            "name": "activationTime",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "放置后开始射击所需的时间。\n\n**Notes**: 炮塔放置后的激活延迟时间。",
+            "localizedName": "激活延迟时间"
+        },
+        {
+            "name": "coolEffect",
+            "type": "Effect",
+            "defaultValue": "fuelburn",
+            "notes": "使用冷却液时显示的效果。\n\n**Notes**: 当冷却液被消耗时播放的效果。",
+            "localizedName": "冷却效果"
+        },
+        {
+            "name": "coolantMultiplier",
+            "type": "float",
+            "defaultValue": "5.0",
+            "notes": "每单位热容量液体降低的装填时间。\n\n**Notes**: 控制冷却液对装填速度的加成倍率。",
+            "localizedName": "冷却液倍率"
+        },
+        {
+            "name": "coolant",
+            "type": "ConsumeLiquidBase",
+            "defaultValue": "null",
+            "notes": "如果不为null，该消费者将用于冷却。\n\n**Notes**: 冷却液的消耗器。",
+            "localizedName": "冷却液消耗器"
+        }
+    ]
+}

@@ -1,0 +1,42 @@
+{
+    "type": "SpawnDeathAbility",
+    "parentType": "Ability",
+    "localizedName": "死亡生成能力",
+    "fields": [
+        {
+            "name": "unit",
+            "type": "UnitType",
+            "defaultValue": "null",
+            "localizedName": "生成单位类型",
+            "notes": "**Notes**: 生成单位类型"
+        },
+        {
+            "name": "amount",
+            "type": "int",
+            "defaultValue": "1",
+            "localizedName": "生成数量",
+            "notes": "**Notes**: 生成数量"
+        },
+        {
+            "name": "randAmount",
+            "type": "int",
+            "defaultValue": "0",
+            "localizedName": "随机额外数量",
+            "notes": "**Notes**: 随机额外数量"
+        },
+        {
+            "name": "spread",
+            "type": "float",
+            "defaultValue": "8.0",
+            "localizedName": "散布范围",
+            "notes": "单位生成时远离生成点的随机散布。\n\n**Notes**: 生成散布范围"
+        },
+        {
+            "name": "faceOutwards",
+            "type": "boolean",
+            "defaultValue": "true",
+            "localizedName": "面朝外部",
+            "notes": "若为 true，生成的单位面向外部。\n\n**Notes**: 是否面朝外部"
+        }
+    ]
+}

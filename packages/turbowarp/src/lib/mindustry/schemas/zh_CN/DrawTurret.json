@@ -1,0 +1,91 @@
+{
+    "localizedName": "炮塔绘制",
+    "type": "DrawTurret",
+    "parentType": "DrawBlock",
+    "fields": [
+        {
+            "name": "parts",
+            "localizedName": "绘制部件序列",
+            "type": "Seq of DrawPart",
+            "defaultValue": "[]",
+            "notes": "**Notes**: 炮塔的绘制部件序列。"
+        },
+        {
+            "name": "basePrefix",
+            "localizedName": "底座前缀",
+            "type": "String",
+            "defaultValue": "\"\"",
+            "notes": "加载基础区域时使用的前缀。\n\n**Notes**: Prefix to use when loading base region."
+        },
+        {
+            "name": "liquidDraw",
+            "localizedName": "液体绘制覆盖",
+            "type": "Liquid",
+            "defaultValue": "null",
+            "notes": "覆盖在液体区域中绘制的液体类型。\n\n**Notes**: Overrides the liquid to draw in the liquid region."
+        },
+        {
+            "name": "turretLayer",
+            "localizedName": "炮塔渲染层级",
+            "type": "float",
+            "defaultValue": "50.0",
+            "notes": "**Notes**: 炮塔的渲染层级。"
+        },
+        {
+            "name": "shadowLayer",
+            "localizedName": "阴影渲染层级",
+            "type": "float",
+            "defaultValue": "49.5",
+            "notes": "**Notes**: 炮塔阴影的渲染层级。"
+        },
+        {
+            "name": "heatLayer",
+            "localizedName": "过热渲染层级",
+            "type": "float",
+            "defaultValue": "50.1",
+            "notes": "**Notes**: 炮塔过热效果的渲染层级。"
+        },
+        {
+            "name": "base",
+            "localizedName": "底座纹理",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": "**Notes**: 炮塔底座纹理。"
+        },
+        {
+            "name": "liquid",
+            "localizedName": "液体纹理",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": "**Notes**: 炮塔液体纹理。"
+        },
+        {
+            "name": "top",
+            "localizedName": "顶部纹理",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": "**Notes**: 炮塔顶部纹理。"
+        },
+        {
+            "name": "heat",
+            "localizedName": "过热纹理",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": "**Notes**: 炮塔过热纹理。"
+        },
+        {
+            "name": "preview",
+            "localizedName": "预览纹理",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": "**Notes**: 炮塔预览纹理。"
+        },
+        {
+            "name": "outline",
+            "localizedName": "轮廓纹理",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": "**Notes**: 炮塔轮廓纹理。"
+        }
+    ]
+}

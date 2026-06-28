@@ -1,0 +1,12 @@
+{
+    "type": "Thruster",
+    "parentType": "Wall",
+    "fields": [
+        {
+            "name": "topRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        }
+    ]
+}

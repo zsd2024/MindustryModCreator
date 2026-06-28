@@ -1,0 +1,35 @@
+{
+    "localizedName": "预热区域绘制",
+    "type": "DrawWarmupRegion",
+    "parentType": "DrawBlock",
+    "fields": [
+        {
+            "name": "sinMag",
+            "localizedName": "透明度变化幅度",
+            "type": "float",
+            "defaultValue": "0.6",
+            "notes": "**Notes**: 透明度正弦变化的幅度。"
+        },
+        {
+            "name": "sinScl",
+            "localizedName": "透明度变化频率",
+            "type": "float",
+            "defaultValue": "8.0",
+            "notes": "**Notes**: 透明度正弦变化的频率。"
+        },
+        {
+            "name": "color",
+            "localizedName": "预热指示颜色",
+            "type": "Color",
+            "defaultValue": "ff9b59ff",
+            "notes": "**Notes**: 预热指示的颜色。"
+        },
+        {
+            "name": "region",
+            "localizedName": "预热纹理区域",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": "**Notes**: 预热纹理区域。"
+        }
+    ]
+}

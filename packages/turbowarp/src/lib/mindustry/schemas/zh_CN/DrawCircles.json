@@ -1,0 +1,84 @@
+{
+    "localizedName": "圆环绘制",
+    "type": "DrawCircles",
+    "parentType": "DrawBlock",
+    "fields": [
+        {
+            "name": "color",
+            "localizedName": "圆环颜色",
+            "type": "Color",
+            "defaultValue": "7457ceff",
+            "notes": "**Notes**: 圆环的颜色。"
+        },
+        {
+            "name": "amount",
+            "localizedName": "圆环数量",
+            "type": "int",
+            "defaultValue": "5",
+            "notes": "**Notes**: 圆环的数量。"
+        },
+        {
+            "name": "sides",
+            "localizedName": "多边形边数",
+            "type": "int",
+            "defaultValue": "15",
+            "notes": "**Notes**: 圆环多边形的边数。"
+        },
+        {
+            "name": "strokeMin",
+            "localizedName": "最小描边",
+            "type": "float",
+            "defaultValue": "0.2",
+            "notes": "**Notes**: 圆环的最小描边宽度。"
+        },
+        {
+            "name": "strokeMax",
+            "localizedName": "最大描边",
+            "type": "float",
+            "defaultValue": "2.0",
+            "notes": "**Notes**: 圆环的最大描边宽度。"
+        },
+        {
+            "name": "timeScl",
+            "localizedName": "时间缩放",
+            "type": "float",
+            "defaultValue": "160.0",
+            "notes": "**Notes**: 圆环动画的时间缩放。"
+        },
+        {
+            "name": "radius",
+            "localizedName": "半径",
+            "type": "float",
+            "defaultValue": "12.0",
+            "notes": "**Notes**: 圆环的半径。"
+        },
+        {
+            "name": "radiusOffset",
+            "localizedName": "半径偏移",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "**Notes**: 圆环半径的偏移量。"
+        },
+        {
+            "name": "x",
+            "localizedName": "X轴偏移",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "**Notes**: 圆环的X轴偏移。"
+        },
+        {
+            "name": "y",
+            "localizedName": "Y轴偏移",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "**Notes**: 圆环的Y轴偏移。"
+        },
+        {
+            "name": "strokeInterp",
+            "localizedName": "描边插值函数",
+            "type": "Interp",
+            "defaultValue": "pow3In",
+            "notes": "**Notes**: 控制描边宽度变化的插值函数。"
+        }
+    ]
+}

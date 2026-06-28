@@ -1,0 +1,14 @@
+{
+    "type": "MultiEffect",
+    "parentType": "Effect",
+    "localizedName": "多重特效",
+    "fields": [
+        {
+            "name": "effects",
+            "localizedName": "效果数组",
+            "type": "Effect[]",
+            "defaultValue": "[]",
+            "notes": "**Notes**: 同时渲染的多个效果"
+        }
+    ]
+}

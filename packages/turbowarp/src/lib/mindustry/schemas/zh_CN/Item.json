@@ -1,0 +1,105 @@
+{
+    "type": "Item",
+    "parentType": "UnlockableContent",
+    "localizedName": "物品",
+    "fields": [
+        {
+            "name": "color",
+            "type": "Color",
+            "localizedName": "物品颜色",
+            "defaultValue": "000000ff",
+            "notes": "**Notes**: 物品的颜色属性，用于图标和渲染。"
+        },
+        {
+            "name": "explosiveness",
+            "type": "float",
+            "localizedName": "爆炸性",
+            "defaultValue": "0.0",
+            "notes": "该物品的爆炸性。\n\n**Notes**: 控制物品作为弹药时的爆炸威力。"
+        },
+        {
+            "name": "flammability",
+            "type": "float",
+            "localizedName": "可燃性",
+            "defaultValue": "0.0",
+            "notes": "可燃性高于0.3的物品可用于燃烧器。\n\n**Notes**: 控制物品在燃烧器中被当做燃料的资格阈值。"
+        },
+        {
+            "name": "radioactivity",
+            "type": "float",
+            "localizedName": "放射性",
+            "defaultValue": "0.0",
+            "notes": "该物品的放射性。\n\n**Notes**: 控制物品的辐射强度。"
+        },
+        {
+            "name": "charge",
+            "type": "float",
+            "localizedName": "电荷能力",
+            "defaultValue": "0.0",
+            "notes": "该物品的电荷能力。\n\n**Notes**: 控制物品的电学效能。"
+        },
+        {
+            "name": "hardness",
+            "type": "int",
+            "localizedName": "钻头硬度",
+            "defaultValue": "0",
+            "notes": "物品的钻头硬度。\n\n**Notes**: 决定哪些钻头可以开采该物品。"
+        },
+        {
+            "name": "cost",
+            "type": "float",
+            "localizedName": "基础材料成本",
+            "defaultValue": "1.0",
+            "notes": "该物品的基础材料成本，用于计算放置时间；1成本=1tick建造时间。\n\n**Notes**: 影响建筑建造速度的基础成本值。"
+        },
+        {
+            "name": "healthScaling",
+            "type": "float",
+            "localizedName": "生命值加成比例",
+            "defaultValue": "0.0",
+            "notes": "当该物品存在于建造成本中时，建筑的默认生命值乘以1+scaling，scaling对所有物品需求类型求和。\n\n**Notes**: 使用该物品建造时提供的生命值加成比例。"
+        },
+        {
+            "name": "lowPriority",
+            "type": "boolean",
+            "localizedName": "低优先级标志",
+            "defaultValue": "false",
+            "notes": "如果为true，该物品对钻头来说是最低优先级的。\n\n**Notes**: 钻头会优先开采其他物品。"
+        },
+        {
+            "name": "frames",
+            "type": "int",
+            "localizedName": "动画帧数",
+            "defaultValue": "0",
+            "notes": "如果大于0，该物品是动画的。\n\n**Notes**: 控制物品图标的动画帧数。"
+        },
+        {
+            "name": "transitionFrames",
+            "type": "int",
+            "localizedName": "过渡帧数",
+            "defaultValue": "0",
+            "notes": "每帧之间生成的过渡帧数量。\n\n**Notes**: 帧间过渡动画的帧数。"
+        },
+        {
+            "name": "frameTime",
+            "type": "float",
+            "localizedName": "帧间隔时间",
+            "defaultValue": "5.0",
+            "notes": "动画帧之间的tick间隔。\n\n**Notes**: 控制动画播放速度。"
+        },
+        {
+            "name": "buildable",
+            "type": "boolean",
+            "localizedName": "是否可用于建筑",
+            "defaultValue": "true",
+            "notes": "如果为true，此材料可用于建筑。如果为false，此材料将在某些核心中被销毁。\n\n**Notes**: 控制物品是否能用于建造。"
+        },
+        {
+            "name": "hidden",
+            "type": "boolean",
+            "localizedName": "是否隐藏",
+            "defaultValue": "false",
+            "notes": "**Notes**: 如果为true，该物品不会出现在行星资源选择界面中。"
+        }
+    ]
+}

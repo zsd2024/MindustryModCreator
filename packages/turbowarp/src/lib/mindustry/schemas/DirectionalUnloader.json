@@ -1,0 +1,36 @@
+{
+    "type": "DirectionalUnloader",
+    "parentType": "Block",
+    "fields": [
+        {
+            "name": "centerRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "topRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "arrowRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "speed",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": ""
+        },
+        {
+            "name": "allowCoreUnload",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": ""
+        }
+    ]
+}

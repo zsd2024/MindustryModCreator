@@ -1,0 +1,84 @@
+{
+    "type": "OverdriveProjector",
+    "parentType": "PowerBlock",
+    "localizedName": "超速投影仪",
+    "fields": [
+        {
+            "name": "speedIncrease",
+            "localizedName": "速度提升",
+            "type": "float",
+            "defaultValue": "0.5",
+            "notes": "速度提升量。\n\n**Notes**: 速度提升系数。"
+        },
+        {
+            "name": "speedBoostPhase",
+            "localizedName": "相位速度加成",
+            "type": "float",
+            "defaultValue": "0.8",
+            "notes": "**Notes**: 使用相位物品时的额外速度加成。"
+        },
+        {
+            "name": "useTime",
+            "localizedName": "消耗间隔",
+            "type": "float",
+            "defaultValue": "240.0",
+            "notes": "相位物品消耗间隔（帧）。\n\n**Notes**: 相位物品消耗间隔时间。"
+        },
+        {
+            "name": "phaseRangeBoost",
+            "localizedName": "相位范围加成",
+            "type": "float",
+            "defaultValue": "20.0",
+            "notes": "**Notes**: 相位物品提供的范围加成。"
+        },
+        {
+            "name": "reload",
+            "localizedName": "充能时间",
+            "type": "float",
+            "defaultValue": "100.0",
+            "notes": "过载脉冲之间的延迟（帧）。\n\n**Notes**: 过载脉冲充能时间。"
+        },
+        {
+            "name": "range",
+            "localizedName": "范围",
+            "type": "float",
+            "defaultValue": "80.0",
+            "notes": "**Notes**: 过载范围半径。"
+        },
+        {
+            "name": "instantReload",
+            "localizedName": "立即装弹",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "**Notes**: 是否立即装弹。"
+        },
+        {
+            "name": "affectsAir",
+            "localizedName": "影响空中",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "**Notes**: 是否影响空中单位。"
+        },
+        {
+            "name": "affectsGround",
+            "localizedName": "影响地面",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "**Notes**: 是否影响地面单位。"
+        },
+        {
+            "name": "phaseColor",
+            "localizedName": "相位颜色",
+            "type": "Color",
+            "defaultValue": "feb380ff",
+            "notes": "**Notes**: 相位增强时的颜色。"
+        },
+        {
+            "name": "activeColor",
+            "localizedName": "激活颜色",
+            "type": "Color",
+            "defaultValue": "f3bb7aff",
+            "notes": "**Notes**: 激活时的颜色。"
+        }
+    ]
+}

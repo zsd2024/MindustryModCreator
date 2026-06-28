@@ -1,0 +1,21 @@
+{
+    "type": "LaserBoltBulletType",
+    "parentType": "BasicBulletType",
+    "localizedName": "激光弹子弹类型",
+    "fields": [
+        {
+            "name": "width",
+            "type": "float",
+            "localizedName": "激光线条宽度",
+            "defaultValue": "2.0",
+            "notes": "激光线条宽度"
+        },
+        {
+            "name": "height",
+            "type": "float",
+            "localizedName": "激光线条长度",
+            "defaultValue": "7.0",
+            "notes": "激光线条长度"
+        }
+    ]
+}

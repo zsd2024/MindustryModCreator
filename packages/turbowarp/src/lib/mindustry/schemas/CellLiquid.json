@@ -1,0 +1,54 @@
+{
+    "type": "CellLiquid",
+    "parentType": "Liquid",
+    "fields": [
+        {
+            "name": "colorFrom",
+            "type": "Color",
+            "defaultValue": "ffffffff",
+            "notes": ""
+        },
+        {
+            "name": "colorTo",
+            "type": "Color",
+            "defaultValue": "ffffffff",
+            "notes": ""
+        },
+        {
+            "name": "cells",
+            "type": "int",
+            "defaultValue": "6",
+            "notes": ""
+        },
+        {
+            "name": "spreadTarget",
+            "type": "Liquid",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "maxSpread",
+            "type": "float",
+            "defaultValue": "0.75",
+            "notes": ""
+        },
+        {
+            "name": "spreadConversion",
+            "type": "float",
+            "defaultValue": "1.2",
+            "notes": ""
+        },
+        {
+            "name": "spreadDamage",
+            "type": "float",
+            "defaultValue": "0.11",
+            "notes": ""
+        },
+        {
+            "name": "removeScaling",
+            "type": "float",
+            "defaultValue": "0.25",
+            "notes": ""
+        }
+    ]
+}

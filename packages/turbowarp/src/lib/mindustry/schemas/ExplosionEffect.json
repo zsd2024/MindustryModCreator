@@ -1,0 +1,96 @@
+{
+    "type": "ExplosionEffect",
+    "parentType": "Effect",
+    "fields": [
+        {
+            "name": "waveColor",
+            "type": "Color",
+            "defaultValue": "ffd2aeff",
+            "notes": ""
+        },
+        {
+            "name": "smokeColor",
+            "type": "Color",
+            "defaultValue": "7f7f7fff",
+            "notes": ""
+        },
+        {
+            "name": "sparkColor",
+            "type": "Color",
+            "defaultValue": "e58956ff",
+            "notes": ""
+        },
+        {
+            "name": "waveLife",
+            "type": "float",
+            "defaultValue": "6.0",
+            "notes": ""
+        },
+        {
+            "name": "waveStroke",
+            "type": "float",
+            "defaultValue": "3.0",
+            "notes": ""
+        },
+        {
+            "name": "waveRad",
+            "type": "float",
+            "defaultValue": "15.0",
+            "notes": ""
+        },
+        {
+            "name": "waveRadBase",
+            "type": "float",
+            "defaultValue": "2.0",
+            "notes": ""
+        },
+        {
+            "name": "sparkStroke",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": ""
+        },
+        {
+            "name": "sparkRad",
+            "type": "float",
+            "defaultValue": "23.0",
+            "notes": ""
+        },
+        {
+            "name": "sparkLen",
+            "type": "float",
+            "defaultValue": "3.0",
+            "notes": ""
+        },
+        {
+            "name": "smokeSize",
+            "type": "float",
+            "defaultValue": "4.0",
+            "notes": ""
+        },
+        {
+            "name": "smokeSizeBase",
+            "type": "float",
+            "defaultValue": "0.5",
+            "notes": ""
+        },
+        {
+            "name": "smokeRad",
+            "type": "float",
+            "defaultValue": "23.0",
+            "notes": ""
+        },
+        {
+            "name": "smokes",
+            "type": "int",
+            "defaultValue": "5",
+            "notes": ""
+        },
+        {
+            "name": "sparks",
+            "type": "int",
+            "defaultValue": "4",
+            "notes": ""
+        }
+    ]
+}

@@ -1,0 +1,132 @@
+{
+    "type": "SuppressionFieldAbility",
+    "parentType": "Ability",
+    "fields": [
+        {
+            "name": "reload",
+            "type": "float",
+            "defaultValue": "90.0",
+            "notes": ""
+        },
+        {
+            "name": "maxDelay",
+            "type": "float",
+            "defaultValue": "90.0",
+            "notes": ""
+        },
+        {
+            "name": "range",
+            "type": "float",
+            "defaultValue": "200.0",
+            "notes": ""
+        },
+        {
+            "name": "orbRadius",
+            "type": "float",
+            "defaultValue": "4.1",
+            "notes": ""
+        },
+        {
+            "name": "orbMidScl",
+            "type": "float",
+            "defaultValue": "0.33",
+            "notes": ""
+        },
+        {
+            "name": "orbSinScl",
+            "type": "float",
+            "defaultValue": "8.0",
+            "notes": ""
+        },
+        {
+            "name": "orbSinMag",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": ""
+        },
+        {
+            "name": "color",
+            "type": "Color",
+            "defaultValue": "a393feff",
+            "notes": ""
+        },
+        {
+            "name": "layer",
+            "type": "float",
+            "defaultValue": "110.0",
+            "notes": ""
+        },
+        {
+            "name": "x",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": ""
+        },
+        {
+            "name": "y",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": ""
+        },
+        {
+            "name": "particles",
+            "type": "int",
+            "defaultValue": "15",
+            "notes": ""
+        },
+        {
+            "name": "particleSize",
+            "type": "float",
+            "defaultValue": "4.0",
+            "notes": ""
+        },
+        {
+            "name": "particleLen",
+            "type": "float",
+            "defaultValue": "7.0",
+            "notes": ""
+        },
+        {
+            "name": "rotateScl",
+            "type": "float",
+            "defaultValue": "3.0",
+            "notes": ""
+        },
+        {
+            "name": "particleLife",
+            "type": "float",
+            "defaultValue": "110.0",
+            "notes": ""
+        },
+        {
+            "name": "active",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": ""
+        },
+        {
+            "name": "particleInterp",
+            "type": "Interp",
+            "defaultValue": "apply(f))",
+            "notes": ""
+        },
+        {
+            "name": "particleColor",
+            "type": "Color",
+            "defaultValue": "665c9fff",
+            "notes": ""
+        },
+        {
+            "name": "effectColor",
+            "type": "Color",
+            "defaultValue": "bf92f9ff",
+            "notes": ""
+        },
+        {
+            "name": "applyParticleChance",
+            "type": "float",
+            "defaultValue": "13.0",
+            "notes": ""
+        }
+    ]
+}

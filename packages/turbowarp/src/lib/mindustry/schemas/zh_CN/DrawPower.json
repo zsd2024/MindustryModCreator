@@ -1,0 +1,63 @@
+{
+    "localizedName": "电力绘制",
+    "type": "DrawPower",
+    "parentType": "DrawBlock",
+    "fields": [
+        {
+            "name": "emptyRegion",
+            "localizedName": "空电力纹理",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": "**Notes**: 无电力时显示的纹理。"
+        },
+        {
+            "name": "fullRegion",
+            "localizedName": "满电力纹理",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": "**Notes**: 满电力时显示的纹理。"
+        },
+        {
+            "name": "suffix",
+            "localizedName": "纹理后缀",
+            "type": "String",
+            "defaultValue": "\"-power\"",
+            "notes": "**Notes**: 方块名称后附加的后缀以查找纹理。"
+        },
+        {
+            "name": "drawPlan",
+            "localizedName": "规划模式绘制",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "**Notes**: 是否在规划模式中绘制。"
+        },
+        {
+            "name": "mixcol",
+            "localizedName": "颜色混合",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "若为false，则在emptyRegion和fullRegion之间淡入淡出，而非在空/满颜色之间混合。\n\n**Notes**: If false, fades between emptyRegion and fullRegion instead of mixcol between empty and full colors."
+        },
+        {
+            "name": "emptyLightColor",
+            "localizedName": "空电力光照颜色",
+            "type": "Color",
+            "defaultValue": "f8c266ff",
+            "notes": "**Notes**: 空电力时光照的颜色。"
+        },
+        {
+            "name": "fullLightColor",
+            "localizedName": "满电力光照颜色",
+            "type": "Color",
+            "defaultValue": "fb9567ff",
+            "notes": "**Notes**: 满电力时光照的颜色。"
+        },
+        {
+            "name": "layer",
+            "localizedName": "渲染层级",
+            "type": "float",
+            "defaultValue": "-1.0",
+            "notes": "任何小于等于0的值将禁用图层更改。\n\n**Notes**: Any number <=0 disables layer changes."
+        }
+    ]
+}

@@ -1,0 +1,49 @@
+{
+    "type": "LiquidExplodeAbility",
+    "parentType": "Ability",
+    "localizedName": "液体爆炸能力",
+    "fields": [
+        {
+            "name": "liquid",
+            "type": "Liquid",
+            "localizedName": "液体类型",
+            "defaultValue": "water",
+            "notes": "**Notes**: 液体类型"
+        },
+        {
+            "name": "amount",
+            "type": "float",
+            "localizedName": "液体量",
+            "defaultValue": "120.0",
+            "notes": "**Notes**: 液体量"
+        },
+        {
+            "name": "radAmountScale",
+            "type": "float",
+            "localizedName": "半径液体量缩放",
+            "defaultValue": "5.0",
+            "notes": "**Notes**: 半径液体量缩放"
+        },
+        {
+            "name": "radScale",
+            "type": "float",
+            "localizedName": "半径缩放",
+            "defaultValue": "1.0",
+            "notes": "**Notes**: 半径缩放"
+        },
+        {
+            "name": "noiseMag",
+            "type": "float",
+            "localizedName": "噪声幅度",
+            "defaultValue": "6.5",
+            "notes": "**Notes**: 噪声幅度"
+        },
+        {
+            "name": "noiseScl",
+            "type": "float",
+            "localizedName": "噪声缩放",
+            "defaultValue": "5.0",
+            "notes": "**Notes**: 噪声缩放"
+        }
+    ]
+}

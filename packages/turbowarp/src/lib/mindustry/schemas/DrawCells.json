@@ -1,0 +1,60 @@
+{
+    "type": "DrawCells",
+    "parentType": "DrawBlock",
+    "fields": [
+        {
+            "name": "middle",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "color",
+            "type": "Color",
+            "defaultValue": "ffffffff",
+            "notes": ""
+        },
+        {
+            "name": "particleColorFrom",
+            "type": "Color",
+            "defaultValue": "000000ff",
+            "notes": ""
+        },
+        {
+            "name": "particleColorTo",
+            "type": "Color",
+            "defaultValue": "000000ff",
+            "notes": ""
+        },
+        {
+            "name": "particles",
+            "type": "int",
+            "defaultValue": "12",
+            "notes": ""
+        },
+        {
+            "name": "range",
+            "type": "float",
+            "defaultValue": "4.0",
+            "notes": ""
+        },
+        {
+            "name": "recurrence",
+            "type": "float",
+            "defaultValue": "2.0",
+            "notes": ""
+        },
+        {
+            "name": "radius",
+            "type": "float",
+            "defaultValue": "1.8",
+            "notes": ""
+        },
+        {
+            "name": "lifetime",
+            "type": "float",
+            "defaultValue": "180.0",
+            "notes": ""
+        }
+    ]
+}

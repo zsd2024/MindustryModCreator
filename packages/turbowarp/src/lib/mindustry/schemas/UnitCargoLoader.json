@@ -1,0 +1,48 @@
+{
+    "type": "UnitCargoLoader",
+    "parentType": "Block",
+    "fields": [
+        {
+            "name": "unitType",
+            "type": "UnitType",
+            "defaultValue": "manifold",
+            "notes": ""
+        },
+        {
+            "name": "unitBuildTime",
+            "type": "float",
+            "defaultValue": "480.0",
+            "notes": ""
+        },
+        {
+            "name": "polyStroke",
+            "type": "float",
+            "defaultValue": "1.8",
+            "notes": ""
+        },
+        {
+            "name": "polyRadius",
+            "type": "float",
+            "defaultValue": "8.0",
+            "notes": ""
+        },
+        {
+            "name": "polySides",
+            "type": "int",
+            "defaultValue": "6",
+            "notes": ""
+        },
+        {
+            "name": "polyRotateSpeed",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": ""
+        },
+        {
+            "name": "polyColor",
+            "type": "Color",
+            "defaultValue": "ffd37fff",
+            "notes": ""
+        }
+    ]
+}

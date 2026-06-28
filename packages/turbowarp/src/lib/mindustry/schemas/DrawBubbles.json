@@ -1,0 +1,60 @@
+{
+    "type": "DrawBubbles",
+    "parentType": "DrawBlock",
+    "fields": [
+        {
+            "name": "color",
+            "type": "Color",
+            "defaultValue": "7457ceff",
+            "notes": ""
+        },
+        {
+            "name": "amount",
+            "type": "int",
+            "defaultValue": "12",
+            "notes": ""
+        },
+        {
+            "name": "sides",
+            "type": "int",
+            "defaultValue": "8",
+            "notes": ""
+        },
+        {
+            "name": "strokeMin",
+            "type": "float",
+            "defaultValue": "0.2",
+            "notes": ""
+        },
+        {
+            "name": "spread",
+            "type": "float",
+            "defaultValue": "3.0",
+            "notes": ""
+        },
+        {
+            "name": "timeScl",
+            "type": "float",
+            "defaultValue": "30.0",
+            "notes": ""
+        },
+        {
+            "name": "recurrence",
+            "type": "float",
+            "defaultValue": "6.0",
+            "notes": ""
+        },
+        {
+            "name": "radius",
+            "type": "float",
+            "defaultValue": "3.0",
+            "notes": ""
+        },
+        {
+            "name": "fill",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": ""
+        }
+    ]
+}

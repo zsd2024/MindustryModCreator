@@ -1,0 +1,78 @@
+{
+    "type": "SeaBush",
+    "parentType": "Prop",
+    "fields": [
+        {
+            "name": "botRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "centerRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "lobesMin",
+            "type": "int",
+            "defaultValue": "7",
+            "notes": ""
+        },
+        {
+            "name": "lobesMax",
+            "type": "int",
+            "defaultValue": "7",
+            "notes": ""
+        },
+        {
+            "name": "botAngle",
+            "type": "float",
+            "defaultValue": "60.0",
+            "notes": ""
+        },
+        {
+            "name": "origin",
+            "type": "float",
+            "defaultValue": "0.1",
+            "notes": ""
+        },
+        {
+            "name": "sclMin",
+            "type": "float",
+            "defaultValue": "30.0",
+            "notes": ""
+        },
+        {
+            "name": "sclMax",
+            "type": "float",
+            "defaultValue": "50.0",
+            "notes": ""
+        },
+        {
+            "name": "magMin",
+            "type": "float",
+            "defaultValue": "5.0",
+            "notes": ""
+        },
+        {
+            "name": "magMax",
+            "type": "float",
+            "defaultValue": "15.0",
+            "notes": ""
+        },
+        {
+            "name": "timeRange",
+            "type": "float",
+            "defaultValue": "40.0",
+            "notes": ""
+        },
+        {
+            "name": "spread",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": ""
+        }
+    ]
+}

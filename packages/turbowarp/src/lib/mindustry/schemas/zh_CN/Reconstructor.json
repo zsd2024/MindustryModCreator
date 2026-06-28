@@ -1,0 +1,42 @@
+{
+    "type": "Reconstructor",
+    "parentType": "UnitBlock",
+    "localizedName": "单位升级机",
+    "fields": [
+        {
+            "name": "constructTime",
+            "type": "float",
+            "defaultValue": "120.0",
+            "localizedName": "建造时间",
+            "notes": "**Notes**: 升级建造时间（帧数）"
+        },
+        {
+            "name": "upgrades",
+            "type": "Seq of UnitType[]",
+            "defaultValue": "[]",
+            "localizedName": "升级路线",
+            "notes": "**Notes**: 单位升级路线列表"
+        },
+        {
+            "name": "capacities",
+            "type": "int[]",
+            "defaultValue": "[]",
+            "localizedName": "容量数组",
+            "notes": "**Notes**: 各物品的最大容量"
+        },
+        {
+            "name": "createSound",
+            "type": "Sound",
+            "defaultValue": "unitCreate",
+            "localizedName": "创建音效",
+            "notes": "**Notes**: 单位创建音效"
+        },
+        {
+            "name": "createSoundVolume",
+            "type": "float",
+            "defaultValue": "1.0",
+            "localizedName": "创建音效音量",
+            "notes": "**Notes**: 创建音效音量"
+        }
+    ]
+}

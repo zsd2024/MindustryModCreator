@@ -1,0 +1,35 @@
+{
+    "type": "BufferedItemBridge",
+    "parentType": "ItemBridge",
+    "localizedName": "缓冲物品桥",
+    "fields": [
+        {
+            "name": "timerAccept",
+            "type": "int",
+            "defaultValue": "2",
+            "notes": "**Notes**: 接收计时器ID",
+            "localizedName": "接收计时器ID"
+        },
+        {
+            "name": "speed",
+            "type": "float",
+            "defaultValue": "40.0",
+            "notes": "**Notes**: 传输速度",
+            "localizedName": "传输速度"
+        },
+        {
+            "name": "bufferCapacity",
+            "type": "int",
+            "defaultValue": "50",
+            "notes": "**Notes**: 缓冲区容量",
+            "localizedName": "缓冲区容量"
+        },
+        {
+            "name": "displayedSpeed",
+            "type": "float",
+            "defaultValue": "11.0",
+            "notes": "**Notes**: 统计面板显示的速度值",
+            "localizedName": "显示速度值"
+        }
+    ]
+}

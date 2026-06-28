@@ -1,0 +1,147 @@
+{
+    "type": "RepairTurret",
+    "parentType": "Block",
+    "localizedName": "修复炮塔",
+    "fields": [
+        {
+            "name": "timerTarget",
+            "type": "int",
+            "defaultValue": "1",
+            "localizedName": "目标计时器",
+            "notes": "**Notes**: 搜索目标计时器ID"
+        },
+        {
+            "name": "timerEffect",
+            "type": "int",
+            "defaultValue": "2",
+            "localizedName": "特效计时器",
+            "notes": "**Notes**: 特效计时器ID"
+        },
+        {
+            "name": "repairRadius",
+            "type": "float",
+            "defaultValue": "50.0",
+            "localizedName": "修复半径",
+            "notes": "**Notes**: 修复半径"
+        },
+        {
+            "name": "repairSpeed",
+            "type": "float",
+            "defaultValue": "0.3",
+            "localizedName": "修复速度",
+            "notes": "**Notes**: 修复速度"
+        },
+        {
+            "name": "powerUse",
+            "type": "float",
+            "defaultValue": "0.0",
+            "localizedName": "电力消耗",
+            "notes": "**Notes**: 电力消耗"
+        },
+        {
+            "name": "length",
+            "type": "float",
+            "defaultValue": "5.0",
+            "localizedName": "炮管长度",
+            "notes": "**Notes**: 炮管长度"
+        },
+        {
+            "name": "beamWidth",
+            "type": "float",
+            "defaultValue": "1.0",
+            "localizedName": "光束宽度",
+            "notes": "**Notes**: 光束宽度"
+        },
+        {
+            "name": "pulseRadius",
+            "type": "float",
+            "defaultValue": "6.0",
+            "localizedName": "脉冲半径",
+            "notes": "**Notes**: 脉冲半径"
+        },
+        {
+            "name": "pulseStroke",
+            "type": "float",
+            "defaultValue": "2.0",
+            "localizedName": "脉冲描边",
+            "notes": "**Notes**: 脉冲线条宽度"
+        },
+        {
+            "name": "acceptCoolant",
+            "type": "boolean",
+            "defaultValue": "false",
+            "localizedName": "接受冷却液",
+            "notes": "**Notes**: 是否接受冷却液"
+        },
+        {
+            "name": "coolantUse",
+            "type": "float",
+            "defaultValue": "0.5",
+            "localizedName": "冷却液消耗",
+            "notes": "**Notes**: 冷却液消耗量"
+        },
+        {
+            "name": "coolEffect",
+            "type": "Effect",
+            "defaultValue": "fuelburn",
+            "localizedName": "冷却特效",
+            "notes": "使用冷却液时显示的特效。\n\n**Notes**: 使用冷却液时显示的特效"
+        },
+        {
+            "name": "coolantMultiplier",
+            "type": "float",
+            "defaultValue": "1.0",
+            "localizedName": "冷却倍率",
+            "notes": "热容量对治疗效果提升的倍率。\n\n**Notes**: 冷却液热容量对治疗效果的提升倍率"
+        },
+        {
+            "name": "baseRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "localizedName": "底座纹理",
+            "notes": "**Notes**: 底座纹理区域"
+        },
+        {
+            "name": "laser",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "localizedName": "激光纹理",
+            "notes": "**Notes**: 激光纹理区域"
+        },
+        {
+            "name": "laserEnd",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "localizedName": "激光末端纹理",
+            "notes": "**Notes**: 激光末端纹理区域"
+        },
+        {
+            "name": "laserTop",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "localizedName": "激光顶层纹理",
+            "notes": "**Notes**: 激光顶层纹理区域"
+        },
+        {
+            "name": "laserTopEnd",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "localizedName": "激光顶层末端纹理",
+            "notes": "**Notes**: 激光顶层末端纹理区域"
+        },
+        {
+            "name": "laserColor",
+            "type": "Color",
+            "defaultValue": "98ffa9ff",
+            "localizedName": "激光颜色",
+            "notes": "**Notes**: 激光颜色"
+        },
+        {
+            "name": "laserTopColor",
+            "type": "Color",
+            "defaultValue": "ffffffff",
+            "localizedName": "激光顶层颜色",
+            "notes": "**Notes**: 激光顶层颜色"
+        }
+    ]
+}

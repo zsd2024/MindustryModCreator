@@ -1,0 +1,168 @@
+{
+    "type": "StatusEffect",
+    "parentType": "UnlockableContent",
+    "fields": [
+        {
+            "name": "damageMultiplier",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": "Damage dealt by the unit with the effect."
+        },
+        {
+            "name": "healthMultiplier",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": "Unit health multiplier."
+        },
+        {
+            "name": "speedMultiplier",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": "Unit speed multiplier."
+        },
+        {
+            "name": "reloadMultiplier",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": "Unit reload multiplier."
+        },
+        {
+            "name": "buildSpeedMultiplier",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": "Unit build speed multiplier."
+        },
+        {
+            "name": "dragMultiplier",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": "Unit drag multiplier."
+        },
+        {
+            "name": "transitionDamage",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "Damage dealt upon transition to an affinity."
+        },
+        {
+            "name": "disarm",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "Unit weapon(s) disabled."
+        },
+        {
+            "name": "damage",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "Damage per frame."
+        },
+        {
+            "name": "intervalDamageTime",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "Spacing (in ticks) between interval damage. <=0 to disable."
+        },
+        {
+            "name": "intervalDamage",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "Damage dealt by interval damage."
+        },
+        {
+            "name": "intervalDamagePierce",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "If true, interval damage is armor piercing."
+        },
+        {
+            "name": "effectChance",
+            "type": "float",
+            "defaultValue": "0.15",
+            "notes": "Chance of effect appearing."
+        },
+        {
+            "name": "parentizeEffect",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "Should the effect be given a parent."
+        },
+        {
+            "name": "permanent",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "If true, the effect never disappears."
+        },
+        {
+            "name": "reactive",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "If true, this effect will only react with other effects and cannot be applied."
+        },
+        {
+            "name": "dynamic",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "Special flag for the dynamic effect type with custom stats - do not use."
+        },
+        {
+            "name": "show",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "Whether to show this effect in the database."
+        },
+        {
+            "name": "color",
+            "type": "Color",
+            "defaultValue": "ffffffff",
+            "notes": "Tint color of effect."
+        },
+        {
+            "name": "effect",
+            "type": "Effect",
+            "defaultValue": "none",
+            "notes": "Effect that happens randomly on top of the affected unit."
+        },
+        {
+            "name": "applyEffect",
+            "type": "Effect",
+            "defaultValue": "none",
+            "notes": "Effect that is displayed once when applied to a unit."
+        },
+        {
+            "name": "applyExtend",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "Whether the apply effect should display even if effect is already on the unit."
+        },
+        {
+            "name": "applyColor",
+            "type": "Color",
+            "defaultValue": "ffffffff",
+            "notes": "Tint color of apply effect."
+        },
+        {
+            "name": "parentizeApplyEffect",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "Should the apply effect be given a parent."
+        },
+        {
+            "name": "affinities",
+            "type": "ObjectSet of StatusEffect",
+            "defaultValue": "new ObjectSet<>()",
+            "notes": "Affinity & opposite values for stat displays."
+        },
+        {
+            "name": "opposites",
+            "type": "ObjectSet of StatusEffect",
+            "defaultValue": "new ObjectSet<>()",
+            "notes": "Affinity & opposite values for stat displays."
+        },
+        {
+            "name": "outline",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "Set to false to disable outline generation."
+        }
+    ]
+}

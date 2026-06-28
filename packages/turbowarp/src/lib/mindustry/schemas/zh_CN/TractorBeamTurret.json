@@ -1,0 +1,140 @@
+{
+    "type": "TractorBeamTurret",
+    "parentType": "BaseTurret",
+    "localizedName": "牵引光束炮塔",
+    "fields": [
+        {
+            "name": "timerTarget",
+            "type": "int",
+            "localizedName": "目标计时器",
+            "defaultValue": "1",
+            "notes": "**Notes**: 重新寻找目标的计时器索引。"
+        },
+        {
+            "name": "retargetTime",
+            "type": "float",
+            "localizedName": "重新索敌间隔",
+            "defaultValue": "5.0",
+            "notes": "**Notes**: 重新寻找目标的tick间隔。"
+        },
+        {
+            "name": "shootCone",
+            "type": "float",
+            "localizedName": "发射角度",
+            "defaultValue": "6.0",
+            "notes": "**Notes**: 牵引光束的发射角度。"
+        },
+        {
+            "name": "shootLength",
+            "type": "float",
+            "localizedName": "光束长度",
+            "defaultValue": "5.0",
+            "notes": "**Notes**: 牵引光束的长度。"
+        },
+        {
+            "name": "laserWidth",
+            "type": "float",
+            "localizedName": "光束宽度",
+            "defaultValue": "0.6",
+            "notes": "**Notes**: 牵引光束的视觉宽度。"
+        },
+        {
+            "name": "force",
+            "type": "float",
+            "localizedName": "牵引力",
+            "defaultValue": "0.3",
+            "notes": "**Notes**: 牵引力大小。"
+        },
+        {
+            "name": "scaledForce",
+            "type": "float",
+            "localizedName": "距离缩放牵引力",
+            "defaultValue": "0.0",
+            "notes": "**Notes**: 基于距离缩放附加的牵引力。"
+        },
+        {
+            "name": "damage",
+            "type": "float",
+            "localizedName": "持续伤害",
+            "defaultValue": "0.0",
+            "notes": "**Notes**: 牵引光束对被牵引单位造成的持续伤害。"
+        },
+        {
+            "name": "targetAir",
+            "type": "boolean",
+            "localizedName": "可牵引空中",
+            "defaultValue": "true",
+            "notes": "**Notes**: 如果为true，可以牵引空中单位。"
+        },
+        {
+            "name": "targetGround",
+            "type": "boolean",
+            "localizedName": "可牵引地面",
+            "defaultValue": "false",
+            "notes": "**Notes**: 如果为true，可以牵引地面单位。"
+        },
+        {
+            "name": "laserColor",
+            "type": "Color",
+            "localizedName": "光束颜色",
+            "defaultValue": "ffffffff",
+            "notes": "**Notes**: 牵引光束的颜色。"
+        },
+        {
+            "name": "status",
+            "type": "StatusEffect",
+            "localizedName": "状态效果",
+            "defaultValue": "none",
+            "notes": "**Notes**: 牵引时对单位施加的状态效果。"
+        },
+        {
+            "name": "statusDuration",
+            "type": "float",
+            "localizedName": "状态持续时间",
+            "defaultValue": "300.0",
+            "notes": "**Notes**: 状态效果的持续时间。"
+        },
+        {
+            "name": "shootSound",
+            "type": "Sound",
+            "localizedName": "射击音效",
+            "defaultValue": "beamParallax",
+            "notes": "**Notes**: 牵引光束的音效。"
+        },
+        {
+            "name": "shootSoundVolume",
+            "type": "float",
+            "localizedName": "音效音量",
+            "defaultValue": "0.9",
+            "notes": "**Notes**: 牵引音效的音量。"
+        },
+        {
+            "name": "baseRegion",
+            "type": "TextureRegion",
+            "localizedName": "底座纹理",
+            "defaultValue": "null",
+            "notes": "**Notes**: 塔座纹理区域。"
+        },
+        {
+            "name": "laser",
+            "type": "TextureRegion",
+            "localizedName": "激光纹理",
+            "defaultValue": "null",
+            "notes": "**Notes**: 激光纹理区域。"
+        },
+        {
+            "name": "laserStart",
+            "type": "TextureRegion",
+            "localizedName": "激光起始纹理",
+            "defaultValue": "null",
+            "notes": "**Notes**: 激光起始端纹理区域。"
+        },
+        {
+            "name": "laserEnd",
+            "type": "TextureRegion",
+            "localizedName": "激光末端纹理",
+            "defaultValue": "null",
+            "notes": "**Notes**: 激光末端纹理区域。"
+        }
+    ]
+}

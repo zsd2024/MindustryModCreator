@@ -1,0 +1,21 @@
+{
+    "type": "OverflowGate",
+    "parentType": "Block",
+    "localizedName": "溢出门",
+    "fields": [
+        {
+            "name": "speed",
+            "localizedName": "传输速度",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": "**Notes**: 物品传输速度"
+        },
+        {
+            "name": "invert",
+            "localizedName": "反转",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "**Notes**: 是否反转分流方向"
+        }
+    ]
+}

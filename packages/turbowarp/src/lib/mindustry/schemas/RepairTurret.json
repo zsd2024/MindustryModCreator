@@ -1,0 +1,126 @@
+{
+    "type": "RepairTurret",
+    "parentType": "Block",
+    "fields": [
+        {
+            "name": "timerTarget",
+            "type": "int",
+            "defaultValue": "1",
+            "notes": ""
+        },
+        {
+            "name": "timerEffect",
+            "type": "int",
+            "defaultValue": "2",
+            "notes": ""
+        },
+        {
+            "name": "repairRadius",
+            "type": "float",
+            "defaultValue": "50.0",
+            "notes": ""
+        },
+        {
+            "name": "repairSpeed",
+            "type": "float",
+            "defaultValue": "0.3",
+            "notes": ""
+        },
+        {
+            "name": "powerUse",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": ""
+        },
+        {
+            "name": "length",
+            "type": "float",
+            "defaultValue": "5.0",
+            "notes": ""
+        },
+        {
+            "name": "beamWidth",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": ""
+        },
+        {
+            "name": "pulseRadius",
+            "type": "float",
+            "defaultValue": "6.0",
+            "notes": ""
+        },
+        {
+            "name": "pulseStroke",
+            "type": "float",
+            "defaultValue": "2.0",
+            "notes": ""
+        },
+        {
+            "name": "acceptCoolant",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": ""
+        },
+        {
+            "name": "coolantUse",
+            "type": "float",
+            "defaultValue": "0.5",
+            "notes": ""
+        },
+        {
+            "name": "coolEffect",
+            "type": "Effect",
+            "defaultValue": "fuelburn",
+            "notes": "Effect displayed when coolant is used."
+        },
+        {
+            "name": "coolantMultiplier",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": "How much healing is increased by with heat capacity."
+        },
+        {
+            "name": "baseRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "laser",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "laserEnd",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "laserTop",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "laserTopEnd",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "laserColor",
+            "type": "Color",
+            "defaultValue": "98ffa9ff",
+            "notes": ""
+        },
+        {
+            "name": "laserTopColor",
+            "type": "Color",
+            "defaultValue": "ffffffff",
+            "notes": ""
+        }
+    ]
+}

@@ -1,0 +1,49 @@
+{
+    "type": "PayloadBlock",
+    "parentType": "Block",
+    "localizedName": "载荷方块",
+    "fields": [
+        {
+            "name": "payloadSpeed",
+            "localizedName": "载荷速度",
+            "type": "float",
+            "defaultValue": "0.7",
+            "notes": "**Notes**: 载荷移动速度"
+        },
+        {
+            "name": "payloadRotateSpeed",
+            "localizedName": "载荷旋转速度",
+            "type": "float",
+            "defaultValue": "5.0",
+            "notes": "**Notes**: 载荷旋转速度"
+        },
+        {
+            "name": "regionSuffix",
+            "localizedName": "纹理后缀",
+            "type": "String",
+            "defaultValue": "\"\"",
+            "notes": "**Notes**: 纹理区域后缀"
+        },
+        {
+            "name": "topRegion",
+            "localizedName": "顶部纹理",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": "**Notes**: 顶部纹理"
+        },
+        {
+            "name": "outRegion",
+            "localizedName": "输出纹理",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": "**Notes**: 输出方向纹理"
+        },
+        {
+            "name": "inRegion",
+            "localizedName": "输入纹理",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": "**Notes**: 输入方向纹理"
+        }
+    ]
+}

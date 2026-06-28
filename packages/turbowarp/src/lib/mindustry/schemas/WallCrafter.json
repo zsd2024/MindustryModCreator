@@ -1,0 +1,96 @@
+{
+    "type": "WallCrafter",
+    "parentType": "Block",
+    "fields": [
+        {
+            "name": "topRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "rotatorBottomRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "rotatorRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "drillTime",
+            "type": "float",
+            "defaultValue": "150.0",
+            "notes": "Time to produce one item at 100% efficiency."
+        },
+        {
+            "name": "liquidBoostIntensity",
+            "type": "float",
+            "defaultValue": "1.6",
+            "notes": "How many times faster the drill will progress when boosted by liquid."
+        },
+        {
+            "name": "updateEffect",
+            "type": "Effect",
+            "defaultValue": "mineWallSmall",
+            "notes": "Effect randomly played while drilling."
+        },
+        {
+            "name": "updateEffectChance",
+            "type": "float",
+            "defaultValue": "0.02",
+            "notes": ""
+        },
+        {
+            "name": "rotateSpeed",
+            "type": "float",
+            "defaultValue": "2.0",
+            "notes": ""
+        },
+        {
+            "name": "attribute",
+            "type": "Attribute",
+            "defaultValue": "sand",
+            "notes": "Attribute to check for wall output."
+        },
+        {
+            "name": "output",
+            "type": "Item",
+            "defaultValue": "sand",
+            "notes": ""
+        },
+        {
+            "name": "boostItemUseTime",
+            "type": "float",
+            "defaultValue": "120.0",
+            "notes": ""
+        },
+        {
+            "name": "itemBoostIntensity",
+            "type": "float",
+            "defaultValue": "1.6",
+            "notes": "How many times faster the drill will progress when boosted by items. Note: Using item and liquid boosters at once is not supported."
+        },
+        {
+            "name": "itemConsumer",
+            "type": "Consume",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "hasLiquidBooster",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": ""
+        },
+        {
+            "name": "timerUse",
+            "type": "int",
+            "defaultValue": "1",
+            "notes": ""
+        }
+    ]
+}

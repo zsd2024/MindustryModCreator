@@ -1,0 +1,24 @@
+{
+    "type": "BaseShield",
+    "parentType": "Block",
+    "fields": [
+        {
+            "name": "radius",
+            "type": "float",
+            "defaultValue": "200.0",
+            "notes": ""
+        },
+        {
+            "name": "sides",
+            "type": "int",
+            "defaultValue": "24",
+            "notes": ""
+        },
+        {
+            "name": "shieldColor",
+            "type": "Color",
+            "defaultValue": "null",
+            "notes": ""
+        }
+    ]
+}

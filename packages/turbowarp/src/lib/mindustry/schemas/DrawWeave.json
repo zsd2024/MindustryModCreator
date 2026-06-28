@@ -1,0 +1,24 @@
+{
+    "type": "DrawWeave",
+    "parentType": "DrawBlock",
+    "fields": [
+        {
+            "name": "weave",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "x",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": ""
+        },
+        {
+            "name": "y",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": ""
+        }
+    ]
+}

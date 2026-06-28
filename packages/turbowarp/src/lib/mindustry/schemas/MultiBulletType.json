@@ -1,0 +1,18 @@
+{
+    "type": "MultiBulletType",
+    "parentType": "BulletType",
+    "fields": [
+        {
+            "name": "bullets",
+            "type": "BulletType[]",
+            "defaultValue": "[]",
+            "notes": ""
+        },
+        {
+            "name": "repeat",
+            "type": "int",
+            "defaultValue": "1",
+            "notes": "Amount of times the bullet array is repeated."
+        }
+    ]
+}

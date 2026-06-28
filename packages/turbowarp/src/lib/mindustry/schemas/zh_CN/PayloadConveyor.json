@@ -1,0 +1,56 @@
+{
+    "type": "PayloadConveyor",
+    "parentType": "Block",
+    "localizedName": "载荷传送带",
+    "fields": [
+        {
+            "name": "moveTime",
+            "localizedName": "移动周期",
+            "type": "float",
+            "defaultValue": "45.0",
+            "notes": "**Notes**: 移动周期（帧数）"
+        },
+        {
+            "name": "moveForce",
+            "localizedName": "推动力",
+            "type": "float",
+            "defaultValue": "201.0",
+            "notes": "**Notes**: 推动单位的作用力"
+        },
+        {
+            "name": "topRegion",
+            "localizedName": "顶部纹理",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": "**Notes**: 顶部纹理"
+        },
+        {
+            "name": "edgeRegion",
+            "localizedName": "边缘纹理",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": "**Notes**: 边缘纹理"
+        },
+        {
+            "name": "interp",
+            "localizedName": "插值函数",
+            "type": "Interp",
+            "defaultValue": "pow5",
+            "notes": "**Notes**: 移动插值函数"
+        },
+        {
+            "name": "payloadLimit",
+            "localizedName": "载荷限制",
+            "type": "float",
+            "defaultValue": "3.0",
+            "notes": "**Notes**: 载荷大小限制（方块格数）"
+        },
+        {
+            "name": "pushUnits",
+            "localizedName": "推动单位",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "**Notes**: 是否推动站在上面的单位"
+        }
+    ]
+}

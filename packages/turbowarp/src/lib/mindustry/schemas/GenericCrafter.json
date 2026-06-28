@@ -1,0 +1,96 @@
+{
+    "type": "GenericCrafter",
+    "parentType": "Block",
+    "fields": [
+        {
+            "name": "outputItem",
+            "type": "ItemStack",
+            "defaultValue": "null",
+            "notes": "Written to outputItems as a single-element array if outputItems is null."
+        },
+        {
+            "name": "outputItems",
+            "type": "ItemStack[]",
+            "defaultValue": "null",
+            "notes": "Overwrites outputItem if not null."
+        },
+        {
+            "name": "outputLiquid",
+            "type": "LiquidStack",
+            "defaultValue": "null",
+            "notes": "Written to outputLiquids as a single-element array if outputLiquids is null."
+        },
+        {
+            "name": "outputLiquids",
+            "type": "LiquidStack[]",
+            "defaultValue": "null",
+            "notes": "Overwrites outputLiquid if not null."
+        },
+        {
+            "name": "liquidOutputDirections",
+            "type": "int[]",
+            "defaultValue": "{ -1 }",
+            "notes": "Liquid output directions, specified in the same order as outputLiquids. Use -1 to dump in every direction. Rotations are relative to block."
+        },
+        {
+            "name": "dumpExtraLiquid",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "if true, crafters with multiple liquid outputs will dump excess when there's still space for at least one liquid type"
+        },
+        {
+            "name": "ignoreLiquidFullness",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": ""
+        },
+        {
+            "name": "craftTime",
+            "type": "float",
+            "defaultValue": "80.0",
+            "notes": ""
+        },
+        {
+            "name": "craftEffect",
+            "type": "Effect",
+            "defaultValue": "none",
+            "notes": ""
+        },
+        {
+            "name": "updateEffect",
+            "type": "Effect",
+            "defaultValue": "none",
+            "notes": ""
+        },
+        {
+            "name": "updateEffectChance",
+            "type": "float",
+            "defaultValue": "0.04",
+            "notes": ""
+        },
+        {
+            "name": "updateEffectSpread",
+            "type": "float",
+            "defaultValue": "4.0",
+            "notes": ""
+        },
+        {
+            "name": "warmupSpeed",
+            "type": "float",
+            "defaultValue": "0.019",
+            "notes": ""
+        },
+        {
+            "name": "legacyReadWarmup",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "Only used for legacy cultivator blocks."
+        },
+        {
+            "name": "drawer",
+            "type": "DrawBlock",
+            "defaultValue": "new DrawDefault()",
+            "notes": ""
+        }
+    ]
+}

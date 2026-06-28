@@ -1,0 +1,126 @@
+{
+    "localizedName": "弧形熔炼绘制",
+    "type": "DrawArcSmelt",
+    "parentType": "DrawBlock",
+    "fields": [
+        {
+            "name": "flameColor",
+            "localizedName": "火焰外圈颜色",
+            "type": "Color",
+            "defaultValue": "f58349ff",
+            "notes": "**Notes**: 火焰外圈的颜色。"
+        },
+        {
+            "name": "midColor",
+            "localizedName": "火焰中心颜色",
+            "type": "Color",
+            "defaultValue": "f2d585ff",
+            "notes": "**Notes**: 火焰中心的颜色。"
+        },
+        {
+            "name": "flameRad",
+            "localizedName": "火焰基础半径",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": "**Notes**: 火焰的基础半径。"
+        },
+        {
+            "name": "circleSpace",
+            "localizedName": "内外间距",
+            "type": "float",
+            "defaultValue": "2.0",
+            "notes": "**Notes**: 内圆和外圈之间的间距。"
+        },
+        {
+            "name": "flameRadiusScl",
+            "localizedName": "半径波动频率",
+            "type": "float",
+            "defaultValue": "3.0",
+            "notes": "**Notes**: 火焰半径正弦波动的频率。"
+        },
+        {
+            "name": "flameRadiusMag",
+            "localizedName": "半径波动幅度",
+            "type": "float",
+            "defaultValue": "0.3",
+            "notes": "**Notes**: 火焰半径正弦波动的幅度。"
+        },
+        {
+            "name": "circleStroke",
+            "localizedName": "外圈描边宽度",
+            "type": "float",
+            "defaultValue": "1.5",
+            "notes": "**Notes**: 外圈圆环的描边宽度。"
+        },
+        {
+            "name": "x",
+            "localizedName": "X轴偏移",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "**Notes**: 火焰绘制的X轴偏移。"
+        },
+        {
+            "name": "y",
+            "localizedName": "Y轴偏移",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "**Notes**: 火焰绘制的Y轴偏移。"
+        },
+        {
+            "name": "alpha",
+            "localizedName": "透明度",
+            "type": "float",
+            "defaultValue": "0.68",
+            "notes": "**Notes**: 火焰的整体透明度。"
+        },
+        {
+            "name": "particles",
+            "localizedName": "粒子数量",
+            "type": "int",
+            "defaultValue": "25",
+            "notes": "**Notes**: 火焰粒子数量。"
+        },
+        {
+            "name": "particleLife",
+            "localizedName": "粒子生命周期",
+            "type": "float",
+            "defaultValue": "40.0",
+            "notes": "**Notes**: 火焰粒子的生命周期（刻数）。"
+        },
+        {
+            "name": "particleRad",
+            "localizedName": "粒子扩散半径",
+            "type": "float",
+            "defaultValue": "7.0",
+            "notes": "**Notes**: 火焰粒子的扩散半径。"
+        },
+        {
+            "name": "particleStroke",
+            "localizedName": "粒子描边宽度",
+            "type": "float",
+            "defaultValue": "1.1",
+            "notes": "**Notes**: 火焰粒子的描边宽度。"
+        },
+        {
+            "name": "particleLen",
+            "localizedName": "粒子线条长度",
+            "type": "float",
+            "defaultValue": "3.0",
+            "notes": "**Notes**: 火焰粒子的线条长度。"
+        },
+        {
+            "name": "drawCenter",
+            "localizedName": "绘制中心圆点",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "**Notes**: 是否绘制中心圆点。"
+        },
+        {
+            "name": "blending",
+            "localizedName": "混合模式",
+            "type": "Blending",
+            "defaultValue": "additive",
+            "notes": "**Notes**: 火焰的混合模式。"
+        }
+    ]
+}

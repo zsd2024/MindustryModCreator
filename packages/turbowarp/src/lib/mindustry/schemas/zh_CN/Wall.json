@@ -1,0 +1,70 @@
+{
+    "type": "Wall",
+    "parentType": "Block",
+    "localizedName": "墙壁",
+    "fields": [
+        {
+            "name": "lightningChance",
+            "type": "float",
+            "localizedName": "闪电概率",
+            "defaultValue": "-1.0",
+            "notes": "闪电概率。-1禁用。\n\n**Notes**: 被击中时触发闪电反击的概率。"
+        },
+        {
+            "name": "lightningDamage",
+            "type": "float",
+            "localizedName": "闪电伤害",
+            "defaultValue": "20.0",
+            "notes": "**Notes**: 闪电造成的伤害值。"
+        },
+        {
+            "name": "lightningLength",
+            "type": "int",
+            "localizedName": "闪电长度",
+            "defaultValue": "17",
+            "notes": "**Notes**: 闪电的长度。"
+        },
+        {
+            "name": "lightningColor",
+            "type": "Color",
+            "localizedName": "闪电颜色",
+            "defaultValue": "f3e979ff",
+            "notes": "**Notes**: 闪电的颜色。"
+        },
+        {
+            "name": "lightningSound",
+            "type": "Sound",
+            "localizedName": "闪电音效",
+            "defaultValue": "shootArc",
+            "notes": "**Notes**: 闪电触发时的音效。"
+        },
+        {
+            "name": "chanceDeflect",
+            "type": "float",
+            "localizedName": "偏转概率",
+            "defaultValue": "-1.0",
+            "notes": "子弹偏转概率。-1禁用。\n\n**Notes**: 墙壁偏转来袭子弹的概率。"
+        },
+        {
+            "name": "flashHit",
+            "type": "boolean",
+            "localizedName": "命中闪烁",
+            "defaultValue": "false",
+            "notes": "**Notes**: 被击中时是否闪烁。"
+        },
+        {
+            "name": "flashColor",
+            "type": "Color",
+            "localizedName": "闪烁颜色",
+            "defaultValue": "ffffffff",
+            "notes": "**Notes**: 被击中时闪烁的颜色。"
+        },
+        {
+            "name": "deflectSound",
+            "type": "Sound",
+            "localizedName": "偏转音效",
+            "defaultValue": "none",
+            "notes": "**Notes**: 偏转子弹时的音效。"
+        }
+    ]
+}

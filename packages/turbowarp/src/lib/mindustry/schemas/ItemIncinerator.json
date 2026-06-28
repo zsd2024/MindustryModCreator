@@ -1,0 +1,30 @@
+{
+    "type": "ItemIncinerator",
+    "parentType": "Block",
+    "fields": [
+        {
+            "name": "effect",
+            "type": "Effect",
+            "defaultValue": "incinerateSlag",
+            "notes": ""
+        },
+        {
+            "name": "effectChance",
+            "type": "float",
+            "defaultValue": "0.2",
+            "notes": ""
+        },
+        {
+            "name": "liquidRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "topRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        }
+    ]
+}

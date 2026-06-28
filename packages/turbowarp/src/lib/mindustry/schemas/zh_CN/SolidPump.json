@@ -1,0 +1,56 @@
+{
+    "type": "SolidPump",
+    "parentType": "Pump",
+    "localizedName": "固体泵",
+    "fields": [
+        {
+            "name": "result",
+            "type": "Liquid",
+            "defaultValue": "water",
+            "localizedName": "输出液体",
+            "notes": "**Notes**: 输出的液体类型"
+        },
+        {
+            "name": "updateEffect",
+            "type": "Effect",
+            "defaultValue": "none",
+            "localizedName": "运行特效",
+            "notes": "**Notes**: 运行时的粒子效果"
+        },
+        {
+            "name": "updateEffectChance",
+            "type": "float",
+            "defaultValue": "0.02",
+            "localizedName": "特效概率",
+            "notes": "**Notes**: 效果触发概率"
+        },
+        {
+            "name": "rotateSpeed",
+            "type": "float",
+            "defaultValue": "1.0",
+            "localizedName": "旋转速度",
+            "notes": "**Notes**: 旋转部件速度"
+        },
+        {
+            "name": "baseEfficiency",
+            "type": "float",
+            "defaultValue": "1.0",
+            "localizedName": "基础效率",
+            "notes": "**Notes**: 基础效率"
+        },
+        {
+            "name": "attribute",
+            "type": "Attribute",
+            "defaultValue": "null",
+            "localizedName": "环境属性",
+            "notes": "计算输出时检查的属性\n\n**Notes**: 计算输出时检查的属性"
+        },
+        {
+            "name": "rotatorRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "localizedName": "旋转部件纹理",
+            "notes": "**Notes**: 旋转部件纹理"
+        }
+    ]
+}

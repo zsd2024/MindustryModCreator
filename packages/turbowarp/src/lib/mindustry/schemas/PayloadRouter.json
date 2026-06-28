@@ -1,0 +1,18 @@
+{
+    "type": "PayloadRouter",
+    "parentType": "PayloadConveyor",
+    "fields": [
+        {
+            "name": "invert",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": ""
+        },
+        {
+            "name": "overRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        }
+    ]
+}

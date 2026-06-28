@@ -1,0 +1,42 @@
+{
+    "type": "UnitSpawnAbility",
+    "parentType": "Ability",
+    "fields": [
+        {
+            "name": "unit",
+            "type": "UnitType",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "spawnTime",
+            "type": "float",
+            "defaultValue": "60.0",
+            "notes": ""
+        },
+        {
+            "name": "spawnX",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": ""
+        },
+        {
+            "name": "spawnY",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": ""
+        },
+        {
+            "name": "spawnEffect",
+            "type": "Effect",
+            "defaultValue": "spawn",
+            "notes": ""
+        },
+        {
+            "name": "parentizeEffects",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": ""
+        }
+    ]
+}

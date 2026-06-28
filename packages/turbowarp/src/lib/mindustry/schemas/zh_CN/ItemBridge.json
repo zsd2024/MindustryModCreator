@@ -1,0 +1,112 @@
+{
+    "type": "ItemBridge",
+    "parentType": "Block",
+    "localizedName": "物品桥",
+    "fields": [
+        {
+            "name": "timerCheckMoved",
+            "type": "int",
+            "localizedName": "检测移动计时器",
+            "defaultValue": "1",
+            "notes": "**Notes**: 检测移动计时器ID"
+        },
+        {
+            "name": "range",
+            "type": "int",
+            "localizedName": "连接范围",
+            "defaultValue": "0",
+            "notes": "**Notes**: 连接范围"
+        },
+        {
+            "name": "transportTime",
+            "type": "float",
+            "localizedName": "传输时间",
+            "defaultValue": "0.0",
+            "notes": "**Notes**: 传输时间"
+        },
+        {
+            "name": "endRegion",
+            "type": "TextureRegion",
+            "localizedName": "端点纹理区域",
+            "defaultValue": "null",
+            "notes": "**Notes**: 端点纹理区域"
+        },
+        {
+            "name": "bridgeRegion",
+            "type": "TextureRegion",
+            "localizedName": "桥体纹理区域",
+            "defaultValue": "null",
+            "notes": "**Notes**: 桥体纹理区域"
+        },
+        {
+            "name": "arrowRegion",
+            "type": "TextureRegion",
+            "localizedName": "箭头纹理区域",
+            "defaultValue": "null",
+            "notes": "**Notes**: 箭头纹理区域"
+        },
+        {
+            "name": "fadeIn",
+            "type": "boolean",
+            "localizedName": "是否渐入显示",
+            "defaultValue": "true",
+            "notes": "**Notes**: 是否渐入显示"
+        },
+        {
+            "name": "moveArrows",
+            "type": "boolean",
+            "localizedName": "是否显示移动箭头",
+            "defaultValue": "true",
+            "notes": "**Notes**: 是否显示移动箭头"
+        },
+        {
+            "name": "pulse",
+            "type": "boolean",
+            "localizedName": "是否脉冲显示",
+            "defaultValue": "false",
+            "notes": "**Notes**: 是否脉冲显示"
+        },
+        {
+            "name": "arrowSpacing",
+            "type": "float",
+            "localizedName": "箭头间距",
+            "defaultValue": "4.0",
+            "notes": "**Notes**: 箭头间距"
+        },
+        {
+            "name": "arrowOffset",
+            "type": "float",
+            "localizedName": "箭头偏移量",
+            "defaultValue": "2.0",
+            "notes": "**Notes**: 箭头偏移量"
+        },
+        {
+            "name": "arrowPeriod",
+            "type": "float",
+            "localizedName": "箭头周期",
+            "defaultValue": "0.4",
+            "notes": "**Notes**: 箭头周期"
+        },
+        {
+            "name": "arrowTimeScl",
+            "type": "float",
+            "localizedName": "箭头时间缩放",
+            "defaultValue": "6.2",
+            "notes": "**Notes**: 箭头时间缩放"
+        },
+        {
+            "name": "bridgeWidth",
+            "type": "float",
+            "localizedName": "桥体宽度",
+            "defaultValue": "6.5",
+            "notes": "**Notes**: 桥体宽度"
+        },
+        {
+            "name": "lastBuild",
+            "type": "ItemBridgeBuild",
+            "localizedName": "上次建造实例",
+            "defaultValue": "null",
+            "notes": "**Notes**: 上次建造的方块实例（用于自动连接）"
+        }
+    ]
+}

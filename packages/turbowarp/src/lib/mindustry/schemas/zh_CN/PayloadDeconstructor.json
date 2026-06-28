@@ -1,0 +1,28 @@
+{
+    "type": "PayloadDeconstructor",
+    "parentType": "PayloadBlock",
+    "localizedName": "载荷拆解机",
+    "fields": [
+        {
+            "name": "maxPayloadSize",
+            "localizedName": "最大载荷尺寸",
+            "type": "float",
+            "defaultValue": "4.0",
+            "notes": "**Notes**: 最大可处理的载荷大小"
+        },
+        {
+            "name": "deconstructSpeed",
+            "localizedName": "拆解速度",
+            "type": "float",
+            "defaultValue": "2.5",
+            "notes": "**Notes**: 拆解速度"
+        },
+        {
+            "name": "dumpRate",
+            "localizedName": "输出速率",
+            "type": "int",
+            "defaultValue": "4",
+            "notes": "**Notes**: 每次输出的物品数量"
+        }
+    ]
+}

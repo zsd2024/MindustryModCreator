@@ -1,0 +1,63 @@
+{
+    "type": "AttributeCrafter",
+    "parentType": "GenericCrafter",
+    "localizedName": "属性加工器",
+    "fields": [
+        {
+            "name": "attribute",
+            "type": "Attribute",
+            "defaultValue": "heat",
+            "notes": "**Notes**: 依赖的属性类型",
+            "localizedName": "依赖属性类型"
+        },
+        {
+            "name": "baseEfficiency",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": "**Notes**: 基础效率",
+            "localizedName": "基础效率"
+        },
+        {
+            "name": "boostScale",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": "**Notes**: 属性加成比例",
+            "localizedName": "属性加成比例"
+        },
+        {
+            "name": "maxBoost",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": "**Notes**: 最大属性加成效",
+            "localizedName": "最大属性加成效"
+        },
+        {
+            "name": "minEfficiency",
+            "type": "float",
+            "defaultValue": "-1.0",
+            "notes": "**Notes**: 最低效率阈值（低于此值无法放置）",
+            "localizedName": "最低效率阈值"
+        },
+        {
+            "name": "displayEfficiencyScale",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": "**Notes**: 显示效率缩放",
+            "localizedName": "显示效率缩放"
+        },
+        {
+            "name": "displayEfficiency",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "**Notes**: 是否显示效率",
+            "localizedName": "显示效率"
+        },
+        {
+            "name": "scaleLiquidConsumption",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "**Notes**: 是否按效率缩放液体消耗",
+            "localizedName": "缩放液体消耗"
+        }
+    ]
+}

@@ -1,0 +1,49 @@
+{
+    "localizedName": "定向桥梁",
+    "type": "DirectionBridge",
+    "parentType": "Block",
+    "fields": [
+        {
+            "name": "bridgeRegion",
+            "localizedName": "桥梁主体纹理",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": "**Notes**: 桥梁主体纹理"
+        },
+        {
+            "name": "bridgeBotRegion",
+            "localizedName": "桥梁底部纹理",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": "**Notes**: 桥梁底部纹理"
+        },
+        {
+            "name": "bridgeLiquidRegion",
+            "localizedName": "桥梁液体纹理",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": "**Notes**: 桥梁液体纹理"
+        },
+        {
+            "name": "arrowRegion",
+            "localizedName": "箭头纹理",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": "**Notes**: 箭头纹理"
+        },
+        {
+            "name": "dirRegion",
+            "localizedName": "方向指示纹理",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": "**Notes**: 方向指示纹理"
+        },
+        {
+            "name": "range",
+            "localizedName": "连接距离",
+            "type": "int",
+            "defaultValue": "4",
+            "notes": "**Notes**: 最大连接距离"
+        }
+    ]
+}

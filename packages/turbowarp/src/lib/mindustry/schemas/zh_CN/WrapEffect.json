@@ -1,0 +1,28 @@
+{
+    "type": "WrapEffect",
+    "parentType": "Effect",
+    "localizedName": "包装效果",
+    "fields": [
+        {
+            "name": "effect",
+            "type": "Effect",
+            "localizedName": "被包装的效果",
+            "defaultValue": "none",
+            "notes": "**Notes**: 要包装的效果"
+        },
+        {
+            "name": "color",
+            "type": "Color",
+            "localizedName": "覆盖颜色",
+            "defaultValue": "ffffffff",
+            "notes": "**Notes**: 覆盖颜色"
+        },
+        {
+            "name": "rotation",
+            "type": "float",
+            "localizedName": "覆盖旋转角度",
+            "defaultValue": "0.0",
+            "notes": "**Notes**: 覆盖旋转角度"
+        }
+    ]
+}

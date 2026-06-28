@@ -1,0 +1,12 @@
+{
+    "type": "DrawMulti",
+    "parentType": "DrawBlock",
+    "fields": [
+        {
+            "name": "drawers",
+            "type": "DrawBlock[]",
+            "defaultValue": "[]",
+            "notes": ""
+        }
+    ]
+}

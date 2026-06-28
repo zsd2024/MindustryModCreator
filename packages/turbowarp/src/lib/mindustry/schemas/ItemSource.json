@@ -1,0 +1,12 @@
+{
+    "type": "ItemSource",
+    "parentType": "Block",
+    "fields": [
+        {
+            "name": "itemsPerSecond",
+            "type": "int",
+            "defaultValue": "100",
+            "notes": ""
+        }
+    ]
+}

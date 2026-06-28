@@ -1,0 +1,28 @@
+{
+    "type": "Unloader",
+    "parentType": "Block",
+    "localizedName": "卸载器",
+    "fields": [
+        {
+            "name": "centerRegion",
+            "type": "TextureRegion",
+            "localizedName": "中心纹理",
+            "defaultValue": "null",
+            "notes": "**Notes**: 中心纹理区域"
+        },
+        {
+            "name": "speed",
+            "type": "float",
+            "localizedName": "卸载速度",
+            "defaultValue": "1.0",
+            "notes": "**Notes**: 卸载速度"
+        },
+        {
+            "name": "allowCoreUnload",
+            "type": "boolean",
+            "localizedName": "允许从核心卸载",
+            "defaultValue": "true",
+            "notes": "**Notes**: 是否允许从核心卸载"
+        }
+    ]
+}

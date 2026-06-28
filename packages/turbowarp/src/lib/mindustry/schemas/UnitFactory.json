@@ -1,0 +1,30 @@
+{
+    "type": "UnitFactory",
+    "parentType": "UnitBlock",
+    "fields": [
+        {
+            "name": "capacities",
+            "type": "int[]",
+            "defaultValue": "[]",
+            "notes": ""
+        },
+        {
+            "name": "plans",
+            "type": "Seq of UnitPlan",
+            "defaultValue": "[]",
+            "notes": ""
+        },
+        {
+            "name": "createSound",
+            "type": "Sound",
+            "defaultValue": "unitCreate",
+            "notes": ""
+        },
+        {
+            "name": "createSoundVolume",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": ""
+        }
+    ]
+}

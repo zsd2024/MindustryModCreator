@@ -1,0 +1,30 @@
+{
+    "type": "BufferedItemBridge",
+    "parentType": "ItemBridge",
+    "fields": [
+        {
+            "name": "timerAccept",
+            "type": "int",
+            "defaultValue": "2",
+            "notes": ""
+        },
+        {
+            "name": "speed",
+            "type": "float",
+            "defaultValue": "40.0",
+            "notes": ""
+        },
+        {
+            "name": "bufferCapacity",
+            "type": "int",
+            "defaultValue": "50",
+            "notes": ""
+        },
+        {
+            "name": "displayedSpeed",
+            "type": "float",
+            "defaultValue": "11.0",
+            "notes": ""
+        }
+    ]
+}

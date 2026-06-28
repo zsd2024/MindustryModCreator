@@ -1,0 +1,36 @@
+{
+    "type": "DrawHeatInput",
+    "parentType": "DrawBlock",
+    "fields": [
+        {
+            "name": "suffix",
+            "type": "String",
+            "defaultValue": "\"-heat\"",
+            "notes": ""
+        },
+        {
+            "name": "heatColor",
+            "type": "Color",
+            "defaultValue": "ff3838cc",
+            "notes": ""
+        },
+        {
+            "name": "heatPulse",
+            "type": "float",
+            "defaultValue": "0.3",
+            "notes": ""
+        },
+        {
+            "name": "heatPulseScl",
+            "type": "float",
+            "defaultValue": "10.0",
+            "notes": ""
+        },
+        {
+            "name": "heat",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        }
+    ]
+}

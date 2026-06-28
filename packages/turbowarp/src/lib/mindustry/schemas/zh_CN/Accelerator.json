@@ -1,0 +1,259 @@
+{
+    "type": "Accelerator",
+    "parentType": "Block",
+    "localizedName": "发射加速器",
+    "fields": [
+        {
+            "name": "arrowRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": "**Notes**: 发射箭头的纹理区域",
+            "localizedName": "发射箭头纹理"
+        },
+        {
+            "name": "selectArrowRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": "**Notes**: 选择箭头的纹理区域",
+            "localizedName": "选择箭头纹理"
+        },
+        {
+            "name": "launchBlock",
+            "type": "Block",
+            "defaultValue": "coreNucleus",
+            "notes": "被发射的核心方块。应与目标行星的起始核心匹配。\n\n**Notes**: 被发射的核心方块，应与目标行星的初始核心一致",
+            "localizedName": "发射目标核心方块"
+        },
+        {
+            "name": "powerBufferRequirement",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "**Notes**: 所需的电力缓冲量",
+            "localizedName": "电力缓冲需求"
+        },
+        {
+            "name": "launchCandidates",
+            "type": "Seq of Planet",
+            "defaultValue": "null",
+            "notes": "此方块可发射至的行星覆盖列表。若为null，则使用行星的默认发射候选列表。\n\n**Notes**: 覆盖此方块可发射的目标行星列表，为null时使用行星默认列表",
+            "localizedName": "发射候选行星列表"
+        },
+        {
+            "name": "lightningSound",
+            "type": "Sound",
+            "defaultValue": "shootArc)",
+            "notes": "**Notes**: 闪电音效",
+            "localizedName": "闪电音效"
+        },
+        {
+            "name": "lightningSoundVolume",
+            "type": "float",
+            "defaultValue": "0.85",
+            "notes": "**Notes**: 闪电音效音量",
+            "localizedName": "闪电音效音量"
+        },
+        {
+            "name": "chargeSound",
+            "type": "Sound",
+            "defaultValue": "acceleratorCharge",
+            "notes": "**Notes**: 充能音效",
+            "localizedName": "充能音效"
+        },
+        {
+            "name": "launchSound",
+            "type": "Sound",
+            "defaultValue": "acceleratorLaunch",
+            "notes": "**Notes**: 发射音效",
+            "localizedName": "发射音效"
+        },
+        {
+            "name": "constructSound",
+            "type": "Sound",
+            "defaultValue": "acceleratorConstruct",
+            "notes": "**Notes**: 构建音效",
+            "localizedName": "构建音效"
+        },
+        {
+            "name": "launchDuration",
+            "type": "float",
+            "defaultValue": "120.0",
+            "notes": "**Notes**: 发射持续时间",
+            "localizedName": "发射持续时间"
+        },
+        {
+            "name": "chargeDuration",
+            "type": "float",
+            "defaultValue": "220.0",
+            "notes": "**Notes**: 充能持续时间",
+            "localizedName": "充能持续时间"
+        },
+        {
+            "name": "buildDuration",
+            "type": "float",
+            "defaultValue": "120.0",
+            "notes": "**Notes**: 构建持续时间",
+            "localizedName": "构建持续时间"
+        },
+        {
+            "name": "landZoomInterp",
+            "type": "Interp",
+            "defaultValue": "pow4In",
+            "notes": "**Notes**: 着陆缩放插值函数",
+            "localizedName": "着陆缩放插值"
+        },
+        {
+            "name": "chargeZoomInterp",
+            "type": "Interp",
+            "defaultValue": "pow4In",
+            "notes": "**Notes**: 充能缩放插值函数",
+            "localizedName": "充能缩放插值"
+        },
+        {
+            "name": "landZoomFrom",
+            "type": "float",
+            "defaultValue": "0.02",
+            "notes": "**Notes**: 着陆起始缩放值",
+            "localizedName": "着陆起始缩放"
+        },
+        {
+            "name": "landZoomTo",
+            "type": "float",
+            "defaultValue": "4.0",
+            "notes": "**Notes**: 着陆结束缩放值",
+            "localizedName": "着陆结束缩放"
+        },
+        {
+            "name": "chargeZoomTo",
+            "type": "float",
+            "defaultValue": "5.0",
+            "notes": "**Notes**: 充能结束缩放值",
+            "localizedName": "充能结束缩放"
+        },
+        {
+            "name": "chargeRings",
+            "type": "int",
+            "defaultValue": "4",
+            "notes": "**Notes**: 充能光环数量",
+            "localizedName": "充能光环数量"
+        },
+        {
+            "name": "ringRadBase",
+            "type": "float",
+            "defaultValue": "60.0",
+            "notes": "**Notes**: 光环基础半径",
+            "localizedName": "光环基础半径"
+        },
+        {
+            "name": "ringRadSpacing",
+            "type": "float",
+            "defaultValue": "25.0",
+            "notes": "**Notes**: 光环半径间距",
+            "localizedName": "光环半径间距"
+        },
+        {
+            "name": "ringRadPow",
+            "type": "float",
+            "defaultValue": "1.6",
+            "notes": "**Notes**: 光环半径幂次",
+            "localizedName": "光环半径幂次"
+        },
+        {
+            "name": "ringStroke",
+            "type": "float",
+            "defaultValue": "3.0",
+            "notes": "**Notes**: 光环线条宽度",
+            "localizedName": "光环线条宽度"
+        },
+        {
+            "name": "ringSpeedup",
+            "type": "float",
+            "defaultValue": "1.4",
+            "notes": "**Notes**: 光环速度倍率",
+            "localizedName": "光环速度倍率"
+        },
+        {
+            "name": "chargeRingMerge",
+            "type": "float",
+            "defaultValue": "2.0",
+            "notes": "**Notes**: 充能光环合并因子",
+            "localizedName": "充能光环合并因子"
+        },
+        {
+            "name": "ringArrowRad",
+            "type": "float",
+            "defaultValue": "3.0",
+            "notes": "**Notes**: 光环箭头半径",
+            "localizedName": "光环箭头半径"
+        },
+        {
+            "name": "ringHandleTilt",
+            "type": "float",
+            "defaultValue": "0.8",
+            "notes": "**Notes**: 光环手柄倾斜度",
+            "localizedName": "光环手柄倾斜度"
+        },
+        {
+            "name": "ringHandleLen",
+            "type": "float",
+            "defaultValue": "30.0",
+            "notes": "**Notes**: 光环手柄长度",
+            "localizedName": "光环手柄长度"
+        },
+        {
+            "name": "ringColor",
+            "type": "Color",
+            "defaultValue": "ffd37fff",
+            "notes": "**Notes**: 光环颜色",
+            "localizedName": "光环颜色"
+        },
+        {
+            "name": "launchLightning",
+            "type": "int",
+            "defaultValue": "20",
+            "notes": "**Notes**: 发射时产生的闪电数量",
+            "localizedName": "发射闪电数量"
+        },
+        {
+            "name": "lightningColor",
+            "type": "Color",
+            "defaultValue": "ffd37fff",
+            "notes": "**Notes**: 闪电颜色",
+            "localizedName": "闪电颜色"
+        },
+        {
+            "name": "lightningDamage",
+            "type": "float",
+            "defaultValue": "40.0",
+            "notes": "**Notes**: 闪电伤害",
+            "localizedName": "闪电伤害"
+        },
+        {
+            "name": "lightningOffset",
+            "type": "float",
+            "defaultValue": "24.0",
+            "notes": "**Notes**: 闪电偏移距离",
+            "localizedName": "闪电偏移距离"
+        },
+        {
+            "name": "lightningLengthMin",
+            "type": "int",
+            "defaultValue": "5",
+            "notes": "**Notes**: 闪电最小长度",
+            "localizedName": "闪电最小长度"
+        },
+        {
+            "name": "lightningLengthMax",
+            "type": "int",
+            "defaultValue": "25",
+            "notes": "**Notes**: 闪电最大长度",
+            "localizedName": "闪电最大长度"
+        },
+        {
+            "name": "lightningLaunchChance",
+            "type": "double",
+            "defaultValue": "0.8",
+            "notes": "**Notes**: 发射时产生闪电的概率",
+            "localizedName": "发射闪电概率"
+        }
+    ]
+}

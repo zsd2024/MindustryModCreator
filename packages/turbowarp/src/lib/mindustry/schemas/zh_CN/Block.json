@@ -1,0 +1,1330 @@
+{
+    "type": "Block",
+    "parentType": "UnlockableContent",
+    "localizedName": "方块基类",
+    "fields": [
+        {
+            "name": "hasItems",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "若为true，建筑拥有ItemModule。\n\n**Notes**: 该字段控制是否启用物品模块；当设为true时，建筑会拥有ItemModule实例来管理物品存储和交互。",
+            "localizedName": "拥有物品模块"
+        },
+        {
+            "name": "hasLiquids",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "若为true，建筑拥有LiquidModule。\n\n**Notes**: 该字段控制是否启用液体模块；当设为true时，建筑会拥有LiquidModule实例来管理液体存储和交互。",
+            "localizedName": "拥有液体模块"
+        },
+        {
+            "name": "hasPower",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "若为true，建筑拥有PowerModule。\n\n**Notes**: 该字段控制是否启用电力模块；当设为true时，建筑会拥有PowerModule实例来管理电力存储和交互。",
+            "localizedName": "拥有电力模块"
+        },
+        {
+            "name": "outputsLiquid",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "用于确定此方块是否在某处输出液体的标志；用于连接。\n\n**Notes**: 控制方块是否具有液体输出能力，影响液体管道的连接判断。",
+            "localizedName": "输出液体"
+        },
+        {
+            "name": "consumesPower",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "某些电力方块（节点）使用此标志标记为不消耗电力。默认为true，即使此方块没有电力模块。\n\n**Notes**: 控制方块是否消耗电力。",
+            "localizedName": "消耗电力"
+        },
+        {
+            "name": "outputsPower",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "若为true，此方块是可以发电的发电机。\n\n**Notes**: 控制方块是否能输出电力。",
+            "localizedName": "输出电力"
+        },
+        {
+            "name": "connectedPower",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "若为false，电力节点无法连接到此方块。\n\n**Notes**: 控制方块是否允许电力节点连接。",
+            "localizedName": "可连接电力"
+        },
+        {
+            "name": "conductivePower",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "若为true，此方块可以像电缆一样传导电力。\n\n**Notes**: 控制方块是否能传导电力（类似于电线）。",
+            "localizedName": "传导电力"
+        },
+        {
+            "name": "outputsPayload",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "若为true，此方块可以输出载荷；影响混合。\n\n**Notes**: 控制方块是否能输出载荷。",
+            "localizedName": "输出载荷"
+        },
+        {
+            "name": "acceptsUnitPayloads",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "若为true，此方块可以输入载荷；影响单位载荷进入行为。\n\n**Notes**: 控制方块是否能接收单位载荷。",
+            "localizedName": "接收单位载荷"
+        },
+        {
+            "name": "acceptsPayload",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "若为true，载荷将尝试移入此方块。\n\n**Notes**: 控制方块是否能接收载荷。",
+            "localizedName": "接收载荷"
+        },
+        {
+            "name": "acceptsItems",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "用于某些运输方块混合的视觉标志。\n\n**Notes**: 控制方块是否接受物品（用于混合渲染）。",
+            "localizedName": "接收物品"
+        },
+        {
+            "name": "alwaysAllowDeposit",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "若为true，此方块不受onlyDepositCore规则影响。\n\n**Notes**: 控制方块是否始终允许物品存入。",
+            "localizedName": "始终允许存入"
+        },
+        {
+            "name": "depositCooldown",
+            "type": "float",
+            "defaultValue": "-1.0",
+            "notes": "当任何物品存入此方块时，应用于玩家存入的冷却时间（秒）。如果非负，覆盖itemDepositCooldown。\n\n**Notes**: 控制玩家存入物品后的冷却时间。",
+            "localizedName": "存入冷却时间"
+        },
+        {
+            "name": "separateItemCapacity",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "若为true，此方块的所有物品容量分开计算而非合并为一个数值。\n\n**Notes**: 控制每种物品是否独立计算容量。",
+            "localizedName": "独立物品容量"
+        },
+        {
+            "name": "itemCapacity",
+            "type": "int",
+            "defaultValue": "10",
+            "notes": "此方块可携带的最大物品数（通常按物品类型计算）。\n\n**Notes**: 控制方块每种物品的最大存储量。",
+            "localizedName": "物品容量"
+        },
+        {
+            "name": "liquidCapacity",
+            "type": "float",
+            "defaultValue": "-1.0",
+            "notes": "如果hasLiquids = true，此方块可携带的最大总液体量。默认值为10，随ConsumeLiquid中的最大液体消耗按比例调整。\n\n**Notes**: 控制方块的液体存储容量。",
+            "localizedName": "液体容量"
+        },
+        {
+            "name": "liquidPressure",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": "更高的数值增加液体输出速度；TODO 移除并用更好的液体系统替代。\n\n**Notes**: 控制液体的输出压力/速度。",
+            "localizedName": "液体压力"
+        },
+        {
+            "name": "outputFacing",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "若为true，此方块向面对的方向输出。用于混合计算。\n\n**Notes**: 控制方块是否朝向输出方向。",
+            "localizedName": "朝向输出"
+        },
+        {
+            "name": "noSideBlend",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "若为true，此方块不接受来自侧面的输入（用于装甲传送带）。\n\n**Notes**: 控制方块是否禁止侧面输入。",
+            "localizedName": "禁止侧面输入"
+        },
+        {
+            "name": "displayFlow",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "是否显示流速。\n\n**Notes**: 控制是否在界面中显示流体/物品流速。",
+            "localizedName": "显示流速"
+        },
+        {
+            "name": "inEditor",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "此方块是否在地图编辑器中可见。\n\n**Notes**: 控制方块在编辑器中的可见性。",
+            "localizedName": "在编辑器中可见"
+        },
+        {
+            "name": "editorConfigurable",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "若为true，将调用buildEditorConfig(Table)以在编辑器中配置此方块。\n\n**Notes**: 控制方块是否可在编辑器中进行配置。",
+            "localizedName": "编辑器可配置"
+        },
+        {
+            "name": "lastConfig",
+            "type": "Object",
+            "defaultValue": "null",
+            "notes": "上次应用于此方块的配置值。\n\n**Notes**: 存储方块的最后配置值。",
+            "localizedName": "上次配置值"
+        },
+        {
+            "name": "saveConfig",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "是否保存上次配置并将其应用于新放置的方块。\n\n**Notes**: 控制方块是否记住上次的配置设置。",
+            "localizedName": "保存配置"
+        },
+        {
+            "name": "copyConfig",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "是否允许通过中键复制配置。\n\n**Notes**: 控制是否可通过中键复制方块的配置。",
+            "localizedName": "复制配置"
+        },
+        {
+            "name": "clearOnDoubleTap",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "若为true，双击此可配置方块将清除配置。\n\n**Notes**: 控制双击是否清除配置。",
+            "localizedName": "双击清除配置"
+        },
+        {
+            "name": "update",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "此方块是否有更新的瓦片实体。\n\n**Notes**: 控制方块是否有每帧更新的实体。",
+            "localizedName": "每帧更新"
+        },
+        {
+            "name": "destructible",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "此方块是否有生命值并可被摧毁。注意：如果update = true，设为false无效！\n\n**Notes**: 控制方块是否可被摧毁。",
+            "localizedName": "可被摧毁"
+        },
+        {
+            "name": "unloadable",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "卸载器是否对此方块有效。\n\n**Notes**: 控制卸载器是否能从此方块取物。",
+            "localizedName": "可被卸载"
+        },
+        {
+            "name": "isDuct",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "若为true，此方块作为管道工作，可从侧面连接装甲管道。\n\nNotes: 控制方块是否为管道类型。",
+            "localizedName": "是否为管道"
+        },
+        {
+            "name": "allowResupply",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "单位是否可以通过从此方块取物来补给。\n\n**Notes**: 控制单位是否能从此方块获取物品。",
+            "localizedName": "允许单位补给"
+        },
+        {
+            "name": "solid",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "是否为实心方块。\n\n**Notes**: 控制方块是否阻挡移动和视线。",
+            "localizedName": "实心方块"
+        },
+        {
+            "name": "solidifes",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "此方块是否可以变为实心。\n\n**Notes**: 控制方块是否具有实心的能力。",
+            "localizedName": "可变为实心"
+        },
+        {
+            "name": "teamPassable",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "若为true，此方块对本队单位视为非实心。\n\n**Notes**: 控制本队单位是否能穿过此方块。",
+            "localizedName": "队友可穿过"
+        },
+        {
+            "name": "underBullets",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "若为true，此方块除非被明确瞄准，否则不会被子弹击中。\n\n**Notes**: 控制方块是否在子弹下方（不会阻挡子弹）。",
+            "localizedName": "子弹下方"
+        },
+        {
+            "name": "rotate",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "是否可旋转。\n\n**Notes**: 控制方块是否可旋转方向。",
+            "localizedName": "可旋转"
+        },
+        {
+            "name": "rotateDraw",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "如果rotate为true且此值为false，绘制时纹理不会旋转。\n\n**Notes**: 控制是否在绘制时旋转纹理。",
+            "localizedName": "绘制时旋转纹理"
+        },
+        {
+            "name": "rotateDrawEditor",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "如果rotate为true且此值为false，在编辑器中绘制时纹理不会旋转。\n\n**Notes**: 控制是否在编辑器中绘制时旋转纹理。",
+            "localizedName": "编辑器中旋转纹理"
+        },
+        {
+            "name": "visualRotationOffset",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "用于损坏计划渲染的视觉旋转偏移。\n\n**Notes**: 控制方块的视觉旋转偏移角度。",
+            "localizedName": "视觉旋转偏移"
+        },
+        {
+            "name": "lockRotation",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "如果rotate = false且此值为true，放置时旋转锁定为0（默认）；仅高级使用。\n\n**Notes**: 控制是否锁定方块旋转。",
+            "localizedName": "锁定旋转"
+        },
+        {
+            "name": "ignoreLineRotation",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "若为true，此方块不会面向线条拖拽方向。\n\n**Notes**: 控制方块是否忽略拖拽线条的旋转方向。",
+            "localizedName": "忽略线条旋转"
+        },
+        {
+            "name": "invertFlip",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "若为true，含此方块的蓝图翻转被反转。\n\n**Notes**: 控制蓝图翻转时是否反向处理。",
+            "localizedName": "反转翻转"
+        },
+        {
+            "name": "variants",
+            "type": "int",
+            "defaultValue": "0",
+            "notes": "要使用的不同变体纹理数量。\n\n**Notes**: 方块的随机外观变体数量。",
+            "localizedName": "变体纹理数量"
+        },
+        {
+            "name": "drawArrow",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "是否绘制旋转箭头——这不适用于线条型方块。\n\n**Notes**: 控制是否在放置预览中绘制方向箭头。",
+            "localizedName": "绘制方向箭头"
+        },
+        {
+            "name": "drawTeamOverlay",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "是否默认在角落绘制队伍标识。\n\n**Notes**: 控制是否显示队伍颜色标识。",
+            "localizedName": "绘制队伍标识"
+        },
+        {
+            "name": "saveData",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "仅静态方块：若为true，瓦片的data()会保存在世界数据中。\n\n**Notes**: 控制是否保存方块的额外数据。",
+            "localizedName": "保存额外数据"
+        },
+        {
+            "name": "breakable",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "是否可以通过右键拆除。\n\n**Notes**: 控制方块是否可被右键拆除。",
+            "localizedName": "可右键拆除"
+        },
+        {
+            "name": "unitMoveBreakable",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "若为true，某些单位踩过/移过此方块时会将其破坏。\n\n**Notes**: 控制单位是否能踩碎此方块。",
+            "localizedName": "可被单位踩碎"
+        },
+        {
+            "name": "rebuildable",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "是否将此方块添加到brokenblocks列表。\n\n**Notes**: 控制方块被摧毁后是否会出现在待重建列表中。",
+            "localizedName": "可被重建"
+        },
+        {
+            "name": "privileged",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "若为true，此逻辑相关方块只能由特权处理器使用（或本身就是一个）。\n\n**Notes**: 控制方块是否需要特权才能使用。",
+            "localizedName": "特权方块"
+        },
+        {
+            "name": "requiresWater",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "此方块是否只能放置在水上。\n\n**Notes**: 控制方块是否要求放置在水面上。",
+            "localizedName": "需要水域"
+        },
+        {
+            "name": "placeableLiquid",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "此方块是否可以放置在任何液体上。\n\n**Notes**: 控制方块是否能放置在液体上。",
+            "localizedName": "可放置在液体上"
+        },
+        {
+            "name": "placeablePlayer",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "此方块是否可以通过PlacementFragment由玩家直接放置。\n\n**Notes**: 控制玩家是否能直接放置此方块。",
+            "localizedName": "玩家可放置"
+        },
+        {
+            "name": "placeableOn",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "此地面是否可被放置方块。\n\n**Notes**: 控制此地面是否允许在其上放置其他方块。",
+            "localizedName": "可被放置方块"
+        },
+        {
+            "name": "insulated",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "此方块是否具有绝缘特性。\n\n**Notes**: 控制方块是否绝缘。",
+            "localizedName": "绝缘方块"
+        },
+        {
+            "name": "squareSprite",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "精灵是否为完整正方形。\n\n**Notes**: 控制精灵是否为正方形。",
+            "localizedName": "正方形精灵"
+        },
+        {
+            "name": "absorbLasers",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "此方块是否吸收激光攻击。\n\n**Notes**: 控制方块是否能吸收激光类攻击。",
+            "localizedName": "吸收激光"
+        },
+        {
+            "name": "enableDrawStatus",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "若为false，状态从不绘制。\n\n**Notes**: 控制是否绘制方块状态指示。",
+            "localizedName": "绘制状态指示"
+        },
+        {
+            "name": "drawDisabled",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "是否绘制禁用状态。\n\n**Notes**: 控制是否在方块禁用时显示禁用标记。",
+            "localizedName": "绘制禁用标记"
+        },
+        {
+            "name": "autoResetEnabled",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "逻辑方块一段时间未交互后是否自动重置启用状态。\n\n**Notes**: 控制逻辑控制后是否自动恢复启用状态。",
+            "localizedName": "自动重置启用"
+        },
+        {
+            "name": "noUpdateDisabled",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "若为true，方块在禁用时停止更新。\n\n**Notes**: 控制禁用时是否停止更新逻辑。",
+            "localizedName": "禁用时停止更新"
+        },
+        {
+            "name": "updateInUnits",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "若为true，此方块作为单位载荷时仍会更新。\n\n**Notes**: 控制方块在单位载荷中是否更新。",
+            "localizedName": "载荷中更新"
+        },
+        {
+            "name": "alwaysUpdateInUnits",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "若为true，此方块在单位载荷中始终更新，不受实验性游戏规则影响。\n\n**Notes**: 控制方块在载荷中是否强制更新。",
+            "localizedName": "载荷中强制更新"
+        },
+        {
+            "name": "canPickup",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "若为true，此方块可以被作为载荷拾取。\n\n**Notes**: 控制方块是否能被拾取为载荷。",
+            "localizedName": "可被拾取"
+        },
+        {
+            "name": "deconstructDropAllLiquid",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "若为false，只有可焚烧液体在拆除时掉落；否则所有液体都会掉落。\n\n**Notes**: 控制拆除时是否掉落所有液体。",
+            "localizedName": "拆除掉落所有液体"
+        },
+        {
+            "name": "useColor",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "是否在小地图中使用此方块的颜色。仅用于覆盖层。\n\n**Notes**: 控制小地图中是否使用方块颜色。",
+            "localizedName": "使用小地图颜色"
+        },
+        {
+            "name": "itemDrop",
+            "type": "Item",
+            "defaultValue": "null",
+            "notes": "此方块掉落的物品，用于钻头。\n\n**Notes**: 钻头开采此方块获得的物品。",
+            "localizedName": "掉落物品"
+        },
+        {
+            "name": "playerUnmineable",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "若为true，玩家无法开采此方块。对沙子等烦人物品有用。\n\n**Notes**: 控制玩家是否能开采此方块。",
+            "localizedName": "玩家不可开采"
+        },
+        {
+            "name": "attributes",
+            "type": "Attributes",
+            "defaultValue": "new Attributes()",
+            "notes": "与某些事物的亲和数组。\n\n**Notes**: 方块的环境属性值集合（如光照、温度等）。",
+            "localizedName": "环境属性"
+        },
+        {
+            "name": "scaledHealth",
+            "type": "float",
+            "defaultValue": "-1.0",
+            "notes": "此方块每平方瓦片的生命值；本质上乘以size * size。如果health > 0则被覆盖。如果<0，默认值为40。\n\n**Notes**: 基于面积的缩放生命值。",
+            "localizedName": "缩放生命值"
+        },
+        {
+            "name": "health",
+            "type": "int",
+            "defaultValue": "-1",
+            "notes": "建筑生命值；-1使用scaledHealth。\n\n**Notes**: 方块的基础生命值。",
+            "localizedName": "基础生命值"
+        },
+        {
+            "name": "armor",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "伤害吸收，类似于单位护甲。\n\n**Notes**: 减少受到的伤害值。",
+            "localizedName": "护甲值"
+        },
+        {
+            "name": "baseExplosiveness",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "基础方块爆炸性。\n\n**Notes**: 方块被摧毁时的基础爆炸强度。",
+            "localizedName": "基础爆炸性"
+        },
+        {
+            "name": "explosivenessScale",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": "基于物品/液体的爆炸性缩放。\n\n**Notes**: 内部存储的物品/液体对爆炸强度的缩放倍率。",
+            "localizedName": "爆炸性缩放"
+        },
+        {
+            "name": "flammabilityScale",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": "基于物品/液体的爆炸可燃性缩放。\n\n**Notes**: 内部存储的物品/液体对爆炸火焰的缩放倍率。",
+            "localizedName": "可燃性缩放"
+        },
+        {
+            "name": "baseShake",
+            "type": "float",
+            "defaultValue": "3.0",
+            "notes": "摧毁时屏幕震动的基础值。\n\n**Notes**: 方块被摧毁时的屏幕震动强度。",
+            "localizedName": "基础震屏强度"
+        },
+        {
+            "name": "destroyBullet",
+            "type": "BulletType",
+            "defaultValue": "null",
+            "notes": "此方块被摧毁时生成的子弹。\n\n**Notes**: 方块被摧毁时发射的子弹类型。",
+            "localizedName": "摧毁发射子弹"
+        },
+        {
+            "name": "destroyBulletSameTeam",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "若为true，destroyBullet生成在方块的队伍而非Derelict队伍。\n\n**Notes**: 控制摧毁子弹是否使用方块原队伍。",
+            "localizedName": "摧毁子弹使用原队伍"
+        },
+        {
+            "name": "lightLiquid",
+            "type": "Liquid",
+            "defaultValue": "null",
+            "notes": "用于照明的液体。\n\n**Notes**: 方块发光时使用的液体类型。",
+            "localizedName": "照明液体"
+        },
+        {
+            "name": "drawCracks",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "方块受损时是否绘制裂纹。\n\n**Notes**: 控制是否显示损伤裂纹。",
+            "localizedName": "绘制裂纹"
+        },
+        {
+            "name": "createRubble",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "方块被摧毁时是否生成碎石。\n\n**Notes**: 控制是否生成废墟碎片。",
+            "localizedName": "生成废墟碎片"
+        },
+        {
+            "name": "floating",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "此方块是否可以放置在液体边缘。\n\n**Notes**: 控制方块是否能浮在液体上放置。",
+            "localizedName": "可浮空放置"
+        },
+        {
+            "name": "size",
+            "type": "int",
+            "defaultValue": "1",
+            "notes": "多方块尺寸。\n\n**Notes**: 方块的尺寸（例如2表示2x2）。",
+            "localizedName": "方块尺寸"
+        },
+        {
+            "name": "offset",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "多方块偏移。\n\n**Notes**: 方块渲染位置偏移量。",
+            "localizedName": "渲染偏移"
+        },
+        {
+            "name": "sizeOffset",
+            "type": "int",
+            "defaultValue": "0",
+            "notes": "迭代偏移（仅内部使用）。\n\n**Notes**: 内部使用的迭代偏移。",
+            "localizedName": "内部迭代偏移"
+        },
+        {
+            "name": "clipSize",
+            "type": "float",
+            "defaultValue": "-1.0",
+            "notes": "此方块的裁剪大小。至少应与方块绘制范围一样大。\n\n**Notes**: 控制方块的渲染裁剪区域大小。",
+            "localizedName": "裁剪区域大小"
+        },
+        {
+            "name": "lightClipSize",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "仅光源的裁剪大小。\n\n**Notes**: 控制光源的裁剪区域大小。",
+            "localizedName": "光源裁剪区域"
+        },
+        {
+            "name": "placeOverlapRange",
+            "type": "float",
+            "defaultValue": "50.0",
+            "notes": "当启用placeRangeCheck时，此为检查敌方方块的范围。\n\n**Notes**: 检查放置重叠的检测范围。",
+            "localizedName": "放置重叠范围"
+        },
+        {
+            "name": "crushDamageMultiplier",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": "坦克对此方块造成的伤害倍率。不适用于爬行者。\n\n**Notes**: 碾压伤害倍率。",
+            "localizedName": "碾压伤害倍率"
+        },
+        {
+            "name": "crushFragile",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "若为true，此方块被设置为crushFragile = true的坦克瞬间摧毁。\n\n**Notes**: 控制方块是否惧怕碾压（脆弱）。",
+            "localizedName": "惧怕碾压"
+        },
+        {
+            "name": "timers",
+            "type": "int",
+            "defaultValue": "1",
+            "notes": "使用的最大计时器数。\n\n**Notes**: 方块可用的计时器数量。",
+            "localizedName": "计时器数量"
+        },
+        {
+            "name": "cacheLayer",
+            "type": "CacheLayer",
+            "defaultValue": "normal",
+            "notes": "缓存层。仅用于'缓存'渲染。\n\n**Notes**: 控制方块的渲染缓存层类型。",
+            "localizedName": "渲染缓存层"
+        },
+        {
+            "name": "fillsTile",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "特殊标志；若为false，即使方块被缓存，地面仍会在其下方绘制。\n\n**Notes**: 控制方块是否填满整个瓦片。",
+            "localizedName": "填满瓦片"
+        },
+        {
+            "name": "forceDark",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "若为true，即使是人造方块，此方块也会被黑暗/迷雾覆盖。\n\n**Notes**: 控制方块是否强制被黑暗覆盖。",
+            "localizedName": "强制黑暗覆盖"
+        },
+        {
+            "name": "alwaysReplace",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "此方块是否在任意情况下可被替换。\n\n**Notes**: 控制方块是否总是可被替换。",
+            "localizedName": "总是可替换"
+        },
+        {
+            "name": "replaceable",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "若为false，此方块永远不可被替换。\n\n**Notes**: 控制方块是否可被替换。",
+            "localizedName": "可被替换"
+        },
+        {
+            "name": "group",
+            "type": "BlockGroup",
+            "defaultValue": "none",
+            "notes": "方块组。除非重写了canReplace，否则同一组中的方块可以相互替换。\n\n**Notes**: 方块的分类组，用于替换逻辑。",
+            "localizedName": "方块分组"
+        },
+        {
+            "name": "flags",
+            "type": "EnumSet of BlockFlag",
+            "defaultValue": "of()",
+            "notes": "方块标志列表。用于AI索引。\n\n**Notes**: 方块的标志位集合。",
+            "localizedName": "方块标志集合"
+        },
+        {
+            "name": "priority",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "此方块被敌人视为目标的优先级。\n\n**Notes**: 控制敌人优先攻击此方块的程度。",
+            "localizedName": "目标优先级"
+        },
+        {
+            "name": "unitCapModifier",
+            "type": "int",
+            "defaultValue": "0",
+            "notes": "此方块对单位上限的影响量。方块标志必须包含unitModifier才能生效。\n\n**Notes**: 控制方块对单位数量上限的调整。",
+            "localizedName": "单位上限调整"
+        },
+        {
+            "name": "configurable",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "方块是否可被点击选中并配置。\n\n**Notes**: 控制方块是否有配置界面。",
+            "localizedName": "可配置"
+        },
+        {
+            "name": "configureSound",
+            "type": "Sound",
+            "defaultValue": "click",
+            "notes": "配置此方块时播放的音效。\n\n**Notes**: 配置操作音效。",
+            "localizedName": "配置音效"
+        },
+        {
+            "name": "ignoreResizeConfig",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "若为true，此方块在调整大小时不会对pointConfig进行变换。\n\n**Notes**: 控制地图缩放时是否忽略配置变换。",
+            "localizedName": "忽略缩放配置"
+        },
+        {
+            "name": "commandable",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "若为true，此建筑可以像单位一样被选中指挥。\n\n**Notes**: 控制建筑是否可被RTS指挥。",
+            "localizedName": "可RTS指挥"
+        },
+        {
+            "name": "allowConfigInventory",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "若为true，建筑库存可与配置一起显示。\n\n**Notes**: 控制配置界面是否显示建筑库存。",
+            "localizedName": "显示配置库存"
+        },
+        {
+            "name": "selectionRows",
+            "type": "int",
+            "defaultValue": "5",
+            "notes": "定义选择菜单（如分类器）的大小。\n\n**Notes**: 选择菜单的行数。",
+            "localizedName": "选择行数"
+        },
+        {
+            "name": "selectionColumns",
+            "type": "int",
+            "defaultValue": "4",
+            "notes": "定义选择菜单（如分类器）的大小。\n\n**Notes**: 选择菜单的列数。",
+            "localizedName": "选择列数"
+        },
+        {
+            "name": "logicConfigurable",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "若为true，此方块可通过逻辑处理器配置。\n\n**Notes**: 控制方块是否可由逻辑进行配置。",
+            "localizedName": "逻辑可配置"
+        },
+        {
+            "name": "delayLandingConfig",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "若为true，在播放着陆方块建筑动画时延迟配置。这可能在将来被移除！\n\n**Notes**: 控制着陆时是否延迟配置。",
+            "localizedName": "延迟着陆配置"
+        },
+        {
+            "name": "consumesTap",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "此方块被点击时是否消耗touchDown事件。\n\n**Notes**: 控制方块是否拦截点击事件。",
+            "localizedName": "拦截点击事件"
+        },
+        {
+            "name": "drawLiquidLight",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "是否为此方块绘制液体发光效果（如果有）。\n\n**Notes**: 控制是否绘制液体光线。",
+            "localizedName": "绘制液体发光"
+        },
+        {
+            "name": "envRequired",
+            "type": "int",
+            "defaultValue": "0",
+            "notes": "此方块运行所需的环境标志。0 = 任何环境。\n\n**Notes**: 方块所需的环境条件标志。",
+            "localizedName": "所需环境"
+        },
+        {
+            "name": "envEnabled",
+            "type": "int",
+            "defaultValue": "1",
+            "notes": "此方块可运行的环境标志。如果环境匹配其中任何一个，方块将启用。\n\n**Notes**: 方块可运行的环境条件。",
+            "localizedName": "可运行环境"
+        },
+        {
+            "name": "envDisabled",
+            "type": "int",
+            "defaultValue": "0",
+            "notes": "此方块无法运行的环境标志。如果环境匹配其中任何一个，方块将禁用。\n\n**Notes**: 方块无法运行的环境条件。",
+            "localizedName": "禁止运行环境"
+        },
+        {
+            "name": "sync",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "是否定期通过网络同步此方块。\n\n**Notes**: 控制方块是否需要网络同步。",
+            "localizedName": "网络同步"
+        },
+        {
+            "name": "conveyorPlacement",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "此方块是否使用传送带类型的放置模式。\n\n**Notes**: 控制方块是否使用传送带式放置逻辑。",
+            "localizedName": "传送带式放置"
+        },
+        {
+            "name": "allowDiagonal",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "若为false，不允许此方块的对角线放置（ctrl）。\n\n**Notes**: 控制是否允许对角线放置。",
+            "localizedName": "允许对角线放置"
+        },
+        {
+            "name": "swapDiagonalPlacement",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "是否交换对角线放置模式。\n\n**Notes**: 控制是否交换对角线放置的方向。",
+            "localizedName": "交换对角线方向"
+        },
+        {
+            "name": "allowRectanglePlacement",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "是否允许矩形放置，而非线条。\n\n**Notes**: 控制是否允许矩形区域放置。",
+            "localizedName": "允许矩形放置"
+        },
+        {
+            "name": "schematicPriority",
+            "type": "int",
+            "defaultValue": "0",
+            "notes": "蓝图中的建造队列优先级。\n\n**Notes**: 控制蓝图建造顺序的优先级。",
+            "localizedName": "蓝图优先级"
+        },
+        {
+            "name": "mapColor",
+            "type": "Color",
+            "defaultValue": "000000ff",
+            "notes": "此方块在小地图或地图预览中显示的颜色。请勿手动设置！大多数方块的此值在加载时被覆盖。\n\n**Notes**: 小地图颜色。",
+            "localizedName": "小地图颜色"
+        },
+        {
+            "name": "hasColor",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "此方块是否有小地图颜色。\n\n**Notes**: 控制方块是否有小地图颜色。",
+            "localizedName": "拥有小地图颜色"
+        },
+        {
+            "name": "targetable",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "单位是否以此方块为目标。\n\n**Notes**: 控制单位是否会自动瞄准此方块。",
+            "localizedName": "可被瞄准"
+        },
+        {
+            "name": "attacks",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "若为true，此方块会攻击并在indexer中被视为炮塔。建筑必须实现Ranged接口。\n\n**Notes**: 控制方块是否为攻击性炮塔。",
+            "localizedName": "攻击性炮塔"
+        },
+        {
+            "name": "suppressable",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "若为true，此方块与修复相关，可被特殊单位/导弹压制。\n\n**Notes**: 控制方块是否可被压制。",
+            "localizedName": "可被压制"
+        },
+        {
+            "name": "canOverdrive",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "过载核心是否对此方块有任何效果。\n\n**Notes**: 控制方块是否可被过载。",
+            "localizedName": "可被过载"
+        },
+        {
+            "name": "outlineColor",
+            "type": "Color",
+            "defaultValue": "404049ff",
+            "notes": "轮廓图标颜色。\n\n**Notes**: 方块图标的轮廓颜色。",
+            "localizedName": "轮廓颜色"
+        },
+        {
+            "name": "outlineIcon",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "是否有图标区域添加了轮廓。\n\n**Notes**: 控制图标是否生成轮廓。",
+            "localizedName": "图标轮廓"
+        },
+        {
+            "name": "outlineRadius",
+            "type": "int",
+            "defaultValue": "4",
+            "notes": "轮廓图标半径。\n\n**Notes**: 轮廓的像素粗细。",
+            "localizedName": "轮廓半径"
+        },
+        {
+            "name": "outlinedIcon",
+            "type": "int",
+            "defaultValue": "-1",
+            "notes": "哪些图标区域会添加轮廓。使用<= 0时的最后一个图标。\n\n**Notes**: 指定被轮廓化的图标索引。",
+            "localizedName": "轮廓图标索引"
+        },
+        {
+            "name": "hasShadow",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "此方块是否有阴影。\n\n**Notes**: 控制方块是否在下方绘制阴影。",
+            "localizedName": "有阴影"
+        },
+        {
+            "name": "customShadow",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "若为true，在此方块下方绘制自定义阴影（名称-shadow）。\n\n**Notes**: 控制方块是否使用自定义阴影纹理。",
+            "localizedName": "自定义阴影"
+        },
+        {
+            "name": "placePitchChange",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "此方块建造时的音效音调是否应变化。\n\n**Notes**: 控制建造音效是否随机音调。",
+            "localizedName": "建造音调变化"
+        },
+        {
+            "name": "breakPitchChange",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "此方块拆除时的音效音调是否应变化。\n\n**Notes**: 控制拆除音效是否随机音调。",
+            "localizedName": "拆除音调变化"
+        },
+        {
+            "name": "placeSound",
+            "type": "Sound",
+            "defaultValue": "unset",
+            "notes": "此方块建造时的音效。\n\n**Notes**: 建造音效。",
+            "localizedName": "建造音效"
+        },
+        {
+            "name": "breakSound",
+            "type": "Sound",
+            "defaultValue": "unset",
+            "notes": "此方块拆除时的音效。\n\n**Notes**: 拆除音效。",
+            "localizedName": "拆除音效"
+        },
+        {
+            "name": "destroySound",
+            "type": "Sound",
+            "defaultValue": "unset",
+            "notes": "此方块被摧毁时的音效。\n\n**Notes**: 摧毁音效。",
+            "localizedName": "摧毁音效"
+        },
+        {
+            "name": "destroySoundVolume",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": "摧毁音效的音量。\n\n**Notes**: 控制摧毁音效的音量大小。",
+            "localizedName": "摧毁音效音量"
+        },
+        {
+            "name": "destroyPitchMin",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": "摧毁音效的范围。\n\n**Notes**: 摧毁音效的最小音调。",
+            "localizedName": "摧毁音调最小值"
+        },
+        {
+            "name": "destroyPitchMax",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": "摧毁音效的范围。\n\n**Notes**: 摧毁音效的最大音调。",
+            "localizedName": "摧毁音调最大值"
+        },
+        {
+            "name": "albedo",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "此方块的反射率。\n\n**Notes**: 控制方块对光照的反射程度。",
+            "localizedName": "表面反射率"
+        },
+        {
+            "name": "lightColor",
+            "type": "Color",
+            "defaultValue": "ffffffff",
+            "notes": "环境被动光颜色。\n\n**Notes**: 方块发出的环境光颜色。",
+            "localizedName": "环境光颜色"
+        },
+        {
+            "name": "emitLight",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "若为true，将为此方块调用drawLight()。\n\n**Notes**: 控制方块是否发光。",
+            "localizedName": "发射光源"
+        },
+        {
+            "name": "obstructsLight",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "若为true，此方块阻挡其他方块发出的光。\n\n**Notes**: 控制方块是否阻挡光线传播。",
+            "localizedName": "阻挡光线"
+        },
+        {
+            "name": "lightRadius",
+            "type": "float",
+            "defaultValue": "60.0",
+            "notes": "此方块发出的光的半径。\n\n**Notes**: 光的照射半径。",
+            "localizedName": "光源半径"
+        },
+        {
+            "name": "fogRadius",
+            "type": "int",
+            "defaultValue": "-1",
+            "notes": "此方块驱散多少迷雾（以瓦片为单位）。不能动态变化。<= 0禁用。\n\n**Notes**: 方块的视野驱雾半径。",
+            "localizedName": "驱雾半径"
+        },
+        {
+            "name": "ambientSound",
+            "type": "Sound",
+            "defaultValue": "none",
+            "notes": "此方块空闲时播放的音效。所有方块共用一个音效循环。\n\n**Notes**: 环境音效。",
+            "localizedName": "环境音效"
+        },
+        {
+            "name": "ambientSoundVolume",
+            "type": "float",
+            "defaultValue": "0.05",
+            "notes": "空闲音效的基础音量。\n\n**Notes**: 环境音效的音量。",
+            "localizedName": "环境音效音量"
+        },
+        {
+            "name": "requirements",
+            "type": "ItemStack[]",
+            "defaultValue": "[]",
+            "notes": "建造此方块的所需材料。\n\n**Notes**: 建造成本列表。",
+            "localizedName": "建造成本"
+        },
+        {
+            "name": "category",
+            "type": "Category",
+            "defaultValue": "distribution",
+            "notes": "放置菜单中的分类。\n\n**Notes**: 方块在建造菜单中的分类。",
+            "localizedName": "建造分类"
+        },
+        {
+            "name": "buildTime",
+            "type": "float",
+            "defaultValue": "-1.0",
+            "notes": "建造此方块的时间（tick数）。如果此值<0，则动态计算。\n\n**Notes**: 方块建造所需的施工时间。",
+            "localizedName": "建造时间"
+        },
+        {
+            "name": "buildVisibility",
+            "type": "BuildVisibility",
+            "defaultValue": "hidden",
+            "notes": "此方块是否可见并可建造。\n\n**Notes**: 控制方块的建造可见性。",
+            "localizedName": "建造可见性"
+        },
+        {
+            "name": "buildCostMultiplier",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": "建造此方块的速度倍率。\n\n**Notes**: 控制建造速度的倍率。",
+            "localizedName": "建造速度倍率"
+        },
+        {
+            "name": "deconstructThreshold",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "拆除完成的建造进度阈值。\n\n**Notes**: 控制拆除完成所需的进度比例。",
+            "localizedName": "拆除进度阈值"
+        },
+        {
+            "name": "instantDeconstruct",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "若为true，此方块立即拆除。立即拆除意味着不返还资源。\n\n**Notes**: 控制方块是否瞬间拆除。",
+            "localizedName": "瞬间拆除"
+        },
+        {
+            "name": "instantBuild",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "若为true，此方块立即建造。这意味着不需要资源，并忽略配置——请勿使用，仅供性能优化！\n\n**Notes**: 控制方块是否瞬间建造（仅供性能优化使用）。",
+            "localizedName": "瞬间建造"
+        },
+        {
+            "name": "ignoreBuildDarkness",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "若为true，此方块即使在'黑暗'区域也可放置。仅用于编辑器静态墙壁。\n\n**Notes**: 控制方块是否无视黑暗区域限制。",
+            "localizedName": "无视黑暗限制"
+        },
+        {
+            "name": "placeEffect",
+            "type": "Effect",
+            "defaultValue": "placeBlock",
+            "notes": "放置方块时的特效。将尺寸作为旋转传递给特效。\n\n**Notes**: 放置特效。",
+            "localizedName": "放置特效"
+        },
+        {
+            "name": "breakEffect",
+            "type": "Effect",
+            "defaultValue": "breakBlock",
+            "notes": "拆除方块时的特效。将尺寸作为旋转传递给特效。\n\n**Notes**: 拆除特效。",
+            "localizedName": "拆除特效"
+        },
+        {
+            "name": "destroyEffect",
+            "type": "Effect",
+            "defaultValue": "dynamicExplosion",
+            "notes": "摧毁方块时的特效。\n\n**Notes**: 摧毁特效。",
+            "localizedName": "摧毁特效"
+        },
+        {
+            "name": "researchCostMultiplier",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": "科技树研究成本的倍率。\n\n**Notes**: 研究成本倍率。",
+            "localizedName": "研究成本倍率"
+        },
+        {
+            "name": "researchCostMultipliers",
+            "type": "ObjectFloatMap of Item",
+            "defaultValue": "new ObjectFloatMap<>()",
+            "notes": "每种物品的成本倍率。\n\n**Notes**: 每种物品的研究成本倍率映射。",
+            "localizedName": "研究成本倍率映射"
+        },
+        {
+            "name": "researchCost",
+            "type": "ItemStack[]",
+            "defaultValue": "null",
+            "notes": "研究成本的覆盖值。如果未设置，则使用上述倍率和建造成本。\n\n**Notes**: 手动设置的研究成本。",
+            "localizedName": "研究成本覆盖"
+        },
+        {
+            "name": "forceTeam",
+            "type": "Team",
+            "defaultValue": "null",
+            "notes": "若设置，所有方块将被强制归为此队伍。\n\n**Notes**: 强制所有此方块为指定队伍。",
+            "localizedName": "强制队伍"
+        },
+        {
+            "name": "instantTransfer",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "此方块是否具有即时传输能力。\n\n**Notes**: 控制物品/液体是否即时传输。",
+            "localizedName": "即时传输"
+        },
+        {
+            "name": "quickRotate",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "放置后是否可以旋转此方块。\n\n**Notes**: 控制方块放置后是否可快速旋转。",
+            "localizedName": "快速旋转"
+        },
+        {
+            "name": "allowDerelictRepair",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "若为true，可以通过点击废弃方块来修复它。\n\n**Notes**: 控制是否允许修复废弃方块。",
+            "localizedName": "允许修复废弃"
+        },
+        {
+            "name": "subclass",
+            "type": "Class of ?",
+            "defaultValue": "class mindustry.world.Block",
+            "notes": "主要子类。非匿名类。\n\n**Notes**: 方块的主要子类。",
+            "localizedName": "主要子类"
+        },
+        {
+            "name": "selectScroll",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "某些方块的滚动位置。\n\n**Notes**: 选择界面的滚动位置。",
+            "localizedName": "选择滚动位置"
+        },
+        {
+            "name": "buildType",
+            "type": "Prov of Building",
+            "defaultValue": "null",
+            "notes": "为此方块创建的Building。通过反射在init()中初始化。如果是Mod方块，请手动设置。\n\n**Notes**: 方块对应的建筑实体类型。",
+            "localizedName": "建筑实体类型"
+        },
+        {
+            "name": "configurations",
+            "type": "ObjectMap of Class of ?, Cons2",
+            "defaultValue": "new ObjectMap<>()",
+            "notes": "按类型分类的配置处理器。\n\n**Notes**: 配置类型的处理映射表。",
+            "localizedName": "配置处理器映射"
+        },
+        {
+            "name": "itemFilter",
+            "type": "boolean[]",
+            "defaultValue": "[]",
+            "notes": "消耗过滤器。\n\n**Notes**: 物品消耗过滤器的布尔数组。",
+            "localizedName": "物品过滤器"
+        },
+        {
+            "name": "liquidFilter",
+            "type": "boolean[]",
+            "defaultValue": "[]",
+            "notes": "消耗过滤器。\n\n**Notes**: 液体消耗过滤器的布尔数组。",
+            "localizedName": "液体过滤器"
+        },
+        {
+            "name": "consumers",
+            "type": "Consume[]",
+            "defaultValue": "[]",
+            "notes": "此方块使用的消耗物数组。仅在init()后填充。\n\n**Notes**: 消耗列表（包括可选和非可选）。",
+            "localizedName": "消耗物列表"
+        },
+        {
+            "name": "optionalConsumers",
+            "type": "Consume[]",
+            "defaultValue": "[]",
+            "notes": "此方块使用的消耗物数组。仅在init()后填充。\n\n**Notes**: 可选消耗列表。",
+            "localizedName": "可选消耗物列表"
+        },
+        {
+            "name": "nonOptionalConsumers",
+            "type": "Consume[]",
+            "defaultValue": "[]",
+            "notes": "此方块使用的消耗物数组。仅在init()后填充。\n\n**Notes**: 非可选消耗列表。",
+            "localizedName": "非可选消耗物列表"
+        },
+        {
+            "name": "updateConsumers",
+            "type": "Consume[]",
+            "defaultValue": "[]",
+            "notes": "此方块使用的消耗物数组。仅在init()后填充。\n\n**Notes**: 更新时检查的消耗列表。",
+            "localizedName": "更新时消耗列表"
+        },
+        {
+            "name": "hasConsumers",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "如果此方块在其数组中有任何消耗物，则设为true。\n\n**Notes**: 标记方块是否有消耗物。",
+            "localizedName": "拥有消耗物"
+        },
+        {
+            "name": "consPower",
+            "type": "ConsumePower",
+            "defaultValue": "null",
+            "notes": "单个电力消耗物（如果适用）。\n\n**Notes**: 电力消耗配置引用。",
+            "localizedName": "电力消耗配置"
+        },
+        {
+            "name": "regionRotated1",
+            "type": "int",
+            "defaultValue": "-1",
+            "notes": "来自icons()中可旋转的纹理索引。如果其中任何一个不是-1，其他纹理在ConstructBlocks中不会被旋转。\n\n**Notes**: 第一个可旋转的纹理区域索引。",
+            "localizedName": "可旋转纹理索引一"
+        },
+        {
+            "name": "regionRotated2",
+            "type": "int",
+            "defaultValue": "-1",
+            "notes": "来自icons()中可旋转的纹理索引。如果其中任何一个不是-1，其他纹理在ConstructBlocks中不会被旋转。\n\n**Notes**: 第二个可旋转的纹理区域索引。",
+            "localizedName": "可旋转纹理索引二"
+        },
+        {
+            "name": "region",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": "**Notes**: 方块的主要纹理区域。",
+            "localizedName": "主纹理区域"
+        },
+        {
+            "name": "customShadowRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": "**Notes**: 自定义阴影纹理区域。",
+            "localizedName": "自定义阴影纹理"
+        },
+        {
+            "name": "teamRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": "**Notes**: 队伍标识纹理区域。",
+            "localizedName": "队伍标识纹理"
+        },
+        {
+            "name": "teamRegions",
+            "type": "TextureRegion[]",
+            "defaultValue": "null",
+            "notes": "**Notes**: 队伍标识纹理区域数组。",
+            "localizedName": "队伍标识纹理数组"
+        },
+        {
+            "name": "variantRegions",
+            "type": "TextureRegion[]",
+            "defaultValue": "null",
+            "notes": "**Notes**: 变体纹理区域数组。",
+            "localizedName": "变体纹理数组"
+        },
+        {
+            "name": "variantShadowRegions",
+            "type": "TextureRegion[]",
+            "defaultValue": "null",
+            "notes": "**Notes**: 变体阴影纹理区域数组。",
+            "localizedName": "变体阴影纹理数组"
+        },
+        {
+            "name": "dumpTime",
+            "type": "int",
+            "defaultValue": "5",
+            "notes": "尝试倾倒物品的频率（tick数），例如5 = 12次/秒。\n\n**Notes**: 控制物品的输出频率。",
+            "localizedName": "输出周期"
+        }
+    ]
+}

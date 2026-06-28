@@ -1,0 +1,18 @@
+{
+    "type": "LiquidSource",
+    "parentType": "Block",
+    "fields": [
+        {
+            "name": "crossRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "bottomRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        }
+    ]
+}

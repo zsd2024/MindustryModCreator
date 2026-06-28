@@ -1,0 +1,28 @@
+{
+    "type": "ShallowLiquid",
+    "parentType": "Floor",
+    "localizedName": "浅层液体",
+    "fields": [
+        {
+            "name": "liquidBase",
+            "type": "Floor",
+            "defaultValue": "null",
+            "localizedName": "液体基底",
+            "notes": "**Notes**: 用于混合的液体地板基础。"
+        },
+        {
+            "name": "floorBase",
+            "type": "Floor",
+            "defaultValue": "null",
+            "localizedName": "地板基底",
+            "notes": "**Notes**: 用于混合的普通地板基础。"
+        },
+        {
+            "name": "liquidOpacity",
+            "type": "float",
+            "defaultValue": "0.35",
+            "localizedName": "液体透明度",
+            "notes": "**Notes**: 液体覆盖层的透明度。"
+        }
+    ]
+}

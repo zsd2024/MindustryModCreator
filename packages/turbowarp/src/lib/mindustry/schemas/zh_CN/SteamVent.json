@@ -1,0 +1,35 @@
+{
+    "type": "SteamVent",
+    "parentType": "Floor",
+    "localizedName": "蒸汽口",
+    "fields": [
+        {
+            "name": "parent",
+            "type": "Block",
+            "defaultValue": "air",
+            "localizedName": "父级方块",
+            "notes": "**Notes**: 蒸汽口下方的父级方块。"
+        },
+        {
+            "name": "effect",
+            "type": "Effect",
+            "defaultValue": "ventSteam",
+            "localizedName": "蒸汽效果",
+            "notes": "**Notes**: 蒸汽喷射效果。"
+        },
+        {
+            "name": "effectColor",
+            "type": "Color",
+            "defaultValue": "6b4e4eff",
+            "localizedName": "效果颜色",
+            "notes": "**Notes**: 蒸汽效果的颜色。"
+        },
+        {
+            "name": "effectSpacing",
+            "type": "float",
+            "defaultValue": "15.0",
+            "localizedName": "效果间隔",
+            "notes": "**Notes**: 蒸汽喷射的时间间隔（刻数）。"
+        }
+    ]
+}

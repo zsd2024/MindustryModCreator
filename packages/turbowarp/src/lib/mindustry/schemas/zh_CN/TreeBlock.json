@@ -1,0 +1,21 @@
+{
+    "type": "TreeBlock",
+    "parentType": "Block",
+    "localizedName": "树木方块",
+    "fields": [
+        {
+            "name": "shadowOffset",
+            "type": "float",
+            "localizedName": "阴影偏移量",
+            "defaultValue": "-4.0",
+            "notes": "**Notes**: 树影的偏移量。"
+        },
+        {
+            "name": "shadow",
+            "type": "TextureRegion",
+            "localizedName": "阴影纹理",
+            "defaultValue": "null",
+            "notes": "**Notes**: 运行时加载的树木阴影纹理。"
+        }
+    ]
+}

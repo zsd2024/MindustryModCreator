@@ -1,0 +1,112 @@
+{
+    "type": "WallCrafter",
+    "parentType": "Block",
+    "localizedName": "墙面钻取机",
+    "fields": [
+        {
+            "name": "topRegion",
+            "type": "TextureRegion",
+            "localizedName": "顶部纹理",
+            "defaultValue": "null",
+            "notes": "**Notes**: 顶部纹理区域"
+        },
+        {
+            "name": "rotatorBottomRegion",
+            "type": "TextureRegion",
+            "localizedName": "旋转器底部纹理",
+            "defaultValue": "null",
+            "notes": "**Notes**: 旋转器底部纹理区域"
+        },
+        {
+            "name": "rotatorRegion",
+            "type": "TextureRegion",
+            "localizedName": "旋转器纹理",
+            "defaultValue": "null",
+            "notes": "**Notes**: 旋转器纹理区域"
+        },
+        {
+            "name": "drillTime",
+            "type": "float",
+            "localizedName": "钻取时间",
+            "defaultValue": "150.0",
+            "notes": "100%效率下生产一个物品所需的时间。\n\n**Notes**: 100%效率下生产一个物品所需的时间"
+        },
+        {
+            "name": "liquidBoostIntensity",
+            "type": "float",
+            "localizedName": "液体增强倍率",
+            "defaultValue": "1.6",
+            "notes": "被液体增强时钻取速度提升的倍数。\n\n**Notes**: 被液体增强时钻取速度提升的倍数"
+        },
+        {
+            "name": "updateEffect",
+            "type": "Effect",
+            "localizedName": "钻取特效",
+            "defaultValue": "mineWallSmall",
+            "notes": "钻取时随机播放的特效。\n\n**Notes**: 钻取时随机播放的特效"
+        },
+        {
+            "name": "updateEffectChance",
+            "type": "float",
+            "localizedName": "特效触发概率",
+            "defaultValue": "0.02",
+            "notes": "**Notes**: 钻取特效触发概率"
+        },
+        {
+            "name": "rotateSpeed",
+            "type": "float",
+            "localizedName": "旋转速度",
+            "defaultValue": "2.0",
+            "notes": "**Notes**: 旋转速度"
+        },
+        {
+            "name": "attribute",
+            "type": "Attribute",
+            "localizedName": "环境属性",
+            "defaultValue": "sand",
+            "notes": "用于检测墙壁输出的属性类型。\n\n**Notes**: 用于检测墙壁输出的属性类型"
+        },
+        {
+            "name": "output",
+            "type": "Item",
+            "localizedName": "输出物品",
+            "defaultValue": "sand",
+            "notes": "**Notes**: 输出物品"
+        },
+        {
+            "name": "boostItemUseTime",
+            "type": "float",
+            "localizedName": "物品增强消耗间隔",
+            "defaultValue": "120.0",
+            "notes": "**Notes**: 物品增强消耗间隔时间"
+        },
+        {
+            "name": "itemBoostIntensity",
+            "type": "float",
+            "localizedName": "物品增强倍率",
+            "defaultValue": "1.6",
+            "notes": "被物品增强时钻取速度提升的倍数。注意：不支持同时使用物品和液体增强。\n\n**Notes**: 被物品增强时钻取速度提升的倍数（不支持与液体增强同时使用）"
+        },
+        {
+            "name": "itemConsumer",
+            "type": "Consume",
+            "localizedName": "物品消耗器",
+            "defaultValue": "null",
+            "notes": "**Notes**: 物品消耗器（可选增强消耗）"
+        },
+        {
+            "name": "hasLiquidBooster",
+            "type": "boolean",
+            "localizedName": "有液体增强器",
+            "defaultValue": "false",
+            "notes": "**Notes**: 是否有液体增强器"
+        },
+        {
+            "name": "timerUse",
+            "type": "int",
+            "localizedName": "物品消耗计时器",
+            "defaultValue": "1",
+            "notes": "**Notes**: 物品消耗计时器ID"
+        }
+    ]
+}

@@ -1,0 +1,42 @@
+{
+    "type": "DroneCenter",
+    "parentType": "Block",
+    "fields": [
+        {
+            "name": "unitsSpawned",
+            "type": "int",
+            "defaultValue": "4",
+            "notes": ""
+        },
+        {
+            "name": "droneType",
+            "type": "UnitType",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "status",
+            "type": "StatusEffect",
+            "defaultValue": "overdrive",
+            "notes": ""
+        },
+        {
+            "name": "droneConstructTime",
+            "type": "float",
+            "defaultValue": "180.0",
+            "notes": ""
+        },
+        {
+            "name": "statusDuration",
+            "type": "float",
+            "defaultValue": "120.0",
+            "notes": ""
+        },
+        {
+            "name": "droneRange",
+            "type": "float",
+            "defaultValue": "50.0",
+            "notes": ""
+        }
+    ]
+}

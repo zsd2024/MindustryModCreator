@@ -1,0 +1,18 @@
+{
+    "type": "PayloadVoid",
+    "parentType": "PayloadBlock",
+    "fields": [
+        {
+            "name": "incinerateEffect",
+            "type": "Effect",
+            "defaultValue": "blastExplosion",
+            "notes": ""
+        },
+        {
+            "name": "incinerateSound",
+            "type": "Sound",
+            "defaultValue": "unitExplode1",
+            "notes": ""
+        }
+    ]
+}

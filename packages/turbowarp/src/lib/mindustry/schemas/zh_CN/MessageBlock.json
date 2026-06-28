@@ -1,0 +1,21 @@
+{
+    "type": "MessageBlock",
+    "parentType": "Block",
+    "localizedName": "消息方块",
+    "fields": [
+        {
+            "name": "maxTextLength",
+            "localizedName": "最大文本长度",
+            "type": "int",
+            "defaultValue": "400",
+            "notes": "writeUTF 每个字符的最大 UTF-8 长度为 3 字节，因此 3*400 = 1200 字节，为最大字符串字节数\n\n**Notes**: 消息块中允许的最大文本长度"
+        },
+        {
+            "name": "maxNewlines",
+            "localizedName": "最大换行数",
+            "type": "int",
+            "defaultValue": "24",
+            "notes": "**Notes**: 消息中允许的最大换行符数量"
+        }
+    ]
+}

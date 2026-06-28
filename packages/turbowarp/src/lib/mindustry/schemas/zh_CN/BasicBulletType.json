@@ -1,0 +1,112 @@
+{
+    "type": "BasicBulletType",
+    "parentType": "BulletType",
+    "localizedName": "基础子弹类型",
+    "fields": [
+        {
+            "name": "backColor",
+            "type": "Color",
+            "defaultValue": "f9c27aff",
+            "notes": "**Notes**: 子弹后方（底部）精灵的颜色，默认为黄色调，在绘制backRegion时应用。",
+            "localizedName": "后方颜色"
+        },
+        {
+            "name": "frontColor",
+            "type": "Color",
+            "defaultValue": "fff8e8ff",
+            "notes": "**Notes**: 子弹前方（顶部）精灵的颜色，在绘制frontRegion时应用，默认为亮黄色。",
+            "localizedName": "前方颜色"
+        },
+        {
+            "name": "mixColorFrom",
+            "type": "Color",
+            "defaultValue": "ffffff00",
+            "notes": "**Notes**: 混合颜色的起始色，透明度为0表示默认不启用混色效果，随子弹飞行时间从起始色渐变至mixColorTo。",
+            "localizedName": "混合起始颜色"
+        },
+        {
+            "name": "mixColorTo",
+            "type": "Color",
+            "defaultValue": "ffffff00",
+            "notes": "**Notes**: 混合颜色的结束色，子弹飞行过程中通过lerp从mixColorFrom过渡到此颜色。",
+            "localizedName": "混合结束颜色"
+        },
+        {
+            "name": "width",
+            "type": "float",
+            "defaultValue": "5.0",
+            "notes": "**Notes**: 子弹精灵的绘制宽度（像素单位），在渲染时应用shrinkX收缩系数。",
+            "localizedName": "绘制宽度"
+        },
+        {
+            "name": "height",
+            "type": "float",
+            "defaultValue": "7.0",
+            "notes": "**Notes**: 子弹精灵的绘制高度（像素单位），在渲染时应用shrinkY收缩系数。",
+            "localizedName": "绘制高度"
+        },
+        {
+            "name": "shrinkX",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "**Notes**: X轴方向的收缩因子，0表示不收缩，1表示完全收缩到0宽度，实际收缩量通过shrinkInterp插值计算。",
+            "localizedName": "X轴收缩因子"
+        },
+        {
+            "name": "shrinkY",
+            "type": "float",
+            "defaultValue": "0.5",
+            "notes": "**Notes**: Y轴方向的收缩因子，默认0.5使得子弹在生命周期结束时高度减半。",
+            "localizedName": "Y轴收缩因子"
+        },
+        {
+            "name": "shrinkInterp",
+            "type": "Interp",
+            "defaultValue": "linear",
+            "notes": "**Notes**: 控制收缩动画的插值函数，默认线性插值，可替换为其他缓动函数改变收缩曲线。",
+            "localizedName": "收缩插值函数"
+        },
+        {
+            "name": "spin",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "**Notes**: 子弹自转速度（度/帧），非零时基于子弹ID添加随机初始旋转偏移，持续旋转。",
+            "localizedName": "自转速度"
+        },
+        {
+            "name": "rotationOffset",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "**Notes**: 额外的旋转角度偏移量，在计算最终旋转角度时累加到自转和飞行方向之上。",
+            "localizedName": "旋转角度偏移"
+        },
+        {
+            "name": "sprite",
+            "type": "String",
+            "defaultValue": "bullet",
+            "notes": "**Notes**: 子弹前方精灵的纹理名称，默认使用\"bullet\"，同时用于推导后方精灵路径（sprite + \"-back\"）。",
+            "localizedName": "精灵纹理名称"
+        },
+        {
+            "name": "backSprite",
+            "type": "String",
+            "defaultValue": "null",
+            "notes": "**Notes**: 后方精灵的显式纹理名称（可选），若为null则自动使用sprite + \"-back\"作为路径。",
+            "localizedName": "后方精灵名称"
+        },
+        {
+            "name": "backRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": "**Notes**: 运行时从backSprite加载的后方纹理区域，在load()方法中通过Core.atlas.find()初始化。",
+            "localizedName": "后方纹理区域"
+        },
+        {
+            "name": "frontRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": "**Notes**: 运行时从sprite加载的前方纹理区域，在load()方法中通过Core.atlas.find()初始化。",
+            "localizedName": "前方纹理区域"
+        }
+    ]
+}

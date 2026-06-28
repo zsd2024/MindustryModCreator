@@ -1,0 +1,203 @@
+{
+    "type": "EnergyFieldAbility",
+    "parentType": "Ability",
+    "localizedName": "能量场能力",
+    "fields": [
+        {
+            "name": "damage",
+            "type": "float",
+            "localizedName": "伤害值",
+            "defaultValue": "1.0",
+            "notes": "**Notes**: 伤害值"
+        },
+        {
+            "name": "reload",
+            "type": "float",
+            "localizedName": "装填时间",
+            "defaultValue": "100.0",
+            "notes": "**Notes**: 装填时间"
+        },
+        {
+            "name": "range",
+            "type": "float",
+            "localizedName": "范围",
+            "defaultValue": "60.0",
+            "notes": "**Notes**: 范围"
+        },
+        {
+            "name": "healEffect",
+            "type": "Effect",
+            "localizedName": "治疗效果",
+            "defaultValue": "heal",
+            "notes": "**Notes**: 治疗效果"
+        },
+        {
+            "name": "hitEffect",
+            "type": "Effect",
+            "localizedName": "命中效果",
+            "defaultValue": "hitLaserBlast",
+            "notes": "**Notes**: 命中效果"
+        },
+        {
+            "name": "damageEffect",
+            "type": "Effect",
+            "localizedName": "伤害效果",
+            "defaultValue": "chainLightning",
+            "notes": "**Notes**: 伤害效果"
+        },
+        {
+            "name": "status",
+            "type": "StatusEffect",
+            "localizedName": "状态效果",
+            "defaultValue": "electrified",
+            "notes": "**Notes**: 状态效果"
+        },
+        {
+            "name": "shootSound",
+            "type": "Sound",
+            "localizedName": "射击音效",
+            "defaultValue": "shootEnergyField",
+            "notes": "**Notes**: 射击音效"
+        },
+        {
+            "name": "statusDuration",
+            "type": "float",
+            "localizedName": "状态效果持续时间",
+            "defaultValue": "360.0",
+            "notes": "**Notes**: 状态效果持续时间"
+        },
+        {
+            "name": "x",
+            "type": "float",
+            "localizedName": "效果偏移X",
+            "defaultValue": "0.0",
+            "notes": "**Notes**: 效果偏移 X"
+        },
+        {
+            "name": "y",
+            "type": "float",
+            "localizedName": "效果偏移Y",
+            "defaultValue": "0.0",
+            "notes": "**Notes**: 效果偏移 Y"
+        },
+        {
+            "name": "targetGround",
+            "type": "boolean",
+            "localizedName": "是否目标地面单位",
+            "defaultValue": "true",
+            "notes": "**Notes**: 是否目标地面单位"
+        },
+        {
+            "name": "targetAir",
+            "type": "boolean",
+            "localizedName": "是否目标空中单位",
+            "defaultValue": "true",
+            "notes": "**Notes**: 是否目标空中单位"
+        },
+        {
+            "name": "hitBuildings",
+            "type": "boolean",
+            "localizedName": "是否命中建筑",
+            "defaultValue": "true",
+            "notes": "**Notes**: 是否命中建筑"
+        },
+        {
+            "name": "hitUnits",
+            "type": "boolean",
+            "localizedName": "是否命中单位",
+            "defaultValue": "true",
+            "notes": "**Notes**: 是否命中单位"
+        },
+        {
+            "name": "maxTargets",
+            "type": "int",
+            "localizedName": "最大目标数",
+            "defaultValue": "25",
+            "notes": "**Notes**: 最大目标数"
+        },
+        {
+            "name": "healPercent",
+            "type": "float",
+            "localizedName": "治疗百分比",
+            "defaultValue": "3.0",
+            "notes": "**Notes**: 治疗百分比"
+        },
+        {
+            "name": "sameTypeHealMult",
+            "type": "float",
+            "localizedName": "同类型治疗倍率",
+            "defaultValue": "1.0",
+            "notes": "同类型单位的治疗量乘以该倍数。\n\n**Notes**: 同类型治疗倍率"
+        },
+        {
+            "name": "displayHeal",
+            "type": "boolean",
+            "localizedName": "是否显示治疗描述",
+            "defaultValue": "true",
+            "notes": "**Notes**: 是否显示治疗描述"
+        },
+        {
+            "name": "layer",
+            "type": "float",
+            "localizedName": "绘制层级",
+            "defaultValue": "99.999",
+            "notes": "**Notes**: 绘制层级"
+        },
+        {
+            "name": "blinkScl",
+            "type": "float",
+            "localizedName": "闪烁缩放",
+            "defaultValue": "20.0",
+            "notes": "**Notes**: 闪烁缩放"
+        },
+        {
+            "name": "blinkSize",
+            "type": "float",
+            "localizedName": "闪烁大小",
+            "defaultValue": "0.1",
+            "notes": "**Notes**: 闪烁大小"
+        },
+        {
+            "name": "effectRadius",
+            "type": "float",
+            "localizedName": "效果半径",
+            "defaultValue": "5.0",
+            "notes": "**Notes**: 效果半径"
+        },
+        {
+            "name": "sectorRad",
+            "type": "float",
+            "localizedName": "扇形弧度",
+            "defaultValue": "0.14",
+            "notes": "**Notes**: 扇形弧度"
+        },
+        {
+            "name": "rotateSpeed",
+            "type": "float",
+            "localizedName": "旋转速度",
+            "defaultValue": "0.5",
+            "notes": "**Notes**: 旋转速度"
+        },
+        {
+            "name": "sectors",
+            "type": "int",
+            "localizedName": "扇形数量",
+            "defaultValue": "5",
+            "notes": "**Notes**: 扇形数量"
+        },
+        {
+            "name": "color",
+            "type": "Color",
+            "localizedName": "颜色",
+            "defaultValue": "98ffa9ff",
+            "notes": "**Notes**: 颜色"
+        },
+        {
+            "name": "useAmmo",
+            "type": "boolean",
+            "localizedName": "是否使用弹药",
+            "defaultValue": "true",
+            "notes": "**Notes**: 是否使用弹药"
+        }
+    ]
+}

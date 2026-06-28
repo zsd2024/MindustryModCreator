@@ -1,0 +1,30 @@
+{
+    "type": "WobbleProp",
+    "parentType": "Prop",
+    "fields": [
+        {
+            "name": "wscl",
+            "type": "float",
+            "defaultValue": "25.0",
+            "notes": ""
+        },
+        {
+            "name": "wmag",
+            "type": "float",
+            "defaultValue": "0.4",
+            "notes": ""
+        },
+        {
+            "name": "wtscl",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": ""
+        },
+        {
+            "name": "wmag2",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": ""
+        }
+    ]
+}

@@ -1,0 +1,91 @@
+{
+    "localizedName": "持续激光子弹类型",
+    "type": "ContinuousLaserBulletType",
+    "parentType": "ContinuousBulletType",
+    "fields": [
+        {
+            "name": "fadeTime",
+            "localizedName": "淡出时间",
+            "type": "float",
+            "defaultValue": "16.0",
+            "notes": "淡出时间（刻数）"
+        },
+        {
+            "name": "lightStroke",
+            "localizedName": "灯光描边",
+            "type": "float",
+            "defaultValue": "40.0",
+            "notes": "灯光描边尺寸"
+        },
+        {
+            "name": "divisions",
+            "localizedName": "分段数",
+            "type": "int",
+            "defaultValue": "13",
+            "notes": "激光分段数"
+        },
+        {
+            "name": "colors",
+            "localizedName": "颜色数组",
+            "type": "Color[]",
+            "defaultValue": "[ec745855, ec7458aa, ff9c5aff, ffffffff]",
+            "notes": "颜色数组（从核心到边缘）"
+        },
+        {
+            "name": "strokeFrom",
+            "localizedName": "起始描边",
+            "type": "float",
+            "defaultValue": "2.0",
+            "notes": "起始描边宽度"
+        },
+        {
+            "name": "strokeTo",
+            "localizedName": "结束描边",
+            "type": "float",
+            "defaultValue": "0.5",
+            "notes": "结束描边宽度"
+        },
+        {
+            "name": "pointyScaling",
+            "localizedName": "尖端缩放",
+            "type": "float",
+            "defaultValue": "0.75",
+            "notes": "尖端缩放"
+        },
+        {
+            "name": "backLength",
+            "localizedName": "后端长度",
+            "type": "float",
+            "defaultValue": "7.0",
+            "notes": "后端椭圆长度"
+        },
+        {
+            "name": "frontLength",
+            "localizedName": "前端长度",
+            "type": "float",
+            "defaultValue": "35.0",
+            "notes": "前端椭圆长度"
+        },
+        {
+            "name": "width",
+            "localizedName": "激光宽度",
+            "type": "float",
+            "defaultValue": "9.0",
+            "notes": "激光宽度"
+        },
+        {
+            "name": "oscScl",
+            "localizedName": "振荡缩放",
+            "type": "float",
+            "defaultValue": "0.8",
+            "notes": "振荡缩放"
+        },
+        {
+            "name": "oscMag",
+            "localizedName": "振荡幅度",
+            "type": "float",
+            "defaultValue": "1.5",
+            "notes": "振荡幅度"
+        }
+    ]
+}

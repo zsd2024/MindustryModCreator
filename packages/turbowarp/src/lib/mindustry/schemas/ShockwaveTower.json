@@ -1,0 +1,114 @@
+{
+    "type": "ShockwaveTower",
+    "parentType": "Block",
+    "fields": [
+        {
+            "name": "timerCheck",
+            "type": "int",
+            "defaultValue": "1",
+            "notes": ""
+        },
+        {
+            "name": "range",
+            "type": "float",
+            "defaultValue": "110.0",
+            "notes": ""
+        },
+        {
+            "name": "reload",
+            "type": "float",
+            "defaultValue": "90.0",
+            "notes": ""
+        },
+        {
+            "name": "bulletDamage",
+            "type": "float",
+            "defaultValue": "160.0",
+            "notes": ""
+        },
+        {
+            "name": "falloffCount",
+            "type": "float",
+            "defaultValue": "20.0",
+            "notes": ""
+        },
+        {
+            "name": "shake",
+            "type": "float",
+            "defaultValue": "2.0",
+            "notes": ""
+        },
+        {
+            "name": "checkInterval",
+            "type": "float",
+            "defaultValue": "8.0",
+            "notes": ""
+        },
+        {
+            "name": "shootSound",
+            "type": "Sound",
+            "defaultValue": "shockwaveTower",
+            "notes": ""
+        },
+        {
+            "name": "waveColor",
+            "type": "Color",
+            "defaultValue": "ffd37fff",
+            "notes": ""
+        },
+        {
+            "name": "heatColor",
+            "type": "Color",
+            "defaultValue": "ab3400ff",
+            "notes": ""
+        },
+        {
+            "name": "shapeColor",
+            "type": "Color",
+            "defaultValue": "f29c83ff",
+            "notes": ""
+        },
+        {
+            "name": "cooldownMultiplier",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": ""
+        },
+        {
+            "name": "hitEffect",
+            "type": "Effect",
+            "defaultValue": "hitSquaresColor",
+            "notes": ""
+        },
+        {
+            "name": "waveEffect",
+            "type": "Effect",
+            "defaultValue": "pointShockwave",
+            "notes": ""
+        },
+        {
+            "name": "shapeRotateSpeed",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": ""
+        },
+        {
+            "name": "shapeRadius",
+            "type": "float",
+            "defaultValue": "6.0",
+            "notes": ""
+        },
+        {
+            "name": "shapeSides",
+            "type": "int",
+            "defaultValue": "4",
+            "notes": ""
+        },
+        {
+            "name": "heatRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        }
+    ]
+}

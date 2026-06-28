@@ -1,0 +1,35 @@
+{
+    "type": "ItemIncinerator",
+    "parentType": "Block",
+    "localizedName": "物品焚毁炉",
+    "fields": [
+        {
+            "name": "effect",
+            "type": "Effect",
+            "localizedName": "销毁粒子效果",
+            "defaultValue": "incinerateSlag",
+            "notes": "**Notes**: 销毁物品时的粒子效果"
+        },
+        {
+            "name": "effectChance",
+            "type": "float",
+            "localizedName": "效果触发概率",
+            "defaultValue": "0.2",
+            "notes": "**Notes**: 效果触发概率"
+        },
+        {
+            "name": "liquidRegion",
+            "type": "TextureRegion",
+            "localizedName": "液体纹理",
+            "defaultValue": "null",
+            "notes": "**Notes**: 液体纹理"
+        },
+        {
+            "name": "topRegion",
+            "type": "TextureRegion",
+            "localizedName": "顶部纹理",
+            "defaultValue": "null",
+            "notes": "**Notes**: 顶部纹理"
+        }
+    ]
+}

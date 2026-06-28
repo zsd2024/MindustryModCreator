@@ -1,0 +1,35 @@
+{
+    "localizedName": "定向液体桥梁",
+    "type": "DirectionLiquidBridge",
+    "parentType": "DirectionBridge",
+    "fields": [
+        {
+            "name": "timerFlow",
+            "localizedName": "流动计时器",
+            "type": "int",
+            "defaultValue": "1",
+            "notes": "**Notes**: 液体流动计时器ID"
+        },
+        {
+            "name": "speed",
+            "localizedName": "传输速度",
+            "type": "float",
+            "defaultValue": "5.0",
+            "notes": "**Notes**: 液体传输速度"
+        },
+        {
+            "name": "liquidPadding",
+            "localizedName": "液体内边距",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": "**Notes**: 液体渲染内边距"
+        },
+        {
+            "name": "bottomRegion",
+            "localizedName": "底部纹理",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": "**Notes**: 底部纹理"
+        }
+    ]
+}

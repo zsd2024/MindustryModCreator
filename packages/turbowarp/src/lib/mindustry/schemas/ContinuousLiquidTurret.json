@@ -1,0 +1,18 @@
+{
+    "type": "ContinuousLiquidTurret",
+    "parentType": "ContinuousTurret",
+    "fields": [
+        {
+            "name": "ammoTypes",
+            "type": "ObjectMap of Liquid, BulletType",
+            "defaultValue": "new ObjectMap<>()",
+            "notes": ""
+        },
+        {
+            "name": "liquidConsumed",
+            "type": "float",
+            "defaultValue": "0.016666668",
+            "notes": ""
+        }
+    ]
+}

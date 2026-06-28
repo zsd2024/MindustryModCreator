@@ -1,0 +1,48 @@
+{
+    "type": "DrawLiquidTile",
+    "parentType": "DrawBlock",
+    "fields": [
+        {
+            "name": "drawLiquid",
+            "type": "Liquid",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "padding",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": ""
+        },
+        {
+            "name": "padLeft",
+            "type": "float",
+            "defaultValue": "-1.0",
+            "notes": ""
+        },
+        {
+            "name": "padRight",
+            "type": "float",
+            "defaultValue": "-1.0",
+            "notes": ""
+        },
+        {
+            "name": "padTop",
+            "type": "float",
+            "defaultValue": "-1.0",
+            "notes": ""
+        },
+        {
+            "name": "padBottom",
+            "type": "float",
+            "defaultValue": "-1.0",
+            "notes": ""
+        },
+        {
+            "name": "alpha",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": ""
+        }
+    ]
+}

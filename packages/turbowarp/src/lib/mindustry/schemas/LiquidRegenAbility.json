@@ -1,0 +1,36 @@
+{
+    "type": "LiquidRegenAbility",
+    "parentType": "Ability",
+    "fields": [
+        {
+            "name": "liquid",
+            "type": "Liquid",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "slurpSpeed",
+            "type": "float",
+            "defaultValue": "5.0",
+            "notes": ""
+        },
+        {
+            "name": "regenPerSlurp",
+            "type": "float",
+            "defaultValue": "6.0",
+            "notes": ""
+        },
+        {
+            "name": "slurpEffectChance",
+            "type": "float",
+            "defaultValue": "0.4",
+            "notes": ""
+        },
+        {
+            "name": "slurpEffect",
+            "type": "Effect",
+            "defaultValue": "heal",
+            "notes": ""
+        }
+    ]
+}

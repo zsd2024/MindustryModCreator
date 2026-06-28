@@ -1,0 +1,12 @@
+{
+    "type": "MultiEffect",
+    "parentType": "Effect",
+    "fields": [
+        {
+            "name": "effects",
+            "type": "Effect[]",
+            "defaultValue": "[]",
+            "notes": ""
+        }
+    ]
+}

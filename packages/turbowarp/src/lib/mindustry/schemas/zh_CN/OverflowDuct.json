@@ -1,0 +1,28 @@
+{
+    "type": "OverflowDuct",
+    "parentType": "Block",
+    "localizedName": "溢出导管",
+    "fields": [
+        {
+            "name": "speed",
+            "localizedName": "传输速度",
+            "type": "float",
+            "defaultValue": "5.0",
+            "notes": "**Notes**: 传输速度"
+        },
+        {
+            "name": "invert",
+            "localizedName": "反转",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "**Notes**: 是否反转，为true时优先侧边输出"
+        },
+        {
+            "name": "topRegion",
+            "localizedName": "顶部纹理",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": "**Notes**: 顶部纹理区域"
+        }
+    ]
+}

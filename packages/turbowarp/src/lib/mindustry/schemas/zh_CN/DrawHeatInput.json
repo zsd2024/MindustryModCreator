@@ -1,0 +1,42 @@
+{
+    "localizedName": "热能输入绘制",
+    "type": "DrawHeatInput",
+    "parentType": "DrawBlock",
+    "fields": [
+        {
+            "name": "suffix",
+            "localizedName": "纹理后缀",
+            "type": "String",
+            "defaultValue": "\"-heat\"",
+            "notes": "**Notes**: 方块名称后附加的后缀以查找纹理。"
+        },
+        {
+            "name": "heatColor",
+            "localizedName": "热能颜色",
+            "type": "Color",
+            "defaultValue": "ff3838cc",
+            "notes": "**Notes**: 热能输入指示的颜色。"
+        },
+        {
+            "name": "heatPulse",
+            "localizedName": "脉冲幅度",
+            "type": "float",
+            "defaultValue": "0.3",
+            "notes": "**Notes**: 热点脉冲的幅度。"
+        },
+        {
+            "name": "heatPulseScl",
+            "localizedName": "脉冲频率",
+            "type": "float",
+            "defaultValue": "10.0",
+            "notes": "**Notes**: 热点脉冲的频率缩放。"
+        },
+        {
+            "name": "heat",
+            "localizedName": "热能纹理",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": "**Notes**: 运行时加载的热能指示纹理。"
+        }
+    ]
+}

@@ -1,0 +1,21 @@
+{
+    "localizedName": "悬崖",
+    "type": "Cliff",
+    "parentType": "Block",
+    "fields": [
+        {
+            "name": "size",
+            "localizedName": "纹理尺寸",
+            "type": "float",
+            "defaultValue": "11.0",
+            "notes": "**Notes**: 悬崖纹理的尺寸。"
+        },
+        {
+            "name": "cliffs",
+            "localizedName": "悬崖纹理数组",
+            "type": "TextureRegion[]",
+            "defaultValue": "null",
+            "notes": "**Notes**: 运行时加载的悬崖遮罩纹理数组。"
+        }
+    ]
+}

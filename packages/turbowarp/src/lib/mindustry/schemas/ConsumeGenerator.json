@@ -1,0 +1,78 @@
+{
+    "type": "ConsumeGenerator",
+    "parentType": "PowerGenerator",
+    "fields": [
+        {
+            "name": "itemDuration",
+            "type": "float",
+            "defaultValue": "120.0",
+            "notes": "The time in number of ticks during which a single item will produce power."
+        },
+        {
+            "name": "warmupSpeed",
+            "type": "float",
+            "defaultValue": "0.05",
+            "notes": ""
+        },
+        {
+            "name": "effectChance",
+            "type": "float",
+            "defaultValue": "0.01",
+            "notes": ""
+        },
+        {
+            "name": "generateEffect",
+            "type": "Effect",
+            "defaultValue": "none",
+            "notes": ""
+        },
+        {
+            "name": "consumeEffect",
+            "type": "Effect",
+            "defaultValue": "none",
+            "notes": ""
+        },
+        {
+            "name": "generateEffectRange",
+            "type": "float",
+            "defaultValue": "3.0",
+            "notes": ""
+        },
+        {
+            "name": "baseLightRadius",
+            "type": "float",
+            "defaultValue": "65.0",
+            "notes": ""
+        },
+        {
+            "name": "outputLiquid",
+            "type": "LiquidStack",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "explodeOnFull",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "If true, this block explodes when outputLiquid exceeds capacity."
+        },
+        {
+            "name": "filterItem",
+            "type": "ConsumeItemFilter",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "filterLiquid",
+            "type": "ConsumeLiquidFilter",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "itemDurationMultipliers",
+            "type": "ObjectFloatMap of Item",
+            "defaultValue": "new ObjectFloatMap<>()",
+            "notes": "Multiplies the itemDuration for a given item."
+        }
+    ]
+}

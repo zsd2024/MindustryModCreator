@@ -1,0 +1,154 @@
+{
+    "type": "SuppressionFieldAbility",
+    "parentType": "Ability",
+    "localizedName": "压制场能力",
+    "fields": [
+        {
+            "name": "reload",
+            "type": "float",
+            "defaultValue": "90.0",
+            "localizedName": "装填时间",
+            "notes": "**Notes**: 装填时间"
+        },
+        {
+            "name": "maxDelay",
+            "type": "float",
+            "defaultValue": "90.0",
+            "localizedName": "最大延迟",
+            "notes": "**Notes**: 最大延迟"
+        },
+        {
+            "name": "range",
+            "type": "float",
+            "defaultValue": "200.0",
+            "localizedName": "范围",
+            "notes": "**Notes**: 范围"
+        },
+        {
+            "name": "orbRadius",
+            "type": "float",
+            "defaultValue": "4.1",
+            "localizedName": "球体半径",
+            "notes": "**Notes**: 球体半径"
+        },
+        {
+            "name": "orbMidScl",
+            "type": "float",
+            "defaultValue": "0.33",
+            "localizedName": "球体中段缩放",
+            "notes": "**Notes**: 球体中间缩放"
+        },
+        {
+            "name": "orbSinScl",
+            "type": "float",
+            "defaultValue": "8.0",
+            "localizedName": "球体正弦缩放",
+            "notes": "**Notes**: 球体正弦缩放"
+        },
+        {
+            "name": "orbSinMag",
+            "type": "float",
+            "defaultValue": "1.0",
+            "localizedName": "球体正弦幅度",
+            "notes": "**Notes**: 球体正弦幅度"
+        },
+        {
+            "name": "color",
+            "type": "Color",
+            "defaultValue": "a393feff",
+            "localizedName": "颜色",
+            "notes": "**Notes**: 颜色"
+        },
+        {
+            "name": "layer",
+            "type": "float",
+            "defaultValue": "110.0",
+            "localizedName": "绘制层级",
+            "notes": "**Notes**: 绘制层级"
+        },
+        {
+            "name": "x",
+            "type": "float",
+            "defaultValue": "0.0",
+            "localizedName": "X偏移",
+            "notes": "**Notes**: 偏移 X"
+        },
+        {
+            "name": "y",
+            "type": "float",
+            "defaultValue": "0.0",
+            "localizedName": "Y偏移",
+            "notes": "**Notes**: 偏移 Y"
+        },
+        {
+            "name": "particles",
+            "type": "int",
+            "defaultValue": "15",
+            "localizedName": "粒子数量",
+            "notes": "**Notes**: 粒子数量"
+        },
+        {
+            "name": "particleSize",
+            "type": "float",
+            "defaultValue": "4.0",
+            "localizedName": "粒子大小",
+            "notes": "**Notes**: 粒子大小"
+        },
+        {
+            "name": "particleLen",
+            "type": "float",
+            "defaultValue": "7.0",
+            "localizedName": "粒子长度",
+            "notes": "**Notes**: 粒子长度"
+        },
+        {
+            "name": "rotateScl",
+            "type": "float",
+            "defaultValue": "3.0",
+            "localizedName": "旋转缩放",
+            "notes": "**Notes**: 旋转缩放"
+        },
+        {
+            "name": "particleLife",
+            "type": "float",
+            "defaultValue": "110.0",
+            "localizedName": "粒子寿命",
+            "notes": "**Notes**: 粒子生命周期"
+        },
+        {
+            "name": "active",
+            "type": "boolean",
+            "defaultValue": "true",
+            "localizedName": "激活状态",
+            "notes": "**Notes**: 是否激活"
+        },
+        {
+            "name": "particleInterp",
+            "type": "Interp",
+            "defaultValue": "apply(f))",
+            "localizedName": "粒子插值",
+            "notes": "**Notes**: 粒子插值函数"
+        },
+        {
+            "name": "particleColor",
+            "type": "Color",
+            "defaultValue": "665c9fff",
+            "localizedName": "粒子颜色",
+            "notes": "**Notes**: 粒子颜色"
+        },
+        {
+            "name": "effectColor",
+            "type": "Color",
+            "defaultValue": "bf92f9ff",
+            "localizedName": "效果颜色",
+            "notes": "**Notes**: 效果颜色"
+        },
+        {
+            "name": "applyParticleChance",
+            "type": "float",
+            "defaultValue": "13.0",
+            "localizedName": "应用粒子概率",
+            "notes": "**Notes**: 应用粒子概率"
+        }
+    ]
+}

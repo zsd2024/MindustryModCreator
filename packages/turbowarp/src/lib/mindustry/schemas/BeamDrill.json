@@ -1,0 +1,192 @@
+{
+    "type": "BeamDrill",
+    "parentType": "Block",
+    "fields": [
+        {
+            "name": "laser",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "laserEnd",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "laserCenter",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "laserBoost",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "laserEndBoost",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "laserCenterBoost",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "topRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "glowRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "drillTime",
+            "type": "float",
+            "defaultValue": "200.0",
+            "notes": ""
+        },
+        {
+            "name": "range",
+            "type": "int",
+            "defaultValue": "5",
+            "notes": ""
+        },
+        {
+            "name": "tier",
+            "type": "int",
+            "defaultValue": "1",
+            "notes": ""
+        },
+        {
+            "name": "laserWidth",
+            "type": "float",
+            "defaultValue": "0.65",
+            "notes": ""
+        },
+        {
+            "name": "optionalBoostIntensity",
+            "type": "float",
+            "defaultValue": "2.5",
+            "notes": "How many times faster the drill will progress when boosted by an optional consumer."
+        },
+        {
+            "name": "drillMultipliers",
+            "type": "ObjectFloatMap of Item",
+            "defaultValue": "new ObjectFloatMap<>()",
+            "notes": "Multipliers of drill speed for each item. Defaults to 1."
+        },
+        {
+            "name": "blockedItem",
+            "type": "Item",
+            "defaultValue": "null",
+            "notes": "Special exemption item that this drill can't mine."
+        },
+        {
+            "name": "blockedItems",
+            "type": "Seq of Item",
+            "defaultValue": "null",
+            "notes": "Special exemption items that this drill can't mine."
+        },
+        {
+            "name": "sparkColor",
+            "type": "Color",
+            "defaultValue": "fd9e81ff",
+            "notes": ""
+        },
+        {
+            "name": "glowColor",
+            "type": "Color",
+            "defaultValue": "ffffffff",
+            "notes": ""
+        },
+        {
+            "name": "glowIntensity",
+            "type": "float",
+            "defaultValue": "0.2",
+            "notes": ""
+        },
+        {
+            "name": "pulseIntensity",
+            "type": "float",
+            "defaultValue": "0.07",
+            "notes": ""
+        },
+        {
+            "name": "glowScl",
+            "type": "float",
+            "defaultValue": "3.0",
+            "notes": ""
+        },
+        {
+            "name": "sparks",
+            "type": "int",
+            "defaultValue": "7",
+            "notes": ""
+        },
+        {
+            "name": "sparkRange",
+            "type": "float",
+            "defaultValue": "10.0",
+            "notes": ""
+        },
+        {
+            "name": "sparkLife",
+            "type": "float",
+            "defaultValue": "27.0",
+            "notes": ""
+        },
+        {
+            "name": "sparkRecurrence",
+            "type": "float",
+            "defaultValue": "4.0",
+            "notes": ""
+        },
+        {
+            "name": "sparkSpread",
+            "type": "float",
+            "defaultValue": "45.0",
+            "notes": ""
+        },
+        {
+            "name": "sparkSize",
+            "type": "float",
+            "defaultValue": "3.5",
+            "notes": ""
+        },
+        {
+            "name": "boostHeatColor",
+            "type": "Color",
+            "defaultValue": "75b3ccff",
+            "notes": ""
+        },
+        {
+            "name": "heatColor",
+            "type": "Color",
+            "defaultValue": "ff5959e5",
+            "notes": ""
+        },
+        {
+            "name": "heatPulse",
+            "type": "float",
+            "defaultValue": "0.3",
+            "notes": ""
+        },
+        {
+            "name": "heatPulseScl",
+            "type": "float",
+            "defaultValue": "7.0",
+            "notes": ""
+        }
+    ]
+}

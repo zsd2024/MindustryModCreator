@@ -1,0 +1,84 @@
+{
+    "type": "RepairTower",
+    "parentType": "Block",
+    "localizedName": "修复塔",
+    "fields": [
+        {
+            "name": "range",
+            "type": "float",
+            "defaultValue": "80.0",
+            "localizedName": "修复范围",
+            "notes": "**Notes**: 修复范围"
+        },
+        {
+            "name": "circleColor",
+            "type": "Color",
+            "defaultValue": "98ffa9ff",
+            "localizedName": "圆圈颜色",
+            "notes": "**Notes**: 圆圈颜色"
+        },
+        {
+            "name": "glowColor",
+            "type": "Color",
+            "defaultValue": "98ffa97f",
+            "localizedName": "发光颜色",
+            "notes": "**Notes**: 发光颜色"
+        },
+        {
+            "name": "circleSpeed",
+            "type": "float",
+            "defaultValue": "120.0",
+            "localizedName": "圆圈速度",
+            "notes": "**Notes**: 圆圈动画速度"
+        },
+        {
+            "name": "circleStroke",
+            "type": "float",
+            "defaultValue": "3.0",
+            "localizedName": "圆圈描边",
+            "notes": "**Notes**: 圆圈线条宽度"
+        },
+        {
+            "name": "squareRad",
+            "type": "float",
+            "defaultValue": "3.0",
+            "localizedName": "方形半径",
+            "notes": "**Notes**: 方形半径"
+        },
+        {
+            "name": "squareSpinScl",
+            "type": "float",
+            "defaultValue": "0.8",
+            "localizedName": "方形旋转缩放",
+            "notes": "**Notes**: 方形旋转缩放"
+        },
+        {
+            "name": "glowMag",
+            "type": "float",
+            "defaultValue": "0.5",
+            "localizedName": "发光幅度",
+            "notes": "**Notes**: 发光幅度"
+        },
+        {
+            "name": "glowScl",
+            "type": "float",
+            "defaultValue": "8.0",
+            "localizedName": "发光缩放",
+            "notes": "**Notes**: 发光缩放"
+        },
+        {
+            "name": "healAmount",
+            "type": "float",
+            "defaultValue": "1.0",
+            "localizedName": "治疗量",
+            "notes": "**Notes**: 每秒治疗量"
+        },
+        {
+            "name": "glow",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "localizedName": "发光纹理",
+            "notes": "**Notes**: 发光纹理区域"
+        }
+    ]
+}

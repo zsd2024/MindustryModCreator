@@ -1,0 +1,24 @@
+{
+    "type": "ShallowLiquid",
+    "parentType": "Floor",
+    "fields": [
+        {
+            "name": "liquidBase",
+            "type": "Floor",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "floorBase",
+            "type": "Floor",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "liquidOpacity",
+            "type": "float",
+            "defaultValue": "0.35",
+            "notes": ""
+        }
+    ]
+}

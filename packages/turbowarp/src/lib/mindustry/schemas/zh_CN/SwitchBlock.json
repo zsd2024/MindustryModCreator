@@ -1,0 +1,21 @@
+{
+    "type": "SwitchBlock",
+    "parentType": "Block",
+    "localizedName": "开关",
+    "fields": [
+        {
+            "name": "clickSound",
+            "type": "Sound",
+            "defaultValue": "click",
+            "localizedName": "点击音效",
+            "notes": "**Notes**: 开关点击时的音效"
+        },
+        {
+            "name": "onRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "localizedName": "开启纹理",
+            "notes": "**Notes**: 开启状态下的纹理区域"
+        }
+    ]
+}

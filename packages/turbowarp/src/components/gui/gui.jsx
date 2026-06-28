@@ -20,6 +20,7 @@ import MenuBar from '../menu-bar/menu-bar.jsx';
 import CostumeLibrary from '../../containers/costume-library.jsx';
 import BackdropLibrary from '../../containers/backdrop-library.jsx';
 import Watermark from '../../containers/watermark.jsx';
+import MindustryJsonEditor from '../mindustry-json-editor/mindustry-json-editor.jsx';
 
 import Backpack from '../../containers/backpack.jsx';
 import BrowserModal from '../browser-modal/browser-modal.jsx';
@@ -118,6 +119,7 @@ const GUIComponent = props => {
         onClickAbout,
         onClickAccountNav,
         onCloseAccountNav,
+        onContentDataChange,
         onClickAddonSettings,
         onClickDesktopSettings,
         onClickNewWindow,
@@ -143,6 +145,8 @@ const GUIComponent = props => {
         onTelemetryModalOptIn,
         onTelemetryModalOptOut,
         securityManager,
+        selectedContentType,
+        selectedContentData,
         showComingSoon,
         showOpenFilePicker,
         showSaveFilePicker,
@@ -386,37 +390,47 @@ const GUIComponent = props => {
                                     </Tab>
                                 </TabList>
                                 <TabPanel className={tabClassNames.tabPanel}>
-                                    <Box className={styles.blocksWrapper}>
-                                        <Blocks
-                                            key={`${blocksId}/${theme.id}`}
-                                            canUseCloud={canUseCloud}
-                                            grow={1}
-                                            isVisible={blocksTabVisible}
-                                            options={{
-                                                media: `${basePath}static/${theme.getBlocksMediaFolder()}/`
-                                            }}
-                                            stageSize={stageSize}
-                                            onOpenCustomExtensionModal={onOpenCustomExtensionModal}
-                                            theme={theme}
-                                            vm={vm}
+                                    {selectedContentType ? (
+                                        <MindustryJsonEditor
+                                            contentType={selectedContentType}
+                                            initialData={selectedContentData}
+                                            onChange={onContentDataChange}
                                         />
-                                    </Box>
-                                    <Box className={styles.extensionButtonContainer}>
-                                        <button
-                                            className={styles.extensionButton}
-                                            title={intl.formatMessage(messages.addExtension)}
-                                            onClick={onExtensionButtonClick}
-                                        >
-                                            <img
-                                                className={styles.extensionButtonIcon}
-                                                draggable={false}
-                                                src={addExtensionIcon}
-                                            />
-                                        </button>
-                                    </Box>
-                                    <Box className={styles.watermark}>
-                                        <Watermark />
-                                    </Box>
+                                    ) : (
+                                        <React.Fragment>
+                                            <Box className={styles.blocksWrapper}>
+                                                <Blocks
+                                                    key={`${blocksId}/${theme.id}`}
+                                                    canUseCloud={canUseCloud}
+                                                    grow={1}
+                                                    isVisible={blocksTabVisible}
+                                                    options={{
+                                                        media: `${basePath}static/${theme.getBlocksMediaFolder()}/`
+                                                    }}
+                                                    stageSize={stageSize}
+                                                    onOpenCustomExtensionModal={onOpenCustomExtensionModal}
+                                                    theme={theme}
+                                                    vm={vm}
+                                                />
+                                            </Box>
+                                            <Box className={styles.extensionButtonContainer}>
+                                                <button
+                                                    className={styles.extensionButton}
+                                                    title={intl.formatMessage(messages.addExtension)}
+                                                    onClick={onExtensionButtonClick}
+                                                >
+                                                    <img
+                                                        className={styles.extensionButtonIcon}
+                                                        draggable={false}
+                                                        src={addExtensionIcon}
+                                                    />
+                                                </button>
+                                            </Box>
+                                            <Box className={styles.watermark}>
+                                                <Watermark />
+                                            </Box>
+                                        </React.Fragment>
+                                    )}
                                 </TabPanel>
                                 <TabPanel className={tabClassNames.tabPanel}>
                                     {costumesTabVisible ? <CostumeTab
@@ -503,6 +517,7 @@ GUIComponent.propTypes = {
     onClickAccountNav: PropTypes.func,
     onClickAddonSettings: PropTypes.func,
     onClickDesktopSettings: PropTypes.func,
+    onContentDataChange: PropTypes.func,
     onClickNewWindow: PropTypes.func,
     onClickPackager: PropTypes.func,
     onClickLogo: PropTypes.func,
@@ -525,6 +540,8 @@ GUIComponent.propTypes = {
     onToggleLoginOpen: PropTypes.func,
     renderLogin: PropTypes.func,
     securityManager: PropTypes.shape({}),
+    selectedContentType: PropTypes.string,
+    selectedContentData: PropTypes.object,
     showComingSoon: PropTypes.bool,
     showOpenFilePicker: PropTypes.func,
     showSaveFilePicker: PropTypes.func,

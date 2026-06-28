@@ -1,0 +1,70 @@
+{
+    "localizedName": "复合编织绘制",
+    "type": "DrawMultiWeave",
+    "parentType": "DrawBlock",
+    "fields": [
+        {
+            "name": "weave",
+            "localizedName": "编织纹理",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": "**Notes**: 编织纹理。"
+        },
+        {
+            "name": "glow",
+            "localizedName": "发光纹理",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": "**Notes**: 发光纹理。"
+        },
+        {
+            "name": "rotateSpeed",
+            "localizedName": "编织旋转速度",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": "**Notes**: 编织纹理的旋转速度。"
+        },
+        {
+            "name": "rotateSpeed2",
+            "localizedName": "发光旋转速度",
+            "type": "float",
+            "defaultValue": "-0.9",
+            "notes": "**Notes**: 发光纹理的旋转速度。"
+        },
+        {
+            "name": "fadeWeave",
+            "localizedName": "编织淡出",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "**Notes**: 编织纹理是否随预热淡出。"
+        },
+        {
+            "name": "glowColor",
+            "localizedName": "发光颜色",
+            "type": "Color",
+            "defaultValue": "ff6666cc",
+            "notes": "**Notes**: 发光纹理的颜色。"
+        },
+        {
+            "name": "weaveColor",
+            "localizedName": "编织颜色",
+            "type": "Color",
+            "defaultValue": "ffffffff",
+            "notes": "**Notes**: 编织纹理的颜色。"
+        },
+        {
+            "name": "pulse",
+            "localizedName": "脉冲幅度",
+            "type": "float",
+            "defaultValue": "0.3",
+            "notes": "**Notes**: 发光脉冲的幅度。"
+        },
+        {
+            "name": "pulseScl",
+            "localizedName": "脉冲频率",
+            "type": "float",
+            "defaultValue": "10.0",
+            "notes": "**Notes**: 发光脉冲的频率缩放。"
+        }
+    ]
+}

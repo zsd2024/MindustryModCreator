@@ -1,0 +1,21 @@
+{
+    "localizedName": "方块部件绘制",
+    "type": "DrawBlockParts",
+    "parentType": "DrawBlock",
+    "fields": [
+        {
+            "name": "parts",
+            "localizedName": "绘制部件序列",
+            "type": "Seq of DrawPart",
+            "defaultValue": "[]",
+            "notes": "**Notes**: 方块的绘制部件序列。"
+        },
+        {
+            "name": "preview",
+            "localizedName": "预览纹理",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": "**Notes**: 方块预览纹理。"
+        }
+    ]
+}

@@ -1,0 +1,28 @@
+{
+    "type": "BaseShield",
+    "parentType": "Block",
+    "localizedName": "基础护盾",
+    "fields": [
+        {
+            "name": "radius",
+            "type": "float",
+            "defaultValue": "200.0",
+            "notes": "**Notes**: 护盾半径",
+            "localizedName": "护盾半径"
+        },
+        {
+            "name": "sides",
+            "type": "int",
+            "defaultValue": "24",
+            "notes": "**Notes**: 护盾多边形边数",
+            "localizedName": "护盾边数"
+        },
+        {
+            "name": "shieldColor",
+            "type": "Color",
+            "defaultValue": "null",
+            "notes": "**Notes**: 护盾颜色，为空时使用队伍颜色",
+            "localizedName": "护盾颜色"
+        }
+    ]
+}

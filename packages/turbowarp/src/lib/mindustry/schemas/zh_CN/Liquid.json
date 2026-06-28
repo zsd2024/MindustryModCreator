@@ -1,0 +1,161 @@
+{
+    "type": "Liquid",
+    "parentType": "UnlockableContent",
+    "localizedName": "液体",
+    "fields": [
+        {
+            "name": "gas",
+            "type": "boolean",
+            "localizedName": "是否为气体",
+            "defaultValue": "false",
+            "notes": "如果为true，该流体被处理为气体（不会产生水坑）。\n\n**Notes**: 控制流体是气体还是液体形态。"
+        },
+        {
+            "name": "color",
+            "type": "Color",
+            "localizedName": "基础颜色",
+            "defaultValue": "000000ff",
+            "notes": "管道和地面中使用的颜色。\n\n**Notes**: 流体的基础颜色。"
+        },
+        {
+            "name": "gasColor",
+            "type": "Color",
+            "localizedName": "气体颜色",
+            "defaultValue": "bfbfbfff",
+            "notes": "该流体气体形态的颜色。\n\n**Notes**: 当gas=true时使用的颜色。"
+        },
+        {
+            "name": "barColor",
+            "type": "Color",
+            "localizedName": "状态条颜色",
+            "defaultValue": "null",
+            "notes": "状态条中使用的颜色。\n\n**Notes**: 如果不为null，覆盖柱状条显示的颜色。"
+        },
+        {
+            "name": "lightColor",
+            "type": "Color",
+            "localizedName": "发光颜色",
+            "defaultValue": "00000000",
+            "notes": "绘制灯光时使用的颜色。注意alpha通道用于控制亮度。\n\n**Notes**: 控制流体发出的光的颜色和亮度。"
+        },
+        {
+            "name": "flammability",
+            "type": "float",
+            "localizedName": "可燃性",
+            "defaultValue": "0.0",
+            "notes": "0~1，0为完全不燃，高于0可能在受热时着火，0.5以上为高度可燃。\n\n**Notes**: 控制流体的可燃性等级。"
+        },
+        {
+            "name": "temperature",
+            "type": "float",
+            "localizedName": "温度",
+            "defaultValue": "0.5",
+            "notes": "温度：0.5为室温，0为极冷，1为熔融热。\n\n**Notes**: 控制流体的温度属性。"
+        },
+        {
+            "name": "heatCapacity",
+            "type": "float",
+            "localizedName": "热容量",
+            "defaultValue": "0.5",
+            "notes": "该流体能储存多少热量。0.4=水（中等），更低的值密度更低且冷却效果差。\n\n**Notes**: 控制流体的热容量，影响冷却效果。"
+        },
+        {
+            "name": "viscosity",
+            "type": "float",
+            "localizedName": "粘稠度",
+            "defaultValue": "0.5",
+            "notes": "该流体的粘稠度。0.5=水（相对粘稠），1=焦油（非常慢）。\n\n**Notes**: 控制流体流动的阻力。"
+        },
+        {
+            "name": "explosiveness",
+            "type": "float",
+            "localizedName": "爆炸性",
+            "defaultValue": "0.0",
+            "notes": "该流体在受热时爆炸的倾向。0=无，1=核爆。\n\n**Notes**: 控制流体的爆炸风险。"
+        },
+        {
+            "name": "blockReactive",
+            "type": "boolean",
+            "localizedName": "是否与方块反应",
+            "defaultValue": "true",
+            "notes": "该流体是否在方块中发生反应（例如熔渣与水）。\n\n**Notes**: 控制流体是否会与其他方块交互反应。"
+        },
+        {
+            "name": "coolant",
+            "type": "boolean",
+            "localizedName": "是否可用作冷却剂",
+            "defaultValue": "true",
+            "notes": "如果为false，该流体不能用作冷却剂。\n\n**Notes**: 控制流体是否具有冷却能力。"
+        },
+        {
+            "name": "moveThroughBlocks",
+            "type": "boolean",
+            "localizedName": "是否可穿过方块",
+            "defaultValue": "false",
+            "notes": "如果为true，该流体可以以水坑形式穿过方块。\n\n**Notes**: 控制流体是否能够穿透方块。"
+        },
+        {
+            "name": "incinerable",
+            "type": "boolean",
+            "localizedName": "是否可被焚烧",
+            "defaultValue": "true",
+            "notes": "如果为true，该流体可以在焚烧炉方块中被销毁。\n\n**Notes**: 控制流体是否可以被焚烧处理。"
+        },
+        {
+            "name": "effect",
+            "type": "StatusEffect",
+            "localizedName": "关联状态效果",
+            "defaultValue": "none",
+            "notes": "关联的状态效果。\n\n**Notes**: 接触该流体时施加的状态效果。"
+        },
+        {
+            "name": "particleEffect",
+            "type": "Effect",
+            "localizedName": "水坑粒子效果",
+            "defaultValue": "none",
+            "notes": "水坑中显示的效果。\n\n**Notes**: 流体在地面形成水坑时播放的粒子效果。"
+        },
+        {
+            "name": "particleSpacing",
+            "type": "float",
+            "localizedName": "粒子效果间隔",
+            "defaultValue": "60.0",
+            "notes": "粒子效果的tick间隔。\n\n**Notes**: 控制粒子效果产生的频率。"
+        },
+        {
+            "name": "boilPoint",
+            "type": "float",
+            "localizedName": "汽化温度",
+            "defaultValue": "2.0",
+            "notes": "该液体汽化的温度。这不仅仅是沸腾。\n\n**Notes**: 控制流体蒸发的环境温度阈值。"
+        },
+        {
+            "name": "capPuddles",
+            "type": "boolean",
+            "localizedName": "是否限制水坑大小",
+            "defaultValue": "true",
+            "notes": "如果为true，水坑大小有上限。\n\n**Notes**: 控制流体水坑是否具有最大尺寸限制。"
+        },
+        {
+            "name": "vaporEffect",
+            "type": "Effect",
+            "localizedName": "汽化效果",
+            "defaultValue": "vapor",
+            "notes": "该液体汽化时的效果。\n\n**Notes**: 当流体达到沸点蒸发时播放的效果。"
+        },
+        {
+            "name": "hidden",
+            "type": "boolean",
+            "localizedName": "是否隐藏",
+            "defaultValue": "false",
+            "notes": "如果为true，该液体在大多数UI中隐藏。\n\n**Notes**: 控制流体是否在大多数界面中不可见。"
+        },
+        {
+            "name": "canStayOn",
+            "type": "ObjectSet of Liquid",
+            "localizedName": "可停留液体集合",
+            "defaultValue": "new ObjectSet<>()",
+            "notes": "该水坑可以停留的液体，例如水上的油。\n\n**Notes**: 指定哪些液体可以浮在该流体之上。"
+        }
+    ]
+}

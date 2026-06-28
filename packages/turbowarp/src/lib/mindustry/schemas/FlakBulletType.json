@@ -1,0 +1,30 @@
+{
+    "type": "FlakBulletType",
+    "parentType": "BasicBulletType",
+    "fields": [
+        {
+            "name": "explodeRange",
+            "type": "float",
+            "defaultValue": "30.0",
+            "notes": ""
+        },
+        {
+            "name": "explodeDelay",
+            "type": "float",
+            "defaultValue": "5.0",
+            "notes": ""
+        },
+        {
+            "name": "flakDelay",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": ""
+        },
+        {
+            "name": "flakInterval",
+            "type": "float",
+            "defaultValue": "6.0",
+            "notes": ""
+        }
+    ]
+}

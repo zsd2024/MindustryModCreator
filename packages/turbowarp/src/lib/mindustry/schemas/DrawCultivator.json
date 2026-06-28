@@ -1,0 +1,84 @@
+{
+    "type": "DrawCultivator",
+    "parentType": "DrawBlock",
+    "fields": [
+        {
+            "name": "plantColor",
+            "type": "Color",
+            "defaultValue": "5541b1ff",
+            "notes": ""
+        },
+        {
+            "name": "plantColorLight",
+            "type": "Color",
+            "defaultValue": "7457ceff",
+            "notes": ""
+        },
+        {
+            "name": "bottomColor",
+            "type": "Color",
+            "defaultValue": "474747ff",
+            "notes": ""
+        },
+        {
+            "name": "bubbles",
+            "type": "int",
+            "defaultValue": "12",
+            "notes": ""
+        },
+        {
+            "name": "sides",
+            "type": "int",
+            "defaultValue": "8",
+            "notes": ""
+        },
+        {
+            "name": "strokeMin",
+            "type": "float",
+            "defaultValue": "0.2",
+            "notes": ""
+        },
+        {
+            "name": "spread",
+            "type": "float",
+            "defaultValue": "3.0",
+            "notes": ""
+        },
+        {
+            "name": "timeScl",
+            "type": "float",
+            "defaultValue": "70.0",
+            "notes": ""
+        },
+        {
+            "name": "recurrence",
+            "type": "float",
+            "defaultValue": "6.0",
+            "notes": ""
+        },
+        {
+            "name": "radius",
+            "type": "float",
+            "defaultValue": "3.0",
+            "notes": ""
+        },
+        {
+            "name": "x",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": ""
+        },
+        {
+            "name": "y",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": ""
+        },
+        {
+            "name": "middle",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        }
+    ]
+}

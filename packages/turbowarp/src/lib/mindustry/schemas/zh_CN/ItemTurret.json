@@ -1,0 +1,14 @@
+{
+    "type": "ItemTurret",
+    "parentType": "Turret",
+    "localizedName": "物品炮塔",
+    "fields": [
+        {
+            "name": "ammoTypes",
+            "type": "ObjectMap of Item, BulletType",
+            "localizedName": "弹药类型映射",
+            "defaultValue": "new OrderedMap<>()",
+            "notes": "**Notes**: 物品到子弹类型的映射表，定义该炮塔接受的弹药类型。"
+        }
+    ]
+}

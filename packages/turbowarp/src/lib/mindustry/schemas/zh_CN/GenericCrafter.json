@@ -1,0 +1,112 @@
+{
+    "type": "GenericCrafter",
+    "parentType": "Block",
+    "localizedName": "通用工厂",
+    "fields": [
+        {
+            "name": "outputItem",
+            "type": "ItemStack",
+            "localizedName": "单个输出物品",
+            "defaultValue": "null",
+            "notes": "如果outputItems为null，作为单元素数组写入outputItems。\n\n**Notes**: 单个输出物品。"
+        },
+        {
+            "name": "outputItems",
+            "type": "ItemStack[]",
+            "localizedName": "多个输出物品",
+            "defaultValue": "null",
+            "notes": "如果不为null，覆盖outputItem。\n\n**Notes**: 多个输出物品。"
+        },
+        {
+            "name": "outputLiquid",
+            "type": "LiquidStack",
+            "localizedName": "单个输出液体",
+            "defaultValue": "null",
+            "notes": "如果outputLiquids为null，作为单元素数组写入outputLiquids。\n\n**Notes**: 单个输出液体。"
+        },
+        {
+            "name": "outputLiquids",
+            "type": "LiquidStack[]",
+            "localizedName": "多个输出液体",
+            "defaultValue": "null",
+            "notes": "如果不为null，覆盖outputLiquid。\n\n**Notes**: 多个输出液体。"
+        },
+        {
+            "name": "liquidOutputDirections",
+            "type": "int[]",
+            "localizedName": "液体输出方向数组",
+            "defaultValue": "{ -1 }",
+            "notes": "液体输出方向，按outputLiquids的顺序指定。使用-1向所有方向排放。旋转相对于方块。\n\n**Notes**: 液体输出方向数组。"
+        },
+        {
+            "name": "dumpExtraLiquid",
+            "type": "boolean",
+            "localizedName": "是否倾倒多余液体",
+            "defaultValue": "true",
+            "notes": "若为true，具有多种液体输出的加工器在至少还有一种液体有空间时会倾倒多余的液体。\n\n**Notes**: 是否在仍有空间时倾倒多余液体。"
+        },
+        {
+            "name": "ignoreLiquidFullness",
+            "type": "boolean",
+            "localizedName": "是否忽略液体满溢",
+            "defaultValue": "false",
+            "notes": "**Notes**: 是否忽略液体满溢继续工作。"
+        },
+        {
+            "name": "craftTime",
+            "type": "float",
+            "localizedName": "合成时间",
+            "defaultValue": "80.0",
+            "notes": "**Notes**: 合成时间（tick数）。"
+        },
+        {
+            "name": "craftEffect",
+            "type": "Effect",
+            "localizedName": "合成完成特效",
+            "defaultValue": "none",
+            "notes": "**Notes**: 合成完成时的特效。"
+        },
+        {
+            "name": "updateEffect",
+            "type": "Effect",
+            "localizedName": "合成过程特效",
+            "defaultValue": "none",
+            "notes": "**Notes**: 合成过程中的特效。"
+        },
+        {
+            "name": "updateEffectChance",
+            "type": "float",
+            "localizedName": "合成特效概率",
+            "defaultValue": "0.04",
+            "notes": "**Notes**: 合成特效的出现概率。"
+        },
+        {
+            "name": "updateEffectSpread",
+            "type": "float",
+            "localizedName": "合成特效散布范围",
+            "defaultValue": "4.0",
+            "notes": "**Notes**: 合成特效的散布范围。"
+        },
+        {
+            "name": "warmupSpeed",
+            "type": "float",
+            "localizedName": "预热速度",
+            "defaultValue": "0.019",
+            "notes": "**Notes**: 预热速度。"
+        },
+        {
+            "name": "legacyReadWarmup",
+            "type": "boolean",
+            "localizedName": "旧版预热读取兼容",
+            "defaultValue": "false",
+            "notes": "仅用于传统培育方块。\n\n**Notes**: 旧版预热读取兼容。"
+        },
+        {
+            "name": "drawer",
+            "type": "DrawBlock",
+            "localizedName": "绘制器",
+            "defaultValue": "new DrawDefault()",
+            "notes": "**Notes**: 绘制器，控制方块的渲染方式。"
+        }
+    ]
+}

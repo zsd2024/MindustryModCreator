@@ -1,0 +1,120 @@
+{
+    "type": "SectorPreset",
+    "parentType": "UnlockableContent",
+    "fields": [
+        {
+            "name": "generator",
+            "type": "FileMapGenerator",
+            "defaultValue": "mindustry.maps.generators.FileMapGenerator@5784f6b9",
+            "notes": ""
+        },
+        {
+            "name": "planet",
+            "type": "Planet",
+            "defaultValue": "serpulo",
+            "notes": ""
+        },
+        {
+            "name": "sector",
+            "type": "Sector",
+            "defaultValue": "serpulo#5 (sectorName)",
+            "notes": ""
+        },
+        {
+            "name": "captureWave",
+            "type": "int",
+            "defaultValue": "0",
+            "notes": ""
+        },
+        {
+            "name": "rules",
+            "type": "Cons of Rules",
+            "defaultValue": "winWave = captureWave",
+            "notes": ""
+        },
+        {
+            "name": "difficulty",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "Difficulty, 0-10."
+        },
+        {
+            "name": "startWaveTimeMultiplier",
+            "type": "float",
+            "defaultValue": "2.0",
+            "notes": ""
+        },
+        {
+            "name": "addStartingItems",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": ""
+        },
+        {
+            "name": "noLighting",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": ""
+        },
+        {
+            "name": "isLastSector",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "If true, this is the last sector in its planetary campaign."
+        },
+        {
+            "name": "requireUnlock",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "If true, this sector must be unlocked before landing is permitted."
+        },
+        {
+            "name": "showHidden",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "If true, the icon and name is shown, even when it's a 'hidden' always-unlocked sector. TODO: this field may be changed, not sure how it should work"
+        },
+        {
+            "name": "showSectorLandInfo",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": ""
+        },
+        {
+            "name": "overrideLaunchDefaults",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "If true, uses this sector's launch fields instead"
+        },
+        {
+            "name": "allowLaunchSchematics",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "Whether to allow users to specify a custom launch schematic for this map."
+        },
+        {
+            "name": "allowLaunchLoadout",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "Whether to allow users to specify the resources they take to this map."
+        },
+        {
+            "name": "attackAfterWaves",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "If true, switches to attack mode after waves end."
+        },
+        {
+            "name": "originalPosition",
+            "type": "int",
+            "defaultValue": "5",
+            "notes": "The original position of this sector; used for migration. Internal use for vanilla campaign only!"
+        },
+        {
+            "name": "shieldSectors",
+            "type": "Seq of Sector",
+            "defaultValue": "[]",
+            "notes": "Sectors that prevent this sector from being landed on until they are completed."
+        }
+    ]
+}

@@ -1,0 +1,18 @@
+{
+    "type": "CharacterOverlay",
+    "parentType": "OverlayFloor",
+    "fields": [
+        {
+            "name": "letterRegions",
+            "type": "TextureRegion[]",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "color",
+            "type": "Color",
+            "defaultValue": "ffffffff",
+            "notes": ""
+        }
+    ]
+}

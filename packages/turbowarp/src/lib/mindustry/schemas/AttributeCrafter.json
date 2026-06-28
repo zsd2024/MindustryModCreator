@@ -1,0 +1,54 @@
+{
+    "type": "AttributeCrafter",
+    "parentType": "GenericCrafter",
+    "fields": [
+        {
+            "name": "attribute",
+            "type": "Attribute",
+            "defaultValue": "heat",
+            "notes": ""
+        },
+        {
+            "name": "baseEfficiency",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": ""
+        },
+        {
+            "name": "boostScale",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": ""
+        },
+        {
+            "name": "maxBoost",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": ""
+        },
+        {
+            "name": "minEfficiency",
+            "type": "float",
+            "defaultValue": "-1.0",
+            "notes": ""
+        },
+        {
+            "name": "displayEfficiencyScale",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": ""
+        },
+        {
+            "name": "displayEfficiency",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": ""
+        },
+        {
+            "name": "scaleLiquidConsumption",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": ""
+        }
+    ]
+}

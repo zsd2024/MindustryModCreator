@@ -1,0 +1,147 @@
+{
+    "localizedName": "核心方块",
+    "type": "CoreBlock",
+    "parentType": "StorageBlock",
+    "fields": [
+        {
+            "name": "thruster1",
+            "localizedName": "推进器1纹理",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": "**Notes**: 推进器1纹理区域（右上）"
+        },
+        {
+            "name": "thruster2",
+            "localizedName": "推进器2纹理",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": "**Notes**: 推进器2纹理区域（左下）"
+        },
+        {
+            "name": "thrusterLength",
+            "localizedName": "推进器长度",
+            "type": "float",
+            "defaultValue": "3.5",
+            "notes": "**Notes**: 推进器长度"
+        },
+        {
+            "name": "thrusterOffset",
+            "localizedName": "推进器偏移",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "**Notes**: 推进器偏移量"
+        },
+        {
+            "name": "isFirstTier",
+            "localizedName": "第一级核心",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "**Notes**: 是否为第一级核心"
+        },
+        {
+            "name": "allowSpawn",
+            "localizedName": "允许重生",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "若为false，玩家无法在此核心重生。\n\n**Notes**: 是否允许玩家在此核心重生"
+        },
+        {
+            "name": "requiresCoreZone",
+            "localizedName": "需要核心区域",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "若为true，此核心类型需要核心区域才能升级。\n\n**Notes**: 是否需要核心区域才能升级"
+        },
+        {
+            "name": "incinerateNonBuildable",
+            "localizedName": "焚毁不可建造物品",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "**Notes**: 是否焚毁不可建造的物品"
+        },
+        {
+            "name": "unitType",
+            "localizedName": "单位类型",
+            "type": "UnitType",
+            "defaultValue": "alpha",
+            "notes": "**Notes**: 单位类型，玩家在此核心重生时使用的单位"
+        },
+        {
+            "name": "landDuration",
+            "localizedName": "着陆持续时间",
+            "type": "float",
+            "defaultValue": "160.0",
+            "notes": "**Notes**: 着陆动画持续时间"
+        },
+        {
+            "name": "landMusic",
+            "localizedName": "着陆音乐",
+            "type": "Music",
+            "defaultValue": "land",
+            "notes": "**Notes**: 着陆音乐"
+        },
+        {
+            "name": "launchSoundVolume",
+            "localizedName": "发射音量",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": "**Notes**: 发射音效音量"
+        },
+        {
+            "name": "landSoundVolume",
+            "localizedName": "着陆音量",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": "**Notes**: 着陆音效音量"
+        },
+        {
+            "name": "launchSound",
+            "localizedName": "发射音效",
+            "type": "Sound",
+            "defaultValue": "coreLaunch",
+            "notes": "**Notes**: 发射音效"
+        },
+        {
+            "name": "landSound",
+            "localizedName": "着陆音效",
+            "type": "Sound",
+            "defaultValue": "coreLand",
+            "notes": "**Notes**: 着陆音效"
+        },
+        {
+            "name": "launchEffect",
+            "localizedName": "发射特效",
+            "type": "Effect",
+            "defaultValue": "launch",
+            "notes": "**Notes**: 发射特效"
+        },
+        {
+            "name": "landZoomInterp",
+            "localizedName": "着陆缩放插值",
+            "type": "Interp",
+            "defaultValue": "pow3",
+            "notes": "**Notes**: 着陆缩放插值函数"
+        },
+        {
+            "name": "landZoomFrom",
+            "localizedName": "着陆起始缩放",
+            "type": "float",
+            "defaultValue": "0.02",
+            "notes": "**Notes**: 着陆起始缩放值"
+        },
+        {
+            "name": "landZoomTo",
+            "localizedName": "着陆结束缩放",
+            "type": "float",
+            "defaultValue": "4.0",
+            "notes": "**Notes**: 着陆结束缩放值"
+        },
+        {
+            "name": "captureInvicibility",
+            "localizedName": "占领无敌时间",
+            "type": "float",
+            "defaultValue": "900.0",
+            "notes": "**Notes**: 核心被占领后的无敌时间"
+        }
+    ]
+}

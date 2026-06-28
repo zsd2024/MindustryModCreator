@@ -1,0 +1,112 @@
+{
+    "localizedName": "活塞绘制",
+    "type": "DrawPistons",
+    "parentType": "DrawBlock",
+    "fields": [
+        {
+            "name": "sinMag",
+            "localizedName": "运动幅度",
+            "type": "float",
+            "defaultValue": "4.0",
+            "notes": "**Notes**: 活塞运动的幅度。"
+        },
+        {
+            "name": "sinScl",
+            "localizedName": "运动频率",
+            "type": "float",
+            "defaultValue": "6.0",
+            "notes": "**Notes**: 活塞运动的频率。"
+        },
+        {
+            "name": "sinOffset",
+            "localizedName": "相位偏移",
+            "type": "float",
+            "defaultValue": "50.0",
+            "notes": "**Notes**: 活塞运动的相位偏移。"
+        },
+        {
+            "name": "sideOffset",
+            "localizedName": "侧面偏移",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "**Notes**: 活塞侧面的偏移量。"
+        },
+        {
+            "name": "lenOffset",
+            "localizedName": "长度偏移",
+            "type": "float",
+            "defaultValue": "-1.0",
+            "notes": "**Notes**: 活塞长度偏移。"
+        },
+        {
+            "name": "horiOffset",
+            "localizedName": "水平偏移",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "**Notes**: 活塞水平偏移。"
+        },
+        {
+            "name": "angleOffset",
+            "localizedName": "角度偏移",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "**Notes**: 活塞角度偏移。"
+        },
+        {
+            "name": "x",
+            "localizedName": "X轴偏移",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "**Notes**: 活塞的X轴偏移。"
+        },
+        {
+            "name": "y",
+            "localizedName": "Y轴偏移",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "**Notes**: 活塞的Y轴偏移。"
+        },
+        {
+            "name": "sides",
+            "localizedName": "活塞数量",
+            "type": "int",
+            "defaultValue": "4",
+            "notes": "**Notes**: 活塞的数量。"
+        },
+        {
+            "name": "suffix",
+            "localizedName": "纹理后缀",
+            "type": "String",
+            "defaultValue": "\"-piston\"",
+            "notes": "**Notes**: 方块名称后附加的后缀以查找纹理。"
+        },
+        {
+            "name": "region1",
+            "localizedName": "活塞杆纹理",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": "**Notes**: 活塞杆纹理。"
+        },
+        {
+            "name": "region2",
+            "localizedName": "活塞头纹理",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": "**Notes**: 活塞头纹理。"
+        },
+        {
+            "name": "regiont",
+            "localizedName": "活塞顶部纹理",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": "**Notes**: 活塞顶部纹理。"
+        },
+        {
+            "name": "iconRegion",
+            "localizedName": "图标纹理",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": "**Notes**: 图标纹理。"
+        }
+    ]
+}

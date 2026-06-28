@@ -1,0 +1,84 @@
+{
+    "type": "LaunchPad",
+    "parentType": "Block",
+    "fields": [
+        {
+            "name": "launchTime",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": "Time between launches."
+        },
+        {
+            "name": "launchSoundPitchRand",
+            "type": "float",
+            "defaultValue": "0.1",
+            "notes": ""
+        },
+        {
+            "name": "launchSound",
+            "type": "Sound",
+            "defaultValue": "padLaunch",
+            "notes": ""
+        },
+        {
+            "name": "lightRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "podRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "previewRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "lightColor",
+            "type": "Color",
+            "defaultValue": "eab678ff",
+            "notes": ""
+        },
+        {
+            "name": "acceptMultipleItems",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": ""
+        },
+        {
+            "name": "lightStep",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": ""
+        },
+        {
+            "name": "lightSteps",
+            "type": "int",
+            "defaultValue": "3",
+            "notes": ""
+        },
+        {
+            "name": "liquidPad",
+            "type": "float",
+            "defaultValue": "2.0",
+            "notes": ""
+        },
+        {
+            "name": "drawLiquid",
+            "type": "Liquid",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "bottomColor",
+            "type": "Color",
+            "defaultValue": "565666ff",
+            "notes": ""
+        }
+    ]
+}

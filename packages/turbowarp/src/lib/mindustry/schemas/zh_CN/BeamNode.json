@@ -1,0 +1,63 @@
+{
+    "type": "BeamNode",
+    "parentType": "PowerBlock",
+    "localizedName": "光束节点",
+    "fields": [
+        {
+            "name": "range",
+            "type": "int",
+            "defaultValue": "5",
+            "notes": "**Notes**: 最大搜索范围，用于寻找可连接的方块",
+            "localizedName": "搜索范围"
+        },
+        {
+            "name": "laser",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": "**Notes**: 激光束纹理",
+            "localizedName": "激光束纹理"
+        },
+        {
+            "name": "laserEnd",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": "**Notes**: 激光束末端纹理",
+            "localizedName": "激光束末端纹理"
+        },
+        {
+            "name": "laserColor1",
+            "type": "Color",
+            "defaultValue": "ffffffff",
+            "notes": "**Notes**: 激光颜色1",
+            "localizedName": "激光颜色一"
+        },
+        {
+            "name": "laserColor2",
+            "type": "Color",
+            "defaultValue": "ffd9c2ff",
+            "notes": "**Notes**: 激光颜色2",
+            "localizedName": "激光颜色二"
+        },
+        {
+            "name": "pulseScl",
+            "type": "float",
+            "defaultValue": "7.0",
+            "notes": "**Notes**: 脉冲缩放系数",
+            "localizedName": "脉冲缩放系数"
+        },
+        {
+            "name": "pulseMag",
+            "type": "float",
+            "defaultValue": "0.05",
+            "notes": "**Notes**: 脉冲幅度",
+            "localizedName": "脉冲幅度"
+        },
+        {
+            "name": "laserWidth",
+            "type": "float",
+            "defaultValue": "0.4",
+            "notes": "**Notes**: 激光宽度",
+            "localizedName": "激光宽度"
+        }
+    ]
+}

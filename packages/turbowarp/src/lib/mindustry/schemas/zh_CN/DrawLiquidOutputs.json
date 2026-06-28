@@ -1,0 +1,14 @@
+{
+    "localizedName": "液体输出绘制",
+    "type": "DrawLiquidOutputs",
+    "parentType": "DrawBlock",
+    "fields": [
+        {
+            "name": "liquidOutputRegions",
+            "localizedName": "液体输出纹理数组",
+            "type": "TextureRegion[][]",
+            "defaultValue": "null",
+            "notes": "**Notes**: 运行时加载的液体输出纹理二维数组。"
+        }
+    ]
+}

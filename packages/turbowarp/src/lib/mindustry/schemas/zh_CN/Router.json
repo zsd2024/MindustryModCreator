@@ -1,0 +1,14 @@
+{
+    "type": "Router",
+    "parentType": "Block",
+    "localizedName": "分配器",
+    "fields": [
+        {
+            "name": "speed",
+            "type": "float",
+            "defaultValue": "8.0",
+            "localizedName": "传输速度",
+            "notes": "**Notes**: 分配器传输物品的速度。"
+        }
+    ]
+}

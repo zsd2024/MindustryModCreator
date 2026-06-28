@@ -1,0 +1,126 @@
+{
+    "type": "MoveEffectAbility",
+    "parentType": "Ability",
+    "localizedName": "移动特效能力",
+    "fields": [
+        {
+            "name": "minVelocity",
+            "localizedName": "最小速度",
+            "type": "float",
+            "defaultValue": "0.08",
+            "notes": "**Notes**: 最小触发速度"
+        },
+        {
+            "name": "interval",
+            "localizedName": "效果间隔",
+            "type": "float",
+            "defaultValue": "3.0",
+            "notes": "**Notes**: 效果间隔"
+        },
+        {
+            "name": "chance",
+            "localizedName": "触发概率",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "**Notes**: 触发概率"
+        },
+        {
+            "name": "amount",
+            "localizedName": "效果数量",
+            "type": "int",
+            "defaultValue": "1",
+            "notes": "**Notes**: 效果数量"
+        },
+        {
+            "name": "x",
+            "localizedName": "偏移X",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "**Notes**: 偏移 X"
+        },
+        {
+            "name": "y",
+            "localizedName": "偏移Y",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "**Notes**: 偏移 Y"
+        },
+        {
+            "name": "rotation",
+            "localizedName": "旋转角度",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "**Notes**: 旋转角度"
+        },
+        {
+            "name": "rangeX",
+            "localizedName": "X轴随机范围",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "**Notes**: X 轴随机范围"
+        },
+        {
+            "name": "rangeY",
+            "localizedName": "Y轴随机范围",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "**Notes**: Y 轴随机范围"
+        },
+        {
+            "name": "rangeLengthMin",
+            "localizedName": "随机长度最小值",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "**Notes**: 随机长度最小值"
+        },
+        {
+            "name": "rangeLengthMax",
+            "localizedName": "随机长度最大值",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "**Notes**: 随机长度最大值"
+        },
+        {
+            "name": "rotateEffect",
+            "localizedName": "旋转效果",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "**Notes**: 是否旋转效果"
+        },
+        {
+            "name": "effectParam",
+            "localizedName": "效果参数",
+            "type": "float",
+            "defaultValue": "3.0",
+            "notes": "**Notes**: 效果参数"
+        },
+        {
+            "name": "teamColor",
+            "localizedName": "队伍颜色",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "**Notes**: 是否使用队伍颜色"
+        },
+        {
+            "name": "parentizeEffects",
+            "localizedName": "继承父级",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "**Notes**: 效果是否继承父级"
+        },
+        {
+            "name": "color",
+            "localizedName": "颜色",
+            "type": "Color",
+            "defaultValue": "ffffffff",
+            "notes": "**Notes**: 颜色"
+        },
+        {
+            "name": "effect",
+            "localizedName": "特效",
+            "type": "Effect",
+            "defaultValue": "missileTrail",
+            "notes": "**Notes**: 效果"
+        }
+    ]
+}

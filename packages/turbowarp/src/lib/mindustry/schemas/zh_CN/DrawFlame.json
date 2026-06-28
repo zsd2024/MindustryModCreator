@@ -1,0 +1,98 @@
+{
+    "localizedName": "火焰绘制",
+    "type": "DrawFlame",
+    "parentType": "DrawBlock",
+    "fields": [
+        {
+            "name": "flameColor",
+            "localizedName": "火焰颜色",
+            "type": "Color",
+            "defaultValue": "ffc999ff",
+            "notes": "**Notes**: 火焰的颜色。"
+        },
+        {
+            "name": "top",
+            "localizedName": "火焰顶部纹理",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": "**Notes**: 火焰顶部纹理。"
+        },
+        {
+            "name": "lightRadius",
+            "localizedName": "光线基础半径",
+            "type": "float",
+            "defaultValue": "60.0",
+            "notes": "**Notes**: 光线的基础半径。"
+        },
+        {
+            "name": "lightAlpha",
+            "localizedName": "光线透明度",
+            "type": "float",
+            "defaultValue": "0.65",
+            "notes": "**Notes**: 光线的透明度。"
+        },
+        {
+            "name": "lightSinScl",
+            "localizedName": "光线波动频率",
+            "type": "float",
+            "defaultValue": "10.0",
+            "notes": "**Notes**: 光线半径正弦波动的频率。"
+        },
+        {
+            "name": "lightSinMag",
+            "localizedName": "光线波动幅度",
+            "type": "float",
+            "defaultValue": "5.0",
+            "notes": "**Notes**: 光线半径正弦波动的幅度。"
+        },
+        {
+            "name": "flameRadius",
+            "localizedName": "火焰外圈半径",
+            "type": "float",
+            "defaultValue": "3.0",
+            "notes": "**Notes**: 火焰外圈半径。"
+        },
+        {
+            "name": "flameRadiusIn",
+            "localizedName": "火焰内圈半径",
+            "type": "float",
+            "defaultValue": "1.9",
+            "notes": "**Notes**: 火焰内圈半径。"
+        },
+        {
+            "name": "flameRadiusScl",
+            "localizedName": "火焰波动频率",
+            "type": "float",
+            "defaultValue": "5.0",
+            "notes": "**Notes**: 火焰半径正弦波动的频率。"
+        },
+        {
+            "name": "flameRadiusMag",
+            "localizedName": "外圈波动幅度",
+            "type": "float",
+            "defaultValue": "2.0",
+            "notes": "**Notes**: 火焰外圈半径正弦波动的幅度。"
+        },
+        {
+            "name": "flameRadiusInMag",
+            "localizedName": "内圈波动幅度",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": "**Notes**: 火焰内圈半径正弦波动的幅度。"
+        },
+        {
+            "name": "flameX",
+            "localizedName": "火焰X轴偏移",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "**Notes**: 火焰绘制的X轴偏移。"
+        },
+        {
+            "name": "flameY",
+            "localizedName": "火焰Y轴偏移",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "**Notes**: 火焰绘制的Y轴偏移。"
+        }
+    ]
+}

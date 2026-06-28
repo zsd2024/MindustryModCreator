@@ -1,0 +1,133 @@
+{
+    "type": "ShockwaveTower",
+    "parentType": "Block",
+    "localizedName": "冲击波塔",
+    "fields": [
+        {
+            "name": "timerCheck",
+            "type": "int",
+            "defaultValue": "1",
+            "localizedName": "检测计时器",
+            "notes": "**Notes**: 检测计时器ID"
+        },
+        {
+            "name": "range",
+            "type": "float",
+            "defaultValue": "110.0",
+            "localizedName": "攻击范围",
+            "notes": "**Notes**: 攻击范围"
+        },
+        {
+            "name": "reload",
+            "type": "float",
+            "defaultValue": "90.0",
+            "localizedName": "装填时间",
+            "notes": "**Notes**: 装填时间"
+        },
+        {
+            "name": "bulletDamage",
+            "type": "float",
+            "defaultValue": "160.0",
+            "localizedName": "子弹伤害",
+            "notes": "**Notes**: 子弹伤害"
+        },
+        {
+            "name": "falloffCount",
+            "type": "float",
+            "defaultValue": "20.0",
+            "localizedName": "伤害衰减计数",
+            "notes": "**Notes**: 伤害衰减计数"
+        },
+        {
+            "name": "shake",
+            "type": "float",
+            "defaultValue": "2.0",
+            "localizedName": "屏幕震动",
+            "notes": "**Notes**: 屏幕震动强度"
+        },
+        {
+            "name": "checkInterval",
+            "type": "float",
+            "defaultValue": "8.0",
+            "localizedName": "检测间隔",
+            "notes": "**Notes**: 检测间隔"
+        },
+        {
+            "name": "shootSound",
+            "type": "Sound",
+            "defaultValue": "shockwaveTower",
+            "localizedName": "发射音效",
+            "notes": "**Notes**: 发射音效"
+        },
+        {
+            "name": "waveColor",
+            "type": "Color",
+            "defaultValue": "ffd37fff",
+            "localizedName": "冲击波颜色",
+            "notes": "**Notes**: 冲击波颜色"
+        },
+        {
+            "name": "heatColor",
+            "type": "Color",
+            "defaultValue": "ab3400ff",
+            "localizedName": "热量颜色",
+            "notes": "**Notes**: 热量颜色"
+        },
+        {
+            "name": "shapeColor",
+            "type": "Color",
+            "defaultValue": "f29c83ff",
+            "localizedName": "形状颜色",
+            "notes": "**Notes**: 形状颜色"
+        },
+        {
+            "name": "cooldownMultiplier",
+            "type": "float",
+            "defaultValue": "1.0",
+            "localizedName": "冷却倍率",
+            "notes": "**Notes**: 冷却倍率"
+        },
+        {
+            "name": "hitEffect",
+            "type": "Effect",
+            "defaultValue": "hitSquaresColor",
+            "localizedName": "命中特效",
+            "notes": "**Notes**: 命中特效"
+        },
+        {
+            "name": "waveEffect",
+            "type": "Effect",
+            "defaultValue": "pointShockwave",
+            "localizedName": "冲击波特效",
+            "notes": "**Notes**: 冲击波特效"
+        },
+        {
+            "name": "shapeRotateSpeed",
+            "type": "float",
+            "defaultValue": "1.0",
+            "localizedName": "形状旋转速度",
+            "notes": "**Notes**: 形状旋转速度"
+        },
+        {
+            "name": "shapeRadius",
+            "type": "float",
+            "defaultValue": "6.0",
+            "localizedName": "形状半径",
+            "notes": "**Notes**: 形状半径"
+        },
+        {
+            "name": "shapeSides",
+            "type": "int",
+            "defaultValue": "4",
+            "localizedName": "形状边数",
+            "notes": "**Notes**: 形状边数"
+        },
+        {
+            "name": "heatRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "localizedName": "热量纹理",
+            "notes": "**Notes**: 热量纹理区域"
+        }
+    ]
+}

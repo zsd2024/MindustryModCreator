@@ -1,0 +1,78 @@
+{
+    "type": "ShockMine",
+    "parentType": "Block",
+    "fields": [
+        {
+            "name": "timerDamage",
+            "type": "int",
+            "defaultValue": "1",
+            "notes": ""
+        },
+        {
+            "name": "cooldown",
+            "type": "float",
+            "defaultValue": "80.0",
+            "notes": ""
+        },
+        {
+            "name": "tileDamage",
+            "type": "float",
+            "defaultValue": "5.0",
+            "notes": ""
+        },
+        {
+            "name": "damage",
+            "type": "float",
+            "defaultValue": "13.0",
+            "notes": ""
+        },
+        {
+            "name": "length",
+            "type": "int",
+            "defaultValue": "10",
+            "notes": ""
+        },
+        {
+            "name": "tendrils",
+            "type": "int",
+            "defaultValue": "6",
+            "notes": ""
+        },
+        {
+            "name": "lightningColor",
+            "type": "Color",
+            "defaultValue": "a9d8ffff",
+            "notes": ""
+        },
+        {
+            "name": "shots",
+            "type": "int",
+            "defaultValue": "6",
+            "notes": ""
+        },
+        {
+            "name": "inaccuracy",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": ""
+        },
+        {
+            "name": "bullet",
+            "type": "BulletType",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "teamAlpha",
+            "type": "float",
+            "defaultValue": "0.3",
+            "notes": ""
+        },
+        {
+            "name": "teamRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        }
+    ]
+}

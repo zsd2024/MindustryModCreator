@@ -1,0 +1,24 @@
+{
+    "type": "ContinuousTurret",
+    "parentType": "Turret",
+    "fields": [
+        {
+            "name": "shootType",
+            "type": "BulletType",
+            "defaultValue": "placeholder",
+            "notes": ""
+        },
+        {
+            "name": "aimChangeSpeed",
+            "type": "float",
+            "defaultValue": "Infinity",
+            "notes": "Speed at which the turret can change its bullet \"aim\" distance. This is only used for point laser bullets."
+        },
+        {
+            "name": "scaleDamageEfficiency",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": ""
+        }
+    ]
+}

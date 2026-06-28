@@ -1,0 +1,24 @@
+{
+    "type": "UnitAssemblerModule",
+    "parentType": "PayloadBlock",
+    "fields": [
+        {
+            "name": "sideRegion1",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "sideRegion2",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "tier",
+            "type": "int",
+            "defaultValue": "1",
+            "notes": ""
+        }
+    ]
+}

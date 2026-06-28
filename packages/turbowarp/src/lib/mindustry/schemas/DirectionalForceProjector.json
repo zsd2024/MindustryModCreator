@@ -1,0 +1,66 @@
+{
+    "type": "DirectionalForceProjector",
+    "parentType": "Block",
+    "fields": [
+        {
+            "name": "width",
+            "type": "float",
+            "defaultValue": "30.0",
+            "notes": ""
+        },
+        {
+            "name": "shieldHealth",
+            "type": "float",
+            "defaultValue": "3000.0",
+            "notes": ""
+        },
+        {
+            "name": "cooldownNormal",
+            "type": "float",
+            "defaultValue": "1.75",
+            "notes": ""
+        },
+        {
+            "name": "cooldownLiquid",
+            "type": "float",
+            "defaultValue": "1.5",
+            "notes": ""
+        },
+        {
+            "name": "cooldownBrokenBase",
+            "type": "float",
+            "defaultValue": "0.35",
+            "notes": ""
+        },
+        {
+            "name": "absorbEffect",
+            "type": "Effect",
+            "defaultValue": "absorb",
+            "notes": ""
+        },
+        {
+            "name": "shieldBreakEffect",
+            "type": "Effect",
+            "defaultValue": "shieldBreak",
+            "notes": ""
+        },
+        {
+            "name": "topRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "length",
+            "type": "float",
+            "defaultValue": "40.0",
+            "notes": ""
+        },
+        {
+            "name": "padSize",
+            "type": "float",
+            "defaultValue": "40.0",
+            "notes": ""
+        }
+    ]
+}

@@ -1,0 +1,21 @@
+{
+    "type": "Incinerator",
+    "parentType": "Block",
+    "localizedName": "焚烧炉",
+    "fields": [
+        {
+            "name": "effect",
+            "type": "Effect",
+            "localizedName": "焚烧效果",
+            "defaultValue": "fuelburn",
+            "notes": "**Notes**: 焚烧效果"
+        },
+        {
+            "name": "flameColor",
+            "type": "Color",
+            "localizedName": "火焰颜色",
+            "defaultValue": "ffad9dff",
+            "notes": "**Notes**: 火焰颜色"
+        }
+    ]
+}

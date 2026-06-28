@@ -1,0 +1,49 @@
+{
+    "type": "SoundEffect",
+    "parentType": "Effect",
+    "localizedName": "音效效果",
+    "fields": [
+        {
+            "name": "sound",
+            "type": "Sound",
+            "defaultValue": "none",
+            "localizedName": "音效",
+            "notes": "**Notes**: 要播放的音效"
+        },
+        {
+            "name": "minPitch",
+            "type": "float",
+            "defaultValue": "0.8",
+            "localizedName": "最小音高",
+            "notes": "**Notes**: 最小音高"
+        },
+        {
+            "name": "maxPitch",
+            "type": "float",
+            "defaultValue": "1.2",
+            "localizedName": "最大音高",
+            "notes": "**Notes**: 最大音高"
+        },
+        {
+            "name": "minVolume",
+            "type": "float",
+            "defaultValue": "1.0",
+            "localizedName": "最小音量",
+            "notes": "**Notes**: 最小音量"
+        },
+        {
+            "name": "maxVolume",
+            "type": "float",
+            "defaultValue": "1.0",
+            "localizedName": "最大音量",
+            "notes": "**Notes**: 最大音量"
+        },
+        {
+            "name": "effect",
+            "type": "Effect",
+            "defaultValue": "null",
+            "localizedName": "视觉效果",
+            "notes": "**Notes**: 同时渲染的效果"
+        }
+    ]
+}

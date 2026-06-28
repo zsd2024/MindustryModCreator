@@ -1,0 +1,30 @@
+{
+    "type": "LogicBlock",
+    "parentType": "Block",
+    "fields": [
+        {
+            "name": "maxInstructionScale",
+            "type": "int",
+            "defaultValue": "5",
+            "notes": ""
+        },
+        {
+            "name": "instructionsPerTick",
+            "type": "int",
+            "defaultValue": "1",
+            "notes": ""
+        },
+        {
+            "name": "maxInstructionsPerTick",
+            "type": "int",
+            "defaultValue": "40",
+            "notes": ""
+        },
+        {
+            "name": "range",
+            "type": "float",
+            "defaultValue": "80.0",
+            "notes": ""
+        }
+    ]
+}

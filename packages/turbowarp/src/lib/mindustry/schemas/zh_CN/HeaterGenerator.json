@@ -1,0 +1,21 @@
+{
+    "type": "HeaterGenerator",
+    "parentType": "ConsumeGenerator",
+    "localizedName": "加热发电机",
+    "fields": [
+        {
+            "name": "heatOutput",
+            "type": "float",
+            "localizedName": "热量输出",
+            "defaultValue": "10.0",
+            "notes": "**Notes**: 热量输出"
+        },
+        {
+            "name": "warmupRate",
+            "type": "float",
+            "localizedName": "预热速率",
+            "defaultValue": "0.15",
+            "notes": "**Notes**: 预热速率"
+        }
+    ]
+}

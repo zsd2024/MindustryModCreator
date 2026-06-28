@@ -1,0 +1,66 @@
+{
+    "type": "DrawGlowRegion",
+    "parentType": "DrawBlock",
+    "fields": [
+        {
+            "name": "blending",
+            "type": "Blending",
+            "defaultValue": "additive",
+            "notes": ""
+        },
+        {
+            "name": "suffix",
+            "type": "String",
+            "defaultValue": "\"-glow\"",
+            "notes": ""
+        },
+        {
+            "name": "alpha",
+            "type": "float",
+            "defaultValue": "0.9",
+            "notes": ""
+        },
+        {
+            "name": "glowScale",
+            "type": "float",
+            "defaultValue": "10.0",
+            "notes": ""
+        },
+        {
+            "name": "glowIntensity",
+            "type": "float",
+            "defaultValue": "0.5",
+            "notes": ""
+        },
+        {
+            "name": "rotateSpeed",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": ""
+        },
+        {
+            "name": "layer",
+            "type": "float",
+            "defaultValue": "31.0",
+            "notes": ""
+        },
+        {
+            "name": "rotate",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": ""
+        },
+        {
+            "name": "color",
+            "type": "Color",
+            "defaultValue": "ff0000ff",
+            "notes": ""
+        },
+        {
+            "name": "region",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        }
+    ]
+}

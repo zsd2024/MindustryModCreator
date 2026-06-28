@@ -1,0 +1,21 @@
+{
+    "type": "LiquidSource",
+    "parentType": "Block",
+    "localizedName": "液体源",
+    "fields": [
+        {
+            "name": "crossRegion",
+            "type": "TextureRegion",
+            "localizedName": "交叉纹理",
+            "defaultValue": "null",
+            "notes": "**Notes**: 未选择液体时显示的交叉纹理"
+        },
+        {
+            "name": "bottomRegion",
+            "type": "TextureRegion",
+            "localizedName": "底部纹理区域",
+            "defaultValue": "null",
+            "notes": "**Notes**: 底部纹理区域"
+        }
+    ]
+}

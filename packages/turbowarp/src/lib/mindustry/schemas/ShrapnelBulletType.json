@@ -1,0 +1,72 @@
+{
+    "type": "ShrapnelBulletType",
+    "parentType": "BulletType",
+    "fields": [
+        {
+            "name": "length",
+            "type": "float",
+            "defaultValue": "100.0",
+            "notes": ""
+        },
+        {
+            "name": "width",
+            "type": "float",
+            "defaultValue": "20.0",
+            "notes": ""
+        },
+        {
+            "name": "fromColor",
+            "type": "Color",
+            "defaultValue": "ffffffff",
+            "notes": ""
+        },
+        {
+            "name": "toColor",
+            "type": "Color",
+            "defaultValue": "a9d8ffff",
+            "notes": ""
+        },
+        {
+            "name": "hitLarge",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": ""
+        },
+        {
+            "name": "serrations",
+            "type": "int",
+            "defaultValue": "7",
+            "notes": ""
+        },
+        {
+            "name": "serrationLenScl",
+            "type": "float",
+            "defaultValue": "10.0",
+            "notes": ""
+        },
+        {
+            "name": "serrationWidth",
+            "type": "float",
+            "defaultValue": "4.0",
+            "notes": ""
+        },
+        {
+            "name": "serrationSpacing",
+            "type": "float",
+            "defaultValue": "8.0",
+            "notes": ""
+        },
+        {
+            "name": "serrationSpaceOffset",
+            "type": "float",
+            "defaultValue": "80.0",
+            "notes": ""
+        },
+        {
+            "name": "serrationFadeOffset",
+            "type": "float",
+            "defaultValue": "0.5",
+            "notes": ""
+        }
+    ]
+}

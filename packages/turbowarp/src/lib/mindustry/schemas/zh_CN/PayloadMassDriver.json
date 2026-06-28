@@ -1,0 +1,182 @@
+{
+    "type": "PayloadMassDriver",
+    "parentType": "PayloadBlock",
+    "localizedName": "载荷质量驱动器",
+    "fields": [
+        {
+            "name": "range",
+            "localizedName": "射程",
+            "type": "float",
+            "defaultValue": "100.0",
+            "notes": "**Notes**: 射程范围"
+        },
+        {
+            "name": "rotateSpeed",
+            "localizedName": "旋转速度",
+            "type": "float",
+            "defaultValue": "5.0",
+            "notes": "**Notes**: 旋转速度"
+        },
+        {
+            "name": "length",
+            "localizedName": "炮管长度",
+            "type": "float",
+            "defaultValue": "11.125",
+            "notes": "**Notes**: 炮管长度"
+        },
+        {
+            "name": "knockback",
+            "localizedName": "后坐力",
+            "type": "float",
+            "defaultValue": "5.0",
+            "notes": "**Notes**: 后坐力"
+        },
+        {
+            "name": "reload",
+            "localizedName": "装填时间",
+            "type": "float",
+            "defaultValue": "30.0",
+            "notes": "**Notes**: 装填时间"
+        },
+        {
+            "name": "chargeTime",
+            "localizedName": "充能时间",
+            "type": "float",
+            "defaultValue": "100.0",
+            "notes": "**Notes**: 充能时间"
+        },
+        {
+            "name": "maxPayloadSize",
+            "localizedName": "最大负载大小",
+            "type": "float",
+            "defaultValue": "3.0",
+            "notes": "**Notes**: 最大负载大小"
+        },
+        {
+            "name": "grabWidth",
+            "localizedName": "抓取宽度",
+            "type": "float",
+            "defaultValue": "8.0",
+            "notes": "**Notes**: 抓取宽度"
+        },
+        {
+            "name": "grabHeight",
+            "localizedName": "抓取高度",
+            "type": "float",
+            "defaultValue": "2.75",
+            "notes": "**Notes**: 抓取高度"
+        },
+        {
+            "name": "shootEffect",
+            "localizedName": "发射特效",
+            "type": "Effect",
+            "defaultValue": "shootBig2",
+            "notes": "**Notes**: 发射特效"
+        },
+        {
+            "name": "smokeEffect",
+            "localizedName": "烟雾特效",
+            "type": "Effect",
+            "defaultValue": "shootPayloadDriver",
+            "notes": "**Notes**: 烟雾特效"
+        },
+        {
+            "name": "receiveEffect",
+            "localizedName": "接收特效",
+            "type": "Effect",
+            "defaultValue": "payloadReceive",
+            "notes": "**Notes**: 接收特效"
+        },
+        {
+            "name": "shootSound",
+            "localizedName": "发射音效",
+            "type": "Sound",
+            "defaultValue": "massdriver",
+            "notes": "**Notes**: 发射音效"
+        },
+        {
+            "name": "receiveSound",
+            "localizedName": "接收音效",
+            "type": "Sound",
+            "defaultValue": "massdriverReceive",
+            "notes": "**Notes**: 接收音效"
+        },
+        {
+            "name": "shootSoundVolume",
+            "localizedName": "发射音量",
+            "type": "float",
+            "defaultValue": "0.7",
+            "notes": "**Notes**: 发射音效音量"
+        },
+        {
+            "name": "shake",
+            "localizedName": "震动强度",
+            "type": "float",
+            "defaultValue": "3.0",
+            "notes": "**Notes**: 屏幕震动强度"
+        },
+        {
+            "name": "transferEffect",
+            "localizedName": "传输特效",
+            "type": "Effect",
+            "defaultValue": "flyingUnitLow - 1)",
+            "notes": "**Notes**: 负载传输特效"
+        },
+        {
+            "name": "baseRegion",
+            "localizedName": "底座纹理",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": "**Notes**: 底座纹理区域"
+        },
+        {
+            "name": "capRegion",
+            "localizedName": "顶盖纹理",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": "**Notes**: 顶盖纹理区域"
+        },
+        {
+            "name": "leftRegion",
+            "localizedName": "左侧纹理",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": "**Notes**: 左侧纹理区域"
+        },
+        {
+            "name": "rightRegion",
+            "localizedName": "右侧纹理",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": "**Notes**: 右侧纹理区域"
+        },
+        {
+            "name": "capOutlineRegion",
+            "localizedName": "顶盖轮廓纹理",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": "**Notes**: 顶盖轮廓纹理区域"
+        },
+        {
+            "name": "leftOutlineRegion",
+            "localizedName": "左侧轮廓纹理",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": "**Notes**: 左侧轮廓纹理区域"
+        },
+        {
+            "name": "rightOutlineRegion",
+            "localizedName": "右侧轮廓纹理",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": "**Notes**: 右侧轮廓纹理区域"
+        },
+        {
+            "name": "arrow",
+            "localizedName": "箭头纹理",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": "**Notes**: 箭头纹理区域"
+        }
+    ]
+}

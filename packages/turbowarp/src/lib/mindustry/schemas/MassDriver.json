@@ -1,0 +1,108 @@
+{
+    "type": "MassDriver",
+    "parentType": "Block",
+    "fields": [
+        {
+            "name": "range",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": ""
+        },
+        {
+            "name": "rotateSpeed",
+            "type": "float",
+            "defaultValue": "5.0",
+            "notes": ""
+        },
+        {
+            "name": "translation",
+            "type": "float",
+            "defaultValue": "7.0",
+            "notes": ""
+        },
+        {
+            "name": "minDistribute",
+            "type": "int",
+            "defaultValue": "10",
+            "notes": ""
+        },
+        {
+            "name": "knockback",
+            "type": "float",
+            "defaultValue": "4.0",
+            "notes": ""
+        },
+        {
+            "name": "reload",
+            "type": "float",
+            "defaultValue": "100.0",
+            "notes": ""
+        },
+        {
+            "name": "bullet",
+            "type": "MassDriverBolt",
+            "defaultValue": "new MassDriverBolt()",
+            "notes": ""
+        },
+        {
+            "name": "bulletSpeed",
+            "type": "float",
+            "defaultValue": "5.5",
+            "notes": ""
+        },
+        {
+            "name": "bulletLifetime",
+            "type": "float",
+            "defaultValue": "200.0",
+            "notes": ""
+        },
+        {
+            "name": "shootEffect",
+            "type": "Effect",
+            "defaultValue": "shootBig2",
+            "notes": ""
+        },
+        {
+            "name": "smokeEffect",
+            "type": "Effect",
+            "defaultValue": "shootBigSmoke2",
+            "notes": ""
+        },
+        {
+            "name": "receiveEffect",
+            "type": "Effect",
+            "defaultValue": "mineBig",
+            "notes": ""
+        },
+        {
+            "name": "shootSound",
+            "type": "Sound",
+            "defaultValue": "massdriver",
+            "notes": ""
+        },
+        {
+            "name": "receiveSound",
+            "type": "Sound",
+            "defaultValue": "massdriverReceive",
+            "notes": ""
+        },
+        {
+            "name": "shootSoundVolume",
+            "type": "float",
+            "defaultValue": "0.5",
+            "notes": ""
+        },
+        {
+            "name": "shake",
+            "type": "float",
+            "defaultValue": "3.0",
+            "notes": ""
+        },
+        {
+            "name": "baseRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        }
+    ]
+}

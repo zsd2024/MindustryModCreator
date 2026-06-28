@@ -1,0 +1,35 @@
+{
+    "localizedName": "液体区域绘制",
+    "type": "DrawLiquidRegion",
+    "parentType": "DrawBlock",
+    "fields": [
+        {
+            "name": "drawLiquid",
+            "localizedName": "指定液体类型",
+            "type": "Liquid",
+            "defaultValue": "null",
+            "notes": "**Notes**: 指定绘制的液体类型，为null则使用当前液体。"
+        },
+        {
+            "name": "liquid",
+            "localizedName": "液体纹理",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": "**Notes**: 运行时加载的液体纹理。"
+        },
+        {
+            "name": "suffix",
+            "localizedName": "纹理后缀",
+            "type": "String",
+            "defaultValue": "\"-liquid\"",
+            "notes": "**Notes**: 方块名称后附加的后缀以查找纹理。"
+        },
+        {
+            "name": "alpha",
+            "localizedName": "透明度",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": "**Notes**: 液体绘制的透明度。"
+        }
+    ]
+}

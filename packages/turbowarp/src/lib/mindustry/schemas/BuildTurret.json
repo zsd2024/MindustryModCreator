@@ -1,0 +1,66 @@
+{
+    "type": "BuildTurret",
+    "parentType": "BaseTurret",
+    "fields": [
+        {
+            "name": "timerTarget",
+            "type": "int",
+            "defaultValue": "1",
+            "notes": ""
+        },
+        {
+            "name": "timerTarget2",
+            "type": "int",
+            "defaultValue": "2",
+            "notes": ""
+        },
+        {
+            "name": "targetInterval",
+            "type": "int",
+            "defaultValue": "15",
+            "notes": ""
+        },
+        {
+            "name": "baseRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "glowRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "buildSpeed",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": ""
+        },
+        {
+            "name": "buildBeamOffset",
+            "type": "float",
+            "defaultValue": "5.0",
+            "notes": ""
+        },
+        {
+            "name": "unitType",
+            "type": "UnitType",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "elevation",
+            "type": "float",
+            "defaultValue": "-1.0",
+            "notes": ""
+        },
+        {
+            "name": "heatColor",
+            "type": "Color",
+            "defaultValue": "ffd37fe5",
+            "notes": ""
+        }
+    ]
+}

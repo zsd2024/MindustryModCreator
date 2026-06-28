@@ -1,0 +1,14 @@
+{
+    "type": "Thruster",
+    "parentType": "Wall",
+    "localizedName": "推进器",
+    "fields": [
+        {
+            "name": "topRegion",
+            "type": "TextureRegion",
+            "localizedName": "顶部纹理",
+            "defaultValue": "null",
+            "notes": "**Notes**: 顶部纹理区域，用于显示推进器火焰方向"
+        }
+    ]
+}

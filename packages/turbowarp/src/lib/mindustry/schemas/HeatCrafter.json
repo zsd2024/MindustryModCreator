@@ -1,0 +1,24 @@
+{
+    "type": "HeatCrafter",
+    "parentType": "GenericCrafter",
+    "fields": [
+        {
+            "name": "heatRequirement",
+            "type": "float",
+            "defaultValue": "10.0",
+            "notes": "Base heat requirement for 100% efficiency."
+        },
+        {
+            "name": "overheatScale",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": "After heat meets this requirement, excess heat will be scaled by this number."
+        },
+        {
+            "name": "maxEfficiency",
+            "type": "float",
+            "defaultValue": "4.0",
+            "notes": "Maximum possible efficiency after overheat."
+        }
+    ]
+}

@@ -1,0 +1,21 @@
+{
+    "type": "TiledWall",
+    "parentType": "StaticWall",
+    "localizedName": "拼接墙壁",
+    "fields": [
+        {
+            "name": "sizedRegions",
+            "type": "TextureRegion[][][][]",
+            "localizedName": "按尺寸分组的纹理",
+            "defaultValue": "null",
+            "notes": "**Notes**: 运行时加载的按尺寸分组的纹理四维数组。"
+        },
+        {
+            "name": "maxSize",
+            "type": "int",
+            "localizedName": "最大拼接尺寸",
+            "defaultValue": "3",
+            "notes": "**Notes**: 瓦片拼接的最大尺寸。"
+        }
+    ]
+}

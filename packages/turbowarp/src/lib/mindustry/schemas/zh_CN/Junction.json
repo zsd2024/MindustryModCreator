@@ -1,0 +1,28 @@
+{
+    "type": "Junction",
+    "parentType": "Block",
+    "localizedName": "交叉路口",
+    "fields": [
+        {
+            "name": "speed",
+            "type": "float",
+            "localizedName": "传输速度",
+            "defaultValue": "26.0",
+            "notes": "**Notes**: 交叉路口传输物品的速度。"
+        },
+        {
+            "name": "capacity",
+            "type": "int",
+            "localizedName": "物品缓存容量",
+            "defaultValue": "6",
+            "notes": "**Notes**: 交叉路口的物品缓存容量。"
+        },
+        {
+            "name": "displayedSpeed",
+            "type": "float",
+            "localizedName": "显示传输速度",
+            "defaultValue": "13.0",
+            "notes": "**Notes**: 在统计界面中显示的物品传输速度。"
+        }
+    ]
+}

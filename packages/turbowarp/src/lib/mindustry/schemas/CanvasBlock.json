@@ -1,0 +1,60 @@
+{
+    "type": "CanvasBlock",
+    "parentType": "Block",
+    "fields": [
+        {
+            "name": "padding",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": ""
+        },
+        {
+            "name": "canvasSize",
+            "type": "int",
+            "defaultValue": "8",
+            "notes": ""
+        },
+        {
+            "name": "palette",
+            "type": "int[]",
+            "defaultValue": "{ 0x362944_ff, 0xc45d9f_ff, 0xe39aac_ff, 0xf0dab1_ff, 0x6461c2_ff, 0x2ba9b4_ff, 0x93d4b5_ff, 0xf0f6e8_ff }",
+            "notes": ""
+        },
+        {
+            "name": "bitsPerPixel",
+            "type": "int",
+            "defaultValue": "0",
+            "notes": ""
+        },
+        {
+            "name": "colorToIndex",
+            "type": "IntIntMap",
+            "defaultValue": "new IntIntMap()",
+            "notes": ""
+        },
+        {
+            "name": "side1",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "side2",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "corner1",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "corner2",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        }
+    ]
+}

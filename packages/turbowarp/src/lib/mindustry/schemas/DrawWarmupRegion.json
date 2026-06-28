@@ -1,0 +1,30 @@
+{
+    "type": "DrawWarmupRegion",
+    "parentType": "DrawBlock",
+    "fields": [
+        {
+            "name": "sinMag",
+            "type": "float",
+            "defaultValue": "0.6",
+            "notes": ""
+        },
+        {
+            "name": "sinScl",
+            "type": "float",
+            "defaultValue": "8.0",
+            "notes": ""
+        },
+        {
+            "name": "color",
+            "type": "Color",
+            "defaultValue": "ff9b59ff",
+            "notes": ""
+        },
+        {
+            "name": "region",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        }
+    ]
+}

@@ -1,0 +1,54 @@
+{
+    "type": "DrawPower",
+    "parentType": "DrawBlock",
+    "fields": [
+        {
+            "name": "emptyRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "fullRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "suffix",
+            "type": "String",
+            "defaultValue": "\"-power\"",
+            "notes": ""
+        },
+        {
+            "name": "drawPlan",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": ""
+        },
+        {
+            "name": "mixcol",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "If false, fades between emptyRegion and fullRegion instead of mixcol between empty and full colors."
+        },
+        {
+            "name": "emptyLightColor",
+            "type": "Color",
+            "defaultValue": "f8c266ff",
+            "notes": ""
+        },
+        {
+            "name": "fullLightColor",
+            "type": "Color",
+            "defaultValue": "fb9567ff",
+            "notes": ""
+        },
+        {
+            "name": "layer",
+            "type": "float",
+            "defaultValue": "-1.0",
+            "notes": "Any number <=0 disables layer changes."
+        }
+    ]
+}

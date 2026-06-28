@@ -1,0 +1,77 @@
+{
+    "type": "ArmorPlateAbility",
+    "parentType": "Ability",
+    "localizedName": "装甲板能力",
+    "fields": [
+        {
+            "name": "plateRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": "**Notes**: 装甲板纹理区域",
+            "localizedName": "装甲板纹理"
+        },
+        {
+            "name": "shineRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": "**Notes**: 光泽纹理区域",
+            "localizedName": "光泽纹理"
+        },
+        {
+            "name": "plateSuffix",
+            "type": "String",
+            "defaultValue": "\"-armor\"",
+            "notes": "**Notes**: 装甲板纹理后缀",
+            "localizedName": "装甲板纹理后缀"
+        },
+        {
+            "name": "shineSuffix",
+            "type": "String",
+            "defaultValue": "\"-shine\"",
+            "notes": "**Notes**: 光泽纹理后缀",
+            "localizedName": "光泽纹理后缀"
+        },
+        {
+            "name": "color",
+            "type": "Color",
+            "defaultValue": "null",
+            "notes": "光泽的颜色。若为 null，则使用队伍颜色。\n\n**Notes**: 光泽颜色，null 则使用队伍颜色",
+            "localizedName": "光泽颜色"
+        },
+        {
+            "name": "shineSpeed",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": "**Notes**: 光泽动画速度",
+            "localizedName": "光泽动画速度"
+        },
+        {
+            "name": "z",
+            "type": "float",
+            "defaultValue": "-1.0",
+            "notes": "**Notes**: 绘制层级",
+            "localizedName": "绘制层级"
+        },
+        {
+            "name": "drawPlate",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "是否绘制装甲板区域。\n\n**Notes**: 是否绘制装甲板",
+            "localizedName": "绘制装甲板"
+        },
+        {
+            "name": "drawShine",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "是否在装甲板区域上方绘制光泽。\n\n**Notes**: 是否绘制光泽",
+            "localizedName": "绘制光泽"
+        },
+        {
+            "name": "healthMultiplier",
+            "type": "float",
+            "defaultValue": "0.2",
+            "notes": "**Notes**: 生命值倍率加成",
+            "localizedName": "生命值倍率加成"
+        }
+    ]
+}

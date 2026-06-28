@@ -1,0 +1,48 @@
+{
+    "type": "ThermalGenerator",
+    "parentType": "PowerGenerator",
+    "fields": [
+        {
+            "name": "generateEffect",
+            "type": "Effect",
+            "defaultValue": "none",
+            "notes": ""
+        },
+        {
+            "name": "effectChance",
+            "type": "float",
+            "defaultValue": "0.05",
+            "notes": ""
+        },
+        {
+            "name": "minEfficiency",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": ""
+        },
+        {
+            "name": "displayEfficiencyScale",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": ""
+        },
+        {
+            "name": "displayEfficiency",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": ""
+        },
+        {
+            "name": "outputLiquid",
+            "type": "LiquidStack",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "attribute",
+            "type": "Attribute",
+            "defaultValue": "heat",
+            "notes": ""
+        }
+    ]
+}

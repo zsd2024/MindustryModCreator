@@ -1,0 +1,21 @@
+{
+    "type": "PayloadRouter",
+    "parentType": "PayloadConveyor",
+    "localizedName": "载荷路由器",
+    "fields": [
+        {
+            "name": "invert",
+            "localizedName": "反转",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "**Notes**: 是否反转匹配行为"
+        },
+        {
+            "name": "overRegion",
+            "localizedName": "覆盖层纹理",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": "**Notes**: 覆盖层纹理区域"
+        }
+    ]
+}

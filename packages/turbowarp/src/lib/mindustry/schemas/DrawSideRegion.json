@@ -1,0 +1,18 @@
+{
+    "type": "DrawSideRegion",
+    "parentType": "DrawBlock",
+    "fields": [
+        {
+            "name": "top1",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "top2",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        }
+    ]
+}

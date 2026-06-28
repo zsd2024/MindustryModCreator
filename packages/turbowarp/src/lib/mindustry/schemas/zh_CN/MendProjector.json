@@ -1,0 +1,70 @@
+{
+    "type": "MendProjector",
+    "parentType": "PowerBlock",
+    "localizedName": "修复投影仪",
+    "fields": [
+        {
+            "name": "repairSpeed",
+            "localizedName": "修复速度",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "**Notes**: 每秒的修复速度。"
+        },
+        {
+            "name": "repairRadius",
+            "localizedName": "修复半径",
+            "type": "float",
+            "defaultValue": "50.0",
+            "notes": "**Notes**: 修复范围半径。"
+        },
+        {
+            "name": "phaseRangeBoost",
+            "localizedName": "相位范围加成",
+            "type": "float",
+            "defaultValue": "20.0",
+            "notes": "**Notes**: 相位物品提供的范围加成。"
+        },
+        {
+            "name": "phaseSpeedBoost",
+            "localizedName": "相位速度加成",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "**Notes**: 相位物品提供的速度加成。"
+        },
+        {
+            "name": "useTime",
+            "localizedName": "消耗间隔",
+            "type": "float",
+            "defaultValue": "400.0",
+            "notes": "**Notes**: 相位物品的消耗间隔时间。"
+        },
+        {
+            "name": "beamWidth",
+            "localizedName": "光束宽度",
+            "type": "float",
+            "defaultValue": "0.1",
+            "notes": "**Notes**: 修复光束的宽度。"
+        },
+        {
+            "name": "beamColor",
+            "localizedName": "光束颜色",
+            "type": "Color",
+            "defaultValue": "ffd480ff",
+            "notes": "**Notes**: 修复光束的颜色。"
+        },
+        {
+            "name": "healEffect",
+            "localizedName": "治疗特效",
+            "type": "Effect",
+            "defaultValue": "mends",
+            "notes": "**Notes**: 治疗时的特效。"
+        },
+        {
+            "name": "fadeOut",
+            "localizedName": "淡出速度",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "**Notes**: 修复光束的淡出速度。"
+        }
+    ]
+}

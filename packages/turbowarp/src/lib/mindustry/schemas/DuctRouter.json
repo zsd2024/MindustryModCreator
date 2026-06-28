@@ -1,0 +1,18 @@
+{
+    "type": "DuctRouter",
+    "parentType": "Block",
+    "fields": [
+        {
+            "name": "speed",
+            "type": "float",
+            "defaultValue": "5.0",
+            "notes": ""
+        },
+        {
+            "name": "topRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        }
+    ]
+}

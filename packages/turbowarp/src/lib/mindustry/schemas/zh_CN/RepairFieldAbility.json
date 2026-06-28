@@ -1,0 +1,77 @@
+{
+    "type": "RepairFieldAbility",
+    "parentType": "Ability",
+    "localizedName": "修复场能力",
+    "fields": [
+        {
+            "name": "amount",
+            "type": "float",
+            "defaultValue": "1.0",
+            "localizedName": "治疗量",
+            "notes": "**Notes**: 治疗量"
+        },
+        {
+            "name": "reload",
+            "type": "float",
+            "defaultValue": "100.0",
+            "localizedName": "装填时间",
+            "notes": "**Notes**: 装填时间"
+        },
+        {
+            "name": "range",
+            "type": "float",
+            "defaultValue": "60.0",
+            "localizedName": "范围",
+            "notes": "**Notes**: 范围"
+        },
+        {
+            "name": "healPercent",
+            "type": "float",
+            "defaultValue": "0.0",
+            "localizedName": "治疗百分比",
+            "notes": "**Notes**: 治疗百分比"
+        },
+        {
+            "name": "healEffect",
+            "type": "Effect",
+            "defaultValue": "heal",
+            "localizedName": "治疗效果",
+            "notes": "**Notes**: 治疗效果"
+        },
+        {
+            "name": "activeEffect",
+            "type": "Effect",
+            "defaultValue": "healWaveDynamic",
+            "localizedName": "激活效果",
+            "notes": "**Notes**: 激活效果"
+        },
+        {
+            "name": "sound",
+            "type": "Sound",
+            "defaultValue": "healWave",
+            "localizedName": "音效",
+            "notes": "**Notes**: 音效"
+        },
+        {
+            "name": "soundVolume",
+            "type": "float",
+            "defaultValue": "0.5",
+            "localizedName": "音效音量",
+            "notes": "**Notes**: 音效音量"
+        },
+        {
+            "name": "parentizeEffects",
+            "type": "boolean",
+            "defaultValue": "false",
+            "localizedName": "继承父级效果",
+            "notes": "**Notes**: 效果是否继承父级"
+        },
+        {
+            "name": "sameTypeHealMult",
+            "type": "float",
+            "defaultValue": "1.0",
+            "localizedName": "同类型治疗倍率",
+            "notes": "同类型单位的治疗量乘以该倍数。\n\n**Notes**: 同类型治疗倍率"
+        }
+    ]
+}

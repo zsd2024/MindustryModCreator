@@ -1,0 +1,14 @@
+{
+    "type": "PowerSource",
+    "parentType": "PowerNode",
+    "localizedName": "电力源",
+    "fields": [
+        {
+            "name": "powerProduction",
+            "localizedName": "发电量",
+            "type": "float",
+            "defaultValue": "10000.0",
+            "notes": "**Notes**: 电力生产量"
+        }
+    ]
+}

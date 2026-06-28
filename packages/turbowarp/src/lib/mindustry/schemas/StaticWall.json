@@ -1,0 +1,30 @@
+{
+    "type": "StaticWall",
+    "parentType": "Prop",
+    "fields": [
+        {
+            "name": "large",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "split",
+            "type": "TextureRegion[][]",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "autotile",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "If true, this wall uses autotiling; variants are not supported. See https://github.com/GglLfr/tile-gen"
+        },
+        {
+            "name": "autotileMidVariants",
+            "type": "int",
+            "defaultValue": "1",
+            "notes": "If >1, the middle region of the autotile has random variants."
+        }
+    ]
+}

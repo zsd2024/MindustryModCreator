@@ -1,0 +1,266 @@
+{
+    "type": "Floor",
+    "parentType": "Block",
+    "localizedName": "地面",
+    "fields": [
+        {
+            "name": "edge",
+            "type": "String",
+            "localizedName": "边缘后备纹理",
+            "defaultValue": "\"stone\"",
+            "notes": "边缘后备纹理，主要用于矿石。\n\n**Notes**: 地面边缘的默认纹理名称。"
+        },
+        {
+            "name": "speedMultiplier",
+            "type": "float",
+            "localizedName": "速度倍率",
+            "defaultValue": "1.0",
+            "notes": "单位走过时速度乘以该值。\n\n**Notes**: 地形速度倍率。"
+        },
+        {
+            "name": "dragMultiplier",
+            "type": "float",
+            "localizedName": "阻力倍率",
+            "defaultValue": "1.0",
+            "notes": "单位走过时阻力乘以该值。\n\n**Notes**: 地形阻力倍率。"
+        },
+        {
+            "name": "damageTaken",
+            "type": "float",
+            "localizedName": "地形伤害",
+            "defaultValue": "0.0",
+            "notes": "在此瓦片上每tick受到的伤害。\n\n**Notes**: 地形伤害（tick）。"
+        },
+        {
+            "name": "drownTime",
+            "type": "float",
+            "localizedName": "溺水时间",
+            "defaultValue": "0.0",
+            "notes": "在此地形上溺水所需的tick数。0禁用。\n\n**Notes**: 溺水时间。"
+        },
+        {
+            "name": "walkEffect",
+            "type": "Effect",
+            "localizedName": "行走特效",
+            "defaultValue": "none",
+            "notes": "在此地面上行走时的特效。\n\n**Notes**: 行走特效。"
+        },
+        {
+            "name": "walkSound",
+            "type": "Sound",
+            "localizedName": "行走音效",
+            "defaultValue": "none",
+            "notes": "行走时发出的音效。\n\n**Notes**: 行走音效。"
+        },
+        {
+            "name": "walkSoundVolume",
+            "type": "float",
+            "localizedName": "行走音效音量",
+            "defaultValue": "0.1",
+            "notes": "行走音效的音量。\n\n**Notes**: 行走音效音量。"
+        },
+        {
+            "name": "walkSoundPitchMin",
+            "type": "float",
+            "localizedName": "行走音效最小音调",
+            "defaultValue": "0.8",
+            "notes": "行走音效的音量。\n\n**Notes**: 行走音效最小音调。"
+        },
+        {
+            "name": "walkSoundPitchMax",
+            "type": "float",
+            "localizedName": "行走音效最大音调",
+            "defaultValue": "1.2",
+            "notes": "行走音效的音量。\n\n**Notes**: 行走音效最大音调。"
+        },
+        {
+            "name": "drownUpdateEffect",
+            "type": "Effect",
+            "localizedName": "溺水特效",
+            "defaultValue": "bubble",
+            "notes": "在此地面溺水时显示的特效。\n\n**Notes**: 溺水特效。"
+        },
+        {
+            "name": "status",
+            "type": "StatusEffect",
+            "localizedName": "行走状态效果",
+            "defaultValue": "none",
+            "notes": "走过时施加的状态效果。\n\n**Notes**: 行走状态效果。"
+        },
+        {
+            "name": "statusDuration",
+            "type": "float",
+            "localizedName": "状态效果持续时间",
+            "defaultValue": "60.0",
+            "notes": "施加状态效果的强度。\n\n**Notes**: 状态效果持续时间。"
+        },
+        {
+            "name": "liquidDrop",
+            "type": "Liquid",
+            "localizedName": "可抽取液体类型",
+            "defaultValue": "null",
+            "notes": "此方块掉落的液体，用于泵。\n\n**Notes**: 可从地面抽取的液体类型。"
+        },
+        {
+            "name": "liquidMultiplier",
+            "type": "float",
+            "localizedName": "液体抽取倍率",
+            "defaultValue": "1.0",
+            "notes": "泵出液体的倍率，用于深水。\n\n**Notes**: 液体抽取倍率。"
+        },
+        {
+            "name": "isLiquid",
+            "type": "boolean",
+            "localizedName": "是否为液体",
+            "defaultValue": "false",
+            "notes": "此方块是否为液体。\n\n**Notes**: 控制地面是否为液体。"
+        },
+        {
+            "name": "overlayAlpha",
+            "type": "float",
+            "localizedName": "液体覆盖层透明度",
+            "defaultValue": "0.65",
+            "notes": "对于液体地面，这是顶部覆盖层的不透明度。\n\n**Notes**: 液体覆盖层透明度。"
+        },
+        {
+            "name": "supportsOverlay",
+            "type": "boolean",
+            "localizedName": "是否支持覆盖层",
+            "defaultValue": "false",
+            "notes": "此地面是否支持覆盖层地面。\n\n**Notes**: 控制是否可叠加覆盖层。"
+        },
+        {
+            "name": "shallow",
+            "type": "boolean",
+            "localizedName": "浅水标志",
+            "defaultValue": "false",
+            "notes": "浅水标志，用于地图生成。\n\n**Notes**: 控制地面是否为浅水。"
+        },
+        {
+            "name": "blendGroup",
+            "type": "Block",
+            "localizedName": "地面混合组",
+            "defaultValue": "this",
+            "notes": "此方块不会绘制边缘的方块组。\n\n**Notes**: 地面混合组。"
+        },
+        {
+            "name": "oreDefault",
+            "type": "boolean",
+            "localizedName": "是否默认生成矿石",
+            "defaultValue": "false",
+            "notes": "此矿石是否默认在地图中生成。\n\n**Notes**: 控制矿石是否默认生成。"
+        },
+        {
+            "name": "oreScale",
+            "type": "float",
+            "localizedName": "矿石生成缩放",
+            "defaultValue": "24.0",
+            "notes": "矿石生成参数。\n\n**Notes**: 矿石生成缩放。"
+        },
+        {
+            "name": "oreThreshold",
+            "type": "float",
+            "localizedName": "矿石生成阈值",
+            "defaultValue": "0.828",
+            "notes": "矿石生成参数。\n\n**Notes**: 矿石生成阈值。"
+        },
+        {
+            "name": "wall",
+            "type": "Block",
+            "localizedName": "对应墙壁方块",
+            "defaultValue": "air",
+            "notes": "此方块的墙壁变体。如果找不到，可能为Blocks.air。\n\n**Notes**: 对应的墙壁方块。"
+        },
+        {
+            "name": "decoration",
+            "type": "Block",
+            "localizedName": "地面装饰物",
+            "defaultValue": "air",
+            "notes": "装饰方块。通常是岩石。可能为空。\n\n**Notes**: 地面装饰物。"
+        },
+        {
+            "name": "canShadow",
+            "type": "boolean",
+            "localizedName": "是否可绘制阴影",
+            "defaultValue": "true",
+            "notes": "单位能否在此方块上绘制阴影。\n\n**Notes**: 控制单位阴影是否在此地面上绘制。"
+        },
+        {
+            "name": "forceDrawLight",
+            "type": "boolean",
+            "localizedName": "强制绘制光照",
+            "defaultValue": "false",
+            "notes": "若为true，此地面忽略覆盖层的obstructsLight标志。\n\n**Notes**: 强制绘制光照。"
+        },
+        {
+            "name": "needsSurface",
+            "type": "boolean",
+            "localizedName": "是否需要表面",
+            "defaultValue": "true",
+            "notes": "此覆盖层是否需要表面。浮动方块（如出生点）为false。\n\n**Notes**: 控制覆盖层是否需要地面基础。"
+        },
+        {
+            "name": "allowCorePlacement",
+            "type": "boolean",
+            "localizedName": "是否允许放置核心",
+            "defaultValue": "false",
+            "notes": "若为true，核心可放置在此地面上。\n\n**Notes**: 控制是否允许放置核心在此地面。"
+        },
+        {
+            "name": "wallOre",
+            "type": "boolean",
+            "localizedName": "是否在墙壁上生成矿石",
+            "defaultValue": "false",
+            "notes": "若为true，此矿石允许出现在墙壁上。\n\n**Notes**: 控制矿石是否可在墙壁上生成。"
+        },
+        {
+            "name": "blendId",
+            "type": "int",
+            "localizedName": "混合ID",
+            "defaultValue": "-1",
+            "notes": "用于混合组的实际ID。内部使用。\n\n**Notes**: 混合ID。"
+        },
+        {
+            "name": "tilingVariants",
+            "type": "int",
+            "localizedName": "平铺变体数量",
+            "defaultValue": "0",
+            "notes": "如果>0，此地面作为大纹理的一部分绘制。\n\n**Notes**: 平铺变体数量。"
+        },
+        {
+            "name": "autotile",
+            "type": "boolean",
+            "localizedName": "是否使用自动贴图",
+            "defaultValue": "false",
+            "notes": "若为true，此地面使用自动贴图；变体不受支持。github.com/GglLfr/tile-gen。\n\n**Notes**: 控制是否使用自动贴图。"
+        },
+        {
+            "name": "autotileMidVariants",
+            "type": "int",
+            "localizedName": "自动贴图中间变体数",
+            "defaultValue": "1",
+            "notes": "如果>1，自动贴图的中间区域有随机变体。\n\n**Notes**: 自动贴图中间变体数。"
+        },
+        {
+            "name": "autotileVariants",
+            "type": "int",
+            "localizedName": "自动贴图变体数",
+            "defaultValue": "1",
+            "notes": "主自动贴图精灵的变体数。\n\n**Notes**: 自动贴图变体数。"
+        },
+        {
+            "name": "drawEdgeIn",
+            "type": "boolean",
+            "localizedName": "是否绘制向内边缘",
+            "defaultValue": "true",
+            "notes": "若为true（默认），此地面将在自身上绘制其他地面的边缘。\n\n**Notes**: 控制是否绘制向内边缘。"
+        },
+        {
+            "name": "drawEdgeOut",
+            "type": "boolean",
+            "localizedName": "是否绘制向外边缘",
+            "defaultValue": "true",
+            "notes": "若为true（默认），此地面将在其他地面上绘制其边缘。\n\n**Notes**: 控制是否绘制向外边缘。"
+        }
+    ]
+}

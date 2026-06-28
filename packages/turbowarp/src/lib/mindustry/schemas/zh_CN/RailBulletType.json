@@ -1,0 +1,49 @@
+{
+    "type": "RailBulletType",
+    "parentType": "BulletType",
+    "localizedName": "轨道子弹",
+    "fields": [
+        {
+            "name": "pierceEffect",
+            "type": "Effect",
+            "defaultValue": "hitBulletSmall",
+            "localizedName": "穿透效果",
+            "notes": "穿透效果"
+        },
+        {
+            "name": "pointEffect",
+            "type": "Effect",
+            "defaultValue": "none",
+            "localizedName": "轨迹点效果",
+            "notes": "轨迹点效果"
+        },
+        {
+            "name": "lineEffect",
+            "type": "Effect",
+            "defaultValue": "none",
+            "localizedName": "线条效果",
+            "notes": "线条效果"
+        },
+        {
+            "name": "endEffect",
+            "type": "Effect",
+            "defaultValue": "none",
+            "localizedName": "末端效果",
+            "notes": "末端效果"
+        },
+        {
+            "name": "length",
+            "type": "float",
+            "defaultValue": "100.0",
+            "localizedName": "轨道长度",
+            "notes": "轨道长度"
+        },
+        {
+            "name": "pointEffectSpace",
+            "type": "float",
+            "defaultValue": "20.0",
+            "localizedName": "轨迹点间距",
+            "notes": "轨迹点间距"
+        }
+    ]
+}

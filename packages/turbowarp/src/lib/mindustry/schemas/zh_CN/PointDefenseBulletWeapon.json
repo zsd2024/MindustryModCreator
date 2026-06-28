@@ -1,0 +1,14 @@
+{
+    "type": "PointDefenseBulletWeapon",
+    "parentType": "Weapon",
+    "localizedName": "点防御子弹武器",
+    "fields": [
+        {
+            "name": "damageTargetWeight",
+            "localizedName": "目标伤害权重",
+            "type": "float",
+            "defaultValue": "10.0",
+            "notes": "**Notes**: 目标选择时伤害权重，越高越优先拦截高伤害子弹。"
+        }
+    ]
+}

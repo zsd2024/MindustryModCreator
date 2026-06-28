@@ -1,0 +1,112 @@
+{
+    "type": "ExplosionEffect",
+    "parentType": "Effect",
+    "localizedName": "爆炸效果",
+    "fields": [
+        {
+            "name": "waveColor",
+            "type": "Color",
+            "localizedName": "冲击波颜色",
+            "defaultValue": "ffd2aeff",
+            "notes": "**Notes**: 冲击波颜色"
+        },
+        {
+            "name": "smokeColor",
+            "type": "Color",
+            "localizedName": "烟雾颜色",
+            "defaultValue": "7f7f7fff",
+            "notes": "**Notes**: 烟雾颜色"
+        },
+        {
+            "name": "sparkColor",
+            "type": "Color",
+            "localizedName": "火花颜色",
+            "defaultValue": "e58956ff",
+            "notes": "**Notes**: 火花颜色"
+        },
+        {
+            "name": "waveLife",
+            "type": "float",
+            "localizedName": "冲击波持续时间",
+            "defaultValue": "6.0",
+            "notes": "**Notes**: 冲击波持续时间（帧）"
+        },
+        {
+            "name": "waveStroke",
+            "type": "float",
+            "localizedName": "冲击波线条宽度",
+            "defaultValue": "3.0",
+            "notes": "**Notes**: 冲击波线条宽度"
+        },
+        {
+            "name": "waveRad",
+            "type": "float",
+            "localizedName": "冲击波最大半径",
+            "defaultValue": "15.0",
+            "notes": "**Notes**: 冲击波最大半径"
+        },
+        {
+            "name": "waveRadBase",
+            "type": "float",
+            "localizedName": "冲击波基础半径",
+            "defaultValue": "2.0",
+            "notes": "**Notes**: 冲击波基础半径"
+        },
+        {
+            "name": "sparkStroke",
+            "type": "float",
+            "localizedName": "火花线条宽度",
+            "defaultValue": "1.0",
+            "notes": "**Notes**: 火花线条宽度"
+        },
+        {
+            "name": "sparkRad",
+            "type": "float",
+            "localizedName": "火花扩散半径",
+            "defaultValue": "23.0",
+            "notes": "**Notes**: 火花扩散半径"
+        },
+        {
+            "name": "sparkLen",
+            "type": "float",
+            "localizedName": "火花长度",
+            "defaultValue": "3.0",
+            "notes": "**Notes**: 火花长度"
+        },
+        {
+            "name": "smokeSize",
+            "type": "float",
+            "localizedName": "烟雾粒子大小",
+            "defaultValue": "4.0",
+            "notes": "**Notes**: 烟雾粒子大小"
+        },
+        {
+            "name": "smokeSizeBase",
+            "type": "float",
+            "localizedName": "烟雾粒子基础大小",
+            "defaultValue": "0.5",
+            "notes": "**Notes**: 烟雾粒子基础大小"
+        },
+        {
+            "name": "smokeRad",
+            "type": "float",
+            "localizedName": "烟雾扩散半径",
+            "defaultValue": "23.0",
+            "notes": "**Notes**: 烟雾扩散半径"
+        },
+        {
+            "name": "smokes",
+            "type": "int",
+            "localizedName": "烟雾粒子数量",
+            "defaultValue": "5",
+            "notes": "**Notes**: 烟雾粒子数量"
+        },
+        {
+            "name": "sparks",
+            "type": "int",
+            "localizedName": "火花数量",
+            "defaultValue": "4",
+            "notes": "**Notes**: 火花数量"
+        }
+    ]
+}

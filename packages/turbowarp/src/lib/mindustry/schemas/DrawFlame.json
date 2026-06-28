@@ -1,0 +1,84 @@
+{
+    "type": "DrawFlame",
+    "parentType": "DrawBlock",
+    "fields": [
+        {
+            "name": "flameColor",
+            "type": "Color",
+            "defaultValue": "ffc999ff",
+            "notes": ""
+        },
+        {
+            "name": "top",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "lightRadius",
+            "type": "float",
+            "defaultValue": "60.0",
+            "notes": ""
+        },
+        {
+            "name": "lightAlpha",
+            "type": "float",
+            "defaultValue": "0.65",
+            "notes": ""
+        },
+        {
+            "name": "lightSinScl",
+            "type": "float",
+            "defaultValue": "10.0",
+            "notes": ""
+        },
+        {
+            "name": "lightSinMag",
+            "type": "float",
+            "defaultValue": "5.0",
+            "notes": ""
+        },
+        {
+            "name": "flameRadius",
+            "type": "float",
+            "defaultValue": "3.0",
+            "notes": ""
+        },
+        {
+            "name": "flameRadiusIn",
+            "type": "float",
+            "defaultValue": "1.9",
+            "notes": ""
+        },
+        {
+            "name": "flameRadiusScl",
+            "type": "float",
+            "defaultValue": "5.0",
+            "notes": ""
+        },
+        {
+            "name": "flameRadiusMag",
+            "type": "float",
+            "defaultValue": "2.0",
+            "notes": ""
+        },
+        {
+            "name": "flameRadiusInMag",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": ""
+        },
+        {
+            "name": "flameX",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": ""
+        },
+        {
+            "name": "flameY",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": ""
+        }
+    ]
+}

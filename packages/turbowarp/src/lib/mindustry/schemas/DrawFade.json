@@ -1,0 +1,42 @@
+{
+    "type": "DrawFade",
+    "parentType": "DrawBlock",
+    "fields": [
+        {
+            "name": "suffix",
+            "type": "String",
+            "defaultValue": "\"-top\"",
+            "notes": ""
+        },
+        {
+            "name": "alpha",
+            "type": "float",
+            "defaultValue": "0.6",
+            "notes": ""
+        },
+        {
+            "name": "scale",
+            "type": "float",
+            "defaultValue": "3.0",
+            "notes": ""
+        },
+        {
+            "name": "x",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": ""
+        },
+        {
+            "name": "y",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": ""
+        },
+        {
+            "name": "region",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        }
+    ]
+}

@@ -1,0 +1,63 @@
+{
+    "localizedName": "形状绘制",
+    "type": "DrawShape",
+    "parentType": "DrawBlock",
+    "fields": [
+        {
+            "name": "color",
+            "localizedName": "形状颜色",
+            "type": "Color",
+            "defaultValue": "ffd37fff",
+            "notes": "**Notes**: 形状的颜色。"
+        },
+        {
+            "name": "sides",
+            "localizedName": "多边形边数",
+            "type": "int",
+            "defaultValue": "4",
+            "notes": "**Notes**: 多边形的边数。"
+        },
+        {
+            "name": "radius",
+            "localizedName": "半径",
+            "type": "float",
+            "defaultValue": "2.0",
+            "notes": "**Notes**: 形状的半径。"
+        },
+        {
+            "name": "timeScl",
+            "localizedName": "旋转时间缩放",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": "**Notes**: 旋转动画的时间缩放。"
+        },
+        {
+            "name": "layer",
+            "localizedName": "渲染层级",
+            "type": "float",
+            "defaultValue": "-1.0",
+            "notes": "**Notes**: 渲染层级。"
+        },
+        {
+            "name": "x",
+            "localizedName": "X轴偏移",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "**Notes**: 形状的X轴偏移。"
+        },
+        {
+            "name": "y",
+            "localizedName": "Y轴偏移",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "**Notes**: 形状的Y轴偏移。"
+        },
+        {
+            "name": "useWarmupRadius",
+            "localizedName": "预热影响半径",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "**Notes**: 半径是否受预热值影响。"
+        }
+    ]
+}

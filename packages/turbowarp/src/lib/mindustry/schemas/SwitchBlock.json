@@ -1,0 +1,18 @@
+{
+    "type": "SwitchBlock",
+    "parentType": "Block",
+    "fields": [
+        {
+            "name": "clickSound",
+            "type": "Sound",
+            "defaultValue": "click",
+            "notes": ""
+        },
+        {
+            "name": "onRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        }
+    ]
+}

@@ -1,0 +1,42 @@
+{
+    "type": "TallBlock",
+    "parentType": "Block",
+    "localizedName": "高方块",
+    "fields": [
+        {
+            "name": "shadowOffset",
+            "type": "float",
+            "localizedName": "阴影偏移量",
+            "defaultValue": "-3.0",
+            "notes": "**Notes**: 阴影的偏移量。"
+        },
+        {
+            "name": "layer",
+            "type": "float",
+            "localizedName": "渲染图层",
+            "defaultValue": "71.0",
+            "notes": "**Notes**: 方块的渲染层级。"
+        },
+        {
+            "name": "shadowLayer",
+            "type": "float",
+            "localizedName": "阴影图层",
+            "defaultValue": "69.0",
+            "notes": "**Notes**: 阴影的渲染层级。"
+        },
+        {
+            "name": "rotationRand",
+            "type": "float",
+            "localizedName": "随机旋转范围",
+            "defaultValue": "20.0",
+            "notes": "**Notes**: 随机旋转的范围。"
+        },
+        {
+            "name": "shadowAlpha",
+            "type": "float",
+            "localizedName": "阴影透明度",
+            "defaultValue": "0.6",
+            "notes": "**Notes**: 阴影的透明度。"
+        }
+    ]
+}

@@ -1,0 +1,108 @@
+{
+    "type": "DrawCrucibleFlame",
+    "parentType": "DrawBlock",
+    "fields": [
+        {
+            "name": "flameColor",
+            "type": "Color",
+            "defaultValue": "f58349ff",
+            "notes": ""
+        },
+        {
+            "name": "midColor",
+            "type": "Color",
+            "defaultValue": "f2d585ff",
+            "notes": ""
+        },
+        {
+            "name": "flameRad",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": ""
+        },
+        {
+            "name": "circleSpace",
+            "type": "float",
+            "defaultValue": "2.0",
+            "notes": ""
+        },
+        {
+            "name": "flameRadiusScl",
+            "type": "float",
+            "defaultValue": "10.0",
+            "notes": ""
+        },
+        {
+            "name": "flameRadiusMag",
+            "type": "float",
+            "defaultValue": "0.6",
+            "notes": ""
+        },
+        {
+            "name": "circleStroke",
+            "type": "float",
+            "defaultValue": "1.5",
+            "notes": ""
+        },
+        {
+            "name": "x",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": ""
+        },
+        {
+            "name": "y",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": ""
+        },
+        {
+            "name": "alpha",
+            "type": "float",
+            "defaultValue": "0.5",
+            "notes": ""
+        },
+        {
+            "name": "particles",
+            "type": "int",
+            "defaultValue": "30",
+            "notes": ""
+        },
+        {
+            "name": "particleLife",
+            "type": "float",
+            "defaultValue": "70.0",
+            "notes": ""
+        },
+        {
+            "name": "particleRad",
+            "type": "float",
+            "defaultValue": "7.0",
+            "notes": ""
+        },
+        {
+            "name": "particleSize",
+            "type": "float",
+            "defaultValue": "3.0",
+            "notes": ""
+        },
+        {
+            "name": "fadeMargin",
+            "type": "float",
+            "defaultValue": "0.4",
+            "notes": ""
+        },
+        {
+            "name": "rotateScl",
+            "type": "float",
+            "defaultValue": "1.5",
+            "notes": ""
+        },
+        {
+            "name": "particleInterp",
+            "type": "Interp",
+            "defaultValue": "5f)",
+            "notes": ""
+        }
+    ]
+}

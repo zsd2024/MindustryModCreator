@@ -1,0 +1,49 @@
+{
+    "localizedName": "无人机中心",
+    "type": "DroneCenter",
+    "parentType": "Block",
+    "fields": [
+        {
+            "name": "unitsSpawned",
+            "localizedName": "无人机数量",
+            "type": "int",
+            "defaultValue": "4",
+            "notes": "**Notes**: 同时生成的无人机数量"
+        },
+        {
+            "name": "droneType",
+            "localizedName": "无人机类型",
+            "type": "UnitType",
+            "defaultValue": "null",
+            "notes": "**Notes**: 无人机类型"
+        },
+        {
+            "name": "status",
+            "localizedName": "状态效果",
+            "type": "StatusEffect",
+            "defaultValue": "overdrive",
+            "notes": "**Notes**: 施加给附近单位的状态效果"
+        },
+        {
+            "name": "droneConstructTime",
+            "localizedName": "建造时间",
+            "type": "float",
+            "defaultValue": "180.0",
+            "notes": "**Notes**: 无人机建造时间（帧数）"
+        },
+        {
+            "name": "statusDuration",
+            "localizedName": "效果持续时间",
+            "type": "float",
+            "defaultValue": "120.0",
+            "notes": "**Notes**: 状态效果持续时间（帧数）"
+        },
+        {
+            "name": "droneRange",
+            "localizedName": "无人机范围",
+            "type": "float",
+            "defaultValue": "50.0",
+            "notes": "**Notes**: 无人机工作范围"
+        }
+    ]
+}

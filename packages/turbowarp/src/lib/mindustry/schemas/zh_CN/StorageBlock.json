@@ -1,0 +1,14 @@
+{
+    "type": "StorageBlock",
+    "parentType": "Block",
+    "localizedName": "存储方块",
+    "fields": [
+        {
+            "name": "coreMerge",
+            "type": "boolean",
+            "defaultValue": "true",
+            "localizedName": "核心合并",
+            "notes": "**Notes**: 是否与核心合并物品存储"
+        }
+    ]
+}

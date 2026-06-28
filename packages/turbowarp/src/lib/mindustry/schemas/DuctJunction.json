@@ -1,0 +1,30 @@
+{
+    "type": "DuctJunction",
+    "parentType": "Block",
+    "fields": [
+        {
+            "name": "transparentColor",
+            "type": "Color",
+            "defaultValue": "66666619",
+            "notes": ""
+        },
+        {
+            "name": "bottomRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "topRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "speed",
+            "type": "float",
+            "defaultValue": "5.0",
+            "notes": ""
+        }
+    ]
+}

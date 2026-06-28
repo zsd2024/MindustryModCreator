@@ -1,0 +1,105 @@
+{
+    "type": "PowerGenerator",
+    "parentType": "PowerDistributor",
+    "localizedName": "发电机",
+    "fields": [
+        {
+            "name": "powerProduction",
+            "localizedName": "发电量",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "在效率为1.0（即100%）时每tick产生的电量。\n\n**Notes**: 满效率时的发电量。"
+        },
+        {
+            "name": "generationType",
+            "localizedName": "发电类型",
+            "type": "Stat",
+            "defaultValue": "basePowerGeneration",
+            "notes": "**Notes**: 发电类型统计标识。"
+        },
+        {
+            "name": "drawer",
+            "localizedName": "绘制器",
+            "type": "DrawBlock",
+            "defaultValue": "new DrawDefault()",
+            "notes": "**Notes**: 绘制器，控制发电机的渲染方式。"
+        },
+        {
+            "name": "explosionRadius",
+            "localizedName": "爆炸半径",
+            "type": "int",
+            "defaultValue": "12",
+            "notes": "**Notes**: 爆炸半径。"
+        },
+        {
+            "name": "explosionDamage",
+            "localizedName": "爆炸伤害",
+            "type": "int",
+            "defaultValue": "0",
+            "notes": "**Notes**: 爆炸伤害。"
+        },
+        {
+            "name": "explodeEffect",
+            "localizedName": "爆炸特效",
+            "type": "Effect",
+            "defaultValue": "none",
+            "notes": "**Notes**: 爆炸特效。"
+        },
+        {
+            "name": "explodeSound",
+            "localizedName": "爆炸音效",
+            "type": "Sound",
+            "defaultValue": "none",
+            "notes": "**Notes**: 爆炸音效。"
+        },
+        {
+            "name": "explosionPuddles",
+            "localizedName": "爆炸水坑数",
+            "type": "int",
+            "defaultValue": "10",
+            "notes": "**Notes**: 爆炸产生的水坑数量。"
+        },
+        {
+            "name": "explosionPuddleRange",
+            "localizedName": "水坑散布范围",
+            "type": "float",
+            "defaultValue": "16.0",
+            "notes": "**Notes**: 爆炸水坑的散布范围。"
+        },
+        {
+            "name": "explosionPuddleAmount",
+            "localizedName": "水坑液体量",
+            "type": "float",
+            "defaultValue": "100.0",
+            "notes": "**Notes**: 每个爆炸水坑的液体量。"
+        },
+        {
+            "name": "explosionPuddleLiquid",
+            "localizedName": "水坑液体类型",
+            "type": "Liquid",
+            "defaultValue": "null",
+            "notes": "**Notes**: 爆炸水坑的液体类型。"
+        },
+        {
+            "name": "explosionMinWarmup",
+            "localizedName": "爆炸预热阈值",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "**Notes**: 爆炸所需的最低预热值。"
+        },
+        {
+            "name": "explosionShake",
+            "localizedName": "爆炸震动强度",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "**Notes**: 爆炸震屏强度。"
+        },
+        {
+            "name": "explosionShakeDuration",
+            "localizedName": "爆炸震动时长",
+            "type": "float",
+            "defaultValue": "6.0",
+            "notes": "**Notes**: 爆炸震屏持续时间。"
+        }
+    ]
+}

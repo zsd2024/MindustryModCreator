@@ -1,0 +1,42 @@
+{
+    "type": "LiquidRegenAbility",
+    "parentType": "Ability",
+    "localizedName": "液体回复能力",
+    "fields": [
+        {
+            "name": "liquid",
+            "type": "Liquid",
+            "localizedName": "液体类型",
+            "defaultValue": "null",
+            "notes": "**Notes**: 液体类型"
+        },
+        {
+            "name": "slurpSpeed",
+            "type": "float",
+            "localizedName": "吸取速度",
+            "defaultValue": "5.0",
+            "notes": "**Notes**: 吸取速度"
+        },
+        {
+            "name": "regenPerSlurp",
+            "type": "float",
+            "localizedName": "每次吸取回复量",
+            "defaultValue": "6.0",
+            "notes": "**Notes**: 每次吸取回复量"
+        },
+        {
+            "name": "slurpEffectChance",
+            "type": "float",
+            "localizedName": "吸取效果概率",
+            "defaultValue": "0.4",
+            "notes": "**Notes**: 吸取效果概率"
+        },
+        {
+            "name": "slurpEffect",
+            "type": "Effect",
+            "localizedName": "吸取效果",
+            "defaultValue": "heal",
+            "notes": "**Notes**: 吸取效果"
+        }
+    ]
+}

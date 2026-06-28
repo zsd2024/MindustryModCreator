@@ -1,0 +1,133 @@
+{
+    "type": "ForceProjector",
+    "parentType": "PowerBlock",
+    "localizedName": "力场投影仪",
+    "fields": [
+        {
+            "name": "phaseUseTime",
+            "type": "float",
+            "localizedName": "相位物品消耗间隔",
+            "defaultValue": "500.0",
+            "notes": "**Notes**: 相位物品的消耗间隔时间。"
+        },
+        {
+            "name": "phaseRadiusBoost",
+            "type": "float",
+            "localizedName": "相位范围加成",
+            "defaultValue": "20.0",
+            "notes": "**Notes**: 相位物品提供的范围加成。"
+        },
+        {
+            "name": "shieldHealth",
+            "type": "float",
+            "localizedName": "护盾生命值",
+            "defaultValue": "700.0",
+            "notes": "**Notes**: 护盾的总生命值。"
+        },
+        {
+            "name": "cooldownNormal",
+            "type": "float",
+            "localizedName": "正常冷却时间",
+            "defaultValue": "60.0",
+            "notes": "**Notes**: 护盾未被破坏时的冷却时间。"
+        },
+        {
+            "name": "cooldownBroken",
+            "type": "float",
+            "localizedName": "破碎冷却时间",
+            "defaultValue": "210.0",
+            "notes": "**Notes**: 护盾被破坏后的冷却时间。"
+        },
+        {
+            "name": "shieldRiseDuration",
+            "type": "float",
+            "localizedName": "护盾升起持续时间",
+            "defaultValue": "0.0",
+            "notes": "当非零时，护盾展开所需的时间（如果小于cooldownBroken，则有效）。\n\n**Notes**: 护盾升起持续时间。"
+        },
+        {
+            "name": "radius",
+            "type": "float",
+            "localizedName": "护盾半径",
+            "defaultValue": "60.0",
+            "notes": "**Notes**: 护盾的半径。"
+        },
+        {
+            "name": "shootEffect",
+            "type": "Effect",
+            "localizedName": "受击特效",
+            "defaultValue": "none",
+            "notes": "**Notes**: 护盾被击中时的特效。"
+        },
+        {
+            "name": "activeEffect",
+            "type": "Effect",
+            "localizedName": "激活特效",
+            "defaultValue": "none",
+            "notes": "**Notes**: 护盾激活时的持续特效。"
+        },
+        {
+            "name": "absorbEffect",
+            "type": "Effect",
+            "localizedName": "吸收特效",
+            "defaultValue": "none",
+            "notes": "**Notes**: 吸收子弹时的特效。"
+        },
+        {
+            "name": "breakEffect",
+            "type": "Effect",
+            "localizedName": "破碎特效",
+            "defaultValue": "none",
+            "notes": "**Notes**: 护盾破碎时的特效。"
+        },
+        {
+            "name": "radiusScale",
+            "type": "float",
+            "localizedName": "半径缩放比例",
+            "defaultValue": "1.0",
+            "notes": "**Notes**: 护盾绘制半径的缩放比例。"
+        },
+        {
+            "name": "useDynamicRadius",
+            "type": "boolean",
+            "localizedName": "是否使用动态半径",
+            "defaultValue": "false",
+            "notes": "**Notes**: 是否使用动态半径绘制。"
+        },
+        {
+            "name": "allowSpawn",
+            "type": "boolean",
+            "localizedName": "是否允许生成单位",
+            "defaultValue": "true",
+            "notes": "**Notes**: 是否允许护盾内生成单位。"
+        },
+        {
+            "name": "baseEdgeColor",
+            "type": "Color",
+            "localizedName": "底座边缘颜色",
+            "defaultValue": "454545ff",
+            "notes": "**Notes**: 底座边缘颜色。"
+        },
+        {
+            "name": "baseColor",
+            "type": "Color",
+            "localizedName": "底座主色",
+            "defaultValue": "707070ff",
+            "notes": "**Notes**: 底座主色。"
+        },
+        {
+            "name": "phaseColor",
+            "type": "Color",
+            "localizedName": "相位增强颜色",
+            "defaultValue": "45d5fdff",
+            "notes": "**Notes**: 相位增强时的护盾颜色。"
+        },
+        {
+            "name": "shieldColor",
+            "type": "Color",
+            "localizedName": "护盾默认颜色",
+            "defaultValue": "b0e1faff",
+            "notes": "**Notes**: 护盾的默认颜色。"
+        }
+    ]
+}

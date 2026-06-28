@@ -1,0 +1,24 @@
+{
+    "type": "ImpactReactor",
+    "parentType": "PowerGenerator",
+    "fields": [
+        {
+            "name": "timerUse",
+            "type": "int",
+            "defaultValue": "1",
+            "notes": ""
+        },
+        {
+            "name": "warmupSpeed",
+            "type": "float",
+            "defaultValue": "0.001",
+            "notes": ""
+        },
+        {
+            "name": "itemDuration",
+            "type": "float",
+            "defaultValue": "60.0",
+            "notes": ""
+        }
+    ]
+}

@@ -1,0 +1,77 @@
+{
+    "localizedName": "发光区域绘制",
+    "type": "DrawGlowRegion",
+    "parentType": "DrawBlock",
+    "fields": [
+        {
+            "name": "blending",
+            "localizedName": "混合模式",
+            "type": "Blending",
+            "defaultValue": "additive",
+            "notes": "**Notes**: 发光效果的混合模式。"
+        },
+        {
+            "name": "suffix",
+            "localizedName": "纹理后缀",
+            "type": "String",
+            "defaultValue": "\"-glow\"",
+            "notes": "**Notes**: 方块名称后附加的后缀以查找纹理。"
+        },
+        {
+            "name": "alpha",
+            "localizedName": "最大透明度",
+            "type": "float",
+            "defaultValue": "0.9",
+            "notes": "**Notes**: 发光效果的最大透明度。"
+        },
+        {
+            "name": "glowScale",
+            "localizedName": "发光波动频率",
+            "type": "float",
+            "defaultValue": "10.0",
+            "notes": "**Notes**: 发光强度正弦波动的频率。"
+        },
+        {
+            "name": "glowIntensity",
+            "localizedName": "发光强度",
+            "type": "float",
+            "defaultValue": "0.5",
+            "notes": "**Notes**: 发光强度的基础值。"
+        },
+        {
+            "name": "rotateSpeed",
+            "localizedName": "旋转速度",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "**Notes**: 发光纹理的旋转速度（度/秒）。"
+        },
+        {
+            "name": "layer",
+            "localizedName": "渲染层级",
+            "type": "float",
+            "defaultValue": "31.0",
+            "notes": "**Notes**: 发光效果的渲染层级。"
+        },
+        {
+            "name": "rotate",
+            "localizedName": "随建筑旋转",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "**Notes**: 发光纹理是否跟随建筑旋转。"
+        },
+        {
+            "name": "color",
+            "localizedName": "发光颜色",
+            "type": "Color",
+            "defaultValue": "ff0000ff",
+            "notes": "**Notes**: 发光的颜色。"
+        },
+        {
+            "name": "region",
+            "localizedName": "发光纹理区域",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": "**Notes**: 运行时加载的发光纹理区域。"
+        }
+    ]
+}

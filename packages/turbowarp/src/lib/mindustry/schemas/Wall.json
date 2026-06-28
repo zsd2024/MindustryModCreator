@@ -1,0 +1,60 @@
+{
+    "type": "Wall",
+    "parentType": "Block",
+    "fields": [
+        {
+            "name": "lightningChance",
+            "type": "float",
+            "defaultValue": "-1.0",
+            "notes": "Lighting chance. -1 to disable"
+        },
+        {
+            "name": "lightningDamage",
+            "type": "float",
+            "defaultValue": "20.0",
+            "notes": ""
+        },
+        {
+            "name": "lightningLength",
+            "type": "int",
+            "defaultValue": "17",
+            "notes": ""
+        },
+        {
+            "name": "lightningColor",
+            "type": "Color",
+            "defaultValue": "f3e979ff",
+            "notes": ""
+        },
+        {
+            "name": "lightningSound",
+            "type": "Sound",
+            "defaultValue": "shootArc",
+            "notes": ""
+        },
+        {
+            "name": "chanceDeflect",
+            "type": "float",
+            "defaultValue": "-1.0",
+            "notes": "Bullet deflection chance. -1 to disable"
+        },
+        {
+            "name": "flashHit",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": ""
+        },
+        {
+            "name": "flashColor",
+            "type": "Color",
+            "defaultValue": "ffffffff",
+            "notes": ""
+        },
+        {
+            "name": "deflectSound",
+            "type": "Sound",
+            "defaultValue": "none",
+            "notes": ""
+        }
+    ]
+}

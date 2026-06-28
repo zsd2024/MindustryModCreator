@@ -1,0 +1,28 @@
+{
+    "localizedName": "门",
+    "type": "Door",
+    "parentType": "Wall",
+    "fields": [
+        {
+            "name": "openDrawer",
+            "localizedName": "打开绘制器",
+            "type": "DrawBlock",
+            "defaultValue": "null",
+            "notes": "**Notes**: 门打开时的绘制器。"
+        },
+        {
+            "name": "openEffect",
+            "localizedName": "开门特效",
+            "type": "Effect",
+            "defaultValue": "none",
+            "notes": "**Notes**: 开门时的特效。"
+        },
+        {
+            "name": "closeEffect",
+            "localizedName": "关门特效",
+            "type": "Effect",
+            "defaultValue": "none",
+            "notes": "**Notes**: 关门时的特效。"
+        }
+    ]
+}

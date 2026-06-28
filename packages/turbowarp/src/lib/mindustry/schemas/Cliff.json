@@ -1,0 +1,18 @@
+{
+    "type": "Cliff",
+    "parentType": "Block",
+    "fields": [
+        {
+            "name": "size",
+            "type": "float",
+            "defaultValue": "11.0",
+            "notes": ""
+        },
+        {
+            "name": "cliffs",
+            "type": "TextureRegion[]",
+            "defaultValue": "null",
+            "notes": ""
+        }
+    ]
+}

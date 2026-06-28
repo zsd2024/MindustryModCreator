@@ -1,0 +1,70 @@
+{
+    "localizedName": "细胞绘制",
+    "type": "DrawCells",
+    "parentType": "DrawBlock",
+    "fields": [
+        {
+            "name": "middle",
+            "localizedName": "中心液体纹理",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": "**Notes**: 中心液体区域的纹理。"
+        },
+        {
+            "name": "color",
+            "localizedName": "中心颜色",
+            "type": "Color",
+            "defaultValue": "ffffffff",
+            "notes": "**Notes**: 中心液体绘制的颜色。"
+        },
+        {
+            "name": "particleColorFrom",
+            "localizedName": "粒子起始颜色",
+            "type": "Color",
+            "defaultValue": "000000ff",
+            "notes": "**Notes**: 细胞粒子的起始颜色。"
+        },
+        {
+            "name": "particleColorTo",
+            "localizedName": "粒子结束颜色",
+            "type": "Color",
+            "defaultValue": "000000ff",
+            "notes": "**Notes**: 细胞粒子的结束颜色。"
+        },
+        {
+            "name": "particles",
+            "localizedName": "粒子数量",
+            "type": "int",
+            "defaultValue": "12",
+            "notes": "**Notes**: 细胞粒子的数量。"
+        },
+        {
+            "name": "range",
+            "localizedName": "偏移范围",
+            "type": "float",
+            "defaultValue": "4.0",
+            "notes": "**Notes**: 细胞粒子的随机偏移范围。"
+        },
+        {
+            "name": "recurrence",
+            "localizedName": "重复周期",
+            "type": "float",
+            "defaultValue": "2.0",
+            "notes": "**Notes**: 细胞粒子动画的重复周期。"
+        },
+        {
+            "name": "radius",
+            "localizedName": "粒子半径",
+            "type": "float",
+            "defaultValue": "1.8",
+            "notes": "**Notes**: 细胞粒子的半径。"
+        },
+        {
+            "name": "lifetime",
+            "localizedName": "生命周期",
+            "type": "float",
+            "defaultValue": "180.0",
+            "notes": "**Notes**: 细胞粒子的生命周期（刻数）。"
+        }
+    ]
+}

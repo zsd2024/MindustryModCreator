@@ -1,0 +1,48 @@
+{
+    "type": "Radar",
+    "parentType": "Block",
+    "fields": [
+        {
+            "name": "discoveryTime",
+            "type": "float",
+            "defaultValue": "600.0",
+            "notes": ""
+        },
+        {
+            "name": "rotateSpeed",
+            "type": "float",
+            "defaultValue": "2.0",
+            "notes": ""
+        },
+        {
+            "name": "baseRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "glowRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "glowColor",
+            "type": "Color",
+            "defaultValue": "ab3400ff",
+            "notes": ""
+        },
+        {
+            "name": "glowScl",
+            "type": "float",
+            "defaultValue": "5.0",
+            "notes": ""
+        },
+        {
+            "name": "glowMag",
+            "type": "float",
+            "defaultValue": "0.6",
+            "notes": ""
+        }
+    ]
+}

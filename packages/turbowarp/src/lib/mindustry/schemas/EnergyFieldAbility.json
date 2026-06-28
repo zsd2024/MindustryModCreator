@@ -1,0 +1,174 @@
+{
+    "type": "EnergyFieldAbility",
+    "parentType": "Ability",
+    "fields": [
+        {
+            "name": "damage",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": ""
+        },
+        {
+            "name": "reload",
+            "type": "float",
+            "defaultValue": "100.0",
+            "notes": ""
+        },
+        {
+            "name": "range",
+            "type": "float",
+            "defaultValue": "60.0",
+            "notes": ""
+        },
+        {
+            "name": "healEffect",
+            "type": "Effect",
+            "defaultValue": "heal",
+            "notes": ""
+        },
+        {
+            "name": "hitEffect",
+            "type": "Effect",
+            "defaultValue": "hitLaserBlast",
+            "notes": ""
+        },
+        {
+            "name": "damageEffect",
+            "type": "Effect",
+            "defaultValue": "chainLightning",
+            "notes": ""
+        },
+        {
+            "name": "status",
+            "type": "StatusEffect",
+            "defaultValue": "electrified",
+            "notes": ""
+        },
+        {
+            "name": "shootSound",
+            "type": "Sound",
+            "defaultValue": "shootEnergyField",
+            "notes": ""
+        },
+        {
+            "name": "statusDuration",
+            "type": "float",
+            "defaultValue": "360.0",
+            "notes": ""
+        },
+        {
+            "name": "x",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": ""
+        },
+        {
+            "name": "y",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": ""
+        },
+        {
+            "name": "targetGround",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": ""
+        },
+        {
+            "name": "targetAir",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": ""
+        },
+        {
+            "name": "hitBuildings",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": ""
+        },
+        {
+            "name": "hitUnits",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": ""
+        },
+        {
+            "name": "maxTargets",
+            "type": "int",
+            "defaultValue": "25",
+            "notes": ""
+        },
+        {
+            "name": "healPercent",
+            "type": "float",
+            "defaultValue": "3.0",
+            "notes": ""
+        },
+        {
+            "name": "sameTypeHealMult",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": "Multiplies healing to units of the same type by this amount."
+        },
+        {
+            "name": "displayHeal",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": ""
+        },
+        {
+            "name": "layer",
+            "type": "float",
+            "defaultValue": "99.999",
+            "notes": ""
+        },
+        {
+            "name": "blinkScl",
+            "type": "float",
+            "defaultValue": "20.0",
+            "notes": ""
+        },
+        {
+            "name": "blinkSize",
+            "type": "float",
+            "defaultValue": "0.1",
+            "notes": ""
+        },
+        {
+            "name": "effectRadius",
+            "type": "float",
+            "defaultValue": "5.0",
+            "notes": ""
+        },
+        {
+            "name": "sectorRad",
+            "type": "float",
+            "defaultValue": "0.14",
+            "notes": ""
+        },
+        {
+            "name": "rotateSpeed",
+            "type": "float",
+            "defaultValue": "0.5",
+            "notes": ""
+        },
+        {
+            "name": "sectors",
+            "type": "int",
+            "defaultValue": "5",
+            "notes": ""
+        },
+        {
+            "name": "color",
+            "type": "Color",
+            "defaultValue": "98ffa9ff",
+            "notes": ""
+        },
+        {
+            "name": "useAmmo",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": ""
+        }
+    ]
+}

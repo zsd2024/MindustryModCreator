@@ -1,0 +1,14 @@
+{
+    "type": "PointBulletType",
+    "parentType": "BulletType",
+    "localizedName": "点防御子弹类型",
+    "fields": [
+        {
+            "name": "trailSpacing",
+            "localizedName": "拖尾间距",
+            "type": "float",
+            "defaultValue": "10.0",
+            "notes": "拖尾效果间距"
+        }
+    ]
+}

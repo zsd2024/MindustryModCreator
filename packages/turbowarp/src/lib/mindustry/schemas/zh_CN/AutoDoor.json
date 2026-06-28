@@ -1,0 +1,6 @@
+{
+    "type": "AutoDoor",
+    "parentType": "Door",
+    "localizedName": "自动门",
+    "fields": []
+}

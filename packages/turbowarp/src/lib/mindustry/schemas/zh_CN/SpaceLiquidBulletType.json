@@ -1,0 +1,14 @@
+{
+    "type": "SpaceLiquidBulletType",
+    "parentType": "BulletType",
+    "localizedName": "太空液体子弹",
+    "fields": [
+        {
+            "name": "orbSize",
+            "type": "float",
+            "defaultValue": "5.5",
+            "localizedName": "液滴大小",
+            "notes": "液滴大小"
+        }
+    ]
+}

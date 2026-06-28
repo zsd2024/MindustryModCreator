@@ -1,0 +1,56 @@
+{
+    "type": "UnitCargoLoader",
+    "parentType": "Block",
+    "localizedName": "单位货运装载器",
+    "fields": [
+        {
+            "name": "unitType",
+            "type": "UnitType",
+            "localizedName": "单位类型",
+            "defaultValue": "manifold",
+            "notes": "**Notes**: 生成的单位类型"
+        },
+        {
+            "name": "unitBuildTime",
+            "type": "float",
+            "localizedName": "单位建造时间",
+            "defaultValue": "480.0",
+            "notes": "**Notes**: 单位建造时间（帧数）"
+        },
+        {
+            "name": "polyStroke",
+            "type": "float",
+            "localizedName": "多边形描边宽度",
+            "defaultValue": "1.8",
+            "notes": "**Notes**: 多边形描边宽度"
+        },
+        {
+            "name": "polyRadius",
+            "type": "float",
+            "localizedName": "多边形半径",
+            "defaultValue": "8.0",
+            "notes": "**Notes**: 多边形半径"
+        },
+        {
+            "name": "polySides",
+            "type": "int",
+            "localizedName": "多边形边数",
+            "defaultValue": "6",
+            "notes": "**Notes**: 多边形边数"
+        },
+        {
+            "name": "polyRotateSpeed",
+            "type": "float",
+            "localizedName": "多边形旋转速度",
+            "defaultValue": "1.0",
+            "notes": "**Notes**: 多边形旋转速度"
+        },
+        {
+            "name": "polyColor",
+            "type": "Color",
+            "localizedName": "多边形颜色",
+            "defaultValue": "ffd37fff",
+            "notes": "**Notes**: 多边形颜色"
+        }
+    ]
+}

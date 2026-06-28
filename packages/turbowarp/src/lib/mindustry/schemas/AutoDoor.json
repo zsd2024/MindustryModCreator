@@ -1,0 +1,48 @@
+{
+    "type": "AutoDoor",
+    "parentType": "Wall",
+    "fields": [
+        {
+            "name": "timerToggle",
+            "type": "int",
+            "defaultValue": "1",
+            "notes": ""
+        },
+        {
+            "name": "checkInterval",
+            "type": "float",
+            "defaultValue": "20.0",
+            "notes": ""
+        },
+        {
+            "name": "openfx",
+            "type": "Effect",
+            "defaultValue": "dooropen",
+            "notes": ""
+        },
+        {
+            "name": "closefx",
+            "type": "Effect",
+            "defaultValue": "doorclose",
+            "notes": ""
+        },
+        {
+            "name": "doorSound",
+            "type": "Sound",
+            "defaultValue": "door",
+            "notes": ""
+        },
+        {
+            "name": "openRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "triggerMargin",
+            "type": "float",
+            "defaultValue": "12.0",
+            "notes": ""
+        }
+    ]
+}

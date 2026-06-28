@@ -1,0 +1,36 @@
+{
+    "type": "Reconstructor",
+    "parentType": "UnitBlock",
+    "fields": [
+        {
+            "name": "constructTime",
+            "type": "float",
+            "defaultValue": "120.0",
+            "notes": ""
+        },
+        {
+            "name": "upgrades",
+            "type": "Seq of UnitType[]",
+            "defaultValue": "[]",
+            "notes": ""
+        },
+        {
+            "name": "capacities",
+            "type": "int[]",
+            "defaultValue": "[]",
+            "notes": ""
+        },
+        {
+            "name": "createSound",
+            "type": "Sound",
+            "defaultValue": "unitCreate",
+            "notes": ""
+        },
+        {
+            "name": "createSoundVolume",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": ""
+        }
+    ]
+}

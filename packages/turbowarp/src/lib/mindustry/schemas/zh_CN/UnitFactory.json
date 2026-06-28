@@ -1,0 +1,35 @@
+{
+    "type": "UnitFactory",
+    "parentType": "UnitBlock",
+    "localizedName": "单位工厂",
+    "fields": [
+        {
+            "name": "capacities",
+            "type": "int[]",
+            "localizedName": "物品容量数组",
+            "defaultValue": "[]",
+            "notes": "**Notes**: 各类物品的容量数组"
+        },
+        {
+            "name": "plans",
+            "type": "Seq of UnitPlan",
+            "localizedName": "生产计划列表",
+            "defaultValue": "[]",
+            "notes": "**Notes**: 单位生产计划列表"
+        },
+        {
+            "name": "createSound",
+            "type": "Sound",
+            "localizedName": "创建音效",
+            "defaultValue": "unitCreate",
+            "notes": "**Notes**: 创建单位时的音效"
+        },
+        {
+            "name": "createSoundVolume",
+            "type": "float",
+            "localizedName": "创建音量",
+            "defaultValue": "1.0",
+            "notes": "**Notes**: 创建音效音量"
+        }
+    ]
+}

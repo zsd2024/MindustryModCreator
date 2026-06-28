@@ -1,0 +1,224 @@
+{
+    "type": "BeamDrill",
+    "parentType": "Block",
+    "localizedName": "光束钻头",
+    "fields": [
+        {
+            "name": "laser",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": "**Notes**: 光束纹理区域",
+            "localizedName": "光束纹理"
+        },
+        {
+            "name": "laserEnd",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": "**Notes**: 光束末端纹理区域",
+            "localizedName": "光束末端纹理"
+        },
+        {
+            "name": "laserCenter",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": "**Notes**: 光束中心纹理区域",
+            "localizedName": "光束中心纹理"
+        },
+        {
+            "name": "laserBoost",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": "**Notes**: 增强光束纹理区域",
+            "localizedName": "增强光束纹理"
+        },
+        {
+            "name": "laserEndBoost",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": "**Notes**: 增强光束末端纹理区域",
+            "localizedName": "增强光束末端纹理"
+        },
+        {
+            "name": "laserCenterBoost",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": "**Notes**: 增强光束中心纹理区域",
+            "localizedName": "增强光束中心纹理"
+        },
+        {
+            "name": "topRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": "**Notes**: 顶部纹理区域",
+            "localizedName": "顶部纹理"
+        },
+        {
+            "name": "glowRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": "**Notes**: 发光纹理区域",
+            "localizedName": "发光纹理"
+        },
+        {
+            "name": "drillTime",
+            "type": "float",
+            "defaultValue": "200.0",
+            "notes": "**Notes**: 钻取时间，生产一个物品所需的基础时间",
+            "localizedName": "钻取时间"
+        },
+        {
+            "name": "range",
+            "type": "int",
+            "defaultValue": "5",
+            "notes": "**Notes**: 钻取范围，以方块为单位",
+            "localizedName": "钻取范围"
+        },
+        {
+            "name": "tier",
+            "type": "int",
+            "defaultValue": "1",
+            "notes": "**Notes**: 钻头等级，决定可开采的矿物硬度上限",
+            "localizedName": "钻头等级"
+        },
+        {
+            "name": "laserWidth",
+            "type": "float",
+            "defaultValue": "0.65",
+            "notes": "**Notes**: 光束宽度",
+            "localizedName": "光束宽度"
+        },
+        {
+            "name": "optionalBoostIntensity",
+            "type": "float",
+            "defaultValue": "2.5",
+            "notes": "被可选消耗品增强时钻取速度提升的倍数。\n\n**Notes**: 被可选消耗品增强时钻取速度提升的倍数",
+            "localizedName": "可选增强倍率"
+        },
+        {
+            "name": "drillMultipliers",
+            "type": "ObjectFloatMap of Item",
+            "defaultValue": "new ObjectFloatMap<>()",
+            "notes": "每种物品的钻取速度倍率，默认为1。\n\n**Notes**: 每种物品的钻取速度倍率映射，默认值为1",
+            "localizedName": "物品速度倍率"
+        },
+        {
+            "name": "blockedItem",
+            "type": "Item",
+            "defaultValue": "null",
+            "notes": "该钻头无法开采的特殊豁免物品。\n\n**Notes**: 此钻头无法开采的单个豁免物品",
+            "localizedName": "禁止开采物品"
+        },
+        {
+            "name": "blockedItems",
+            "type": "Seq of Item",
+            "defaultValue": "null",
+            "notes": "该钻头无法开采的特殊豁免物品列表。\n\n**Notes**: 此钻头无法开采的豁免物品列表",
+            "localizedName": "禁止开采物品列表"
+        },
+        {
+            "name": "sparkColor",
+            "type": "Color",
+            "defaultValue": "fd9e81ff",
+            "notes": "**Notes**: 火花颜色",
+            "localizedName": "火花颜色"
+        },
+        {
+            "name": "glowColor",
+            "type": "Color",
+            "defaultValue": "ffffffff",
+            "notes": "**Notes**: 发光颜色",
+            "localizedName": "发光颜色"
+        },
+        {
+            "name": "glowIntensity",
+            "type": "float",
+            "defaultValue": "0.2",
+            "notes": "**Notes**: 发光强度",
+            "localizedName": "发光强度"
+        },
+        {
+            "name": "pulseIntensity",
+            "type": "float",
+            "defaultValue": "0.07",
+            "notes": "**Notes**: 脉冲强度",
+            "localizedName": "脉冲强度"
+        },
+        {
+            "name": "glowScl",
+            "type": "float",
+            "defaultValue": "3.0",
+            "notes": "**Notes**: 发光缩放系数",
+            "localizedName": "发光缩放系数"
+        },
+        {
+            "name": "sparks",
+            "type": "int",
+            "defaultValue": "7",
+            "notes": "**Notes**: 火花数量",
+            "localizedName": "火花数量"
+        },
+        {
+            "name": "sparkRange",
+            "type": "float",
+            "defaultValue": "10.0",
+            "notes": "**Notes**: 火花范围",
+            "localizedName": "火花范围"
+        },
+        {
+            "name": "sparkLife",
+            "type": "float",
+            "defaultValue": "27.0",
+            "notes": "**Notes**: 火花生命周期",
+            "localizedName": "火花生命周期"
+        },
+        {
+            "name": "sparkRecurrence",
+            "type": "float",
+            "defaultValue": "4.0",
+            "notes": "**Notes**: 火花重复间隔",
+            "localizedName": "火花重复间隔"
+        },
+        {
+            "name": "sparkSpread",
+            "type": "float",
+            "defaultValue": "45.0",
+            "notes": "**Notes**: 火花扩散角度",
+            "localizedName": "火花扩散角度"
+        },
+        {
+            "name": "sparkSize",
+            "type": "float",
+            "defaultValue": "3.5",
+            "notes": "**Notes**: 火花大小",
+            "localizedName": "火花大小"
+        },
+        {
+            "name": "boostHeatColor",
+            "type": "Color",
+            "defaultValue": "75b3ccff",
+            "notes": "**Notes**: 增强状态下的热力颜色",
+            "localizedName": "增强热力颜色"
+        },
+        {
+            "name": "heatColor",
+            "type": "Color",
+            "defaultValue": "ff5959e5",
+            "notes": "**Notes**: 热力颜色",
+            "localizedName": "热力颜色"
+        },
+        {
+            "name": "heatPulse",
+            "type": "float",
+            "defaultValue": "0.3",
+            "notes": "**Notes**: 热力脉冲幅度",
+            "localizedName": "热力脉冲幅度"
+        },
+        {
+            "name": "heatPulseScl",
+            "type": "float",
+            "defaultValue": "7.0",
+            "notes": "**Notes**: 热力脉冲缩放",
+            "localizedName": "热力脉冲缩放"
+        }
+    ]
+}

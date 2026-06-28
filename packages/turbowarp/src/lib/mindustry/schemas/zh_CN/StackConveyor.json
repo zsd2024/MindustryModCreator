@@ -1,0 +1,98 @@
+{
+    "type": "StackConveyor",
+    "parentType": "Block",
+    "localizedName": "堆叠传送带",
+    "fields": [
+        {
+            "name": "regions",
+            "type": "TextureRegion[]",
+            "defaultValue": "null",
+            "localizedName": "纹理数组",
+            "notes": "**Notes**: 纹理区域数组（三种状态：移动/装载/卸载）"
+        },
+        {
+            "name": "edgeRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "localizedName": "边缘纹理",
+            "notes": "**Notes**: 边缘纹理区域"
+        },
+        {
+            "name": "stackRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "localizedName": "堆叠纹理",
+            "notes": "**Notes**: 堆叠物品纹理区域"
+        },
+        {
+            "name": "glowRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "localizedName": "发光纹理",
+            "notes": "需要电力才能正常工作\n\n**Notes**: 发光纹理区域，需要电力才能正常工作"
+        },
+        {
+            "name": "edgeGlowRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "localizedName": "边缘发光纹理",
+            "notes": "**Notes**: 边缘发光纹理区域"
+        },
+        {
+            "name": "glowAlpha",
+            "type": "float",
+            "defaultValue": "1.0",
+            "localizedName": "发光透明度",
+            "notes": "**Notes**: 发光透明度"
+        },
+        {
+            "name": "glowColor",
+            "type": "Color",
+            "defaultValue": "feb380ff",
+            "localizedName": "发光颜色",
+            "notes": "**Notes**: 发光颜色"
+        },
+        {
+            "name": "baseEfficiency",
+            "type": "float",
+            "defaultValue": "0.0",
+            "localizedName": "基础效率",
+            "notes": "**Notes**: 基础效率"
+        },
+        {
+            "name": "speed",
+            "type": "float",
+            "defaultValue": "0.0",
+            "localizedName": "传送速度",
+            "notes": "**Notes**: 传送速度"
+        },
+        {
+            "name": "outputRouter",
+            "type": "boolean",
+            "defaultValue": "true",
+            "localizedName": "输出路由器",
+            "notes": "**Notes**: 是否作为输出路由器"
+        },
+        {
+            "name": "recharge",
+            "type": "float",
+            "defaultValue": "2.0",
+            "localizedName": "充能需求",
+            "notes": "填充一条传送线所需的最小装载码头数量。\n\n**Notes**: 填充一条传送线所需的最小装载码头数量"
+        },
+        {
+            "name": "loadEffect",
+            "type": "Effect",
+            "defaultValue": "conveyorPoof",
+            "localizedName": "装载特效",
+            "notes": "**Notes**: 装载特效"
+        },
+        {
+            "name": "unloadEffect",
+            "type": "Effect",
+            "defaultValue": "conveyorPoof",
+            "localizedName": "卸载特效",
+            "notes": "**Notes**: 卸载特效"
+        }
+    ]
+}

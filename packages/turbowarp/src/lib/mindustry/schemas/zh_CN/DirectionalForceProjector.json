@@ -1,0 +1,77 @@
+{
+    "localizedName": "定向力场投影仪",
+    "type": "DirectionalForceProjector",
+    "parentType": "Block",
+    "fields": [
+        {
+            "name": "width",
+            "localizedName": "护盾宽度",
+            "type": "float",
+            "defaultValue": "30.0",
+            "notes": "**Notes**: 护盾宽度"
+        },
+        {
+            "name": "shieldHealth",
+            "localizedName": "护盾生命值",
+            "type": "float",
+            "defaultValue": "3000.0",
+            "notes": "**Notes**: 护盾生命值"
+        },
+        {
+            "name": "cooldownNormal",
+            "localizedName": "普通冷却倍率",
+            "type": "float",
+            "defaultValue": "1.75",
+            "notes": "**Notes**: 普通冷却倍率"
+        },
+        {
+            "name": "cooldownLiquid",
+            "localizedName": "液体冷却倍率",
+            "type": "float",
+            "defaultValue": "1.5",
+            "notes": "**Notes**: 液体冷却倍率"
+        },
+        {
+            "name": "cooldownBrokenBase",
+            "localizedName": "破碎基础冷却",
+            "type": "float",
+            "defaultValue": "0.35",
+            "notes": "**Notes**: 破碎时基础冷却"
+        },
+        {
+            "name": "absorbEffect",
+            "localizedName": "吸收特效",
+            "type": "Effect",
+            "defaultValue": "absorb",
+            "notes": "**Notes**: 吸收特效"
+        },
+        {
+            "name": "shieldBreakEffect",
+            "localizedName": "护盾破碎特效",
+            "type": "Effect",
+            "defaultValue": "shieldBreak",
+            "notes": "**Notes**: 护盾破碎特效"
+        },
+        {
+            "name": "topRegion",
+            "localizedName": "顶部纹理",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": "**Notes**: 顶部渲染纹理区域"
+        },
+        {
+            "name": "length",
+            "localizedName": "护盾长度",
+            "type": "float",
+            "defaultValue": "40.0",
+            "notes": "**Notes**: 护盾长度"
+        },
+        {
+            "name": "padSize",
+            "localizedName": "填充尺寸",
+            "type": "float",
+            "defaultValue": "40.0",
+            "notes": "**Notes**: 填充尺寸"
+        }
+    ]
+}

@@ -1,0 +1,1232 @@
+{
+    "type": "BulletType",
+    "parentType": "Content",
+    "localizedName": "子弹类型",
+    "fields": [
+        {
+            "name": "lifetime",
+            "type": "float",
+            "defaultValue": "40.0",
+            "notes": "寿命（tick数）。\n\n**Notes**: 子弹的生存时长，以tick计。",
+            "localizedName": "子弹寿命"
+        },
+        {
+            "name": "lifeScaleRandMin",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": "子弹生成时应用的寿命最小/最大倍率。\n\n**Notes**: 寿命随机缩放下限。",
+            "localizedName": "寿命随机缩放最小值"
+        },
+        {
+            "name": "lifeScaleRandMax",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": "子弹生成时应用的寿命最小/最大倍率。\n\n**Notes**: 寿命随机缩放上限。",
+            "localizedName": "寿命随机缩放最大值"
+        },
+        {
+            "name": "speed",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": "速度（单位/tick）。\n\n**Notes**: 子弹每tick移动的距离。",
+            "localizedName": "子弹速度"
+        },
+        {
+            "name": "velocityScaleRandMin",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": "子弹生成时应用的速率最小/最大倍率。\n\n**Notes**: 速率随机缩放下限。",
+            "localizedName": "速度随机缩放最小值"
+        },
+        {
+            "name": "velocityScaleRandMax",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": "子弹生成时应用的速率最小/最大倍率。\n\n**Notes**: 速率随机缩放上限。",
+            "localizedName": "速度随机缩放最大值"
+        },
+        {
+            "name": "damage",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": "命中时造成的直接伤害。\n\n**Notes**: 子弹的基础伤害值。",
+            "localizedName": "基础伤害"
+        },
+        {
+            "name": "hitSize",
+            "type": "float",
+            "defaultValue": "4.0",
+            "notes": "碰撞箱大小。\n\n**Notes**: 子弹的碰撞检测范围。",
+            "localizedName": "碰撞箱大小"
+        },
+        {
+            "name": "drawSize",
+            "type": "float",
+            "defaultValue": "40.0",
+            "notes": "裁剪碰撞箱。\n\n**Notes**: 子弹的渲染裁剪范围。",
+            "localizedName": "渲染裁剪大小"
+        },
+        {
+            "name": "angleOffset",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "每次子弹生成时应用的角度偏移。\n\n**Notes**: 子弹的固定角度偏移。",
+            "localizedName": "固定角度偏移"
+        },
+        {
+            "name": "randomAngleOffset",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "每次子弹生成时应用的角度偏移。\n\n**Notes**: 子弹的随机角度偏移。",
+            "localizedName": "随机角度偏移"
+        },
+        {
+            "name": "drag",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "阻力（速率比例）。\n\n**Notes**: 子弹每帧的速率衰减比例。",
+            "localizedName": "空气阻力"
+        },
+        {
+            "name": "accel",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "每帧加速度。\n\n**Notes**: 子弹每帧的加速度。",
+            "localizedName": "加速度"
+        },
+        {
+            "name": "pierce",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "是否穿透单位。\n\n**Notes**: 控制子弹是否能穿透敌人单位。",
+            "localizedName": "穿透单位"
+        },
+        {
+            "name": "pierceBuilding",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "是否穿透建筑。\n\n**Notes**: 控制子弹是否能穿透建筑物。",
+            "localizedName": "穿透建筑"
+        },
+        {
+            "name": "pierceCap",
+            "type": "int",
+            "defaultValue": "-1",
+            "notes": "最大穿透目标数。\n\n**Notes**: 子弹最多能穿透多少个目标。",
+            "localizedName": "穿透上限"
+        },
+        {
+            "name": "pierceDamageFactor",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "每穿透一个生命值减少的伤害倍率。\n\n**Notes**: 穿透目标后伤害衰减比例。",
+            "localizedName": "穿透伤害衰减"
+        },
+        {
+            "name": "maxDamageFraction",
+            "type": "float",
+            "defaultValue": "-1.0",
+            "notes": "如果为正值，限制非溅射伤害不超过目标最大生命值的比例。\n\nNotes: 对单目标的最大伤害比例限制。",
+            "localizedName": "最大伤害比例"
+        },
+        {
+            "name": "removeAfterPierce",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "若为false，此子弹在超过pierceCap后不会被移除。仅供专家使用。\n\n**Notes**: 控制达到穿透上限后是否移除子弹。",
+            "localizedName": "穿透后移除"
+        },
+        {
+            "name": "laserAbsorb",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "对于穿透激光，设为true可被塑钢墙吸收。\n\n**Notes**: 控制激光是否被塑钢墙吸收。",
+            "localizedName": "激光可被吸收"
+        },
+        {
+            "name": "optimalLifeFract",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "此子弹具有最佳射程/伤害等的寿命比例。用于激光和持续炮塔。\n\n**Notes**: 子弹最佳表现对应的寿命比例。",
+            "localizedName": "最佳寿命比例"
+        },
+        {
+            "name": "layer",
+            "type": "float",
+            "defaultValue": "100.0",
+            "notes": "渲染的Z层。\n\n**Notes**: 子弹的渲染层级。",
+            "localizedName": "渲染层级"
+        },
+        {
+            "name": "hitEffect",
+            "type": "Effect",
+            "defaultValue": "hitBulletSmall",
+            "notes": "直接命中时显示的特效。\n\n**Notes**: 命中特效。",
+            "localizedName": "命中特效"
+        },
+        {
+            "name": "despawnEffect",
+            "type": "Effect",
+            "defaultValue": "hitBulletSmall",
+            "notes": "子弹消失时显示的特效。\n\n**Notes**: 消失特效。",
+            "localizedName": "消失特效"
+        },
+        {
+            "name": "shootEffect",
+            "type": "Effect",
+            "defaultValue": "shootSmall",
+            "notes": "射击时创建的特效。\n\n**Notes**: 发射特效。",
+            "localizedName": "发射特效"
+        },
+        {
+            "name": "shootPattern",
+            "type": "ShootPattern",
+            "defaultValue": "null",
+            "notes": "用于发射此子弹的模式。若为null，使用炮塔的默认模式。\n\n**Notes**: 子弹的发射模式。",
+            "localizedName": "发射模式"
+        },
+        {
+            "name": "chargeEffect",
+            "type": "Effect",
+            "defaultValue": "none",
+            "notes": "充能开始时创建的特效；仅可用于有firstShotDelay/shotDelay的单发武器。\n\n**Notes**: 充能特效。",
+            "localizedName": "充能特效"
+        },
+        {
+            "name": "smokeEffect",
+            "type": "Effect",
+            "defaultValue": "shootSmallSmoke",
+            "notes": "射击时创建的额外烟雾特效。\n\n**Notes**: 烟雾特效。",
+            "localizedName": "烟雾特效"
+        },
+        {
+            "name": "shootSound",
+            "type": "Sound",
+            "defaultValue": "none",
+            "notes": "如果设置，覆盖炮塔的射击音效。对单位无效，因为它们不能有多种弹药类型。\n\n**Notes**: 子弹的射击音效（覆盖炮塔默认）。",
+            "localizedName": "射击音效"
+        },
+        {
+            "name": "hitSound",
+            "type": "Sound",
+            "defaultValue": "none",
+            "notes": "命中物体或被移除时的音效。\n\n**Notes**: 命中音效。",
+            "localizedName": "命中音效"
+        },
+        {
+            "name": "despawnSound",
+            "type": "Sound",
+            "defaultValue": "none",
+            "notes": "命中物体或被移除时的音效。\n\n**Notes**: 消失音效。",
+            "localizedName": "消失音效"
+        },
+        {
+            "name": "hitSoundPitch",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": "命中物体时的音效音调。\n\n**Notes**: 命中音效的音调。",
+            "localizedName": "命中音调"
+        },
+        {
+            "name": "hitSoundPitchRange",
+            "type": "float",
+            "defaultValue": "0.1",
+            "notes": "命中物体时的音效音调。\n\n**Notes**: 命中音效的随机音调范围。",
+            "localizedName": "命中音调范围"
+        },
+        {
+            "name": "hitSoundVolume",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": "命中物体时的音效音量。\n\n**Notes**: 命中音效的音量。",
+            "localizedName": "命中音量"
+        },
+        {
+            "name": "inaccuracy",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "额外的射击不精确度。\n\n**Notes**: 子弹自身的散布值。",
+            "localizedName": "散布值"
+        },
+        {
+            "name": "ammoMultiplier",
+            "type": "float",
+            "defaultValue": "2.0",
+            "notes": "每份弹药/液体产生的子弹数量。\n\n**Notes**: 弹药倍率。",
+            "localizedName": "弹药倍率"
+        },
+        {
+            "name": "reloadMultiplier",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": "乘以炮塔装填速度以获得最终射击速度。\n\n**Notes**: 装填速度倍率。",
+            "localizedName": "装填速度倍率"
+        },
+        {
+            "name": "buildingDamageMultiplier",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": "对瓦片造成的基础伤害倍率。\n\n**Notes**: 对建筑伤害倍率。",
+            "localizedName": "建筑伤害倍率"
+        },
+        {
+            "name": "shieldDamageMultiplier",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": "对力场护盾造成的基础伤害倍率。\n\n**Notes**: 对护盾伤害倍率。",
+            "localizedName": "护盾伤害倍率"
+        },
+        {
+            "name": "recoil",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "射手实体的后坐力。\n\n**Notes**: 射击后坐力。",
+            "localizedName": "后坐力"
+        },
+        {
+            "name": "killShooter",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "是否在射击时杀死射手。用于自杀式炸弹。\n\n**Notes**: 自杀式子弹。",
+            "localizedName": "杀死射手"
+        },
+        {
+            "name": "instantDisappear",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "是否让子弹立即消失。\n\n**Notes**: 子弹是否瞬间消失。",
+            "localizedName": "瞬间消失"
+        },
+        {
+            "name": "splashDamage",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "溅射伤害值。0禁用。\n\n**Notes**: 溅射伤害。",
+            "localizedName": "溅射伤害"
+        },
+        {
+            "name": "scaledSplashDamage",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "若为true，溅射伤害'正确'地受到单位碰撞箱大小影响。用于不碰撞/以溅射为主要伤害来源的抛射物。\n\n**Notes**: 溅射伤害是否受目标大小缩放。",
+            "localizedName": "溅射伤害缩放"
+        },
+        {
+            "name": "knockback",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "击退速度。\n\n**Notes**: 击退效果强度。",
+            "localizedName": "击退强度"
+        },
+        {
+            "name": "impact",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "击退是否沿子弹方向。\n\n**Notes**: 控制击退是否沿子弹方向而非反方向。",
+            "localizedName": "正向击退"
+        },
+        {
+            "name": "status",
+            "type": "StatusEffect",
+            "defaultValue": "none",
+            "notes": "命中时施加的状态效果。\n\n**Notes**: 子弹附带的状态效果。",
+            "localizedName": "状态效果"
+        },
+        {
+            "name": "statusDuration",
+            "type": "float",
+            "defaultValue": "480.0",
+            "notes": "施加状态效果的持续时间强度。\n\n**Notes**: 状态效果持续时间（tick）。",
+            "localizedName": "状态持续时间"
+        },
+        {
+            "name": "targetBlocks",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "仅炮塔。若为false，不会以方块为目标。\n\n**Notes**: 控制炮塔是否以此子弹瞄准方块。",
+            "localizedName": "瞄准方块"
+        },
+        {
+            "name": "targetMissiles",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "仅炮塔。若为false，不会以导弹为目标。\n\n**Notes**: 控制炮塔是否以此子弹瞄准导弹。",
+            "localizedName": "瞄准导弹"
+        },
+        {
+            "name": "collidesTiles",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "此子弹类型是否与瓦片碰撞。\n\n**Notes**: 控制子弹是否与地形瓦片碰撞。",
+            "localizedName": "与瓦片碰撞"
+        },
+        {
+            "name": "collidesTeam",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "此子弹类型是否与同队伍的瓦片碰撞。\n\n**Notes**: 控制子弹是否与友方目标碰撞。",
+            "localizedName": "与队友碰撞"
+        },
+        {
+            "name": "collidesAir",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "此子弹类型是否与空中/地面单位碰撞。\n\n**Notes**: 控制子弹是否与空中单位碰撞。",
+            "localizedName": "与空中单位碰撞"
+        },
+        {
+            "name": "collidesGround",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "此子弹类型是否与空中/地面单位碰撞。\n\n**Notes**: 控制子弹是否与地面单位碰撞。",
+            "localizedName": "与地面单位碰撞"
+        },
+        {
+            "name": "collides",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "此子弹类型是否与任何物体碰撞。\n\n**Notes**: 控制子弹是否与任何物体碰撞。",
+            "localizedName": "启用碰撞"
+        },
+        {
+            "name": "collideFloor",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "若为true，此抛射物与非表面的地面碰撞。\n\n**Notes**: 控制子弹是否与地面碰撞。",
+            "localizedName": "与地面碰撞"
+        },
+        {
+            "name": "collideTerrain",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "若为true，此抛射物与静态墙壁碰撞。\n\n**Notes**: 控制子弹是否与地形碰撞。",
+            "localizedName": "与地形碰撞"
+        },
+        {
+            "name": "keepVelocity",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "是否继承射手的速率。\n\n**Notes**: 控制子弹是否继承发射者的速度。",
+            "localizedName": "继承发射者速度"
+        },
+        {
+            "name": "scaleKeepVelocity",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "如果keepVelocity = true，是否按比例减少寿命以弥补额外速度，使射程保持一致。\n\n**Notes**: 控制继承速度时是否调整寿命保持射程一致。",
+            "localizedName": "继承速度调整寿命"
+        },
+        {
+            "name": "scaleLife",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "是否缩放寿命（而非速度）使其在目标位置消失。用于火炮。\n\n**Notes**: 控制是否根据目标距离调整子弹寿命。",
+            "localizedName": "根据距离调整寿命"
+        },
+        {
+            "name": "hittable",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "此子弹是否可被点防御命中。\n\n**Notes**: 控制子弹是否能被反导系统拦截。",
+            "localizedName": "可被拦截"
+        },
+        {
+            "name": "reflectable",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "此子弹是否可被反射。\n\n**Notes**: 控制子弹是否能被反射。",
+            "localizedName": "可被反射"
+        },
+        {
+            "name": "absorbable",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "此抛射物是否可被护盾吸收。\n\n**Notes**: 控制子弹是否能被护盾吸收。",
+            "localizedName": "可被护盾吸收"
+        },
+        {
+            "name": "ignoreSpawnAngle",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "若为true，create中的角度参数被忽略。\n\n**Notes**: 控制是否忽略生成角度参数。",
+            "localizedName": "忽略生成角度"
+        },
+        {
+            "name": "createChance",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": "此子弹生成的概率。\n\n**Notes**: 每次射击生成此子弹的几率。",
+            "localizedName": "生成概率"
+        },
+        {
+            "name": "maxRange",
+            "type": "float",
+            "defaultValue": "-1.0",
+            "notes": "子弹射程正向覆盖。\n\n**Notes**: 子弹的最大射程覆盖值。",
+            "localizedName": "最大射程覆盖"
+        },
+        {
+            "name": "rangeOverride",
+            "type": "float",
+            "defaultValue": "-1.0",
+            "notes": "当>0时，即使小于基础射程也会覆盖射程。\n\n**Notes**: 射程强制覆盖值。",
+            "localizedName": "射程覆盖值"
+        },
+        {
+            "name": "rangeChange",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "在具有多种弹药类型的炮塔中使用时，可设置非零值来影响射程。\n\n**Notes**: 射程变化值。",
+            "localizedName": "射程变化值"
+        },
+        {
+            "name": "extraRangeMargin",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "在应用了limitRange()的炮塔中使用时，这为子弹添加超出瞄准范围的额外射程。仅在原版中特别相关。\n\n**Notes**: 额外射程余量。",
+            "localizedName": "额外射程余量"
+        },
+        {
+            "name": "range",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "在init()中初始化的射程。\n\n**Notes**: 子弹的最终计算射程。",
+            "localizedName": "最终射程"
+        },
+        {
+            "name": "minRangeChange",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "在具有多种弹药类型的炮塔中使用时，可设置非零值来影响最小射程。\n\n**Notes**: 最小射程变化值。",
+            "localizedName": "最小射程变化值"
+        },
+        {
+            "name": "healPercent",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "方块生命值治疗百分比*。\n\n**Notes**: 按百分比治疗建筑。",
+            "localizedName": "治疗百分比"
+        },
+        {
+            "name": "healAmount",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "方块生命值治疗固定量。\n\n**Notes**: 固定数值治疗建筑。",
+            "localizedName": "治疗固定量"
+        },
+        {
+            "name": "healSound",
+            "type": "Sound",
+            "defaultValue": "blockHeal",
+            "notes": "方块被治疗时播放的音效。\n\n**Notes**: 治疗音效。",
+            "localizedName": "治疗音效"
+        },
+        {
+            "name": "healSoundVolume",
+            "type": "float",
+            "defaultValue": "0.9",
+            "notes": "治疗音效的音量。\n\n**Notes**: 治疗音效音量。",
+            "localizedName": "治疗音效音量"
+        },
+        {
+            "name": "lifesteal",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "子弹伤害中治疗射手的比例。\n\n**Notes**: 生命偷取比例。",
+            "localizedName": "生命偷取"
+        },
+        {
+            "name": "makeFire",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "是否在撞击时产生火焰。\n\n**Notes**: 控制子弹是否引燃地面。",
+            "localizedName": "引燃地面"
+        },
+        {
+            "name": "hitUnder",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "此子弹是否总是击中其下方的方块。\n\n**Notes**: 控制子弹是否击中下方的方块。",
+            "localizedName": "击中下方方块"
+        },
+        {
+            "name": "despawnHit",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "是否在消失时创建命中特效。如果此子弹有任何特殊效果（如溅射伤害），强制为true。禁用setDefaults以避免覆盖。\n\n**Notes**: 控制消失时是否播放命中特效。",
+            "localizedName": "消失时播放命中"
+        },
+        {
+            "name": "fragOnHit",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "若为true，此子弹命中任何物体时会产生子弹。\n\n**Notes**: 控制命中时是否产生分裂子弹。",
+            "localizedName": "命中时分裂"
+        },
+        {
+            "name": "fragOnDespawn",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "若为true，此子弹消失时会产生子弹。\n\n**Notes**: 控制消失时是否产生分裂子弹。",
+            "localizedName": "消失时分裂"
+        },
+        {
+            "name": "fragOnAbsorb",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "若为false，此子弹被护盾吸收时不会产生碎片。\n\n**Notes**: 控制被吸收时是否产生碎片。",
+            "localizedName": "被吸收时分裂"
+        },
+        {
+            "name": "pierceArmor",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "若为true，伤害计算中忽略单位护甲。\n\n**Notes**: 控制子弹是否无视护甲。",
+            "localizedName": "无视护甲"
+        },
+        {
+            "name": "armorMultiplier",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": "乘以伤害计算中使用的单位/建筑护甲。用于护甲弱点、穿甲和反护甲。\n\n**Notes**: 护甲倍率。",
+            "localizedName": "护甲倍率"
+        },
+        {
+            "name": "blockArmorMultiplier",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": "仅乘以伤害计算中使用的建筑护甲。\n\n**Notes**: 建筑护甲倍率。",
+            "localizedName": "建筑护甲倍率"
+        },
+        {
+            "name": "sticky",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "若为true，子弹将'粘'在敌人身上并在碰撞时停用。\n\n**Notes**: 控制子弹是否粘附在目标上。",
+            "localizedName": "粘附目标"
+        },
+        {
+            "name": "stickyExtraLifetime",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "子弹粘住某物时增加的额外时间。\n\n**Notes**: 粘附额外寿命。",
+            "localizedName": "粘附额外寿命"
+        },
+        {
+            "name": "setDefaults",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "status和despawnHit是否应自动设置。\n\n**Notes**: 控制是否自动设置默认值。",
+            "localizedName": "自动设置默认值"
+        },
+        {
+            "name": "hitShake",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "此子弹命中某物或消失时产生的震屏量。\n\n**Notes**: 命中震屏强度。",
+            "localizedName": "命中震屏强度"
+        },
+        {
+            "name": "despawnShake",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "此子弹命中某物或消失时产生的震屏量。\n\n**Notes**: 消失震屏强度。",
+            "localizedName": "消失震屏强度"
+        },
+        {
+            "name": "fragBullet",
+            "type": "BulletType",
+            "defaultValue": "null",
+            "notes": "此子弹过期时创建的子弹类型。\n\n**Notes**: 分裂子弹类型。",
+            "localizedName": "分裂子弹类型"
+        },
+        {
+            "name": "delayFrags",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "若为true，分裂子弹延迟到下一帧生成。修复穿透子弹类型立即生成碎片并打乱Damage临时变量的模糊错误。\n\n**Notes**: 控制分裂子弹是否延迟生成。",
+            "localizedName": "延迟分裂"
+        },
+        {
+            "name": "fragRandomSpread",
+            "type": "float",
+            "defaultValue": "360.0",
+            "notes": "分裂子弹的角度散布范围（度）。\n\n**Notes**: 分裂子弹的随机散布角度。",
+            "localizedName": "分裂随机散布"
+        },
+        {
+            "name": "fragSpread",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "每颗分裂子弹之间的均匀散布（度）。\n\n**Notes**: 分裂子弹的均匀散布角度。",
+            "localizedName": "分裂均匀散布"
+        },
+        {
+            "name": "fragAngle",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "分裂子弹的角度偏移。\n\n**Notes**: 分裂子弹的角度偏移量。",
+            "localizedName": "分裂角度偏移"
+        },
+        {
+            "name": "fragBullets",
+            "type": "int",
+            "defaultValue": "9",
+            "notes": "创建的分裂子弹数量。\n\n**Notes**: 分裂出的子弹数量。",
+            "localizedName": "分裂子弹数量"
+        },
+        {
+            "name": "fragVelocityMin",
+            "type": "float",
+            "defaultValue": "0.2",
+            "notes": "分裂速率作为倍率的随机范围。\n\n**Notes**: 分裂子弹速率随机缩放最小值。",
+            "localizedName": "分裂速度最小值"
+        },
+        {
+            "name": "fragVelocityMax",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": "分裂速率作为倍率的随机范围。\n\n**Notes**: 分裂子弹速率随机缩放最大值。",
+            "localizedName": "分裂速度最大值"
+        },
+        {
+            "name": "fragLifeMin",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": "分裂寿命作为倍率的随机范围。\n\n**Notes**: 分裂子弹寿命随机缩放最小值。",
+            "localizedName": "分裂寿命最小值"
+        },
+        {
+            "name": "fragLifeMax",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": "分裂寿命作为倍率的随机范围。\n\n**Notes**: 分裂子弹寿命随机缩放最大值。",
+            "localizedName": "分裂寿命最大值"
+        },
+        {
+            "name": "fragOffsetMin",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": "分裂子弹距离父子弹的随机偏移。\n\n**Notes**: 分裂子弹偏移最小值。",
+            "localizedName": "分裂偏移最小值"
+        },
+        {
+            "name": "fragOffsetMax",
+            "type": "float",
+            "defaultValue": "7.0",
+            "notes": "分裂子弹距离父子弹的随机偏移。\n\n**Notes**: 分裂子弹偏移最大值。",
+            "localizedName": "分裂偏移最大值"
+        },
+        {
+            "name": "pierceFragCap",
+            "type": "int",
+            "defaultValue": "-1",
+            "notes": "此子弹可以释放分裂子弹的次数，如果pierce = true。\n\n**Notes**: 穿透分裂次数上限。",
+            "localizedName": "穿透分裂上限"
+        },
+        {
+            "name": "intervalBullet",
+            "type": "BulletType",
+            "defaultValue": "null",
+            "notes": "以固定间隔创建的子弹。\n\n**Notes**: 间隔子弹类型。",
+            "localizedName": "间隔子弹类型"
+        },
+        {
+            "name": "bulletInterval",
+            "type": "float",
+            "defaultValue": "20.0",
+            "notes": "子弹生成的间隔（tick数）。\n\n**Notes**: 间隔子弹生成周期。",
+            "localizedName": "间隔子弹周期"
+        },
+        {
+            "name": "intervalBullets",
+            "type": "int",
+            "defaultValue": "1",
+            "notes": "每次间隔生成的子弹数量。\n\n**Notes**: 每次间隔生成的子弹数。",
+            "localizedName": "每次间隔子弹数"
+        },
+        {
+            "name": "intervalRandomSpread",
+            "type": "float",
+            "defaultValue": "360.0",
+            "notes": "间隔子弹的随机角度。\n\n**Notes**: 间隔子弹随机散布角度。",
+            "localizedName": "间隔随机散布"
+        },
+        {
+            "name": "intervalSpread",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "各间隔子弹之间的角度散布。\n\n**Notes**: 间隔子弹均匀散布角度。",
+            "localizedName": "间隔均匀散布"
+        },
+        {
+            "name": "intervalAngle",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "间隔子弹的角度偏移。\n\n**Notes**: 间隔子弹角度偏移。",
+            "localizedName": "间隔角度偏移"
+        },
+        {
+            "name": "intervalDelay",
+            "type": "float",
+            "defaultValue": "-1.0",
+            "notes": "使用负值禁用间隔子弹延迟。\n\n**Notes**: 间隔子弹首次生成延迟。",
+            "localizedName": "间隔首次延迟"
+        },
+        {
+            "name": "underwater",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "若为true，此子弹在水下渲染。高度实验性！\n\n**Notes**: 控制子弹是否在水下渲染。",
+            "localizedName": "水下渲染"
+        },
+        {
+            "name": "hitColor",
+            "type": "Color",
+            "defaultValue": "ffffffff",
+            "notes": "用于命中/消失特效的颜色。\n\n**Notes**: 命中特效颜色。",
+            "localizedName": "命中特效颜色"
+        },
+        {
+            "name": "healColor",
+            "type": "Color",
+            "defaultValue": "98ffa9ff",
+            "notes": "用于方块治疗特效的颜色。\n\n**Notes**: 治疗特效颜色。",
+            "localizedName": "治疗特效颜色"
+        },
+        {
+            "name": "healEffect",
+            "type": "Effect",
+            "defaultValue": "healBlockFull",
+            "notes": "被治疗的方块上发出的特效。\n\n**Notes**: 治疗效果。",
+            "localizedName": "治疗效果"
+        },
+        {
+            "name": "spawnBullets",
+            "type": "Seq of BulletType",
+            "defaultValue": "[]",
+            "notes": "此子弹被创建时生成的子弹。很少需要，用于视觉效果。\n\n**Notes**: 生成时附带子弹列表。",
+            "localizedName": "生成附带子弹"
+        },
+        {
+            "name": "showStats",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "是否显示生成的子弹的属性。\n\n**Notes**: 控制是否显示生成子弹的属性统计。",
+            "localizedName": "显示生成子弹属性"
+        },
+        {
+            "name": "spawnBulletRandomSpread",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "生成子弹的随机角度散布。\n\n**Notes**: 生成子弹的角度散布。",
+            "localizedName": "生成子弹散布"
+        },
+        {
+            "name": "spawnUnit",
+            "type": "UnitType",
+            "defaultValue": "null",
+            "notes": "替代此子弹生成的单位。用于导弹。\n\n**Notes**: 生成代替子弹的单位。",
+            "localizedName": "生成单位"
+        },
+        {
+            "name": "despawnUnit",
+            "type": "UnitType",
+            "defaultValue": "null",
+            "notes": "此子弹命中物体或因寿命结束消失时生成的单位。\n\n**Notes**: 消失/命中时生成的单位。",
+            "localizedName": "消失生成单位"
+        },
+        {
+            "name": "despawnUnitChance",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": "生成消失单位的概率。\n\n**Notes**: 消失单位的生成概率。",
+            "localizedName": "消失单位概率"
+        },
+        {
+            "name": "despawnUnitCount",
+            "type": "int",
+            "defaultValue": "1",
+            "notes": "此子弹消失时生成单位的数量。\n\n**Notes**: 生成单位的数量。",
+            "localizedName": "生成单位数量"
+        },
+        {
+            "name": "despawnUnitRadius",
+            "type": "float",
+            "defaultValue": "0.1",
+            "notes": "距离原子弹消失/命中坐标的随机偏移距离。\n\n**Notes**: 生成单位的位置随机偏移。",
+            "localizedName": "生成单位偏移"
+        },
+        {
+            "name": "faceOutwards",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "若为true，子弹消失时生成的单位面朝远离子弹的方向而非与子弹相同方向。\n\n**Notes**: 控制生成单位的朝向。",
+            "localizedName": "单位朝外"
+        },
+        {
+            "name": "parts",
+            "type": "Seq of DrawPart",
+            "defaultValue": "[]",
+            "notes": "此子弹的额外视觉部件。\n\n**Notes**: 子弹的额外绘制部件。",
+            "localizedName": "绘制部件"
+        },
+        {
+            "name": "trailColor",
+            "type": "Color",
+            "defaultValue": "e58956ff",
+            "notes": "子弹尾部轨迹的颜色。\n\n**Notes**: 拖尾轨迹颜色。",
+            "localizedName": "拖尾颜色"
+        },
+        {
+            "name": "trailChance",
+            "type": "float",
+            "defaultValue": "-1.0E-4",
+            "notes": "每tick产生轨迹特效的概率。\n\n**Notes**: 拖尾特效生成概率。",
+            "localizedName": "拖尾概率"
+        },
+        {
+            "name": "trailInterval",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "轨迹特效生成的均匀间隔。\n\n**Notes**: 拖尾特效生成间隔。",
+            "localizedName": "拖尾间隔"
+        },
+        {
+            "name": "trailMinVelocity",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "生成轨迹特效所需的最小速率。\n\n**Notes**: 拖尾所需最小速度。",
+            "localizedName": "拖尾最小速度"
+        },
+        {
+            "name": "trailEffect",
+            "type": "Effect",
+            "defaultValue": "missileTrail",
+            "notes": "生成的轨迹特效。\n\n**Notes**: 拖尾特效类型。",
+            "localizedName": "拖尾特效"
+        },
+        {
+            "name": "trailSpread",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "轨迹特效的随机偏移。\n\n**Notes**: 拖尾特效位置随机偏移。",
+            "localizedName": "拖尾散布"
+        },
+        {
+            "name": "trailParam",
+            "type": "float",
+            "defaultValue": "2.0",
+            "notes": "传递给轨迹的旋转/大小参数。通常控制大小。\n\n**Notes**: 拖尾参数（通常控制大小）。",
+            "localizedName": "拖尾参数"
+        },
+        {
+            "name": "trailRotation",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "传递给轨迹的参数是否为子弹旋转而非固定值。\n\n**Notes**: 控制拖尾参数是否为子弹旋转角度。",
+            "localizedName": "拖尾旋转"
+        },
+        {
+            "name": "trailInterp",
+            "type": "Interp",
+            "defaultValue": "one",
+            "notes": "拖尾宽度随子弹寿命的插值函数。\n\n**Notes**: 拖尾宽度插值。",
+            "localizedName": "拖尾宽度插值"
+        },
+        {
+            "name": "trailLength",
+            "type": "int",
+            "defaultValue": "-1",
+            "notes": "拖尾四边形的长度。任何<=0的值禁用拖尾。\n\n**Notes**: 拖尾长度。",
+            "localizedName": "拖尾长度"
+        },
+        {
+            "name": "trailWidth",
+            "type": "float",
+            "defaultValue": "2.0",
+            "notes": "如果trailLength > 0，拖尾的宽度。\n\n**Notes**: 拖尾宽度。",
+            "localizedName": "拖尾宽度"
+        },
+        {
+            "name": "trailSinMag",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "如果trailSinMag > 0，这些值作为正弦曲线应用于拖尾宽度。\n\n**Notes**: 拖尾宽度正弦幅度。",
+            "localizedName": "拖尾正弦幅度"
+        },
+        {
+            "name": "trailSinScl",
+            "type": "float",
+            "defaultValue": "3.0",
+            "notes": "如果trailSinMag > 0，这些值作为正弦曲线应用于拖尾宽度。\n\n**Notes**: 拖尾宽度正弦缩放。",
+            "localizedName": "拖尾正弦缩放"
+        },
+        {
+            "name": "circleShooter",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "若为true，子弹将尝试环绕其射手实体。\n\n**Notes**: 控制子弹是否围绕射手旋转。",
+            "localizedName": "环绕射手"
+        },
+        {
+            "name": "circleShooterRadius",
+            "type": "float",
+            "defaultValue": "13.0",
+            "notes": "子弹尝试环绕的半径。\n\n**Notes**: 环绕半径。",
+            "localizedName": "环绕半径"
+        },
+        {
+            "name": "circleShooterRadiusSmooth",
+            "type": "float",
+            "defaultValue": "10.0",
+            "notes": "环绕的平滑额外半径值。\n\n**Notes**: 环绕平滑半径。",
+            "localizedName": "环绕平滑半径"
+        },
+        {
+            "name": "circleShooterRotateSpeed",
+            "type": "float",
+            "defaultValue": "0.3",
+            "notes": "用于在环绕时调整速度的速率倍率。\n\n**Notes**: 环绕旋转速度倍率。",
+            "localizedName": "环绕旋转速度"
+        },
+        {
+            "name": "splashDamageRadius",
+            "type": "float",
+            "defaultValue": "-1.0",
+            "notes": "使用负值禁用溅射伤害。\n\n**Notes**: 溅射伤害半径。",
+            "localizedName": "溅射伤害半径"
+        },
+        {
+            "name": "splashDamagePierce",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "若为true，溅射伤害穿透瓦片。\n\n**Notes**: 溅射伤害是否穿透地形。",
+            "localizedName": "溅射穿透地形"
+        },
+        {
+            "name": "incendAmount",
+            "type": "int",
+            "defaultValue": "0",
+            "notes": "子弹周围尝试引燃的数量。\n\n**Notes**: 引燃尝试次数。",
+            "localizedName": "引燃数量"
+        },
+        {
+            "name": "incendSpread",
+            "type": "float",
+            "defaultValue": "8.0",
+            "notes": "子弹周围火焰的散布。\n\n**Notes**: 引燃散布范围。",
+            "localizedName": "引燃散布"
+        },
+        {
+            "name": "incendChance",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": "产生火焰的概率。\n\n**Notes**: 引燃概率。",
+            "localizedName": "引燃概率"
+        },
+        {
+            "name": "homingPower",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "子弹追踪能力。通常为0到1之间的数字；可以尝试0.1作为起点。\n\n**Notes**: 追踪强度。",
+            "localizedName": "追踪强度"
+        },
+        {
+            "name": "homingRange",
+            "type": "float",
+            "defaultValue": "50.0",
+            "notes": "子弹周围追踪效果的范围。\n\n**Notes**: 追踪范围。",
+            "localizedName": "追踪范围"
+        },
+        {
+            "name": "homingDelay",
+            "type": "float",
+            "defaultValue": "-1.0",
+            "notes": "使用负值禁用追踪延迟。\n\n**Notes**: 追踪开始前的延迟。",
+            "localizedName": "追踪延迟"
+        },
+        {
+            "name": "followAimSpeed",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "子弹旋转跟随光标的速率。<= 0禁用。\n\n**Notes**: 跟随瞄准速度。",
+            "localizedName": "跟随瞄准速度"
+        },
+        {
+            "name": "suppressionRange",
+            "type": "float",
+            "defaultValue": "-1.0",
+            "notes": "治疗方块压制效果的范围。\n\n**Notes**: 压制范围。",
+            "localizedName": "压制范围"
+        },
+        {
+            "name": "suppressionDuration",
+            "type": "float",
+            "defaultValue": "480.0",
+            "notes": "治疗方块压制效果的持续时间。\n\n**Notes**: 压制持续时间。",
+            "localizedName": "压制持续时间"
+        },
+        {
+            "name": "suppressionEffectChance",
+            "type": "float",
+            "defaultValue": "50.0",
+            "notes": "压制效果在方块上发生的概率，按方块数量缩放。\n\n**Notes**: 压制效果触发概率。",
+            "localizedName": "压制概率"
+        },
+        {
+            "name": "suppressColor",
+            "type": "Color",
+            "defaultValue": "bf92f9ff",
+            "notes": "用于regenSuppressSeek特效的颜色。\n\n**Notes**: 压制特效颜色。",
+            "localizedName": "压制特效颜色"
+        },
+        {
+            "name": "lightningColor",
+            "type": "Color",
+            "defaultValue": "f3e979ff",
+            "notes": "子弹产生的闪电的颜色。\n\n**Notes**: 闪电颜色。",
+            "localizedName": "闪电颜色"
+        },
+        {
+            "name": "lightning",
+            "type": "int",
+            "defaultValue": "0",
+            "notes": "分离的闪电'根'数量。\n\n**Notes**: 闪电分支数。",
+            "localizedName": "闪电分支数"
+        },
+        {
+            "name": "lightningLength",
+            "type": "int",
+            "defaultValue": "5",
+            "notes": "每条闪电的长度。\n\n**Notes**: 闪电基础长度。",
+            "localizedName": "闪电基础长度"
+        },
+        {
+            "name": "lightningLengthRand",
+            "type": "int",
+            "defaultValue": "0",
+            "notes": "添加到基础闪电长度上的额外随机长度。\n\n**Notes**: 闪电随机额外长度。",
+            "localizedName": "闪电随机长度"
+        },
+        {
+            "name": "lightningDamage",
+            "type": "float",
+            "defaultValue": "-1.0",
+            "notes": "使用负值以使用默认子弹伤害。\n\n**Notes**: 闪电伤害。",
+            "localizedName": "闪电伤害"
+        },
+        {
+            "name": "lightningCone",
+            "type": "float",
+            "defaultValue": "360.0",
+            "notes": "闪电相对子弹旋转的散布角度。\n\n**Notes**: 闪电锥形散布。",
+            "localizedName": "闪电锥形散布"
+        },
+        {
+            "name": "lightningAngle",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "闪电相对子弹旋转的偏移角度。\n\n**Notes**: 闪电角度偏移。",
+            "localizedName": "闪电角度偏移"
+        },
+        {
+            "name": "lightningType",
+            "type": "BulletType",
+            "defaultValue": "null",
+            "notes": "在闪电点创建的子弹。\n\n**Notes**: 闪电点子弹类型。",
+            "localizedName": "闪电点子弹"
+        },
+        {
+            "name": "weaveScale",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": "子弹摆动模式缩放。越高 -> 振动越小。\n\n**Notes**: 摆动缩放。",
+            "localizedName": "摆动缩放"
+        },
+        {
+            "name": "weaveMag",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "子弹摆动强度。注意这可能导致子弹不精确。\n\n**Notes**: 摆动幅度。",
+            "localizedName": "摆动幅度"
+        },
+        {
+            "name": "weaveRandom",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "若为true，子弹摆动在生成时随机切换方向。\n\n**Notes**: 摆动是否随机方向。",
+            "localizedName": "摆动随机方向"
+        },
+        {
+            "name": "rotateSpeed",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "子弹飞行时速度的旋转速率。\n\n**Notes**: 子弹旋转速度。",
+            "localizedName": "子弹旋转速度"
+        },
+        {
+            "name": "puddles",
+            "type": "int",
+            "defaultValue": "0",
+            "notes": "创建的独立水坑数量。\n\n**Notes**: 水坑数量。",
+            "localizedName": "水坑数量"
+        },
+        {
+            "name": "puddleRange",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "子弹周围水坑的范围。\n\n**Notes**: 水坑散布范围。",
+            "localizedName": "水坑范围"
+        },
+        {
+            "name": "puddleAmount",
+            "type": "float",
+            "defaultValue": "5.0",
+            "notes": "每个水坑的液体量。\n\n**Notes**: 水坑液体量。",
+            "localizedName": "水坑液体量"
+        },
+        {
+            "name": "puddleLiquid",
+            "type": "Liquid",
+            "defaultValue": "water",
+            "notes": "水坑的液体类型。\n\n**Notes**: 水坑液体类型。",
+            "localizedName": "水坑液体类型"
+        },
+        {
+            "name": "displayAmmoMultiplier",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "是否在此子弹类型的属性中显示弹药倍率。\n\n**Notes**: 控制是否显示弹药倍率属性。",
+            "localizedName": "显示弹药倍率"
+        },
+        {
+            "name": "statLiquidConsumed",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "如果>0，显示的值除以弹药倍率。\n\n**Notes**: 显示的液体消耗量。",
+            "localizedName": "显示液体消耗"
+        },
+        {
+            "name": "lightRadius",
+            "type": "float",
+            "defaultValue": "-1.0",
+            "notes": "此子弹发出的光半径；<0使用默认值。\n\n**Notes**: 子弹发光半径。",
+            "localizedName": "发光半径"
+        },
+        {
+            "name": "lightOpacity",
+            "type": "float",
+            "defaultValue": "0.3",
+            "notes": "光源颜色的不透明度。\n\n**Notes**: 发光不透明度。",
+            "localizedName": "发光不透明度"
+        },
+        {
+            "name": "lightColor",
+            "type": "Color",
+            "defaultValue": "fbd367ff",
+            "notes": "此子弹发出的光的颜色。\n\n**Notes**: 发光颜色。",
+            "localizedName": "发光颜色"
+        }
+    ]
+}

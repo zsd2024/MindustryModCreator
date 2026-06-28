@@ -1,0 +1,72 @@
+{
+    "type": "RepairTower",
+    "parentType": "Block",
+    "fields": [
+        {
+            "name": "range",
+            "type": "float",
+            "defaultValue": "80.0",
+            "notes": ""
+        },
+        {
+            "name": "circleColor",
+            "type": "Color",
+            "defaultValue": "98ffa9ff",
+            "notes": ""
+        },
+        {
+            "name": "glowColor",
+            "type": "Color",
+            "defaultValue": "98ffa97f",
+            "notes": ""
+        },
+        {
+            "name": "circleSpeed",
+            "type": "float",
+            "defaultValue": "120.0",
+            "notes": ""
+        },
+        {
+            "name": "circleStroke",
+            "type": "float",
+            "defaultValue": "3.0",
+            "notes": ""
+        },
+        {
+            "name": "squareRad",
+            "type": "float",
+            "defaultValue": "3.0",
+            "notes": ""
+        },
+        {
+            "name": "squareSpinScl",
+            "type": "float",
+            "defaultValue": "0.8",
+            "notes": ""
+        },
+        {
+            "name": "glowMag",
+            "type": "float",
+            "defaultValue": "0.5",
+            "notes": ""
+        },
+        {
+            "name": "glowScl",
+            "type": "float",
+            "defaultValue": "8.0",
+            "notes": ""
+        },
+        {
+            "name": "healAmount",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": ""
+        },
+        {
+            "name": "glow",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        }
+    ]
+}

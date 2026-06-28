@@ -1,0 +1,102 @@
+{
+    "type": "BurstDrill",
+    "parentType": "Drill",
+    "fields": [
+        {
+            "name": "shake",
+            "type": "float",
+            "defaultValue": "2.0",
+            "notes": ""
+        },
+        {
+            "name": "speedCurve",
+            "type": "Interp",
+            "defaultValue": "pow2In",
+            "notes": ""
+        },
+        {
+            "name": "topInvertRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "glowRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "arrowRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "arrowBlurRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "invertedTime",
+            "type": "float",
+            "defaultValue": "200.0",
+            "notes": ""
+        },
+        {
+            "name": "arrowSpacing",
+            "type": "float",
+            "defaultValue": "4.0",
+            "notes": ""
+        },
+        {
+            "name": "arrowOffset",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": ""
+        },
+        {
+            "name": "arrows",
+            "type": "int",
+            "defaultValue": "3",
+            "notes": ""
+        },
+        {
+            "name": "arrowColor",
+            "type": "Color",
+            "defaultValue": "feb380ff",
+            "notes": ""
+        },
+        {
+            "name": "baseArrowColor",
+            "type": "Color",
+            "defaultValue": "6e7080ff",
+            "notes": ""
+        },
+        {
+            "name": "glowColor",
+            "type": "Color",
+            "defaultValue": "feb380ff",
+            "notes": ""
+        },
+        {
+            "name": "drillSound",
+            "type": "Sound",
+            "defaultValue": "drillImpact",
+            "notes": ""
+        },
+        {
+            "name": "drillSoundVolume",
+            "type": "float",
+            "defaultValue": "0.6",
+            "notes": ""
+        },
+        {
+            "name": "drillSoundPitchRand",
+            "type": "float",
+            "defaultValue": "0.1",
+            "notes": ""
+        }
+    ]
+}

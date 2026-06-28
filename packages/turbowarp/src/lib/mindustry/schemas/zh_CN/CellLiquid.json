@@ -1,0 +1,63 @@
+{
+    "localizedName": "细胞液体",
+    "type": "CellLiquid",
+    "parentType": "Liquid",
+    "fields": [
+        {
+            "name": "colorFrom",
+            "localizedName": "起始颜色",
+            "type": "Color",
+            "defaultValue": "ffffffff",
+            "notes": "**Notes**: 细胞绘制的起始颜色。"
+        },
+        {
+            "name": "colorTo",
+            "localizedName": "结束颜色",
+            "type": "Color",
+            "defaultValue": "ffffffff",
+            "notes": "**Notes**: 细胞绘制的结束颜色。"
+        },
+        {
+            "name": "cells",
+            "localizedName": "细胞数量",
+            "type": "int",
+            "defaultValue": "6",
+            "notes": "**Notes**: 绘制的细胞数量。"
+        },
+        {
+            "name": "spreadTarget",
+            "localizedName": "扩散目标",
+            "type": "Liquid",
+            "defaultValue": "null",
+            "notes": "**Notes**: 可以扩散转化的目标液体。"
+        },
+        {
+            "name": "maxSpread",
+            "localizedName": "最大扩散量",
+            "type": "float",
+            "defaultValue": "0.75",
+            "notes": "**Notes**: 每次扩散的最大量。"
+        },
+        {
+            "name": "spreadConversion",
+            "localizedName": "扩散转化倍率",
+            "type": "float",
+            "defaultValue": "1.2",
+            "notes": "**Notes**: 扩散转化的倍率。"
+        },
+        {
+            "name": "spreadDamage",
+            "localizedName": "扩散伤害",
+            "type": "float",
+            "defaultValue": "0.11",
+            "notes": "**Notes**: 扩散时对建筑造成的伤害。"
+        },
+        {
+            "name": "removeScaling",
+            "localizedName": "移除缩放",
+            "type": "float",
+            "defaultValue": "0.25",
+            "notes": "**Notes**: 从目标液体中移除量的缩放比例。"
+        }
+    ]
+}

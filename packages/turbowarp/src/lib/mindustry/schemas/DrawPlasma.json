@@ -1,0 +1,48 @@
+{
+    "type": "DrawPlasma",
+    "parentType": "DrawFlame",
+    "fields": [
+        {
+            "name": "x",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": ""
+        },
+        {
+            "name": "y",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": ""
+        },
+        {
+            "name": "regions",
+            "type": "TextureRegion[]",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "suffix",
+            "type": "String",
+            "defaultValue": "\"-plasma-\"",
+            "notes": ""
+        },
+        {
+            "name": "plasmas",
+            "type": "int",
+            "defaultValue": "4",
+            "notes": ""
+        },
+        {
+            "name": "plasma1",
+            "type": "Color",
+            "defaultValue": "ffd06bff",
+            "notes": ""
+        },
+        {
+            "name": "plasma2",
+            "type": "Color",
+            "defaultValue": "ff361bff",
+            "notes": ""
+        }
+    ]
+}

@@ -1,0 +1,14 @@
+{
+    "type": "Prop",
+    "parentType": "Block",
+    "localizedName": "装饰物",
+    "fields": [
+        {
+            "name": "layer",
+            "localizedName": "渲染层级",
+            "type": "float",
+            "defaultValue": "32.0",
+            "notes": "**Notes**: 装饰物的渲染层级。"
+        }
+    ]
+}

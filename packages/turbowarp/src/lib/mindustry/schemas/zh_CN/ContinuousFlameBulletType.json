@@ -1,0 +1,126 @@
+{
+    "localizedName": "持续火焰子弹类型",
+    "type": "ContinuousFlameBulletType",
+    "parentType": "ContinuousBulletType",
+    "fields": [
+        {
+            "name": "lightStroke",
+            "localizedName": "灯光描边",
+            "type": "float",
+            "defaultValue": "40.0",
+            "notes": "灯光描边尺寸"
+        },
+        {
+            "name": "width",
+            "localizedName": "火焰宽度",
+            "type": "float",
+            "defaultValue": "3.7",
+            "notes": "火焰宽度"
+        },
+        {
+            "name": "oscScl",
+            "localizedName": "振荡缩放",
+            "type": "float",
+            "defaultValue": "1.2",
+            "notes": "振荡缩放"
+        },
+        {
+            "name": "oscMag",
+            "localizedName": "振荡幅度",
+            "type": "float",
+            "defaultValue": "0.02",
+            "notes": "振荡幅度"
+        },
+        {
+            "name": "divisions",
+            "localizedName": "分段数",
+            "type": "int",
+            "defaultValue": "25",
+            "notes": "火焰分段数"
+        },
+        {
+            "name": "drawFlare",
+            "localizedName": "绘制闪光",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "是否绘制闪光"
+        },
+        {
+            "name": "flareColor",
+            "localizedName": "闪光颜色",
+            "type": "Color",
+            "defaultValue": "e189f5ff",
+            "notes": "闪光颜色"
+        },
+        {
+            "name": "flareWidth",
+            "localizedName": "闪光宽度",
+            "type": "float",
+            "defaultValue": "3.0",
+            "notes": "闪光宽度"
+        },
+        {
+            "name": "flareInnerScl",
+            "localizedName": "闪光内部缩放",
+            "type": "float",
+            "defaultValue": "0.5",
+            "notes": "闪光内部缩放"
+        },
+        {
+            "name": "flareLength",
+            "localizedName": "闪光长度",
+            "type": "float",
+            "defaultValue": "40.0",
+            "notes": "闪光长度"
+        },
+        {
+            "name": "flareInnerLenScl",
+            "localizedName": "闪光内部长度缩放",
+            "type": "float",
+            "defaultValue": "0.5",
+            "notes": "闪光内部长度缩放"
+        },
+        {
+            "name": "flareLayer",
+            "localizedName": "闪光渲染层级",
+            "type": "float",
+            "defaultValue": "99.9999",
+            "notes": "闪光渲染层级"
+        },
+        {
+            "name": "flareRotSpeed",
+            "localizedName": "闪光旋转速度",
+            "type": "float",
+            "defaultValue": "1.2",
+            "notes": "闪光旋转速度"
+        },
+        {
+            "name": "rotateFlare",
+            "localizedName": "闪光随子弹旋转",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "闪光是否随子弹旋转"
+        },
+        {
+            "name": "lengthInterp",
+            "localizedName": "长度插值函数",
+            "type": "Interp",
+            "defaultValue": "slope",
+            "notes": "长度插值函数"
+        },
+        {
+            "name": "lengthWidthPans",
+            "localizedName": "长度宽度椭圆平移数组",
+            "type": "float[]",
+            "defaultValue": "[1.12, 1.3, 0.32, 1.0, 1.0, 0.3, 0.8, 0.9, 0.2, 0.5, 0.8, 0.15, 0.25, 0.7, 0.1]",
+            "notes": "长度、宽度、椭圆平移和偏移量，均为基本宽度和长度的分数。存储为'交错'数组：LWPO1 LWPO2 LWPO3...\n\n**Notes**: 按颜色层级分组的长度、宽度和椭圆平移交错数组"
+        },
+        {
+            "name": "colors",
+            "localizedName": "颜色数组",
+            "type": "Color[]",
+            "defaultValue": "[eb7abe8c, e189f5b2, 907ef7cc, 91a4ffff, ffffffff]",
+            "notes": "颜色数组，从外到内渐变"
+        }
+    ]
+}

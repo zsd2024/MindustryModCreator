@@ -1,0 +1,18 @@
+{
+    "type": "PayloadUnloader",
+    "parentType": "PayloadLoader",
+    "fields": [
+        {
+            "name": "offloadSpeed",
+            "type": "int",
+            "defaultValue": "4",
+            "notes": ""
+        },
+        {
+            "name": "maxPowerUnload",
+            "type": "float",
+            "defaultValue": "80.0",
+            "notes": ""
+        }
+    ]
+}

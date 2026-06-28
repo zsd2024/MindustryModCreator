@@ -1,0 +1,49 @@
+{
+    "localizedName": "淡入淡出绘制",
+    "type": "DrawFade",
+    "parentType": "DrawBlock",
+    "fields": [
+        {
+            "name": "suffix",
+            "localizedName": "纹理后缀",
+            "type": "String",
+            "defaultValue": "\"-top\"",
+            "notes": "**Notes**: 方块名称后附加的后缀以查找纹理。"
+        },
+        {
+            "name": "alpha",
+            "localizedName": "最大透明度",
+            "type": "float",
+            "defaultValue": "0.6",
+            "notes": "**Notes**: 透明度变化的最大值。"
+        },
+        {
+            "name": "scale",
+            "localizedName": "变化频率",
+            "type": "float",
+            "defaultValue": "3.0",
+            "notes": "**Notes**: 透明度正弦变化的频率。"
+        },
+        {
+            "name": "x",
+            "localizedName": "X轴偏移",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "**Notes**: 精灵的X轴偏移。"
+        },
+        {
+            "name": "y",
+            "localizedName": "Y轴偏移",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "**Notes**: 精灵的Y轴偏移。"
+        },
+        {
+            "name": "region",
+            "localizedName": "纹理区域",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": "**Notes**: 运行时加载的纹理区域。"
+        }
+    ]
+}

@@ -1,0 +1,96 @@
+{
+    "type": "ItemBridge",
+    "parentType": "Block",
+    "fields": [
+        {
+            "name": "timerCheckMoved",
+            "type": "int",
+            "defaultValue": "1",
+            "notes": ""
+        },
+        {
+            "name": "range",
+            "type": "int",
+            "defaultValue": "0",
+            "notes": ""
+        },
+        {
+            "name": "transportTime",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": ""
+        },
+        {
+            "name": "endRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "bridgeRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "arrowRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "fadeIn",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": ""
+        },
+        {
+            "name": "moveArrows",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": ""
+        },
+        {
+            "name": "pulse",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": ""
+        },
+        {
+            "name": "arrowSpacing",
+            "type": "float",
+            "defaultValue": "4.0",
+            "notes": ""
+        },
+        {
+            "name": "arrowOffset",
+            "type": "float",
+            "defaultValue": "2.0",
+            "notes": ""
+        },
+        {
+            "name": "arrowPeriod",
+            "type": "float",
+            "defaultValue": "0.4",
+            "notes": ""
+        },
+        {
+            "name": "arrowTimeScl",
+            "type": "float",
+            "defaultValue": "6.2",
+            "notes": ""
+        },
+        {
+            "name": "bridgeWidth",
+            "type": "float",
+            "defaultValue": "6.5",
+            "notes": ""
+        },
+        {
+            "name": "lastBuild",
+            "type": "ItemBridgeBuild",
+            "defaultValue": "null",
+            "notes": ""
+        }
+    ]
+}

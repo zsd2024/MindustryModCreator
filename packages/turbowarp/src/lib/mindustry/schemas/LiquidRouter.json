@@ -1,0 +1,12 @@
+{
+    "type": "LiquidRouter",
+    "parentType": "LiquidBlock",
+    "fields": [
+        {
+            "name": "liquidPadding",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": ""
+        }
+    ]
+}

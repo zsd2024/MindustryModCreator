@@ -1,0 +1,12 @@
+{
+    "type": "Prop",
+    "parentType": "Block",
+    "fields": [
+        {
+            "name": "layer",
+            "type": "float",
+            "defaultValue": "32.0",
+            "notes": ""
+        }
+    ]
+}

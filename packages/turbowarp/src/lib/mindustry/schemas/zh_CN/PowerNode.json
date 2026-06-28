@@ -1,0 +1,84 @@
+{
+    "type": "PowerNode",
+    "parentType": "PowerBlock",
+    "localizedName": "电力节点",
+    "fields": [
+        {
+            "name": "laser",
+            "localizedName": "激光纹理",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": "**Notes**: 电力激光纹理区域。"
+        },
+        {
+            "name": "laserEnd",
+            "localizedName": "激光末端纹理",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": "**Notes**: 电力激光末端纹理区域。"
+        },
+        {
+            "name": "laserRange",
+            "localizedName": "连接范围",
+            "type": "float",
+            "defaultValue": "6.0",
+            "notes": "**Notes**: 电力节点的连接范围（格数）。"
+        },
+        {
+            "name": "maxNodes",
+            "localizedName": "最大连接数",
+            "type": "int",
+            "defaultValue": "3",
+            "notes": "**Notes**: 最大可连接节点数。"
+        },
+        {
+            "name": "autolink",
+            "localizedName": "自动连接",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "**Notes**: 放置时是否自动连接附近节点。"
+        },
+        {
+            "name": "drawRange",
+            "localizedName": "绘制范围",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "**Notes**: 是否绘制连接范围指示圈。"
+        },
+        {
+            "name": "sameBlockConnection",
+            "localizedName": "同类型连接",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "**Notes**: 是否允许连接同类型的方块。"
+        },
+        {
+            "name": "laserScale",
+            "localizedName": "激光粗细",
+            "type": "float",
+            "defaultValue": "0.25",
+            "notes": "**Notes**: 电力激光的粗细缩放。"
+        },
+        {
+            "name": "powerLayer",
+            "localizedName": "渲染图层",
+            "type": "float",
+            "defaultValue": "70.0",
+            "notes": "**Notes**: 电力线的渲染图层。"
+        },
+        {
+            "name": "laserColor1",
+            "localizedName": "激光主色",
+            "type": "Color",
+            "defaultValue": "ffffffff",
+            "notes": "**Notes**: 电力激光的主色。"
+        },
+        {
+            "name": "laserColor2",
+            "localizedName": "激光副色",
+            "type": "Color",
+            "defaultValue": "fbd367ff",
+            "notes": "**Notes**: 电力激光的副色。"
+        }
+    ]
+}

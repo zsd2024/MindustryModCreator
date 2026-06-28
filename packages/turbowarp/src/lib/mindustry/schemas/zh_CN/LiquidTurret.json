@@ -1,0 +1,21 @@
+{
+    "type": "LiquidTurret",
+    "parentType": "Turret",
+    "localizedName": "液体炮塔",
+    "fields": [
+        {
+            "name": "ammoTypes",
+            "type": "ObjectMap of Liquid, BulletType",
+            "localizedName": "弹药类型映射",
+            "defaultValue": "new ObjectMap<>()",
+            "notes": "**Notes**: 液体到子弹类型的映射表，定义该炮塔接受的液体弹药类型。"
+        },
+        {
+            "name": "extinguish",
+            "type": "boolean",
+            "localizedName": "是否优先灭火",
+            "defaultValue": "true",
+            "notes": "**Notes**: 如果为true，该炮塔在液体可灭火时会优先瞄准火焰。"
+        }
+    ]
+}

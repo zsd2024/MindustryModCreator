@@ -1,0 +1,21 @@
+{
+    "type": "UnitCargoUnloadPoint",
+    "parentType": "Block",
+    "localizedName": "单位货运卸载点",
+    "fields": [
+        {
+            "name": "staleTimeDuration",
+            "type": "float",
+            "localizedName": "过期超时时间",
+            "defaultValue": "360.0",
+            "notes": "如果方块在此时间内一直处于满员状态，则不再被无人机送达。\n\n**Notes**: 方块满员后不再被无人机送达的超时时间"
+        },
+        {
+            "name": "topRegion",
+            "type": "TextureRegion",
+            "localizedName": "顶部纹理",
+            "defaultValue": "null",
+            "notes": "**Notes**: 顶部纹理区域"
+        }
+    ]
+}

@@ -1,0 +1,48 @@
+{
+    "type": "PayloadConveyor",
+    "parentType": "Block",
+    "fields": [
+        {
+            "name": "moveTime",
+            "type": "float",
+            "defaultValue": "45.0",
+            "notes": ""
+        },
+        {
+            "name": "moveForce",
+            "type": "float",
+            "defaultValue": "201.0",
+            "notes": ""
+        },
+        {
+            "name": "topRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "edgeRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "interp",
+            "type": "Interp",
+            "defaultValue": "pow5",
+            "notes": ""
+        },
+        {
+            "name": "payloadLimit",
+            "type": "float",
+            "defaultValue": "3.0",
+            "notes": ""
+        },
+        {
+            "name": "pushUnits",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": ""
+        }
+    ]
+}

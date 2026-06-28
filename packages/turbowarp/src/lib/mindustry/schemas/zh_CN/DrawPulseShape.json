@@ -1,0 +1,70 @@
+{
+    "localizedName": "脉冲形状绘制",
+    "type": "DrawPulseShape",
+    "parentType": "DrawBlock",
+    "fields": [
+        {
+            "name": "color",
+            "localizedName": "脉冲颜色",
+            "type": "Color",
+            "defaultValue": "ffd37fff",
+            "notes": "**Notes**: 脉冲形状的颜色。"
+        },
+        {
+            "name": "stroke",
+            "localizedName": "描边宽度",
+            "type": "float",
+            "defaultValue": "2.0",
+            "notes": "**Notes**: 描边宽度。"
+        },
+        {
+            "name": "timeScl",
+            "localizedName": "时间缩放",
+            "type": "float",
+            "defaultValue": "100.0",
+            "notes": "**Notes**: 脉冲的时间缩放。"
+        },
+        {
+            "name": "minStroke",
+            "localizedName": "最小描边",
+            "type": "float",
+            "defaultValue": "0.2",
+            "notes": "**Notes**: 最小描边宽度。"
+        },
+        {
+            "name": "x",
+            "localizedName": "X轴偏移",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "**Notes**: 形状的X轴偏移。"
+        },
+        {
+            "name": "y",
+            "localizedName": "Y轴偏移",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "**Notes**: 形状的Y轴偏移。"
+        },
+        {
+            "name": "radiusScl",
+            "localizedName": "半径缩放",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": "**Notes**: 脉冲半径的缩放。"
+        },
+        {
+            "name": "layer",
+            "localizedName": "渲染层级",
+            "type": "float",
+            "defaultValue": "-1.0",
+            "notes": "**Notes**: 渲染层级。"
+        },
+        {
+            "name": "square",
+            "localizedName": "方形模式",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "**Notes**: 是否为方形而非圆形。"
+        }
+    ]
+}

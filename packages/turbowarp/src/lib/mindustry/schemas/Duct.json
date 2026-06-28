@@ -1,0 +1,48 @@
+{
+    "type": "Duct",
+    "parentType": "Block",
+    "fields": [
+        {
+            "name": "speed",
+            "type": "float",
+            "defaultValue": "5.0",
+            "notes": ""
+        },
+        {
+            "name": "armored",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": ""
+        },
+        {
+            "name": "transparentColor",
+            "type": "Color",
+            "defaultValue": "66666619",
+            "notes": ""
+        },
+        {
+            "name": "topRegions",
+            "type": "TextureRegion[]",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "botRegions",
+            "type": "TextureRegion[]",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "bridgeReplacement",
+            "type": "Block",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "junctionReplacement",
+            "type": "Block",
+            "defaultValue": "null",
+            "notes": ""
+        }
+    ]
+}

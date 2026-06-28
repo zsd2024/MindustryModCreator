@@ -1,0 +1,60 @@
+{
+    "type": "DrawMultiWeave",
+    "parentType": "DrawBlock",
+    "fields": [
+        {
+            "name": "weave",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "glow",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "rotateSpeed",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": ""
+        },
+        {
+            "name": "rotateSpeed2",
+            "type": "float",
+            "defaultValue": "-0.9",
+            "notes": ""
+        },
+        {
+            "name": "fadeWeave",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": ""
+        },
+        {
+            "name": "glowColor",
+            "type": "Color",
+            "defaultValue": "ff6666cc",
+            "notes": ""
+        },
+        {
+            "name": "weaveColor",
+            "type": "Color",
+            "defaultValue": "ffffffff",
+            "notes": ""
+        },
+        {
+            "name": "pulse",
+            "type": "float",
+            "defaultValue": "0.3",
+            "notes": ""
+        },
+        {
+            "name": "pulseScl",
+            "type": "float",
+            "defaultValue": "10.0",
+            "notes": ""
+        }
+    ]
+}

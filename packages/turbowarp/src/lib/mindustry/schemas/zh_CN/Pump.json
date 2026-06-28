@@ -1,0 +1,35 @@
+{
+    "type": "Pump",
+    "parentType": "LiquidBlock",
+    "localizedName": "泵",
+    "fields": [
+        {
+            "name": "pumpAmount",
+            "localizedName": "泵液量",
+            "type": "float",
+            "defaultValue": "0.2",
+            "notes": "每瓦片泵液量。\n\n**Notes**: 每个瓦片的基础泵液量"
+        },
+        {
+            "name": "consumeTime",
+            "localizedName": "处理间隔",
+            "type": "float",
+            "defaultValue": "300.0",
+            "notes": "物品处理间隔（如适用）。\n\n**Notes**: 两次物品处理之间的时间间隔（如适用）"
+        },
+        {
+            "name": "warmupSpeed",
+            "localizedName": "预热速度",
+            "type": "float",
+            "defaultValue": "0.019",
+            "notes": "**Notes**: 预热速度变化率"
+        },
+        {
+            "name": "drawer",
+            "localizedName": "绘制器",
+            "type": "DrawBlock",
+            "defaultValue": "new DrawMulti(new DrawDefault(), new DrawPumpLiquid())",
+            "notes": "**Notes**: 绘制器，用于自定义泵的渲染方式"
+        }
+    ]
+}

@@ -1,0 +1,12 @@
+{
+    "type": "SingleBlockProducer",
+    "parentType": "BlockProducer",
+    "fields": [
+        {
+            "name": "result",
+            "type": "Block",
+            "defaultValue": "router",
+            "notes": ""
+        }
+    ]
+}

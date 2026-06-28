@@ -1,0 +1,18 @@
+{
+    "type": "Sorter",
+    "parentType": "Block",
+    "fields": [
+        {
+            "name": "cross",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "invert",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": ""
+        }
+    ]
+}

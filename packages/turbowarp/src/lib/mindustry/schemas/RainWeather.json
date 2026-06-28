@@ -1,0 +1,72 @@
+{
+    "type": "RainWeather",
+    "parentType": "Weather",
+    "fields": [
+        {
+            "name": "yspeed",
+            "type": "float",
+            "defaultValue": "5.0",
+            "notes": ""
+        },
+        {
+            "name": "xspeed",
+            "type": "float",
+            "defaultValue": "1.5",
+            "notes": ""
+        },
+        {
+            "name": "padding",
+            "type": "float",
+            "defaultValue": "16.0",
+            "notes": ""
+        },
+        {
+            "name": "density",
+            "type": "float",
+            "defaultValue": "1200.0",
+            "notes": ""
+        },
+        {
+            "name": "stroke",
+            "type": "float",
+            "defaultValue": "0.75",
+            "notes": ""
+        },
+        {
+            "name": "sizeMin",
+            "type": "float",
+            "defaultValue": "8.0",
+            "notes": ""
+        },
+        {
+            "name": "sizeMax",
+            "type": "float",
+            "defaultValue": "40.0",
+            "notes": ""
+        },
+        {
+            "name": "splashTimeScale",
+            "type": "float",
+            "defaultValue": "22.0",
+            "notes": ""
+        },
+        {
+            "name": "liquid",
+            "type": "Liquid",
+            "defaultValue": "water",
+            "notes": ""
+        },
+        {
+            "name": "splashes",
+            "type": "TextureRegion[]",
+            "defaultValue": "[null, null, null, null, null, null, null, null, null, null, null, null]",
+            "notes": ""
+        },
+        {
+            "name": "color",
+            "type": "Color",
+            "defaultValue": "7a95eaff",
+            "notes": ""
+        }
+    ]
+}

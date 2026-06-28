@@ -1,0 +1,56 @@
+{
+    "localizedName": "物品管道",
+    "type": "Duct",
+    "parentType": "Block",
+    "fields": [
+        {
+            "name": "speed",
+            "localizedName": "传输速度",
+            "type": "float",
+            "defaultValue": "5.0",
+            "notes": "**Notes**: 物品传输速度"
+        },
+        {
+            "name": "armored",
+            "localizedName": "装甲版本",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "**Notes**: 是否为装甲版本"
+        },
+        {
+            "name": "transparentColor",
+            "localizedName": "透明叠加颜色",
+            "type": "Color",
+            "defaultValue": "66666619",
+            "notes": "**Notes**: 透明叠加颜色，用于渲染底部半透明效果"
+        },
+        {
+            "name": "topRegions",
+            "localizedName": "顶部纹理数组",
+            "type": "TextureRegion[]",
+            "defaultValue": "null",
+            "notes": "**Notes**: 顶部纹理数组，用于不同朝向拼接渲染"
+        },
+        {
+            "name": "botRegions",
+            "localizedName": "底部纹理数组",
+            "type": "TextureRegion[]",
+            "defaultValue": "null",
+            "notes": "**Notes**: 底部纹理数组，用于不同朝向拼接渲染"
+        },
+        {
+            "name": "bridgeReplacement",
+            "localizedName": "桥梁替换方块",
+            "type": "Block",
+            "defaultValue": "null",
+            "notes": "**Notes**: 长距离放置时替换为的桥梁方块"
+        },
+        {
+            "name": "junctionReplacement",
+            "localizedName": "连接器替换方块",
+            "type": "Block",
+            "defaultValue": "null",
+            "notes": "**Notes**: 交叉放置时替换为的连接器方块"
+        }
+    ]
+}

@@ -1,0 +1,28 @@
+{
+    "localizedName": "建造器",
+    "type": "Constructor",
+    "parentType": "BlockProducer",
+    "fields": [
+        {
+            "name": "filter",
+            "localizedName": "过滤器",
+            "type": "Seq of Block",
+            "defaultValue": "[]",
+            "notes": "空序列表示无过滤器\n\n**Notes**: 空序列表示无过滤器"
+        },
+        {
+            "name": "minBlockSize",
+            "localizedName": "最小方块尺寸",
+            "type": "int",
+            "defaultValue": "1",
+            "notes": "**Notes**: 最小可建造方块尺寸"
+        },
+        {
+            "name": "maxBlockSize",
+            "localizedName": "最大方块尺寸",
+            "type": "int",
+            "defaultValue": "2",
+            "notes": "**Notes**: 最大可建造方块尺寸"
+        }
+    ]
+}

@@ -1,0 +1,96 @@
+{
+    "type": "WaveEffect",
+    "parentType": "Effect",
+    "fields": [
+        {
+            "name": "colorFrom",
+            "type": "Color",
+            "defaultValue": "ffffffff",
+            "notes": ""
+        },
+        {
+            "name": "colorTo",
+            "type": "Color",
+            "defaultValue": "ffffffff",
+            "notes": ""
+        },
+        {
+            "name": "lightColor",
+            "type": "Color",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "sizeFrom",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": ""
+        },
+        {
+            "name": "sizeTo",
+            "type": "float",
+            "defaultValue": "100.0",
+            "notes": ""
+        },
+        {
+            "name": "lightScl",
+            "type": "float",
+            "defaultValue": "3.0",
+            "notes": ""
+        },
+        {
+            "name": "lightOpacity",
+            "type": "float",
+            "defaultValue": "0.8",
+            "notes": ""
+        },
+        {
+            "name": "sides",
+            "type": "int",
+            "defaultValue": "-1",
+            "notes": ""
+        },
+        {
+            "name": "rotation",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": ""
+        },
+        {
+            "name": "strokeFrom",
+            "type": "float",
+            "defaultValue": "2.0",
+            "notes": ""
+        },
+        {
+            "name": "strokeTo",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": ""
+        },
+        {
+            "name": "interp",
+            "type": "Interp",
+            "defaultValue": "linear",
+            "notes": ""
+        },
+        {
+            "name": "lightInterp",
+            "type": "Interp",
+            "defaultValue": "reverse",
+            "notes": ""
+        },
+        {
+            "name": "offsetX",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": ""
+        },
+        {
+            "name": "offsetY",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": ""
+        }
+    ]
+}

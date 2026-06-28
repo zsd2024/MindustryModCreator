@@ -1,0 +1,21 @@
+{
+    "type": "RegenAbility",
+    "parentType": "Ability",
+    "localizedName": "再生能力",
+    "fields": [
+        {
+            "name": "percentAmount",
+            "type": "float",
+            "defaultValue": "0.0",
+            "localizedName": "百分比恢复量",
+            "notes": "每 tick 恢复的生命值百分比。\n\n**Notes**: 百分比恢复量"
+        },
+        {
+            "name": "amount",
+            "type": "float",
+            "defaultValue": "0.0",
+            "localizedName": "固定恢复量",
+            "notes": "每 tick 恢复的固定生命值。\n\n**Notes**: 固定恢复量"
+        }
+    ]
+}

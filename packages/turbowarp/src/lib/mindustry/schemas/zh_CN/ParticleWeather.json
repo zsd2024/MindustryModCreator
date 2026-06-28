@@ -1,0 +1,217 @@
+{
+    "type": "ParticleWeather",
+    "parentType": "Weather",
+    "localizedName": "粒子天气",
+    "fields": [
+        {
+            "name": "particleRegion",
+            "localizedName": "粒子精灵",
+            "type": "String",
+            "defaultValue": "\"circle-shadow\"",
+            "notes": "**Notes**: 粒子使用的精灵名称。"
+        },
+        {
+            "name": "color",
+            "localizedName": "粒子颜色",
+            "type": "Color",
+            "defaultValue": "ffffffff",
+            "notes": "**Notes**: 粒子的颜色。"
+        },
+        {
+            "name": "region",
+            "localizedName": "纹理区域",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": "**Notes**: 运行时加载的粒子纹理区域。"
+        },
+        {
+            "name": "yspeed",
+            "localizedName": "Y轴速度",
+            "type": "float",
+            "defaultValue": "-2.0",
+            "notes": "**Notes**: 粒子在Y轴方向的速度。"
+        },
+        {
+            "name": "xspeed",
+            "localizedName": "X轴速度",
+            "type": "float",
+            "defaultValue": "0.25",
+            "notes": "**Notes**: 粒子在X轴方向的速度。"
+        },
+        {
+            "name": "padding",
+            "localizedName": "生成偏移",
+            "type": "float",
+            "defaultValue": "16.0",
+            "notes": "**Notes**: 粒子生成区域的偏移量。"
+        },
+        {
+            "name": "sizeMin",
+            "localizedName": "最小尺寸",
+            "type": "float",
+            "defaultValue": "2.4",
+            "notes": "**Notes**: 粒子的最小尺寸。"
+        },
+        {
+            "name": "sizeMax",
+            "localizedName": "最大尺寸",
+            "type": "float",
+            "defaultValue": "12.0",
+            "notes": "**Notes**: 粒子的最大尺寸。"
+        },
+        {
+            "name": "density",
+            "localizedName": "密度",
+            "type": "float",
+            "defaultValue": "1200.0",
+            "notes": "**Notes**: 粒子的密度（数量）。"
+        },
+        {
+            "name": "minAlpha",
+            "localizedName": "最小透明度",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": "**Notes**: 粒子的最小透明度。"
+        },
+        {
+            "name": "maxAlpha",
+            "localizedName": "最大透明度",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": "**Notes**: 粒子的最大透明度。"
+        },
+        {
+            "name": "force",
+            "localizedName": "作用力",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "**Notes**: 天气对单位施加的力。"
+        },
+        {
+            "name": "noiseScale",
+            "localizedName": "噪声缩放",
+            "type": "float",
+            "defaultValue": "2000.0",
+            "notes": "**Notes**: 噪声纹理的缩放比例。"
+        },
+        {
+            "name": "baseSpeed",
+            "localizedName": "基础速度",
+            "type": "float",
+            "defaultValue": "6.1",
+            "notes": "**Notes**: 使用风向向量时的基础速度。"
+        },
+        {
+            "name": "sinSclMin",
+            "localizedName": "正弦频率最小值",
+            "type": "float",
+            "defaultValue": "30.0",
+            "notes": "**Notes**: 粒子正弦运动的最小频率缩放。"
+        },
+        {
+            "name": "sinSclMax",
+            "localizedName": "正弦频率最大值",
+            "type": "float",
+            "defaultValue": "80.0",
+            "notes": "**Notes**: 粒子正弦运动的最大频率缩放。"
+        },
+        {
+            "name": "sinMagMin",
+            "localizedName": "正弦幅度最小值",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": "**Notes**: 粒子正弦运动的最小幅度。"
+        },
+        {
+            "name": "sinMagMax",
+            "localizedName": "正弦幅度最大值",
+            "type": "float",
+            "defaultValue": "7.0",
+            "notes": "**Notes**: 粒子正弦运动的最大幅度。"
+        },
+        {
+            "name": "noiseColor",
+            "localizedName": "噪声颜色",
+            "type": "Color",
+            "defaultValue": "ffffffff",
+            "notes": "**Notes**: 噪声层的颜色。"
+        },
+        {
+            "name": "drawNoise",
+            "localizedName": "绘制噪声",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "**Notes**: 是否绘制噪声纹理层。"
+        },
+        {
+            "name": "drawParticles",
+            "localizedName": "绘制粒子",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "**Notes**: 是否绘制粒子。"
+        },
+        {
+            "name": "useWindVector",
+            "localizedName": "使用风向向量",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "**Notes**: 是否使用风向向量而非固定速度。"
+        },
+        {
+            "name": "randomParticleRotation",
+            "localizedName": "随机旋转",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "**Notes**: 粒子是否随机旋转。"
+        },
+        {
+            "name": "noiseLayers",
+            "localizedName": "噪声层数",
+            "type": "int",
+            "defaultValue": "1",
+            "notes": "**Notes**: 噪声纹理的层数。"
+        },
+        {
+            "name": "noiseLayerSpeedM",
+            "localizedName": "噪声速度倍率",
+            "type": "float",
+            "defaultValue": "1.1",
+            "notes": "**Notes**: 每层噪声速度的倍率。"
+        },
+        {
+            "name": "noiseLayerAlphaM",
+            "localizedName": "噪声透明度倍率",
+            "type": "float",
+            "defaultValue": "0.8",
+            "notes": "**Notes**: 每层噪声透明度的倍率。"
+        },
+        {
+            "name": "noiseLayerSclM",
+            "localizedName": "噪声缩放倍率",
+            "type": "float",
+            "defaultValue": "0.99",
+            "notes": "**Notes**: 每层噪声缩放的倍率。"
+        },
+        {
+            "name": "noiseLayerColorM",
+            "localizedName": "噪声颜色倍率",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": "**Notes**: 每层噪声颜色的倍率。"
+        },
+        {
+            "name": "noisePath",
+            "localizedName": "噪声纹理路径",
+            "type": "String",
+            "defaultValue": "\"noiseAlpha\"",
+            "notes": "**Notes**: 噪声纹理文件的路径。"
+        },
+        {
+            "name": "noise",
+            "localizedName": "噪声纹理",
+            "type": "Texture",
+            "defaultValue": "null",
+            "notes": "**Notes**: 运行时加载的噪声纹理。"
+        }
+    ]
+}

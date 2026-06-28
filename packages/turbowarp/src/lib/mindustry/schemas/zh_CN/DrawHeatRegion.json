@@ -1,0 +1,49 @@
+{
+    "localizedName": "热能区域绘制",
+    "type": "DrawHeatRegion",
+    "parentType": "DrawBlock",
+    "fields": [
+        {
+            "name": "color",
+            "localizedName": "热能颜色",
+            "type": "Color",
+            "defaultValue": "ff3838cc",
+            "notes": "**Notes**: 热能区域的颜色。"
+        },
+        {
+            "name": "pulse",
+            "localizedName": "脉冲幅度",
+            "type": "float",
+            "defaultValue": "0.3",
+            "notes": "**Notes**: 热点脉冲的幅度。"
+        },
+        {
+            "name": "pulseScl",
+            "localizedName": "脉冲频率",
+            "type": "float",
+            "defaultValue": "10.0",
+            "notes": "**Notes**: 热点脉冲的频率缩放。"
+        },
+        {
+            "name": "layer",
+            "localizedName": "渲染层级",
+            "type": "float",
+            "defaultValue": "31.0",
+            "notes": "**Notes**: 渲染层级。"
+        },
+        {
+            "name": "heat",
+            "localizedName": "热能纹理",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": "**Notes**: 运行时加载的热能纹理。"
+        },
+        {
+            "name": "suffix",
+            "localizedName": "纹理后缀",
+            "type": "String",
+            "defaultValue": "\"-glow\"",
+            "notes": "**Notes**: 方块名称后附加的后缀以查找纹理。"
+        }
+    ]
+}

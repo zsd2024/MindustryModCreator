@@ -1,0 +1,102 @@
+{
+    "type": "MoveLightningAbility",
+    "parentType": "Ability",
+    "fields": [
+        {
+            "name": "damage",
+            "type": "float",
+            "defaultValue": "35.0",
+            "notes": "Lightning damage"
+        },
+        {
+            "name": "chance",
+            "type": "float",
+            "defaultValue": "0.15",
+            "notes": "Chance of firing every tick. Set >= 1 to always fire lightning every tick at max speed"
+        },
+        {
+            "name": "length",
+            "type": "int",
+            "defaultValue": "12",
+            "notes": "Length of the lightning. <= 0 to disable"
+        },
+        {
+            "name": "minSpeed",
+            "type": "float",
+            "defaultValue": "0.8",
+            "notes": "Speeds for when to start lightninging and when to stop getting faster"
+        },
+        {
+            "name": "maxSpeed",
+            "type": "float",
+            "defaultValue": "1.2",
+            "notes": "Speeds for when to start lightninging and when to stop getting faster"
+        },
+        {
+            "name": "color",
+            "type": "Color",
+            "defaultValue": "a9d8ffff",
+            "notes": "Lightning color"
+        },
+        {
+            "name": "y",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "Shifts where the lightning spawns along the Y axis"
+        },
+        {
+            "name": "x",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "Offset along the X axis"
+        },
+        {
+            "name": "alternate",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "Whether the spawn side alternates"
+        },
+        {
+            "name": "heatRegion",
+            "type": "String",
+            "defaultValue": "\"error\"",
+            "notes": "Jittering heat sprite like the shield on v5 Javelin"
+        },
+        {
+            "name": "bullet",
+            "type": "BulletType",
+            "defaultValue": "null",
+            "notes": "Bullet type that is fired. Can be null"
+        },
+        {
+            "name": "bulletAngle",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "Bullet angle parameters"
+        },
+        {
+            "name": "bulletSpread",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "Bullet angle parameters"
+        },
+        {
+            "name": "shootEffect",
+            "type": "Effect",
+            "defaultValue": "sparkShoot",
+            "notes": ""
+        },
+        {
+            "name": "parentizeEffects",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": ""
+        },
+        {
+            "name": "shootSound",
+            "type": "Sound",
+            "defaultValue": "shootArc",
+            "notes": ""
+        }
+    ]
+}

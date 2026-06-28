@@ -1,0 +1,24 @@
+{
+    "type": "LightBlock",
+    "parentType": "Block",
+    "fields": [
+        {
+            "name": "brightness",
+            "type": "float",
+            "defaultValue": "0.9",
+            "notes": ""
+        },
+        {
+            "name": "radius",
+            "type": "float",
+            "defaultValue": "200.0",
+            "notes": ""
+        },
+        {
+            "name": "topRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        }
+    ]
+}

@@ -1,0 +1,21 @@
+{
+    "type": "RuneOverlay",
+    "parentType": "OverlayFloor",
+    "localizedName": "符文覆盖层",
+    "fields": [
+        {
+            "name": "letterRegions",
+            "type": "TextureRegion[]",
+            "defaultValue": "null",
+            "localizedName": "符文纹理",
+            "notes": "**Notes**: 运行时加载的符文纹理数组。"
+        },
+        {
+            "name": "color",
+            "type": "Color",
+            "defaultValue": "ffffffff",
+            "localizedName": "颜色",
+            "notes": "**Notes**: 符文绘制的颜色。"
+        }
+    ]
+}

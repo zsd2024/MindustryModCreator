@@ -1,0 +1,1458 @@
+{
+    "type": "UnitType",
+    "parentType": "UnlockableContent",
+    "fields": [
+        {
+            "name": "envRequired",
+            "type": "int",
+            "defaultValue": "0",
+            "notes": "Environmental flags that are all required for this unit to function. 0 = any environment"
+        },
+        {
+            "name": "envEnabled",
+            "type": "int",
+            "defaultValue": "1",
+            "notes": "The environment flags that this unit can function in. If the env matches any of these, it will be enabled."
+        },
+        {
+            "name": "envDisabled",
+            "type": "int",
+            "defaultValue": "16",
+            "notes": "The environment flags that this unit cannot function in. If the env matches any of these, it will explode or be disabled."
+        },
+        {
+            "name": "speed",
+            "type": "float",
+            "defaultValue": "1.1",
+            "notes": "movement speed (world units/t)"
+        },
+        {
+            "name": "boostMultiplier",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": "multiplier for speed when boosting"
+        },
+        {
+            "name": "floorMultiplier",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": "how affected this unit is by terrain"
+        },
+        {
+            "name": "rotateSpeed",
+            "type": "float",
+            "defaultValue": "5.0",
+            "notes": "body rotation speed in degrees/t"
+        },
+        {
+            "name": "baseRotateSpeed",
+            "type": "float",
+            "defaultValue": "5.0",
+            "notes": "mech base rotation speed in degrees/t"
+        },
+        {
+            "name": "drag",
+            "type": "float",
+            "defaultValue": "0.3",
+            "notes": "movement drag as fraction"
+        },
+        {
+            "name": "accel",
+            "type": "float",
+            "defaultValue": "0.5",
+            "notes": "acceleration as fraction of speed"
+        },
+        {
+            "name": "hitSize",
+            "type": "float",
+            "defaultValue": "6.0",
+            "notes": "size of one side of the hitbox square"
+        },
+        {
+            "name": "deathShake",
+            "type": "float",
+            "defaultValue": "-1.0",
+            "notes": "shake on unit death"
+        },
+        {
+            "name": "stepShake",
+            "type": "float",
+            "defaultValue": "-1.0",
+            "notes": "shake on each step for leg/mech units"
+        },
+        {
+            "name": "rippleScale",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": "ripple / dust size for legged units"
+        },
+        {
+            "name": "riseSpeed",
+            "type": "float",
+            "defaultValue": "0.08",
+            "notes": "boosting rise speed as fraction"
+        },
+        {
+            "name": "descentSpeed",
+            "type": "float",
+            "defaultValue": "0.08",
+            "notes": "boosting descent speed as fraction"
+        },
+        {
+            "name": "fallSpeed",
+            "type": "float",
+            "defaultValue": "0.018",
+            "notes": "how fast this unit falls upon death"
+        },
+        {
+            "name": "missileAccelTime",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "how many ticks it takes this missile to accelerate to full speed"
+        },
+        {
+            "name": "health",
+            "type": "float",
+            "defaultValue": "200.0",
+            "notes": "raw health amount"
+        },
+        {
+            "name": "armor",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "incoming damage is reduced by this amount"
+        },
+        {
+            "name": "range",
+            "type": "float",
+            "defaultValue": "-1.0",
+            "notes": "minimum range of any weapon; used for approaching targets. can be overridden by setting a value > 0."
+        },
+        {
+            "name": "maxRange",
+            "type": "float",
+            "defaultValue": "-1.0",
+            "notes": "maximum range of any weapon"
+        },
+        {
+            "name": "mineRange",
+            "type": "float",
+            "defaultValue": "70.0",
+            "notes": "range at which this unit can mine ores"
+        },
+        {
+            "name": "buildRange",
+            "type": "float",
+            "defaultValue": "220.0",
+            "notes": "range at which this unit can build"
+        },
+        {
+            "name": "circleTargetRadius",
+            "type": "float",
+            "defaultValue": "80.0",
+            "notes": "radius for circleTarget, if true"
+        },
+        {
+            "name": "crashDamageMultiplier",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": "multiplier for damage this (flying) unit deals when crashing on enemy things"
+        },
+        {
+            "name": "wreckHealthMultiplier",
+            "type": "float",
+            "defaultValue": "0.25",
+            "notes": "multiplier for health that this flying unit has for its wreck, based on its max health."
+        },
+        {
+            "name": "dpsEstimate",
+            "type": "float",
+            "defaultValue": "-1.0",
+            "notes": "a VERY ROUGH estimate of unit DPS; initialized in init()"
+        },
+        {
+            "name": "clipSize",
+            "type": "float",
+            "defaultValue": "-1.0",
+            "notes": "graphics clipping size; <0 to calculate automatically"
+        },
+        {
+            "name": "drownTimeMultiplier",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": "multiplier for how slowly this unit drowns - higher numbers, slower drowning."
+        },
+        {
+            "name": "strafePenalty",
+            "type": "float",
+            "defaultValue": "0.5",
+            "notes": "fractional movement speed penalty for this unit when it is moving in the opposite direction that it is facing"
+        },
+        {
+            "name": "researchCostMultiplier",
+            "type": "float",
+            "defaultValue": "50.0",
+            "notes": "multiplier for cost of research in tech tree"
+        },
+        {
+            "name": "groundLayer",
+            "type": "float",
+            "defaultValue": "60.0",
+            "notes": "for ground units, the layer upon which this unit is drawn"
+        },
+        {
+            "name": "flyingLayer",
+            "type": "float",
+            "defaultValue": "-1.0",
+            "notes": "For units that fly, the layer upon which this unit is drawn. If no value is set, defaults to Layer.flyingUnitLow or Layer.flyingUnit depending on lowAltitude"
+        },
+        {
+            "name": "payloadCapacity",
+            "type": "float",
+            "defaultValue": "8.0",
+            "notes": "Payload capacity of this unit in world units^2"
+        },
+        {
+            "name": "buildSpeed",
+            "type": "float",
+            "defaultValue": "-1.0",
+            "notes": "building speed multiplier; <0 to disable."
+        },
+        {
+            "name": "aimDst",
+            "type": "float",
+            "defaultValue": "-1.0",
+            "notes": "Minimum distance from this unit that weapons can target. Prevents units from firing \"inside\" the unit."
+        },
+        {
+            "name": "buildBeamOffset",
+            "type": "float",
+            "defaultValue": "3.8",
+            "notes": "Visual offset of the build beam from the front."
+        },
+        {
+            "name": "mineBeamOffset",
+            "type": "float",
+            "defaultValue": "-Infinity",
+            "notes": "Visual offset of the mining beam from the front. Defaults to half the hitsize."
+        },
+        {
+            "name": "targetPriority",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "WIP: Units of low priority will always be ignored in favor of those with higher priority, regardless of distance."
+        },
+        {
+            "name": "shadowElevation",
+            "type": "float",
+            "defaultValue": "-1.0",
+            "notes": "Elevation of shadow drawn under this (ground) unit. Visual only."
+        },
+        {
+            "name": "shadowElevationScl",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": "Scale for length of shadow drawn under this unit. Does nothing if this unit has no shadow."
+        },
+        {
+            "name": "engineOffset",
+            "type": "float",
+            "defaultValue": "5.0",
+            "notes": "backwards engine offset from center of unit"
+        },
+        {
+            "name": "engineSize",
+            "type": "float",
+            "defaultValue": "2.5",
+            "notes": "main engine radius"
+        },
+        {
+            "name": "engineLayer",
+            "type": "float",
+            "defaultValue": "-1.0",
+            "notes": "layer of all engines (<0 for default)"
+        },
+        {
+            "name": "itemOffsetY",
+            "type": "float",
+            "defaultValue": "3.0",
+            "notes": "visual backwards offset of items on unit"
+        },
+        {
+            "name": "lightRadius",
+            "type": "float",
+            "defaultValue": "-1.0",
+            "notes": "radius of light emitted, <0 for default"
+        },
+        {
+            "name": "lightOpacity",
+            "type": "float",
+            "defaultValue": "0.6",
+            "notes": "light color opacity"
+        },
+        {
+            "name": "softShadowScl",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": "scale of soft shadow - its size is calculated based off of region size"
+        },
+        {
+            "name": "fogRadius",
+            "type": "float",
+            "defaultValue": "-1.0",
+            "notes": "fog view radius in tiles. <0 for automatic radius."
+        },
+        {
+            "name": "waveTrailX",
+            "type": "float",
+            "defaultValue": "4.0",
+            "notes": "horizontal offset of wave trail in naval units"
+        },
+        {
+            "name": "waveTrailY",
+            "type": "float",
+            "defaultValue": "-3.0",
+            "notes": "vertical offset of wave trail in naval units"
+        },
+        {
+            "name": "trailScl",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": "width of all trails (including naval ones)"
+        },
+        {
+            "name": "isEnemy",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "if true, this unit counts as an enemy in the wave counter (usually false for support-only units)"
+        },
+        {
+            "name": "flying",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "if true, the unit is always at elevation 1"
+        },
+        {
+            "name": "wobble",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "whether this flying unit should wobble around"
+        },
+        {
+            "name": "targetAir",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "whether this unit tries to attack air units"
+        },
+        {
+            "name": "targetGround",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "whether this unit tries to attack ground units"
+        },
+        {
+            "name": "faceTarget",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "if true, this unit will attempt to face its target when shooting/aiming at it"
+        },
+        {
+            "name": "circleTarget",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "AI flag: if true, this flying unit circles around its target like a bomber"
+        },
+        {
+            "name": "autoDropBombs",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "AI flag: if true, this unit will drop bombs under itself even when it is not next to its 'real' target. used for carpet bombers"
+        },
+        {
+            "name": "targetBuildingsMobile",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "For the mobile version only: If false, this unit will not auto-target buildings to attach when a player controls it."
+        },
+        {
+            "name": "canBoost",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "if true, this unit can boost into the air if a player/processors controls it"
+        },
+        {
+            "name": "boostWhenBuilding",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "if true, this unit will always boost when using builder AI"
+        },
+        {
+            "name": "boostWhenMining",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "if true, this unit will always boost when using miner AI"
+        },
+        {
+            "name": "logicControllable",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "if false, logic processors cannot control this unit"
+        },
+        {
+            "name": "playerControllable",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "if false, players cannot control this unit"
+        },
+        {
+            "name": "controlSelectGlobal",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "If true, the unit can be selected with the global selection hotkey (shift+g)."
+        },
+        {
+            "name": "allowedInPayloads",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "if false, this unit cannot be moved into payloads"
+        },
+        {
+            "name": "hittable",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "if false, this unit cannot be hit by bullets or explosions"
+        },
+        {
+            "name": "killable",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "if false, this unit does not take damage and cannot be kill() / destroy()-ed."
+        },
+        {
+            "name": "targetable",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "if false, this unit is not targeted by anything."
+        },
+        {
+            "name": "vulnerableWithPayloads",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "if true, this unit can be hit/targeted when it has payloads (assuming hittable/targetable is false)"
+        },
+        {
+            "name": "pickupUnits",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "if true, this payload unit can pick up units"
+        },
+        {
+            "name": "physics",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "if false, this unit does not physically collide with others."
+        },
+        {
+            "name": "canDrown",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "if true, this ground unit will drown in deep liquids."
+        },
+        {
+            "name": "useUnitCap",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "if false, this unit ignores the unit cap and can be spawned infinitely"
+        },
+        {
+            "name": "coreUnitDock",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "if true, this core unit will \"dock\" to other units, making it re-appear when \"undocking\"."
+        },
+        {
+            "name": "createWreck",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "if false, no falling \"corpse\" is created when this unit dies."
+        },
+        {
+            "name": "createScorch",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "if false, no scorch marks are created when this unit dies"
+        },
+        {
+            "name": "lowAltitude",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "if true, this unit will be drawn under effects/bullets; this is a visual change only."
+        },
+        {
+            "name": "rotateToBuilding",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "if true, this unit will look at whatever it is building"
+        },
+        {
+            "name": "allowLegStep",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "if true and this is a legged unit, this unit can walk over blocks."
+        },
+        {
+            "name": "legPhysicsLayer",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "for legged units, setting this to false forces it to be on the ground physics layer."
+        },
+        {
+            "name": "hovering",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "if true, this unit will not be affected by the floor under it."
+        },
+        {
+            "name": "omniMovement",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "if true, this unit can move in any direction regardless of rotation. if false, this unit can only move in the direction it is facing."
+        },
+        {
+            "name": "rotateMoveFirst",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "if true, the unit faces its moving direction before actually moving."
+        },
+        {
+            "name": "healFlash",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "if true, this unit flashes when being healed"
+        },
+        {
+            "name": "canHeal",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "whether the unit can heal blocks. Initialized in init()"
+        },
+        {
+            "name": "singleTarget",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "if true, all weapons will attack the same target."
+        },
+        {
+            "name": "forceMultiTarget",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "if true, this unit will be able to have multiple targets, even if it only has one mirrored weapon."
+        },
+        {
+            "name": "canAttack",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "if false, this unit has no weapons that can attack."
+        },
+        {
+            "name": "hidden",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "if true, this unit won't show up in the database or various other UIs."
+        },
+        {
+            "name": "internal",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "if true, this unit is for internal use only and does not have a sprite generated."
+        },
+        {
+            "name": "internalGenerateSprites",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "For certain units, generating sprites is still necessary, despite being internal."
+        },
+        {
+            "name": "bounded",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "If false, this unit is not pushed away from map edges."
+        },
+        {
+            "name": "naval",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "if true, this unit is detected as naval - do NOT assign this manually! Initialized in init()"
+        },
+        {
+            "name": "autoFindTarget",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "if false, RTS AI controlled units do not automatically attack things while moving. This is automatically assigned."
+        },
+        {
+            "name": "targetUnderBlocks",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "If false, 'under' blocks like conveyors are not targeted."
+        },
+        {
+            "name": "alwaysShootWhenMoving",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "if true, this unit will always shoot while moving regardless of slowdown"
+        },
+        {
+            "name": "hoverable",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "whether this unit has a hover tooltip"
+        },
+        {
+            "name": "alwaysCreateOutline",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "if true, this modded unit always has a -outline region generated for its base. Normally, outlines are ignored if there are no top = false weapons."
+        },
+        {
+            "name": "generateFullIcon",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "for vanilla content only - if false, skips the full icon generation step."
+        },
+        {
+            "name": "squareShape",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "if true, this unit has a square shadow."
+        },
+        {
+            "name": "drawBuildBeam",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "if true, this unit will draw its building beam towards blocks."
+        },
+        {
+            "name": "drawMineBeam",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "if true, this unit will draw its mining beam towards blocks"
+        },
+        {
+            "name": "drawCell",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "if false, the team indicator/cell is not drawn."
+        },
+        {
+            "name": "drawItems",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "if false, carried items are not drawn."
+        },
+        {
+            "name": "drawShields",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "if false, the unit shield (usually seen in waves) is not drawn."
+        },
+        {
+            "name": "drawBody",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "if false, the unit body is not drawn."
+        },
+        {
+            "name": "drawSoftShadow",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "if false, the soft shadow is not drawn."
+        },
+        {
+            "name": "drawMinimap",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "if false, the unit is not drawn on the minimap."
+        },
+        {
+            "name": "aiController",
+            "type": "Prov of ? extends UnitController",
+            "defaultValue": "{code}",
+            "notes": "The default AI controller to assign on creation."
+        },
+        {
+            "name": "controller",
+            "type": "Func of Unit, ? extends UnitController",
+            "defaultValue": "get() : new CommandAI()",
+            "notes": "Function that chooses AI controller based on unit entity."
+        },
+        {
+            "name": "constructor",
+            "type": "Prov of ? extends Unit",
+            "defaultValue": "null",
+            "notes": "Creates a new instance of this unit class."
+        },
+        {
+            "name": "abilities",
+            "type": "Seq of Ability",
+            "defaultValue": "[]",
+            "notes": "list of \"abilities\", which are various behaviors that update each frame"
+        },
+        {
+            "name": "weapons",
+            "type": "Seq of Weapon",
+            "defaultValue": "[]",
+            "notes": "All weapons that this unit will shoot with."
+        },
+        {
+            "name": "immunities",
+            "type": "ObjectSet of StatusEffect",
+            "defaultValue": "new ObjectSet<>()",
+            "notes": "None of the status effects in this set can be applied to this unit."
+        },
+        {
+            "name": "healColor",
+            "type": "Color",
+            "defaultValue": "98ffa9ff",
+            "notes": "color that this unit flashes when getting healed (if healFlash is true)"
+        },
+        {
+            "name": "lightColor",
+            "type": "Color",
+            "defaultValue": "fbd367ff",
+            "notes": "Color of light that this unit produces when lighting is enabled in the map."
+        },
+        {
+            "name": "shieldColor",
+            "type": "Color",
+            "defaultValue": "null",
+            "notes": "override for unit shield colour."
+        },
+        {
+            "name": "deathSound",
+            "type": "Sound",
+            "defaultValue": "unset",
+            "notes": "sound played when this unit explodes (not when it is shot down)"
+        },
+        {
+            "name": "deathSoundVolume",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": "volume of death sound"
+        },
+        {
+            "name": "wreckSound",
+            "type": "Sound",
+            "defaultValue": "unset",
+            "notes": "sound played when the unit wreck is shot down"
+        },
+        {
+            "name": "wreckSoundVolume",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": "volume of wreck falling sound"
+        },
+        {
+            "name": "loopSound",
+            "type": "Sound",
+            "defaultValue": "none",
+            "notes": "sound played on loop when this unit is around."
+        },
+        {
+            "name": "loopSoundVolume",
+            "type": "float",
+            "defaultValue": "0.5",
+            "notes": "volume of loop sound"
+        },
+        {
+            "name": "stepSound",
+            "type": "Sound",
+            "defaultValue": "mechStepSmall",
+            "notes": "sound played when this mech/insect unit does a step"
+        },
+        {
+            "name": "stepSoundVolume",
+            "type": "float",
+            "defaultValue": "0.5",
+            "notes": "volume of step sound"
+        },
+        {
+            "name": "stepSoundPitch",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": "base pitch of step sound"
+        },
+        {
+            "name": "stepSoundPitchRange",
+            "type": "float",
+            "defaultValue": "0.1",
+            "notes": "base pitch of step sound"
+        },
+        {
+            "name": "tankMoveSound",
+            "type": "Sound",
+            "defaultValue": "tankMove",
+            "notes": "sound looped when tank moves"
+        },
+        {
+            "name": "moveSound",
+            "type": "Sound",
+            "defaultValue": "none",
+            "notes": "sound looped when the unit moves; volume depends on velocity"
+        },
+        {
+            "name": "moveSoundVolume",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": "volume of movement sound"
+        },
+        {
+            "name": "moveSoundPitchMin",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": "pitch of movement sound based on velocity"
+        },
+        {
+            "name": "moveSoundPitchMax",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": "pitch of movement sound based on velocity"
+        },
+        {
+            "name": "tankMoveVolume",
+            "type": "float",
+            "defaultValue": "0.5",
+            "notes": "volume of tank move sfx"
+        },
+        {
+            "name": "fallEffect",
+            "type": "Effect",
+            "defaultValue": "fallSmoke",
+            "notes": "effect that this unit emits when falling"
+        },
+        {
+            "name": "fallEngineEffect",
+            "type": "Effect",
+            "defaultValue": "fallSmoke",
+            "notes": "effect created at engine when unit falls."
+        },
+        {
+            "name": "deathExplosionEffect",
+            "type": "Effect",
+            "defaultValue": "dynamicExplosion",
+            "notes": "effect created when this unit dies"
+        },
+        {
+            "name": "treadEffect",
+            "type": "Effect",
+            "defaultValue": "null",
+            "notes": "optional effect created when this tank moves"
+        },
+        {
+            "name": "parts",
+            "type": "Seq of DrawPart",
+            "defaultValue": "[]",
+            "notes": "extra (usually animated) visual parts"
+        },
+        {
+            "name": "engines",
+            "type": "Seq of UnitEngine",
+            "defaultValue": "[]",
+            "notes": "list of engines, or \"thrusters\""
+        },
+        {
+            "name": "useEngineElevation",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "if false, the thruster is always displayed at its normal size regardless of elevation"
+        },
+        {
+            "name": "engineColor",
+            "type": "Color",
+            "defaultValue": "null",
+            "notes": "override for all engine colors"
+        },
+        {
+            "name": "engineColorInner",
+            "type": "Color",
+            "defaultValue": "ffffffff",
+            "notes": "color for inner portions of engines"
+        },
+        {
+            "name": "trailLength",
+            "type": "int",
+            "defaultValue": "0",
+            "notes": "length of engine trail (if flying) or wave trail (if naval)"
+        },
+        {
+            "name": "trailColor",
+            "type": "Color",
+            "defaultValue": "null",
+            "notes": "override for engine trail color"
+        },
+        {
+            "name": "flowfieldPathType",
+            "type": "int",
+            "defaultValue": "-1",
+            "notes": "Cost type ID for flow field/enemy AI pathfinding."
+        },
+        {
+            "name": "pathCost",
+            "type": "PathCost",
+            "defaultValue": "null",
+            "notes": "Function used for calculating cost of moving with ControlPathfinder. Does not affect \"normal\" flow field pathfinding."
+        },
+        {
+            "name": "pathCostId",
+            "type": "int",
+            "defaultValue": "0",
+            "notes": "ID for path cost, to be used in the control path finder. This is the value that actually matters; do not assign manually. Set in init()."
+        },
+        {
+            "name": "sample",
+            "type": "Unit",
+            "defaultValue": "null",
+            "notes": "A sample of the unit that this type creates. Do not modify!"
+        },
+        {
+            "name": "targetFlags",
+            "type": "BlockFlag[]",
+            "defaultValue": "[null]",
+            "notes": "Flags to target based on priority. Null indicates that the closest target should be found. The closest enemy core is used as a fallback."
+        },
+        {
+            "name": "allowChangeCommands",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "A value of false is used to hide command changing UI in unit factories."
+        },
+        {
+            "name": "commands",
+            "type": "Seq of UnitCommand",
+            "defaultValue": "[]",
+            "notes": "Commands available to this unit through RTS controls. An empty array means commands will be assigned based on unit capabilities in init()."
+        },
+        {
+            "name": "defaultCommand",
+            "type": "UnitCommand",
+            "defaultValue": "null",
+            "notes": "Command to assign to this unit upon creation. Null indicates the first command in the array."
+        },
+        {
+            "name": "stances",
+            "type": "Seq of UnitStance",
+            "defaultValue": "[]",
+            "notes": "Stances this unit can have. An empty array means stances will be assigned based on unit capabilities in init()."
+        },
+        {
+            "name": "outlineColor",
+            "type": "Color",
+            "defaultValue": "565666ff",
+            "notes": "color for outline generated around sprites"
+        },
+        {
+            "name": "outlineRadius",
+            "type": "int",
+            "defaultValue": "3",
+            "notes": "thickness for sprite outline"
+        },
+        {
+            "name": "outlines",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "if false, no sprite outlines are generated"
+        },
+        {
+            "name": "itemCapacity",
+            "type": "int",
+            "defaultValue": "-1",
+            "notes": "amount of items this unit can carry; <0 to determine based on hitSize."
+        },
+        {
+            "name": "ammoCapacity",
+            "type": "int",
+            "defaultValue": "1",
+            "notes": "@deprecated only kept for compatibility with some turrets that query this field! Remove this from your code immediately!"
+        },
+        {
+            "name": "mineTier",
+            "type": "int",
+            "defaultValue": "-1",
+            "notes": "max hardness of ore that this unit can mine (<0 to disable)"
+        },
+        {
+            "name": "mineSpeed",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": "mining speed in weird arbitrary units"
+        },
+        {
+            "name": "mineWalls",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "whether this unit can mine ores from floors/walls, respectively"
+        },
+        {
+            "name": "mineFloor",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "whether this unit can mine ores from floors/walls, respectively"
+        },
+        {
+            "name": "mineHardnessScaling",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "if true, harder materials will take longer to mine"
+        },
+        {
+            "name": "mineSound",
+            "type": "Sound",
+            "defaultValue": "loopMineBeam",
+            "notes": "continuous sound emitted when mining."
+        },
+        {
+            "name": "mineSoundVolume",
+            "type": "float",
+            "defaultValue": "0.6",
+            "notes": "volume of mining sound."
+        },
+        {
+            "name": "mineItems",
+            "type": "Seq of Item",
+            "defaultValue": "[Copper, Lead, Titanium, Thorium]",
+            "notes": "Target items to mine. Used in MinerAI"
+        },
+        {
+            "name": "legCount",
+            "type": "int",
+            "defaultValue": "4",
+            "notes": "number of legs this unit has (must have the correct type to function!)"
+        },
+        {
+            "name": "legGroupSize",
+            "type": "int",
+            "defaultValue": "2",
+            "notes": "size of groups in which legs move. for example, insects (6 legs) usually move legs in groups of 3."
+        },
+        {
+            "name": "legLength",
+            "type": "float",
+            "defaultValue": "10.0",
+            "notes": "total length of a leg (both segments)"
+        },
+        {
+            "name": "legSpeed",
+            "type": "float",
+            "defaultValue": "0.1",
+            "notes": "how fast individual legs move towards their destination (non-linear)"
+        },
+        {
+            "name": "legForwardScl",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": "scale for how far in front (relative to unit velocity) legs try to place themselves; if legs lag behind a unit, increase this number"
+        },
+        {
+            "name": "legBaseOffset",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "leg offset from the center of the unit"
+        },
+        {
+            "name": "legMoveSpace",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": "scaling for space between leg movements"
+        },
+        {
+            "name": "legExtension",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "for legs without \"joints\", this is how much the second leg sprite is moved \"back\" by, so it covers the joint region (it's hard to explain without an image)"
+        },
+        {
+            "name": "legPairOffset",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "Higher values of this field make groups of legs move less in-sync with each other."
+        },
+        {
+            "name": "legLengthScl",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": "scaling for how far away legs try to be from the body (not their actual length); e.g. if set to 0.5, legs will appear somewhat folded"
+        },
+        {
+            "name": "legStraightLength",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": "if legStraightness > 0, this is the scale for how far away legs are from the body horizontally"
+        },
+        {
+            "name": "legMaxLength",
+            "type": "float",
+            "defaultValue": "1.75",
+            "notes": "maximum length of an individual leg as fraction of real length"
+        },
+        {
+            "name": "legMinLength",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "minimum length of an individual leg as fraction of real length"
+        },
+        {
+            "name": "legSplashDamage",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "splash damage dealt when a leg touches the ground"
+        },
+        {
+            "name": "legSplashRange",
+            "type": "float",
+            "defaultValue": "5.0",
+            "notes": "splash damage radius of legs"
+        },
+        {
+            "name": "baseLegStraightness",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "how straight the leg base/origin is (0 = circular, 1 = line)"
+        },
+        {
+            "name": "legStraightness",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "how straight the leg outward angles are (0 = circular, 1 = horizontal line)"
+        },
+        {
+            "name": "legBaseUnder",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "If true, the base (further away) leg region is drawn under instead of over."
+        },
+        {
+            "name": "lockLegBase",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "If true, legs are locked to the base of the unit instead of being on an implicit rotating \"mount\"."
+        },
+        {
+            "name": "legContinuousMove",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "If true, legs always try to move around even when the unit is not moving (leads to more natural behavior)"
+        },
+        {
+            "name": "flipBackLegs",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "TODO neither of these appear to do much"
+        },
+        {
+            "name": "flipLegSide",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "TODO neither of these appear to do much"
+        },
+        {
+            "name": "emitWalkSound",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "Whether to emit a splashing noise in water."
+        },
+        {
+            "name": "emitWalkEffect",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "Whether to emit a splashing effect in water (fasle implies emitWalkSound false)."
+        },
+        {
+            "name": "mechLandShake",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "screen shake amount for when this mech lands after boosting"
+        },
+        {
+            "name": "mechSideSway",
+            "type": "float",
+            "defaultValue": "0.54",
+            "notes": "parameters for mech swaying animation"
+        },
+        {
+            "name": "mechFrontSway",
+            "type": "float",
+            "defaultValue": "0.1",
+            "notes": "parameters for mech swaying animation"
+        },
+        {
+            "name": "mechStride",
+            "type": "float",
+            "defaultValue": "-1.0",
+            "notes": "parameters for mech swaying animation"
+        },
+        {
+            "name": "mechStepParticles",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "whether particles are created when this mech takes a step"
+        },
+        {
+            "name": "mechLegColor",
+            "type": "Color",
+            "defaultValue": "6e7080ff",
+            "notes": "color that legs change to when moving, to simulate depth"
+        },
+        {
+            "name": "treadRects",
+            "type": "Rect[]",
+            "defaultValue": "[]",
+            "notes": "list of treads as rectangles in IMAGE COORDINATES, relative to the center. these are mirrored."
+        },
+        {
+            "name": "treadFrames",
+            "type": "int",
+            "defaultValue": "18",
+            "notes": "number of frames of movement in a tread"
+        },
+        {
+            "name": "treadPullOffset",
+            "type": "int",
+            "defaultValue": "0",
+            "notes": "how much of a top part of a tread sprite is \"cut off\" relative to the pattern; this is corrected for"
+        },
+        {
+            "name": "crushFragile",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "if true, 'fragile' blocks will instantly be crushed in a 1x1 area around the tank"
+        },
+        {
+            "name": "segments",
+            "type": "int",
+            "defaultValue": "0",
+            "notes": "number of independent segments"
+        },
+        {
+            "name": "segmentUnits",
+            "type": "int",
+            "defaultValue": "1",
+            "notes": "TODO wave support - for multi-unit segmented units, this is the number of independent units that are spawned"
+        },
+        {
+            "name": "segmentUnit",
+            "type": "UnitType",
+            "defaultValue": "null",
+            "notes": "unit spawned in segments; if null, the same unit is used"
+        },
+        {
+            "name": "segmentEndUnit",
+            "type": "UnitType",
+            "defaultValue": "null",
+            "notes": "unit spawned at the end; if null, the segment unit is used"
+        },
+        {
+            "name": "segmentLayerOrder",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "true - parent segments are on higher layers; false - parent segments are on lower layers than head"
+        },
+        {
+            "name": "segmentMag",
+            "type": "float",
+            "defaultValue": "2.0",
+            "notes": "magnitude of sine offset between segments"
+        },
+        {
+            "name": "segmentScl",
+            "type": "float",
+            "defaultValue": "4.0",
+            "notes": "scale of sine offset between segments"
+        },
+        {
+            "name": "segmentPhase",
+            "type": "float",
+            "defaultValue": "5.0",
+            "notes": "index multiplier of sine offset between segments"
+        },
+        {
+            "name": "segmentRotSpeed",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": "how fast each segment moves towards the next one"
+        },
+        {
+            "name": "segmentMaxRot",
+            "type": "float",
+            "defaultValue": "30.0",
+            "notes": "maximum difference between segment angles"
+        },
+        {
+            "name": "segmentSpacing",
+            "type": "float",
+            "defaultValue": "-1.0",
+            "notes": "spacing between separate unit segments (only used for multi-unit worms)"
+        },
+        {
+            "name": "segmentRotationRange",
+            "type": "float",
+            "defaultValue": "80.0",
+            "notes": "rotation between segments is clamped to this range"
+        },
+        {
+            "name": "crawlSlowdown",
+            "type": "float",
+            "defaultValue": "0.5",
+            "notes": "speed multiplier this unit will have when crawlSlowdownFrac is met."
+        },
+        {
+            "name": "crushDamage",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "damage dealt to blocks under this tank/crawler every frame."
+        },
+        {
+            "name": "crawlSlowdownFrac",
+            "type": "float",
+            "defaultValue": "0.55",
+            "notes": "the fraction of solids under this block necessary for it to reach crawlSlowdown."
+        },
+        {
+            "name": "lifetime",
+            "type": "float",
+            "defaultValue": "300.0",
+            "notes": "lifetime of this missile."
+        },
+        {
+            "name": "homingDelay",
+            "type": "float",
+            "defaultValue": "10.0",
+            "notes": "ticks that must pass before this missile starts homing."
+        },
+        {
+            "name": "baseRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "legRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "region",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "previewRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "shadowRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "cellRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "itemCircleRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "softShadowRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "jointRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "footRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "legBaseRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "baseJointRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "outlineRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "treadRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "mineLaserRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "mineLaserEndRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "wreckRegions",
+            "type": "TextureRegion[]",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "segmentRegions",
+            "type": "TextureRegion[]",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "segmentCellRegions",
+            "type": "TextureRegion[]",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "segmentOutlineRegions",
+            "type": "TextureRegion[]",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "treadRegions",
+            "type": "TextureRegion[][]",
+            "defaultValue": "null",
+            "notes": ""
+        }
+    ]
+}

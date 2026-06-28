@@ -1,0 +1,28 @@
+{
+    "localizedName": "持续炮塔",
+    "type": "ContinuousTurret",
+    "parentType": "Turret",
+    "fields": [
+        {
+            "name": "shootType",
+            "localizedName": "射击子弹类型",
+            "type": "BulletType",
+            "defaultValue": "placeholder",
+            "notes": "**Notes**: 持续炮塔发射的子弹类型。"
+        },
+        {
+            "name": "aimChangeSpeed",
+            "localizedName": "瞄准变化速度",
+            "type": "float",
+            "defaultValue": "Infinity",
+            "notes": "炮塔改变子弹瞄准距离的速度。仅用于点激光子弹。\n\n**Notes**: 控制激光瞄准点的移动速度。"
+        },
+        {
+            "name": "scaleDamageEfficiency",
+            "localizedName": "伤害效率缩放",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "**Notes**: 如果为true，伤害会根据效率进行缩放。"
+        }
+    ]
+}

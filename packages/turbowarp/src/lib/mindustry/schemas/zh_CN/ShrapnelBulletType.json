@@ -1,0 +1,84 @@
+{
+    "type": "ShrapnelBulletType",
+    "parentType": "BulletType",
+    "localizedName": "弹片子弹",
+    "fields": [
+        {
+            "name": "length",
+            "type": "float",
+            "defaultValue": "100.0",
+            "localizedName": "弹片长度",
+            "notes": "弹片长度"
+        },
+        {
+            "name": "width",
+            "type": "float",
+            "defaultValue": "20.0",
+            "localizedName": "弹片宽度",
+            "notes": "弹片宽度"
+        },
+        {
+            "name": "fromColor",
+            "type": "Color",
+            "defaultValue": "ffffffff",
+            "localizedName": "起始颜色",
+            "notes": "起始颜色"
+        },
+        {
+            "name": "toColor",
+            "type": "Color",
+            "defaultValue": "a9d8ffff",
+            "localizedName": "结束颜色",
+            "notes": "结束颜色"
+        },
+        {
+            "name": "hitLarge",
+            "type": "boolean",
+            "defaultValue": "false",
+            "localizedName": "大范围判定",
+            "notes": "是否使用大范围伤害判定"
+        },
+        {
+            "name": "serrations",
+            "type": "int",
+            "defaultValue": "7",
+            "localizedName": "锯齿数量",
+            "notes": "锯齿数量"
+        },
+        {
+            "name": "serrationLenScl",
+            "type": "float",
+            "defaultValue": "10.0",
+            "localizedName": "锯齿长度缩放",
+            "notes": "锯齿长度缩放"
+        },
+        {
+            "name": "serrationWidth",
+            "type": "float",
+            "defaultValue": "4.0",
+            "localizedName": "锯齿宽度",
+            "notes": "锯齿宽度"
+        },
+        {
+            "name": "serrationSpacing",
+            "type": "float",
+            "defaultValue": "8.0",
+            "localizedName": "锯齿间距",
+            "notes": "锯齿间距"
+        },
+        {
+            "name": "serrationSpaceOffset",
+            "type": "float",
+            "defaultValue": "80.0",
+            "localizedName": "锯齿空间偏移",
+            "notes": "锯齿空间偏移"
+        },
+        {
+            "name": "serrationFadeOffset",
+            "type": "float",
+            "defaultValue": "0.5",
+            "localizedName": "锯齿淡出偏移",
+            "notes": "锯齿淡出偏移"
+        }
+    ]
+}

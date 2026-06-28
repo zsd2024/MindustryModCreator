@@ -1,0 +1,78 @@
+{
+    "type": "DrawRegion",
+    "parentType": "DrawBlock",
+    "fields": [
+        {
+            "name": "region",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "suffix",
+            "type": "String",
+            "defaultValue": "\"\"",
+            "notes": ""
+        },
+        {
+            "name": "name",
+            "type": "String",
+            "defaultValue": "null",
+            "notes": "If set, overrides the region name."
+        },
+        {
+            "name": "color",
+            "type": "Color",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "spinSprite",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": ""
+        },
+        {
+            "name": "drawPlan",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": ""
+        },
+        {
+            "name": "buildingRotate",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": ""
+        },
+        {
+            "name": "rotateSpeed",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": ""
+        },
+        {
+            "name": "x",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": ""
+        },
+        {
+            "name": "y",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": ""
+        },
+        {
+            "name": "rotation",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": ""
+        },
+        {
+            "name": "layer",
+            "type": "float",
+            "defaultValue": "-1.0",
+            "notes": "Any number <=0 disables layer changes."
+        }
+    ]
+}

@@ -1,0 +1,18 @@
+{
+    "type": "MessageBlock",
+    "parentType": "Block",
+    "fields": [
+        {
+            "name": "maxTextLength",
+            "type": "int",
+            "defaultValue": "400",
+            "notes": "writeUTF maximum UTF-8 length per char is 3, so 3*400 = 1200 bytes, the max string byte size"
+        },
+        {
+            "name": "maxNewlines",
+            "type": "int",
+            "defaultValue": "24",
+            "notes": ""
+        }
+    ]
+}

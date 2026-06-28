@@ -1,0 +1,30 @@
+{
+    "type": "DirectionLiquidBridge",
+    "parentType": "DirectionBridge",
+    "fields": [
+        {
+            "name": "timerFlow",
+            "type": "int",
+            "defaultValue": "1",
+            "notes": ""
+        },
+        {
+            "name": "speed",
+            "type": "float",
+            "defaultValue": "5.0",
+            "notes": ""
+        },
+        {
+            "name": "liquidPadding",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": ""
+        },
+        {
+            "name": "bottomRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        }
+    ]
+}

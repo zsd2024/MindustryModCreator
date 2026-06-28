@@ -1,0 +1,21 @@
+{
+    "localizedName": "持续液体炮塔",
+    "type": "ContinuousLiquidTurret",
+    "parentType": "ContinuousTurret",
+    "fields": [
+        {
+            "name": "ammoTypes",
+            "localizedName": "弹药类型映射",
+            "type": "ObjectMap of Liquid, BulletType",
+            "defaultValue": "new ObjectMap<>()",
+            "notes": "**Notes**: 液体到子弹类型的映射表，定义该持续炮塔接受的液体弹药。"
+        },
+        {
+            "name": "liquidConsumed",
+            "localizedName": "液体消耗量",
+            "type": "float",
+            "defaultValue": "0.016666668",
+            "notes": "**Notes**: 每tick消耗的液体量。"
+        }
+    ]
+}

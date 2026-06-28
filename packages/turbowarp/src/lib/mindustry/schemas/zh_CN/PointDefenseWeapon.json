@@ -1,0 +1,21 @@
+{
+    "type": "PointDefenseWeapon",
+    "parentType": "Weapon",
+    "localizedName": "点防御武器",
+    "fields": [
+        {
+            "name": "color",
+            "localizedName": "光束颜色",
+            "type": "Color",
+            "defaultValue": "ffffffff",
+            "notes": "**Notes**: 拦截光束的颜色。"
+        },
+        {
+            "name": "beamEffect",
+            "localizedName": "光束特效",
+            "type": "Effect",
+            "defaultValue": "pointBeam",
+            "notes": "**Notes**: 拦截光束发射时的特效。"
+        }
+    ]
+}

@@ -1,0 +1,18 @@
+{
+    "type": "TiledFloor",
+    "parentType": "Floor",
+    "fields": [
+        {
+            "name": "sizedRegions",
+            "type": "TextureRegion[][][][]",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "maxSize",
+            "type": "int",
+            "defaultValue": "3",
+            "notes": ""
+        }
+    ]
+}

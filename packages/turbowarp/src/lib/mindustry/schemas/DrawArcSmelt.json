@@ -1,0 +1,108 @@
+{
+    "type": "DrawArcSmelt",
+    "parentType": "DrawBlock",
+    "fields": [
+        {
+            "name": "flameColor",
+            "type": "Color",
+            "defaultValue": "f58349ff",
+            "notes": ""
+        },
+        {
+            "name": "midColor",
+            "type": "Color",
+            "defaultValue": "f2d585ff",
+            "notes": ""
+        },
+        {
+            "name": "flameRad",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": ""
+        },
+        {
+            "name": "circleSpace",
+            "type": "float",
+            "defaultValue": "2.0",
+            "notes": ""
+        },
+        {
+            "name": "flameRadiusScl",
+            "type": "float",
+            "defaultValue": "3.0",
+            "notes": ""
+        },
+        {
+            "name": "flameRadiusMag",
+            "type": "float",
+            "defaultValue": "0.3",
+            "notes": ""
+        },
+        {
+            "name": "circleStroke",
+            "type": "float",
+            "defaultValue": "1.5",
+            "notes": ""
+        },
+        {
+            "name": "x",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": ""
+        },
+        {
+            "name": "y",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": ""
+        },
+        {
+            "name": "alpha",
+            "type": "float",
+            "defaultValue": "0.68",
+            "notes": ""
+        },
+        {
+            "name": "particles",
+            "type": "int",
+            "defaultValue": "25",
+            "notes": ""
+        },
+        {
+            "name": "particleLife",
+            "type": "float",
+            "defaultValue": "40.0",
+            "notes": ""
+        },
+        {
+            "name": "particleRad",
+            "type": "float",
+            "defaultValue": "7.0",
+            "notes": ""
+        },
+        {
+            "name": "particleStroke",
+            "type": "float",
+            "defaultValue": "1.1",
+            "notes": ""
+        },
+        {
+            "name": "particleLen",
+            "type": "float",
+            "defaultValue": "3.0",
+            "notes": ""
+        },
+        {
+            "name": "drawCenter",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": ""
+        },
+        {
+            "name": "blending",
+            "type": "Blending",
+            "defaultValue": "additive",
+            "notes": ""
+        }
+    ]
+}

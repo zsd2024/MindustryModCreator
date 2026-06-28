@@ -1,0 +1,12 @@
+{
+    "type": "SeqEffect",
+    "parentType": "Effect",
+    "fields": [
+        {
+            "name": "effects",
+            "type": "Effect[]",
+            "defaultValue": "[]",
+            "notes": ""
+        }
+    ]
+}

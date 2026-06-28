@@ -1,0 +1,413 @@
+{
+    "type": "Turret",
+    "parentType": "ReloadTurret",
+    "localizedName": "炮塔",
+    "fields": [
+        {
+            "name": "timerTarget",
+            "type": "int",
+            "localizedName": "目标计时器",
+            "defaultValue": "1",
+            "notes": "**Notes**: 用于寻找目标的计时器索引。"
+        },
+        {
+            "name": "targetInterval",
+            "type": "float",
+            "localizedName": "索敌间隔",
+            "defaultValue": "20.0",
+            "notes": "尝试寻找目标的tick间隔。\n\n**Notes**: 每经过此tick数尝试寻找新目标。"
+        },
+        {
+            "name": "newTargetInterval",
+            "type": "float",
+            "localizedName": "已有目标时索敌间隔",
+            "defaultValue": "-1.0",
+            "notes": "当炮塔已有有效目标时的目标寻找间隔。\n\n**Notes**: -1表示使用targetInterval的值。"
+        },
+        {
+            "name": "maxAmmo",
+            "type": "int",
+            "localizedName": "最大弹药量",
+            "defaultValue": "30",
+            "notes": "最大弹药单位存储量。\n\n**Notes**: 炮塔可以存储的最大弹药数。"
+        },
+        {
+            "name": "ammoPerShot",
+            "type": "int",
+            "localizedName": "每发弹药消耗",
+            "defaultValue": "1",
+            "notes": "每次射击消耗的弹药单位。\n\n**Notes**: 每次开火消耗的弹药量。"
+        },
+        {
+            "name": "consumeAmmoOnce",
+            "type": "boolean",
+            "localizedName": "单次消耗弹药",
+            "defaultValue": "true",
+            "notes": "如果为true，无论子弹数量如何，每次射击仅消耗一次弹药。\n\n**Notes**: 控制多弹头射击时是消耗一次还是多次弹药。"
+        },
+        {
+            "name": "heatRequirement",
+            "type": "float",
+            "localizedName": "热量需求",
+            "defaultValue": "-1.0",
+            "notes": "开火所需的最低输入热量。\n\n**Notes**: 如果大于0，炮塔需要达到指定热量才能开火。"
+        },
+        {
+            "name": "maxHeatEfficiency",
+            "type": "float",
+            "localizedName": "最大热量效率",
+            "defaultValue": "3.0",
+            "notes": "如果炮塔使用热量，可能达到的最大效率。\n\n**Notes**: 热量驱动的炮塔的最大效率倍率。"
+        },
+        {
+            "name": "inaccuracy",
+            "type": "float",
+            "localizedName": "散布角度",
+            "defaultValue": "0.0",
+            "notes": "子弹角度的随机偏差，以度为单位。\n\n**Notes**: 控制子弹的散布范围。"
+        },
+        {
+            "name": "velocityRnd",
+            "type": "float",
+            "localizedName": "速度随机比例",
+            "defaultValue": "0.0",
+            "notes": "子弹速度的随机比例。\n\n**Notes**: 控制子弹速度的随机性。"
+        },
+        {
+            "name": "scaleLifetimeOffset",
+            "type": "float",
+            "localizedName": "寿命缩放偏移",
+            "defaultValue": "0.0",
+            "notes": "添加到具有lifeScale的子弹的寿命比例。\n\n**Notes**: 控制根据距离缩放子弹寿命时的偏移量。"
+        },
+        {
+            "name": "shootCone",
+            "type": "float",
+            "localizedName": "射击角度范围",
+            "defaultValue": "8.0",
+            "notes": "炮塔仍会尝试射击的最大角度差。\n\n**Notes**: 控制炮塔射击的精度要求。"
+        },
+        {
+            "name": "shootX",
+            "type": "float",
+            "localizedName": "射击点X偏移",
+            "defaultValue": "0.0",
+            "notes": "炮塔射击点。\n\n**Notes**: 子弹发射位置的X轴偏移。"
+        },
+        {
+            "name": "shootY",
+            "type": "float",
+            "localizedName": "射击点Y偏移",
+            "defaultValue": "-Infinity",
+            "notes": "炮塔射击点。\n\n**Notes**: 子弹发射位置的Y轴偏移，默认为size*tilesize/2。"
+        },
+        {
+            "name": "xRand",
+            "type": "float",
+            "localizedName": "X轴随机散布",
+            "defaultValue": "0.0",
+            "notes": "X轴上的随机散布。\n\n**Notes**: 子弹在X轴上的随机偏移范围。"
+        },
+        {
+            "name": "drawMinRange",
+            "type": "boolean",
+            "localizedName": "绘制最小射程",
+            "defaultValue": "false",
+            "notes": "如果为true，还会绘制最小射程的圆圈。\n\n**Notes**: 在放置时显示最小射程指示器。"
+        },
+        {
+            "name": "trackingRange",
+            "type": "float",
+            "localizedName": "追踪范围",
+            "defaultValue": "0.0",
+            "notes": "发现并锁定目标但不射击的范围。\n\n**Notes**: 大于射程时炮塔可以在更远距离追踪目标。"
+        },
+        {
+            "name": "minRange",
+            "type": "float",
+            "localizedName": "最小射程",
+            "defaultValue": "0.0",
+            "notes": "最小子弹射程。仅用于火炮。\n\n**Notes**: 炮弹不会攻击小于此距离的目标。"
+        },
+        {
+            "name": "minWarmup",
+            "type": "float",
+            "localizedName": "最小预热值",
+            "defaultValue": "0.0",
+            "notes": "开火所需的最低预热程度。\n\n**Notes**: 控制炮塔需要预热到多少才能开火。"
+        },
+        {
+            "name": "accurateDelay",
+            "type": "boolean",
+            "localizedName": "精确延迟瞄准",
+            "defaultValue": "true",
+            "notes": "如果为true，炮塔会精确瞄准移动目标，考虑shoot.firstShotDelay。\n\n**Notes**: 控制是否在射击延迟期间预测目标移动。"
+        },
+        {
+            "name": "moveWhileCharging",
+            "type": "boolean",
+            "localizedName": "充能时可旋转",
+            "defaultValue": "true",
+            "notes": "如果为false，炮塔在充能时不能移动。\n\n**Notes**: 控制充能期间炮塔能否旋转。"
+        },
+        {
+            "name": "reloadWhileCharging",
+            "type": "boolean",
+            "localizedName": "充能时可装填",
+            "defaultValue": "true",
+            "notes": "如果为false，炮塔在充能时不能装填。\n\n**Notes**: 控制充能期间炮塔能否继续装填。"
+        },
+        {
+            "name": "warmupMaintainTime",
+            "type": "float",
+            "localizedName": "预热保持时间",
+            "defaultValue": "0.0",
+            "notes": "即使炮塔不开火也能维持预热的时间。\n\n**Notes**: 控制预热状态的保持时间。"
+        },
+        {
+            "name": "shoot",
+            "type": "ShootPattern",
+            "localizedName": "射击模式",
+            "defaultValue": "new ShootPattern()",
+            "notes": "用于子弹的射击模式。\n\n**Notes**: 定义炮弹的发射模式。"
+        },
+        {
+            "name": "targetAir",
+            "type": "boolean",
+            "localizedName": "可攻击空中",
+            "defaultValue": "true",
+            "notes": "如果为true，该方块瞄准空中单位。\n\n**Notes**: 控制炮塔是否能攻击空中目标。"
+        },
+        {
+            "name": "targetGround",
+            "type": "boolean",
+            "localizedName": "可攻击地面",
+            "defaultValue": "true",
+            "notes": "如果为true，该方块瞄准地面单位和建筑。\n\n**Notes**: 控制炮塔是否能攻击地面目标。"
+        },
+        {
+            "name": "targetBlocks",
+            "type": "boolean",
+            "localizedName": "可攻击建筑",
+            "defaultValue": "true",
+            "notes": "如果为true，该方块瞄准建筑。\n\n**Notes**: 控制炮塔是否能攻击敌方建筑。"
+        },
+        {
+            "name": "targetHealing",
+            "type": "boolean",
+            "localizedName": "可治疗友方",
+            "defaultValue": "false",
+            "notes": "如果为true，该方块瞄准友方建筑进行治疗。\n\n**Notes**: 控制炮塔是否能治疗友方建筑。"
+        },
+        {
+            "name": "playerControllable",
+            "type": "boolean",
+            "localizedName": "玩家可控",
+            "defaultValue": "true",
+            "notes": "如果为true，该炮塔可以被玩家控制。\n\n**Notes**: 控制玩家是否能手动操作该炮塔。"
+        },
+        {
+            "name": "displayAmmoMultiplier",
+            "type": "boolean",
+            "localizedName": "显示弹药倍率",
+            "defaultValue": "true",
+            "notes": "如果为true，方块将在属性中显示弹药倍率。\n\n**Notes**: 控制状态面板是否显示弹药倍率信息。"
+        },
+        {
+            "name": "targetUnderBlocks",
+            "type": "boolean",
+            "localizedName": "可攻击下方方块",
+            "defaultValue": "true",
+            "notes": "如果为false，不瞄准传送带等\"下方\"方块。\n\n**Notes**: 控制炮塔是否会攻击传送带等低优先级方块。"
+        },
+        {
+            "name": "alwaysShooting",
+            "type": "boolean",
+            "localizedName": "始终射击",
+            "defaultValue": "false",
+            "notes": "如果为true，炮塔在有弹药时始终射击。\n\n**Notes**: 忽略目标检测，始终开火。"
+        },
+        {
+            "name": "predictTarget",
+            "type": "boolean",
+            "localizedName": "预测目标",
+            "defaultValue": "true",
+            "notes": "该炮塔是否预测单位移动。\n\n**Notes**: 控制炮塔是否进行提前量计算。"
+        },
+        {
+            "name": "unitSort",
+            "type": "Sortf",
+            "localizedName": "单位排序函数",
+            "defaultValue": "closest",
+            "notes": "选择目标的排序函数。\n\n**Notes**: 定义如何选择优先攻击的单位。"
+        },
+        {
+            "name": "unitFilter",
+            "type": "Boolf of Unit",
+            "localizedName": "单位过滤器",
+            "defaultValue": "{code}",
+            "notes": "攻击单位类型的过滤器。\n\n**Notes**: 定义哪些单位可以被攻击。"
+        },
+        {
+            "name": "buildingFilter",
+            "type": "Boolf of Building",
+            "localizedName": "建筑过滤器",
+            "defaultValue": "underBullets",
+            "notes": "攻击建筑类型的过滤器。\n\n**Notes**: 定义哪些建筑可以被攻击。"
+        },
+        {
+            "name": "heatColor",
+            "type": "Color",
+            "localizedName": "热力颜色",
+            "defaultValue": "ab3400ff",
+            "notes": "绘制在顶部的热力区域的颜色。\n\n**Notes**: 炮管发热时的颜色。"
+        },
+        {
+            "name": "shootEffect",
+            "type": "Effect",
+            "localizedName": "射击特效覆盖",
+            "defaultValue": "null",
+            "notes": "所有射击效果的可选覆盖。\n\n**Notes**: 如果不为null，覆盖子弹的射击效果。"
+        },
+        {
+            "name": "smokeEffect",
+            "type": "Effect",
+            "localizedName": "烟雾特效覆盖",
+            "defaultValue": "null",
+            "notes": "所有烟雾效果的可选覆盖。\n\n**Notes**: 如果不为null，覆盖子弹的烟雾效果。"
+        },
+        {
+            "name": "ammoUseEffect",
+            "type": "Effect",
+            "localizedName": "弹药消耗特效",
+            "defaultValue": "none",
+            "notes": "消耗弹药时创建的效果。非可选。\n\n**Notes**: 每次消耗弹药时播放的效果。"
+        },
+        {
+            "name": "shootSound",
+            "type": "Sound",
+            "localizedName": "射击音效",
+            "defaultValue": "shootDuo",
+            "notes": "发射单发子弹时的音效。\n\n**Notes**: 炮塔开火音效。"
+        },
+        {
+            "name": "shootSoundVolume",
+            "type": "float",
+            "localizedName": "射击音量",
+            "defaultValue": "1.0",
+            "notes": "射击音效的音量。\n\n**Notes**: 控制射击音效的音量大小。"
+        },
+        {
+            "name": "chargeSound",
+            "type": "Sound",
+            "localizedName": "充能音效",
+            "defaultValue": "none",
+            "notes": "当shoot.firstShotDelay大于0且开始射击时发出的音效。\n\n**Notes**: 充能音效。"
+        },
+        {
+            "name": "loopSound",
+            "type": "Sound",
+            "localizedName": "循环音效",
+            "defaultValue": "none",
+            "notes": "方块在活动时发出的音效。单次循环。不要滥用。\n\n**Notes**: 炮塔持续工作时的循环音效。"
+        },
+        {
+            "name": "loopSoundVolume",
+            "type": "float",
+            "localizedName": "循环音量",
+            "defaultValue": "0.5",
+            "notes": "活动音效的基础音量。\n\n**Notes**: 循环音效的音量。"
+        },
+        {
+            "name": "soundPitchMin",
+            "type": "float",
+            "localizedName": "音高下限",
+            "defaultValue": "0.9",
+            "notes": "射击音效的音高范围。\n\n**Notes**: 音高随机范围的最小值。"
+        },
+        {
+            "name": "soundPitchMax",
+            "type": "float",
+            "localizedName": "音高上限",
+            "defaultValue": "1.1",
+            "notes": "射击音效的音高范围。\n\n**Notes**: 音高随机范围的最大值。"
+        },
+        {
+            "name": "ammoEjectBack",
+            "type": "float",
+            "localizedName": "弹壳后向偏移",
+            "defaultValue": "1.0",
+            "notes": "弹药抛壳效果的向后Y轴偏移。\n\n**Notes**: 弹壳抛出的向后偏移量。"
+        },
+        {
+            "name": "shootWarmupSpeed",
+            "type": "float",
+            "localizedName": "预热速度",
+            "defaultValue": "0.1",
+            "notes": "炮塔预热的插值速度。\n\n**Notes**: 预热状态的Lerp速度。"
+        },
+        {
+            "name": "linearWarmup",
+            "type": "boolean",
+            "localizedName": "线性预热",
+            "defaultValue": "false",
+            "notes": "如果为true，炮塔预热是线性的而非曲线。\n\n**Notes**: 控制预热曲线类型。"
+        },
+        {
+            "name": "recoil",
+            "type": "float",
+            "localizedName": "后坐力",
+            "defaultValue": "1.0",
+            "notes": "每次射击炮塔向后后坐的可视量。\n\n**Notes**: 控制后坐力视觉幅度。"
+        },
+        {
+            "name": "recoils",
+            "type": "int",
+            "localizedName": "后坐力计数器数",
+            "defaultValue": "-1",
+            "notes": "后坐力附加计数器数量。\n\n**Notes**: 多管炮塔的独立后坐力计数。"
+        },
+        {
+            "name": "recoilTime",
+            "type": "float",
+            "localizedName": "后坐恢复时间",
+            "defaultValue": "-1.0",
+            "notes": "炮塔恢复到起始位置所需tick数。默认使用装填时间。\n\n**Notes**: 后坐力恢复时间。"
+        },
+        {
+            "name": "recoilPow",
+            "type": "float",
+            "localizedName": "后坐力曲线指数",
+            "defaultValue": "1.8",
+            "notes": "应用于视觉后坐力的幂曲线。\n\n**Notes**: 控制后坐力动画的曲线形状。"
+        },
+        {
+            "name": "cooldownTime",
+            "type": "float",
+            "localizedName": "冷却时间",
+            "defaultValue": "20.0",
+            "notes": "热力区域冷却所需的tick数。\n\n**Notes**: 炮管发热纹理冷却的时间。"
+        },
+        {
+            "name": "elevation",
+            "type": "float",
+            "localizedName": "阴影高度",
+            "defaultValue": "-1.0",
+            "notes": "炮塔阴影的视觉高度，-1使用默认值。\n\n**Notes**: 控制炮塔阴影的高度。"
+        },
+        {
+            "name": "shake",
+            "type": "float",
+            "localizedName": "震屏强度",
+            "defaultValue": "0.0",
+            "notes": "每次射击屏幕抖动的程度。\n\n**Notes**: 控制开火时的屏幕震动强度。"
+        },
+        {
+            "name": "drawer",
+            "type": "DrawBlock",
+            "localizedName": "绘制器",
+            "defaultValue": "new DrawTurret()",
+            "notes": "定义此炮塔的绘制行为。\n\n**Notes**: 控制炮塔的渲染方式。"
+        }
+    ]
+}

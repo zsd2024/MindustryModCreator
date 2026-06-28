@@ -1,0 +1,91 @@
+{
+    "localizedName": "区域绘制",
+    "type": "DrawRegion",
+    "parentType": "DrawBlock",
+    "fields": [
+        {
+            "name": "region",
+            "localizedName": "纹理区域",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": "**Notes**: 运行时加载的纹理区域。"
+        },
+        {
+            "name": "suffix",
+            "localizedName": "纹理后缀",
+            "type": "String",
+            "defaultValue": "\"\"",
+            "notes": "**Notes**: 附加在方块名称后的后缀以查找纹理。"
+        },
+        {
+            "name": "name",
+            "localizedName": "区域名称",
+            "type": "String",
+            "defaultValue": "null",
+            "notes": "若设置，则覆盖区域名称。\n\n**Notes**: If set, overrides the region name."
+        },
+        {
+            "name": "color",
+            "localizedName": "染色颜色",
+            "type": "Color",
+            "defaultValue": "null",
+            "notes": "**Notes**: 绘制时使用的颜色，为null时不染色。"
+        },
+        {
+            "name": "spinSprite",
+            "localizedName": "自旋精灵",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "**Notes**: 是否使用自旋精灵绘制（自动旋转）。"
+        },
+        {
+            "name": "drawPlan",
+            "localizedName": "规划模式绘制",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "**Notes**: 是否在规划模式中绘制。"
+        },
+        {
+            "name": "buildingRotate",
+            "localizedName": "建筑旋转叠加",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "**Notes**: 纹理旋转是否叠加建筑的旋转角度。"
+        },
+        {
+            "name": "rotateSpeed",
+            "localizedName": "自旋速度",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "**Notes**: 纹理的自旋速度（度/秒）。"
+        },
+        {
+            "name": "x",
+            "localizedName": "X轴偏移",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "**Notes**: 纹理绘制的X轴偏移。"
+        },
+        {
+            "name": "y",
+            "localizedName": "Y轴偏移",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "**Notes**: 纹理绘制的Y轴偏移。"
+        },
+        {
+            "name": "rotation",
+            "localizedName": "固定旋转角度",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "**Notes**: 纹理的固定旋转角度。"
+        },
+        {
+            "name": "layer",
+            "localizedName": "渲染层级",
+            "type": "float",
+            "defaultValue": "-1.0",
+            "notes": "任何小于等于0的值将禁用图层更改。\n\n**Notes**: Any number <=0 disables layer changes."
+        }
+    ]
+}

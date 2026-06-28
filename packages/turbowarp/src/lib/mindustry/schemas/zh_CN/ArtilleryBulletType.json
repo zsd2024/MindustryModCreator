@@ -1,0 +1,21 @@
+{
+    "type": "ArtilleryBulletType",
+    "parentType": "BasicBulletType",
+    "localizedName": "火炮子弹类型",
+    "fields": [
+        {
+            "name": "trailMult",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": "拖尾效果间隔倍数",
+            "localizedName": "拖尾间隔倍数"
+        },
+        {
+            "name": "trailSize",
+            "type": "float",
+            "defaultValue": "4.0",
+            "notes": "拖尾效果大小因子",
+            "localizedName": "拖尾大小因子"
+        }
+    ]
+}

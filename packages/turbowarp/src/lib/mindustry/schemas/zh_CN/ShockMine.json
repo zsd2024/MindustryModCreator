@@ -1,0 +1,91 @@
+{
+    "type": "ShockMine",
+    "parentType": "Block",
+    "localizedName": "震荡地雷",
+    "fields": [
+        {
+            "name": "timerDamage",
+            "type": "int",
+            "defaultValue": "1",
+            "localizedName": "伤害计时器",
+            "notes": "**Notes**: 伤害计时器ID"
+        },
+        {
+            "name": "cooldown",
+            "type": "float",
+            "defaultValue": "80.0",
+            "localizedName": "冷却时间",
+            "notes": "**Notes**: 冷却时间"
+        },
+        {
+            "name": "tileDamage",
+            "type": "float",
+            "defaultValue": "5.0",
+            "localizedName": "自身伤害",
+            "notes": "**Notes**: 对自身方块的伤害"
+        },
+        {
+            "name": "damage",
+            "type": "float",
+            "defaultValue": "13.0",
+            "localizedName": "闪电伤害",
+            "notes": "**Notes**: 闪电伤害"
+        },
+        {
+            "name": "length",
+            "type": "int",
+            "defaultValue": "10",
+            "localizedName": "闪电长度",
+            "notes": "**Notes**: 闪电长度"
+        },
+        {
+            "name": "tendrils",
+            "type": "int",
+            "defaultValue": "6",
+            "localizedName": "闪电触须数",
+            "notes": "**Notes**: 闪电触须数量"
+        },
+        {
+            "name": "lightningColor",
+            "type": "Color",
+            "defaultValue": "a9d8ffff",
+            "localizedName": "闪电颜色",
+            "notes": "**Notes**: 闪电颜色"
+        },
+        {
+            "name": "shots",
+            "type": "int",
+            "defaultValue": "6",
+            "localizedName": "射击数量",
+            "notes": "**Notes**: 子弹发射数量"
+        },
+        {
+            "name": "inaccuracy",
+            "type": "float",
+            "defaultValue": "0.0",
+            "localizedName": "不精确度",
+            "notes": "**Notes**: 子弹不精确度"
+        },
+        {
+            "name": "bullet",
+            "type": "BulletType",
+            "defaultValue": "null",
+            "localizedName": "子弹类型",
+            "notes": "**Notes**: 子弹类型（为null时仅释放闪电）"
+        },
+        {
+            "name": "teamAlpha",
+            "type": "float",
+            "defaultValue": "0.3",
+            "localizedName": "队伍透明度",
+            "notes": "**Notes**: 队伍颜色透明度"
+        },
+        {
+            "name": "teamRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "localizedName": "队伍纹理",
+            "notes": "**Notes**: 队伍顶部纹理区域"
+        }
+    ]
+}

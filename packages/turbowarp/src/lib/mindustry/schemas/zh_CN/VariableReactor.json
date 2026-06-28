@@ -1,0 +1,91 @@
+{
+    "type": "VariableReactor",
+    "parentType": "PowerGenerator",
+    "localizedName": "可变反应堆",
+    "fields": [
+        {
+            "name": "maxHeat",
+            "type": "float",
+            "localizedName": "最大热量",
+            "defaultValue": "100.0",
+            "notes": "**Notes**: 最大热量值"
+        },
+        {
+            "name": "unstableSpeed",
+            "type": "float",
+            "localizedName": "不稳定增长速度",
+            "defaultValue": "0.0055555557",
+            "notes": "不稳定性向1靠近的速度，每帧计算。\n\n**Notes**: 不稳定性向1靠近的速度（每帧）"
+        },
+        {
+            "name": "warmupSpeed",
+            "type": "float",
+            "localizedName": "预热速度",
+            "defaultValue": "0.1",
+            "notes": "**Notes**: 预热速度"
+        },
+        {
+            "name": "effect",
+            "type": "Effect",
+            "localizedName": "运行特效",
+            "defaultValue": "fluxVapor",
+            "notes": "**Notes**: 运行特效"
+        },
+        {
+            "name": "effectChance",
+            "type": "float",
+            "localizedName": "特效触发概率",
+            "defaultValue": "0.05",
+            "notes": "**Notes**: 特效触发概率"
+        },
+        {
+            "name": "effectColor",
+            "type": "Color",
+            "localizedName": "特效颜色",
+            "defaultValue": "ffdf9dff",
+            "notes": "**Notes**: 特效颜色"
+        },
+        {
+            "name": "flashThreshold",
+            "type": "float",
+            "localizedName": "闪烁阈值",
+            "defaultValue": "0.01",
+            "notes": "**Notes**: 闪烁阈值"
+        },
+        {
+            "name": "flashAlpha",
+            "type": "float",
+            "localizedName": "闪烁透明度",
+            "defaultValue": "0.4",
+            "notes": "**Notes**: 闪烁透明度"
+        },
+        {
+            "name": "flashSpeed",
+            "type": "float",
+            "localizedName": "闪烁速度",
+            "defaultValue": "7.0",
+            "notes": "**Notes**: 闪烁速度"
+        },
+        {
+            "name": "flashColor1",
+            "type": "Color",
+            "localizedName": "闪烁颜色1",
+            "defaultValue": "ff0000ff",
+            "notes": "**Notes**: 闪烁颜色1"
+        },
+        {
+            "name": "flashColor2",
+            "type": "Color",
+            "localizedName": "闪烁颜色2",
+            "defaultValue": "89e8b6ff",
+            "notes": "**Notes**: 闪烁颜色2"
+        },
+        {
+            "name": "lightsRegion",
+            "type": "TextureRegion",
+            "localizedName": "灯光纹理",
+            "defaultValue": "null",
+            "notes": "**Notes**: 灯光纹理区域"
+        }
+    ]
+}

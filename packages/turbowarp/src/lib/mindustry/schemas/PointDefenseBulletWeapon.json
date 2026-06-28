@@ -1,0 +1,12 @@
+{
+    "type": "PointDefenseBulletWeapon",
+    "parentType": "Weapon",
+    "fields": [
+        {
+            "name": "damageTargetWeight",
+            "type": "float",
+            "defaultValue": "10.0",
+            "notes": ""
+        }
+    ]
+}

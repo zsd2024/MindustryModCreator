@@ -1,0 +1,42 @@
+{
+    "type": "Conveyor",
+    "parentType": "Block",
+    "fields": [
+        {
+            "name": "regions",
+            "type": "TextureRegion[][]",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "speed",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": ""
+        },
+        {
+            "name": "displayedSpeed",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": ""
+        },
+        {
+            "name": "pushUnits",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": ""
+        },
+        {
+            "name": "junctionReplacement",
+            "type": "Block",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "bridgeReplacement",
+            "type": "Block",
+            "defaultValue": "null",
+            "notes": ""
+        }
+    ]
+}

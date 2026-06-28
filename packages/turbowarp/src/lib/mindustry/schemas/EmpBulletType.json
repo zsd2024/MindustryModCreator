@@ -1,0 +1,66 @@
+{
+    "type": "EmpBulletType",
+    "parentType": "BasicBulletType",
+    "fields": [
+        {
+            "name": "radius",
+            "type": "float",
+            "defaultValue": "100.0",
+            "notes": ""
+        },
+        {
+            "name": "timeIncrease",
+            "type": "float",
+            "defaultValue": "2.5",
+            "notes": ""
+        },
+        {
+            "name": "timeDuration",
+            "type": "float",
+            "defaultValue": "600.0",
+            "notes": ""
+        },
+        {
+            "name": "powerDamageScl",
+            "type": "float",
+            "defaultValue": "2.0",
+            "notes": ""
+        },
+        {
+            "name": "powerSclDecrease",
+            "type": "float",
+            "defaultValue": "0.2",
+            "notes": ""
+        },
+        {
+            "name": "hitPowerEffect",
+            "type": "Effect",
+            "defaultValue": "hitEmpSpark",
+            "notes": ""
+        },
+        {
+            "name": "chainEffect",
+            "type": "Effect",
+            "defaultValue": "chainEmp",
+            "notes": ""
+        },
+        {
+            "name": "applyEffect",
+            "type": "Effect",
+            "defaultValue": "heal",
+            "notes": ""
+        },
+        {
+            "name": "hitUnits",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": ""
+        },
+        {
+            "name": "unitDamageScl",
+            "type": "float",
+            "defaultValue": "0.7",
+            "notes": ""
+        }
+    ]
+}

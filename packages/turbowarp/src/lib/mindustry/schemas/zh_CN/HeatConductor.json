@@ -1,0 +1,28 @@
+{
+    "type": "HeatConductor",
+    "parentType": "Block",
+    "localizedName": "热传导方块",
+    "fields": [
+        {
+            "name": "visualMaxHeat",
+            "type": "float",
+            "localizedName": "可视化最大热量",
+            "defaultValue": "15.0",
+            "notes": "**Notes**: 可视化最大热量"
+        },
+        {
+            "name": "drawer",
+            "type": "DrawBlock",
+            "localizedName": "绘制器",
+            "defaultValue": "new DrawDefault()",
+            "notes": "**Notes**: 绘制器"
+        },
+        {
+            "name": "splitHeat",
+            "type": "boolean",
+            "localizedName": "是否分割热量",
+            "defaultValue": "false",
+            "notes": "**Notes**: 是否将热量分割到各方向"
+        }
+    ]
+}

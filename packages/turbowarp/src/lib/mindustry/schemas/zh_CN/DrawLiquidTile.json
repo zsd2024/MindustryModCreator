@@ -1,0 +1,56 @@
+{
+    "localizedName": "液体瓦片绘制",
+    "type": "DrawLiquidTile",
+    "parentType": "DrawBlock",
+    "fields": [
+        {
+            "name": "drawLiquid",
+            "localizedName": "指定液体类型",
+            "type": "Liquid",
+            "defaultValue": "null",
+            "notes": "**Notes**: 指定绘制的液体类型，为null则使用当前液体。"
+        },
+        {
+            "name": "padding",
+            "localizedName": "全局内边距",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "**Notes**: 液体绘制的全局内边距。"
+        },
+        {
+            "name": "padLeft",
+            "localizedName": "左侧内边距",
+            "type": "float",
+            "defaultValue": "-1.0",
+            "notes": "**Notes**: 左侧内边距，负数使用全局padding。"
+        },
+        {
+            "name": "padRight",
+            "localizedName": "右侧内边距",
+            "type": "float",
+            "defaultValue": "-1.0",
+            "notes": "**Notes**: 右侧内边距，负数使用全局padding。"
+        },
+        {
+            "name": "padTop",
+            "localizedName": "顶部内边距",
+            "type": "float",
+            "defaultValue": "-1.0",
+            "notes": "**Notes**: 顶部内边距，负数使用全局padding。"
+        },
+        {
+            "name": "padBottom",
+            "localizedName": "底部内边距",
+            "type": "float",
+            "defaultValue": "-1.0",
+            "notes": "**Notes**: 底部内边距，负数使用全局padding。"
+        },
+        {
+            "name": "alpha",
+            "localizedName": "透明度",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": "**Notes**: 液体绘制的透明度。"
+        }
+    ]
+}

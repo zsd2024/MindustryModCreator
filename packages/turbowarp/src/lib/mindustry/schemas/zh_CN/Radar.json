@@ -1,0 +1,56 @@
+{
+    "type": "Radar",
+    "parentType": "Block",
+    "localizedName": "雷达",
+    "fields": [
+        {
+            "name": "discoveryTime",
+            "type": "float",
+            "defaultValue": "600.0",
+            "localizedName": "揭示时间",
+            "notes": "**Notes**: 完全揭示迷雾所需时间（帧数）"
+        },
+        {
+            "name": "rotateSpeed",
+            "type": "float",
+            "defaultValue": "2.0",
+            "localizedName": "旋转速度",
+            "notes": "**Notes**: 旋转速度"
+        },
+        {
+            "name": "baseRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "localizedName": "底座纹理",
+            "notes": "**Notes**: 底部纹理"
+        },
+        {
+            "name": "glowRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "localizedName": "发光纹理",
+            "notes": "**Notes**: 发光纹理"
+        },
+        {
+            "name": "glowColor",
+            "type": "Color",
+            "defaultValue": "ab3400ff",
+            "localizedName": "发光颜色",
+            "notes": "**Notes**: 发光颜色"
+        },
+        {
+            "name": "glowScl",
+            "type": "float",
+            "defaultValue": "5.0",
+            "localizedName": "发光缩放",
+            "notes": "**Notes**: 发光缩放系数"
+        },
+        {
+            "name": "glowMag",
+            "type": "float",
+            "defaultValue": "0.6",
+            "localizedName": "发光幅度",
+            "notes": "**Notes**: 发光幅度"
+        }
+    ]
+}

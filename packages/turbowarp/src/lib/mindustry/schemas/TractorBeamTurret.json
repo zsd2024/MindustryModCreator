@@ -1,0 +1,120 @@
+{
+    "type": "TractorBeamTurret",
+    "parentType": "BaseTurret",
+    "fields": [
+        {
+            "name": "timerTarget",
+            "type": "int",
+            "defaultValue": "1",
+            "notes": ""
+        },
+        {
+            "name": "retargetTime",
+            "type": "float",
+            "defaultValue": "5.0",
+            "notes": ""
+        },
+        {
+            "name": "shootCone",
+            "type": "float",
+            "defaultValue": "6.0",
+            "notes": ""
+        },
+        {
+            "name": "shootLength",
+            "type": "float",
+            "defaultValue": "5.0",
+            "notes": ""
+        },
+        {
+            "name": "laserWidth",
+            "type": "float",
+            "defaultValue": "0.6",
+            "notes": ""
+        },
+        {
+            "name": "force",
+            "type": "float",
+            "defaultValue": "0.3",
+            "notes": ""
+        },
+        {
+            "name": "scaledForce",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": ""
+        },
+        {
+            "name": "damage",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": ""
+        },
+        {
+            "name": "targetAir",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": ""
+        },
+        {
+            "name": "targetGround",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": ""
+        },
+        {
+            "name": "laserColor",
+            "type": "Color",
+            "defaultValue": "ffffffff",
+            "notes": ""
+        },
+        {
+            "name": "status",
+            "type": "StatusEffect",
+            "defaultValue": "none",
+            "notes": ""
+        },
+        {
+            "name": "statusDuration",
+            "type": "float",
+            "defaultValue": "300.0",
+            "notes": ""
+        },
+        {
+            "name": "shootSound",
+            "type": "Sound",
+            "defaultValue": "beamParallax",
+            "notes": ""
+        },
+        {
+            "name": "shootSoundVolume",
+            "type": "float",
+            "defaultValue": "0.9",
+            "notes": ""
+        },
+        {
+            "name": "baseRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "laser",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "laserStart",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "laserEnd",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        }
+    ]
+}

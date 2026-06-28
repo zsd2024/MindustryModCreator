@@ -1,0 +1,156 @@
+{
+    "type": "ShieldArcAbility",
+    "parentType": "Ability",
+    "fields": [
+        {
+            "name": "radius",
+            "type": "float",
+            "defaultValue": "60.0",
+            "notes": "Shield radius."
+        },
+        {
+            "name": "regen",
+            "type": "float",
+            "defaultValue": "0.1",
+            "notes": "Shield regen speed in damage/tick."
+        },
+        {
+            "name": "max",
+            "type": "float",
+            "defaultValue": "200.0",
+            "notes": "Maximum shield."
+        },
+        {
+            "name": "cooldown",
+            "type": "float",
+            "defaultValue": "300.0",
+            "notes": "Cooldown after the shield is broken, in ticks."
+        },
+        {
+            "name": "angle",
+            "type": "float",
+            "defaultValue": "80.0",
+            "notes": "Angle of shield arc."
+        },
+        {
+            "name": "angleOffset",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "Offset parameters for shield."
+        },
+        {
+            "name": "x",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "Offset parameters for shield."
+        },
+        {
+            "name": "y",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "Offset parameters for shield."
+        },
+        {
+            "name": "whenShooting",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "If true, only activates when shooting."
+        },
+        {
+            "name": "width",
+            "type": "float",
+            "defaultValue": "6.0",
+            "notes": "Width of shield line."
+        },
+        {
+            "name": "chanceDeflect",
+            "type": "float",
+            "defaultValue": "-1.0",
+            "notes": "Bullet deflection chance. -1 to disable"
+        },
+        {
+            "name": "reflectBuildingDamage",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": "Multiplier for reflected bullet building damage. -1 to disable"
+        },
+        {
+            "name": "reflectVel",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": "Velocity multiplier for reflected bullets on the opposite axis. Negative values = concave, positive values = convex"
+        },
+        {
+            "name": "reflectTime",
+            "type": "float",
+            "defaultValue": "0.5",
+            "notes": "Time multiplier for reflected bullets."
+        },
+        {
+            "name": "deflectSound",
+            "type": "Sound",
+            "defaultValue": "none",
+            "notes": "Deflection sound."
+        },
+        {
+            "name": "breakSound",
+            "type": "Sound",
+            "defaultValue": "shieldBreakSmall",
+            "notes": ""
+        },
+        {
+            "name": "hitSound",
+            "type": "Sound",
+            "defaultValue": "shieldHit",
+            "notes": ""
+        },
+        {
+            "name": "hitSoundVolume",
+            "type": "float",
+            "defaultValue": "0.12",
+            "notes": ""
+        },
+        {
+            "name": "missileUnitMultiplier",
+            "type": "float",
+            "defaultValue": "2.0",
+            "notes": "Multiplier for shield damage taken from missile units."
+        },
+        {
+            "name": "drawArc",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "Whether to draw the arc line."
+        },
+        {
+            "name": "region",
+            "type": "String",
+            "defaultValue": "null",
+            "notes": "If not null, will be drawn on top."
+        },
+        {
+            "name": "color",
+            "type": "Color",
+            "defaultValue": "null",
+            "notes": "Color override of the shield. Uses unit shield colour by default."
+        },
+        {
+            "name": "offsetRegion",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "If true, sprite position will be influenced by x/y."
+        },
+        {
+            "name": "pushUnits",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "If true, enemy units are pushed out."
+        },
+        {
+            "name": "pushEffect",
+            "type": "Effect",
+            "defaultValue": "circleColorSpark",
+            "notes": ""
+        }
+    ]
+}

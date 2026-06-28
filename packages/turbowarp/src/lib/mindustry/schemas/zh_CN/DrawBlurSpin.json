@@ -1,0 +1,56 @@
+{
+    "localizedName": "模糊旋转绘制",
+    "type": "DrawBlurSpin",
+    "parentType": "DrawBlock",
+    "fields": [
+        {
+            "name": "region",
+            "localizedName": "正常纹理",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": "**Notes**: 正常的精灵纹理。"
+        },
+        {
+            "name": "blurRegion",
+            "localizedName": "模糊纹理",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": "**Notes**: 高速旋转时的模糊精灵纹理。"
+        },
+        {
+            "name": "suffix",
+            "localizedName": "纹理后缀",
+            "type": "String",
+            "defaultValue": "\"\"",
+            "notes": "**Notes**: 方块名称后附加的后缀以查找纹理。"
+        },
+        {
+            "name": "rotateSpeed",
+            "localizedName": "旋转速度",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": "**Notes**: 旋转速度（度/秒）。"
+        },
+        {
+            "name": "x",
+            "localizedName": "X轴偏移",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "**Notes**: 精灵的X轴偏移。"
+        },
+        {
+            "name": "y",
+            "localizedName": "Y轴偏移",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "**Notes**: 精灵的Y轴偏移。"
+        },
+        {
+            "name": "blurThresh",
+            "localizedName": "模糊阈值",
+            "type": "float",
+            "defaultValue": "0.7",
+            "notes": "**Notes**: 切换为模糊精灵的预热阈值。"
+        }
+    ]
+}

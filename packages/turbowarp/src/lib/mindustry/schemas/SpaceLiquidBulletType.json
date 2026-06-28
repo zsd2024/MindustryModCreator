@@ -1,0 +1,12 @@
+{
+    "type": "SpaceLiquidBulletType",
+    "parentType": "BulletType",
+    "fields": [
+        {
+            "name": "orbSize",
+            "type": "float",
+            "defaultValue": "5.5",
+            "notes": ""
+        }
+    ]
+}

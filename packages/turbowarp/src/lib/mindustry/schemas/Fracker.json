@@ -1,0 +1,12 @@
+{
+    "type": "Fracker",
+    "parentType": "SolidPump",
+    "fields": [
+        {
+            "name": "itemUseTime",
+            "type": "float",
+            "defaultValue": "100.0",
+            "notes": ""
+        }
+    ]
+}

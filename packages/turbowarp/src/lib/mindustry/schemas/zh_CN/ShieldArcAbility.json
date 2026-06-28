@@ -1,0 +1,182 @@
+{
+    "type": "ShieldArcAbility",
+    "parentType": "Ability",
+    "localizedName": "弧形护盾能力",
+    "fields": [
+        {
+            "name": "radius",
+            "type": "float",
+            "defaultValue": "60.0",
+            "localizedName": "护盾半径",
+            "notes": "护盾半径。\n\n**Notes**: 护盾半径"
+        },
+        {
+            "name": "regen",
+            "type": "float",
+            "defaultValue": "0.1",
+            "localizedName": "恢复速度",
+            "notes": "护盾恢复速度（伤害/tick）。\n\n**Notes**: 护盾恢复速度"
+        },
+        {
+            "name": "max",
+            "type": "float",
+            "defaultValue": "200.0",
+            "localizedName": "最大护盾值",
+            "notes": "最大护盾值。\n\n**Notes**: 最大护盾值"
+        },
+        {
+            "name": "cooldown",
+            "type": "float",
+            "defaultValue": "300.0",
+            "localizedName": "冷却时间",
+            "notes": "护盾破碎后的冷却时间（tick）。\n\n**Notes**: 护盾冷却时间"
+        },
+        {
+            "name": "angle",
+            "type": "float",
+            "defaultValue": "80.0",
+            "localizedName": "护盾弧角度",
+            "notes": "护盾弧的角度。\n\n**Notes**: 护盾弧角度"
+        },
+        {
+            "name": "angleOffset",
+            "type": "float",
+            "defaultValue": "0.0",
+            "localizedName": "角度偏移",
+            "notes": "护盾偏移参数。\n\n**Notes**: 护盾角度偏移"
+        },
+        {
+            "name": "x",
+            "type": "float",
+            "defaultValue": "0.0",
+            "localizedName": "X偏移",
+            "notes": "护盾偏移参数。\n\n**Notes**: 护盾 X 偏移"
+        },
+        {
+            "name": "y",
+            "type": "float",
+            "defaultValue": "0.0",
+            "localizedName": "Y偏移",
+            "notes": "护盾偏移参数。\n\n**Notes**: 护盾 Y 偏移"
+        },
+        {
+            "name": "whenShooting",
+            "type": "boolean",
+            "defaultValue": "true",
+            "localizedName": "射击时激活",
+            "notes": "若为 true，仅在射击时激活。\n\n**Notes**: 是否仅在射击时激活"
+        },
+        {
+            "name": "width",
+            "type": "float",
+            "defaultValue": "6.0",
+            "localizedName": "护盾线宽度",
+            "notes": "护盾线宽度。\n\n**Notes**: 护盾线宽度"
+        },
+        {
+            "name": "chanceDeflect",
+            "type": "float",
+            "defaultValue": "-1.0",
+            "localizedName": "偏转概率",
+            "notes": "子弹偏转概率。设为 -1 禁用。\n\n**Notes**: 子弹偏转概率"
+        },
+        {
+            "name": "reflectBuildingDamage",
+            "type": "float",
+            "defaultValue": "1.0",
+            "localizedName": "反射建筑伤害倍率",
+            "notes": "反射子弹对建筑伤害倍率。设为 -1 禁用。\n\n**Notes**: 反射建筑伤害倍率"
+        },
+        {
+            "name": "reflectVel",
+            "type": "float",
+            "defaultValue": "1.0",
+            "localizedName": "反射速度倍率",
+            "notes": "反射子弹在相反轴上的速度倍率。负值=凹面，正值=凸面。\n\n**Notes**: 反射速度倍率"
+        },
+        {
+            "name": "reflectTime",
+            "type": "float",
+            "defaultValue": "0.5",
+            "localizedName": "反射时间倍率",
+            "notes": "反射子弹的时间倍率。\n\n**Notes**: 反射时间倍率"
+        },
+        {
+            "name": "deflectSound",
+            "type": "Sound",
+            "defaultValue": "none",
+            "localizedName": "偏转音效",
+            "notes": "偏转音效。\n\n**Notes**: 偏转音效"
+        },
+        {
+            "name": "breakSound",
+            "type": "Sound",
+            "defaultValue": "shieldBreakSmall",
+            "localizedName": "破碎音效",
+            "notes": "**Notes**: 护盾破碎音效"
+        },
+        {
+            "name": "hitSound",
+            "type": "Sound",
+            "defaultValue": "shieldHit",
+            "localizedName": "受击音效",
+            "notes": "**Notes**: 护盾受击音效"
+        },
+        {
+            "name": "hitSoundVolume",
+            "type": "float",
+            "defaultValue": "0.12",
+            "localizedName": "受击音效音量",
+            "notes": "**Notes**: 受击音效音量"
+        },
+        {
+            "name": "missileUnitMultiplier",
+            "type": "float",
+            "defaultValue": "2.0",
+            "localizedName": "导弹伤害倍率",
+            "notes": "导弹单位对护盾伤害的倍率。\n\n**Notes**: 导弹伤害倍率"
+        },
+        {
+            "name": "drawArc",
+            "type": "boolean",
+            "defaultValue": "true",
+            "localizedName": "绘制弧线",
+            "notes": "是否绘制弧形线。\n\n**Notes**: 是否绘制弧线"
+        },
+        {
+            "name": "region",
+            "type": "String",
+            "defaultValue": "null",
+            "localizedName": "顶部纹理名称",
+            "notes": "若非 null，将在顶部绘制。\n\n**Notes**: 顶部纹理名称"
+        },
+        {
+            "name": "color",
+            "type": "Color",
+            "defaultValue": "null",
+            "localizedName": "护盾颜色",
+            "notes": "护盾颜色覆盖。默认使用单位护盾颜色。\n\n**Notes**: 护盾颜色"
+        },
+        {
+            "name": "offsetRegion",
+            "type": "boolean",
+            "defaultValue": "false",
+            "localizedName": "偏移纹理位置",
+            "notes": "若为 true，精灵位置将受 x/y 影响。\n\n**Notes**: 是否偏移纹理位置"
+        },
+        {
+            "name": "pushUnits",
+            "type": "boolean",
+            "defaultValue": "true",
+            "localizedName": "推开单位",
+            "notes": "若为 true，推开敌方单位。\n\n**Notes**: 是否推开单位"
+        },
+        {
+            "name": "pushEffect",
+            "type": "Effect",
+            "defaultValue": "circleColorSpark",
+            "localizedName": "推开效果",
+            "notes": "**Notes**: 推开效果"
+        }
+    ]
+}

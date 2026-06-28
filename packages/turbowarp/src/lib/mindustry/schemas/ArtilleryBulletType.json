@@ -1,0 +1,18 @@
+{
+    "type": "ArtilleryBulletType",
+    "parentType": "BasicBulletType",
+    "fields": [
+        {
+            "name": "trailMult",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": ""
+        },
+        {
+            "name": "trailSize",
+            "type": "float",
+            "defaultValue": "4.0",
+            "notes": ""
+        }
+    ]
+}

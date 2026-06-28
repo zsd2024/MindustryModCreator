@@ -1,0 +1,18 @@
+{
+    "type": "UnitCargoUnloadPoint",
+    "parentType": "Block",
+    "fields": [
+        {
+            "name": "staleTimeDuration",
+            "type": "float",
+            "defaultValue": "360.0",
+            "notes": "If a block is full for this amount of time, it will not be flown to anymore."
+        },
+        {
+            "name": "topRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        }
+    ]
+}

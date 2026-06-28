@@ -1,0 +1,12 @@
+{
+    "type": "PointBulletType",
+    "parentType": "BulletType",
+    "fields": [
+        {
+            "name": "trailSpacing",
+            "type": "float",
+            "defaultValue": "10.0",
+            "notes": ""
+        }
+    ]
+}

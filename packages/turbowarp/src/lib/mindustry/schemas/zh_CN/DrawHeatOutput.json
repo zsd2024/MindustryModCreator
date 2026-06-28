@@ -1,0 +1,77 @@
+{
+    "localizedName": "热能输出绘制",
+    "type": "DrawHeatOutput",
+    "parentType": "DrawBlock",
+    "fields": [
+        {
+            "name": "heat",
+            "localizedName": "热能纹理",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": "**Notes**: 运行时加载的热能输出纹理。"
+        },
+        {
+            "name": "glow",
+            "localizedName": "发光纹理",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": "**Notes**: 运行时加载的发光纹理。"
+        },
+        {
+            "name": "top1",
+            "localizedName": "顶部纹理1",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": "**Notes**: 顶部第一种旋转方向的纹理。"
+        },
+        {
+            "name": "top2",
+            "localizedName": "顶部纹理2",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": "**Notes**: 顶部第二种旋转方向的纹理。"
+        },
+        {
+            "name": "heatColor",
+            "localizedName": "热能颜色",
+            "type": "Color",
+            "defaultValue": "ff3838cc",
+            "notes": "**Notes**: 热能输出的颜色。"
+        },
+        {
+            "name": "heatPulse",
+            "localizedName": "脉冲幅度",
+            "type": "float",
+            "defaultValue": "0.3",
+            "notes": "**Notes**: 热点脉冲的幅度。"
+        },
+        {
+            "name": "heatPulseScl",
+            "localizedName": "脉冲频率",
+            "type": "float",
+            "defaultValue": "10.0",
+            "notes": "**Notes**: 热点脉冲的频率缩放。"
+        },
+        {
+            "name": "glowMult",
+            "localizedName": "发光倍率",
+            "type": "float",
+            "defaultValue": "1.2",
+            "notes": "**Notes**: 发光颜色的亮度倍率。"
+        },
+        {
+            "name": "rotOffset",
+            "localizedName": "旋转偏移",
+            "type": "int",
+            "defaultValue": "0",
+            "notes": "**Notes**: 旋转偏移量。"
+        },
+        {
+            "name": "drawGlow",
+            "localizedName": "绘制发光",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "**Notes**: 是否绘制发光效果。"
+        }
+    ]
+}

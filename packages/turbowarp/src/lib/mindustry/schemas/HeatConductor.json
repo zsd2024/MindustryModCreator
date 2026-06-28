@@ -1,0 +1,24 @@
+{
+    "type": "HeatConductor",
+    "parentType": "Block",
+    "fields": [
+        {
+            "name": "visualMaxHeat",
+            "type": "float",
+            "defaultValue": "15.0",
+            "notes": ""
+        },
+        {
+            "name": "drawer",
+            "type": "DrawBlock",
+            "defaultValue": "new DrawDefault()",
+            "notes": ""
+        },
+        {
+            "name": "splitHeat",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": ""
+        }
+    ]
+}

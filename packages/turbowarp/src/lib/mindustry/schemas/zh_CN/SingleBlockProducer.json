@@ -1,0 +1,14 @@
+{
+    "type": "SingleBlockProducer",
+    "parentType": "BlockProducer",
+    "localizedName": "单方块生产器",
+    "fields": [
+        {
+            "name": "result",
+            "type": "Block",
+            "defaultValue": "router",
+            "localizedName": "产出方块",
+            "notes": "**Notes**: 生产的目标方块"
+        }
+    ]
+}

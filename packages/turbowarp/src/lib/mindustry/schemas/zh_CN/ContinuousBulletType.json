@@ -1,0 +1,49 @@
+{
+    "localizedName": "持续子弹类型",
+    "type": "ContinuousBulletType",
+    "parentType": "BulletType",
+    "fields": [
+        {
+            "name": "length",
+            "localizedName": "光束长度",
+            "type": "float",
+            "defaultValue": "220.0",
+            "notes": "光束长度"
+        },
+        {
+            "name": "shake",
+            "localizedName": "屏幕震动",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "屏幕震动强度"
+        },
+        {
+            "name": "damageInterval",
+            "localizedName": "伤害间隔",
+            "type": "float",
+            "defaultValue": "5.0",
+            "notes": "伤害判定间隔（刻数）"
+        },
+        {
+            "name": "largeHit",
+            "localizedName": "大范围伤害",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "是否使用大范围伤害判定"
+        },
+        {
+            "name": "continuous",
+            "localizedName": "持续光束",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "是否为持续光束"
+        },
+        {
+            "name": "timescaleDamage",
+            "localizedName": "时间倍率伤害",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "如果由建筑发射，是否将伤害乘以该建筑的时间倍率。\n\n**Notes**: 如果由建筑发射，将伤害乘以该建筑的时间倍率"
+        }
+    ]
+}

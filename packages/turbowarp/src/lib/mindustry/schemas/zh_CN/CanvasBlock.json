@@ -1,0 +1,70 @@
+{
+    "localizedName": "画板方块",
+    "type": "CanvasBlock",
+    "parentType": "Block",
+    "fields": [
+        {
+            "name": "padding",
+            "localizedName": "边距",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "**Notes**: 画板边距"
+        },
+        {
+            "name": "canvasSize",
+            "localizedName": "画布尺寸",
+            "type": "int",
+            "defaultValue": "8",
+            "notes": "**Notes**: 画布尺寸（像素数量）"
+        },
+        {
+            "name": "palette",
+            "localizedName": "调色板",
+            "type": "int[]",
+            "defaultValue": "{ 0x362944_ff, 0xc45d9f_ff, 0xe39aac_ff, 0xf0dab1_ff, 0x6461c2_ff, 0x2ba9b4_ff, 0x93d4b5_ff, 0xf0f6e8_ff }",
+            "notes": "**Notes**: 调色板颜色数组"
+        },
+        {
+            "name": "bitsPerPixel",
+            "localizedName": "每像素位数",
+            "type": "int",
+            "defaultValue": "0",
+            "notes": "**Notes**: 每像素位数（在init()中根据调色板计算）"
+        },
+        {
+            "name": "colorToIndex",
+            "localizedName": "颜色到索引映射",
+            "type": "IntIntMap",
+            "defaultValue": "new IntIntMap()",
+            "notes": "**Notes**: 颜色到索引的映射"
+        },
+        {
+            "name": "side1",
+            "localizedName": "侧面纹理1",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": "**Notes**: 侧面纹理区域1"
+        },
+        {
+            "name": "side2",
+            "localizedName": "侧面纹理2",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": "**Notes**: 侧面纹理区域2"
+        },
+        {
+            "name": "corner1",
+            "localizedName": "角落纹理1",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": "**Notes**: 角落纹理区域1"
+        },
+        {
+            "name": "corner2",
+            "localizedName": "角落纹理2",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": "**Notes**: 角落纹理区域2"
+        }
+    ]
+}

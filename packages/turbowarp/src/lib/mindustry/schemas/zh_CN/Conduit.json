@@ -1,0 +1,49 @@
+{
+    "localizedName": "管道",
+    "type": "Conduit",
+    "parentType": "Block",
+    "fields": [
+        {
+            "name": "liquidCapacity",
+            "localizedName": "液体容量",
+            "type": "float",
+            "defaultValue": "6.0",
+            "notes": "**Notes**: 液体的缓存容量。"
+        },
+        {
+            "name": "liquidFlowFactor",
+            "localizedName": "流动因子",
+            "type": "float",
+            "defaultValue": "3.0",
+            "notes": "**Notes**: 液体在管道中的流动因子。"
+        },
+        {
+            "name": "liquidRexture",
+            "localizedName": "液体纹理",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": "**Notes**: 管道液体纹理区域。"
+        },
+        {
+            "name": "liquidCapRegion",
+            "localizedName": "液体盖板纹理",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": "**Notes**: 液体盖板纹理区域。"
+        },
+        {
+            "name": "liquidBridge",
+            "localizedName": "液体桥接纹理",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": "**Notes**: 液体桥接纹理区域。"
+        },
+        {
+            "name": "topRegion",
+            "localizedName": "顶部纹理",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": "**Notes**: 顶部纹理区域。"
+        }
+    ]
+}

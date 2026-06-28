@@ -1,0 +1,30 @@
+{
+    "type": "DrawFrames",
+    "parentType": "DrawBlock",
+    "fields": [
+        {
+            "name": "frames",
+            "type": "int",
+            "defaultValue": "3",
+            "notes": "Number of frames to draw."
+        },
+        {
+            "name": "interval",
+            "type": "float",
+            "defaultValue": "5.0",
+            "notes": "Ticks between frames."
+        },
+        {
+            "name": "sine",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "If true, frames wil alternate back and forth in a sine wave."
+        },
+        {
+            "name": "regions",
+            "type": "TextureRegion[]",
+            "defaultValue": "null",
+            "notes": ""
+        }
+    ]
+}

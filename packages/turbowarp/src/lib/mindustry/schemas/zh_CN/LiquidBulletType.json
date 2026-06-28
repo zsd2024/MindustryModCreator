@@ -1,0 +1,35 @@
+{
+    "type": "LiquidBulletType",
+    "parentType": "BulletType",
+    "localizedName": "液体子弹类型",
+    "fields": [
+        {
+            "name": "liquid",
+            "type": "Liquid",
+            "localizedName": "液体类型",
+            "defaultValue": "null",
+            "notes": "液体类型"
+        },
+        {
+            "name": "puddleSize",
+            "type": "float",
+            "localizedName": "水坑大小",
+            "defaultValue": "6.0",
+            "notes": "水坑大小"
+        },
+        {
+            "name": "orbSize",
+            "type": "float",
+            "localizedName": "液滴大小",
+            "defaultValue": "3.0",
+            "notes": "液滴大小"
+        },
+        {
+            "name": "boilTime",
+            "type": "float",
+            "localizedName": "蒸发时间",
+            "defaultValue": "5.0",
+            "notes": "蒸发时间（刻数）"
+        }
+    ]
+}

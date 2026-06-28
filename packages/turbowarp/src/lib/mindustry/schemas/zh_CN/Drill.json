@@ -1,0 +1,161 @@
+{
+    "localizedName": "钻头",
+    "type": "Drill",
+    "parentType": "Block",
+    "fields": [
+        {
+            "name": "hardnessDrillMultiplier",
+            "localizedName": "硬度钻速倍率",
+            "type": "float",
+            "defaultValue": "50.0",
+            "notes": "**Notes**: 硬度对钻速影响的倍率。"
+        },
+        {
+            "name": "tier",
+            "localizedName": "钻头等级",
+            "type": "int",
+            "defaultValue": "0",
+            "notes": "此钻头可开采的最大方块等级。\n\n**Notes**: 钻头等级。"
+        },
+        {
+            "name": "drillTime",
+            "localizedName": "基础钻速",
+            "type": "float",
+            "defaultValue": "300.0",
+            "notes": "开采一个矿石的基础时间（帧）。\n\n**Notes**: 基础钻速（帧/每矿）。"
+        },
+        {
+            "name": "liquidBoostIntensity",
+            "localizedName": "液体加速倍率",
+            "type": "float",
+            "defaultValue": "1.6",
+            "notes": "液体加速时钻头速度提升的倍数。\n\n**Notes**: 液体加速倍率。"
+        },
+        {
+            "name": "warmupSpeed",
+            "localizedName": "预热速度",
+            "type": "float",
+            "defaultValue": "0.015",
+            "notes": "钻头加速到全速的速度。\n\n**Notes**: 预热速度。"
+        },
+        {
+            "name": "blockedItem",
+            "localizedName": "禁止开采物品",
+            "type": "Item",
+            "defaultValue": "null",
+            "notes": "此钻头无法开采的特殊豁免物品。\n\n**Notes**: 禁止开采的单个物品。"
+        },
+        {
+            "name": "blockedItems",
+            "localizedName": "禁止开采物品列表",
+            "type": "Seq of Item",
+            "defaultValue": "null",
+            "notes": "此钻头无法开采的特殊豁免物品列表。\n\n**Notes**: 禁止开采的物品列表。"
+        },
+        {
+            "name": "drawMineItem",
+            "localizedName": "绘制开采物品",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "是否绘制钻头正在开采的物品。\n\n**Notes**: 控制是否显示开采的物品图标。"
+        },
+        {
+            "name": "drillEffect",
+            "localizedName": "采矿产出特效",
+            "type": "Effect",
+            "defaultValue": "mine",
+            "notes": "产出物品时播放的特效。此特效带有颜色。\n\n**Notes**: 采矿产出特效。"
+        },
+        {
+            "name": "drillEffectRnd",
+            "localizedName": "特效随机偏移",
+            "type": "float",
+            "defaultValue": "-1.0",
+            "notes": "钻头特效随机性。默认使用方块尺寸。\n\n**Notes**: 采矿特效随机偏移范围。"
+        },
+        {
+            "name": "drillEffectChance",
+            "localizedName": "特效触发概率",
+            "type": "float",
+            "defaultValue": "0.02",
+            "notes": "特效显示的概率。对于极快钻头很有用。\n\n**Notes**: 采矿特效触发概率。"
+        },
+        {
+            "name": "rotateSpeed",
+            "localizedName": "钻头旋转速度",
+            "type": "float",
+            "defaultValue": "2.0",
+            "notes": "钻头旋转速度。\n\n**Notes**: 钻头旋转速率。"
+        },
+        {
+            "name": "updateEffect",
+            "localizedName": "持续钻探特效",
+            "type": "Effect",
+            "defaultValue": "pulverizeSmall",
+            "notes": "钻探时随机播放的特效。\n\n**Notes**: 持续钻探特效。"
+        },
+        {
+            "name": "updateEffectChance",
+            "localizedName": "持续特效概率",
+            "type": "float",
+            "defaultValue": "0.02",
+            "notes": "更新特效出现的概率。\n\n**Notes**: 持续特效触发概率。"
+        },
+        {
+            "name": "drillMultipliers",
+            "localizedName": "各物品钻速倍率",
+            "type": "ObjectFloatMap of Item",
+            "defaultValue": "new ObjectFloatMap<>()",
+            "notes": "每种物品的钻速倍率。默认为1。\n\n**Notes**: 各物品钻速倍率映射。"
+        },
+        {
+            "name": "drawRim",
+            "localizedName": "绘制边缘环",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "**Notes**: 是否绘制边缘环。"
+        },
+        {
+            "name": "drawSpinSprite",
+            "localizedName": "绘制旋转精灵",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "**Notes**: 是否绘制旋转的钻头精灵。"
+        },
+        {
+            "name": "heatColor",
+            "localizedName": "发热颜色",
+            "type": "Color",
+            "defaultValue": "ff5512ff",
+            "notes": "**Notes**: 钻头发热时的颜色。"
+        },
+        {
+            "name": "rimRegion",
+            "localizedName": "边缘环纹理",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": "**Notes**: 边缘环纹理区域。"
+        },
+        {
+            "name": "rotatorRegion",
+            "localizedName": "旋转部件纹理",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": "**Notes**: 旋转部件纹理区域。"
+        },
+        {
+            "name": "topRegion",
+            "localizedName": "顶部纹理",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": "**Notes**: 顶部纹理区域。"
+        },
+        {
+            "name": "itemRegion",
+            "localizedName": "物品图标纹理",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": "**Notes**: 物品图标纹理区域。"
+        }
+    ]
+}

@@ -1,0 +1,18 @@
+{
+    "type": "PointDefenseWeapon",
+    "parentType": "Weapon",
+    "fields": [
+        {
+            "name": "color",
+            "type": "Color",
+            "defaultValue": "ffffffff",
+            "notes": ""
+        },
+        {
+            "name": "beamEffect",
+            "type": "Effect",
+            "defaultValue": "pointBeam",
+            "notes": ""
+        }
+    ]
+}

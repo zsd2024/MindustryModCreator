@@ -1,0 +1,21 @@
+{
+    "localizedName": "侧面区域绘制",
+    "type": "DrawSideRegion",
+    "parentType": "DrawBlock",
+    "fields": [
+        {
+            "name": "top1",
+            "localizedName": "顶部纹理1",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": "**Notes**: 第一种旋转方向的顶部纹理。"
+        },
+        {
+            "name": "top2",
+            "localizedName": "顶部纹理2",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": "**Notes**: 第二种旋转方向的顶部纹理。"
+        }
+    ]
+}

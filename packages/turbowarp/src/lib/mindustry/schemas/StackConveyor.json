@@ -1,0 +1,84 @@
+{
+    "type": "StackConveyor",
+    "parentType": "Block",
+    "fields": [
+        {
+            "name": "regions",
+            "type": "TextureRegion[]",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "edgeRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "stackRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "glowRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": "requires power to work properly"
+        },
+        {
+            "name": "edgeGlowRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "glowAlpha",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": ""
+        },
+        {
+            "name": "glowColor",
+            "type": "Color",
+            "defaultValue": "feb380ff",
+            "notes": ""
+        },
+        {
+            "name": "baseEfficiency",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": ""
+        },
+        {
+            "name": "speed",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": ""
+        },
+        {
+            "name": "outputRouter",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": ""
+        },
+        {
+            "name": "recharge",
+            "type": "float",
+            "defaultValue": "2.0",
+            "notes": "(minimum) amount of loading docks needed to fill a line."
+        },
+        {
+            "name": "loadEffect",
+            "type": "Effect",
+            "defaultValue": "conveyorPoof",
+            "notes": ""
+        },
+        {
+            "name": "unloadEffect",
+            "type": "Effect",
+            "defaultValue": "conveyorPoof",
+            "notes": ""
+        }
+    ]
+}

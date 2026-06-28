@@ -1,0 +1,56 @@
+{
+    "localizedName": "等离子体绘制",
+    "type": "DrawPlasma",
+    "parentType": "DrawFlame",
+    "fields": [
+        {
+            "name": "x",
+            "localizedName": "X轴偏移",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "**Notes**: 等离子体的X轴偏移。"
+        },
+        {
+            "name": "y",
+            "localizedName": "Y轴偏移",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "**Notes**: 等离子体的Y轴偏移。"
+        },
+        {
+            "name": "regions",
+            "localizedName": "纹理数组",
+            "type": "TextureRegion[]",
+            "defaultValue": "null",
+            "notes": "**Notes**: 运行时加载的等离子体纹理数组。"
+        },
+        {
+            "name": "suffix",
+            "localizedName": "纹理后缀",
+            "type": "String",
+            "defaultValue": "\"-plasma-\"",
+            "notes": "**Notes**: 方块名称后附加的后缀以查找纹理。"
+        },
+        {
+            "name": "plasmas",
+            "localizedName": "纹理数量",
+            "type": "int",
+            "defaultValue": "4",
+            "notes": "**Notes**: 等离子体纹理的数量。"
+        },
+        {
+            "name": "plasma1",
+            "localizedName": "第一种颜色",
+            "type": "Color",
+            "defaultValue": "ffd06bff",
+            "notes": "**Notes**: 等离子体的第一种颜色。"
+        },
+        {
+            "name": "plasma2",
+            "localizedName": "第二种颜色",
+            "type": "Color",
+            "defaultValue": "ff361bff",
+            "notes": "**Notes**: 等离子体的第二种颜色。"
+        }
+    ]
+}

@@ -1,0 +1,35 @@
+{
+    "type": "TileableLogicDisplay",
+    "parentType": "LogicDisplay",
+    "localizedName": "可拼接逻辑显示屏",
+    "fields": [
+        {
+            "name": "maxDisplayDimensions",
+            "type": "int",
+            "localizedName": "最大显示尺寸",
+            "defaultValue": "16",
+            "notes": "**Notes**: 最大显示尺寸（以方块为单位）"
+        },
+        {
+            "name": "tileRegion",
+            "type": "TextureRegion[]",
+            "localizedName": "瓦片纹理数组",
+            "defaultValue": "null",
+            "notes": "**Notes**: 瓦片纹理区域数组"
+        },
+        {
+            "name": "backRegion",
+            "type": "TextureRegion",
+            "localizedName": "背景纹理",
+            "defaultValue": "null",
+            "notes": "**Notes**: 背景纹理区域"
+        },
+        {
+            "name": "frameSize",
+            "type": "int",
+            "localizedName": "边框大小",
+            "defaultValue": "6",
+            "notes": "**Notes**: 边框大小"
+        }
+    ]
+}

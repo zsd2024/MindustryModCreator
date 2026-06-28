@@ -1,0 +1,28 @@
+{
+    "type": "UnitAssemblerModule",
+    "parentType": "PayloadBlock",
+    "localizedName": "单位组装模块",
+    "fields": [
+        {
+            "name": "sideRegion1",
+            "type": "TextureRegion",
+            "localizedName": "侧面纹理1",
+            "defaultValue": "null",
+            "notes": "**Notes**: 侧面纹理区域1"
+        },
+        {
+            "name": "sideRegion2",
+            "type": "TextureRegion",
+            "localizedName": "侧面纹理2",
+            "defaultValue": "null",
+            "notes": "**Notes**: 侧面纹理区域2"
+        },
+        {
+            "name": "tier",
+            "type": "int",
+            "localizedName": "模块等级",
+            "defaultValue": "1",
+            "notes": "**Notes**: 模块等级"
+        }
+    ]
+}

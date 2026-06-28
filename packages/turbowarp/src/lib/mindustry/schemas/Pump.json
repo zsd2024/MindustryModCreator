@@ -1,0 +1,30 @@
+{
+    "type": "Pump",
+    "parentType": "LiquidBlock",
+    "fields": [
+        {
+            "name": "pumpAmount",
+            "type": "float",
+            "defaultValue": "0.2",
+            "notes": "Pump amount per tile."
+        },
+        {
+            "name": "consumeTime",
+            "type": "float",
+            "defaultValue": "300.0",
+            "notes": "Interval in-between item consumptions, if applicable."
+        },
+        {
+            "name": "warmupSpeed",
+            "type": "float",
+            "defaultValue": "0.019",
+            "notes": ""
+        },
+        {
+            "name": "drawer",
+            "type": "DrawBlock",
+            "defaultValue": "new DrawMulti(new DrawDefault(), new DrawPumpLiquid())",
+            "notes": ""
+        }
+    ]
+}

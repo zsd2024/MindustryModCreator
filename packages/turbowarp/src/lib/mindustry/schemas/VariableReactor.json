@@ -1,0 +1,78 @@
+{
+    "type": "VariableReactor",
+    "parentType": "PowerGenerator",
+    "fields": [
+        {
+            "name": "maxHeat",
+            "type": "float",
+            "defaultValue": "100.0",
+            "notes": ""
+        },
+        {
+            "name": "unstableSpeed",
+            "type": "float",
+            "defaultValue": "0.0055555557",
+            "notes": "How quickly instability moves towards 1, per frame."
+        },
+        {
+            "name": "warmupSpeed",
+            "type": "float",
+            "defaultValue": "0.1",
+            "notes": ""
+        },
+        {
+            "name": "effect",
+            "type": "Effect",
+            "defaultValue": "fluxVapor",
+            "notes": ""
+        },
+        {
+            "name": "effectChance",
+            "type": "float",
+            "defaultValue": "0.05",
+            "notes": ""
+        },
+        {
+            "name": "effectColor",
+            "type": "Color",
+            "defaultValue": "ffdf9dff",
+            "notes": ""
+        },
+        {
+            "name": "flashThreshold",
+            "type": "float",
+            "defaultValue": "0.01",
+            "notes": ""
+        },
+        {
+            "name": "flashAlpha",
+            "type": "float",
+            "defaultValue": "0.4",
+            "notes": ""
+        },
+        {
+            "name": "flashSpeed",
+            "type": "float",
+            "defaultValue": "7.0",
+            "notes": ""
+        },
+        {
+            "name": "flashColor1",
+            "type": "Color",
+            "defaultValue": "ff0000ff",
+            "notes": ""
+        },
+        {
+            "name": "flashColor2",
+            "type": "Color",
+            "defaultValue": "89e8b6ff",
+            "notes": ""
+        },
+        {
+            "name": "lightsRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        }
+    ]
+}

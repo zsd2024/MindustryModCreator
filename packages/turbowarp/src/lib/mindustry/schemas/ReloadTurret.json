@@ -1,0 +1,12 @@
+{
+    "type": "ReloadTurret",
+    "parentType": "BaseTurret",
+    "fields": [
+        {
+            "name": "reload",
+            "type": "float",
+            "defaultValue": "10.0",
+            "notes": ""
+        }
+    ]
+}

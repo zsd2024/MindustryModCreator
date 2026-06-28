@@ -1,0 +1,140 @@
+{
+    "type": "SectorPreset",
+    "parentType": "UnlockableContent",
+    "localizedName": "扇区预设",
+    "fields": [
+        {
+            "name": "generator",
+            "type": "FileMapGenerator",
+            "defaultValue": "mindustry.maps.generators.FileMapGenerator@5784f6b9",
+            "localizedName": "地图生成器",
+            "notes": "**Notes**: 此关卡的地图生成器。"
+        },
+        {
+            "name": "planet",
+            "type": "Planet",
+            "defaultValue": "serpulo",
+            "localizedName": "所属行星",
+            "notes": "**Notes**: 此关卡所属的行星。"
+        },
+        {
+            "name": "sector",
+            "type": "Sector",
+            "defaultValue": "serpulo#5 (sectorName)",
+            "localizedName": "扇区对象",
+            "notes": "**Notes**: 此预设对应的扇区对象。"
+        },
+        {
+            "name": "captureWave",
+            "type": "int",
+            "defaultValue": "0",
+            "localizedName": "占领波次",
+            "notes": "**Notes**: 占领此扇区所需完成的波次。"
+        },
+        {
+            "name": "rules",
+            "type": "Cons of Rules",
+            "defaultValue": "winWave = captureWave",
+            "localizedName": "规则配置",
+            "notes": "**Notes**: 此扇区使用的规则配置。"
+        },
+        {
+            "name": "difficulty",
+            "type": "float",
+            "defaultValue": "0.0",
+            "localizedName": "难度",
+            "notes": "难度，0-10。\n\n**Notes**: Difficulty, 0-10."
+        },
+        {
+            "name": "startWaveTimeMultiplier",
+            "type": "float",
+            "defaultValue": "2.0",
+            "localizedName": "起始波次时间倍率",
+            "notes": "**Notes**: 起始波次时间间隔的倍率。"
+        },
+        {
+            "name": "addStartingItems",
+            "type": "boolean",
+            "defaultValue": "false",
+            "localizedName": "添加初始物品",
+            "notes": "**Notes**: 是否添加初始物品。"
+        },
+        {
+            "name": "noLighting",
+            "type": "boolean",
+            "defaultValue": "false",
+            "localizedName": "禁用光照",
+            "notes": "**Notes**: 是否禁用光照。"
+        },
+        {
+            "name": "isLastSector",
+            "type": "boolean",
+            "defaultValue": "false",
+            "localizedName": "最终扇区",
+            "notes": "若为true，则这是其行星战役中的最后一个扇区。\n\n**Notes**: If true, this is the last sector in its planetary campaign."
+        },
+        {
+            "name": "requireUnlock",
+            "type": "boolean",
+            "defaultValue": "true",
+            "localizedName": "需要解锁",
+            "notes": "若为true，则必须先解锁该扇区才能降落。\n\n**Notes**: If true, this sector must be unlocked before landing is permitted."
+        },
+        {
+            "name": "showHidden",
+            "type": "boolean",
+            "defaultValue": "false",
+            "localizedName": "显示隐藏扇区",
+            "notes": "若为true，即使它是\"隐藏\"的始终解锁扇区，也会显示图标和名称。\n\n**Notes**: If true, the icon and name is shown, even when it's a 'hidden' always-unlocked sector. TODO: this field may be changed, not sure how it should work"
+        },
+        {
+            "name": "showSectorLandInfo",
+            "type": "boolean",
+            "defaultValue": "true",
+            "localizedName": "显示着陆信息",
+            "notes": "**Notes**: 是否显示扇区着陆信息。"
+        },
+        {
+            "name": "overrideLaunchDefaults",
+            "type": "boolean",
+            "defaultValue": "false",
+            "localizedName": "覆盖发射默认值",
+            "notes": "若为true，则使用此扇区的发射字段而非默认值。\n\n**Notes**: If true, uses this sector's launch fields instead"
+        },
+        {
+            "name": "allowLaunchSchematics",
+            "type": "boolean",
+            "defaultValue": "false",
+            "localizedName": "允许发射蓝图",
+            "notes": "是否允许玩家为此地图指定自定义发射蓝图。\n\n**Notes**: Whether to allow users to specify a custom launch schematic for this map."
+        },
+        {
+            "name": "allowLaunchLoadout",
+            "type": "boolean",
+            "defaultValue": "false",
+            "localizedName": "允许发射物资",
+            "notes": "是否允许玩家指定带到此地图的资源。\n\n**Notes**: Whether to allow users to specify the resources they take to this map."
+        },
+        {
+            "name": "attackAfterWaves",
+            "type": "boolean",
+            "defaultValue": "false",
+            "localizedName": "波次后攻击模式",
+            "notes": "若为true，则在波次结束后切换到攻击模式。\n\n**Notes**: If true, switches to attack mode after waves end."
+        },
+        {
+            "name": "originalPosition",
+            "type": "int",
+            "defaultValue": "5",
+            "localizedName": "原始位置",
+            "notes": "此扇区的原始位置，用于迁移。仅供原版战役内部使用！\n\n**Notes**: The original position of this sector; used for migration. Internal use for vanilla campaign only!"
+        },
+        {
+            "name": "shieldSectors",
+            "type": "Seq of Sector",
+            "defaultValue": "[]",
+            "localizedName": "护盾扇区",
+            "notes": "阻止此扇区着陆的扇区，需先完成它们。\n\n**Notes**: Sectors that prevent this sector from being landed on until they are completed."
+        }
+    ]
+}

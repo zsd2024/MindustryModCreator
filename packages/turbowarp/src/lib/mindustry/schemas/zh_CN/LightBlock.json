@@ -1,0 +1,28 @@
+{
+    "type": "LightBlock",
+    "parentType": "Block",
+    "localizedName": "照明方块",
+    "fields": [
+        {
+            "name": "brightness",
+            "type": "float",
+            "localizedName": "亮度",
+            "defaultValue": "0.9",
+            "notes": "**Notes**: 亮度"
+        },
+        {
+            "name": "radius",
+            "type": "float",
+            "localizedName": "光照半径",
+            "defaultValue": "200.0",
+            "notes": "**Notes**: 光照半径"
+        },
+        {
+            "name": "topRegion",
+            "type": "TextureRegion",
+            "localizedName": "顶部纹理区域",
+            "defaultValue": "null",
+            "notes": "**Notes**: 顶部纹理区域"
+        }
+    ]
+}

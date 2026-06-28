@@ -1,0 +1,30 @@
+{
+    "type": "SteamVent",
+    "parentType": "Floor",
+    "fields": [
+        {
+            "name": "parent",
+            "type": "Block",
+            "defaultValue": "air",
+            "notes": ""
+        },
+        {
+            "name": "effect",
+            "type": "Effect",
+            "defaultValue": "ventSteam",
+            "notes": ""
+        },
+        {
+            "name": "effectColor",
+            "type": "Color",
+            "defaultValue": "6b4e4eff",
+            "notes": ""
+        },
+        {
+            "name": "effectSpacing",
+            "type": "float",
+            "defaultValue": "15.0",
+            "notes": ""
+        }
+    ]
+}

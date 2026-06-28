@@ -1,0 +1,12 @@
+{
+    "type": "ColoredFloor",
+    "parentType": "Floor",
+    "fields": [
+        {
+            "name": "defaultColor",
+            "type": "Color",
+            "defaultValue": "ffffffff",
+            "notes": ""
+        }
+    ]
+}

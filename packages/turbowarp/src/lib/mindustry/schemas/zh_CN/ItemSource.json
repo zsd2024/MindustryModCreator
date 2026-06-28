@@ -1,0 +1,14 @@
+{
+    "type": "ItemSource",
+    "parentType": "Block",
+    "localizedName": "物品源",
+    "fields": [
+        {
+            "name": "itemsPerSecond",
+            "type": "int",
+            "localizedName": "每秒生成物品数",
+            "defaultValue": "100",
+            "notes": "**Notes**: 每秒生成的物品数量"
+        }
+    ]
+}

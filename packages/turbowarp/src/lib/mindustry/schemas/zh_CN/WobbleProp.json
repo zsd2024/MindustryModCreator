@@ -1,0 +1,35 @@
+{
+    "type": "WobbleProp",
+    "parentType": "Prop",
+    "localizedName": "摇晃装饰物",
+    "fields": [
+        {
+            "name": "wscl",
+            "type": "float",
+            "localizedName": "摆动频率",
+            "defaultValue": "25.0",
+            "notes": "**Notes**: 摆动频率。"
+        },
+        {
+            "name": "wmag",
+            "type": "float",
+            "localizedName": "摆动幅度",
+            "defaultValue": "0.4",
+            "notes": "**Notes**: 摆动幅度。"
+        },
+        {
+            "name": "wtscl",
+            "type": "float",
+            "localizedName": "时间缩放",
+            "defaultValue": "1.0",
+            "notes": "**Notes**: 摆动频率的时间缩放。"
+        },
+        {
+            "name": "wmag2",
+            "type": "float",
+            "localizedName": "次要摆动幅度",
+            "defaultValue": "1.0",
+            "notes": "**Notes**: 次要摆动幅度的缩放。"
+        }
+    ]
+}

@@ -1,0 +1,77 @@
+{
+    "localizedName": "尖刺绘制",
+    "type": "DrawSpikes",
+    "parentType": "DrawBlock",
+    "fields": [
+        {
+            "name": "color",
+            "localizedName": "尖刺颜色",
+            "type": "Color",
+            "defaultValue": "7457ceff",
+            "notes": "**Notes**: 尖刺的颜色。"
+        },
+        {
+            "name": "amount",
+            "localizedName": "每层数量",
+            "type": "int",
+            "defaultValue": "10",
+            "notes": "**Notes**: 每层尖刺的数量。"
+        },
+        {
+            "name": "layers",
+            "localizedName": "层数",
+            "type": "int",
+            "defaultValue": "1",
+            "notes": "**Notes**: 尖刺的层数。"
+        },
+        {
+            "name": "stroke",
+            "localizedName": "描边宽度",
+            "type": "float",
+            "defaultValue": "2.0",
+            "notes": "**Notes**: 尖刺的描边宽度。"
+        },
+        {
+            "name": "rotateSpeed",
+            "localizedName": "旋转速度",
+            "type": "float",
+            "defaultValue": "0.8",
+            "notes": "**Notes**: 尖刺的旋转速度。"
+        },
+        {
+            "name": "radius",
+            "localizedName": "基础半径",
+            "type": "float",
+            "defaultValue": "6.0",
+            "notes": "**Notes**: 尖刺的基础半径。"
+        },
+        {
+            "name": "length",
+            "localizedName": "尖刺长度",
+            "type": "float",
+            "defaultValue": "4.0",
+            "notes": "**Notes**: 尖刺的长度。"
+        },
+        {
+            "name": "x",
+            "localizedName": "X轴偏移",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "**Notes**: 尖刺的X轴偏移。"
+        },
+        {
+            "name": "y",
+            "localizedName": "Y轴偏移",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "**Notes**: 尖刺的Y轴偏移。"
+        },
+        {
+            "name": "layerSpeed",
+            "localizedName": "层间速度差",
+            "type": "float",
+            "defaultValue": "-1.0",
+            "notes": "**Notes**: 各层间的旋转速度差异。"
+        }
+    ]
+}

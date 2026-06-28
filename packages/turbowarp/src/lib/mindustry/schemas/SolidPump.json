@@ -1,0 +1,48 @@
+{
+    "type": "SolidPump",
+    "parentType": "Pump",
+    "fields": [
+        {
+            "name": "result",
+            "type": "Liquid",
+            "defaultValue": "water",
+            "notes": ""
+        },
+        {
+            "name": "updateEffect",
+            "type": "Effect",
+            "defaultValue": "none",
+            "notes": ""
+        },
+        {
+            "name": "updateEffectChance",
+            "type": "float",
+            "defaultValue": "0.02",
+            "notes": ""
+        },
+        {
+            "name": "rotateSpeed",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": ""
+        },
+        {
+            "name": "baseEfficiency",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": ""
+        },
+        {
+            "name": "attribute",
+            "type": "Attribute",
+            "defaultValue": "null",
+            "notes": "Attribute that is checked when calculating output."
+        },
+        {
+            "name": "rotatorRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        }
+    ]
+}

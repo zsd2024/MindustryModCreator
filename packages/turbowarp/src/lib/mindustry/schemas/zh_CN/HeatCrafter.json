@@ -1,0 +1,28 @@
+{
+    "type": "HeatCrafter",
+    "parentType": "GenericCrafter",
+    "localizedName": "热量加工机",
+    "fields": [
+        {
+            "name": "heatRequirement",
+            "type": "float",
+            "localizedName": "热量需求",
+            "defaultValue": "10.0",
+            "notes": "达到100%效率所需的基础热量值。\n\n**Notes**: 控制热量制造机的最低输入热量门槛，低于此值将降低或停止生产效率。"
+        },
+        {
+            "name": "overheatScale",
+            "type": "float",
+            "localizedName": "超额热量缩放",
+            "defaultValue": "1.0",
+            "notes": "热量超过需求后，超出部分将乘以该系数。\n\n**Notes**: 用于计算超额热量对效率的额外增益，大于1时超额热量被放大，小于1则被压缩。"
+        },
+        {
+            "name": "maxEfficiency",
+            "type": "float",
+            "localizedName": "最大效率",
+            "defaultValue": "4.0",
+            "notes": "超额加热后能达到的最大效率。\n\n**Notes**: 防止过度加热导致效率无限增长，默认4倍为最高上限。"
+        }
+    ]
+}

@@ -1,0 +1,78 @@
+{
+    "type": "LaserBulletType",
+    "parentType": "BulletType",
+    "fields": [
+        {
+            "name": "colors",
+            "type": "Color[]",
+            "defaultValue": "[a9d8ff66, a9d8ffff, ffffffff]",
+            "notes": ""
+        },
+        {
+            "name": "laserEffect",
+            "type": "Effect",
+            "defaultValue": "lancerLaserShootSmoke",
+            "notes": ""
+        },
+        {
+            "name": "length",
+            "type": "float",
+            "defaultValue": "160.0",
+            "notes": ""
+        },
+        {
+            "name": "width",
+            "type": "float",
+            "defaultValue": "15.0",
+            "notes": ""
+        },
+        {
+            "name": "lengthFalloff",
+            "type": "float",
+            "defaultValue": "0.5",
+            "notes": ""
+        },
+        {
+            "name": "sideLength",
+            "type": "float",
+            "defaultValue": "29.0",
+            "notes": ""
+        },
+        {
+            "name": "sideWidth",
+            "type": "float",
+            "defaultValue": "0.7",
+            "notes": ""
+        },
+        {
+            "name": "sideAngle",
+            "type": "float",
+            "defaultValue": "90.0",
+            "notes": ""
+        },
+        {
+            "name": "lightningSpacing",
+            "type": "float",
+            "defaultValue": "-1.0",
+            "notes": ""
+        },
+        {
+            "name": "lightningDelay",
+            "type": "float",
+            "defaultValue": "0.1",
+            "notes": ""
+        },
+        {
+            "name": "lightningAngleRand",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": ""
+        },
+        {
+            "name": "largeHit",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": ""
+        }
+    ]
+}

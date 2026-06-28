@@ -1,0 +1,28 @@
+{
+    "type": "Separator",
+    "parentType": "Block",
+    "localizedName": "分离器",
+    "fields": [
+        {
+            "name": "results",
+            "type": "ItemStack[]",
+            "defaultValue": "null",
+            "localizedName": "产出列表",
+            "notes": "**Notes**: 可能的产出物品列表"
+        },
+        {
+            "name": "craftTime",
+            "type": "float",
+            "defaultValue": "0.0",
+            "localizedName": "合成时间",
+            "notes": "**Notes**: 合成时间"
+        },
+        {
+            "name": "drawer",
+            "type": "DrawBlock",
+            "defaultValue": "new DrawDefault()",
+            "localizedName": "绘制器",
+            "notes": "**Notes**: 绘制器"
+        }
+    ]
+}

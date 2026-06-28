@@ -1,0 +1,42 @@
+{
+    "type": "LiquidExplodeAbility",
+    "parentType": "Ability",
+    "fields": [
+        {
+            "name": "liquid",
+            "type": "Liquid",
+            "defaultValue": "water",
+            "notes": ""
+        },
+        {
+            "name": "amount",
+            "type": "float",
+            "defaultValue": "120.0",
+            "notes": ""
+        },
+        {
+            "name": "radAmountScale",
+            "type": "float",
+            "defaultValue": "5.0",
+            "notes": ""
+        },
+        {
+            "name": "radScale",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": ""
+        },
+        {
+            "name": "noiseMag",
+            "type": "float",
+            "defaultValue": "6.5",
+            "notes": ""
+        },
+        {
+            "name": "noiseScl",
+            "type": "float",
+            "defaultValue": "5.0",
+            "notes": ""
+        }
+    ]
+}

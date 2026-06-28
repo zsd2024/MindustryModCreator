@@ -1,0 +1,42 @@
+{
+    "type": "PayloadBlock",
+    "parentType": "Block",
+    "fields": [
+        {
+            "name": "payloadSpeed",
+            "type": "float",
+            "defaultValue": "0.7",
+            "notes": ""
+        },
+        {
+            "name": "payloadRotateSpeed",
+            "type": "float",
+            "defaultValue": "5.0",
+            "notes": ""
+        },
+        {
+            "name": "regionSuffix",
+            "type": "String",
+            "defaultValue": "\"\"",
+            "notes": ""
+        },
+        {
+            "name": "topRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "outRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "inRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        }
+    ]
+}

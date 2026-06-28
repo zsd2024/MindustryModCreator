@@ -1,0 +1,49 @@
+{
+    "type": "UnitSpawnAbility",
+    "parentType": "Ability",
+    "localizedName": "单位生成能力",
+    "fields": [
+        {
+            "name": "unit",
+            "type": "UnitType",
+            "localizedName": "单位类型",
+            "defaultValue": "null",
+            "notes": "**Notes**: 单位类型"
+        },
+        {
+            "name": "spawnTime",
+            "type": "float",
+            "localizedName": "生成时间",
+            "defaultValue": "60.0",
+            "notes": "**Notes**: 生成时间"
+        },
+        {
+            "name": "spawnX",
+            "type": "float",
+            "localizedName": "生成偏移X",
+            "defaultValue": "0.0",
+            "notes": "**Notes**: 生成偏移 X"
+        },
+        {
+            "name": "spawnY",
+            "type": "float",
+            "localizedName": "生成偏移Y",
+            "defaultValue": "0.0",
+            "notes": "**Notes**: 生成偏移 Y"
+        },
+        {
+            "name": "spawnEffect",
+            "type": "Effect",
+            "localizedName": "生成特效",
+            "defaultValue": "spawn",
+            "notes": "**Notes**: 生成效果"
+        },
+        {
+            "name": "parentizeEffects",
+            "type": "boolean",
+            "localizedName": "效果继承父级",
+            "defaultValue": "false",
+            "notes": "**Notes**: 效果是否继承父级"
+        }
+    ]
+}

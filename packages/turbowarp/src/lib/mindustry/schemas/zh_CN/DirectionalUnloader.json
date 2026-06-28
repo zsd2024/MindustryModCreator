@@ -1,0 +1,42 @@
+{
+    "localizedName": "定向卸货器",
+    "type": "DirectionalUnloader",
+    "parentType": "Block",
+    "fields": [
+        {
+            "name": "centerRegion",
+            "localizedName": "中心纹理",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": "**Notes**: 中心纹理"
+        },
+        {
+            "name": "topRegion",
+            "localizedName": "顶部纹理",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": "**Notes**: 顶部纹理"
+        },
+        {
+            "name": "arrowRegion",
+            "localizedName": "箭头纹理",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": "**Notes**: 箭头纹理"
+        },
+        {
+            "name": "speed",
+            "localizedName": "卸货速度",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": "**Notes**: 卸货间隔（帧数）"
+        },
+        {
+            "name": "allowCoreUnload",
+            "localizedName": "允许核心卸货",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "**Notes**: 是否允许从核心卸货"
+        }
+    ]
+}

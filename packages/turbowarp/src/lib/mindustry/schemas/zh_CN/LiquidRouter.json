@@ -1,0 +1,49 @@
+{
+    "type": "LiquidRouter",
+    "parentType": "Block",
+    "localizedName": "液体路由器",
+    "fields": [
+        {
+            "name": "liquidCapacity",
+            "type": "float",
+            "localizedName": "液体缓存容量",
+            "defaultValue": "6.0",
+            "notes": "**Notes**: 液体缓存容量。"
+        },
+        {
+            "name": "liquidPaddingDirection",
+            "type": "float",
+            "localizedName": "液体填充方向偏移",
+            "defaultValue": "-1.0",
+            "notes": "**Notes**: 液体填充方向上的偏移。"
+        },
+        {
+            "name": "outputDir",
+            "type": "int",
+            "localizedName": "液体输出方向",
+            "defaultValue": "-1",
+            "notes": "**Notes**: 液体旋转时的输出方向。"
+        },
+        {
+            "name": "bottomRegion",
+            "type": "TextureRegion",
+            "localizedName": "底部纹理区域",
+            "defaultValue": "null",
+            "notes": "**Notes**: 底部纹理区域。"
+        },
+        {
+            "name": "liquidRegion",
+            "type": "TextureRegion",
+            "localizedName": "液体纹理区域",
+            "defaultValue": "null",
+            "notes": "**Notes**: 液体纹理区域。"
+        },
+        {
+            "name": "topRegion",
+            "type": "TextureRegion",
+            "localizedName": "顶部纹理区域",
+            "defaultValue": "null",
+            "notes": "**Notes**: 顶部纹理区域。"
+        }
+    ]
+}

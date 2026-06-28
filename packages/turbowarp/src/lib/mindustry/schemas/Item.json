@@ -1,0 +1,90 @@
+{
+    "type": "Item",
+    "parentType": "UnlockableContent",
+    "fields": [
+        {
+            "name": "color",
+            "type": "Color",
+            "defaultValue": "000000ff",
+            "notes": ""
+        },
+        {
+            "name": "explosiveness",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "how explosive this item is."
+        },
+        {
+            "name": "flammability",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "flammability above 0.3 makes this eligible for item burners."
+        },
+        {
+            "name": "radioactivity",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "how radioactive this item is."
+        },
+        {
+            "name": "charge",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "how electrically potent this item is."
+        },
+        {
+            "name": "hardness",
+            "type": "int",
+            "defaultValue": "0",
+            "notes": "drill hardness of the item"
+        },
+        {
+            "name": "cost",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": "base material cost of this item, used for calculating place times 1 cost = 1 tick added to build time"
+        },
+        {
+            "name": "healthScaling",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "When this item is present in the build cost, a block's default health is multiplied by 1 + scaling, where 'scaling' is summed together for all item requirement types."
+        },
+        {
+            "name": "lowPriority",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "if true, this item is of the lowest priority to drills."
+        },
+        {
+            "name": "frames",
+            "type": "int",
+            "defaultValue": "0",
+            "notes": "If >0, this item is animated."
+        },
+        {
+            "name": "transitionFrames",
+            "type": "int",
+            "defaultValue": "0",
+            "notes": "Number of generated transition frames between each frame"
+        },
+        {
+            "name": "frameTime",
+            "type": "float",
+            "defaultValue": "5.0",
+            "notes": "Ticks in-between animation frames."
+        },
+        {
+            "name": "buildable",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "If true, this material is used by buildings. If false, this material will be incinerated in certain cores."
+        },
+        {
+            "name": "hidden",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": ""
+        }
+    ]
+}

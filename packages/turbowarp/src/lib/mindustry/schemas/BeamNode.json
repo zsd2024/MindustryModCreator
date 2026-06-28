@@ -1,0 +1,54 @@
+{
+    "type": "BeamNode",
+    "parentType": "PowerBlock",
+    "fields": [
+        {
+            "name": "range",
+            "type": "int",
+            "defaultValue": "5",
+            "notes": ""
+        },
+        {
+            "name": "laser",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "laserEnd",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "laserColor1",
+            "type": "Color",
+            "defaultValue": "ffffffff",
+            "notes": ""
+        },
+        {
+            "name": "laserColor2",
+            "type": "Color",
+            "defaultValue": "ffd9c2ff",
+            "notes": ""
+        },
+        {
+            "name": "pulseScl",
+            "type": "float",
+            "defaultValue": "7.0",
+            "notes": ""
+        },
+        {
+            "name": "pulseMag",
+            "type": "float",
+            "defaultValue": "0.05",
+            "notes": ""
+        },
+        {
+            "name": "laserWidth",
+            "type": "float",
+            "defaultValue": "0.4",
+            "notes": ""
+        }
+    ]
+}

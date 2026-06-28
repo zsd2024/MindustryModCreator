@@ -1,0 +1,126 @@
+{
+    "type": "MassDriver",
+    "parentType": "Block",
+    "localizedName": "质量驱动器",
+    "fields": [
+        {
+            "name": "range",
+            "localizedName": "射程",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "**Notes**: 射程范围"
+        },
+        {
+            "name": "rotateSpeed",
+            "localizedName": "旋转速度",
+            "type": "float",
+            "defaultValue": "5.0",
+            "notes": "**Notes**: 旋转速度"
+        },
+        {
+            "name": "translation",
+            "localizedName": "发射偏移",
+            "type": "float",
+            "defaultValue": "7.0",
+            "notes": "**Notes**: 发射偏移距离"
+        },
+        {
+            "name": "minDistribute",
+            "localizedName": "最小分发量",
+            "type": "int",
+            "defaultValue": "10",
+            "notes": "**Notes**: 最小分发数量"
+        },
+        {
+            "name": "knockback",
+            "localizedName": "后坐力",
+            "type": "float",
+            "defaultValue": "4.0",
+            "notes": "**Notes**: 后坐力"
+        },
+        {
+            "name": "reload",
+            "localizedName": "装填时间",
+            "type": "float",
+            "defaultValue": "100.0",
+            "notes": "**Notes**: 装填时间"
+        },
+        {
+            "name": "bullet",
+            "localizedName": "子弹类型",
+            "type": "MassDriverBolt",
+            "defaultValue": "new MassDriverBolt()",
+            "notes": "**Notes**: 子弹类型"
+        },
+        {
+            "name": "bulletSpeed",
+            "localizedName": "子弹速度",
+            "type": "float",
+            "defaultValue": "5.5",
+            "notes": "**Notes**: 子弹速度"
+        },
+        {
+            "name": "bulletLifetime",
+            "localizedName": "子弹寿命",
+            "type": "float",
+            "defaultValue": "200.0",
+            "notes": "**Notes**: 子弹生命周期"
+        },
+        {
+            "name": "shootEffect",
+            "localizedName": "发射特效",
+            "type": "Effect",
+            "defaultValue": "shootBig2",
+            "notes": "**Notes**: 发射特效"
+        },
+        {
+            "name": "smokeEffect",
+            "localizedName": "烟雾特效",
+            "type": "Effect",
+            "defaultValue": "shootBigSmoke2",
+            "notes": "**Notes**: 烟雾特效"
+        },
+        {
+            "name": "receiveEffect",
+            "localizedName": "接收特效",
+            "type": "Effect",
+            "defaultValue": "mineBig",
+            "notes": "**Notes**: 接收特效"
+        },
+        {
+            "name": "shootSound",
+            "localizedName": "发射音效",
+            "type": "Sound",
+            "defaultValue": "massdriver",
+            "notes": "**Notes**: 发射音效"
+        },
+        {
+            "name": "receiveSound",
+            "localizedName": "接收音效",
+            "type": "Sound",
+            "defaultValue": "massdriverReceive",
+            "notes": "**Notes**: 接收音效"
+        },
+        {
+            "name": "shootSoundVolume",
+            "localizedName": "发射音量",
+            "type": "float",
+            "defaultValue": "0.5",
+            "notes": "**Notes**: 发射音效音量"
+        },
+        {
+            "name": "shake",
+            "localizedName": "震动强度",
+            "type": "float",
+            "defaultValue": "3.0",
+            "notes": "**Notes**: 屏幕震动强度"
+        },
+        {
+            "name": "baseRegion",
+            "localizedName": "底座纹理",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": "**Notes**: 底座纹理区域"
+        }
+    ]
+}

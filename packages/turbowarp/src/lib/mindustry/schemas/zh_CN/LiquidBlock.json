@@ -1,0 +1,28 @@
+{
+    "type": "LiquidBlock",
+    "parentType": "Block",
+    "localizedName": "液体方块",
+    "fields": [
+        {
+            "name": "liquidRegion",
+            "type": "TextureRegion",
+            "localizedName": "液体纹理区域",
+            "defaultValue": "null",
+            "notes": "**Notes**: 液体纹理区域"
+        },
+        {
+            "name": "topRegion",
+            "type": "TextureRegion",
+            "localizedName": "顶部纹理区域",
+            "defaultValue": "null",
+            "notes": "**Notes**: 顶部纹理区域"
+        },
+        {
+            "name": "bottomRegion",
+            "type": "TextureRegion",
+            "localizedName": "底部纹理区域",
+            "defaultValue": "null",
+            "notes": "**Notes**: 底部纹理区域"
+        }
+    ]
+}

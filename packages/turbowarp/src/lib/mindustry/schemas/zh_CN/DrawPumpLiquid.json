@@ -1,0 +1,14 @@
+{
+    "localizedName": "泵液体绘制",
+    "type": "DrawPumpLiquid",
+    "parentType": "DrawBlock",
+    "fields": [
+        {
+            "name": "liquid",
+            "localizedName": "泵液体纹理",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": "**Notes**: 运行时加载的泵液体纹理。"
+        }
+    ]
+}

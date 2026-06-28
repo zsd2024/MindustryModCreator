@@ -1,0 +1,186 @@
+{
+    "type": "ParticleWeather",
+    "parentType": "Weather",
+    "fields": [
+        {
+            "name": "particleRegion",
+            "type": "String",
+            "defaultValue": "\"circle-shadow\"",
+            "notes": ""
+        },
+        {
+            "name": "color",
+            "type": "Color",
+            "defaultValue": "ffffffff",
+            "notes": ""
+        },
+        {
+            "name": "region",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "yspeed",
+            "type": "float",
+            "defaultValue": "-2.0",
+            "notes": ""
+        },
+        {
+            "name": "xspeed",
+            "type": "float",
+            "defaultValue": "0.25",
+            "notes": ""
+        },
+        {
+            "name": "padding",
+            "type": "float",
+            "defaultValue": "16.0",
+            "notes": ""
+        },
+        {
+            "name": "sizeMin",
+            "type": "float",
+            "defaultValue": "2.4",
+            "notes": ""
+        },
+        {
+            "name": "sizeMax",
+            "type": "float",
+            "defaultValue": "12.0",
+            "notes": ""
+        },
+        {
+            "name": "density",
+            "type": "float",
+            "defaultValue": "1200.0",
+            "notes": ""
+        },
+        {
+            "name": "minAlpha",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": ""
+        },
+        {
+            "name": "maxAlpha",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": ""
+        },
+        {
+            "name": "force",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": ""
+        },
+        {
+            "name": "noiseScale",
+            "type": "float",
+            "defaultValue": "2000.0",
+            "notes": ""
+        },
+        {
+            "name": "baseSpeed",
+            "type": "float",
+            "defaultValue": "6.1",
+            "notes": ""
+        },
+        {
+            "name": "sinSclMin",
+            "type": "float",
+            "defaultValue": "30.0",
+            "notes": ""
+        },
+        {
+            "name": "sinSclMax",
+            "type": "float",
+            "defaultValue": "80.0",
+            "notes": ""
+        },
+        {
+            "name": "sinMagMin",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": ""
+        },
+        {
+            "name": "sinMagMax",
+            "type": "float",
+            "defaultValue": "7.0",
+            "notes": ""
+        },
+        {
+            "name": "noiseColor",
+            "type": "Color",
+            "defaultValue": "ffffffff",
+            "notes": ""
+        },
+        {
+            "name": "drawNoise",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": ""
+        },
+        {
+            "name": "drawParticles",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": ""
+        },
+        {
+            "name": "useWindVector",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": ""
+        },
+        {
+            "name": "randomParticleRotation",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": ""
+        },
+        {
+            "name": "noiseLayers",
+            "type": "int",
+            "defaultValue": "1",
+            "notes": ""
+        },
+        {
+            "name": "noiseLayerSpeedM",
+            "type": "float",
+            "defaultValue": "1.1",
+            "notes": ""
+        },
+        {
+            "name": "noiseLayerAlphaM",
+            "type": "float",
+            "defaultValue": "0.8",
+            "notes": ""
+        },
+        {
+            "name": "noiseLayerSclM",
+            "type": "float",
+            "defaultValue": "0.99",
+            "notes": ""
+        },
+        {
+            "name": "noiseLayerColorM",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": ""
+        },
+        {
+            "name": "noisePath",
+            "type": "String",
+            "defaultValue": "\"noiseAlpha\"",
+            "notes": ""
+        },
+        {
+            "name": "noise",
+            "type": "Texture",
+            "defaultValue": "null",
+            "notes": ""
+        }
+    ]
+}

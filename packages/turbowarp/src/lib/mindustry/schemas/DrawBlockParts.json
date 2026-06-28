@@ -1,0 +1,18 @@
+{
+    "type": "DrawBlockParts",
+    "parentType": "DrawBlock",
+    "fields": [
+        {
+            "name": "parts",
+            "type": "Seq of DrawPart",
+            "defaultValue": "[]",
+            "notes": ""
+        },
+        {
+            "name": "preview",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        }
+    ]
+}

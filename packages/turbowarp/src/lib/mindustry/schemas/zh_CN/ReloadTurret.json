@@ -1,0 +1,14 @@
+{
+    "type": "ReloadTurret",
+    "parentType": "BaseTurret",
+    "localizedName": "装填炮塔",
+    "fields": [
+        {
+            "name": "reload",
+            "type": "float",
+            "defaultValue": "10.0",
+            "localizedName": "装填时间",
+            "notes": "**Notes**: 装填时间，以tick计。"
+        }
+    ]
+}

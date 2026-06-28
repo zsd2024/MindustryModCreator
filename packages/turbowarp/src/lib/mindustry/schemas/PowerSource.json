@@ -1,0 +1,12 @@
+{
+    "type": "PowerSource",
+    "parentType": "PowerNode",
+    "fields": [
+        {
+            "name": "powerProduction",
+            "type": "float",
+            "defaultValue": "10000.0",
+            "notes": ""
+        }
+    ]
+}

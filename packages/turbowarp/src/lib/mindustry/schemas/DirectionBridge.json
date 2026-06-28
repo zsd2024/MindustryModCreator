@@ -1,0 +1,42 @@
+{
+    "type": "DirectionBridge",
+    "parentType": "Block",
+    "fields": [
+        {
+            "name": "bridgeRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "bridgeBotRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "bridgeLiquidRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "arrowRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "dirRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "range",
+            "type": "int",
+            "defaultValue": "4",
+            "notes": ""
+        }
+    ]
+}

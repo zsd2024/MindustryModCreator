@@ -1,0 +1,138 @@
+{
+    "type": "ForceProjector",
+    "parentType": "Block",
+    "fields": [
+        {
+            "name": "timerUse",
+            "type": "int",
+            "defaultValue": "1",
+            "notes": ""
+        },
+        {
+            "name": "phaseUseTime",
+            "type": "float",
+            "defaultValue": "350.0",
+            "notes": ""
+        },
+        {
+            "name": "phaseRadiusBoost",
+            "type": "float",
+            "defaultValue": "80.0",
+            "notes": ""
+        },
+        {
+            "name": "phaseShieldBoost",
+            "type": "float",
+            "defaultValue": "400.0",
+            "notes": ""
+        },
+        {
+            "name": "radius",
+            "type": "float",
+            "defaultValue": "101.7",
+            "notes": ""
+        },
+        {
+            "name": "sides",
+            "type": "int",
+            "defaultValue": "6",
+            "notes": ""
+        },
+        {
+            "name": "shieldRotation",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": ""
+        },
+        {
+            "name": "shieldHealth",
+            "type": "float",
+            "defaultValue": "700.0",
+            "notes": ""
+        },
+        {
+            "name": "cooldownNormal",
+            "type": "float",
+            "defaultValue": "1.75",
+            "notes": ""
+        },
+        {
+            "name": "cooldownLiquid",
+            "type": "float",
+            "defaultValue": "1.5",
+            "notes": ""
+        },
+        {
+            "name": "cooldownBrokenBase",
+            "type": "float",
+            "defaultValue": "0.35",
+            "notes": ""
+        },
+        {
+            "name": "coolantConsumption",
+            "type": "float",
+            "defaultValue": "0.1",
+            "notes": ""
+        },
+        {
+            "name": "consumeCoolant",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": ""
+        },
+        {
+            "name": "crashDamageMultiplier",
+            "type": "float",
+            "defaultValue": "2.0",
+            "notes": ""
+        },
+        {
+            "name": "breakSound",
+            "type": "Sound",
+            "defaultValue": "shieldBreak",
+            "notes": ""
+        },
+        {
+            "name": "hitSound",
+            "type": "Sound",
+            "defaultValue": "shieldHit",
+            "notes": ""
+        },
+        {
+            "name": "hitSoundVolume",
+            "type": "float",
+            "defaultValue": "0.12",
+            "notes": ""
+        },
+        {
+            "name": "absorbEffect",
+            "type": "Effect",
+            "defaultValue": "absorb",
+            "notes": ""
+        },
+        {
+            "name": "shieldBreakEffect",
+            "type": "Effect",
+            "defaultValue": "shieldBreak",
+            "notes": ""
+        },
+        {
+            "name": "topRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "itemConsumer",
+            "type": "Consume",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "coolantConsumer",
+            "type": "Consume",
+            "defaultValue": "mindustry.world.consumers.ConsumeCoolant@3ed1446c",
+            "notes": ""
+        }
+    ]
+}

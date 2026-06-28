@@ -1,0 +1,18 @@
+{
+    "type": "LiquidTurret",
+    "parentType": "Turret",
+    "fields": [
+        {
+            "name": "ammoTypes",
+            "type": "ObjectMap of Liquid, BulletType",
+            "defaultValue": "new ObjectMap<>()",
+            "notes": ""
+        },
+        {
+            "name": "extinguish",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": ""
+        }
+    ]
+}

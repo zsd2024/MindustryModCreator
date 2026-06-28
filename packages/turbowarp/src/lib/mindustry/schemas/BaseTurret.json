@@ -1,0 +1,60 @@
+{
+    "type": "BaseTurret",
+    "parentType": "Block",
+    "fields": [
+        {
+            "name": "range",
+            "type": "float",
+            "defaultValue": "80.0",
+            "notes": ""
+        },
+        {
+            "name": "placeOverlapMargin",
+            "type": "float",
+            "defaultValue": "56.0",
+            "notes": ""
+        },
+        {
+            "name": "rotateSpeed",
+            "type": "float",
+            "defaultValue": "5.0",
+            "notes": ""
+        },
+        {
+            "name": "fogRadiusMultiplier",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": ""
+        },
+        {
+            "name": "disableOverlapCheck",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": ""
+        },
+        {
+            "name": "activationTime",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "How much time to start shooting after placement."
+        },
+        {
+            "name": "coolEffect",
+            "type": "Effect",
+            "defaultValue": "fuelburn",
+            "notes": "Effect displayed when coolant is used."
+        },
+        {
+            "name": "coolantMultiplier",
+            "type": "float",
+            "defaultValue": "5.0",
+            "notes": "How much reload is lowered by for each unit of liquid of heat capacity."
+        },
+        {
+            "name": "coolant",
+            "type": "ConsumeLiquidBase",
+            "defaultValue": "null",
+            "notes": "If not null, this consumer will be used for coolant."
+        }
+    ]
+}

@@ -1,0 +1,56 @@
+{
+    "type": "ThermalGenerator",
+    "parentType": "PowerGenerator",
+    "localizedName": "热力发电机",
+    "fields": [
+        {
+            "name": "generateEffect",
+            "type": "Effect",
+            "localizedName": "发电特效",
+            "defaultValue": "none",
+            "notes": "**Notes**: 发电时的粒子效果"
+        },
+        {
+            "name": "effectChance",
+            "type": "float",
+            "localizedName": "特效触发概率",
+            "defaultValue": "0.05",
+            "notes": "**Notes**: 效果触发概率"
+        },
+        {
+            "name": "minEfficiency",
+            "type": "float",
+            "localizedName": "最低效率",
+            "defaultValue": "0.0",
+            "notes": "**Notes**: 最低效率要求"
+        },
+        {
+            "name": "displayEfficiencyScale",
+            "type": "float",
+            "localizedName": "显示效率缩放",
+            "defaultValue": "1.0",
+            "notes": "**Notes**: 显示效率缩放系数"
+        },
+        {
+            "name": "displayEfficiency",
+            "type": "boolean",
+            "localizedName": "显示效率",
+            "defaultValue": "true",
+            "notes": "**Notes**: 是否显示效率信息"
+        },
+        {
+            "name": "outputLiquid",
+            "type": "LiquidStack",
+            "localizedName": "输出液体",
+            "defaultValue": "null",
+            "notes": "**Notes**: 输出的液体"
+        },
+        {
+            "name": "attribute",
+            "type": "Attribute",
+            "localizedName": "环境属性",
+            "defaultValue": "heat",
+            "notes": "**Notes**: 依赖的环境属性"
+        }
+    ]
+}

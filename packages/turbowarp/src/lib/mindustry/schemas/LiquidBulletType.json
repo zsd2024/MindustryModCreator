@@ -1,0 +1,30 @@
+{
+    "type": "LiquidBulletType",
+    "parentType": "BulletType",
+    "fields": [
+        {
+            "name": "liquid",
+            "type": "Liquid",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "puddleSize",
+            "type": "float",
+            "defaultValue": "6.0",
+            "notes": ""
+        },
+        {
+            "name": "orbSize",
+            "type": "float",
+            "defaultValue": "3.0",
+            "notes": ""
+        },
+        {
+            "name": "boilTime",
+            "type": "float",
+            "defaultValue": "5.0",
+            "notes": ""
+        }
+    ]
+}

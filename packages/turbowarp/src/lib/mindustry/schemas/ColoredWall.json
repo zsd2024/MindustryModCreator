@@ -1,0 +1,12 @@
+{
+    "type": "ColoredWall",
+    "parentType": "StaticWall",
+    "fields": [
+        {
+            "name": "defaultColor",
+            "type": "Color",
+            "defaultValue": "ffffffff",
+            "notes": ""
+        }
+    ]
+}

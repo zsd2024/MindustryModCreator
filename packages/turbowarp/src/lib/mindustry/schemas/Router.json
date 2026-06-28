@@ -1,0 +1,12 @@
+{
+    "type": "Router",
+    "parentType": "Block",
+    "fields": [
+        {
+            "name": "speed",
+            "type": "float",
+            "defaultValue": "8.0",
+            "notes": ""
+        }
+    ]
+}

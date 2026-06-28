@@ -1,0 +1,174 @@
+{
+    "type": "ParticleEffect",
+    "parentType": "Effect",
+    "fields": [
+        {
+            "name": "colorFrom",
+            "type": "Color",
+            "defaultValue": "ffffffff",
+            "notes": ""
+        },
+        {
+            "name": "colorTo",
+            "type": "Color",
+            "defaultValue": "ffffffff",
+            "notes": ""
+        },
+        {
+            "name": "particles",
+            "type": "int",
+            "defaultValue": "6",
+            "notes": ""
+        },
+        {
+            "name": "randLength",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": ""
+        },
+        {
+            "name": "casingFlip",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "Gives the effect flipping compatability like casing effects."
+        },
+        {
+            "name": "cone",
+            "type": "float",
+            "defaultValue": "180.0",
+            "notes": ""
+        },
+        {
+            "name": "length",
+            "type": "float",
+            "defaultValue": "20.0",
+            "notes": ""
+        },
+        {
+            "name": "baseLength",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": ""
+        },
+        {
+            "name": "interp",
+            "type": "Interp",
+            "defaultValue": "linear",
+            "notes": "Particle size/length/radius interpolation."
+        },
+        {
+            "name": "sizeInterp",
+            "type": "Interp",
+            "defaultValue": "null",
+            "notes": "Particle size interpolation. Null to use interp."
+        },
+        {
+            "name": "offsetX",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": ""
+        },
+        {
+            "name": "offsetY",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": ""
+        },
+        {
+            "name": "lightScl",
+            "type": "float",
+            "defaultValue": "2.0",
+            "notes": ""
+        },
+        {
+            "name": "lightOpacity",
+            "type": "float",
+            "defaultValue": "0.6",
+            "notes": ""
+        },
+        {
+            "name": "lightColor",
+            "type": "Color",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "spin",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "Spin in degrees per tick."
+        },
+        {
+            "name": "sizeFrom",
+            "type": "float",
+            "defaultValue": "2.0",
+            "notes": "Controls the initial and final sprite sizes."
+        },
+        {
+            "name": "sizeTo",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "Controls the initial and final sprite sizes."
+        },
+        {
+            "name": "sizeChangeStart",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "Controls the amount of ticks the effect waits before changing size."
+        },
+        {
+            "name": "useRotation",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "Whether the rotation adds with the parent"
+        },
+        {
+            "name": "offset",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "Rotation offset."
+        },
+        {
+            "name": "region",
+            "type": "String",
+            "defaultValue": "\"circle\"",
+            "notes": "Sprite to draw."
+        },
+        {
+            "name": "line",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": ""
+        },
+        {
+            "name": "strokeFrom",
+            "type": "float",
+            "defaultValue": "2.0",
+            "notes": ""
+        },
+        {
+            "name": "strokeTo",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": ""
+        },
+        {
+            "name": "lenFrom",
+            "type": "float",
+            "defaultValue": "4.0",
+            "notes": ""
+        },
+        {
+            "name": "lenTo",
+            "type": "float",
+            "defaultValue": "2.0",
+            "notes": ""
+        },
+        {
+            "name": "cap",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": ""
+        }
+    ]
+}

@@ -1,0 +1,21 @@
+{
+    "type": "Sorter",
+    "parentType": "Block",
+    "localizedName": "分类器",
+    "fields": [
+        {
+            "name": "cross",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "localizedName": "交叉纹理",
+            "notes": "**Notes**: 分类器交叉纹理区域。"
+        },
+        {
+            "name": "invert",
+            "type": "boolean",
+            "defaultValue": "false",
+            "localizedName": "反转逻辑",
+            "notes": "**Notes**: 是否反转分类逻辑。"
+        }
+    ]
+}

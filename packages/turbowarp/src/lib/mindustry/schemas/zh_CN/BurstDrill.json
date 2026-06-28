@@ -1,0 +1,119 @@
+{
+    "type": "BurstDrill",
+    "parentType": "Drill",
+    "localizedName": "脉冲钻头",
+    "fields": [
+        {
+            "name": "shake",
+            "type": "float",
+            "defaultValue": "2.0",
+            "notes": "**Notes**: 屏幕震动强度",
+            "localizedName": "屏幕震动强度"
+        },
+        {
+            "name": "speedCurve",
+            "type": "Interp",
+            "defaultValue": "pow2In",
+            "notes": "**Notes**: 速度曲线插值函数",
+            "localizedName": "速度曲线插值"
+        },
+        {
+            "name": "topInvertRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": "**Notes**: 顶部反色纹理区域",
+            "localizedName": "顶部反色纹理"
+        },
+        {
+            "name": "glowRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": "**Notes**: 发光纹理区域",
+            "localizedName": "发光纹理"
+        },
+        {
+            "name": "arrowRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": "**Notes**: 箭头纹理区域",
+            "localizedName": "箭头纹理"
+        },
+        {
+            "name": "arrowBlurRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": "**Notes**: 箭头模糊纹理区域",
+            "localizedName": "箭头模糊纹理"
+        },
+        {
+            "name": "invertedTime",
+            "type": "float",
+            "defaultValue": "200.0",
+            "notes": "**Notes**: 反色持续时间",
+            "localizedName": "反色持续时间"
+        },
+        {
+            "name": "arrowSpacing",
+            "type": "float",
+            "defaultValue": "4.0",
+            "notes": "**Notes**: 箭头间距",
+            "localizedName": "箭头间距"
+        },
+        {
+            "name": "arrowOffset",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "**Notes**: 箭头偏移量",
+            "localizedName": "箭头偏移量"
+        },
+        {
+            "name": "arrows",
+            "type": "int",
+            "defaultValue": "3",
+            "notes": "**Notes**: 每边箭头数量",
+            "localizedName": "每边箭头数量"
+        },
+        {
+            "name": "arrowColor",
+            "type": "Color",
+            "defaultValue": "feb380ff",
+            "notes": "**Notes**: 箭头颜色",
+            "localizedName": "箭头颜色"
+        },
+        {
+            "name": "baseArrowColor",
+            "type": "Color",
+            "defaultValue": "6e7080ff",
+            "notes": "**Notes**: 基础箭头颜色",
+            "localizedName": "基础箭头颜色"
+        },
+        {
+            "name": "glowColor",
+            "type": "Color",
+            "defaultValue": "feb380ff",
+            "notes": "**Notes**: 发光颜色",
+            "localizedName": "发光颜色"
+        },
+        {
+            "name": "drillSound",
+            "type": "Sound",
+            "defaultValue": "drillImpact",
+            "notes": "**Notes**: 钻取音效",
+            "localizedName": "钻取音效"
+        },
+        {
+            "name": "drillSoundVolume",
+            "type": "float",
+            "defaultValue": "0.6",
+            "notes": "**Notes**: 钻取音效音量",
+            "localizedName": "钻取音效音量"
+        },
+        {
+            "name": "drillSoundPitchRand",
+            "type": "float",
+            "defaultValue": "0.1",
+            "notes": "**Notes**: 钻取音效音调随机范围",
+            "localizedName": "钻取音调随机范围"
+        }
+    ]
+}

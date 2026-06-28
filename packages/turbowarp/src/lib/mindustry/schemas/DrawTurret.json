@@ -1,0 +1,78 @@
+{
+    "type": "DrawTurret",
+    "parentType": "DrawBlock",
+    "fields": [
+        {
+            "name": "parts",
+            "type": "Seq of DrawPart",
+            "defaultValue": "[]",
+            "notes": ""
+        },
+        {
+            "name": "basePrefix",
+            "type": "String",
+            "defaultValue": "\"\"",
+            "notes": "Prefix to use when loading base region."
+        },
+        {
+            "name": "liquidDraw",
+            "type": "Liquid",
+            "defaultValue": "null",
+            "notes": "Overrides the liquid to draw in the liquid region."
+        },
+        {
+            "name": "turretLayer",
+            "type": "float",
+            "defaultValue": "50.0",
+            "notes": ""
+        },
+        {
+            "name": "shadowLayer",
+            "type": "float",
+            "defaultValue": "49.5",
+            "notes": ""
+        },
+        {
+            "name": "heatLayer",
+            "type": "float",
+            "defaultValue": "50.1",
+            "notes": ""
+        },
+        {
+            "name": "base",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "liquid",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "top",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "heat",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "preview",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "outline",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        }
+    ]
+}

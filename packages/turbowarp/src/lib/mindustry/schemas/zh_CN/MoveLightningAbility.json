@@ -1,0 +1,119 @@
+{
+    "type": "MoveLightningAbility",
+    "parentType": "Ability",
+    "localizedName": "移动闪电能力",
+    "fields": [
+        {
+            "name": "damage",
+            "localizedName": "闪电伤害",
+            "type": "float",
+            "defaultValue": "35.0",
+            "notes": "闪电伤害\n\n**Notes**: 闪电伤害"
+        },
+        {
+            "name": "chance",
+            "localizedName": "触发概率",
+            "type": "float",
+            "defaultValue": "0.15",
+            "notes": "每 tick 触发概率。设置为 >= 1 可在最大速度下每 tick 必定触发闪电。\n\n**Notes**: 触发概率"
+        },
+        {
+            "name": "length",
+            "localizedName": "闪电长度",
+            "type": "int",
+            "defaultValue": "12",
+            "notes": "闪电长度。<= 0 禁用。\n\n**Notes**: 闪电长度"
+        },
+        {
+            "name": "minSpeed",
+            "localizedName": "最小速度",
+            "type": "float",
+            "defaultValue": "0.8",
+            "notes": "开始触发闪电的速度和停止加速的速度。\n\n**Notes**: 最小触发速度"
+        },
+        {
+            "name": "maxSpeed",
+            "localizedName": "最大速度",
+            "type": "float",
+            "defaultValue": "1.2",
+            "notes": "开始触发闪电的速度和停止加速的速度。\n\n**Notes**: 最大速度"
+        },
+        {
+            "name": "color",
+            "localizedName": "闪电颜色",
+            "type": "Color",
+            "defaultValue": "a9d8ffff",
+            "notes": "闪电颜色\n\n**Notes**: 闪电颜色"
+        },
+        {
+            "name": "y",
+            "localizedName": "Y轴偏移",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "沿 Y 轴偏移闪电生成位置。\n\n**Notes**: Y 轴偏移"
+        },
+        {
+            "name": "x",
+            "localizedName": "X轴偏移",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "沿 X 轴偏移。\n\n**Notes**: X 轴偏移"
+        },
+        {
+            "name": "alternate",
+            "localizedName": "交替侧",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "生成侧是否交替。\n\n**Notes**: 是否交替侧"
+        },
+        {
+            "name": "heatRegion",
+            "localizedName": "热浪纹理",
+            "type": "String",
+            "defaultValue": "\"error\"",
+            "notes": "抖动热浪纹理，类似 v5 Javelin 的护盾。\n\n**Notes**: 热浪纹理名称"
+        },
+        {
+            "name": "bullet",
+            "localizedName": "子弹类型",
+            "type": "BulletType",
+            "defaultValue": "null",
+            "notes": "发射的子弹类型。可为 null。\n\n**Notes**: 子弹类型"
+        },
+        {
+            "name": "bulletAngle",
+            "localizedName": "子弹角度",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "子弹角度参数\n\n**Notes**: 子弹角度"
+        },
+        {
+            "name": "bulletSpread",
+            "localizedName": "子弹散布",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "子弹角度参数\n\n**Notes**: 子弹散布"
+        },
+        {
+            "name": "shootEffect",
+            "localizedName": "射击特效",
+            "type": "Effect",
+            "defaultValue": "sparkShoot",
+            "notes": "**Notes**: 射击效果"
+        },
+        {
+            "name": "parentizeEffects",
+            "localizedName": "继承父级",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "**Notes**: 效果是否继承父级"
+        },
+        {
+            "name": "shootSound",
+            "localizedName": "射击音效",
+            "type": "Sound",
+            "defaultValue": "shootArc",
+            "notes": "**Notes**: 射击音效"
+        }
+    ]
+}

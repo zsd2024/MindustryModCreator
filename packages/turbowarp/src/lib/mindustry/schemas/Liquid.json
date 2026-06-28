@@ -1,0 +1,138 @@
+{
+    "type": "Liquid",
+    "parentType": "UnlockableContent",
+    "fields": [
+        {
+            "name": "gas",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "If true, this fluid is treated as a gas (and does not create puddles)"
+        },
+        {
+            "name": "color",
+            "type": "Color",
+            "defaultValue": "000000ff",
+            "notes": "Color used in pipes and on the ground."
+        },
+        {
+            "name": "gasColor",
+            "type": "Color",
+            "defaultValue": "bfbfbfff",
+            "notes": "Color of this liquid in gas form."
+        },
+        {
+            "name": "barColor",
+            "type": "Color",
+            "defaultValue": "null",
+            "notes": "Color used in bars."
+        },
+        {
+            "name": "lightColor",
+            "type": "Color",
+            "defaultValue": "00000000",
+            "notes": "Color used to draw lights. Note that the alpha channel is used to dictate brightness."
+        },
+        {
+            "name": "flammability",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "0-1, 0 is completely not flammable, anything above that may catch fire when exposed to heat, 0.5+ is very flammable."
+        },
+        {
+            "name": "temperature",
+            "type": "float",
+            "defaultValue": "0.5",
+            "notes": "temperature: 0.5 is 'room' temperature, 0 is very cold, 1 is molten hot"
+        },
+        {
+            "name": "heatCapacity",
+            "type": "float",
+            "defaultValue": "0.5",
+            "notes": "how much heat this liquid can store. 0.4=water (decent), anything lower is probably less dense and bad at cooling."
+        },
+        {
+            "name": "viscosity",
+            "type": "float",
+            "defaultValue": "0.5",
+            "notes": "how thick this liquid is. 0.5=water (relatively viscous), 1 would be something like tar (very slow)."
+        },
+        {
+            "name": "explosiveness",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "how prone to exploding this liquid is, when heated. 0 = nothing, 1 = nuke"
+        },
+        {
+            "name": "blockReactive",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "whether this fluid reacts in blocks at all (e.g. slag with water)"
+        },
+        {
+            "name": "coolant",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "if false, this liquid cannot be a coolant"
+        },
+        {
+            "name": "moveThroughBlocks",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "if true, this liquid can move through blocks as a puddle."
+        },
+        {
+            "name": "incinerable",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "if true, this liquid can be incinerated in the incinerator block."
+        },
+        {
+            "name": "effect",
+            "type": "StatusEffect",
+            "defaultValue": "none",
+            "notes": "The associated status effect."
+        },
+        {
+            "name": "particleEffect",
+            "type": "Effect",
+            "defaultValue": "none",
+            "notes": "Effect shown in puddles."
+        },
+        {
+            "name": "particleSpacing",
+            "type": "float",
+            "defaultValue": "60.0",
+            "notes": "Particle effect rate spacing in ticks."
+        },
+        {
+            "name": "boilPoint",
+            "type": "float",
+            "defaultValue": "2.0",
+            "notes": "Temperature at which this liquid vaporizes. This isn't just boiling."
+        },
+        {
+            "name": "capPuddles",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "If true, puddle size is capped."
+        },
+        {
+            "name": "vaporEffect",
+            "type": "Effect",
+            "defaultValue": "vapor",
+            "notes": "Effect when this liquid vaporizes."
+        },
+        {
+            "name": "hidden",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "If true, this liquid is hidden in most UI."
+        },
+        {
+            "name": "canStayOn",
+            "type": "ObjectSet of Liquid",
+            "defaultValue": "new ObjectSet<>()",
+            "notes": "Liquids this puddle can stay on, e.g. oil on water."
+        }
+    ]
+}

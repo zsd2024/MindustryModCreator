@@ -1,0 +1,30 @@
+{
+    "type": "DrawLiquidRegion",
+    "parentType": "DrawBlock",
+    "fields": [
+        {
+            "name": "drawLiquid",
+            "type": "Liquid",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "liquid",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "suffix",
+            "type": "String",
+            "defaultValue": "\"-liquid\"",
+            "notes": ""
+        },
+        {
+            "name": "alpha",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": ""
+        }
+    ]
+}

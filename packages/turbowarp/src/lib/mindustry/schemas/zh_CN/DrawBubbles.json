@@ -1,0 +1,70 @@
+{
+    "localizedName": "气泡绘制",
+    "type": "DrawBubbles",
+    "parentType": "DrawBlock",
+    "fields": [
+        {
+            "name": "color",
+            "localizedName": "气泡颜色",
+            "type": "Color",
+            "defaultValue": "7457ceff",
+            "notes": "**Notes**: 气泡的颜色。"
+        },
+        {
+            "name": "amount",
+            "localizedName": "气泡数量",
+            "type": "int",
+            "defaultValue": "12",
+            "notes": "**Notes**: 气泡的数量。"
+        },
+        {
+            "name": "sides",
+            "localizedName": "多边形边数",
+            "type": "int",
+            "defaultValue": "8",
+            "notes": "**Notes**: 气泡多边形的边数。"
+        },
+        {
+            "name": "strokeMin",
+            "localizedName": "最小描边",
+            "type": "float",
+            "defaultValue": "0.2",
+            "notes": "**Notes**: 气泡的最小描边宽度。"
+        },
+        {
+            "name": "spread",
+            "localizedName": "扩散范围",
+            "type": "float",
+            "defaultValue": "3.0",
+            "notes": "**Notes**: 气泡的随机扩散范围。"
+        },
+        {
+            "name": "timeScl",
+            "localizedName": "时间缩放",
+            "type": "float",
+            "defaultValue": "30.0",
+            "notes": "**Notes**: 气泡动画的时间缩放。"
+        },
+        {
+            "name": "recurrence",
+            "localizedName": "重复周期",
+            "type": "float",
+            "defaultValue": "6.0",
+            "notes": "**Notes**: 气泡动画的重复周期。"
+        },
+        {
+            "name": "radius",
+            "localizedName": "最大半径",
+            "type": "float",
+            "defaultValue": "3.0",
+            "notes": "**Notes**: 气泡的最大半径。"
+        },
+        {
+            "name": "fill",
+            "localizedName": "填充模式",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "**Notes**: 是否填充气泡（而非仅描边）。"
+        }
+    ]
+}

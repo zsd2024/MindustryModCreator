@@ -1,0 +1,77 @@
+{
+    "type": "FireBulletType",
+    "parentType": "BulletType",
+    "localizedName": "火焰子弹类型",
+    "fields": [
+        {
+            "name": "colorFrom",
+            "type": "Color",
+            "localizedName": "起始颜色",
+            "defaultValue": "ffdd55ff",
+            "notes": "起始颜色"
+        },
+        {
+            "name": "colorMid",
+            "type": "Color",
+            "localizedName": "中间颜色",
+            "defaultValue": "db401cff",
+            "notes": "中间颜色"
+        },
+        {
+            "name": "colorTo",
+            "type": "Color",
+            "localizedName": "结束颜色",
+            "defaultValue": "7f7f7fff",
+            "notes": "结束颜色"
+        },
+        {
+            "name": "radius",
+            "type": "float",
+            "localizedName": "火球半径",
+            "defaultValue": "3.0",
+            "notes": "火球半径"
+        },
+        {
+            "name": "velMin",
+            "type": "float",
+            "localizedName": "最小速度",
+            "defaultValue": "0.6",
+            "notes": "最小速度"
+        },
+        {
+            "name": "velMax",
+            "type": "float",
+            "localizedName": "最大速度",
+            "defaultValue": "2.6",
+            "notes": "最大速度"
+        },
+        {
+            "name": "fireTrailChance",
+            "type": "float",
+            "localizedName": "火焰拖尾生成概率",
+            "defaultValue": "0.04",
+            "notes": "火焰拖尾生成概率"
+        },
+        {
+            "name": "trailEffect2",
+            "type": "Effect",
+            "localizedName": "第二种拖尾效果",
+            "defaultValue": "ballfire",
+            "notes": "第二种拖尾效果"
+        },
+        {
+            "name": "fireEffectChance",
+            "type": "float",
+            "localizedName": "火焰效果概率",
+            "defaultValue": "0.1",
+            "notes": "火焰效果概率"
+        },
+        {
+            "name": "fireEffectChance2",
+            "type": "float",
+            "localizedName": "第二种火焰效果概率",
+            "defaultValue": "0.1",
+            "notes": "第二种火焰效果概率"
+        }
+    ]
+}

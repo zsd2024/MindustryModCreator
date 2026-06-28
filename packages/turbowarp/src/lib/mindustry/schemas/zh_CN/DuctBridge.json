@@ -1,0 +1,14 @@
+{
+    "localizedName": "管道桥梁",
+    "type": "DuctBridge",
+    "parentType": "DirectionBridge",
+    "fields": [
+        {
+            "name": "speed",
+            "localizedName": "传输速度",
+            "type": "float",
+            "defaultValue": "5.0",
+            "notes": "**Notes**: 物品传输间隔时间"
+        }
+    ]
+}

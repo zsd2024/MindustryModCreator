@@ -1,0 +1,30 @@
+{
+    "type": "TileableLogicDisplay",
+    "parentType": "LogicDisplay",
+    "fields": [
+        {
+            "name": "maxDisplayDimensions",
+            "type": "int",
+            "defaultValue": "16",
+            "notes": ""
+        },
+        {
+            "name": "tileRegion",
+            "type": "TextureRegion[]",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "backRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "frameSize",
+            "type": "int",
+            "defaultValue": "6",
+            "notes": ""
+        }
+    ]
+}

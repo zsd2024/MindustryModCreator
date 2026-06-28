@@ -1,0 +1,84 @@
+{
+    "type": "RainWeather",
+    "parentType": "Weather",
+    "localizedName": "雨天天气",
+    "fields": [
+        {
+            "name": "yspeed",
+            "type": "float",
+            "defaultValue": "5.0",
+            "localizedName": "Y轴速度",
+            "notes": "**Notes**: 雨滴在Y轴方向的速度。"
+        },
+        {
+            "name": "xspeed",
+            "type": "float",
+            "defaultValue": "1.5",
+            "localizedName": "X轴速度",
+            "notes": "**Notes**: 雨滴在X轴方向的速度。"
+        },
+        {
+            "name": "padding",
+            "type": "float",
+            "defaultValue": "16.0",
+            "localizedName": "生成偏移",
+            "notes": "**Notes**: 雨滴生成区域的偏移量。"
+        },
+        {
+            "name": "density",
+            "type": "float",
+            "defaultValue": "1200.0",
+            "localizedName": "密度",
+            "notes": "**Notes**: 雨滴的密度（数量）。"
+        },
+        {
+            "name": "stroke",
+            "type": "float",
+            "defaultValue": "0.75",
+            "localizedName": "描边宽度",
+            "notes": "**Notes**: 雨滴线条的描边宽度。"
+        },
+        {
+            "name": "sizeMin",
+            "type": "float",
+            "defaultValue": "8.0",
+            "localizedName": "最小尺寸",
+            "notes": "**Notes**: 雨滴的最小尺寸。"
+        },
+        {
+            "name": "sizeMax",
+            "type": "float",
+            "defaultValue": "40.0",
+            "localizedName": "最大尺寸",
+            "notes": "**Notes**: 雨滴的最大尺寸。"
+        },
+        {
+            "name": "splashTimeScale",
+            "type": "float",
+            "defaultValue": "22.0",
+            "localizedName": "溅射时间缩放",
+            "notes": "**Notes**: 溅射效果的时间缩放。"
+        },
+        {
+            "name": "liquid",
+            "type": "Liquid",
+            "defaultValue": "water",
+            "localizedName": "液体类型",
+            "notes": "**Notes**: 雨使用的液体类型。"
+        },
+        {
+            "name": "splashes",
+            "type": "TextureRegion[]",
+            "defaultValue": "[null, null, null, null, null, null, null, null, null, null, null, null]",
+            "localizedName": "溅射纹理",
+            "notes": "**Notes**: 运行时加载的溅射纹理数组。"
+        },
+        {
+            "name": "color",
+            "type": "Color",
+            "defaultValue": "7a95eaff",
+            "localizedName": "颜色",
+            "notes": "**Notes**: 雨滴的颜色。"
+        }
+    ]
+}

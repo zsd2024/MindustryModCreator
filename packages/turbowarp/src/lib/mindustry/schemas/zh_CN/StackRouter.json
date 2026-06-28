@@ -1,0 +1,35 @@
+{
+    "type": "StackRouter",
+    "parentType": "DuctRouter",
+    "localizedName": "堆叠路由器",
+    "fields": [
+        {
+            "name": "baseEfficiency",
+            "type": "float",
+            "defaultValue": "0.0",
+            "localizedName": "基础效率",
+            "notes": "**Notes**: 基础效率"
+        },
+        {
+            "name": "glowRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "localizedName": "发光纹理",
+            "notes": "**Notes**: 发光纹理区域"
+        },
+        {
+            "name": "glowAlpha",
+            "type": "float",
+            "defaultValue": "1.0",
+            "localizedName": "发光透明度",
+            "notes": "**Notes**: 发光透明度"
+        },
+        {
+            "name": "glowColor",
+            "type": "Color",
+            "defaultValue": "feb380ff",
+            "localizedName": "发光颜色",
+            "notes": "**Notes**: 发光颜色"
+        }
+    ]
+}

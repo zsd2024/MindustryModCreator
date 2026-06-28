@@ -1,0 +1,24 @@
+{
+    "type": "LiquidBlock",
+    "parentType": "Block",
+    "fields": [
+        {
+            "name": "liquidRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "topRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "bottomRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        }
+    ]
+}

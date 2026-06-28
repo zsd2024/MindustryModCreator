@@ -1,0 +1,12 @@
+{
+    "type": "PayloadAmmoTurret",
+    "parentType": "Turret",
+    "fields": [
+        {
+            "name": "ammoTypes",
+            "type": "ObjectMap of UnlockableContent, BulletType",
+            "defaultValue": "new ObjectMap<>()",
+            "notes": ""
+        }
+    ]
+}

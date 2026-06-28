@@ -1,0 +1,36 @@
+{
+    "type": "SpawnDeathAbility",
+    "parentType": "Ability",
+    "fields": [
+        {
+            "name": "unit",
+            "type": "UnitType",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "amount",
+            "type": "int",
+            "defaultValue": "1",
+            "notes": ""
+        },
+        {
+            "name": "randAmount",
+            "type": "int",
+            "defaultValue": "0",
+            "notes": ""
+        },
+        {
+            "name": "spread",
+            "type": "float",
+            "defaultValue": "8.0",
+            "notes": "Random spread of units away from the spawned."
+        },
+        {
+            "name": "faceOutwards",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "If true, units spawned face outwards from the middle."
+        }
+    ]
+}

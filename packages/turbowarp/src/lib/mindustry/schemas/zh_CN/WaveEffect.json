@@ -1,0 +1,112 @@
+{
+    "type": "WaveEffect",
+    "parentType": "Effect",
+    "localizedName": "冲击波效果",
+    "fields": [
+        {
+            "name": "colorFrom",
+            "type": "Color",
+            "localizedName": "起始颜色",
+            "defaultValue": "ffffffff",
+            "notes": "**Notes**: 冲击波的起始颜色，在效果生命周期内通过插值渐变至colorTo。"
+        },
+        {
+            "name": "colorTo",
+            "type": "Color",
+            "localizedName": "结束颜色",
+            "defaultValue": "ffffffff",
+            "notes": "**Notes**: 冲击波的结束颜色，与colorFrom配合实现颜色渐变过渡。"
+        },
+        {
+            "name": "lightColor",
+            "type": "Color",
+            "localizedName": "光照颜色",
+            "defaultValue": "null",
+            "notes": "**Notes**: 可选的光照颜色，若为null则使用当前绘图颜色作为光源色。"
+        },
+        {
+            "name": "sizeFrom",
+            "type": "float",
+            "localizedName": "起始半径",
+            "defaultValue": "0.0",
+            "notes": "**Notes**: 冲击波的起始半径（像素），效果开始时的大小。"
+        },
+        {
+            "name": "sizeTo",
+            "type": "float",
+            "localizedName": "结束半径",
+            "defaultValue": "100.0",
+            "notes": "**Notes**: 冲击波的结束半径（像素），效果结束时扩展到该大小，默认100像素。"
+        },
+        {
+            "name": "lightScl",
+            "type": "float",
+            "localizedName": "光照半径缩放",
+            "defaultValue": "3.0",
+            "notes": "**Notes**: 光照半径相对于冲击波半径的缩放倍数，光照范围 = 波半径 * lightScl。"
+        },
+        {
+            "name": "lightOpacity",
+            "type": "float",
+            "localizedName": "光照透明度",
+            "defaultValue": "0.8",
+            "notes": "**Notes**: 光照的透明度，通过lightInterp插值后乘以该值作为最终透明度。"
+        },
+        {
+            "name": "sides",
+            "type": "int",
+            "localizedName": "多边形边数",
+            "defaultValue": "-1",
+            "notes": "**Notes**: 多边形边数，-1表示使用圆形（根据半径自动计算顶点数），正数则绘制正多边形冲击波。"
+        },
+        {
+            "name": "rotation",
+            "type": "float",
+            "localizedName": "额外旋转角度",
+            "defaultValue": "0.0",
+            "notes": "**Notes**: 多边形的额外旋转角度（度），叠加在效果的rotation之上。"
+        },
+        {
+            "name": "strokeFrom",
+            "type": "float",
+            "localizedName": "起始描边宽度",
+            "defaultValue": "2.0",
+            "notes": "**Notes**: 描边的起始宽度（像素），效果开始时线条的粗细。"
+        },
+        {
+            "name": "strokeTo",
+            "type": "float",
+            "localizedName": "结束描边宽度",
+            "defaultValue": "0.0",
+            "notes": "**Notes**: 描边的结束宽度（像素），效果结束时线条逐渐消失。"
+        },
+        {
+            "name": "interp",
+            "type": "Interp",
+            "localizedName": "主插值函数",
+            "defaultValue": "linear",
+            "notes": "**Notes**: 主插值函数，控制半径和描边的动画曲线（默认线性）。"
+        },
+        {
+            "name": "lightInterp",
+            "type": "Interp",
+            "localizedName": "光照插值函数",
+            "defaultValue": "reverse",
+            "notes": "**Notes**: 光照透明度的插值函数，默认reverse使得光照较早淡出。"
+        },
+        {
+            "name": "offsetX",
+            "type": "float",
+            "localizedName": "中心X偏移",
+            "defaultValue": "0.0",
+            "notes": "**Notes**: 效果中心的X轴偏移量（像素），基于效果的旋转方向进行偏移变换。"
+        },
+        {
+            "name": "offsetY",
+            "type": "float",
+            "localizedName": "中心Y偏移",
+            "defaultValue": "0.0",
+            "notes": "**Notes**: 效果中心的Y轴偏移量（像素），与offsetX一起通过角度变换计算最终绘制位置。"
+        }
+    ]
+}

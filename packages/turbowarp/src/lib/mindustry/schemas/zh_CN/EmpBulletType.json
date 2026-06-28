@@ -1,0 +1,77 @@
+{
+    "type": "EmpBulletType",
+    "parentType": "BasicBulletType",
+    "localizedName": "EMP子弹类型",
+    "fields": [
+        {
+            "name": "radius",
+            "type": "float",
+            "localizedName": "作用半径",
+            "defaultValue": "100.0",
+            "notes": "EMP作用半径"
+        },
+        {
+            "name": "timeIncrease",
+            "type": "float",
+            "localizedName": "时间倍率增加量",
+            "defaultValue": "2.5",
+            "notes": "时间倍率增加量"
+        },
+        {
+            "name": "timeDuration",
+            "type": "float",
+            "localizedName": "时间倍率持续时间",
+            "defaultValue": "600.0",
+            "notes": "时间倍率持续时间"
+        },
+        {
+            "name": "powerDamageScl",
+            "type": "float",
+            "localizedName": "电力伤害缩放",
+            "defaultValue": "2.0",
+            "notes": "电力伤害缩放"
+        },
+        {
+            "name": "powerSclDecrease",
+            "type": "float",
+            "localizedName": "电力缩放衰减",
+            "defaultValue": "0.2",
+            "notes": "电力缩放衰减"
+        },
+        {
+            "name": "hitPowerEffect",
+            "type": "Effect",
+            "localizedName": "击中电力效果",
+            "defaultValue": "hitEmpSpark",
+            "notes": "击中电力效果"
+        },
+        {
+            "name": "chainEffect",
+            "type": "Effect",
+            "localizedName": "连锁效果",
+            "defaultValue": "chainEmp",
+            "notes": "连锁效果"
+        },
+        {
+            "name": "applyEffect",
+            "type": "Effect",
+            "localizedName": "应用效果",
+            "defaultValue": "heal",
+            "notes": "应用效果"
+        },
+        {
+            "name": "hitUnits",
+            "type": "boolean",
+            "localizedName": "是否击中单位",
+            "defaultValue": "true",
+            "notes": "是否击中单位"
+        },
+        {
+            "name": "unitDamageScl",
+            "type": "float",
+            "localizedName": "单位伤害缩放",
+            "defaultValue": "0.7",
+            "notes": "单位伤害缩放"
+        }
+    ]
+}

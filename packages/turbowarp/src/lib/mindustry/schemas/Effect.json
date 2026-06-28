@@ -1,0 +1,66 @@
+{
+    "type": "Effect",
+    "parentType": "Object",
+    "fields": [
+        {
+            "name": "id",
+            "type": "int",
+            "defaultValue": "426",
+            "notes": ""
+        },
+        {
+            "name": "renderer",
+            "type": "Cons of EffectContainer",
+            "defaultValue": "{code}",
+            "notes": ""
+        },
+        {
+            "name": "lifetime",
+            "type": "float",
+            "defaultValue": "50.0",
+            "notes": ""
+        },
+        {
+            "name": "clip",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "Clip size."
+        },
+        {
+            "name": "startDelay",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "Time delay before the effect starts"
+        },
+        {
+            "name": "baseRotation",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "Amount added to rotation"
+        },
+        {
+            "name": "followParent",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "If true, parent unit is data are followed."
+        },
+        {
+            "name": "rotWithParent",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "If this and followParent are true, the effect will offset and rotate with the parent's rotation."
+        },
+        {
+            "name": "layer",
+            "type": "float",
+            "defaultValue": "110.0",
+            "notes": ""
+        },
+        {
+            "name": "layerDuration",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": ""
+        }
+    ]
+}

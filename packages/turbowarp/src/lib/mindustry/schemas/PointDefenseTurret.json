@@ -1,0 +1,72 @@
+{
+    "type": "PointDefenseTurret",
+    "parentType": "ReloadTurret",
+    "fields": [
+        {
+            "name": "timerTarget",
+            "type": "int",
+            "defaultValue": "1",
+            "notes": ""
+        },
+        {
+            "name": "retargetTime",
+            "type": "float",
+            "defaultValue": "5.0",
+            "notes": ""
+        },
+        {
+            "name": "baseRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "color",
+            "type": "Color",
+            "defaultValue": "ffffffff",
+            "notes": ""
+        },
+        {
+            "name": "beamEffect",
+            "type": "Effect",
+            "defaultValue": "pointBeam",
+            "notes": ""
+        },
+        {
+            "name": "hitEffect",
+            "type": "Effect",
+            "defaultValue": "pointHit",
+            "notes": ""
+        },
+        {
+            "name": "shootEffect",
+            "type": "Effect",
+            "defaultValue": "sparkShoot",
+            "notes": ""
+        },
+        {
+            "name": "shootSound",
+            "type": "Sound",
+            "defaultValue": "shootSegment",
+            "notes": ""
+        },
+        {
+            "name": "shootCone",
+            "type": "float",
+            "defaultValue": "5.0",
+            "notes": ""
+        },
+        {
+            "name": "bulletDamage",
+            "type": "float",
+            "defaultValue": "10.0",
+            "notes": ""
+        },
+        {
+            "name": "shootLength",
+            "type": "float",
+            "defaultValue": "3.0",
+            "notes": ""
+        }
+    ]
+}

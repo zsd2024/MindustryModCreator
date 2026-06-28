@@ -1,0 +1,12 @@
+{
+    "type": "DrawLiquidOutputs",
+    "parentType": "DrawBlock",
+    "fields": [
+        {
+            "name": "liquidOutputRegions",
+            "type": "TextureRegion[][]",
+            "defaultValue": "null",
+            "notes": ""
+        }
+    ]
+}

@@ -1,0 +1,56 @@
+{
+    "localizedName": "消耗发电机",
+    "type": "ConsumeGenerator",
+    "parentType": "PowerGenerator",
+    "fields": [
+        {
+            "name": "itemDuration",
+            "localizedName": "物品持续时间",
+            "type": "float",
+            "defaultValue": "60.0",
+            "notes": "一个物品可燃烧的持续时间。\n\n**Notes**: 单个物品燃烧持续时间。"
+        },
+        {
+            "name": "minEfficiency",
+            "localizedName": "最低效率",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "**Notes**: 最低效率阈值。"
+        },
+        {
+            "name": "efficiencyScale",
+            "localizedName": "效率缩放",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": "**Notes**: 效率缩放系数。"
+        },
+        {
+            "name": "baseEfficiency",
+            "localizedName": "基础效率",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "不燃烧物品的基础效率。\n\n**Notes**: 基础效率。"
+        },
+        {
+            "name": "displayEfficiency",
+            "localizedName": "显示效率",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "**Notes**: 是否在界面中显示效率。"
+        },
+        {
+            "name": "displayEfficiencyScale",
+            "localizedName": "显示效率缩放",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "**Notes**: 是否显示效率缩放信息。"
+        },
+        {
+            "name": "itemEffect",
+            "localizedName": "物品特效",
+            "type": "Effect",
+            "defaultValue": "none",
+            "notes": "物品燃烧时的特效。\n\n**Notes**: 燃烧物品时的特效。"
+        }
+    ]
+}

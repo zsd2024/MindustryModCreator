@@ -1,0 +1,126 @@
+{
+    "type": "CoreBlock",
+    "parentType": "StorageBlock",
+    "fields": [
+        {
+            "name": "thruster1",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "thruster2",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "thrusterLength",
+            "type": "float",
+            "defaultValue": "3.5",
+            "notes": ""
+        },
+        {
+            "name": "thrusterOffset",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": ""
+        },
+        {
+            "name": "isFirstTier",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": ""
+        },
+        {
+            "name": "allowSpawn",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "If false, players can't respawn at this core."
+        },
+        {
+            "name": "requiresCoreZone",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "If true, this core type requires a core zone to upgrade."
+        },
+        {
+            "name": "incinerateNonBuildable",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": ""
+        },
+        {
+            "name": "unitType",
+            "type": "UnitType",
+            "defaultValue": "alpha",
+            "notes": ""
+        },
+        {
+            "name": "landDuration",
+            "type": "float",
+            "defaultValue": "160.0",
+            "notes": ""
+        },
+        {
+            "name": "landMusic",
+            "type": "Music",
+            "defaultValue": "land",
+            "notes": ""
+        },
+        {
+            "name": "launchSoundVolume",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": ""
+        },
+        {
+            "name": "landSoundVolume",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": ""
+        },
+        {
+            "name": "launchSound",
+            "type": "Sound",
+            "defaultValue": "coreLaunch",
+            "notes": ""
+        },
+        {
+            "name": "landSound",
+            "type": "Sound",
+            "defaultValue": "coreLand",
+            "notes": ""
+        },
+        {
+            "name": "launchEffect",
+            "type": "Effect",
+            "defaultValue": "launch",
+            "notes": ""
+        },
+        {
+            "name": "landZoomInterp",
+            "type": "Interp",
+            "defaultValue": "pow3",
+            "notes": ""
+        },
+        {
+            "name": "landZoomFrom",
+            "type": "float",
+            "defaultValue": "0.02",
+            "notes": ""
+        },
+        {
+            "name": "landZoomTo",
+            "type": "float",
+            "defaultValue": "4.0",
+            "notes": ""
+        },
+        {
+            "name": "captureInvicibility",
+            "type": "float",
+            "defaultValue": "900.0",
+            "notes": ""
+        }
+    ]
+}

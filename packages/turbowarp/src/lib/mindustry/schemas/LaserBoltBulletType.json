@@ -1,0 +1,18 @@
+{
+    "type": "LaserBoltBulletType",
+    "parentType": "BasicBulletType",
+    "fields": [
+        {
+            "name": "width",
+            "type": "float",
+            "defaultValue": "2.0",
+            "notes": ""
+        },
+        {
+            "name": "height",
+            "type": "float",
+            "defaultValue": "7.0",
+            "notes": ""
+        }
+    ]
+}

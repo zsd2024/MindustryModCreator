@@ -1,0 +1,105 @@
+{
+    "type": "Weather",
+    "parentType": "UnlockableContent",
+    "localizedName": "天气",
+    "fields": [
+        {
+            "name": "duration",
+            "type": "float",
+            "localizedName": "持续时间",
+            "defaultValue": "36000.0",
+            "notes": "该天气事件的默认持续时间，以tick计。\n\n**Notes**: 天气事件的默认持续时长。"
+        },
+        {
+            "name": "opacityMultiplier",
+            "type": "float",
+            "localizedName": "不透明度倍率",
+            "defaultValue": "1.0",
+            "notes": "**Notes**: 天气渲染的不透明度倍率。"
+        },
+        {
+            "name": "attrs",
+            "type": "Attributes",
+            "localizedName": "环境属性修饰器",
+            "defaultValue": "new Attributes()",
+            "notes": "**Notes**: 天气携带的环境属性修饰器。"
+        },
+        {
+            "name": "sound",
+            "type": "Sound",
+            "localizedName": "音效",
+            "defaultValue": "none",
+            "notes": "**Notes**: 天气事件播放的音效。"
+        },
+        {
+            "name": "soundVol",
+            "type": "float",
+            "localizedName": "基础音量",
+            "defaultValue": "0.1",
+            "notes": "**Notes**: 天气音效的基础音量。"
+        },
+        {
+            "name": "soundVolMin",
+            "type": "float",
+            "localizedName": "最小音量",
+            "defaultValue": "0.0",
+            "notes": "**Notes**: 天气音效的最小音量。"
+        },
+        {
+            "name": "soundVolOscMag",
+            "type": "float",
+            "localizedName": "音量振荡幅度",
+            "defaultValue": "0.0",
+            "notes": "**Notes**: 音量振荡幅度。"
+        },
+        {
+            "name": "soundVolOscScl",
+            "type": "float",
+            "localizedName": "音量振荡周期缩放",
+            "defaultValue": "20.0",
+            "notes": "**Notes**: 音量振荡周期缩放。"
+        },
+        {
+            "name": "hidden",
+            "type": "boolean",
+            "localizedName": "UI隐藏",
+            "defaultValue": "false",
+            "notes": "**Notes**: 如果为true，该天气不会在UI中显示。"
+        },
+        {
+            "name": "type",
+            "type": "Prov of WeatherState",
+            "localizedName": "天气状态工厂",
+            "defaultValue": "WeatherState::create",
+            "notes": "**Notes**: 天气状态实体的工厂函数。"
+        },
+        {
+            "name": "status",
+            "type": "StatusEffect",
+            "localizedName": "状态效果",
+            "defaultValue": "none",
+            "notes": "**Notes**: 天气对单位施加的状态效果。"
+        },
+        {
+            "name": "statusDuration",
+            "type": "float",
+            "localizedName": "状态持续时间",
+            "defaultValue": "120.0",
+            "notes": "**Notes**: 状态效果的持续tick数。"
+        },
+        {
+            "name": "statusAir",
+            "type": "boolean",
+            "localizedName": "影响空中单位",
+            "defaultValue": "true",
+            "notes": "**Notes**: 如果为true，空中单位会受到状态效果影响。"
+        },
+        {
+            "name": "statusGround",
+            "type": "boolean",
+            "localizedName": "影响地面单位",
+            "defaultValue": "true",
+            "notes": "**Notes**: 如果为true，地面单位会受到状态效果影响。"
+        }
+    ]
+}

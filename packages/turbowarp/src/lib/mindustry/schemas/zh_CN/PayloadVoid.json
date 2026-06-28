@@ -1,0 +1,21 @@
+{
+    "type": "PayloadVoid",
+    "parentType": "PayloadBlock",
+    "localizedName": "载荷销毁器",
+    "fields": [
+        {
+            "name": "incinerateEffect",
+            "localizedName": "销毁特效",
+            "type": "Effect",
+            "defaultValue": "blastExplosion",
+            "notes": "**Notes**: 销毁负载时播放的效果"
+        },
+        {
+            "name": "incinerateSound",
+            "localizedName": "销毁音效",
+            "type": "Sound",
+            "defaultValue": "unitExplode1",
+            "notes": "**Notes**: 销毁负载时播放的音效"
+        }
+    ]
+}

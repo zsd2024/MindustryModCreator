@@ -1,0 +1,228 @@
+{
+    "type": "Floor",
+    "parentType": "Block",
+    "fields": [
+        {
+            "name": "edge",
+            "type": "String",
+            "defaultValue": "\"stone\"",
+            "notes": "edge fallback, used mainly for ores"
+        },
+        {
+            "name": "speedMultiplier",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": "Multiplies unit velocity by this when walked on."
+        },
+        {
+            "name": "dragMultiplier",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": "Multiplies unit drag by this when walked on."
+        },
+        {
+            "name": "damageTaken",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "Damage taken per tick on this tile."
+        },
+        {
+            "name": "drownTime",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "How many ticks it takes to drown on this. 0 to disable."
+        },
+        {
+            "name": "walkEffect",
+            "type": "Effect",
+            "defaultValue": "none",
+            "notes": "Effect when walking on this floor."
+        },
+        {
+            "name": "walkSound",
+            "type": "Sound",
+            "defaultValue": "none",
+            "notes": "Sound made when walking."
+        },
+        {
+            "name": "walkSoundVolume",
+            "type": "float",
+            "defaultValue": "0.1",
+            "notes": "Volume of sound made when walking."
+        },
+        {
+            "name": "walkSoundPitchMin",
+            "type": "float",
+            "defaultValue": "0.8",
+            "notes": "Volume of sound made when walking."
+        },
+        {
+            "name": "walkSoundPitchMax",
+            "type": "float",
+            "defaultValue": "1.2",
+            "notes": "Volume of sound made when walking."
+        },
+        {
+            "name": "drownUpdateEffect",
+            "type": "Effect",
+            "defaultValue": "bubble",
+            "notes": "Effect displayed when drowning on this floor."
+        },
+        {
+            "name": "status",
+            "type": "StatusEffect",
+            "defaultValue": "none",
+            "notes": "Status effect applied when walking on."
+        },
+        {
+            "name": "statusDuration",
+            "type": "float",
+            "defaultValue": "60.0",
+            "notes": "Intensity of applied status effect."
+        },
+        {
+            "name": "liquidDrop",
+            "type": "Liquid",
+            "defaultValue": "null",
+            "notes": "liquids that drop from this block, used for pumps."
+        },
+        {
+            "name": "liquidMultiplier",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": "Multiplier for pumped liquids, used for deep water."
+        },
+        {
+            "name": "isLiquid",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "whether this block is liquid."
+        },
+        {
+            "name": "overlayAlpha",
+            "type": "float",
+            "defaultValue": "0.65",
+            "notes": "for liquid floors, this is the opacity of the overlay drawn on top."
+        },
+        {
+            "name": "supportsOverlay",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "whether this floor supports an overlay floor"
+        },
+        {
+            "name": "shallow",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "shallow water flag used for generation"
+        },
+        {
+            "name": "blendGroup",
+            "type": "Block",
+            "defaultValue": "this",
+            "notes": "Group of blocks that this block does not draw edges on."
+        },
+        {
+            "name": "oreDefault",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "Whether this ore generates in maps by default."
+        },
+        {
+            "name": "oreScale",
+            "type": "float",
+            "defaultValue": "24.0",
+            "notes": "Ore generation params."
+        },
+        {
+            "name": "oreThreshold",
+            "type": "float",
+            "defaultValue": "0.828",
+            "notes": "Ore generation params."
+        },
+        {
+            "name": "wall",
+            "type": "Block",
+            "defaultValue": "air",
+            "notes": "Wall variant of this block. May be Blocks.air if not found."
+        },
+        {
+            "name": "decoration",
+            "type": "Block",
+            "defaultValue": "air",
+            "notes": "Decoration block. Usually a rock. May be air."
+        },
+        {
+            "name": "canShadow",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "Whether units can draw shadows over this."
+        },
+        {
+            "name": "forceDrawLight",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "If true, this floor ignores the obstructsLight flag of overlays."
+        },
+        {
+            "name": "needsSurface",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "Whether this overlay needs a surface to be on. False for floating blocks, like spawns."
+        },
+        {
+            "name": "allowCorePlacement",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "If true, cores can be placed on this floor."
+        },
+        {
+            "name": "wallOre",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "If true, this ore is allowed on walls."
+        },
+        {
+            "name": "blendId",
+            "type": "int",
+            "defaultValue": "-1",
+            "notes": "Actual ID used for blend groups. Internal."
+        },
+        {
+            "name": "tilingVariants",
+            "type": "int",
+            "defaultValue": "0",
+            "notes": "If >0, this floor is drawn as parts of a large texture."
+        },
+        {
+            "name": "autotile",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "If true, this floor uses autotiling; variants are not supported. See https://github.com/GglLfr/tile-gen"
+        },
+        {
+            "name": "autotileMidVariants",
+            "type": "int",
+            "defaultValue": "1",
+            "notes": "If >1, the middle region of the autotile has random variants."
+        },
+        {
+            "name": "autotileVariants",
+            "type": "int",
+            "defaultValue": "1",
+            "notes": "Variants of the main autotile sprite."
+        },
+        {
+            "name": "drawEdgeIn",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "If true (default), this floor will draw edges of other floors on itself."
+        },
+        {
+            "name": "drawEdgeOut",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "If true (default), this floor will draw its edges onto other floors."
+        }
+    ]
+}

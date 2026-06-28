@@ -1,0 +1,1477 @@
+{
+    "type": "UnitType",
+    "parentType": "UnlockableContent",
+    "localizedName": "单位类型",
+    "fields": [
+        {
+            "name": "envRequired",
+            "type": "int",
+            "localizedName": "必需环境",
+            "defaultValue": "0",
+            "notes": "此单位运行所需的全部环境标志。0 = 任何环境。\n\n**Notes**: 单位运行所需的环境条件标志。"
+        },
+        {
+            "name": "envEnabled",
+            "type": "int",
+            "localizedName": "可用环境",
+            "defaultValue": "1",
+            "notes": "此单位可运行的环境标志。如果环境匹配其中任何一个，单位将启用。\n\n**Notes**: 单位可运行的环境条件。"
+        },
+        {
+            "name": "envDisabled",
+            "type": "int",
+            "localizedName": "禁用环境",
+            "defaultValue": "16",
+            "notes": "此单位无法运行的环境标志。如果环境匹配其中任何一个，单位将爆炸或禁用。\n\n**Notes**: 单位无法运行的环境条件。"
+        },
+        {
+            "name": "speed",
+            "type": "float",
+            "localizedName": "移动速度",
+            "defaultValue": "1.1",
+            "notes": "移动速度（世界单位/t）。\n\n**Notes**: 单位的基础移动速度。"
+        },
+        {
+            "name": "boostMultiplier",
+            "type": "float",
+            "localizedName": "加速倍率",
+            "defaultValue": "1.0",
+            "notes": "加速时的速度倍率。\n\n**Notes**: 单位加速飞行时的速度倍率。"
+        },
+        {
+            "name": "floorMultiplier",
+            "type": "float",
+            "localizedName": "地形影响倍率",
+            "defaultValue": "1.0",
+            "notes": "单位受地形影响的程度。\n\n**Notes**: 地形对单位速度的影响倍率。"
+        },
+        {
+            "name": "rotateSpeed",
+            "type": "float",
+            "localizedName": "旋转速度",
+            "defaultValue": "5.0",
+            "notes": "身体旋转速度（度/t）。\n\n**Notes**: 单位旋转速度。"
+        },
+        {
+            "name": "baseRotateSpeed",
+            "type": "float",
+            "localizedName": "基础旋转速度",
+            "defaultValue": "5.0",
+            "notes": "机甲基础旋转速度（度/t）。\n\n**Notes**: 机甲基础旋转速度。"
+        },
+        {
+            "name": "drag",
+            "type": "float",
+            "localizedName": "阻力",
+            "defaultValue": "0.3",
+            "notes": "移动阻力比例。\n\n**Notes**: 单位移动时的阻力。"
+        },
+        {
+            "name": "accel",
+            "type": "float",
+            "localizedName": "加速度",
+            "defaultValue": "0.5",
+            "notes": "加速度（速度的比例）。\n\n**Notes**: 单位加速度。"
+        },
+        {
+            "name": "hitSize",
+            "type": "float",
+            "localizedName": "碰撞箱尺寸",
+            "defaultValue": "6.0",
+            "notes": "碰撞箱正方形一边的大小。\n\n**Notes**: 单位碰撞箱尺寸。"
+        },
+        {
+            "name": "deathShake",
+            "type": "float",
+            "localizedName": "死亡震屏",
+            "defaultValue": "-1.0",
+            "notes": "单位死亡时的震屏。\n\n**Notes**: 死亡震屏强度。"
+        },
+        {
+            "name": "stepShake",
+            "type": "float",
+            "localizedName": "脚步震屏",
+            "defaultValue": "-1.0",
+            "notes": "腿/机甲单位每步的震屏。\n\n**Notes**: 脚步震屏强度。"
+        },
+        {
+            "name": "rippleScale",
+            "type": "float",
+            "localizedName": "波纹缩放",
+            "defaultValue": "1.0",
+            "notes": "有腿单位的波纹/尘埃大小。\n\n**Notes**: 波纹/尘埃粒子大小。"
+        },
+        {
+            "name": "riseSpeed",
+            "type": "float",
+            "localizedName": "上升速度",
+            "defaultValue": "0.08",
+            "notes": "加速上升速度（比例）。\n\n**Notes**: 起飞速度。"
+        },
+        {
+            "name": "descentSpeed",
+            "type": "float",
+            "localizedName": "下降速度",
+            "defaultValue": "0.08",
+            "notes": "加速下降速度（比例）。\n\n**Notes**: 降落速度。"
+        },
+        {
+            "name": "fallSpeed",
+            "type": "float",
+            "localizedName": "坠落速度",
+            "defaultValue": "0.018",
+            "notes": "单位死亡时的下落速度。\n\n**Notes**: 坠毁速度。"
+        },
+        {
+            "name": "missileAccelTime",
+            "type": "float",
+            "localizedName": "导弹加速时间",
+            "defaultValue": "0.0",
+            "notes": "此导弹加速到全速所需的tick数。\n\n**Notes**: 导弹加速时间。"
+        },
+        {
+            "name": "health",
+            "type": "float",
+            "localizedName": "生命值",
+            "defaultValue": "200.0",
+            "notes": "原始生命值。\n\n**Notes**: 单位的基础生命值。"
+        },
+        {
+            "name": "armor",
+            "type": "float",
+            "localizedName": "护甲",
+            "defaultValue": "0.0",
+            "notes": "减少受到的伤害值。\n\n**Notes**: 护甲值。"
+        },
+        {
+            "name": "range",
+            "type": "float",
+            "localizedName": "最小射程",
+            "defaultValue": "-1.0",
+            "notes": "任何武器的最小射程；用于接近目标。可通过设置>0的值覆盖。\n\n**Notes**: 单位的最小攻击范围。"
+        },
+        {
+            "name": "maxRange",
+            "type": "float",
+            "localizedName": "最大射程",
+            "defaultValue": "-1.0",
+            "notes": "任何武器的最大射程。\n\n**Notes**: 单位最大攻击范围。"
+        },
+        {
+            "name": "mineRange",
+            "type": "float",
+            "localizedName": "采矿范围",
+            "defaultValue": "70.0",
+            "notes": "此单位可采矿的范围。\n\n**Notes**: 单位采矿范围。"
+        },
+        {
+            "name": "buildRange",
+            "type": "float",
+            "localizedName": "建造范围",
+            "defaultValue": "220.0",
+            "notes": "此单位可建造的范围。\n\n**Notes**: 单位建造范围。"
+        },
+        {
+            "name": "circleTargetRadius",
+            "type": "float",
+            "localizedName": "环绕半径",
+            "defaultValue": "80.0",
+            "notes": "如果circleTarget为true，环绕目标的半径。\n\n**Notes**: 环绕目标半径。"
+        },
+        {
+            "name": "crashDamageMultiplier",
+            "type": "float",
+            "localizedName": "撞击伤害倍率",
+            "defaultValue": "1.0",
+            "notes": "此（飞行）单位撞击敌方物体时造成伤害的倍率。\n\n**Notes**: 撞击伤害倍率。"
+        },
+        {
+            "name": "wreckHealthMultiplier",
+            "type": "float",
+            "localizedName": "残骸生命倍率",
+            "defaultValue": "0.25",
+            "notes": "此飞行单位残骸基于最大生命值的生命保留倍率。\n\n**Notes**: 残骸生命倍率。"
+        },
+        {
+            "name": "dpsEstimate",
+            "type": "float",
+            "localizedName": "估算DPS",
+            "defaultValue": "-1.0",
+            "notes": "单位DPS的粗略估计；在init()中初始化。\n\n**Notes**: 估计DPS值。"
+        },
+        {
+            "name": "clipSize",
+            "type": "float",
+            "localizedName": "裁剪大小",
+            "defaultValue": "-1.0",
+            "notes": "图形裁剪大小；<0自动计算。\n\n**Notes**: 渲染裁剪大小。"
+        },
+        {
+            "name": "drownTimeMultiplier",
+            "type": "float",
+            "localizedName": "溺水时间倍率",
+            "defaultValue": "1.0",
+            "notes": "单位溺水速度的倍率——数值越高，溺水越慢。\n\n**Notes**: 溺水时间倍率。"
+        },
+        {
+            "name": "strafePenalty",
+            "type": "float",
+            "localizedName": "横向惩罚",
+            "defaultValue": "0.5",
+            "notes": "单位朝相反方向移动时的移动速度惩罚比例。\n\n**Notes**: 横向移动速度惩罚。"
+        },
+        {
+            "name": "researchCostMultiplier",
+            "type": "float",
+            "localizedName": "研究成本倍率",
+            "defaultValue": "50.0",
+            "notes": "科技树研究成本的倍率。\n\n**Notes**: 研究成本倍率。"
+        },
+        {
+            "name": "groundLayer",
+            "type": "float",
+            "localizedName": "地面渲染层",
+            "defaultValue": "60.0",
+            "notes": "用于地面单位，绘制此单位的图层。\n\n**Notes**: 地面单位的渲染图层。"
+        },
+        {
+            "name": "flyingLayer",
+            "type": "float",
+            "localizedName": "飞行渲染层",
+            "defaultValue": "-1.0",
+            "notes": "对于飞行单位，绘制此单位的图层。如果未设置值，默认取决于lowAltitude。\n\n**Notes**: 飞行单位的渲染图层。"
+        },
+        {
+            "name": "payloadCapacity",
+            "type": "float",
+            "localizedName": "载荷容量",
+            "defaultValue": "8.0",
+            "notes": "此单位的载荷容量（世界单位^2）。\n\n**Notes**: 负载容量。"
+        },
+        {
+            "name": "buildSpeed",
+            "type": "float",
+            "localizedName": "建造速度",
+            "defaultValue": "-1.0",
+            "notes": "建造速度倍率；<0禁用。\n\n**Notes**: 建造速度。"
+        },
+        {
+            "name": "aimDst",
+            "type": "float",
+            "localizedName": "最小瞄准距离",
+            "defaultValue": "-1.0",
+            "notes": "武器可以瞄准的与单位的最小距离。防止单位在'体内'开火。\n\n**Notes**: 最小瞄准距离。"
+        },
+        {
+            "name": "buildBeamOffset",
+            "type": "float",
+            "localizedName": "建造光束偏移",
+            "defaultValue": "3.8",
+            "notes": "建造光束的前方视觉偏移。\n\n**Notes**: 建造光束偏移。"
+        },
+        {
+            "name": "mineBeamOffset",
+            "type": "float",
+            "localizedName": "采矿光束偏移",
+            "defaultValue": "-Infinity",
+            "notes": "采矿光束的前方视觉偏移。默认为碰撞箱的一半。\n\n**Notes**: 采矿光束偏移。"
+        },
+        {
+            "name": "targetPriority",
+            "type": "float",
+            "localizedName": "目标优先级",
+            "defaultValue": "0.0",
+            "notes": "WIP：低优先级的单位将始终被高优先级单位优先处理，无论距离如何。\n\n**Notes**: 目标选择优先级。"
+        },
+        {
+            "name": "shadowElevation",
+            "type": "float",
+            "localizedName": "阴影高度",
+            "defaultValue": "-1.0",
+            "notes": "此（地面）单位下方阴影的高度。仅视觉效果。\n\n**Notes**: 阴影高度。"
+        },
+        {
+            "name": "shadowElevationScl",
+            "type": "float",
+            "localizedName": "阴影长度缩放",
+            "defaultValue": "1.0",
+            "notes": "此单位下方阴影长度的缩放。如果单位没有阴影则无效。\n\n**Notes**: 阴影长度缩放。"
+        },
+        {
+            "name": "engineOffset",
+            "type": "float",
+            "localizedName": "引擎后向偏移",
+            "defaultValue": "5.0",
+            "notes": "引擎从单位中心向后的偏移量。\n\n**Notes**: 引擎后向偏移。"
+        },
+        {
+            "name": "engineSize",
+            "type": "float",
+            "localizedName": "引擎尺寸",
+            "defaultValue": "2.5",
+            "notes": "主引擎半径。\n\n**Notes**: 引擎尺寸。"
+        },
+        {
+            "name": "engineLayer",
+            "type": "float",
+            "localizedName": "引擎渲染层",
+            "defaultValue": "-1.0",
+            "notes": "所有引擎的图层（<0使用默认值）。\n\n**Notes**: 引擎渲染图层。"
+        },
+        {
+            "name": "itemOffsetY",
+            "type": "float",
+            "localizedName": "物品显示偏移",
+            "defaultValue": "3.0",
+            "notes": "单位上物品的视觉后向偏移。\n\n**Notes**: 物品显示偏移。"
+        },
+        {
+            "name": "lightRadius",
+            "type": "float",
+            "localizedName": "发光半径",
+            "defaultValue": "-1.0",
+            "notes": "发出光的半径，<0使用默认值。\n\n**Notes**: 发光半径。"
+        },
+        {
+            "name": "lightOpacity",
+            "type": "float",
+            "localizedName": "发光不透明度",
+            "defaultValue": "0.6",
+            "notes": "光源颜色不透明度。\n\n**Notes**: 发光不透明度。"
+        },
+        {
+            "name": "softShadowScl",
+            "type": "float",
+            "localizedName": "软阴影缩放",
+            "defaultValue": "1.0",
+            "notes": "软阴影的缩放——其大小基于纹理区域大小计算。\n\n**Notes**: 软阴影缩放。"
+        },
+        {
+            "name": "fogRadius",
+            "type": "float",
+            "localizedName": "驱雾半径",
+            "defaultValue": "-1.0",
+            "notes": "迷雾视野半径（瓦片）。<0自动计算。\n\n**Notes**: 驱雾半径。"
+        },
+        {
+            "name": "waveTrailX",
+            "type": "float",
+            "localizedName": "波浪轨迹X偏移",
+            "defaultValue": "4.0",
+            "notes": "海军单位波浪轨迹的水平偏移。\n\n**Notes**: 波浪轨迹X偏移。"
+        },
+        {
+            "name": "waveTrailY",
+            "type": "float",
+            "localizedName": "波浪轨迹Y偏移",
+            "defaultValue": "-3.0",
+            "notes": "海军单位波浪轨迹的垂直偏移。\n\n**Notes**: 波浪轨迹Y偏移。"
+        },
+        {
+            "name": "trailScl",
+            "type": "float",
+            "localizedName": "轨迹宽度缩放",
+            "defaultValue": "1.0",
+            "notes": "所有轨迹（包括海军）的宽度。\n\n**Notes**: 轨迹宽度缩放。"
+        },
+        {
+            "name": "isEnemy",
+            "type": "boolean",
+            "localizedName": "是敌方单位",
+            "defaultValue": "true",
+            "notes": "若为true，此单位在波次计数中算作敌人（通常仅对纯支援单位设为false）。\n\n**Notes**: 控制单位是否为敌方单位。"
+        },
+        {
+            "name": "flying",
+            "type": "boolean",
+            "localizedName": "会飞行",
+            "defaultValue": "false",
+            "notes": "若为true，单位始终处于高度1。\n\n**Notes**: 控制单位是否飞行。"
+        },
+        {
+            "name": "wobble",
+            "type": "boolean",
+            "localizedName": "飞行摇晃",
+            "defaultValue": "true",
+            "notes": "此飞行单位是否应摇晃。\n\n**Notes**: 控制飞行单位是否摇晃。"
+        },
+        {
+            "name": "targetAir",
+            "type": "boolean",
+            "localizedName": "可攻击空中",
+            "defaultValue": "true",
+            "notes": "此单位是否尝试攻击空中单位。\n\n**Notes**: 控制单位是否能攻击空中目标。"
+        },
+        {
+            "name": "targetGround",
+            "type": "boolean",
+            "localizedName": "可攻击地面",
+            "defaultValue": "true",
+            "notes": "此单位是否尝试攻击地面单位。\n\n**Notes**: 控制单位是否能攻击地面目标。"
+        },
+        {
+            "name": "faceTarget",
+            "type": "boolean",
+            "localizedName": "面向目标",
+            "defaultValue": "true",
+            "notes": "若为true，此单位在射击/瞄准时将尝试面向目标。\n\n**Notes**: 控制单位是否面向目标。"
+        },
+        {
+            "name": "circleTarget",
+            "type": "boolean",
+            "localizedName": "环绕目标",
+            "defaultValue": "false",
+            "notes": "AI标志：若为true，此飞行单位像轰炸机一样环绕目标。\n\n**Notes**: 控制单位是否环绕目标攻击。"
+        },
+        {
+            "name": "autoDropBombs",
+            "type": "boolean",
+            "localizedName": "自动投弹",
+            "defaultValue": "false",
+            "notes": "AI标志：若为true，即使用户不在'真正'目标附近，此单位也会在自身下方投弹。用于地毯式轰炸机。\n\n**Notes**: 控制单位是否自动投弹。"
+        },
+        {
+            "name": "targetBuildingsMobile",
+            "type": "boolean",
+            "localizedName": "移动版自动瞄准建筑",
+            "defaultValue": "true",
+            "notes": "仅移动版：若为false，玩家控制时此单位不会自动瞄准建筑。\n\n**Notes**: 移动版建筑自动瞄准。"
+        },
+        {
+            "name": "canBoost",
+            "type": "boolean",
+            "localizedName": "可加速升空",
+            "defaultValue": "false",
+            "notes": "若为true，此单位可以在玩家/处理器控制时加速飞行。\n\n**Notes**: 控制单位是否能加速升空。"
+        },
+        {
+            "name": "boostWhenBuilding",
+            "type": "boolean",
+            "localizedName": "建造时升空",
+            "defaultValue": "true",
+            "notes": "若为true，此单位在使用建造AI时始终加速。\n\n**Notes**: 建造时自动升空。"
+        },
+        {
+            "name": "boostWhenMining",
+            "type": "boolean",
+            "localizedName": "采矿时升空",
+            "defaultValue": "true",
+            "notes": "若为true，此单位在使用采矿AI时始终加速。\n\n**Notes**: 采矿时自动升空。"
+        },
+        {
+            "name": "logicControllable",
+            "type": "boolean",
+            "localizedName": "可被逻辑控制",
+            "defaultValue": "true",
+            "notes": "若为false，逻辑处理器无法控制此单位。\n\n**Notes**: 控制单位是否可被逻辑控制。"
+        },
+        {
+            "name": "playerControllable",
+            "type": "boolean",
+            "localizedName": "可被玩家控制",
+            "defaultValue": "true",
+            "notes": "若为false，玩家无法控制此单位。\n\n**Notes**: 控制单位是否可被玩家控制。"
+        },
+        {
+            "name": "controlSelectGlobal",
+            "type": "boolean",
+            "localizedName": "可全局选中",
+            "defaultValue": "true",
+            "notes": "若为true，单位可通过全局选择快捷键（shift+g）选中。\n\n**Notes**: 控制单位是否可全局选中。"
+        },
+        {
+            "name": "allowedInPayloads",
+            "type": "boolean",
+            "localizedName": "可装入载荷",
+            "defaultValue": "true",
+            "notes": "若为false，此单位无法被移入载荷。\n\n**Notes**: 控制单位是否可被装入载荷。"
+        },
+        {
+            "name": "hittable",
+            "type": "boolean",
+            "localizedName": "可被命中",
+            "defaultValue": "true",
+            "notes": "若为false，此单位无法被子弹或爆炸命中。\n\n**Notes**: 控制单位是否可被攻击命中。"
+        },
+        {
+            "name": "killable",
+            "type": "boolean",
+            "localizedName": "可被击杀",
+            "defaultValue": "true",
+            "notes": "若为false，此单位不承受伤害且无法被kill()/destroy()。\n\n**Notes**: 控制单位是否可被击杀。"
+        },
+        {
+            "name": "targetable",
+            "type": "boolean",
+            "localizedName": "可被瞄准",
+            "defaultValue": "true",
+            "notes": "若为false，任何东西都不会以此单位为目标。\n\n**Notes**: 控制单位是否可被瞄准。"
+        },
+        {
+            "name": "vulnerableWithPayloads",
+            "type": "boolean",
+            "localizedName": "携带载荷时易伤",
+            "defaultValue": "false",
+            "notes": "若为true，此单位在携带载荷时可被命中/瞄准（假设hittable/targetable为false）。\n\n**Notes**: 控制携带载荷时是否可被攻击。"
+        },
+        {
+            "name": "pickupUnits",
+            "type": "boolean",
+            "localizedName": "可拾取单位",
+            "defaultValue": "true",
+            "notes": "若为true，此载荷单位可以拾取单位。\n\n**Notes**: 控制单位是否能拾取其他单位。"
+        },
+        {
+            "name": "physics",
+            "type": "boolean",
+            "localizedName": "有物理碰撞",
+            "defaultValue": "true",
+            "notes": "若为false，此单位不与其他人发生物理碰撞。\n\n**Notes**: 控制单位是否有物理碰撞。"
+        },
+        {
+            "name": "canDrown",
+            "type": "boolean",
+            "localizedName": "可溺水",
+            "defaultValue": "true",
+            "notes": "若为true，此地面单位会在深液体中溺水。\n\n**Notes**: 控制单位是否会溺水。"
+        },
+        {
+            "name": "useUnitCap",
+            "type": "boolean",
+            "localizedName": "受单位上限约束",
+            "defaultValue": "true",
+            "notes": "若为false，此单位无视单位上限并可无限生成。\n\n**Notes**: 控制单位是否受单位上限约束。"
+        },
+        {
+            "name": "coreUnitDock",
+            "type": "boolean",
+            "localizedName": "核心可停靠",
+            "defaultValue": "false",
+            "notes": "若为true，此核心单位将'停靠'到其他单位，使其在'取消停靠'时重新出现。\n\n**Notes**: 控制核心单位是否可停靠。"
+        },
+        {
+            "name": "createWreck",
+            "type": "boolean",
+            "localizedName": "生成残骸",
+            "defaultValue": "true",
+            "notes": "若为false，此单位死亡时不创建下落的'残骸'。\n\n**Notes**: 控制是否生成残骸。"
+        },
+        {
+            "name": "createScorch",
+            "type": "boolean",
+            "localizedName": "生成烧焦痕迹",
+            "defaultValue": "true",
+            "notes": "若为false，此单位死亡时不创建烧焦痕迹。\n\n**Notes**: 控制是否生成烧焦痕迹。"
+        },
+        {
+            "name": "lowAltitude",
+            "type": "boolean",
+            "localizedName": "低空绘制",
+            "defaultValue": "false",
+            "notes": "若为true，此单位将在特效/子弹下方绘制；仅为视觉变化。\n\n**Notes**: 控制单位是否在低空绘制。"
+        },
+        {
+            "name": "rotateToBuilding",
+            "type": "boolean",
+            "localizedName": "建造时面向建筑",
+            "defaultValue": "true",
+            "notes": "若为true，此单位将看向其正在建造的对象。\n\n**Notes**: 控制建造时是否面向建筑。"
+        },
+        {
+            "name": "allowLegStep",
+            "type": "boolean",
+            "localizedName": "腿可跨越方块",
+            "defaultValue": "false",
+            "notes": "若为true且此单位是有腿单位，此单位可以走过方块。\n\n**Notes**: 控制有腿单位是否能跨越方块。"
+        },
+        {
+            "name": "legPhysicsLayer",
+            "type": "boolean",
+            "localizedName": "腿部物理层",
+            "defaultValue": "true",
+            "notes": "对于有腿单位，设为false使其强制位于地面物理层。\n\n**Notes**: 控制腿部单位物理层。"
+        },
+        {
+            "name": "hovering",
+            "type": "boolean",
+            "localizedName": "悬空",
+            "defaultValue": "false",
+            "notes": "若为true，此单位不受下方地面影响。\n\n**Notes**: 控制单位是否悬空（不受地形影响）。"
+        },
+        {
+            "name": "omniMovement",
+            "type": "boolean",
+            "localizedName": "全方向移动",
+            "defaultValue": "true",
+            "notes": "若为true，此单位可朝任意方向移动，不受旋转限制。若为false，此单位只能朝面对方向移动。\n\n**Notes**: 控制单位是否可全方向移动。"
+        },
+        {
+            "name": "rotateMoveFirst",
+            "type": "boolean",
+            "localizedName": "先转向再移动",
+            "defaultValue": "false",
+            "notes": "若为true，单位在实际移动前先转向移动方向。\n\n**Notes**: 控制单位是否先转向再移动。"
+        },
+        {
+            "name": "healFlash",
+            "type": "boolean",
+            "localizedName": "治疗闪烁",
+            "defaultValue": "true",
+            "notes": "若为true，此单位被治疗时闪烁。\n\n**Notes**: 控制治疗时是否闪烁。"
+        },
+        {
+            "name": "canHeal",
+            "type": "boolean",
+            "localizedName": "可治疗",
+            "defaultValue": "false",
+            "notes": "单位是否可以治疗方块。在init()中初始化。\n\n**Notes**: 控制单位是否能修复建筑。"
+        },
+        {
+            "name": "singleTarget",
+            "type": "boolean",
+            "localizedName": "集中攻击单目标",
+            "defaultValue": "false",
+            "notes": "若为true，所有武器将攻击同一目标。\n\n**Notes**: 控制是否所有武器集中攻击同一目标。"
+        },
+        {
+            "name": "forceMultiTarget",
+            "type": "boolean",
+            "localizedName": "强制多目标",
+            "defaultValue": "false",
+            "notes": "若为true，此单位即使只有一件镜像武器也能拥有多个目标。\n\n**Notes**: 控制是否强制多目标。"
+        },
+        {
+            "name": "canAttack",
+            "type": "boolean",
+            "localizedName": "可攻击",
+            "defaultValue": "true",
+            "notes": "若为false，此单位没有任何可以攻击的武器。\n\n**Notes**: 控制单位是否能攻击。"
+        },
+        {
+            "name": "hidden",
+            "type": "boolean",
+            "localizedName": "隐藏",
+            "defaultValue": "false",
+            "notes": "若为true，此单位不会出现在数据库或各种其他UI中。\n\n**Notes**: 控制单位是否在数据库中隐藏。"
+        },
+        {
+            "name": "internal",
+            "type": "boolean",
+            "localizedName": "内部单位",
+            "defaultValue": "false",
+            "notes": "若为true，此单位仅供内部使用，不会生成精灵。\n\n**Notes**: 控制单位是否为内部单位。"
+        },
+        {
+            "name": "internalGenerateSprites",
+            "type": "boolean",
+            "localizedName": "内部单位生成精灵",
+            "defaultValue": "false",
+            "notes": "对于某些单位，尽管是内部的，仍需要生成精灵。\n\n**Notes**: 控制内部单位是否仍需要生成精灵。"
+        },
+        {
+            "name": "bounded",
+            "type": "boolean",
+            "localizedName": "受地图边界限制",
+            "defaultValue": "true",
+            "notes": "若为false，此单位不会被推离地图边缘。\n\n**Notes**: 控制单位是否受地图边界限制。"
+        },
+        {
+            "name": "naval",
+            "type": "boolean",
+            "localizedName": "海军类型",
+            "defaultValue": "false",
+            "notes": "若为true，此单位被检测为海军——请勿手动分配！在init()中初始化。\n\n**Notes**: 控制单位是否为海军类型。"
+        },
+        {
+            "name": "autoFindTarget",
+            "type": "boolean",
+            "localizedName": "自动寻找目标",
+            "defaultValue": "true",
+            "notes": "若为false，RTS AI控制的单位在移动时不会自动攻击。此为自动分配。\n\n**Notes**: 控制单位是否自动寻找目标。"
+        },
+        {
+            "name": "targetUnderBlocks",
+            "type": "boolean",
+            "localizedName": "攻击underBullets方块",
+            "defaultValue": "true",
+            "notes": "若为false，'下方'方块（如传送带）不会被瞄准。\n\n**Notes**: 控制单位是否瞄准underBullets方块。"
+        },
+        {
+            "name": "alwaysShootWhenMoving",
+            "type": "boolean",
+            "localizedName": "移动时始终射击",
+            "defaultValue": "false",
+            "notes": "若为true，此单位在移动时将始终射击，不受减速影响。\n\n**Notes**: 控制移动时是否始终开火。"
+        },
+        {
+            "name": "hoverable",
+            "type": "boolean",
+            "localizedName": "可悬停显示信息",
+            "defaultValue": "true",
+            "notes": "此单位是否有悬停提示。\n\n**Notes**: 控制鼠标悬停是否显示信息。"
+        },
+        {
+            "name": "alwaysCreateOutline",
+            "type": "boolean",
+            "localizedName": "始终生成轮廓",
+            "defaultValue": "false",
+            "notes": "若为true，此Mod单位始终为其基础生成-outline纹理。通常，如果没有top = false的武器，轮廓会被忽略。\n\n**Notes**: 控制是否始终生成轮廓纹理。"
+        },
+        {
+            "name": "generateFullIcon",
+            "type": "boolean",
+            "localizedName": "生成完整图标",
+            "defaultValue": "true",
+            "notes": "仅用于原版内容——若为false，跳过完整图标生成步骤。\n\n**Notes**: 控制是否生成完整图标。"
+        },
+        {
+            "name": "squareShape",
+            "type": "boolean",
+            "localizedName": "方形阴影",
+            "defaultValue": "false",
+            "notes": "若为true，此单位有方形阴影。\n\n**Notes**: 控制阴影是否为方形。"
+        },
+        {
+            "name": "drawBuildBeam",
+            "type": "boolean",
+            "localizedName": "绘制建造光束",
+            "defaultValue": "true",
+            "notes": "若为true，此单位将向方块绘制建造光束。\n\n**Notes**: 控制是否绘制建造光束。"
+        },
+        {
+            "name": "drawMineBeam",
+            "type": "boolean",
+            "localizedName": "绘制采矿光束",
+            "defaultValue": "true",
+            "notes": "若为true，此单位将向方块绘制采矿光束。\n\n**Notes**: 控制是否绘制采矿光束。"
+        },
+        {
+            "name": "drawCell",
+            "type": "boolean",
+            "localizedName": "绘制队伍标识",
+            "defaultValue": "true",
+            "notes": "若为false，不绘制队伍标识/坐标格。\n\n**Notes**: 控制是否绘制队伍标识。"
+        },
+        {
+            "name": "drawItems",
+            "type": "boolean",
+            "localizedName": "绘制携带物品",
+            "defaultValue": "true",
+            "notes": "若为false，不绘制携带的物品。\n\n**Notes**: 控制是否绘制携带物品。"
+        },
+        {
+            "name": "drawShields",
+            "type": "boolean",
+            "localizedName": "绘制护盾",
+            "defaultValue": "true",
+            "notes": "若为false，不绘制单位护盾（通常在波次中可见）。\n\n**Notes**: 控制是否绘制护盾。"
+        },
+        {
+            "name": "drawBody",
+            "type": "boolean",
+            "localizedName": "绘制身体",
+            "defaultValue": "true",
+            "notes": "若为false，不绘制单位身体。\n\n**Notes**: 控制是否绘制单位身体。"
+        },
+        {
+            "name": "drawSoftShadow",
+            "type": "boolean",
+            "localizedName": "绘制软阴影",
+            "defaultValue": "true",
+            "notes": "若为false，不绘制软阴影。\n\n**Notes**: 控制是否绘制软阴影。"
+        },
+        {
+            "name": "drawMinimap",
+            "type": "boolean",
+            "localizedName": "小地图显示",
+            "defaultValue": "true",
+            "notes": "若为false，不在小地图上绘制单位。\n\n**Notes**: 控制是否在小地图显示。"
+        },
+        {
+            "name": "aiController",
+            "type": "Prov of ? extends UnitController",
+            "localizedName": "默认AI控制器",
+            "defaultValue": "{code}",
+            "notes": "创建时分配的默认AI控制器。\n\n**Notes**: 默认AI控制器。"
+        },
+        {
+            "name": "controller",
+            "type": "Func of Unit, ? extends UnitController",
+            "localizedName": "AI控制器选择函数",
+            "defaultValue": "get() : new CommandAI()",
+            "notes": "根据单位实体选择AI控制器的函数。\n\n**Notes**: AI控制器选择函数。"
+        },
+        {
+            "name": "constructor",
+            "type": "Prov of ? extends Unit",
+            "localizedName": "单位构造函数",
+            "defaultValue": "null",
+            "notes": "创建此单位类的新实例。\n\n**Notes**: 单位构造函数。"
+        },
+        {
+            "name": "abilities",
+            "type": "Seq of Ability",
+            "localizedName": "能力列表",
+            "defaultValue": "[]",
+            "notes": "'能力'列表，即每帧更新的各种行为。\n\n**Notes**: 单位的特殊能力列表。"
+        },
+        {
+            "name": "weapons",
+            "type": "Seq of Weapon",
+            "localizedName": "武器列表",
+            "defaultValue": "[]",
+            "notes": "此单位将使用的所有武器。\n\n**Notes**: 单位装备的武器列表。"
+        },
+        {
+            "name": "immunities",
+            "type": "ObjectSet of StatusEffect",
+            "localizedName": "免疫状态效果",
+            "defaultValue": "new ObjectSet<>()",
+            "notes": "此集合中的任何状态效果都无法施加到该单位。\n\n**Notes**: 单位免疫的状态效果集合。"
+        },
+        {
+            "name": "healColor",
+            "type": "Color",
+            "localizedName": "治疗闪烁颜色",
+            "defaultValue": "98ffa9ff",
+            "notes": "单位被治疗时闪烁的颜色（如果healFlash为true）。\n\n**Notes**: 治疗闪烁颜色。"
+        },
+        {
+            "name": "lightColor",
+            "type": "Color",
+            "localizedName": "发光颜色",
+            "defaultValue": "fbd367ff",
+            "notes": "地图启用光照时此单位产生的光颜色。\n\n**Notes**: 单位发光颜色。"
+        },
+        {
+            "name": "shieldColor",
+            "type": "Color",
+            "localizedName": "护盾颜色覆盖",
+            "defaultValue": "null",
+            "notes": "单位护盾颜色的覆盖值。\n\n**Notes**: 护盾颜色覆盖。"
+        },
+        {
+            "name": "deathSound",
+            "type": "Sound",
+            "localizedName": "死亡音效",
+            "defaultValue": "unset",
+            "notes": "此单位爆炸时播放的音效（不是被击落时）。\n\n**Notes**: 死亡音效。"
+        },
+        {
+            "name": "deathSoundVolume",
+            "type": "float",
+            "localizedName": "死亡音量",
+            "defaultValue": "1.0",
+            "notes": "死亡音效的音量。\n\n**Notes**: 死亡音效音量。"
+        },
+        {
+            "name": "wreckSound",
+            "type": "Sound",
+            "localizedName": "残骸音效",
+            "defaultValue": "unset",
+            "notes": "单位残骸被击落时播放的音效。\n\n**Notes**: 残骸音效。"
+        },
+        {
+            "name": "wreckSoundVolume",
+            "type": "float",
+            "localizedName": "残骸音量",
+            "defaultValue": "1.0",
+            "notes": "残骸下落音效的音量。\n\n**Notes**: 残骸音效音量。"
+        },
+        {
+            "name": "loopSound",
+            "type": "Sound",
+            "localizedName": "循环音效",
+            "defaultValue": "none",
+            "notes": "此单位在附近时循环播放的音效。\n\n**Notes**: 持续循环音效。"
+        },
+        {
+            "name": "loopSoundVolume",
+            "type": "float",
+            "localizedName": "循环音量",
+            "defaultValue": "0.5",
+            "notes": "循环音效的音量。\n\n**Notes**: 循环音效音量。"
+        },
+        {
+            "name": "stepSound",
+            "type": "Sound",
+            "localizedName": "脚步音效",
+            "defaultValue": "mechStepSmall",
+            "notes": "此机甲/昆虫单位迈步时播放的音效。\n\n**Notes**: 脚步音效。"
+        },
+        {
+            "name": "stepSoundVolume",
+            "type": "float",
+            "localizedName": "脚步音量",
+            "defaultValue": "0.5",
+            "notes": "脚步音效的音量。\n\n**Notes**: 脚步音效音量。"
+        },
+        {
+            "name": "stepSoundPitch",
+            "type": "float",
+            "localizedName": "脚步音调",
+            "defaultValue": "1.0",
+            "notes": "脚步音效的基础音调。\n\n**Notes**: 脚步音调。"
+        },
+        {
+            "name": "stepSoundPitchRange",
+            "type": "float",
+            "localizedName": "脚步音调范围",
+            "defaultValue": "0.1",
+            "notes": "脚步音效的基础音调。\n\n**Notes**: 脚步音调范围。"
+        },
+        {
+            "name": "tankMoveSound",
+            "type": "Sound",
+            "localizedName": "坦克移动音效",
+            "defaultValue": "tankMove",
+            "notes": "坦克移动时循环的音效。\n\n**Notes**: 坦克移动音效。"
+        },
+        {
+            "name": "moveSound",
+            "type": "Sound",
+            "localizedName": "移动音效",
+            "defaultValue": "none",
+            "notes": "单位移动时循环的音效；音量取决于速度。\n\n**Notes**: 移动音效。"
+        },
+        {
+            "name": "moveSoundVolume",
+            "type": "float",
+            "localizedName": "移动音量",
+            "defaultValue": "1.0",
+            "notes": "移动音效的音量。\n\n**Notes**: 移动音效音量。"
+        },
+        {
+            "name": "moveSoundPitchMin",
+            "type": "float",
+            "localizedName": "移动音效最小音调",
+            "defaultValue": "1.0",
+            "notes": "基于速度的移动音效音调。\n\n**Notes**: 移动音效最小音调。"
+        },
+        {
+            "name": "moveSoundPitchMax",
+            "type": "float",
+            "localizedName": "移动音效最大音调",
+            "defaultValue": "1.0",
+            "notes": "基于速度的移动音效音调。\n\n**Notes**: 移动音效最大音调。"
+        },
+        {
+            "name": "tankMoveVolume",
+            "type": "float",
+            "localizedName": "坦克移动音量",
+            "defaultValue": "0.5",
+            "notes": "坦克移动音效的音量。\n\n**Notes**: 坦克移动音量。"
+        },
+        {
+            "name": "fallEffect",
+            "type": "Effect",
+            "localizedName": "坠落特效",
+            "defaultValue": "fallSmoke",
+            "notes": "此单位下落时发出的特效。\n\n**Notes**: 坠落特效。"
+        },
+        {
+            "name": "fallEngineEffect",
+            "type": "Effect",
+            "localizedName": "坠落引擎特效",
+            "defaultValue": "fallSmoke",
+            "notes": "单位下落时引擎处创建的特效。\n\n**Notes**: 坠落引擎特效。"
+        },
+        {
+            "name": "deathExplosionEffect",
+            "type": "Effect",
+            "localizedName": "死亡爆炸特效",
+            "defaultValue": "dynamicExplosion",
+            "notes": "此单位死亡时创建的特效。\n\n**Notes**: 死亡爆炸特效。"
+        },
+        {
+            "name": "treadEffect",
+            "type": "Effect",
+            "localizedName": "履带特效",
+            "defaultValue": "null",
+            "notes": "此坦克移动时可选的创建特效。\n\n**Notes**: 履带特效。"
+        },
+        {
+            "name": "parts",
+            "type": "Seq of DrawPart",
+            "localizedName": "绘制部件列表",
+            "defaultValue": "[]",
+            "notes": "额外的（通常是动画的）视觉部件。\n\n**Notes**: 额外绘制部件。"
+        },
+        {
+            "name": "engines",
+            "type": "Seq of UnitEngine",
+            "localizedName": "引擎列表",
+            "defaultValue": "[]",
+            "notes": "引擎或'推进器'列表。\n\n**Notes**: 引擎列表。"
+        },
+        {
+            "name": "useEngineElevation",
+            "type": "boolean",
+            "localizedName": "引擎随高度缩放",
+            "defaultValue": "true",
+            "notes": "若为false，无论高度如何，推进器始终以正常大小显示。\n\n**Notes**: 控制引擎是否随高度缩放。"
+        },
+        {
+            "name": "engineColor",
+            "type": "Color",
+            "localizedName": "引擎颜色覆盖",
+            "defaultValue": "null",
+            "notes": "所有引擎颜色的覆盖值。\n\n**Notes**: 引擎颜色覆盖。"
+        },
+        {
+            "name": "engineColorInner",
+            "type": "Color",
+            "localizedName": "引擎内部颜色",
+            "defaultValue": "ffffffff",
+            "notes": "引擎内部部分的颜色。\n\n**Notes**: 引擎内部颜色。"
+        },
+        {
+            "name": "trailLength",
+            "type": "int",
+            "localizedName": "轨迹长度",
+            "defaultValue": "0",
+            "notes": "引擎轨迹（如果飞行）或波浪轨迹（如果海军）的长度。\n\n**Notes**: 轨迹长度。"
+        },
+        {
+            "name": "trailColor",
+            "type": "Color",
+            "localizedName": "轨迹颜色覆盖",
+            "defaultValue": "null",
+            "notes": "引擎轨迹颜色的覆盖值。\n\n**Notes**: 轨迹颜色覆盖。"
+        },
+        {
+            "name": "flowfieldPathType",
+            "type": "int",
+            "localizedName": "流场寻路类型",
+            "defaultValue": "-1",
+            "notes": "流场/敌方AI寻路的成本类型ID。\n\n**Notes**: 流场寻路类型。"
+        },
+        {
+            "name": "pathCost",
+            "type": "PathCost",
+            "localizedName": "路径成本函数",
+            "defaultValue": "null",
+            "notes": "用于计算使用ControlPathfinder移动成本的函数。不影响'正常'流场寻路。\n\n**Notes**: 路径成本函数。"
+        },
+        {
+            "name": "pathCostId",
+            "type": "int",
+            "localizedName": "路径成本ID",
+            "defaultValue": "0",
+            "notes": "路径成本的ID，用于控制路径查找器。这是实际重要的值；请勿手动分配。在init()中设置。\n\n**Notes**: 路径成本ID。"
+        },
+        {
+            "name": "sample",
+            "type": "Unit",
+            "localizedName": "样本实例",
+            "defaultValue": "null",
+            "notes": "此类型创建的单位的样本。请勿修改！\n\n**Notes**: 单位类型样本实例。"
+        },
+        {
+            "name": "targetFlags",
+            "type": "BlockFlag[]",
+            "localizedName": "目标选择标志",
+            "defaultValue": "[null]",
+            "notes": "根据优先级瞄准的标志。null表示应找到最近的目标。使用敌方核心作为后备。\n\n**Notes**: 目标选择标志。"
+        },
+        {
+            "name": "allowChangeCommands",
+            "type": "boolean",
+            "localizedName": "允许更改命令",
+            "defaultValue": "true",
+            "notes": "false值用于在单位工厂中隐藏命令更改UI。\n\n**Notes**: 控制是否允许更改命令。"
+        },
+        {
+            "name": "commands",
+            "type": "Seq of UnitCommand",
+            "localizedName": "RTS命令列表",
+            "defaultValue": "[]",
+            "notes": "通过RTS控制可用的命令。空数组表示命令将根据init()中的单位能力分配。\n\n**Notes**: RTS命令列表。"
+        },
+        {
+            "name": "defaultCommand",
+            "type": "UnitCommand",
+            "localizedName": "默认命令",
+            "defaultValue": "null",
+            "notes": "创建时分配给此单位的命令。null表示数组中的第一个命令。\n\n**Notes**: 默认RTS命令。"
+        },
+        {
+            "name": "stances",
+            "type": "Seq of UnitStance",
+            "localizedName": "RTS姿态列表",
+            "defaultValue": "[]",
+            "notes": "此单位可以拥有的姿态。空数组表示姿态将根据init()中的单位能力分配。\n\n**Notes**: RTS姿态列表。"
+        },
+        {
+            "name": "outlineColor",
+            "type": "Color",
+            "localizedName": "轮廓颜色",
+            "defaultValue": "565666ff",
+            "notes": "精灵轮廓的颜色。\n\n**Notes**: 轮廓颜色。"
+        },
+        {
+            "name": "outlineRadius",
+            "type": "int",
+            "localizedName": "轮廓粗细",
+            "defaultValue": "3",
+            "notes": "精灵轮廓的厚度。\n\n**Notes**: 轮廓粗细。"
+        },
+        {
+            "name": "outlines",
+            "type": "boolean",
+            "localizedName": "生成轮廓",
+            "defaultValue": "true",
+            "notes": "若为false，不生成精灵轮廓。\n\n**Notes**: 控制是否生成轮廓。"
+        },
+        {
+            "name": "itemCapacity",
+            "type": "int",
+            "localizedName": "物品容量",
+            "defaultValue": "-1",
+            "notes": "此单位可携带的物品数量；<0根据hitSize确定。\n\n**Notes**: 物品容量。"
+        },
+        {
+            "name": "ammoCapacity",
+            "type": "int",
+            "localizedName": "弹药容量（已弃用）",
+            "defaultValue": "1",
+            "notes": "@deprecated 仅保留用于兼容查询此字段的某些炮塔！立即从代码中移除！\n\n**Notes**: 已弃用，弹药容量字段。"
+        },
+        {
+            "name": "mineTier",
+            "type": "int",
+            "localizedName": "采矿等级",
+            "defaultValue": "-1",
+            "notes": "此单位可开采矿石的最大硬度（<0禁用）。\n\n**Notes**: 采矿等级。"
+        },
+        {
+            "name": "mineSpeed",
+            "type": "float",
+            "localizedName": "采矿速度",
+            "defaultValue": "1.0",
+            "notes": "采矿速度（奇怪的任意单位）。\n\n**Notes**: 采矿速度。"
+        },
+        {
+            "name": "mineWalls",
+            "type": "boolean",
+            "localizedName": "可开采墙壁矿石",
+            "defaultValue": "false",
+            "notes": "此单位是否可以从地面/墙壁开采矿石。\n\n**Notes**: 控制是否能开采墙壁矿石。"
+        },
+        {
+            "name": "mineFloor",
+            "type": "boolean",
+            "localizedName": "可开采地面矿石",
+            "defaultValue": "true",
+            "notes": "此单位是否可以从地面/墙壁开采矿石。\n\n**Notes**: 控制是否能开采地面矿石。"
+        },
+        {
+            "name": "mineHardnessScaling",
+            "type": "boolean",
+            "localizedName": "硬度缩放采矿时间",
+            "defaultValue": "true",
+            "notes": "若为true，更硬的材料将花费更长时间开采。\n\n**Notes**: 控制是否按硬度缩放采矿时间。"
+        },
+        {
+            "name": "mineSound",
+            "type": "Sound",
+            "localizedName": "采矿音效",
+            "defaultValue": "loopMineBeam",
+            "notes": "采矿时发出的持续音效。\n\n**Notes**: 采矿音效。"
+        },
+        {
+            "name": "mineSoundVolume",
+            "type": "float",
+            "localizedName": "采矿音量",
+            "defaultValue": "0.6",
+            "notes": "采矿音效的音量。\n\n**Notes**: 采矿音效音量。"
+        },
+        {
+            "name": "mineItems",
+            "type": "Seq of Item",
+            "localizedName": "可采矿物品列表",
+            "defaultValue": "[Copper, Lead, Titanium, Thorium]",
+            "notes": "要开采的目标物品。在MinerAI中使用。\n\n**Notes**: 可采矿的物品列表。"
+        },
+        {
+            "name": "legCount",
+            "type": "int",
+            "localizedName": "腿数量",
+            "defaultValue": "4",
+            "notes": "此单位的腿数（必须有正确的类型才能工作！）。\n\n**Notes**: 腿的数量。"
+        },
+        {
+            "name": "legGroupSize",
+            "type": "int",
+            "localizedName": "腿组大小",
+            "defaultValue": "2",
+            "notes": "腿部运动的分组大小。例如，昆虫（6条腿）通常以3条为一组移动。\n\n**Notes**: 腿组大小。"
+        },
+        {
+            "name": "legLength",
+            "type": "float",
+            "localizedName": "腿长",
+            "defaultValue": "10.0",
+            "notes": "腿的总长度（两个部分）。\n\n**Notes**: 腿长。"
+        },
+        {
+            "name": "legSpeed",
+            "type": "float",
+            "localizedName": "腿移动速度",
+            "defaultValue": "0.1",
+            "notes": "单条腿向其目的地的移动速度（非线性）。\n\n**Notes**: 腿移动速度。"
+        },
+        {
+            "name": "legForwardScl",
+            "type": "float",
+            "localizedName": "腿前向放置比例",
+            "defaultValue": "1.0",
+            "notes": "腿试图放置在（相对于单位速度）前方多远比例的缩放；如果腿落后于单位，增加此数值。\n\n**Notes**: 腿的前向放置比例。"
+        },
+        {
+            "name": "legBaseOffset",
+            "type": "float",
+            "localizedName": "腿基础偏移",
+            "defaultValue": "0.0",
+            "notes": "腿从单位中心的偏移。\n\n**Notes**: 腿基础偏移。"
+        },
+        {
+            "name": "legMoveSpace",
+            "type": "float",
+            "localizedName": "腿移动间距缩放",
+            "defaultValue": "1.0",
+            "notes": "腿移动间隔的缩放。\n\n**Notes**: 腿移动间距缩放。"
+        },
+        {
+            "name": "legExtension",
+            "type": "float",
+            "localizedName": "腿延伸量",
+            "defaultValue": "0.0",
+            "notes": "对于没有'关节'的腿，第二个腿精灵向后移动的量，以覆盖关节区域（没有图片很难解释）。\n\n**Notes**: 腿延伸量。"
+        },
+        {
+            "name": "legPairOffset",
+            "type": "float",
+            "localizedName": "腿对偏移",
+            "defaultValue": "0.0",
+            "notes": "此字段的较高值使腿组之间的同步性降低。\n\n**Notes**: 腿对偏移。"
+        },
+        {
+            "name": "legLengthScl",
+            "type": "float",
+            "localizedName": "腿长缩放",
+            "defaultValue": "1.0",
+            "notes": "腿试图远离身体的距离缩放（不是实际长度）；例如如果设为0.5，腿看起来会有些折叠。\n\n**Notes**: 腿长缩放。"
+        },
+        {
+            "name": "legStraightLength",
+            "type": "float",
+            "localizedName": "腿伸直长度",
+            "defaultValue": "1.0",
+            "notes": "如果legStraightness > 0，这是腿在水平方向远离身体的缩放比例。\n\n**Notes**: 腿伸直长度。"
+        },
+        {
+            "name": "legMaxLength",
+            "type": "float",
+            "localizedName": "腿最大长度比例",
+            "defaultValue": "1.75",
+            "notes": "单条腿最大长度（实际长度的比例）。\n\n**Notes**: 腿最大长度比例。"
+        },
+        {
+            "name": "legMinLength",
+            "type": "float",
+            "localizedName": "腿最小长度比例",
+            "defaultValue": "0.0",
+            "notes": "单条腿最小长度（实际长度的比例）。\n\n**Notes**: 腿最小长度比例。"
+        },
+        {
+            "name": "legSplashDamage",
+            "type": "float",
+            "localizedName": "腿部溅射伤害",
+            "defaultValue": "0.0",
+            "notes": "腿触地时造成的溅射伤害。\n\n**Notes**: 腿部溅射伤害。"
+        },
+        {
+            "name": "legSplashRange",
+            "type": "float",
+            "localizedName": "腿部溅射范围",
+            "defaultValue": "5.0",
+            "notes": "腿的溅射伤害半径。\n\n**Notes**: 腿部溅射范围。"
+        },
+        {
+            "name": "baseLegStraightness",
+            "type": "float",
+            "localizedName": "腿基笔直度",
+            "defaultValue": "0.0",
+            "notes": "腿基部/原点的笔直程度（0 = 圆形，1 = 直线）。\n\n**Notes**: 腿基笔直度。"
+        },
+        {
+            "name": "legStraightness",
+            "type": "float",
+            "localizedName": "腿笔直度",
+            "defaultValue": "0.0",
+            "notes": "腿外侧角度的笔直程度（0 = 圆形，1 = 水平线）。\n\n**Notes**: 腿笔直度。"
+        },
+        {
+            "name": "legBaseUnder",
+            "type": "boolean",
+            "localizedName": "腿基绘制在下方",
+            "defaultValue": "false",
+            "notes": "若为true，基部（较远的）腿区域绘制在下方而非上方。\n\n**Notes**: 控制腿基是否绘制在下方。"
+        },
+        {
+            "name": "lockLegBase",
+            "type": "boolean",
+            "localizedName": "腿锁定基部",
+            "defaultValue": "false",
+            "notes": "若为true，腿锁定在单位基部而非位于隐式旋转'支架'上。\n\n**Notes**: 控制腿是否锁定基部。"
+        },
+        {
+            "name": "legContinuousMove",
+            "type": "boolean",
+            "localizedName": "腿持续运动",
+            "defaultValue": "false",
+            "notes": "若为true，即使单位不移动，腿也始终尝试移动（导致更自然的行为）。\n\nNotes: 控制腿是否持续运动。"
+        },
+        {
+            "name": "flipBackLegs",
+            "type": "boolean",
+            "localizedName": "翻转后腿",
+            "defaultValue": "true",
+            "notes": "TODO 这两个似乎都没什么用。\n\n**Notes**: 翻转后腿。"
+        },
+        {
+            "name": "flipLegSide",
+            "type": "boolean",
+            "localizedName": "翻转腿侧",
+            "defaultValue": "false",
+            "notes": "TODO 这两个似乎都没什么用。\n\n**Notes**: 翻转腿侧。"
+        },
+        {
+            "name": "emitWalkSound",
+            "type": "boolean",
+            "localizedName": "发出行走音效",
+            "defaultValue": "true",
+            "notes": "是否在水中发出飞溅声。\n\n**Notes**: 控制是否发出行走音效。"
+        },
+        {
+            "name": "emitWalkEffect",
+            "type": "boolean",
+            "localizedName": "发出行走特效",
+            "defaultValue": "true",
+            "notes": "是否在水中发出飞溅特效（false同时意味着emitWalkSound false）。\n\n**Notes**: 控制是否发出行走特效。"
+        },
+        {
+            "name": "mechLandShake",
+            "type": "float",
+            "localizedName": "机甲着陆震屏",
+            "defaultValue": "0.0",
+            "notes": "此机甲加速后着陆时的屏幕震动量。\n\n**Notes**: 机甲着陆震屏。"
+        },
+        {
+            "name": "mechSideSway",
+            "type": "float",
+            "localizedName": "机甲侧面摇摆",
+            "defaultValue": "0.54",
+            "notes": "机甲摇摆动画参数。\n\n**Notes**: 机甲侧面摇摆参数。"
+        },
+        {
+            "name": "mechFrontSway",
+            "type": "float",
+            "localizedName": "机甲正面摇摆",
+            "defaultValue": "0.1",
+            "notes": "机甲摇摆动画参数。\n\n**Notes**: 机甲正面摇摆参数。"
+        },
+        {
+            "name": "mechStride",
+            "type": "float",
+            "localizedName": "机甲步幅",
+            "defaultValue": "-1.0",
+            "notes": "机甲摇摆动画参数。\n\n**Notes**: 机甲步幅参数。"
+        },
+        {
+            "name": "mechStepParticles",
+            "type": "boolean",
+            "localizedName": "机甲脚步粒子",
+            "defaultValue": "false",
+            "notes": "此机甲迈步时是否产生粒子。\n\n**Notes**: 控制机甲脚步粒子。"
+        },
+        {
+            "name": "mechLegColor",
+            "type": "Color",
+            "localizedName": "机甲腿部颜色",
+            "defaultValue": "6e7080ff",
+            "notes": "腿部移动时变化到的颜色，以模拟深度。\n\n**Notes**: 机甲腿部颜色。"
+        },
+        {
+            "name": "treadRects",
+            "type": "Rect[]",
+            "localizedName": "履带矩形区域",
+            "defaultValue": "[]",
+            "notes": "以图像坐标表示的矩形履带列表，相对于中心。这些是对称的。\n\n**Notes**: 履带矩形区域列表。"
+        },
+        {
+            "name": "treadFrames",
+            "type": "int",
+            "localizedName": "履带动画帧数",
+            "defaultValue": "18",
+            "notes": "履带中运动帧的数量。\n\n**Notes**: 履带动画帧数。"
+        },
+        {
+            "name": "treadPullOffset",
+            "type": "int",
+            "localizedName": "履带拉伸偏移",
+            "defaultValue": "0",
+            "notes": "履带精灵顶部被'截断'的量（相对于图案）；这已被修正。\n\n**Notes**: 履带拉伸偏移。"
+        },
+        {
+            "name": "crushFragile",
+            "type": "boolean",
+            "localizedName": "压碎脆弱方块",
+            "defaultValue": "false",
+            "notes": "若为true，'脆弱'的方块将在坦克周围1x1区域内被瞬间压碎。\n\n**Notes**: 控制坦克是否能压碎脆弱方块。"
+        },
+        {
+            "name": "segments",
+            "type": "int",
+            "localizedName": "分段数",
+            "defaultValue": "0",
+            "notes": "独立节段的数量。\n\n**Notes**: 单位分割段数，用于蛇形单位。"
+        },
+        {
+            "name": "segmentUnits",
+            "type": "int",
+            "localizedName": "分段单位数量",
+            "defaultValue": "1",
+            "notes": "TODO 波浪支持——对于多单位分段单位，这是生成的独立单位数量。\n\n**Notes**: 分段单位数量。"
+        },
+        {
+            "name": "segmentUnit",
+            "type": "UnitType",
+            "localizedName": "分段单位类型",
+            "defaultValue": "null",
+            "notes": "在节段中生成的单位；如果为null，使用相同单位。\n\n**Notes**: 分段单位类型。"
+        },
+        {
+            "name": "segmentEndUnit",
+            "type": "UnitType",
+            "localizedName": "末端分段单位类型",
+            "defaultValue": "null",
+            "notes": "在末尾生成的单位；如果为null，使用分段单位。\n\n**Notes**: 末端分段单位类型。"
+        },
+        {
+            "name": "segmentLayerOrder",
+            "type": "boolean",
+            "localizedName": "分段渲染层顺序",
+            "defaultValue": "true",
+            "notes": "true——父节段在更高层；false——父节段在比头部更低层。\n\n**Notes**: 分段渲染层顺序。"
+        },
+        {
+            "name": "segmentMag",
+            "type": "float",
+            "localizedName": "分段偏移幅度",
+            "defaultValue": "2.0",
+            "notes": "节段之间正弦偏移的幅度。\n\n**Notes**: 分段偏移幅度。"
+        }
+    ]
+}

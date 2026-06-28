@@ -1,0 +1,77 @@
+{
+    "type": "Effect",
+    "parentType": "Object",
+    "localizedName": "效果",
+    "fields": [
+        {
+            "name": "id",
+            "type": "int",
+            "localizedName": "标识ID",
+            "defaultValue": "426",
+            "notes": "**Notes**: 该效果在全局效果列表中的唯一标识ID，在构造函数中自动分配。"
+        },
+        {
+            "name": "renderer",
+            "type": "Cons of EffectContainer",
+            "localizedName": "渲染器",
+            "defaultValue": "{code}",
+            "notes": "**Notes**: 渲染回调函数，负责绘制该效果的实际视觉内容。"
+        },
+        {
+            "name": "lifetime",
+            "type": "float",
+            "localizedName": "持续时间",
+            "defaultValue": "50.0",
+            "notes": "**Notes**: 效果的持续时间，以tick为单位。"
+        },
+        {
+            "name": "clip",
+            "type": "float",
+            "localizedName": "裁剪半径",
+            "defaultValue": "0.0",
+            "notes": "剪辑大小。\n\n**Notes**: 效果渲染的裁剪区域半径，用于判断效果是否在相机视野内。"
+        },
+        {
+            "name": "startDelay",
+            "type": "float",
+            "localizedName": "开始延迟",
+            "defaultValue": "0.0",
+            "notes": "效果开始前的延迟时间。\n\n**Notes**: 效果创建后延迟指定tick才开始播放。"
+        },
+        {
+            "name": "baseRotation",
+            "type": "float",
+            "localizedName": "基础旋转",
+            "defaultValue": "0.0",
+            "notes": "添加到旋转的角度量。\n\n**Notes**: 在效果创建时额外增加的旋转偏移。"
+        },
+        {
+            "name": "followParent",
+            "type": "boolean",
+            "localizedName": "跟随父对象",
+            "defaultValue": "true",
+            "notes": "如果为true，则跟随父单位的数据。\n\n**Notes**: 当数据对象实现了Posc接口时，效果会跟随父对象移动。"
+        },
+        {
+            "name": "rotWithParent",
+            "type": "boolean",
+            "localizedName": "随父对象旋转",
+            "defaultValue": "false",
+            "notes": "如果此值和followParent都为true，效果将随父对象的旋转进行偏移和旋转。\n\n**Notes**: 效果会跟随父对象的旋转角度进行同步。"
+        },
+        {
+            "name": "layer",
+            "type": "float",
+            "localizedName": "图层层级",
+            "defaultValue": "110.0",
+            "notes": "**Notes**: 效果绘制所在的图层层级。"
+        },
+        {
+            "name": "layerDuration",
+            "type": "float",
+            "localizedName": "图层持续时间",
+            "defaultValue": "0.0",
+            "notes": "**Notes**: 图层持续时间的覆盖值，用于部分特殊效果。"
+        }
+    ]
+}

@@ -1,0 +1,12 @@
+{
+    "type": "PowerTurret",
+    "parentType": "Turret",
+    "fields": [
+        {
+            "name": "shootType",
+            "type": "BulletType",
+            "defaultValue": "null",
+            "notes": ""
+        }
+    ]
+}

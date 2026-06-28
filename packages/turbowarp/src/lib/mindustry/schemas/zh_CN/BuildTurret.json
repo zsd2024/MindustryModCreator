@@ -1,0 +1,77 @@
+{
+    "type": "BuildTurret",
+    "parentType": "BaseTurret",
+    "localizedName": "建造炮塔",
+    "fields": [
+        {
+            "name": "timerTarget",
+            "type": "int",
+            "defaultValue": "1",
+            "notes": "**Notes**: 搜索目标计时器ID",
+            "localizedName": "搜索目标计时器一"
+        },
+        {
+            "name": "timerTarget2",
+            "type": "int",
+            "defaultValue": "2",
+            "notes": "**Notes**: 搜索目标计时器ID2",
+            "localizedName": "搜索目标计时器二"
+        },
+        {
+            "name": "targetInterval",
+            "type": "int",
+            "defaultValue": "15",
+            "notes": "**Notes**: 搜索目标间隔",
+            "localizedName": "搜索目标间隔"
+        },
+        {
+            "name": "baseRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": "**Notes**: 底座纹理区域",
+            "localizedName": "底座纹理"
+        },
+        {
+            "name": "glowRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": "**Notes**: 发光纹理区域",
+            "localizedName": "发光纹理"
+        },
+        {
+            "name": "buildSpeed",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": "**Notes**: 建造速度",
+            "localizedName": "建造速度"
+        },
+        {
+            "name": "buildBeamOffset",
+            "type": "float",
+            "defaultValue": "5.0",
+            "notes": "**Notes**: 建造光束偏移",
+            "localizedName": "建造光束偏移"
+        },
+        {
+            "name": "unitType",
+            "type": "UnitType",
+            "defaultValue": "null",
+            "notes": "**Notes**: 单位类型（在init()中创建，不应手动修改）",
+            "localizedName": "单位类型"
+        },
+        {
+            "name": "elevation",
+            "type": "float",
+            "defaultValue": "-1.0",
+            "notes": "**Notes**: 炮管抬升高度",
+            "localizedName": "炮管抬升高度"
+        },
+        {
+            "name": "heatColor",
+            "type": "Color",
+            "defaultValue": "ffd37fe5",
+            "notes": "**Notes**: 热量颜色",
+            "localizedName": "热量颜色"
+        }
+    ]
+}

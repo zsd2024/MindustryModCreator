@@ -1,0 +1,18 @@
+{
+    "type": "LaserTurret",
+    "parentType": "PowerTurret",
+    "fields": [
+        {
+            "name": "firingMoveFract",
+            "type": "float",
+            "defaultValue": "0.25",
+            "notes": ""
+        },
+        {
+            "name": "shootDuration",
+            "type": "float",
+            "defaultValue": "100.0",
+            "notes": ""
+        }
+    ]
+}

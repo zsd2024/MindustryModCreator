@@ -1,0 +1,21 @@
+{
+    "type": "PayloadAmmoTurret",
+    "parentType": "Turret",
+    "localizedName": "载荷弹药炮塔",
+    "fields": [
+        {
+            "name": "ammoTypes",
+            "localizedName": "弹药类型映射",
+            "type": "ObjectMap of UnlockableContent, BulletType",
+            "defaultValue": "new ObjectMap<>()",
+            "notes": "**Notes**: 负载内容到子弹类型的映射表，定义炮塔接受的弹药负载。"
+        },
+        {
+            "name": "ammoKeys",
+            "localizedName": "弹药键数组",
+            "type": "UnlockableContent[]",
+            "defaultValue": "null",
+            "notes": "**Notes**: 用于快速查找的弹药键数组。"
+        }
+    ]
+}

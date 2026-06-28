@@ -1,0 +1,48 @@
+{
+    "type": "ShieldWall",
+    "parentType": "Wall",
+    "fields": [
+        {
+            "name": "shieldHealth",
+            "type": "float",
+            "defaultValue": "900.0",
+            "notes": ""
+        },
+        {
+            "name": "breakCooldown",
+            "type": "float",
+            "defaultValue": "600.0",
+            "notes": ""
+        },
+        {
+            "name": "regenSpeed",
+            "type": "float",
+            "defaultValue": "2.0",
+            "notes": ""
+        },
+        {
+            "name": "glowColor",
+            "type": "Color",
+            "defaultValue": "ff75317f",
+            "notes": ""
+        },
+        {
+            "name": "glowMag",
+            "type": "float",
+            "defaultValue": "0.6",
+            "notes": ""
+        },
+        {
+            "name": "glowScl",
+            "type": "float",
+            "defaultValue": "8.0",
+            "notes": ""
+        },
+        {
+            "name": "glowRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        }
+    ]
+}

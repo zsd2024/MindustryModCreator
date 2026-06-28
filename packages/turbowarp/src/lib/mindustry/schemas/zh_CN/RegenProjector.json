@@ -1,0 +1,63 @@
+{
+    "type": "RegenProjector",
+    "parentType": "Block",
+    "localizedName": "再生投影仪",
+    "fields": [
+        {
+            "name": "range",
+            "type": "int",
+            "defaultValue": "14",
+            "localizedName": "范围",
+            "notes": "**Notes**: 治疗范围（格数）"
+        },
+        {
+            "name": "healPercent",
+            "type": "float",
+            "defaultValue": "0.2",
+            "localizedName": "治疗百分比",
+            "notes": "**Notes**: 每帧治疗百分比"
+        },
+        {
+            "name": "optionalMultiplier",
+            "type": "float",
+            "defaultValue": "2.0",
+            "localizedName": "可选消耗倍率",
+            "notes": "**Notes**: 可选消耗倍率"
+        },
+        {
+            "name": "optionalUseTime",
+            "type": "float",
+            "defaultValue": "480.0",
+            "localizedName": "可选消耗间隔",
+            "notes": "**Notes**: 可选消耗使用间隔"
+        },
+        {
+            "name": "drawer",
+            "type": "DrawBlock",
+            "defaultValue": "new DrawDefault()",
+            "localizedName": "绘制器",
+            "notes": "**Notes**: 方块绘制器"
+        },
+        {
+            "name": "effectChance",
+            "type": "float",
+            "defaultValue": "0.003",
+            "localizedName": "特效概率",
+            "notes": "**Notes**: 特效生成概率"
+        },
+        {
+            "name": "baseColor",
+            "type": "Color",
+            "defaultValue": "ffd37fff",
+            "localizedName": "基础颜色",
+            "notes": "**Notes**: 基础颜色"
+        },
+        {
+            "name": "effect",
+            "type": "Effect",
+            "defaultValue": "regenParticle",
+            "localizedName": "特效",
+            "notes": "**Notes**: 特效"
+        }
+    ]
+}

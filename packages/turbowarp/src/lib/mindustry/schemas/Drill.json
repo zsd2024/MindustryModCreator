@@ -1,0 +1,138 @@
+{
+    "type": "Drill",
+    "parentType": "Block",
+    "fields": [
+        {
+            "name": "hardnessDrillMultiplier",
+            "type": "float",
+            "defaultValue": "50.0",
+            "notes": ""
+        },
+        {
+            "name": "tier",
+            "type": "int",
+            "defaultValue": "0",
+            "notes": "Maximum tier of blocks this drill can mine."
+        },
+        {
+            "name": "drillTime",
+            "type": "float",
+            "defaultValue": "300.0",
+            "notes": "Base time to drill one ore, in frames."
+        },
+        {
+            "name": "liquidBoostIntensity",
+            "type": "float",
+            "defaultValue": "1.6",
+            "notes": "How many times faster the drill will progress when boosted by liquid."
+        },
+        {
+            "name": "warmupSpeed",
+            "type": "float",
+            "defaultValue": "0.015",
+            "notes": "Speed at which the drill speeds up."
+        },
+        {
+            "name": "blockedItem",
+            "type": "Item",
+            "defaultValue": "null",
+            "notes": "Special exemption item that this drill can't mine."
+        },
+        {
+            "name": "blockedItems",
+            "type": "Seq of Item",
+            "defaultValue": "null",
+            "notes": "Special exemption items that this drill can't mine."
+        },
+        {
+            "name": "drawMineItem",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "Whether to draw the item this drill is mining."
+        },
+        {
+            "name": "drillEffect",
+            "type": "Effect",
+            "defaultValue": "mine",
+            "notes": "Effect played when an item is produced. This is colored."
+        },
+        {
+            "name": "drillEffectRnd",
+            "type": "float",
+            "defaultValue": "-1.0",
+            "notes": "Drill effect randomness. Block size by default."
+        },
+        {
+            "name": "drillEffectChance",
+            "type": "float",
+            "defaultValue": "0.02",
+            "notes": "Chance of displaying the effect. Useful for extremely fast drills."
+        },
+        {
+            "name": "rotateSpeed",
+            "type": "float",
+            "defaultValue": "2.0",
+            "notes": "Speed the drill bit rotates at."
+        },
+        {
+            "name": "updateEffect",
+            "type": "Effect",
+            "defaultValue": "pulverizeSmall",
+            "notes": "Effect randomly played while drilling."
+        },
+        {
+            "name": "updateEffectChance",
+            "type": "float",
+            "defaultValue": "0.02",
+            "notes": "Chance the update effect will appear."
+        },
+        {
+            "name": "drillMultipliers",
+            "type": "ObjectFloatMap of Item",
+            "defaultValue": "new ObjectFloatMap<>()",
+            "notes": "Multipliers of drill speed for each item. Defaults to 1."
+        },
+        {
+            "name": "drawRim",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": ""
+        },
+        {
+            "name": "drawSpinSprite",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": ""
+        },
+        {
+            "name": "heatColor",
+            "type": "Color",
+            "defaultValue": "ff5512ff",
+            "notes": ""
+        },
+        {
+            "name": "rimRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "rotatorRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "topRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "itemRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        }
+    ]
+}

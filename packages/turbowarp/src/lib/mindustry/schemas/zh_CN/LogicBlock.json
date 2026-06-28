@@ -1,0 +1,35 @@
+{
+    "type": "LogicBlock",
+    "parentType": "Block",
+    "localizedName": "逻辑方块",
+    "fields": [
+        {
+            "name": "maxInstructionScale",
+            "type": "int",
+            "localizedName": "最大指令累积缩放",
+            "defaultValue": "5",
+            "notes": "**Notes**: 最大指令累积缩放倍数"
+        },
+        {
+            "name": "instructionsPerTick",
+            "type": "int",
+            "localizedName": "每刻执行指令数",
+            "defaultValue": "1",
+            "notes": "**Notes**: 每游戏刻执行指令数"
+        },
+        {
+            "name": "maxInstructionsPerTick",
+            "type": "int",
+            "localizedName": "每刻最大指令数",
+            "defaultValue": "40",
+            "notes": "**Notes**: 每游戏刻最大执行指令数（特权处理器）"
+        },
+        {
+            "name": "range",
+            "type": "float",
+            "localizedName": "链接范围",
+            "defaultValue": "80.0",
+            "notes": "**Notes**: 链接方块的范围"
+        }
+    ]
+}

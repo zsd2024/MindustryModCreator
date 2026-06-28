@@ -1,0 +1,12 @@
+{
+    "type": "MemoryBlock",
+    "parentType": "Block",
+    "fields": [
+        {
+            "name": "memoryCapacity",
+            "type": "int",
+            "defaultValue": "32",
+            "notes": ""
+        }
+    ]
+}

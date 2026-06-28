@@ -1,0 +1,12 @@
+{
+    "type": "DrawPumpLiquid",
+    "parentType": "DrawBlock",
+    "fields": [
+        {
+            "name": "liquid",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        }
+    ]
+}

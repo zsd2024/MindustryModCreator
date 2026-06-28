@@ -1,0 +1,24 @@
+{
+    "type": "PayloadDeconstructor",
+    "parentType": "PayloadBlock",
+    "fields": [
+        {
+            "name": "maxPayloadSize",
+            "type": "float",
+            "defaultValue": "4.0",
+            "notes": ""
+        },
+        {
+            "name": "deconstructSpeed",
+            "type": "float",
+            "defaultValue": "2.5",
+            "notes": ""
+        },
+        {
+            "name": "dumpRate",
+            "type": "int",
+            "defaultValue": "4",
+            "notes": ""
+        }
+    ]
+}

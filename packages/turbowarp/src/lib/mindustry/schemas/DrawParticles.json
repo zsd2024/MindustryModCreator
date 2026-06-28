@@ -1,0 +1,108 @@
+{
+    "type": "DrawParticles",
+    "parentType": "DrawBlock",
+    "fields": [
+        {
+            "name": "color",
+            "type": "Color",
+            "defaultValue": "f2d585ff",
+            "notes": ""
+        },
+        {
+            "name": "sides",
+            "type": "int",
+            "defaultValue": "12",
+            "notes": ""
+        },
+        {
+            "name": "x",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": ""
+        },
+        {
+            "name": "y",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": ""
+        },
+        {
+            "name": "alpha",
+            "type": "float",
+            "defaultValue": "0.5",
+            "notes": ""
+        },
+        {
+            "name": "particles",
+            "type": "int",
+            "defaultValue": "30",
+            "notes": ""
+        },
+        {
+            "name": "particleRotation",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": ""
+        },
+        {
+            "name": "particleLife",
+            "type": "float",
+            "defaultValue": "70.0",
+            "notes": ""
+        },
+        {
+            "name": "particleRad",
+            "type": "float",
+            "defaultValue": "7.0",
+            "notes": ""
+        },
+        {
+            "name": "particleSize",
+            "type": "float",
+            "defaultValue": "3.0",
+            "notes": ""
+        },
+        {
+            "name": "fadeMargin",
+            "type": "float",
+            "defaultValue": "0.4",
+            "notes": ""
+        },
+        {
+            "name": "rotateScl",
+            "type": "float",
+            "defaultValue": "3.0",
+            "notes": ""
+        },
+        {
+            "name": "reverse",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": ""
+        },
+        {
+            "name": "poly",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": ""
+        },
+        {
+            "name": "particleInterp",
+            "type": "Interp",
+            "defaultValue": "5f)",
+            "notes": ""
+        },
+        {
+            "name": "particleSizeInterp",
+            "type": "Interp",
+            "defaultValue": "slope",
+            "notes": ""
+        },
+        {
+            "name": "blending",
+            "type": "Blending",
+            "defaultValue": "normal",
+            "notes": ""
+        }
+    ]
+}

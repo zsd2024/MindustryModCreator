@@ -1,0 +1,90 @@
+{
+    "type": "PowerGenerator",
+    "parentType": "PowerDistributor",
+    "fields": [
+        {
+            "name": "powerProduction",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "The amount of power produced per tick in case of an efficiency of 1.0, which represents 100%."
+        },
+        {
+            "name": "generationType",
+            "type": "Stat",
+            "defaultValue": "basePowerGeneration",
+            "notes": ""
+        },
+        {
+            "name": "drawer",
+            "type": "DrawBlock",
+            "defaultValue": "new DrawDefault()",
+            "notes": ""
+        },
+        {
+            "name": "explosionRadius",
+            "type": "int",
+            "defaultValue": "12",
+            "notes": ""
+        },
+        {
+            "name": "explosionDamage",
+            "type": "int",
+            "defaultValue": "0",
+            "notes": ""
+        },
+        {
+            "name": "explodeEffect",
+            "type": "Effect",
+            "defaultValue": "none",
+            "notes": ""
+        },
+        {
+            "name": "explodeSound",
+            "type": "Sound",
+            "defaultValue": "none",
+            "notes": ""
+        },
+        {
+            "name": "explosionPuddles",
+            "type": "int",
+            "defaultValue": "10",
+            "notes": ""
+        },
+        {
+            "name": "explosionPuddleRange",
+            "type": "float",
+            "defaultValue": "16.0",
+            "notes": ""
+        },
+        {
+            "name": "explosionPuddleAmount",
+            "type": "float",
+            "defaultValue": "100.0",
+            "notes": ""
+        },
+        {
+            "name": "explosionPuddleLiquid",
+            "type": "Liquid",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "explosionMinWarmup",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": ""
+        },
+        {
+            "name": "explosionShake",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": ""
+        },
+        {
+            "name": "explosionShakeDuration",
+            "type": "float",
+            "defaultValue": "6.0",
+            "notes": ""
+        }
+    ]
+}

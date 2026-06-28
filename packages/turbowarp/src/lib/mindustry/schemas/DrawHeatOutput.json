@@ -1,0 +1,66 @@
+{
+    "type": "DrawHeatOutput",
+    "parentType": "DrawBlock",
+    "fields": [
+        {
+            "name": "heat",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "glow",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "top1",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "top2",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "heatColor",
+            "type": "Color",
+            "defaultValue": "ff3838cc",
+            "notes": ""
+        },
+        {
+            "name": "heatPulse",
+            "type": "float",
+            "defaultValue": "0.3",
+            "notes": ""
+        },
+        {
+            "name": "heatPulseScl",
+            "type": "float",
+            "defaultValue": "10.0",
+            "notes": ""
+        },
+        {
+            "name": "glowMult",
+            "type": "float",
+            "defaultValue": "1.2",
+            "notes": ""
+        },
+        {
+            "name": "rotOffset",
+            "type": "int",
+            "defaultValue": "0",
+            "notes": ""
+        },
+        {
+            "name": "drawGlow",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": ""
+        }
+    ]
+}

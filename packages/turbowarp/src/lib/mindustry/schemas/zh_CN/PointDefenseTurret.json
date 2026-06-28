@@ -1,0 +1,84 @@
+{
+    "type": "PointDefenseTurret",
+    "parentType": "ReloadTurret",
+    "localizedName": "点防御炮塔",
+    "fields": [
+        {
+            "name": "timerTarget",
+            "localizedName": "目标计时器",
+            "type": "int",
+            "defaultValue": "1",
+            "notes": "**Notes**: 重新寻找目标的计时器索引。"
+        },
+        {
+            "name": "retargetTime",
+            "localizedName": "重新锁定间隔",
+            "type": "float",
+            "defaultValue": "5.0",
+            "notes": "**Notes**: 重新寻找子弹目标的tick间隔。"
+        },
+        {
+            "name": "baseRegion",
+            "localizedName": "底座纹理",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": "**Notes**: 炮塔底座的纹理区域，通过@-#base注解加载。"
+        },
+        {
+            "name": "color",
+            "localizedName": "光束颜色",
+            "type": "Color",
+            "defaultValue": "ffffffff",
+            "notes": "**Notes**: 防御光束的颜色。"
+        },
+        {
+            "name": "beamEffect",
+            "localizedName": "光束特效",
+            "type": "Effect",
+            "defaultValue": "pointBeam",
+            "notes": "**Notes**: 光束效果。"
+        },
+        {
+            "name": "hitEffect",
+            "localizedName": "击中特效",
+            "type": "Effect",
+            "defaultValue": "pointHit",
+            "notes": "**Notes**: 击中目标时的效果。"
+        },
+        {
+            "name": "shootEffect",
+            "localizedName": "射击特效",
+            "type": "Effect",
+            "defaultValue": "sparkShoot",
+            "notes": "**Notes**: 射击时的火花效果。"
+        },
+        {
+            "name": "shootSound",
+            "localizedName": "射击音效",
+            "type": "Sound",
+            "defaultValue": "shootSegment",
+            "notes": "**Notes**: 射击音效。"
+        },
+        {
+            "name": "shootCone",
+            "localizedName": "射击角度精度",
+            "type": "float",
+            "defaultValue": "5.0",
+            "notes": "**Notes**: 射击角度精确度，角度差在此范围内才能射击。"
+        },
+        {
+            "name": "bulletDamage",
+            "localizedName": "子弹伤害",
+            "type": "float",
+            "defaultValue": "10.0",
+            "notes": "**Notes**: 每次拦截造成的伤害值。"
+        },
+        {
+            "name": "shootLength",
+            "localizedName": "光束长度",
+            "type": "float",
+            "defaultValue": "3.0",
+            "notes": "**Notes**: 光束从炮口延伸的长度。"
+        }
+    ]
+}

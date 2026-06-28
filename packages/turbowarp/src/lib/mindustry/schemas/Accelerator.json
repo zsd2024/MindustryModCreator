@@ -1,0 +1,222 @@
+{
+    "type": "Accelerator",
+    "parentType": "Block",
+    "fields": [
+        {
+            "name": "arrowRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "selectArrowRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "launchBlock",
+            "type": "Block",
+            "defaultValue": "coreNucleus",
+            "notes": "Core block that is launched. Should match the starting core of the planet being launched to."
+        },
+        {
+            "name": "powerBufferRequirement",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": ""
+        },
+        {
+            "name": "launchCandidates",
+            "type": "Seq of Planet",
+            "defaultValue": "null",
+            "notes": "Override for planets that this block can launch to. If null, the planet's launch candidates are used."
+        },
+        {
+            "name": "lightningSound",
+            "type": "Sound",
+            "defaultValue": "shootArc)",
+            "notes": ""
+        },
+        {
+            "name": "lightningSoundVolume",
+            "type": "float",
+            "defaultValue": "0.85",
+            "notes": ""
+        },
+        {
+            "name": "chargeSound",
+            "type": "Sound",
+            "defaultValue": "acceleratorCharge",
+            "notes": ""
+        },
+        {
+            "name": "launchSound",
+            "type": "Sound",
+            "defaultValue": "acceleratorLaunch",
+            "notes": ""
+        },
+        {
+            "name": "constructSound",
+            "type": "Sound",
+            "defaultValue": "acceleratorConstruct",
+            "notes": ""
+        },
+        {
+            "name": "launchDuration",
+            "type": "float",
+            "defaultValue": "120.0",
+            "notes": ""
+        },
+        {
+            "name": "chargeDuration",
+            "type": "float",
+            "defaultValue": "220.0",
+            "notes": ""
+        },
+        {
+            "name": "buildDuration",
+            "type": "float",
+            "defaultValue": "120.0",
+            "notes": ""
+        },
+        {
+            "name": "landZoomInterp",
+            "type": "Interp",
+            "defaultValue": "pow4In",
+            "notes": ""
+        },
+        {
+            "name": "chargeZoomInterp",
+            "type": "Interp",
+            "defaultValue": "pow4In",
+            "notes": ""
+        },
+        {
+            "name": "landZoomFrom",
+            "type": "float",
+            "defaultValue": "0.02",
+            "notes": ""
+        },
+        {
+            "name": "landZoomTo",
+            "type": "float",
+            "defaultValue": "4.0",
+            "notes": ""
+        },
+        {
+            "name": "chargeZoomTo",
+            "type": "float",
+            "defaultValue": "5.0",
+            "notes": ""
+        },
+        {
+            "name": "chargeRings",
+            "type": "int",
+            "defaultValue": "4",
+            "notes": ""
+        },
+        {
+            "name": "ringRadBase",
+            "type": "float",
+            "defaultValue": "60.0",
+            "notes": ""
+        },
+        {
+            "name": "ringRadSpacing",
+            "type": "float",
+            "defaultValue": "25.0",
+            "notes": ""
+        },
+        {
+            "name": "ringRadPow",
+            "type": "float",
+            "defaultValue": "1.6",
+            "notes": ""
+        },
+        {
+            "name": "ringStroke",
+            "type": "float",
+            "defaultValue": "3.0",
+            "notes": ""
+        },
+        {
+            "name": "ringSpeedup",
+            "type": "float",
+            "defaultValue": "1.4",
+            "notes": ""
+        },
+        {
+            "name": "chargeRingMerge",
+            "type": "float",
+            "defaultValue": "2.0",
+            "notes": ""
+        },
+        {
+            "name": "ringArrowRad",
+            "type": "float",
+            "defaultValue": "3.0",
+            "notes": ""
+        },
+        {
+            "name": "ringHandleTilt",
+            "type": "float",
+            "defaultValue": "0.8",
+            "notes": ""
+        },
+        {
+            "name": "ringHandleLen",
+            "type": "float",
+            "defaultValue": "30.0",
+            "notes": ""
+        },
+        {
+            "name": "ringColor",
+            "type": "Color",
+            "defaultValue": "ffd37fff",
+            "notes": ""
+        },
+        {
+            "name": "launchLightning",
+            "type": "int",
+            "defaultValue": "20",
+            "notes": ""
+        },
+        {
+            "name": "lightningColor",
+            "type": "Color",
+            "defaultValue": "ffd37fff",
+            "notes": ""
+        },
+        {
+            "name": "lightningDamage",
+            "type": "float",
+            "defaultValue": "40.0",
+            "notes": ""
+        },
+        {
+            "name": "lightningOffset",
+            "type": "float",
+            "defaultValue": "24.0",
+            "notes": ""
+        },
+        {
+            "name": "lightningLengthMin",
+            "type": "int",
+            "defaultValue": "5",
+            "notes": ""
+        },
+        {
+            "name": "lightningLengthMax",
+            "type": "int",
+            "defaultValue": "25",
+            "notes": ""
+        },
+        {
+            "name": "lightningLaunchChance",
+            "type": "double",
+            "defaultValue": "0.8",
+            "notes": ""
+        }
+    ]
+}

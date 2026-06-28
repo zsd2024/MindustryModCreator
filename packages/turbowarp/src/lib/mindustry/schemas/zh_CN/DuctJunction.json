@@ -1,0 +1,35 @@
+{
+    "localizedName": "管道连接器",
+    "type": "DuctJunction",
+    "parentType": "Block",
+    "fields": [
+        {
+            "name": "transparentColor",
+            "localizedName": "透明颜色",
+            "type": "Color",
+            "defaultValue": "66666619",
+            "notes": "**Notes**: 透明叠加颜色，用于半透明渲染"
+        },
+        {
+            "name": "bottomRegion",
+            "localizedName": "底部纹理",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": "**Notes**: 底部纹理"
+        },
+        {
+            "name": "topRegion",
+            "localizedName": "顶部纹理",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": "**Notes**: 顶部纹理"
+        },
+        {
+            "name": "speed",
+            "localizedName": "传输速度",
+            "type": "float",
+            "defaultValue": "5.0",
+            "notes": "**Notes**: 物品传输速度"
+        }
+    ]
+}

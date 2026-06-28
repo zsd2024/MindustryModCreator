@@ -1,0 +1,84 @@
+{
+    "type": "PointLaserBulletType",
+    "parentType": "BulletType",
+    "localizedName": "点激光子弹类型",
+    "fields": [
+        {
+            "name": "sprite",
+            "localizedName": "精灵名称",
+            "type": "String",
+            "defaultValue": "\"point-laser\"",
+            "notes": "精灵图名称"
+        },
+        {
+            "name": "laser",
+            "localizedName": "激光纹理",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": "激光纹理区域"
+        },
+        {
+            "name": "laserEnd",
+            "localizedName": "激光末端纹理",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": "激光末端纹理区域"
+        },
+        {
+            "name": "color",
+            "localizedName": "激光颜色",
+            "type": "Color",
+            "defaultValue": "ffffffff",
+            "notes": "激光颜色"
+        },
+        {
+            "name": "beamEffect",
+            "localizedName": "光束特效",
+            "type": "Effect",
+            "defaultValue": "colorTrail",
+            "notes": "光束效果"
+        },
+        {
+            "name": "beamEffectInterval",
+            "localizedName": "光束特效间隔",
+            "type": "float",
+            "defaultValue": "3.0",
+            "notes": "光束效果间隔（刻数）"
+        },
+        {
+            "name": "beamEffectSize",
+            "localizedName": "光束特效大小",
+            "type": "float",
+            "defaultValue": "3.5",
+            "notes": "光束效果大小"
+        },
+        {
+            "name": "oscScl",
+            "localizedName": "振荡缩放",
+            "type": "float",
+            "defaultValue": "2.0",
+            "notes": "振荡缩放"
+        },
+        {
+            "name": "oscMag",
+            "localizedName": "振荡幅度",
+            "type": "float",
+            "defaultValue": "0.3",
+            "notes": "振荡幅度"
+        },
+        {
+            "name": "damageInterval",
+            "localizedName": "伤害间隔",
+            "type": "float",
+            "defaultValue": "5.0",
+            "notes": "伤害判定间隔（刻数）"
+        },
+        {
+            "name": "shake",
+            "localizedName": "震动强度",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "屏幕震动强度"
+        }
+    ]
+}

@@ -1,0 +1,63 @@
+{
+    "type": "PayloadLoader",
+    "parentType": "PayloadBlock",
+    "localizedName": "载荷装载器",
+    "fields": [
+        {
+            "name": "timerLoad",
+            "localizedName": "装载计时器",
+            "type": "int",
+            "defaultValue": "1",
+            "notes": "**Notes**: 装载计时器ID"
+        },
+        {
+            "name": "loadTime",
+            "localizedName": "装载时间",
+            "type": "float",
+            "defaultValue": "2.0",
+            "notes": "**Notes**: 装载物品/液体所需时间"
+        },
+        {
+            "name": "itemsLoaded",
+            "localizedName": "物品装载量",
+            "type": "int",
+            "defaultValue": "8",
+            "notes": "**Notes**: 每次操作装载的物品数量"
+        },
+        {
+            "name": "liquidsLoaded",
+            "localizedName": "液体装载量",
+            "type": "float",
+            "defaultValue": "40.0",
+            "notes": "**Notes**: 每次操作装载的液体量"
+        },
+        {
+            "name": "maxBlockSize",
+            "localizedName": "最大方块尺寸",
+            "type": "int",
+            "defaultValue": "3",
+            "notes": "**Notes**: 可装载的最大方块尺寸"
+        },
+        {
+            "name": "maxPowerConsumption",
+            "localizedName": "最大功耗",
+            "type": "float",
+            "defaultValue": "40.0",
+            "notes": "**Notes**: 充电时最大功耗"
+        },
+        {
+            "name": "loadPowerDynamic",
+            "localizedName": "动态功耗",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "**Notes**: 是否动态调整功耗"
+        },
+        {
+            "name": "overRegion",
+            "localizedName": "覆盖层纹理",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": "**Notes**: 覆盖层纹理"
+        }
+    ]
+}

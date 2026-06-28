@@ -1,0 +1,49 @@
+{
+    "localizedName": "传送带",
+    "type": "Conveyor",
+    "parentType": "Block",
+    "fields": [
+        {
+            "name": "regions",
+            "localizedName": "纹理区域数组",
+            "type": "TextureRegion[][]",
+            "defaultValue": "null",
+            "notes": "**Notes**: 7种混合类型×4帧的纹理区域数组，通过@-#1-#2注解自动加载。"
+        },
+        {
+            "name": "speed",
+            "localizedName": "移动速度",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "**Notes**: 传送带的基础移动速度。"
+        },
+        {
+            "name": "displayedSpeed",
+            "localizedName": "显示速度",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "**Notes**: 状态面板中显示的速度值，由于实际移动速度非线性，需要单独设置。"
+        },
+        {
+            "name": "pushUnits",
+            "localizedName": "推动单位",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "**Notes**: 如果为true，传送带会推动站在上面的单位。"
+        },
+        {
+            "name": "junctionReplacement",
+            "localizedName": "交叉替换方块",
+            "type": "Block",
+            "defaultValue": "null",
+            "notes": "**Notes**: 在交叉路口自动替换为的方块，默认为junction。"
+        },
+        {
+            "name": "bridgeReplacement",
+            "localizedName": "桥梁替换方块",
+            "type": "Block",
+            "defaultValue": "null",
+            "notes": "**Notes**: 在桥梁处自动替换为的方块，默认为itemBridge。"
+        }
+    ]
+}

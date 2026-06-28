@@ -1,0 +1,35 @@
+{
+    "type": "StaticWall",
+    "parentType": "Prop",
+    "localizedName": "静态墙壁",
+    "fields": [
+        {
+            "name": "large",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "localizedName": "大型纹理",
+            "notes": "**Notes**: 大块墙壁纹理，可分割为2x2块。"
+        },
+        {
+            "name": "split",
+            "type": "TextureRegion[][]",
+            "defaultValue": "null",
+            "localizedName": "分割纹理",
+            "notes": "**Notes**: 运行时分割后的2x2纹理数组。"
+        },
+        {
+            "name": "autotile",
+            "type": "boolean",
+            "defaultValue": "false",
+            "localizedName": "自动拼接",
+            "notes": "若为true，此墙壁使用自动拼接；不支持变体。\n\n**Notes**: If true, this wall uses autotiling; variants are not supported. See https://github.com/GglLfr/tile-gen"
+        },
+        {
+            "name": "autotileMidVariants",
+            "type": "int",
+            "defaultValue": "1",
+            "localizedName": "自动拼接中间变体数",
+            "notes": "若大于1，自动拼接的中间区域有随机变体。\n\n**Notes**: If >1, the middle region of the autotile has random variants."
+        }
+    ]
+}

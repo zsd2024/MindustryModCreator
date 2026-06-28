@@ -1,0 +1,24 @@
+{
+    "type": "WrapEffect",
+    "parentType": "Effect",
+    "fields": [
+        {
+            "name": "effect",
+            "type": "Effect",
+            "defaultValue": "none",
+            "notes": ""
+        },
+        {
+            "name": "color",
+            "type": "Color",
+            "defaultValue": "ffffffff",
+            "notes": ""
+        },
+        {
+            "name": "rotation",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": ""
+        }
+    ]
+}

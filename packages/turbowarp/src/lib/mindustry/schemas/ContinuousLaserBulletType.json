@@ -1,0 +1,78 @@
+{
+    "type": "ContinuousLaserBulletType",
+    "parentType": "ContinuousBulletType",
+    "fields": [
+        {
+            "name": "fadeTime",
+            "type": "float",
+            "defaultValue": "16.0",
+            "notes": ""
+        },
+        {
+            "name": "lightStroke",
+            "type": "float",
+            "defaultValue": "40.0",
+            "notes": ""
+        },
+        {
+            "name": "divisions",
+            "type": "int",
+            "defaultValue": "13",
+            "notes": ""
+        },
+        {
+            "name": "colors",
+            "type": "Color[]",
+            "defaultValue": "[ec745855, ec7458aa, ff9c5aff, ffffffff]",
+            "notes": ""
+        },
+        {
+            "name": "strokeFrom",
+            "type": "float",
+            "defaultValue": "2.0",
+            "notes": ""
+        },
+        {
+            "name": "strokeTo",
+            "type": "float",
+            "defaultValue": "0.5",
+            "notes": ""
+        },
+        {
+            "name": "pointyScaling",
+            "type": "float",
+            "defaultValue": "0.75",
+            "notes": ""
+        },
+        {
+            "name": "backLength",
+            "type": "float",
+            "defaultValue": "7.0",
+            "notes": ""
+        },
+        {
+            "name": "frontLength",
+            "type": "float",
+            "defaultValue": "35.0",
+            "notes": ""
+        },
+        {
+            "name": "width",
+            "type": "float",
+            "defaultValue": "9.0",
+            "notes": ""
+        },
+        {
+            "name": "oscScl",
+            "type": "float",
+            "defaultValue": "0.8",
+            "notes": ""
+        },
+        {
+            "name": "oscMag",
+            "type": "float",
+            "defaultValue": "1.5",
+            "notes": ""
+        }
+    ]
+}

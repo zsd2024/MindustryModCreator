@@ -1,0 +1,156 @@
+{
+    "type": "PayloadMassDriver",
+    "parentType": "PayloadBlock",
+    "fields": [
+        {
+            "name": "range",
+            "type": "float",
+            "defaultValue": "100.0",
+            "notes": ""
+        },
+        {
+            "name": "rotateSpeed",
+            "type": "float",
+            "defaultValue": "5.0",
+            "notes": ""
+        },
+        {
+            "name": "length",
+            "type": "float",
+            "defaultValue": "11.125",
+            "notes": ""
+        },
+        {
+            "name": "knockback",
+            "type": "float",
+            "defaultValue": "5.0",
+            "notes": ""
+        },
+        {
+            "name": "reload",
+            "type": "float",
+            "defaultValue": "30.0",
+            "notes": ""
+        },
+        {
+            "name": "chargeTime",
+            "type": "float",
+            "defaultValue": "100.0",
+            "notes": ""
+        },
+        {
+            "name": "maxPayloadSize",
+            "type": "float",
+            "defaultValue": "3.0",
+            "notes": ""
+        },
+        {
+            "name": "grabWidth",
+            "type": "float",
+            "defaultValue": "8.0",
+            "notes": ""
+        },
+        {
+            "name": "grabHeight",
+            "type": "float",
+            "defaultValue": "2.75",
+            "notes": ""
+        },
+        {
+            "name": "shootEffect",
+            "type": "Effect",
+            "defaultValue": "shootBig2",
+            "notes": ""
+        },
+        {
+            "name": "smokeEffect",
+            "type": "Effect",
+            "defaultValue": "shootPayloadDriver",
+            "notes": ""
+        },
+        {
+            "name": "receiveEffect",
+            "type": "Effect",
+            "defaultValue": "payloadReceive",
+            "notes": ""
+        },
+        {
+            "name": "shootSound",
+            "type": "Sound",
+            "defaultValue": "massdriver",
+            "notes": ""
+        },
+        {
+            "name": "receiveSound",
+            "type": "Sound",
+            "defaultValue": "massdriverReceive",
+            "notes": ""
+        },
+        {
+            "name": "shootSoundVolume",
+            "type": "float",
+            "defaultValue": "0.7",
+            "notes": ""
+        },
+        {
+            "name": "shake",
+            "type": "float",
+            "defaultValue": "3.0",
+            "notes": ""
+        },
+        {
+            "name": "transferEffect",
+            "type": "Effect",
+            "defaultValue": "flyingUnitLow - 1)",
+            "notes": ""
+        },
+        {
+            "name": "baseRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "capRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "leftRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "rightRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "capOutlineRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "leftOutlineRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "rightOutlineRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "arrow",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        }
+    ]
+}

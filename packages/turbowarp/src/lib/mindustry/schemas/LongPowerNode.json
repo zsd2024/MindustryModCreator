@@ -1,0 +1,30 @@
+{
+    "type": "LongPowerNode",
+    "parentType": "PowerNode",
+    "fields": [
+        {
+            "name": "glow",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "glowColor",
+            "type": "Color",
+            "defaultValue": "cbfd8172",
+            "notes": ""
+        },
+        {
+            "name": "glowScl",
+            "type": "float",
+            "defaultValue": "16.0",
+            "notes": ""
+        },
+        {
+            "name": "glowMag",
+            "type": "float",
+            "defaultValue": "0.6",
+            "notes": ""
+        }
+    ]
+}

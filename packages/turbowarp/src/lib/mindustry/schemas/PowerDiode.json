@@ -1,0 +1,12 @@
+{
+    "type": "PowerDiode",
+    "parentType": "Block",
+    "fields": [
+        {
+            "name": "arrow",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        }
+    ]
+}

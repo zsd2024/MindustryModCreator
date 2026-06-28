@@ -1,0 +1,18 @@
+{
+    "type": "TreeBlock",
+    "parentType": "Block",
+    "fields": [
+        {
+            "name": "shadowOffset",
+            "type": "float",
+            "defaultValue": "-4.0",
+            "notes": ""
+        },
+        {
+            "name": "shadow",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        }
+    ]
+}

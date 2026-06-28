@@ -1,0 +1,72 @@
+{
+    "type": "PointLaserBulletType",
+    "parentType": "BulletType",
+    "fields": [
+        {
+            "name": "sprite",
+            "type": "String",
+            "defaultValue": "\"point-laser\"",
+            "notes": ""
+        },
+        {
+            "name": "laser",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "laserEnd",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "color",
+            "type": "Color",
+            "defaultValue": "ffffffff",
+            "notes": ""
+        },
+        {
+            "name": "beamEffect",
+            "type": "Effect",
+            "defaultValue": "colorTrail",
+            "notes": ""
+        },
+        {
+            "name": "beamEffectInterval",
+            "type": "float",
+            "defaultValue": "3.0",
+            "notes": ""
+        },
+        {
+            "name": "beamEffectSize",
+            "type": "float",
+            "defaultValue": "3.5",
+            "notes": ""
+        },
+        {
+            "name": "oscScl",
+            "type": "float",
+            "defaultValue": "2.0",
+            "notes": ""
+        },
+        {
+            "name": "oscMag",
+            "type": "float",
+            "defaultValue": "0.3",
+            "notes": ""
+        },
+        {
+            "name": "damageInterval",
+            "type": "float",
+            "defaultValue": "5.0",
+            "notes": ""
+        },
+        {
+            "name": "shake",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": ""
+        }
+    ]
+}

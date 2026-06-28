@@ -1,0 +1,21 @@
+{
+    "type": "PayloadUnloader",
+    "parentType": "PayloadLoader",
+    "localizedName": "载荷卸载器",
+    "fields": [
+        {
+            "name": "offloadSpeed",
+            "localizedName": "卸载速度",
+            "type": "int",
+            "defaultValue": "4",
+            "notes": "**Notes**: 每帧卸载物品的尝试次数"
+        },
+        {
+            "name": "maxPowerUnload",
+            "localizedName": "最大电力卸载量",
+            "type": "float",
+            "defaultValue": "80.0",
+            "notes": "**Notes**: 每帧最大电力卸载量"
+        }
+    ]
+}

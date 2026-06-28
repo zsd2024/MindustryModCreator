@@ -1,0 +1,42 @@
+{
+    "type": "SoundEffect",
+    "parentType": "Effect",
+    "fields": [
+        {
+            "name": "sound",
+            "type": "Sound",
+            "defaultValue": "none",
+            "notes": ""
+        },
+        {
+            "name": "minPitch",
+            "type": "float",
+            "defaultValue": "0.8",
+            "notes": ""
+        },
+        {
+            "name": "maxPitch",
+            "type": "float",
+            "defaultValue": "1.2",
+            "notes": ""
+        },
+        {
+            "name": "minVolume",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": ""
+        },
+        {
+            "name": "maxVolume",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": ""
+        },
+        {
+            "name": "effect",
+            "type": "Effect",
+            "defaultValue": "null",
+            "notes": ""
+        }
+    ]
+}

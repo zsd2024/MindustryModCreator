@@ -1,0 +1,63 @@
+{
+    "type": "SapBulletType",
+    "parentType": "BulletType",
+    "localizedName": "汲取子弹",
+    "fields": [
+        {
+            "name": "length",
+            "type": "float",
+            "defaultValue": "100.0",
+            "localizedName": "汲取长度",
+            "notes": "汲取长度"
+        },
+        {
+            "name": "lengthRand",
+            "type": "float",
+            "defaultValue": "0.0",
+            "localizedName": "长度随机增量",
+            "notes": "汲取长度随机增量"
+        },
+        {
+            "name": "sapStrength",
+            "type": "float",
+            "defaultValue": "0.5",
+            "localizedName": "汲取回复比例",
+            "notes": "汲取回复比例"
+        },
+        {
+            "name": "color",
+            "type": "Color",
+            "defaultValue": "ffffffff",
+            "localizedName": "光束颜色",
+            "notes": "汲取光束颜色"
+        },
+        {
+            "name": "width",
+            "type": "float",
+            "defaultValue": "0.4",
+            "localizedName": "光束宽度",
+            "notes": "汲取光束宽度"
+        },
+        {
+            "name": "sprite",
+            "type": "String",
+            "defaultValue": "\"laser\"",
+            "localizedName": "精灵图名称",
+            "notes": "精灵图名称"
+        },
+        {
+            "name": "laserRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "localizedName": "激光纹理",
+            "notes": "激光纹理区域"
+        },
+        {
+            "name": "laserEndRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "localizedName": "激光末端纹理",
+            "notes": "激光末端纹理区域"
+        }
+    ]
+}

@@ -1,0 +1,70 @@
+{
+    "type": "ShieldRegenFieldAbility",
+    "parentType": "Ability",
+    "localizedName": "护盾恢复场能力",
+    "fields": [
+        {
+            "name": "amount",
+            "type": "float",
+            "defaultValue": "1.0",
+            "localizedName": "护盾恢复量",
+            "notes": "**Notes**: 护盾恢复量"
+        },
+        {
+            "name": "max",
+            "type": "float",
+            "defaultValue": "100.0",
+            "localizedName": "最大护盾值",
+            "notes": "**Notes**: 最大护盾值"
+        },
+        {
+            "name": "reload",
+            "type": "float",
+            "defaultValue": "100.0",
+            "localizedName": "装填时间",
+            "notes": "**Notes**: 装填时间"
+        },
+        {
+            "name": "range",
+            "type": "float",
+            "defaultValue": "60.0",
+            "localizedName": "范围",
+            "notes": "**Notes**: 范围"
+        },
+        {
+            "name": "applyEffect",
+            "type": "Effect",
+            "defaultValue": "shieldApply",
+            "localizedName": "应用效果",
+            "notes": "**Notes**: 应用效果"
+        },
+        {
+            "name": "activeEffect",
+            "type": "Effect",
+            "defaultValue": "shieldWave",
+            "localizedName": "激活效果",
+            "notes": "**Notes**: 激活效果"
+        },
+        {
+            "name": "sound",
+            "type": "Sound",
+            "defaultValue": "shieldWave",
+            "localizedName": "音效",
+            "notes": "**Notes**: 音效"
+        },
+        {
+            "name": "soundVolume",
+            "type": "float",
+            "defaultValue": "0.7",
+            "localizedName": "音效音量",
+            "notes": "**Notes**: 音效音量"
+        },
+        {
+            "name": "parentizeEffects",
+            "type": "boolean",
+            "defaultValue": "false",
+            "localizedName": "继承父级效果",
+            "notes": "**Notes**: 效果是否继承父级"
+        }
+    ]
+}

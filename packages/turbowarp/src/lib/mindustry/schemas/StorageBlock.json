@@ -1,0 +1,12 @@
+{
+    "type": "StorageBlock",
+    "parentType": "Block",
+    "fields": [
+        {
+            "name": "coreMerge",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": ""
+        }
+    ]
+}

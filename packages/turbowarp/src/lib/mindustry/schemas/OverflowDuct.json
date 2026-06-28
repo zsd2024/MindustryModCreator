@@ -1,0 +1,24 @@
+{
+    "type": "OverflowDuct",
+    "parentType": "Block",
+    "fields": [
+        {
+            "name": "speed",
+            "type": "float",
+            "defaultValue": "5.0",
+            "notes": ""
+        },
+        {
+            "name": "invert",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": ""
+        },
+        {
+            "name": "topRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        }
+    ]
+}

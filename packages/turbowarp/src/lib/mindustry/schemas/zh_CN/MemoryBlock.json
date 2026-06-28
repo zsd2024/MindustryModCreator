@@ -1,0 +1,14 @@
+{
+    "type": "MemoryBlock",
+    "parentType": "Block",
+    "localizedName": "存储单元",
+    "fields": [
+        {
+            "name": "memoryCapacity",
+            "localizedName": "存储容量",
+            "type": "int",
+            "defaultValue": "32",
+            "notes": "**Notes**: 内存单元的存储容量"
+        }
+    ]
+}

@@ -1,0 +1,91 @@
+{
+    "type": "LaserBulletType",
+    "parentType": "BulletType",
+    "localizedName": "激光子弹类型",
+    "fields": [
+        {
+            "name": "colors",
+            "type": "Color[]",
+            "localizedName": "颜色数组",
+            "defaultValue": "[a9d8ff66, a9d8ffff, ffffffff]",
+            "notes": "颜色数组（从外到内）"
+        },
+        {
+            "name": "laserEffect",
+            "type": "Effect",
+            "localizedName": "激光发射效果",
+            "defaultValue": "lancerLaserShootSmoke",
+            "notes": "激光发射效果"
+        },
+        {
+            "name": "length",
+            "type": "float",
+            "localizedName": "激光长度",
+            "defaultValue": "160.0",
+            "notes": "激光长度"
+        },
+        {
+            "name": "width",
+            "type": "float",
+            "localizedName": "激光宽度",
+            "defaultValue": "15.0",
+            "notes": "激光宽度"
+        },
+        {
+            "name": "lengthFalloff",
+            "type": "float",
+            "localizedName": "长度衰减系数",
+            "defaultValue": "0.5",
+            "notes": "长度衰减系数"
+        },
+        {
+            "name": "sideLength",
+            "type": "float",
+            "localizedName": "侧翼长度",
+            "defaultValue": "29.0",
+            "notes": "侧翼长度"
+        },
+        {
+            "name": "sideWidth",
+            "type": "float",
+            "localizedName": "侧翼宽度",
+            "defaultValue": "0.7",
+            "notes": "侧翼宽度"
+        },
+        {
+            "name": "sideAngle",
+            "type": "float",
+            "localizedName": "侧翼角度",
+            "defaultValue": "90.0",
+            "notes": "侧翼角度"
+        },
+        {
+            "name": "lightningSpacing",
+            "type": "float",
+            "localizedName": "闪电间距",
+            "defaultValue": "-1.0",
+            "notes": "闪电间距（-1表示禁用）"
+        },
+        {
+            "name": "lightningDelay",
+            "type": "float",
+            "localizedName": "闪电延迟",
+            "defaultValue": "0.1",
+            "notes": "闪电延迟"
+        },
+        {
+            "name": "lightningAngleRand",
+            "type": "float",
+            "localizedName": "闪电角度随机偏移",
+            "defaultValue": "0.0",
+            "notes": "闪电角度随机偏移"
+        },
+        {
+            "name": "largeHit",
+            "type": "boolean",
+            "localizedName": "是否使用大范围伤害判定",
+            "defaultValue": "false",
+            "notes": "是否使用大范围伤害判定"
+        }
+    ]
+}

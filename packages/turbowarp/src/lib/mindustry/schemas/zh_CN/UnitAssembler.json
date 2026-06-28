@@ -1,0 +1,77 @@
+{
+    "type": "UnitAssembler",
+    "parentType": "PayloadBlock",
+    "localizedName": "单位组装器",
+    "fields": [
+        {
+            "name": "sideRegion1",
+            "type": "TextureRegion",
+            "localizedName": "侧面纹理1",
+            "defaultValue": "null",
+            "notes": "**Notes**: 侧面纹理区域1"
+        },
+        {
+            "name": "sideRegion2",
+            "type": "TextureRegion",
+            "localizedName": "侧面纹理2",
+            "defaultValue": "null",
+            "notes": "**Notes**: 侧面纹理区域2"
+        },
+        {
+            "name": "areaSize",
+            "type": "int",
+            "localizedName": "组装区域大小",
+            "defaultValue": "11",
+            "notes": "**Notes**: 组装区域大小"
+        },
+        {
+            "name": "droneType",
+            "type": "UnitType",
+            "localizedName": "无人机类型",
+            "defaultValue": "assemblyDrone",
+            "notes": "注意：生成的单位必须使用AssemblerAI作为控制器，并包含'tether'（BuildingTetherComp）组件。\n\n**Notes**: 建造无人机类型，必须使用AssemblerAI和BuildingTetherComp"
+        },
+        {
+            "name": "dronesCreated",
+            "type": "int",
+            "localizedName": "无人机数量",
+            "defaultValue": "4",
+            "notes": "**Notes**: 创建的无人机数量"
+        },
+        {
+            "name": "droneConstructTime",
+            "type": "float",
+            "localizedName": "无人机制造时间",
+            "defaultValue": "240.0",
+            "notes": "**Notes**: 无人机制造时间"
+        },
+        {
+            "name": "capacities",
+            "type": "int[]",
+            "localizedName": "物品容量数组",
+            "defaultValue": "[]",
+            "notes": "**Notes**: 物品容量数组"
+        },
+        {
+            "name": "plans",
+            "type": "Seq of AssemblerUnitPlan",
+            "localizedName": "组装计划列表",
+            "defaultValue": "[]",
+            "notes": "**Notes**: 可组装的单位计划列表"
+        },
+        {
+            "name": "createSound",
+            "type": "Sound",
+            "localizedName": "创建音效",
+            "defaultValue": "unitCreateBig",
+            "notes": "**Notes**: 创建单位音效"
+        },
+        {
+            "name": "createSoundVolume",
+            "type": "float",
+            "localizedName": "创建音量",
+            "defaultValue": "1.0",
+            "notes": "**Notes**: 创建单位音效音量"
+        }
+    ]
+}

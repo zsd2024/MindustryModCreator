@@ -1,0 +1,14 @@
+{
+    "type": "SeqEffect",
+    "parentType": "Effect",
+    "localizedName": "序列效果",
+    "fields": [
+        {
+            "name": "effects",
+            "type": "Effect[]",
+            "defaultValue": "[]",
+            "localizedName": "效果列表",
+            "notes": "**Notes**: 按顺序渲染的多个效果"
+        }
+    ]
+}

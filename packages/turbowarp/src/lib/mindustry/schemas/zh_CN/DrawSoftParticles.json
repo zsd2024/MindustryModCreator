@@ -1,0 +1,98 @@
+{
+    "localizedName": "柔和粒子绘制",
+    "type": "DrawSoftParticles",
+    "parentType": "DrawBlock",
+    "fields": [
+        {
+            "name": "region",
+            "localizedName": "粒子纹理",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": "**Notes**: 粒子使用的精灵纹理。"
+        },
+        {
+            "name": "color",
+            "localizedName": "第一种颜色",
+            "type": "Color",
+            "defaultValue": "e3ae6fff",
+            "notes": "**Notes**: 粒子的第一种颜色。"
+        },
+        {
+            "name": "color2",
+            "localizedName": "第二种颜色",
+            "type": "Color",
+            "defaultValue": "d04d46ff",
+            "notes": "**Notes**: 粒子的第二种颜色。"
+        },
+        {
+            "name": "x",
+            "localizedName": "X轴偏移",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "**Notes**: 粒子中心X轴偏移。"
+        },
+        {
+            "name": "y",
+            "localizedName": "Y轴偏移",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "**Notes**: 粒子中心Y轴偏移。"
+        },
+        {
+            "name": "alpha",
+            "localizedName": "透明度",
+            "type": "float",
+            "defaultValue": "0.5",
+            "notes": "**Notes**: 粒子的透明度。"
+        },
+        {
+            "name": "particles",
+            "localizedName": "粒子数量",
+            "type": "int",
+            "defaultValue": "30",
+            "notes": "**Notes**: 粒子数量。"
+        },
+        {
+            "name": "particleLife",
+            "localizedName": "粒子生命周期",
+            "type": "float",
+            "defaultValue": "70.0",
+            "notes": "**Notes**: 粒子的生命周期（刻数）。"
+        },
+        {
+            "name": "particleRad",
+            "localizedName": "扩散半径",
+            "type": "float",
+            "defaultValue": "7.0",
+            "notes": "**Notes**: 粒子的扩散半径。"
+        },
+        {
+            "name": "particleSize",
+            "localizedName": "粒子尺寸",
+            "type": "float",
+            "defaultValue": "3.0",
+            "notes": "**Notes**: 粒子的尺寸。"
+        },
+        {
+            "name": "fadeMargin",
+            "localizedName": "淡出边距",
+            "type": "float",
+            "defaultValue": "0.4",
+            "notes": "**Notes**: 粒子淡出的边距比例。"
+        },
+        {
+            "name": "rotateScl",
+            "localizedName": "旋转频率缩放",
+            "type": "float",
+            "defaultValue": "1.5",
+            "notes": "**Notes**: 粒子旋转的频率缩放。"
+        },
+        {
+            "name": "particleInterp",
+            "localizedName": "粒子运动插值",
+            "type": "Interp",
+            "defaultValue": "5f)",
+            "notes": "**Notes**: 控制粒子运动的插值函数。"
+        }
+    ]
+}

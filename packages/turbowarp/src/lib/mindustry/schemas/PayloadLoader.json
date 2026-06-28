@@ -1,0 +1,54 @@
+{
+    "type": "PayloadLoader",
+    "parentType": "PayloadBlock",
+    "fields": [
+        {
+            "name": "timerLoad",
+            "type": "int",
+            "defaultValue": "1",
+            "notes": ""
+        },
+        {
+            "name": "loadTime",
+            "type": "float",
+            "defaultValue": "2.0",
+            "notes": ""
+        },
+        {
+            "name": "itemsLoaded",
+            "type": "int",
+            "defaultValue": "8",
+            "notes": ""
+        },
+        {
+            "name": "liquidsLoaded",
+            "type": "float",
+            "defaultValue": "40.0",
+            "notes": ""
+        },
+        {
+            "name": "maxBlockSize",
+            "type": "int",
+            "defaultValue": "3",
+            "notes": ""
+        },
+        {
+            "name": "maxPowerConsumption",
+            "type": "float",
+            "defaultValue": "40.0",
+            "notes": ""
+        },
+        {
+            "name": "loadPowerDynamic",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": ""
+        },
+        {
+            "name": "overRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        }
+    ]
+}

@@ -1,0 +1,21 @@
+{
+    "type": "MultiBulletType",
+    "parentType": "BulletType",
+    "localizedName": "多重子弹类型",
+    "fields": [
+        {
+            "name": "bullets",
+            "localizedName": "子弹数组",
+            "type": "BulletType[]",
+            "defaultValue": "[]",
+            "notes": "子子弹类型数组"
+        },
+        {
+            "name": "repeat",
+            "localizedName": "重复次数",
+            "type": "int",
+            "defaultValue": "1",
+            "notes": "子弹数组重复的次数。\n\n**Notes**: 控制子弹数组被重复发射的次数"
+        }
+    ]
+}

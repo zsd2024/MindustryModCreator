@@ -1,0 +1,24 @@
+{
+    "type": "Junction",
+    "parentType": "Block",
+    "fields": [
+        {
+            "name": "speed",
+            "type": "float",
+            "defaultValue": "26.0",
+            "notes": ""
+        },
+        {
+            "name": "capacity",
+            "type": "int",
+            "defaultValue": "6",
+            "notes": ""
+        },
+        {
+            "name": "displayedSpeed",
+            "type": "float",
+            "defaultValue": "13.0",
+            "notes": ""
+        }
+    ]
+}

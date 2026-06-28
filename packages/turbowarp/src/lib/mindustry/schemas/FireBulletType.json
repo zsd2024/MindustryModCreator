@@ -1,0 +1,66 @@
+{
+    "type": "FireBulletType",
+    "parentType": "BulletType",
+    "fields": [
+        {
+            "name": "colorFrom",
+            "type": "Color",
+            "defaultValue": "ffdd55ff",
+            "notes": ""
+        },
+        {
+            "name": "colorMid",
+            "type": "Color",
+            "defaultValue": "db401cff",
+            "notes": ""
+        },
+        {
+            "name": "colorTo",
+            "type": "Color",
+            "defaultValue": "7f7f7fff",
+            "notes": ""
+        },
+        {
+            "name": "radius",
+            "type": "float",
+            "defaultValue": "3.0",
+            "notes": ""
+        },
+        {
+            "name": "velMin",
+            "type": "float",
+            "defaultValue": "0.6",
+            "notes": ""
+        },
+        {
+            "name": "velMax",
+            "type": "float",
+            "defaultValue": "2.6",
+            "notes": ""
+        },
+        {
+            "name": "fireTrailChance",
+            "type": "float",
+            "defaultValue": "0.04",
+            "notes": ""
+        },
+        {
+            "name": "trailEffect2",
+            "type": "Effect",
+            "defaultValue": "ballfire",
+            "notes": ""
+        },
+        {
+            "name": "fireEffectChance",
+            "type": "float",
+            "defaultValue": "0.1",
+            "notes": ""
+        },
+        {
+            "name": "fireEffectChance2",
+            "type": "float",
+            "defaultValue": "0.1",
+            "notes": ""
+        }
+    ]
+}

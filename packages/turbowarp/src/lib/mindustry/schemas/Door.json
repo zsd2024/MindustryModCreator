@@ -1,0 +1,42 @@
+{
+    "type": "Door",
+    "parentType": "Wall",
+    "fields": [
+        {
+            "name": "timerToggle",
+            "type": "int",
+            "defaultValue": "1",
+            "notes": ""
+        },
+        {
+            "name": "openfx",
+            "type": "Effect",
+            "defaultValue": "dooropen",
+            "notes": ""
+        },
+        {
+            "name": "closefx",
+            "type": "Effect",
+            "defaultValue": "doorclose",
+            "notes": ""
+        },
+        {
+            "name": "doorSound",
+            "type": "Sound",
+            "defaultValue": "door",
+            "notes": ""
+        },
+        {
+            "name": "chainEffect",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": ""
+        },
+        {
+            "name": "openRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        }
+    ]
+}

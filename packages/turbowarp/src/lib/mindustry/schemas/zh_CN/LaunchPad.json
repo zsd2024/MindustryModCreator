@@ -1,0 +1,98 @@
+{
+    "type": "LaunchPad",
+    "parentType": "Block",
+    "localizedName": "发射台",
+    "fields": [
+        {
+            "name": "launchTime",
+            "type": "float",
+            "localizedName": "发射间隔时间",
+            "defaultValue": "1.0",
+            "notes": "发射间隔时间。\n\n**Notes**: 每次发射之间的间隔时间"
+        },
+        {
+            "name": "launchSoundPitchRand",
+            "type": "float",
+            "localizedName": "发射音效音调随机范围",
+            "defaultValue": "0.1",
+            "notes": "**Notes**: 发射音效音调随机范围"
+        },
+        {
+            "name": "launchSound",
+            "type": "Sound",
+            "localizedName": "发射音效",
+            "defaultValue": "padLaunch",
+            "notes": "**Notes**: 发射音效"
+        },
+        {
+            "name": "lightRegion",
+            "type": "TextureRegion",
+            "localizedName": "灯光纹理区域",
+            "defaultValue": "null",
+            "notes": "**Notes**: 灯光纹理区域"
+        },
+        {
+            "name": "podRegion",
+            "type": "TextureRegion",
+            "localizedName": "发射舱纹理区域",
+            "defaultValue": "null",
+            "notes": "**Notes**: 发射舱纹理区域"
+        },
+        {
+            "name": "previewRegion",
+            "type": "TextureRegion",
+            "localizedName": "预览纹理区域",
+            "defaultValue": "null",
+            "notes": "**Notes**: 预览纹理区域"
+        },
+        {
+            "name": "lightColor",
+            "type": "Color",
+            "localizedName": "灯光颜色",
+            "defaultValue": "eab678ff",
+            "notes": "**Notes**: 灯光颜色"
+        },
+        {
+            "name": "acceptMultipleItems",
+            "type": "boolean",
+            "localizedName": "是否接受多种物品",
+            "defaultValue": "false",
+            "notes": "**Notes**: 是否接受多种物品"
+        },
+        {
+            "name": "lightStep",
+            "type": "float",
+            "localizedName": "灯光步进值",
+            "defaultValue": "1.0",
+            "notes": "**Notes**: 灯光步进值"
+        },
+        {
+            "name": "lightSteps",
+            "type": "int",
+            "localizedName": "灯光步数",
+            "defaultValue": "3",
+            "notes": "**Notes**: 灯光步数"
+        },
+        {
+            "name": "liquidPad",
+            "type": "float",
+            "localizedName": "液体边距",
+            "defaultValue": "2.0",
+            "notes": "**Notes**: 液体边距"
+        },
+        {
+            "name": "drawLiquid",
+            "type": "Liquid",
+            "localizedName": "绘制液体类型",
+            "defaultValue": "null",
+            "notes": "**Notes**: 绘制液体类型（为null时不绘制）"
+        },
+        {
+            "name": "bottomColor",
+            "type": "Color",
+            "localizedName": "底部颜色",
+            "defaultValue": "565666ff",
+            "notes": "**Notes**: 底部颜色"
+        }
+    ]
+}

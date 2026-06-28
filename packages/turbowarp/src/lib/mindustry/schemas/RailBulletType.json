@@ -1,0 +1,42 @@
+{
+    "type": "RailBulletType",
+    "parentType": "BulletType",
+    "fields": [
+        {
+            "name": "pierceEffect",
+            "type": "Effect",
+            "defaultValue": "hitBulletSmall",
+            "notes": ""
+        },
+        {
+            "name": "pointEffect",
+            "type": "Effect",
+            "defaultValue": "none",
+            "notes": ""
+        },
+        {
+            "name": "lineEffect",
+            "type": "Effect",
+            "defaultValue": "none",
+            "notes": ""
+        },
+        {
+            "name": "endEffect",
+            "type": "Effect",
+            "defaultValue": "none",
+            "notes": ""
+        },
+        {
+            "name": "length",
+            "type": "float",
+            "defaultValue": "100.0",
+            "notes": ""
+        },
+        {
+            "name": "pointEffectSpace",
+            "type": "float",
+            "defaultValue": "20.0",
+            "notes": ""
+        }
+    ]
+}

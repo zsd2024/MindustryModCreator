@@ -1,0 +1,14 @@
+{
+    "localizedName": "彩色地板",
+    "type": "ColoredFloor",
+    "parentType": "Floor",
+    "fields": [
+        {
+            "name": "defaultColor",
+            "localizedName": "默认颜色",
+            "type": "Color",
+            "defaultValue": "ffffffff",
+            "notes": "**Notes**: 地板默认颜色。"
+        }
+    ]
+}

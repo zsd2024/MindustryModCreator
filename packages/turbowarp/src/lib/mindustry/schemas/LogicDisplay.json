@@ -1,0 +1,24 @@
+{
+    "type": "LogicDisplay",
+    "parentType": "Block",
+    "fields": [
+        {
+            "name": "maxSides",
+            "type": "int",
+            "defaultValue": "25",
+            "notes": ""
+        },
+        {
+            "name": "displaySize",
+            "type": "int",
+            "defaultValue": "64",
+            "notes": ""
+        },
+        {
+            "name": "scaleFactor",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": ""
+        }
+    ]
+}

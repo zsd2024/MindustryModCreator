@@ -1,0 +1,30 @@
+{
+    "type": "StackRouter",
+    "parentType": "DuctRouter",
+    "fields": [
+        {
+            "name": "baseEfficiency",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": ""
+        },
+        {
+            "name": "glowRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "glowAlpha",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": ""
+        },
+        {
+            "name": "glowColor",
+            "type": "Color",
+            "defaultValue": "feb380ff",
+            "notes": ""
+        }
+    ]
+}

@@ -1,0 +1,35 @@
+{
+    "type": "FlakBulletType",
+    "parentType": "BasicBulletType",
+    "localizedName": "防空炮弹类型",
+    "fields": [
+        {
+            "name": "explodeRange",
+            "type": "float",
+            "localizedName": "触发爆炸检测范围",
+            "defaultValue": "30.0",
+            "notes": "触发爆炸的检测范围"
+        },
+        {
+            "name": "explodeDelay",
+            "type": "float",
+            "localizedName": "爆炸延迟时间",
+            "defaultValue": "5.0",
+            "notes": "爆炸延迟时间（刻数）"
+        },
+        {
+            "name": "flakDelay",
+            "type": "float",
+            "localizedName": "检测目标前延迟",
+            "defaultValue": "0.0",
+            "notes": "开始检测目标前的延迟"
+        },
+        {
+            "name": "flakInterval",
+            "type": "float",
+            "localizedName": "目标检测间隔",
+            "defaultValue": "6.0",
+            "notes": "目标检测间隔（刻数）"
+        }
+    ]
+}

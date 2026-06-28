@@ -1,0 +1,66 @@
+{
+    "type": "ArmorPlateAbility",
+    "parentType": "Ability",
+    "fields": [
+        {
+            "name": "plateRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "shineRegion",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "plateSuffix",
+            "type": "String",
+            "defaultValue": "\"-armor\"",
+            "notes": ""
+        },
+        {
+            "name": "shineSuffix",
+            "type": "String",
+            "defaultValue": "\"-shine\"",
+            "notes": ""
+        },
+        {
+            "name": "color",
+            "type": "Color",
+            "defaultValue": "null",
+            "notes": "Color of the shine. If null, uses team color."
+        },
+        {
+            "name": "shineSpeed",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": ""
+        },
+        {
+            "name": "z",
+            "type": "float",
+            "defaultValue": "-1.0",
+            "notes": ""
+        },
+        {
+            "name": "drawPlate",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "Whether to draw the plate region."
+        },
+        {
+            "name": "drawShine",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "Whether to draw the shine over the plate region."
+        },
+        {
+            "name": "healthMultiplier",
+            "type": "float",
+            "defaultValue": "0.2",
+            "notes": ""
+        }
+    ]
+}

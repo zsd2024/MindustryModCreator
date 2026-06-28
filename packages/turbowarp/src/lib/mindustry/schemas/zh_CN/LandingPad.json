@@ -1,0 +1,91 @@
+{
+    "type": "LandingPad",
+    "parentType": "Block",
+    "localizedName": "着陆台",
+    "fields": [
+        {
+            "name": "podRegion",
+            "type": "TextureRegion",
+            "localizedName": "着陆舱纹理区域",
+            "defaultValue": "null",
+            "notes": "**Notes**: 着陆舱纹理区域"
+        },
+        {
+            "name": "arrivalDuration",
+            "type": "float",
+            "localizedName": "到达持续时间",
+            "defaultValue": "150.0",
+            "notes": "**Notes**: 到达持续时间"
+        },
+        {
+            "name": "cooldownTime",
+            "type": "float",
+            "localizedName": "冷却时间",
+            "defaultValue": "150.0",
+            "notes": "**Notes**: 冷却时间"
+        },
+        {
+            "name": "consumeLiquidAmount",
+            "type": "float",
+            "localizedName": "消耗液体量",
+            "defaultValue": "100.0",
+            "notes": "**Notes**: 消耗液体量"
+        },
+        {
+            "name": "consumeLiquid",
+            "type": "Liquid",
+            "localizedName": "消耗液体类型",
+            "defaultValue": "water",
+            "notes": "**Notes**: 消耗的液体类型"
+        },
+        {
+            "name": "landEffect",
+            "type": "Effect",
+            "localizedName": "着陆特效",
+            "defaultValue": "podLandShockwave",
+            "notes": "**Notes**: 着陆特效"
+        },
+        {
+            "name": "coolingEffect",
+            "type": "Effect",
+            "localizedName": "冷却特效",
+            "defaultValue": "none",
+            "notes": "**Notes**: 冷却特效"
+        },
+        {
+            "name": "coolingEffectChance",
+            "type": "float",
+            "localizedName": "冷却特效触发概率",
+            "defaultValue": "0.2",
+            "notes": "**Notes**: 冷却特效触发概率"
+        },
+        {
+            "name": "liquidPad",
+            "type": "float",
+            "localizedName": "液体边距",
+            "defaultValue": "2.0",
+            "notes": "**Notes**: 液体边距"
+        },
+        {
+            "name": "bottomColor",
+            "type": "Color",
+            "localizedName": "底部颜色",
+            "defaultValue": "565666ff",
+            "notes": "**Notes**: 底部颜色"
+        },
+        {
+            "name": "landSoundVolume",
+            "type": "float",
+            "localizedName": "着陆音效音量",
+            "defaultValue": "0.75",
+            "notes": "**Notes**: 着陆音效音量"
+        },
+        {
+            "name": "landSound",
+            "type": "Sound",
+            "localizedName": "着陆音效",
+            "defaultValue": "padLand",
+            "notes": "**Notes**: 着陆音效"
+        }
+    ]
+}

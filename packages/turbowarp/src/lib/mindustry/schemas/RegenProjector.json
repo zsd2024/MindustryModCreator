@@ -1,0 +1,54 @@
+{
+    "type": "RegenProjector",
+    "parentType": "Block",
+    "fields": [
+        {
+            "name": "range",
+            "type": "int",
+            "defaultValue": "14",
+            "notes": ""
+        },
+        {
+            "name": "healPercent",
+            "type": "float",
+            "defaultValue": "0.2",
+            "notes": ""
+        },
+        {
+            "name": "optionalMultiplier",
+            "type": "float",
+            "defaultValue": "2.0",
+            "notes": ""
+        },
+        {
+            "name": "optionalUseTime",
+            "type": "float",
+            "defaultValue": "480.0",
+            "notes": ""
+        },
+        {
+            "name": "drawer",
+            "type": "DrawBlock",
+            "defaultValue": "new DrawDefault()",
+            "notes": ""
+        },
+        {
+            "name": "effectChance",
+            "type": "float",
+            "defaultValue": "0.003",
+            "notes": ""
+        },
+        {
+            "name": "baseColor",
+            "type": "Color",
+            "defaultValue": "ffd37fff",
+            "notes": ""
+        },
+        {
+            "name": "effect",
+            "type": "Effect",
+            "defaultValue": "regenParticle",
+            "notes": ""
+        }
+    ]
+}

@@ -1,0 +1,21 @@
+{
+    "localizedName": "字符覆盖层",
+    "type": "CharacterOverlay",
+    "parentType": "OverlayFloor",
+    "fields": [
+        {
+            "name": "letterRegions",
+            "localizedName": "字符纹理数组",
+            "type": "TextureRegion[]",
+            "defaultValue": "null",
+            "notes": "**Notes**: 运行时加载的字符纹理数组。"
+        },
+        {
+            "name": "color",
+            "localizedName": "字符颜色",
+            "type": "Color",
+            "defaultValue": "ffffffff",
+            "notes": "**Notes**: 字符绘制的颜色。"
+        }
+    ]
+}

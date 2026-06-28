@@ -1,0 +1,126 @@
+{
+    "localizedName": "粒子绘制",
+    "type": "DrawParticles",
+    "parentType": "DrawBlock",
+    "fields": [
+        {
+            "name": "color",
+            "localizedName": "粒子颜色",
+            "type": "Color",
+            "defaultValue": "f2d585ff",
+            "notes": "**Notes**: 粒子的颜色。"
+        },
+        {
+            "name": "sides",
+            "localizedName": "多边形边数",
+            "type": "int",
+            "defaultValue": "12",
+            "notes": "**Notes**: 多边形边数（poly模式时有效）。"
+        },
+        {
+            "name": "x",
+            "localizedName": "X轴偏移",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "**Notes**: 粒子中心X轴偏移。"
+        },
+        {
+            "name": "y",
+            "localizedName": "Y轴偏移",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "**Notes**: 粒子中心Y轴偏移。"
+        },
+        {
+            "name": "alpha",
+            "localizedName": "透明度",
+            "type": "float",
+            "defaultValue": "0.5",
+            "notes": "**Notes**: 粒子的透明度。"
+        },
+        {
+            "name": "particles",
+            "localizedName": "粒子数量",
+            "type": "int",
+            "defaultValue": "30",
+            "notes": "**Notes**: 粒子数量。"
+        },
+        {
+            "name": "particleRotation",
+            "localizedName": "粒子旋转角度",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "**Notes**: 粒子的旋转角度。"
+        },
+        {
+            "name": "particleLife",
+            "localizedName": "粒子生命周期",
+            "type": "float",
+            "defaultValue": "70.0",
+            "notes": "**Notes**: 粒子的生命周期（刻数）。"
+        },
+        {
+            "name": "particleRad",
+            "localizedName": "扩散半径",
+            "type": "float",
+            "defaultValue": "7.0",
+            "notes": "**Notes**: 粒子的扩散半径。"
+        },
+        {
+            "name": "particleSize",
+            "localizedName": "粒子尺寸",
+            "type": "float",
+            "defaultValue": "3.0",
+            "notes": "**Notes**: 粒子的尺寸。"
+        },
+        {
+            "name": "fadeMargin",
+            "localizedName": "淡出边距",
+            "type": "float",
+            "defaultValue": "0.4",
+            "notes": "**Notes**: 粒子淡出的边距比例。"
+        },
+        {
+            "name": "rotateScl",
+            "localizedName": "旋转频率缩放",
+            "type": "float",
+            "defaultValue": "3.0",
+            "notes": "**Notes**: 粒子旋转的频率缩放。"
+        },
+        {
+            "name": "reverse",
+            "localizedName": "反转方向",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "**Notes**: 粒子运动方向是否反转。"
+        },
+        {
+            "name": "poly",
+            "localizedName": "多边形模式",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "**Notes**: 是否使用多边形绘制而非圆形。"
+        },
+        {
+            "name": "particleInterp",
+            "localizedName": "粒子运动插值",
+            "type": "Interp",
+            "defaultValue": "5f)",
+            "notes": "**Notes**: 控制粒子运动的插值函数。"
+        },
+        {
+            "name": "particleSizeInterp",
+            "localizedName": "尺寸变化插值",
+            "type": "Interp",
+            "defaultValue": "slope",
+            "notes": "**Notes**: 控制粒子尺寸变化的插值函数。"
+        },
+        {
+            "name": "blending",
+            "localizedName": "混合模式",
+            "type": "Blending",
+            "defaultValue": "normal",
+            "notes": "**Notes**: 粒子的混合模式。"
+        }
+    ]
+}

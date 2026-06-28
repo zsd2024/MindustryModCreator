@@ -1,0 +1,35 @@
+{
+    "localizedName": "帧动画绘制",
+    "type": "DrawFrames",
+    "parentType": "DrawBlock",
+    "fields": [
+        {
+            "name": "frames",
+            "localizedName": "帧数",
+            "type": "int",
+            "defaultValue": "3",
+            "notes": "要绘制的帧数。\n\n**Notes**: Number of frames to draw."
+        },
+        {
+            "name": "interval",
+            "localizedName": "帧间隔",
+            "type": "float",
+            "defaultValue": "5.0",
+            "notes": "帧之间的刻数间隔。\n\n**Notes**: Ticks between frames."
+        },
+        {
+            "name": "sine",
+            "localizedName": "正弦交替",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "若为true，帧将以正弦波前后交替。\n\n**Notes**: If true, frames wil alternate back and forth in a sine wave."
+        },
+        {
+            "name": "regions",
+            "localizedName": "帧纹理数组",
+            "type": "TextureRegion[]",
+            "defaultValue": "null",
+            "notes": "**Notes**: 运行时加载的帧纹理数组。"
+        }
+    ]
+}

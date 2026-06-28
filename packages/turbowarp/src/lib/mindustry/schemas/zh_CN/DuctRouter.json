@@ -1,0 +1,21 @@
+{
+    "localizedName": "管道路由器",
+    "type": "DuctRouter",
+    "parentType": "Block",
+    "fields": [
+        {
+            "name": "speed",
+            "localizedName": "传输速度",
+            "type": "float",
+            "defaultValue": "5.0",
+            "notes": "**Notes**: 传输速度"
+        },
+        {
+            "name": "topRegion",
+            "localizedName": "顶部纹理",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": "**Notes**: 顶部纹理区域"
+        }
+    ]
+}

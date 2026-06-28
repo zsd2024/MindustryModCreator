@@ -1,0 +1,28 @@
+{
+    "type": "LogicDisplay",
+    "parentType": "Block",
+    "localizedName": "逻辑显示器",
+    "fields": [
+        {
+            "name": "maxSides",
+            "type": "int",
+            "localizedName": "最大多边形边数",
+            "defaultValue": "25",
+            "notes": "**Notes**: 最大多边形边数"
+        },
+        {
+            "name": "displaySize",
+            "type": "int",
+            "localizedName": "显示尺寸",
+            "defaultValue": "64",
+            "notes": "**Notes**: 显示尺寸"
+        },
+        {
+            "name": "scaleFactor",
+            "type": "float",
+            "localizedName": "缩放因子",
+            "defaultValue": "1.0",
+            "notes": "**Notes**: 缩放因子"
+        }
+    ]
+}

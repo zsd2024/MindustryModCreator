@@ -1,0 +1,12 @@
+{
+    "type": "DuctBridge",
+    "parentType": "DirectionBridge",
+    "fields": [
+        {
+            "name": "speed",
+            "type": "float",
+            "defaultValue": "5.0",
+            "notes": ""
+        }
+    ]
+}

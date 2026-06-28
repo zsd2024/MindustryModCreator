@@ -1,0 +1,28 @@
+{
+    "type": "Battery",
+    "parentType": "PowerDistributor",
+    "localizedName": "电池",
+    "fields": [
+        {
+            "name": "drawer",
+            "type": "DrawBlock",
+            "defaultValue": "null",
+            "notes": "**Notes**: 绘制器，控制电池的渲染方式。",
+            "localizedName": "绘制器"
+        },
+        {
+            "name": "emptyLightColor",
+            "type": "Color",
+            "defaultValue": "f8c266ff",
+            "notes": "**Notes**: 电量低时的光颜色。",
+            "localizedName": "低电量光颜色"
+        },
+        {
+            "name": "fullLightColor",
+            "type": "Color",
+            "defaultValue": "fb9567ff",
+            "notes": "**Notes**: 电量满时的光颜色。",
+            "localizedName": "满电量光颜色"
+        }
+    ]
+}

@@ -1,0 +1,354 @@
+{
+    "type": "Turret",
+    "parentType": "ReloadTurret",
+    "fields": [
+        {
+            "name": "timerTarget",
+            "type": "int",
+            "defaultValue": "1",
+            "notes": ""
+        },
+        {
+            "name": "targetInterval",
+            "type": "float",
+            "defaultValue": "20.0",
+            "notes": "Ticks between attempt at finding a target."
+        },
+        {
+            "name": "newTargetInterval",
+            "type": "float",
+            "defaultValue": "-1.0",
+            "notes": "Target interval for when this turret already has a valid target. -1 = targetInterval"
+        },
+        {
+            "name": "maxAmmo",
+            "type": "int",
+            "defaultValue": "30",
+            "notes": "Maximum ammo units stored."
+        },
+        {
+            "name": "ammoPerShot",
+            "type": "int",
+            "defaultValue": "1",
+            "notes": "Ammo units used per shot."
+        },
+        {
+            "name": "consumeAmmoOnce",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "If true, ammo is only consumed once per shot regardless of bullet count."
+        },
+        {
+            "name": "heatRequirement",
+            "type": "float",
+            "defaultValue": "-1.0",
+            "notes": "Minimum input heat required to fire."
+        },
+        {
+            "name": "maxHeatEfficiency",
+            "type": "float",
+            "defaultValue": "3.0",
+            "notes": "Maximum efficiency possible, if this turret uses heat."
+        },
+        {
+            "name": "inaccuracy",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "Bullet angle randomness in degrees."
+        },
+        {
+            "name": "velocityRnd",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "Fraction of bullet velocity that is random."
+        },
+        {
+            "name": "scaleLifetimeOffset",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "Fraction of lifetime that is added to bullets with lifeScale."
+        },
+        {
+            "name": "shootCone",
+            "type": "float",
+            "defaultValue": "8.0",
+            "notes": "Maximum angle difference in degrees at which turret will still try to shoot."
+        },
+        {
+            "name": "shootX",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "Turret shoot point."
+        },
+        {
+            "name": "shootY",
+            "type": "float",
+            "defaultValue": "-Infinity",
+            "notes": "Turret shoot point."
+        },
+        {
+            "name": "xRand",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "Random spread on the X axis."
+        },
+        {
+            "name": "drawMinRange",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "If true, a range ring is also drawn for minRange."
+        },
+        {
+            "name": "trackingRange",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "Range at which it finds and locks on to the target, but does not shoot."
+        },
+        {
+            "name": "minRange",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "Minimum bullet range. Used for artillery only."
+        },
+        {
+            "name": "minWarmup",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "Minimum warmup needed to fire."
+        },
+        {
+            "name": "accurateDelay",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "If true, this turret will accurately target moving targets with respect to shoot.firstShotDelay."
+        },
+        {
+            "name": "moveWhileCharging",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "If false, this turret can't move while charging."
+        },
+        {
+            "name": "reloadWhileCharging",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "If false, this turret can't reload while charging"
+        },
+        {
+            "name": "warmupMaintainTime",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "How long warmup is maintained even if this turret isn't shooting."
+        },
+        {
+            "name": "shoot",
+            "type": "ShootPattern",
+            "defaultValue": "new ShootPattern()",
+            "notes": "pattern used for bullets"
+        },
+        {
+            "name": "targetAir",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "If true, this block targets air units."
+        },
+        {
+            "name": "targetGround",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "If true, this block targets ground units and structures."
+        },
+        {
+            "name": "targetBlocks",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "If true, this block targets blocks."
+        },
+        {
+            "name": "targetHealing",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "If true, this block targets friend blocks, to heal them."
+        },
+        {
+            "name": "playerControllable",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "If true, this turret can be controlled by players."
+        },
+        {
+            "name": "displayAmmoMultiplier",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "If true, this block will display ammo multipliers in its stats (irrelevant for certain types of turrets)."
+        },
+        {
+            "name": "targetUnderBlocks",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "If false, 'under' blocks like conveyors are not targeted."
+        },
+        {
+            "name": "alwaysShooting",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "If true, the turret will always shoot when it has ammo, regardless of targets in range or any control."
+        },
+        {
+            "name": "predictTarget",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "Whether this turret predicts unit movement."
+        },
+        {
+            "name": "unitSort",
+            "type": "Sortf",
+            "defaultValue": "closest",
+            "notes": "Function for choosing which unit to target."
+        },
+        {
+            "name": "unitFilter",
+            "type": "Boolf of Unit",
+            "defaultValue": "{code}",
+            "notes": "Filter for types of units to attack."
+        },
+        {
+            "name": "buildingFilter",
+            "type": "Boolf of Building",
+            "defaultValue": "underBullets",
+            "notes": "Filter for types of buildings to attack."
+        },
+        {
+            "name": "heatColor",
+            "type": "Color",
+            "defaultValue": "ab3400ff",
+            "notes": "Color of heat region drawn on top (if found)"
+        },
+        {
+            "name": "shootEffect",
+            "type": "Effect",
+            "defaultValue": "null",
+            "notes": "Optional override for all shoot effects."
+        },
+        {
+            "name": "smokeEffect",
+            "type": "Effect",
+            "defaultValue": "null",
+            "notes": "Optional override for all smoke effects."
+        },
+        {
+            "name": "ammoUseEffect",
+            "type": "Effect",
+            "defaultValue": "none",
+            "notes": "Effect created when ammo is used. Not optional."
+        },
+        {
+            "name": "shootSound",
+            "type": "Sound",
+            "defaultValue": "shootDuo",
+            "notes": "Sound emitted when a single bullet is shot."
+        },
+        {
+            "name": "shootSoundVolume",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": "Volume of shooting sound."
+        },
+        {
+            "name": "chargeSound",
+            "type": "Sound",
+            "defaultValue": "none",
+            "notes": "Sound emitted when shoot.firstShotDelay is >0 and shooting begins."
+        },
+        {
+            "name": "loopSound",
+            "type": "Sound",
+            "defaultValue": "none",
+            "notes": "The sound that this block makes while active. One sound loop. Do not overuse."
+        },
+        {
+            "name": "loopSoundVolume",
+            "type": "float",
+            "defaultValue": "0.5",
+            "notes": "Active sound base volume."
+        },
+        {
+            "name": "soundPitchMin",
+            "type": "float",
+            "defaultValue": "0.9",
+            "notes": "Range for pitch of shoot sound."
+        },
+        {
+            "name": "soundPitchMax",
+            "type": "float",
+            "defaultValue": "1.1",
+            "notes": "Range for pitch of shoot sound."
+        },
+        {
+            "name": "ammoEjectBack",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": "Backwards Y offset of ammo eject effect."
+        },
+        {
+            "name": "shootWarmupSpeed",
+            "type": "float",
+            "defaultValue": "0.1",
+            "notes": "Lerp speed of turret warmup."
+        },
+        {
+            "name": "linearWarmup",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "If true, turret warmup is linear instead of a curve."
+        },
+        {
+            "name": "recoil",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": "Visual amount by which the turret recoils back per shot."
+        },
+        {
+            "name": "recoils",
+            "type": "int",
+            "defaultValue": "-1",
+            "notes": "Number of additional counters for recoil."
+        },
+        {
+            "name": "recoilTime",
+            "type": "float",
+            "defaultValue": "-1.0",
+            "notes": "ticks taken for turret to return to starting position in ticks. uses reload time by default"
+        },
+        {
+            "name": "recoilPow",
+            "type": "float",
+            "defaultValue": "1.8",
+            "notes": "power curve applied to visual recoil"
+        },
+        {
+            "name": "cooldownTime",
+            "type": "float",
+            "defaultValue": "20.0",
+            "notes": "ticks to cool down the heat region"
+        },
+        {
+            "name": "elevation",
+            "type": "float",
+            "defaultValue": "-1.0",
+            "notes": "Visual elevation of turret shadow, -1 to use defaults."
+        },
+        {
+            "name": "shake",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "How much the screen shakes per shot."
+        },
+        {
+            "name": "drawer",
+            "type": "DrawBlock",
+            "defaultValue": "new DrawTurret()",
+            "notes": "Defines drawing behavior for this turret."
+        }
+    ]
+}

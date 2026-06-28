@@ -1,0 +1,84 @@
+{
+    "type": "DrawSoftParticles",
+    "parentType": "DrawBlock",
+    "fields": [
+        {
+            "name": "region",
+            "type": "TextureRegion",
+            "defaultValue": "null",
+            "notes": ""
+        },
+        {
+            "name": "color",
+            "type": "Color",
+            "defaultValue": "e3ae6fff",
+            "notes": ""
+        },
+        {
+            "name": "color2",
+            "type": "Color",
+            "defaultValue": "d04d46ff",
+            "notes": ""
+        },
+        {
+            "name": "x",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": ""
+        },
+        {
+            "name": "y",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": ""
+        },
+        {
+            "name": "alpha",
+            "type": "float",
+            "defaultValue": "0.5",
+            "notes": ""
+        },
+        {
+            "name": "particles",
+            "type": "int",
+            "defaultValue": "30",
+            "notes": ""
+        },
+        {
+            "name": "particleLife",
+            "type": "float",
+            "defaultValue": "70.0",
+            "notes": ""
+        },
+        {
+            "name": "particleRad",
+            "type": "float",
+            "defaultValue": "7.0",
+            "notes": ""
+        },
+        {
+            "name": "particleSize",
+            "type": "float",
+            "defaultValue": "3.0",
+            "notes": ""
+        },
+        {
+            "name": "fadeMargin",
+            "type": "float",
+            "defaultValue": "0.4",
+            "notes": ""
+        },
+        {
+            "name": "rotateScl",
+            "type": "float",
+            "defaultValue": "1.5",
+            "notes": ""
+        },
+        {
+            "name": "particleInterp",
+            "type": "Interp",
+            "defaultValue": "5f)",
+            "notes": ""
+        }
+    ]
+}

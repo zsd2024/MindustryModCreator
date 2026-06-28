@@ -1,0 +1,28 @@
+{
+    "type": "ImpactReactor",
+    "parentType": "PowerGenerator",
+    "localizedName": "冲击反应堆",
+    "fields": [
+        {
+            "name": "timerUse",
+            "type": "int",
+            "localizedName": "处理计时器索引",
+            "defaultValue": "1",
+            "notes": "**Notes**: 处理计时器索引"
+        },
+        {
+            "name": "warmupSpeed",
+            "type": "float",
+            "localizedName": "预热速度",
+            "defaultValue": "0.001",
+            "notes": "**Notes**: 预热速度"
+        },
+        {
+            "name": "itemDuration",
+            "type": "float",
+            "localizedName": "物品持续时间",
+            "defaultValue": "60.0",
+            "notes": "**Notes**: 每次处理的持续时间（秒）"
+        }
+    ]
+}
