@@ -44,6 +44,7 @@ import runAddons from '../addons/entry';
 import InvalidEmbed from '../components/tw-invalid-embed/invalid-embed.jsx';
 import {APP_NAME} from '../lib/brand.js';
 import exportMod from '../lib/mindustry/mod-export';
+import {generateBundleKeys} from '../lib/mindustry/content-type-utils';
 
 import styles from './interface.css';
 
@@ -208,39 +209,45 @@ class Interface extends React.Component {
         super(props);
         const initialAssets = [];
         let initialSelectedId = null;
-        const modAsset = {
-            id: '__mod_config__',
-            kind: 'modconfig',
-            name: 'mod.hjson',
+        const modConfig = {
+            name: 'my-mod',
+            displayName: 'My Mod',
+            author: '',
+            version: '1.0',
+            subtitle: '',
+            description: '',
+            main: '',
+            repo: '',
+            minGameVersion: '146',
+            dependencies: [],
+            softDependencies: [],
+            hidden: false,
+            java: false,
+            iosCompatible: false,
+            pregenerated: false,
+            legacyCompatible: false,
+            texturescale: 1.0,
         };
+        const bundleEn = {id: '__bundle_en__', kind: 'bundle', name: 'bundle.properties', folderId: 'root_bundles'};
+        const bundleZh = {id: '__bundle_zh__', kind: 'bundle', name: 'bundle_zh_CN.properties', folderId: 'root_bundles'};
+        const bundleKeys = generateBundleKeys(initialAssets, modConfig);
         const initialState = {
             folders: [
                 {id: 'root_json', name: 'JSON 内容', parentId: null, kind: 'content'},
                 {id: 'root_java', name: 'Java 文件', parentId: null, kind: 'java'},
+                {id: 'root_bundles', name: '本地化文件', parentId: null, kind: 'bundle'},
             ],
-            assets: [modAsset, ...initialAssets],
-            selectedAssetId: initialSelectedId || modAsset.id,
+            assets: [
+                {id: '__mod_config__', kind: 'modconfig', name: 'mod.hjson'},
+                bundleEn, bundleZh,
+                ...initialAssets,
+            ],
+            selectedAssetId: initialSelectedId || '__mod_config__',
             selectedFolderId: null,
-            assetFormData: {},
-            modConfig: {
-                name: 'my-mod',
-                displayName: 'My Mod',
-                author: '',
-                version: '1.0',
-                subtitle: '',
-                description: '',
-                main: '',
-                repo: '',
-                minGameVersion: '146',
-                dependencies: [],
-                softDependencies: [],
-                hidden: false,
-                java: false,
-                iosCompatible: false,
-                pregenerated: false,
-                legacyCompatible: false,
-                texturescale: 1.0,
+            assetFormData: {
+                [bundleEn.id]: bundleKeys,
             },
+            modConfig,
         };
         this.state = initialState;
 
@@ -321,14 +328,28 @@ class Interface extends React.Component {
             name,
             contentType: type,
             folderId: this.state.selectedFolderId
-                && !['root_json', 'root_java'].includes(this.state.selectedFolderId)
+                && !['root_json', 'root_java', 'root_bundles'].includes(this.state.selectedFolderId)
                 ? this.state.selectedFolderId
                 : 'root_json',
         };
-        this.setState(prev => ({
-            assets: [...prev.assets, newAsset],
-            selectedAssetId: newAsset.id,
-        }));
+        this.setState(prev => {
+            // auto-generate bundle keys for the new content asset
+            const newKeys = generateBundleKeys([newAsset], prev.modConfig);
+            let bundleData = {...prev.assetFormData[prev.assets.find(a => a.kind === 'bundle')?.id]};
+            if (bundleData) {
+                bundleData = {...bundleData, ...newKeys};
+            }
+            const assetFormData = {...prev.assetFormData};
+            const bundleId = prev.assets.find(a => a.kind === 'bundle')?.id;
+            if (bundleId && bundleData) {
+                assetFormData[bundleId] = bundleData;
+            }
+            return {
+                assets: [...prev.assets, newAsset],
+                selectedAssetId: newAsset.id,
+                assetFormData,
+            };
+        });
     }
 
     handleAddJava(name) {
@@ -414,10 +435,20 @@ class Interface extends React.Component {
                 id: genId(src.kind),
                 name: src.name + '_副本',
             };
-            return {
+            const result = {
                 assets: [...prev.assets, newAsset],
                 selectedAssetId: newAsset.id,
             };
+            if (src.kind === 'content') {
+                const newKeys = generateBundleKeys([newAsset], prev.modConfig);
+                const assetFormData = {...prev.assetFormData};
+                const bundleId = prev.assets.find(a => a.kind === 'bundle')?.id;
+                if (bundleId) {
+                    assetFormData[bundleId] = {...(assetFormData[bundleId] || {}), ...newKeys};
+                }
+                result.assetFormData = assetFormData;
+            }
+            return result;
         });
     }
 
@@ -425,6 +456,10 @@ class Interface extends React.Component {
         if (id === this.state.assets.find(a => a.id === '__url_param__')?.id) return;
         if (id === '__mod_config__') {
             alert('不能删除模组配置文件');
+            return;
+        }
+        if (id === '__bundle_en__' || id === '__bundle_zh__') {
+            alert('不能删除默认本地化文件');
             return;
         }
         this.setState(prev => ({
