@@ -43,6 +43,7 @@ import {loadServiceWorker} from './load-service-worker';
 import runAddons from '../addons/entry';
 import InvalidEmbed from '../components/tw-invalid-embed/invalid-embed.jsx';
 import {APP_NAME} from '../lib/brand.js';
+import exportMod from '../lib/mindustry/mod-export';
 
 import styles from './interface.css';
 
@@ -222,7 +223,7 @@ class Interface extends React.Component {
             assets: [modAsset, ...initialAssets],
             selectedAssetId: initialSelectedId || modAsset.id,
             selectedFolderId: null,
-            jsonFormData: {},
+            assetFormData: {},
             modConfig: {
                 name: 'my-mod',
                 displayName: 'My Mod',
@@ -256,6 +257,7 @@ class Interface extends React.Component {
         this.handleDuplicateAsset = this.handleDuplicateAsset.bind(this);
         this.handleDeleteAsset = this.handleDeleteAsset.bind(this);
         this.handleModConfigChange = this.handleModConfigChange.bind(this);
+        this.handleExport = this.handleExport.bind(this);
     }
 
     getSelectedAsset() {
@@ -278,7 +280,7 @@ class Interface extends React.Component {
     }
 
     handleSelectAsset(assetId) {
-        this.setState({selectedAssetId: assetId, jsonFormData: {}});
+        this.setState({selectedAssetId: assetId});
     }
 
     handleSelectFolder(folderId) {
@@ -286,7 +288,11 @@ class Interface extends React.Component {
     }
 
     handleJsonFormChange(data) {
-        this.setState({jsonFormData: data});
+        const assetId = this.state.selectedAssetId;
+        if (!assetId) return;
+        this.setState(prev => ({
+            assetFormData: {...prev.assetFormData, [assetId]: data},
+        }));
     }
 
     handleAddContent(name, type) {
@@ -303,7 +309,6 @@ class Interface extends React.Component {
         this.setState(prev => ({
             assets: [...prev.assets, newAsset],
             selectedAssetId: newAsset.id,
-            jsonFormData: {},
         }));
     }
 
@@ -320,7 +325,6 @@ class Interface extends React.Component {
         this.setState(prev => ({
             assets: [...prev.assets, newAsset],
             selectedAssetId: newAsset.id,
-            jsonFormData: {},
         }));
     }
 
@@ -415,6 +419,24 @@ class Interface extends React.Component {
             modConfig: {...prev.modConfig, [key]: value},
         }));
     }
+
+    handleExport() {
+        const {assets, modConfig} = this.state;
+        const hasJava = assets.some(a => a.kind === 'java');
+        if (hasJava && !modConfig.java) {
+            alert('检测到 Java 文件，但 mod.hjson 中未勾选 java: true。\n请先在 mod.hjson 中启用 Java 并设置 main 类。');
+            return;
+        }
+        if (hasJava) {
+            const proceed = window.confirm(
+                '此模组包含 Java 代码，需要 JDK 17 及 Gradle 构建。\n' +
+                '参考模板：/home/zyk/.tmp/MindustryWorkspace/MindustryJavaModTemplate\n\n' +
+                '仍要导出？'
+            );
+            if (!proceed) return;
+        }
+        exportMod(assets, this.state.folders, modConfig, this.state.assetFormData);
+    }
     componentDidUpdate (prevProps) {
         if (prevProps.isLoading && !this.props.isLoading) {
             loadServiceWorker();
@@ -488,7 +510,11 @@ class Interface extends React.Component {
                         onDuplicateAsset={this.handleDuplicateAsset}
                         onDeleteAsset={this.handleDeleteAsset}
                         contentType={this.getSelectedAsset() && this.getSelectedAsset().kind === 'content' ? this.getSelectedAsset().contentType : null}
-                        selectedContentData={this.state.jsonFormData}
+                        selectedContentData={
+                            this.state.selectedAssetId
+                                ? this.state.assetFormData[this.state.selectedAssetId] || {}
+                                : {}
+                        }
                         onContentDataChange={this.handleJsonFormChange}
                         folders={this.state.folders}
                         selectedFolderId={this.state.selectedFolderId}
@@ -498,6 +524,7 @@ class Interface extends React.Component {
                         onDeleteFolder={this.handleDeleteFolder}
                         modConfig={this.state.modConfig}
                         onModConfigChange={this.handleModConfigChange}
+                        onExport={this.handleExport}
                         backpackVisible
                         backpackHost="_local_"
                         {...props}

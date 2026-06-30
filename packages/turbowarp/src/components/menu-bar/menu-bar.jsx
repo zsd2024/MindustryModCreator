@@ -219,6 +219,7 @@ class MenuBar extends React.Component {
             'handleClickSave',
             'handleClickSaveAsCopy',
             'handleClickPackager',
+            'handleClickExport',
             'handleClickDesktopSettings',
             'handleClickRestorePoints',
             'handleClickSeeCommunity',
@@ -269,6 +270,10 @@ class MenuBar extends React.Component {
     }
     handleClickPackager () {
         this.props.onClickPackager();
+        this.props.onRequestCloseFile();
+    }
+    handleClickExport () {
+        if (this.props.onExport) this.props.onExport();
         this.props.onRequestCloseFile();
     }
     handleClickDesktopSettings () {
@@ -714,6 +719,15 @@ class MenuBar extends React.Component {
                                             />
                                         </MenuItem>
                                     </MenuSection>
+                                    <MenuSection>
+                                        <MenuItem onClick={this.handleClickExport}>
+                                            <FormattedMessage
+                                                defaultMessage="Export Mod"
+                                                description="Menu bar item to export the mod"
+                                                id="tw.mind export"
+                                            />
+                                        </MenuItem>
+                                    </MenuSection>
                                 </MenuBarMenu>
                             </MenuLabel>
                         )}
@@ -1114,6 +1128,7 @@ MenuBar.propTypes = {
     onClickAddonSettings: PropTypes.func,
     onClickDesktopSettings: PropTypes.func,
     onClickPackager: PropTypes.func,
+    onExport: PropTypes.func,
     onClickRestorePoints: PropTypes.func,
     onClickEdit: PropTypes.func,
     onClickFile: PropTypes.func,
