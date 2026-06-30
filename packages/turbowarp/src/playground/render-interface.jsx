@@ -206,21 +206,8 @@ function buildProjectData(state) {
 class Interface extends React.Component {
     constructor (props) {
         super(props);
-        const mindustryType = new URLSearchParams(location.search).get('mindustry');
-        const isMindustry = !!mindustryType;
         const initialAssets = [];
         let initialSelectedId = null;
-        if (mindustryType) {
-            const id = genId('content');
-            initialAssets.push({
-                id,
-                kind: 'content',
-                name: mindustryType,
-                contentType: mindustryType,
-                folderId: 'root_json',
-            });
-            initialSelectedId = id;
-        }
         const modAsset = {
             id: '__mod_config__',
             kind: 'modconfig',
