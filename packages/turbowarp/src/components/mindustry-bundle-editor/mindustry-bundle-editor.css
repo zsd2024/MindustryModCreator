@@ -130,7 +130,7 @@
 }
 
 .delBtn:hover {
-  background: $error;
+  background: $error-primary;
   color: white;
 }
 
