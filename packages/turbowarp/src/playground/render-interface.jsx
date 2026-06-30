@@ -238,7 +238,7 @@ class Interface extends React.Component {
                 {id: 'root_bundles', name: '本地化文件', parentId: null, kind: 'bundle'},
             ],
             assets: [
-                {id: '__mod_config__', kind: 'modconfig', name: 'mod.hjson'},
+                {id: '__mod_config__', kind: 'modconfig', name: 'mod.hjson', folderId: 'root_json'},
                 bundleEn, bundleZh,
                 ...initialAssets,
             ],
@@ -274,6 +274,7 @@ class Interface extends React.Component {
         this.handleJsonFormChange = this.handleJsonFormChange.bind(this);
         this.handleAddContent = this.handleAddContent.bind(this);
         this.handleAddJava = this.handleAddJava.bind(this);
+        this.handleAddBundle = this.handleAddBundle.bind(this);
         this.handleSelectFolder = this.handleSelectFolder.bind(this);
         this.handleAddFolder = this.handleAddFolder.bind(this);
         this.handleRenameFolder = this.handleRenameFolder.bind(this);
@@ -333,7 +334,6 @@ class Interface extends React.Component {
                 : 'root_json',
         };
         this.setState(prev => {
-            // auto-generate bundle keys for the new content asset
             const newKeys = generateBundleKeys([newAsset], prev.modConfig);
             let bundleData = {...prev.assetFormData[prev.assets.find(a => a.kind === 'bundle')?.id]};
             if (bundleData) {
@@ -358,9 +358,28 @@ class Interface extends React.Component {
             kind: 'java',
             name,
             folderId: this.state.selectedFolderId
-                && !['root_json', 'root_java'].includes(this.state.selectedFolderId)
+                && !['root_json', 'root_java', 'root_bundles'].includes(this.state.selectedFolderId)
                 ? this.state.selectedFolderId
                 : 'root_java',
+        };
+        this.setState(prev => ({
+            assets: [...prev.assets, newAsset],
+            selectedAssetId: newAsset.id,
+        }));
+    }
+
+    handleAddBundle(lang) {
+        const filename = lang === 'en' ? 'bundle.properties' : `bundle_${lang}.properties`;
+        const existing = this.state.assets.find(a => a.kind === 'bundle' && a.name === filename);
+        if (existing) {
+            this.setState({selectedAssetId: existing.id});
+            return;
+        }
+        const newAsset = {
+            id: genId('bundle'),
+            kind: 'bundle',
+            name: filename,
+            folderId: 'root_bundles',
         };
         this.setState(prev => ({
             assets: [...prev.assets, newAsset],
@@ -462,10 +481,15 @@ class Interface extends React.Component {
             alert('不能删除默认本地化文件');
             return;
         }
-        this.setState(prev => ({
-            assets: prev.assets.filter(a => a.id !== id),
-            selectedAssetId: prev.selectedAssetId === id ? null : prev.selectedAssetId,
-        }));
+        this.setState(prev => {
+            const fallback = prev.selectedAssetId === id
+                ? (prev.assets.find(a => a.id === '__mod_config__')?.id || null)
+                : prev.selectedAssetId;
+            return {
+                assets: prev.assets.filter(a => a.id !== id),
+                selectedAssetId: fallback,
+            };
+        });
     }
 
     handleModConfigChange(key, value) {
@@ -598,6 +622,7 @@ class Interface extends React.Component {
                         onAddJavaFile={this.handleAddJava}
                         onRenameAsset={this.handleRenameAsset}
                         onDuplicateAsset={this.handleDuplicateAsset}
+                        onAddBundle={this.handleAddBundle}
                         onDeleteAsset={this.handleDeleteAsset}
                         contentType={this.getSelectedAsset() && this.getSelectedAsset().kind === 'content' ? this.getSelectedAsset().contentType : null}
                         selectedContentData={
