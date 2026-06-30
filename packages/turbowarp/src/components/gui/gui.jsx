@@ -25,6 +25,7 @@ import FolderTree from '../mindustry-folder-tree/mindustry-folder-tree.jsx';
 import AssetCards from '../mindustry-asset-cards/mindustry-asset-cards.jsx';
 import TranspilePanel from '../mindustry-transpile-panel/mindustry-transpile-panel.jsx';
 import ModEditor from '../mindustry-mod-editor/mod-editor.jsx';
+import BundleEditor from '../mindustry-bundle-editor/mindustry-bundle-editor.jsx';
 
 import Backpack from '../../containers/backpack.jsx';
 import BrowserModal from '../browser-modal/browser-modal.jsx';
@@ -457,6 +458,15 @@ const GUIComponent = props => {
                                                 contentType={selectedAsset.contentType}
                                                 initialData={selectedContentData}
                                                 onChange={onContentDataChange}
+                                            />
+                                        </Box>
+                                    ) : selectedAsset && selectedAsset.kind === 'bundle' ? (
+                                        <Box className={styles.blocksWrapper}>
+                                            <BundleEditor
+                                                entries={selectedContentData || {}}
+                                                onChange={onContentDataChange}
+                                                assets={assets}
+                                                modConfig={modConfig}
                                             />
                                         </Box>
                                     ) : (

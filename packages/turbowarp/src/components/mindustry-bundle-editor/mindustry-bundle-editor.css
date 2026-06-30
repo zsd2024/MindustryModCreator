@@ -1,0 +1,176 @@
+@import "../../css/units.css";
+@import "../../css/colors.css";
+
+.editor {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: $ui-white;
+  overflow: hidden;
+}
+
+.toolbar {
+  display: flex;
+  gap: 8px;
+  padding: 8px;
+  border-bottom: 1px solid $ui-black-transparent;
+  flex-shrink: 0;
+}
+
+.search {
+  flex: 1;
+  padding: 4px 8px;
+  border: 1px solid $ui-black-transparent;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  outline: none;
+}
+
+.search:focus {
+  border-color: $motion-primary;
+}
+
+.btn {
+  padding: 4px 12px;
+  border: 1px solid $ui-black-transparent;
+  border-radius: 4px;
+  background: $motion-primary;
+  color: white;
+  cursor: pointer;
+  font-size: 0.75rem;
+  white-space: nowrap;
+}
+
+.btn:hover {
+  opacity: 0.85;
+}
+
+.table {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.header {
+  display: flex;
+  padding: 6px 8px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: $text-primary;
+  background: $ui-primary;
+  border-bottom: 1px solid $ui-black-transparent;
+  flex-shrink: 0;
+}
+
+.body {
+  flex: 1;
+}
+
+.row {
+  display: flex;
+  padding: 3px 8px;
+  border-bottom: 1px solid $ui-black-transparent;
+  align-items: center;
+}
+
+.row:hover {
+  background: $ui-secondary;
+}
+
+.keyCol {
+  width: 45%;
+  font-size: 0.72rem;
+  font-family: monospace;
+  color: $text-primary;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.valCol {
+  flex: 1;
+  font-size: 0.72rem;
+}
+
+.valCol input {
+  width: 100%;
+  padding: 3px 6px;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  font-size: 0.72rem;
+  outline: none;
+  background: transparent;
+}
+
+.valCol input:hover,
+.valCol input:focus {
+  border-color: $ui-black-transparent;
+  background: $ui-white;
+}
+
+.delCol {
+  width: 28px;
+  flex-shrink: 0;
+}
+
+.delBtn {
+  width: 22px;
+  height: 22px;
+  border: none;
+  background: transparent;
+  color: $text-primary;
+  cursor: pointer;
+  font-size: 1rem;
+  line-height: 1;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.delBtn:hover {
+  background: $error;
+  color: white;
+}
+
+.addRow {
+  display: flex;
+  padding: 6px 8px;
+  border-top: 1px solid $ui-black-transparent;
+  gap: 4px;
+  flex-shrink: 0;
+  background: $ui-primary;
+}
+
+.addRow input {
+  padding: 4px 6px;
+  border: 1px solid $ui-black-transparent;
+  border-radius: 3px;
+  font-size: 0.72rem;
+  outline: none;
+}
+
+.addRow input:focus {
+  border-color: $motion-primary;
+}
+
+.addBtn {
+  width: 26px;
+  height: 26px;
+  border: 1px solid $ui-black-transparent;
+  border-radius: 3px;
+  background: $motion-primary;
+  color: white;
+  cursor: pointer;
+  font-size: 1rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.addBtn:hover {
+  opacity: 0.85;
+}
