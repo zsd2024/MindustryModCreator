@@ -722,9 +722,9 @@ class MenuBar extends React.Component {
                                     <MenuSection>
                                         <MenuItem onClick={this.handleClickExport}>
                                             <FormattedMessage
-                                                defaultMessage="Export Mod"
+                                                defaultMessage="导出模组"
                                                 description="Menu bar item to export the mod"
-                                                id="tw.mind export"
+                                                id="tw.mindustry.export"
                                             />
                                         </MenuItem>
                                     </MenuSection>
