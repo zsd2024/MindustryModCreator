@@ -7,8 +7,8 @@ const BUILTIN_IDS = new Set(['__mod_config__', '__bundle_en__', '__bundle_zh__']
 
 const FRIENDLY_NAMES = {
   __mod_config__: '模组配置文件',
-  '__bundle_en__': '英文本地化',
-  '__bundle_zh__': '中文本地化',
+  '__bundle_en__': 'English 本地化文件',
+  '__bundle_zh__': '中文简体 本地化文件',
 };
 
 const IGNORED_TYPES = new Set([
@@ -131,6 +131,7 @@ class AssetCards extends React.Component {
     e.preventDefault();
     e.stopPropagation();
     if (asset.id === '__url_param__') return;
+    if (BUILTIN_IDS.has(asset.id)) return; // built-in: no context menu
     this.setState({
       contextMenu: {assetId: asset.id, name: asset.name, x: e.clientX, y: e.clientY},
     });
@@ -317,7 +318,7 @@ class AssetCards extends React.Component {
           </div>
         )}
 
-          {/* context menu */}
+          {/* context menu — only delete */}
         {this.state.contextMenu && (
           <div
             className={styles.contextMenu}
@@ -325,30 +326,8 @@ class AssetCards extends React.Component {
             ref={(el) => {this._ctxEl = el;}}
             onClick={(e) => e.stopPropagation()}
           >
-            {!BUILTIN_IDS.has(this.state.contextMenu.assetId) && (
-              <div
-                className={styles.menuItem}
-                onClick={() => {
-                  const {assetId, name} = this.state.contextMenu;
-                  this.startRename(assetId, name);
-                }}
-              >
-                重命名
-              </div>
-            )}
-            {!BUILTIN_IDS.has(this.state.contextMenu.assetId) && (
-              <div
-                className={`${styles.menuItem} ${styles.menuDivider}`}
-                onClick={() => {
-                  this.props.onDuplicateAsset(this.state.contextMenu.assetId);
-                  this.setState({contextMenu: null});
-                }}
-              >
-                复制
-              </div>
-            )}
             <div
-              className={`${styles.menuItemDanger} ${styles.menuDivider}`}
+              className={`${styles.menuItemDanger}`}
               onClick={() => {
                 this.props.onDeleteAsset(this.state.contextMenu.assetId);
                 this.setState({contextMenu: null});
