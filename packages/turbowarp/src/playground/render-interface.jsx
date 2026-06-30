@@ -257,13 +257,21 @@ class Interface extends React.Component {
         };
         this.state = initialState;
 
-        // Override VM save to return project file for Mindustry mode
-        if (isMindustry && this.props.vm) {
+        // Override VM save to return project file when in Mindustry mode
+        if (this.props.vm) {
+            const originalSave = this.props.vm.saveProjectSb3.bind(this.props.vm);
             const self = this;
-            this.props.vm.saveProjectSb3 = function () {
-                const data = buildProjectData(self.state);
-                const blob = new Blob([data], {type: 'application/json'});
-                return Promise.resolve(blob);
+            this.props.vm.saveProjectSb3 = function (type) {
+                const state = self.state;
+                const hasMindustry = state.assets && state.assets.some(
+                    a => a.kind === 'content' || a.kind === 'modconfig' || a.kind === 'java'
+                );
+                if (hasMindustry) {
+                    const data = buildProjectData(state);
+                    const blob = new Blob([data], {type: 'application/json'});
+                    return Promise.resolve(blob);
+                }
+                return originalSave(type);
             };
         }
 
