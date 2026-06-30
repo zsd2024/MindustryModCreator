@@ -129,7 +129,7 @@ jar{
 `);
   }
 
-  const filename = `${modName}.msar`;
+  const filename = `${modName}.zip`;
   zip.generateAsync({type: 'blob'}).then(blob => {
     downloadBlob(filename, blob);
   });

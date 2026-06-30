@@ -193,10 +193,21 @@ function genId(prefix) {
     return `${prefix}_${Date.now()}_${_assetIdCounter}`;
 }
 
+function buildProjectData(state) {
+    return JSON.stringify({
+        version: 1,
+        modConfig: state.modConfig,
+        folders: state.folders,
+        assets: state.assets,
+        assetData: state.assetFormData,
+    });
+}
+
 class Interface extends React.Component {
     constructor (props) {
         super(props);
         const mindustryType = new URLSearchParams(location.search).get('mindustry');
+        const isMindustry = !!mindustryType;
         const initialAssets = [];
         let initialSelectedId = null;
         if (mindustryType) {
@@ -215,7 +226,7 @@ class Interface extends React.Component {
             kind: 'modconfig',
             name: 'mod.hjson',
         };
-        this.state = {
+        const initialState = {
             folders: [
                 {id: 'root_json', name: 'JSON 内容', parentId: null, kind: 'content'},
                 {id: 'root_java', name: 'Java 文件', parentId: null, kind: 'java'},
@@ -244,6 +255,18 @@ class Interface extends React.Component {
                 texturescale: 1.0,
             },
         };
+        this.state = initialState;
+
+        // Override VM save to return project file for Mindustry mode
+        if (isMindustry && this.props.vm) {
+            const self = this;
+            this.props.vm.saveProjectSb3 = function () {
+                const data = buildProjectData(self.state);
+                const blob = new Blob([data], {type: 'application/json'});
+                return Promise.resolve(blob);
+            };
+        }
+
         this.handleUpdateProjectTitle = this.handleUpdateProjectTitle.bind(this);
         this.handleSelectAsset = this.handleSelectAsset.bind(this);
         this.handleJsonFormChange = this.handleJsonFormChange.bind(this);
@@ -258,6 +281,7 @@ class Interface extends React.Component {
         this.handleDeleteAsset = this.handleDeleteAsset.bind(this);
         this.handleModConfigChange = this.handleModConfigChange.bind(this);
         this.handleExport = this.handleExport.bind(this);
+        this.handleImportProject = this.handleImportProject.bind(this);
     }
 
     getSelectedAsset() {
@@ -420,6 +444,42 @@ class Interface extends React.Component {
         }));
     }
 
+    handleImportProject() {
+        const input = document.createElement('input');
+        input.type = 'file';
+        input.accept = '.mproj,.json';
+        input.style = 'display: none';
+        input.onchange = (e) => {
+            const file = e.target.files && e.target.files[0];
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = (ev) => {
+                try {
+                    const data = JSON.parse(ev.target.result);
+                    if (data && data.version === 1) {
+                        this.setState({
+                            assets: data.assets || [],
+                            folders: data.folders || [],
+                            modConfig: data.modConfig || this.state.modConfig,
+                            assetFormData: data.assetData || {},
+                            selectedAssetId: null,
+                            selectedFolderId: null,
+                        });
+                    } else {
+                        alert('无效的项目文件');
+                    }
+                } catch (err) {
+                    alert('项目文件解析失败：' + err.message);
+                } finally {
+                    document.body.removeChild(input);
+                }
+            };
+            reader.readAsText(file);
+        };
+        document.body.appendChild(input);
+        input.click();
+    }
+
     handleExport() {
         const {assets, modConfig} = this.state;
         const hasJava = assets.some(a => a.kind === 'java');
@@ -525,6 +585,7 @@ class Interface extends React.Component {
                         modConfig={this.state.modConfig}
                         onModConfigChange={this.handleModConfigChange}
                         onExport={this.handleExport}
+                        onImportProject={this.handleImportProject}
                         backpackVisible
                         backpackHost="_local_"
                         {...props}

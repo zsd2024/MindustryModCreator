@@ -135,6 +135,7 @@ const GUIComponent = props => {
         onDuplicateAsset,
         onDeleteAsset,
         onExport,
+        onImportProject,
         contentType,
         folders,
         selectedFolderId,
@@ -371,6 +372,7 @@ const GUIComponent = props => {
                     onClickNewWindow={onClickNewWindow}
                     onClickPackager={onClickPackager}
                     onExport={onExport}
+                    onImportProject={onImportProject}
                     onClickLogo={onClickLogo}
                     onCloseAccountNav={onCloseAccountNav}
                     onLogOut={onLogOut}
@@ -626,6 +628,7 @@ GUIComponent.propTypes = {
     onDuplicateAsset: PropTypes.func,
     onDeleteAsset: PropTypes.func,
     onExport: PropTypes.func,
+    onImportProject: PropTypes.func,
     onSelectAsset: PropTypes.func,
     onClickDesktopSettings: PropTypes.func,
     onContentDataChange: PropTypes.func,
