@@ -220,6 +220,7 @@ class MenuBar extends React.Component {
             'handleClickSaveAsCopy',
             'handleClickPackager',
             'handleClickExport',
+            'handleClickImport',
             'handleClickDesktopSettings',
             'handleClickRestorePoints',
             'handleClickSeeCommunity',
@@ -274,6 +275,10 @@ class MenuBar extends React.Component {
     }
     handleClickExport () {
         if (this.props.onExport) this.props.onExport();
+        this.props.onRequestCloseFile();
+    }
+    handleClickImport () {
+        if (this.props.onImportProject) this.props.onImportProject();
         this.props.onRequestCloseFile();
     }
     handleClickDesktopSettings () {
@@ -720,6 +725,13 @@ class MenuBar extends React.Component {
                                         </MenuItem>
                                     </MenuSection>
                                     <MenuSection>
+                                        <MenuItem onClick={this.handleClickImport}>
+                                            <FormattedMessage
+                                                defaultMessage="导入项目"
+                                                description="Menu bar item to import a project file"
+                                                id="tw.mindustry.import"
+                                            />
+                                        </MenuItem>
                                         <MenuItem onClick={this.handleClickExport}>
                                             <FormattedMessage
                                                 defaultMessage="导出模组"
@@ -1129,6 +1141,7 @@ MenuBar.propTypes = {
     onClickDesktopSettings: PropTypes.func,
     onClickPackager: PropTypes.func,
     onExport: PropTypes.func,
+    onImportProject: PropTypes.func,
     onClickRestorePoints: PropTypes.func,
     onClickEdit: PropTypes.func,
     onClickFile: PropTypes.func,
