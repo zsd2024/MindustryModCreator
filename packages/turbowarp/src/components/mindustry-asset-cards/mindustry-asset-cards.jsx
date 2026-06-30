@@ -3,6 +3,14 @@ import React from 'react';
 import {getZhLabel} from '../../lib/mindustry/resolve-schema';
 import styles from './mindustry-asset-cards.css';
 
+const BUILTIN_IDS = new Set(['__mod_config__', '__bundle_en__', '__bundle_zh__']);
+
+const FRIENDLY_NAMES = {
+  __mod_config__: '模组配置文件',
+  '__bundle_en__': '英文本地化',
+  '__bundle_zh__': '中文本地化',
+};
+
 const IGNORED_TYPES = new Set([
   'DrawArcSmelt', 'DrawBlockParts', 'DrawBlurSpin', 'DrawBubbles',
   'DrawCells', 'DrawCircles', 'DrawCrucibleFlame', 'DrawCultivator',
@@ -71,6 +79,8 @@ class AssetCards extends React.Component {
       contextMenu: null,
       renamingId: null,
       renameValue: '',
+      bundleDialog: false,
+      bundleLang: 'zh_CN',
     };
     this._ctxEl = null;
   }
@@ -110,6 +120,10 @@ class AssetCards extends React.Component {
     if (name && name.trim()) {
       this.props.onAddJavaFile(name.trim());
     }
+  }
+
+  promptAddBundle() {
+    this.setState({bundleDialog: true, bundleLang: 'zh_CN'});
   }
 
   // ── right-click context menu ──
@@ -206,10 +220,12 @@ class AssetCards extends React.Component {
                   <span className={`${styles.cardBadge} ${
                     asset.kind === 'content' ? styles.badgeJson :
                     asset.kind === 'modconfig' ? styles.badgeConfig :
+                    asset.kind === 'bundle' ? styles.badgeConfig :
                     styles.badgeJava
                   }`}>
                     {asset.kind === 'content' ? 'JSON' :
-                     asset.kind === 'modconfig' ? 'HJSON' : 'Java'}
+                     asset.kind === 'modconfig' ? 'HJSON' :
+                     asset.kind === 'bundle' ? 'i18n' : 'Java'}
                   </span>
                 </div>
                 <div className={styles.cardInfo}>
@@ -227,10 +243,12 @@ class AssetCards extends React.Component {
                       onClick={(e) => e.stopPropagation()}
                     />
                   ) : (
-                    <div className={styles.cardName}>{asset.name}</div>
+                    <div className={styles.cardName}>{FRIENDLY_NAMES[asset.id] || asset.name}</div>
                   )}
                   <div className={styles.cardType}>
-                    {asset.kind === 'content' ? asset.contentType : asset.kind === 'modconfig' ? 'mod.hjson' : '.java'}
+                    {asset.kind === 'content' ? asset.contentType :
+                     asset.kind === 'modconfig' ? 'mod.hjson' :
+                     asset.kind === 'bundle' ? '.properties' : '.java'}
                   </div>
                 </div>
               </div>
@@ -244,9 +262,62 @@ class AssetCards extends React.Component {
           <button className={styles.addBtn} onClick={() => this.promptAddJava()}>
             + 添加 Java
           </button>
+          <button className={styles.addBtn} onClick={() => this.promptAddBundle()}>
+            + 本地化
+          </button>
         </div>
 
-        {/* context menu */}
+        {/* add bundle dialog */}
+        {this.state.bundleDialog && (
+          <div className={styles.overlay} onClick={() => this.setState({bundleDialog: null})}>
+            <div className={styles.dialog} onClick={e => e.stopPropagation()}>
+              <div className={styles.dialogTitle}>添加本地化文件</div>
+              <div className={styles.dialogNameRow}>
+                <span className={styles.nameLabel}>语言</span>
+                <select
+                  className={styles.nameInput}
+                  value={this.state.bundleLang}
+                  onChange={e => this.setState({bundleLang: e.target.value})}
+                >
+                  <option value="en">English</option>
+                  <option value="zh_CN">简体中文</option>
+                  <option value="zh_TW">繁體中文</option>
+                  <option value="ja">日本語</option>
+                  <option value="ko">한국어</option>
+                  <option value="ru">Русский</option>
+                  <option value="de">Deutsch</option>
+                  <option value="fr">Français</option>
+                  <option value="es">Español</option>
+                  <option value="pt_BR">Português (Brasil)</option>
+                  <option value="th">ไทย</option>
+                  <option value="vi">Tiếng Việt</option>
+                  <option value="id">Bahasa Indonesia</option>
+                  <option value="it">Italiano</option>
+                  <option value="pl">Polski</option>
+                  <option value="uk">Українська</option>
+                </select>
+              </div>
+              <div className={styles.dialogActions}>
+                <button className={styles.dialogBtn} onClick={() => this.setState({bundleDialog: null})}>
+                  取消
+                </button>
+                <button
+                  className={`${styles.dialogBtn} ${styles.dialogBtnPrimary}`}
+                  onClick={() => {
+                    if (this.state.bundleLang && this.props.onAddBundle) {
+                      this.props.onAddBundle(this.state.bundleLang);
+                    }
+                    this.setState({bundleDialog: null});
+                  }}
+                >
+                  添加
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
+
+          {/* context menu */}
         {this.state.contextMenu && (
           <div
             className={styles.contextMenu}
@@ -254,24 +325,28 @@ class AssetCards extends React.Component {
             ref={(el) => {this._ctxEl = el;}}
             onClick={(e) => e.stopPropagation()}
           >
-            <div
-              className={styles.menuItem}
-              onClick={() => {
-                const {assetId, name} = this.state.contextMenu;
-                this.startRename(assetId, name);
-              }}
-            >
-              重命名
-            </div>
-            <div
-              className={`${styles.menuItem} ${styles.menuDivider}`}
-              onClick={() => {
-                this.props.onDuplicateAsset(this.state.contextMenu.assetId);
-                this.setState({contextMenu: null});
-              }}
-            >
-              复制
-            </div>
+            {!BUILTIN_IDS.has(this.state.contextMenu.assetId) && (
+              <div
+                className={styles.menuItem}
+                onClick={() => {
+                  const {assetId, name} = this.state.contextMenu;
+                  this.startRename(assetId, name);
+                }}
+              >
+                重命名
+              </div>
+            )}
+            {!BUILTIN_IDS.has(this.state.contextMenu.assetId) && (
+              <div
+                className={`${styles.menuItem} ${styles.menuDivider}`}
+                onClick={() => {
+                  this.props.onDuplicateAsset(this.state.contextMenu.assetId);
+                  this.setState({contextMenu: null});
+                }}
+              >
+                复制
+              </div>
+            )}
             <div
               className={`${styles.menuItemDanger} ${styles.menuDivider}`}
               onClick={() => {
@@ -338,6 +413,7 @@ AssetCards.propTypes = {
   onRenameAsset: PropTypes.func,
   onDuplicateAsset: PropTypes.func,
   onDeleteAsset: PropTypes.func,
+  onAddBundle: PropTypes.func,
 };
 
 export default AssetCards;

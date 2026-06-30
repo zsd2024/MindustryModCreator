@@ -132,6 +132,7 @@ const GUIComponent = props => {
         onSelectAsset,
         onAddContent,
         onAddJavaFile,
+        onAddBundle,
         onRenameAsset,
         onDuplicateAsset,
         onDeleteAsset,
@@ -519,63 +520,41 @@ const GUIComponent = props => {
                             ) : null}
                             </Box>
 
-                        {assets && assets.length > 0 && (
-                            <div
-                                className={styles.resizeHandle}
-                                onMouseDown={onDragStart}
-                            />
-                        )}
+                        <div className={styles.resizeHandle} onMouseDown={onDragStart} />
                         <Box
                             className={classNames(styles.stageAndTargetWrapper, styles[stageSize])}
                             componentRef={rightPanelRef}
-                            style={assets && assets.length > 0 ? {width: rightWidth, flex: 'none'} : {}}
+                            style={{width: rightWidth, flex: 'none'}}
                         >
-                            {selectedAsset ? (
-                                <React.Fragment>
-                                    <TranspilePanel
-                                        selectedAsset={selectedAsset}
-                                        formData={selectedContentData}
-                                        modConfig={modConfig}
-                                    />
-                                    <Box className={styles.targetWrapper}>
-                                        <FolderTree
-                                            folders={folders}
-                                            assets={assets}
-                                            selectedFolderId={selectedFolderId}
-                                            onSelectFolder={onSelectFolder}
-                                            onAddFolder={onAddFolder}
-                                            onRenameFolder={onRenameFolder}
-                                            onDeleteFolder={onDeleteFolder}
-                                        />
-                                        <AssetCards
-                                            assets={filteredAssets}
-                                            selectedId={selectedAssetId}
-                                            onSelect={onSelectAsset}
-                                            onAddContent={onAddContent}
-                                            onAddJavaFile={onAddJavaFile}
-                                            onRenameAsset={onRenameAsset}
-                                            onDuplicateAsset={onDuplicateAsset}
-                                            onDeleteAsset={onDeleteAsset}
-                                        />
-                                    </Box>
-                                </React.Fragment>
-                            ) : (
-                                <React.Fragment>
-                                    <StageWrapper
-                                        isFullScreen={isFullScreen}
-                                        isRendererSupported={isRendererSupported()}
-                                        isRtl={isRtl}
-                                        stageSize={stageSize}
-                                        vm={vm}
-                                    />
-                                    <Box className={styles.targetWrapper}>
-                                        <TargetPane
-                                            stageSize={stageSize}
-                                            vm={vm}
-                                        />
-                                    </Box>
-                                </React.Fragment>
+                            {selectedAsset && (
+                                <TranspilePanel
+                                    selectedAsset={selectedAsset}
+                                    formData={selectedContentData}
+                                    modConfig={modConfig}
+                                />
                             )}
+                            <Box className={styles.targetWrapper}>
+                                <FolderTree
+                                    folders={folders}
+                                    assets={assets}
+                                    selectedFolderId={selectedFolderId}
+                                    onSelectFolder={onSelectFolder}
+                                    onAddFolder={onAddFolder}
+                                    onRenameFolder={onRenameFolder}
+                                    onDeleteFolder={onDeleteFolder}
+                                />
+                                <AssetCards
+                                    assets={filteredAssets}
+                                    selectedId={selectedAssetId}
+                                    onSelect={onSelectAsset}
+                                    onAddContent={onAddContent}
+                                    onAddJavaFile={onAddJavaFile}
+                                    onAddBundle={onAddBundle}
+                                    onRenameAsset={onRenameAsset}
+                                    onDuplicateAsset={onDuplicateAsset}
+                                    onDeleteAsset={onDeleteAsset}
+                                />
+                            </Box>
                         </Box>
                     </Box>
                 </Box>

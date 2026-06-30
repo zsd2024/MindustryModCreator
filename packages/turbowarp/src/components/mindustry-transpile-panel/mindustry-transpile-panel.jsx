@@ -75,8 +75,10 @@ class TranspilePanel extends React.Component {
         } else {
           code = '// 未修改任何字段\n// 修改字段后此处显示差异';
         }
+      } else if (selectedAsset.kind === 'bundle') {
+        code = null;
       } else if (selectedAsset.kind === 'content') {
-        code = `// ${selectedAsset.name} (${selectedAsset.contentType})\n// 编辑内容后此处显示 JSON 差异输出`;
+        code = `// ${selectedAsset.name} (${selectedAsset.contentType})\n// 编辑内容后此处显示 HJSON 差异输出`;
       } else {
         code = `// ${selectedAsset.name}.java\n// Java 转译结果（待实现）`;
       }
@@ -88,7 +90,7 @@ class TranspilePanel extends React.Component {
           <span className={styles.arrow}>{collapsed ? '▶' : '▼'}</span>
           <span className={styles.headerTitle}>
             {selectedAsset
-              ? (selectedAsset.kind === 'content' ? 'HJSON 输出（仅差异）' : selectedAsset.kind === 'modconfig' ? 'mod.hjson' : 'Java 输出')
+              ? (selectedAsset.kind === 'content' ? 'HJSON 输出（仅差异）' : selectedAsset.kind === 'modconfig' ? 'mod.hjson' : selectedAsset.kind === 'bundle' ? '本地化文件' : 'Java 输出')
               : '转译输出'}
           </span>
           <span className={styles.headerHint}>
