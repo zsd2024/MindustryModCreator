@@ -274,6 +274,7 @@ class Interface extends React.Component {
         this.handleJsonFormChange = this.handleJsonFormChange.bind(this);
         this.handleAddContent = this.handleAddContent.bind(this);
         this.handleAddJava = this.handleAddJava.bind(this);
+        this.handleDuplicateAsset = this.handleDuplicateAsset.bind(this);
         this.handleAddBundle = this.handleAddBundle.bind(this);
         this.handleSelectFolder = this.handleSelectFolder.bind(this);
         this.handleAddFolder = this.handleAddFolder.bind(this);
@@ -445,6 +446,32 @@ class Interface extends React.Component {
         }));
     }
 
+    handleDuplicateAsset(id) {
+        this.setState(prev => {
+            const src = prev.assets.find(a => a.id === id);
+            if (!src) return null;
+            const newAsset = {
+                ...src,
+                id: genId(src.kind),
+                name: src.name + '_副本',
+            };
+            const result = {
+                assets: [...prev.assets, newAsset],
+                selectedAssetId: newAsset.id,
+            };
+            if (src.kind === 'content') {
+                const newKeys = generateBundleKeys([newAsset], prev.modConfig);
+                const assetFormData = {...prev.assetFormData};
+                const bundleId = prev.assets.find(a => a.kind === 'bundle')?.id;
+                if (bundleId) {
+                    assetFormData[bundleId] = {...(assetFormData[bundleId] || {}), ...newKeys};
+                }
+                result.assetFormData = assetFormData;
+            }
+            return result;
+        });
+    }
+
     handleDeleteAsset(id) {
         if (id === this.state.assets.find(a => a.id === '__url_param__')?.id) return;
         if (id === '__mod_config__') {
@@ -595,6 +622,7 @@ class Interface extends React.Component {
                         onAddContent={this.handleAddContent}
                         onAddJavaFile={this.handleAddJava}
                         onRenameAsset={this.handleRenameAsset}
+                        onDuplicateAsset={this.handleDuplicateAsset}
                         onAddBundle={this.handleAddBundle}
                         onDeleteAsset={this.handleDeleteAsset}
                         contentType={this.getSelectedAsset() && this.getSelectedAsset().kind === 'content' ? this.getSelectedAsset().contentType : null}

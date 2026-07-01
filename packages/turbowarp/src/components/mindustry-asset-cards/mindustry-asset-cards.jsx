@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import {ContextMenuTrigger} from 'react-contextmenu';
-import {ContextMenu, DangerousMenuItem} from '../context-menu/context-menu.jsx';
+import {ContextMenu, MenuItem, DangerousMenuItem} from '../context-menu/context-menu.jsx';
 import Modal from '../modal/modal.jsx';
 import {getZhLabel} from '../../lib/mindustry/resolve-schema';
 import styles from './mindustry-asset-cards.css';
@@ -233,34 +233,28 @@ class AssetCards extends React.Component {
                 </div>
               </React.Fragment>
             );
+            if (isBuiltin) {
+              return (
+                <div
+                  key={asset.id}
+                  className={`${styles.card} ${active ? styles.cardActive : ''}`}
+                  onClick={() => onSelect(asset.id)}
+                >
+                  {cardContent}
+                </div>
+              );
+            }
             return (
-              <div key={asset.id}>
-                {isBuiltin ? (
-                  <div
-                    className={`${styles.card} ${active ? styles.cardActive : ''}`}
-                    onClick={() => onSelect(asset.id)}
-                  >
-                    {cardContent}
-                  </div>
-                ) : (
-                  <ContextMenuTrigger
-                    id={`asset-ctx-${asset.id}`}
-                    attributes={{
-                      className: `${styles.card} ${active ? styles.cardActive : ''}`,
-                      onClick: () => onSelect(asset.id),
-                    }}
-                  >
-                    {cardContent}
-                  </ContextMenuTrigger>
-                )}
-                {!isBuiltin && (
-                  <ContextMenu id={`asset-ctx-${asset.id}`}>
-                    <DangerousMenuItem onClick={() => this.props.onDeleteAsset(asset.id)}>
-                      删除
-                    </DangerousMenuItem>
-                  </ContextMenu>
-                )}
-              </div>
+              <ContextMenuTrigger
+                key={asset.id}
+                id={`asset-ctx-${asset.id}`}
+                attributes={{
+                  className: `${styles.card} ${active ? styles.cardActive : ''}`,
+                  onClick: () => onSelect(asset.id),
+                }}
+              >
+                {cardContent}
+              </ContextMenuTrigger>
             );
           })}
         </div>
@@ -275,6 +269,24 @@ class AssetCards extends React.Component {
             + 本地化
           </button>
         </div>
+
+        {/* context menus (outside flex container) */}
+        {assets.map(asset => {
+          if (BUILTIN_IDS.has(asset.id)) return null;
+          return (
+            <ContextMenu key={`ctx-${asset.id}`} id={`asset-ctx-${asset.id}`}>
+              <MenuItem onClick={() => this.startRename(asset.id, asset.name)}>
+                重命名
+              </MenuItem>
+              <MenuItem onClick={() => this.props.onDuplicateAsset(asset.id)}>
+                复制
+              </MenuItem>
+              <DangerousMenuItem onClick={() => this.props.onDeleteAsset(asset.id)}>
+                删除
+              </DangerousMenuItem>
+            </ContextMenu>
+          );
+        })}
 
         {/* add java dialog */}
         {this.state.javaDialog && (
@@ -422,6 +434,7 @@ AssetCards.propTypes = {
   onAddContent: PropTypes.func.isRequired,
   onAddJavaFile: PropTypes.func.isRequired,
   onRenameAsset: PropTypes.func,
+  onDuplicateAsset: PropTypes.func,
   onDeleteAsset: PropTypes.func,
   onAddBundle: PropTypes.func,
 };
