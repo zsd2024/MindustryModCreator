@@ -1,5 +1,6 @@
 @import "../../css/units.css";
 @import "../../css/colors.css";
+@import "../../css/z-index.css";
 
 .editor {
   position: absolute;
@@ -31,7 +32,7 @@
   border-radius: 8px;
   margin-bottom: 8px;
   overflow: hidden;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.08);
+  box-shadow: 0 1px 2px $shadow;
 }
 
 .sectionHeader {
@@ -63,38 +64,47 @@
   white-space: nowrap;
 }
 
-.sectionDesc {
+.sectionDesc,
+.fieldHint {
   font-size: 0.8rem;
   color: $text-primary;
-  opacity: 0.5;
+  opacity: 0.55;
   line-height: 1.4;
 }
-.sectionDesc p {
+.sectionDesc p,
+.fieldHint p {
   margin: 0;
 }
-.sectionDesc ul, .sectionDesc ol {
+.sectionDesc ul, .sectionDesc ol,
+.fieldHint ul, .fieldHint ol {
   margin: 2px 0;
   padding-left: 16px;
 }
-.sectionDesc code {
+.sectionDesc code,
+.fieldHint code {
   background: rgba(0,0,0,0.08);
   border-radius: 3px;
   padding: 1px 4px;
   font-family: 'Consolas', 'Monaco', monospace;
   font-size: 0.85em;
 }
-.sectionDesc pre {
+.sectionDesc pre,
+.fieldHint pre {
   background: rgba(0,0,0,0.06);
   border-radius: 4px;
   padding: 8px 12px;
   margin: 4px 0;
   overflow-x: auto;
 }
-.sectionDesc pre code {
+.sectionDesc pre code,
+.fieldHint pre code {
   background: none;
   padding: 0;
   display: block;
   white-space: pre-wrap;
+}
+.sectionDesc {
+  opacity: 0.5;
 }
 
 .sectionBody {
@@ -125,36 +135,6 @@
 
 .fieldHint {
   font-size: 0.78rem;
-  color: $text-primary;
-  opacity: 0.55;
-  line-height: 1.4;
-}
-.fieldHint p {
-  margin: 0;
-}
-.fieldHint ul, .fieldHint ol {
-  margin: 2px 0;
-  padding-left: 16px;
-}
-.fieldHint code {
-  background: rgba(0,0,0,0.08);
-  border-radius: 3px;
-  padding: 1px 4px;
-  font-family: 'Consolas', 'Monaco', monospace;
-  font-size: 0.85em;
-}
-.fieldHint pre {
-  background: rgba(0,0,0,0.06);
-  border-radius: 4px;
-  padding: 8px 12px;
-  margin: 4px 0;
-  overflow-x: auto;
-}
-.fieldHint pre code {
-  background: none;
-  padding: 0;
-  display: block;
-  white-space: pre-wrap;
 }
 
 .fieldControl {

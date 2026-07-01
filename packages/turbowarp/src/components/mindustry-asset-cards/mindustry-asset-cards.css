@@ -1,5 +1,6 @@
 @import "../../css/units.css";
 @import "../../css/colors.css";
+@import "../../css/z-index.css";
 
 .cardsPane {
   flex: 1;
@@ -132,7 +133,7 @@
 
 .cardActive .cardInfo {
   background: $looks-secondary;
-  color: #ffffff;
+  color: $ui-white;
 }
 
 .cardName {
@@ -179,7 +180,7 @@
   border: 1px solid $ui-black-transparent;
   border-radius: calc($space / 2);
   box-shadow: 0px 0px 5px 1px $shadow;
-  z-index: 3000;
+  z-index: $z-index-context-menu;
 }
 
 .menuItem {
@@ -191,7 +192,7 @@
 
 .menuItem:hover {
   background: $looks-secondary;
-  color: white;
+  color: $ui-white;
 }
 
 .menuItemDanger {
@@ -238,8 +239,8 @@
 .overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.4);
-  z-index: 2000;
+  background: $ui-modal-overlay;
+  z-index: $z-index-modal;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -253,7 +254,7 @@
   max-height: 80vh;
   display: flex;
   flex-direction: column;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+  box-shadow: 0 8px 32px $shadow;
 }
 
 .dialogTitle {

@@ -13,14 +13,14 @@
   display: flex;
   gap: 8px;
   padding: 8px;
-  border-bottom: 1px solid $ui-black-transparent;
+  border-bottom: 1px solid $ui-tertiary;
   flex-shrink: 0;
 }
 
 .search {
   flex: 1;
   padding: 4px 8px;
-  border: 1px solid $ui-black-transparent;
+  border: 1px solid $ui-tertiary;
   border-radius: 4px;
   font-size: 0.75rem;
   outline: none;
@@ -35,7 +35,7 @@
   border: 1px solid $ui-black-transparent;
   border-radius: 4px;
   background: $motion-primary;
-  color: white;
+  color: $ui-white;
   cursor: pointer;
   font-size: 0.75rem;
   white-space: nowrap;
@@ -131,7 +131,7 @@
 
 .delBtn:hover {
   background: $error-primary;
-  color: white;
+  color: $ui-white;
 }
 
 .addRow {
@@ -161,7 +161,7 @@
   border: 1px solid $ui-black-transparent;
   border-radius: 3px;
   background: $motion-primary;
-  color: white;
+  color: $ui-white;
   cursor: pointer;
   font-size: 1rem;
   line-height: 1;

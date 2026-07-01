@@ -1,5 +1,6 @@
 @import "../../css/units.css";
 @import "../../css/colors.css";
+@import "../../css/z-index.css";
 
 .tree {
   width: 180px;
@@ -134,8 +135,8 @@
   background: $ui-secondary;
   border: 1px solid $ui-tertiary;
   border-radius: 6px;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.25);
-  z-index: 3000;
+  box-shadow: 0 4px 16px $shadow;
+  z-index: $z-index-context-menu;
   padding: 4px 0;
   min-width: 130px;
 }
