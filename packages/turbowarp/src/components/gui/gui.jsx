@@ -134,6 +134,7 @@ const GUIComponent = props => {
         onAddJavaFile,
         onAddBundle,
         onRenameAsset,
+        onDuplicateAsset,
         onDeleteAsset,
         onExport,
         onImportProject,
@@ -550,6 +551,7 @@ const GUIComponent = props => {
                                     onAddJavaFile={onAddJavaFile}
                                     onAddBundle={onAddBundle}
                                     onRenameAsset={onRenameAsset}
+                                    onDuplicateAsset={onDuplicateAsset}
                                     onDeleteAsset={onDeleteAsset}
                                 />
                             </Box>
@@ -612,6 +614,7 @@ GUIComponent.propTypes = {
     onAddJavaFile: PropTypes.func,
     onAddContent: PropTypes.func,
     onRenameAsset: PropTypes.func,
+    onDuplicateAsset: PropTypes.func,
     onDeleteAsset: PropTypes.func,
     onExport: PropTypes.func,
     onImportProject: PropTypes.func,
