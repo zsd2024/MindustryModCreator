@@ -40,7 +40,7 @@
   width: 100%;
   padding: 5px 8px;
   border: 1px dashed $ui-tertiary;
-  border-radius: 5px;
+  border-radius: $form-radius;
   background: transparent;
   color: $text-primary;
   font-size: 0.78rem;
@@ -115,12 +115,17 @@
   padding-left: 16px;
 }
 
+[dir="rtl"] .children {
+  padding-left: 0;
+  padding-right: 16px;
+}
+
 /* ── inline rename input ── */
 .renameInput {
   flex: 1;
   padding: 2px 4px;
   border: 1px solid $motion-primary;
-  border-radius: 3px;
+  border-radius: $form-radius;
   background: $ui-primary;
   color: $text-primary;
   font-size: 0.82rem;

@@ -83,7 +83,7 @@
 .sectionDesc code,
 .fieldHint code {
   background: rgba(0,0,0,0.08);
-  border-radius: 3px;
+  border-radius: $form-radius;
   padding: 1px 4px;
   font-family: 'Consolas', 'Monaco', monospace;
   font-size: 0.85em;
@@ -91,7 +91,7 @@
 .sectionDesc pre,
 .fieldHint pre {
   background: rgba(0,0,0,0.06);
-  border-radius: 4px;
+  border-radius: $form-radius;
   padding: 8px 12px;
   margin: 4px 0;
   overflow-x: auto;
@@ -184,6 +184,10 @@
   transform: translateX(20px);
 }
 
+[dir="rtl"] .toggleSwitch input:checked + .toggleSlider::before {
+  transform: translateX(-20px);
+}
+
 .colorGroup {
   display: flex;
   align-items: center;
@@ -193,7 +197,7 @@
 .colorSwatch {
   width: 32px;
   height: 32px;
-  border-radius: 6px;
+  border-radius: $form-radius;
   border: 2px solid $ui-tertiary;
   flex-shrink: 0;
 }
@@ -203,7 +207,7 @@
   height: 32px;
   padding: 0;
   border: 1px solid $ui-tertiary;
-  border-radius: 6px;
+  border-radius: $form-radius;
   cursor: pointer;
   background: none;
 }
@@ -213,7 +217,7 @@
   max-width: 120px;
   padding: 6px 10px;
   border: 1px solid $ui-tertiary;
-  border-radius: 6px;
+  border-radius: $form-radius;
   background: $ui-secondary;
   color: $text-primary;
   font-size: 0.9rem;
@@ -229,7 +233,7 @@
   width: 100%;
   padding: 6px 10px;
   border: 1px solid $ui-tertiary;
-  border-radius: 6px;
+  border-radius: $form-radius;
   background: $ui-secondary;
   color: $text-primary;
   font-size: 0.9rem;
@@ -250,7 +254,7 @@
 .sizeBtn {
   padding: 6px 14px;
   border: 1px solid $ui-tertiary;
-  border-radius: 6px;
+  border-radius: $form-radius;
   background: $ui-secondary;
   color: $text-primary;
   font-size: 0.85rem;

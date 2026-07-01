@@ -3,6 +3,7 @@ import React from 'react';
 import {ContextMenuTrigger} from 'react-contextmenu';
 import {ContextMenu, DangerousMenuItem} from '../context-menu/context-menu.jsx';
 import Modal from '../modal/modal.jsx';
+import {getZhLabel} from '../../lib/mindustry/resolve-schema';
 import styles from './mindustry-asset-cards.css';
 
 const BUILTIN_IDS = new Set(['__mod_config__', '__bundle_en__', '__bundle_zh__']);
@@ -85,6 +86,7 @@ class AssetCards extends React.Component {
       javaDialog: false,
       javaName: '',
     };
+  }
 
   // ── add dialog ──
   openDialog() {
@@ -420,7 +422,6 @@ AssetCards.propTypes = {
   onAddContent: PropTypes.func.isRequired,
   onAddJavaFile: PropTypes.func.isRequired,
   onRenameAsset: PropTypes.func,
-  onDuplicateAsset: PropTypes.func,
   onDeleteAsset: PropTypes.func,
   onAddBundle: PropTypes.func,
 };
