@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import {ContextMenuTrigger} from 'react-contextmenu';
 import {ContextMenu, DangerousMenuItem} from '../context-menu/context-menu.jsx';
+import Modal from '../modal/modal.jsx';
 import styles from './mindustry-asset-cards.css';
 
 const BUILTIN_IDS = new Set(['__mod_config__', '__bundle_en__', '__bundle_zh__']);
@@ -268,9 +269,12 @@ class AssetCards extends React.Component {
 
         {/* add bundle dialog */}
         {this.state.bundleDialog && (
-          <div className={styles.overlay} onClick={() => this.setState({bundleDialog: null})}>
-            <div className={styles.dialog} onClick={e => e.stopPropagation()}>
-              <div className={styles.dialogTitle}>添加本地化文件</div>
+          <Modal
+            contentLabel="添加本地化文件"
+            onRequestClose={() => this.setState({bundleDialog: null})}
+            className={styles.bundleDialog}
+          >
+            <div className={styles.dialogBody}>
               <div className={styles.dialogNameRow}>
                 <span className={styles.nameLabel}>语言</span>
                 <select
@@ -313,14 +317,17 @@ class AssetCards extends React.Component {
                 </button>
               </div>
             </div>
-          </div>
+          </Modal>
         )}
 
         {/* add dialog */}
         {this.state.dialogOpen && (
-          <div className={styles.overlay} onClick={() => this.closeDialog()}>
-            <div className={styles.dialog} onClick={e => e.stopPropagation()}>
-              <div className={styles.dialogTitle}>添加新内容</div>
+          <Modal
+            contentLabel="添加新内容"
+            onRequestClose={() => this.closeDialog()}
+            className={styles.addDialog}
+          >
+            <div className={styles.dialogBody}>
               <div className={styles.dialogNameRow}>
                 <span className={styles.nameLabel}>名称</span>
                 <input
@@ -354,7 +361,7 @@ class AssetCards extends React.Component {
                 </button>
               </div>
             </div>
-          </div>
+          </Modal>
         )}
       </div>
     );
