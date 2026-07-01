@@ -82,6 +82,8 @@ class AssetCards extends React.Component {
       renameValue: '',
       bundleDialog: false,
       bundleLang: 'zh_CN',
+      javaDialog: false,
+      javaName: '',
     };
 
   // ── add dialog ──
@@ -101,10 +103,15 @@ class AssetCards extends React.Component {
   }
 
   promptAddJava() {
-    const name = prompt('请输入 Java 类名：');
-    if (name && name.trim()) {
-      this.props.onAddJavaFile(name.trim());
+    this.setState({javaDialog: true, javaName: ''});
+  }
+
+  confirmAddJava() {
+    const {javaName} = this.state;
+    if (javaName.trim()) {
+      this.props.onAddJavaFile(javaName.trim());
     }
+    this.setState({javaDialog: false});
   }
 
   promptAddBundle() {
@@ -266,6 +273,44 @@ class AssetCards extends React.Component {
             + 本地化
           </button>
         </div>
+
+        {/* add java dialog */}
+        {this.state.javaDialog && (
+          <Modal
+            contentLabel="添加 Java 文件"
+            onRequestClose={() => this.setState({javaDialog: false})}
+            className={styles.bundleDialog}
+          >
+            <div className={styles.dialogBody}>
+              <div className={styles.dialogNameRow}>
+                <span className={styles.nameLabel}>类名</span>
+                <input
+                  className={styles.nameInput}
+                  value={this.state.javaName}
+                  onChange={e => this.setState({javaName: e.target.value})}
+                  onKeyDown={e => {
+                    if (e.key === 'Enter') this.confirmAddJava();
+                    if (e.key === 'Escape') this.setState({javaDialog: false});
+                  }}
+                  placeholder="如 MyBlock"
+                  autoFocus
+                />
+              </div>
+              <div className={styles.dialogActions}>
+                <button className={styles.dialogBtn} onClick={() => this.setState({javaDialog: false})}>
+                  取消
+                </button>
+                <button
+                  className={styles.dialogBtnPrimary}
+                  disabled={!this.state.javaName.trim()}
+                  onClick={() => this.confirmAddJava()}
+                >
+                  添加
+                </button>
+              </div>
+            </div>
+          </Modal>
+        )}
 
         {/* add bundle dialog */}
         {this.state.bundleDialog && (
