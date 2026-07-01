@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import {getZhLabel} from '../../lib/mindustry/resolve-schema';
+import {ContextMenuTrigger} from 'react-contextmenu';
+import {ContextMenu, DangerousMenuItem} from '../context-menu/context-menu.jsx';
 import styles from './mindustry-asset-cards.css';
 
 const BUILTIN_IDS = new Set(['__mod_config__', '__bundle_en__', '__bundle_zh__']);
@@ -76,28 +77,11 @@ class AssetCards extends React.Component {
       dialogName: '',
       dialogType: null,
       dialogSearch: '',
-      contextMenu: null,
       renamingId: null,
       renameValue: '',
       bundleDialog: false,
       bundleLang: 'zh_CN',
     };
-    this._ctxEl = null;
-  }
-
-  componentDidMount() {
-    document.addEventListener('click', this._handleDocClick);
-  }
-
-  componentWillUnmount() {
-    document.removeEventListener('click', this._handleDocClick);
-  }
-
-  _handleDocClick = (e) => {
-    if (this.state.contextMenu && this._ctxEl && !this._ctxEl.contains(e.target)) {
-      this.setState({contextMenu: null});
-    }
-  };
 
   // ── add dialog ──
   openDialog() {
@@ -126,20 +110,9 @@ class AssetCards extends React.Component {
     this.setState({bundleDialog: true, bundleLang: 'zh_CN'});
   }
 
-  // ── right-click context menu ──
-  handleContextMenu(asset, e) {
-    e.preventDefault();
-    e.stopPropagation();
-    if (asset.id === '__url_param__') return;
-    if (BUILTIN_IDS.has(asset.id)) return; // built-in: no context menu
-    this.setState({
-      contextMenu: {assetId: asset.id, name: asset.name, x: e.clientX, y: e.clientY},
-    });
-  }
-
   // ── rename (inline) ──
   startRename(id, name) {
-    this.setState({renamingId: id, renameValue: name, contextMenu: null});
+    this.setState({renamingId: id, renameValue: name});
   }
 
   confirmRename() {
@@ -209,13 +182,9 @@ class AssetCards extends React.Component {
           {assets.map(asset => {
             const active = selectedId === asset.id;
             const isRenaming = renamingId === asset.id;
-            return (
-              <div
-                key={asset.id}
-                className={`${styles.card} ${active ? styles.cardActive : ''}`}
-                onClick={() => onSelect(asset.id)}
-                onContextMenu={(e) => this.handleContextMenu(asset, e)}
-              >
+            const isBuiltin = BUILTIN_IDS.has(asset.id);
+            const cardContent = (
+              <React.Fragment>
                 <div className={styles.cardIconArea}>
                   <span className={styles.cardIcon}>{iconForAsset(asset)}</span>
                   <span className={`${styles.cardBadge} ${
@@ -252,6 +221,35 @@ class AssetCards extends React.Component {
                      asset.kind === 'bundle' ? '.properties' : '.java'}
                   </div>
                 </div>
+              </React.Fragment>
+            );
+            return (
+              <div key={asset.id}>
+                {isBuiltin ? (
+                  <div
+                    className={`${styles.card} ${active ? styles.cardActive : ''}`}
+                    onClick={() => onSelect(asset.id)}
+                  >
+                    {cardContent}
+                  </div>
+                ) : (
+                  <ContextMenuTrigger
+                    id={`asset-ctx-${asset.id}`}
+                    attributes={{
+                      className: `${styles.card} ${active ? styles.cardActive : ''}`,
+                      onClick: () => onSelect(asset.id),
+                    }}
+                  >
+                    {cardContent}
+                  </ContextMenuTrigger>
+                )}
+                {!isBuiltin && (
+                  <ContextMenu id={`asset-ctx-${asset.id}`}>
+                    <DangerousMenuItem onClick={() => this.props.onDeleteAsset(asset.id)}>
+                      删除
+                    </DangerousMenuItem>
+                  </ContextMenu>
+                )}
               </div>
             );
           })}
@@ -314,26 +312,6 @@ class AssetCards extends React.Component {
                   添加
                 </button>
               </div>
-            </div>
-          </div>
-        )}
-
-          {/* context menu — only delete */}
-        {this.state.contextMenu && (
-          <div
-            className={styles.contextMenu}
-            style={{left: this.state.contextMenu.x, top: this.state.contextMenu.y}}
-            ref={(el) => {this._ctxEl = el;}}
-            onClick={(e) => e.stopPropagation()}
-          >
-            <div
-              className={`${styles.menuItemDanger}`}
-              onClick={() => {
-                this.props.onDeleteAsset(this.state.contextMenu.assetId);
-                this.setState({contextMenu: null});
-              }}
-            >
-              删除
             </div>
           </div>
         )}
