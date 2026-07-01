@@ -1,6 +1,5 @@
 @import "../../css/units.css";
 @import "../../css/colors.css";
-@import "../../css/z-index.css";
 
 .cardsPane {
   flex: 1;
@@ -196,37 +195,22 @@
   color: $ui-white;
 }
 
-/* ── dialog (type picker) ── */
-.overlay {
-  position: fixed;
-  inset: 0;
-  background: $ui-modal-overlay;
-  z-index: $z-index-modal;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+/* ── dialog content (inside Modal) ── */
+.bundleDialog {
+  width: 400px;
 }
 
-.dialog {
-  background: $ui-secondary;
-  border: 1px solid $ui-tertiary;
-  border-radius: 10px;
-  width: 420px;
-  max-height: 80vh;
-  display: flex;
-  flex-direction: column;
-  box-shadow: 0 8px 32px $shadow;
+.addDialog {
+  width: 480px;
 }
 
-.dialogTitle {
-  padding: 14px 16px 8px;
-  font-weight: 700;
-  font-size: 1rem;
-  color: $text-primary;
+.dialogBody {
+  background: $ui-modal-background;
+  padding: 1rem 1.5rem 1.5rem;
 }
 
 .dialogNameRow {
-  padding: 4px 16px 8px;
+  padding: 6px 0;
   display: flex;
   gap: 8px;
   align-items: center;
@@ -254,9 +238,9 @@
 }
 
 .dialogPicker {
-  flex: 1;
+  max-height: 300px;
   overflow-y: auto;
-  padding: 0 16px 8px;
+  padding: 4px 0;
 }
 
 .pickerCategory {
@@ -297,7 +281,7 @@
 }
 
 .dialogActions {
-  padding: 10px 16px;
+  padding: 10px 0 0;
   border-top: 1px solid $ui-tertiary;
   display: flex;
   justify-content: flex-end;
@@ -333,4 +317,11 @@
 .dialogBtnPrimary:disabled {
   opacity: 0.4;
   cursor: default;
+}
+
+[dir="ltr"] .dialogBtn + .dialogBtn {
+  margin-left: 0.5rem;
+}
+[dir="rtl"] .dialogBtn + .dialogBtn {
+  margin-right: 0.5rem;
 }
