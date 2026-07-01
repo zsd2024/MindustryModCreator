@@ -168,45 +168,6 @@
   outline: none;
 }
 
-/* ── context menu ── */
-.contextMenu {
-  position: fixed;
-  min-width: 130px;
-  padding: 5px 0;
-  margin: 2px 0 0;
-  font-size: 0.85rem;
-  text-align: left;
-  background-color: $ui-white;
-  border: 1px solid $ui-black-transparent;
-  border-radius: calc($space / 2);
-  box-shadow: 0px 0px 5px 1px $shadow;
-  z-index: $z-index-context-menu;
-}
-
-.menuItem {
-  padding: 8px 12px;
-  white-space: nowrap;
-  cursor: pointer;
-  transition: 0.1s ease;
-}
-
-.menuItem:hover {
-  background: $looks-secondary;
-  color: $ui-white;
-}
-
-.menuItemDanger {
-  composes: menuItem;
-}
-
-.menuItemDanger:hover {
-  background: $error-primary;
-}
-
-.menuDivider {
-  border-top: 1px solid $ui-black-transparent;
-}
-
 /* ── footer buttons ── */
 .cardsFooter {
   padding: 8px 10px;

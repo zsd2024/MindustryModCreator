@@ -1,6 +1,5 @@
 @import "../../css/units.css";
 @import "../../css/colors.css";
-@import "../../css/z-index.css";
 
 .tree {
   width: 180px;
@@ -129,37 +128,4 @@
   min-width: 0;
 }
 
-/* ── context menu ── */
-.contextMenu {
-  position: fixed;
-  background: $ui-secondary;
-  border: 1px solid $ui-tertiary;
-  border-radius: 6px;
-  box-shadow: 0 4px 16px $shadow;
-  z-index: $z-index-context-menu;
-  padding: 4px 0;
-  min-width: 130px;
-}
 
-.contextMenuItem {
-  padding: 6px 14px;
-  font-size: 0.8rem;
-  color: $text-primary;
-  cursor: pointer;
-  transition: background 0.1s;
-}
-
-.contextMenuItem:hover {
-  background: $motion-primary;
-  color: $ui-white;
-}
-
-.contextMenuDanger {
-  composes: contextMenuItem;
-  color: $error-primary;
-}
-
-.contextMenuDanger:hover {
-  background: $error-primary;
-  color: $ui-white;
-}
