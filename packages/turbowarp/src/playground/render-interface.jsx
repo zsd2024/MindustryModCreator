@@ -44,7 +44,7 @@ import runAddons from '../addons/entry';
 import InvalidEmbed from '../components/tw-invalid-embed/invalid-embed.jsx';
 import {APP_NAME} from '../lib/brand.js';
 import exportMod from '../lib/mindustry/mod-export';
-import {generateBundleKeys} from '../lib/mindustry/content-type-utils';
+import {generateBundleKeys, getBundlePrefix} from '../lib/mindustry/content-type-utils';
 
 import styles from './interface.css';
 
@@ -189,26 +189,26 @@ const Footer = () => (
 );
 
 let _assetIdCounter = 0;
-function genId(prefix) {
+const genId = function (prefix) {
     _assetIdCounter += 1;
     return `${prefix}_${Date.now()}_${_assetIdCounter}`;
-}
+};
 
-function buildProjectData(state) {
+const buildProjectData = function (state) {
     return JSON.stringify({
         version: 1,
         modConfig: state.modConfig,
         folders: state.folders,
         assets: state.assets,
-        assetData: state.assetFormData,
+        assetData: state.assetFormData
     });
-}
+};
 
 class Interface extends React.Component {
     constructor (props) {
         super(props);
         const initialAssets = [];
-        let initialSelectedId = null;
+        const initialSelectedId = null;
         const modConfig = {
             name: 'my-mod',
             displayName: 'My Mod',
@@ -226,28 +226,28 @@ class Interface extends React.Component {
             iosCompatible: false,
             pregenerated: false,
             legacyCompatible: false,
-            texturescale: 1.0,
+            texturescale: 1.0
         };
-        const bundleEn = {id: '__bundle_en__', kind: 'bundle', name: 'bundle.properties', folderId: 'root_bundles'};
-        const bundleZh = {id: '__bundle_zh__', kind: 'bundle', name: 'bundle_zh_CN.properties', folderId: 'root_bundles'};
+        const bundleEn = {id: '__bundle_en__', kind: 'bundle', name: 'bundle.properties', folderId: 'root_bundles'}; // eslint-disable-line max-len
+        const bundleZh = {id: '__bundle_zh__', kind: 'bundle', name: 'bundle_zh_CN.properties', folderId: 'root_bundles'}; // eslint-disable-line max-len
         const bundleKeys = generateBundleKeys(initialAssets, modConfig);
         const initialState = {
             folders: [
                 {id: 'root_json', name: 'JSON 内容', parentId: null, kind: 'content'},
                 {id: 'root_java', name: 'Java 文件', parentId: null, kind: 'java'},
-                {id: 'root_bundles', name: '本地化文件', parentId: null, kind: 'bundle'},
+                {id: 'root_bundles', name: '本地化文件', parentId: null, kind: 'bundle'}
             ],
             assets: [
                 {id: '__mod_config__', kind: 'modconfig', name: 'mod.hjson', folderId: 'root_json'},
                 bundleEn, bundleZh,
-                ...initialAssets,
+                ...initialAssets
             ],
             selectedAssetId: initialSelectedId || '__mod_config__',
             selectedFolderId: null,
             assetFormData: {
-                [bundleEn.id]: bundleKeys,
+                [bundleEn.id]: bundleKeys
             },
-            modConfig,
+            modConfig
         };
         this.state = initialState;
 
@@ -288,51 +288,38 @@ class Interface extends React.Component {
         this.handleImportProject = this.handleImportProject.bind(this);
     }
 
-    getSelectedAsset() {
-        return this.state.assets.find(a => a.id === this.state.selectedAssetId) || null;
+    componentDidUpdate (prevProps) {
+        if (prevProps.isLoading && !this.props.isLoading) {
+            loadServiceWorker();
+        }
     }
 
-    getFilteredAssets() {
-        const {assets, selectedFolderId} = this.state;
-        if (!selectedFolderId) return assets;
-        // include assets in this folder and sub-folders
-        const folderIds = new Set();
-        const collect = (id) => {
-            folderIds.add(id);
-            for (const f of this.state.folders) {
-                if (f.parentId === id) collect(f.id);
-            }
-        };
-        collect(selectedFolderId);
-        return assets.filter(a => !a.folderId || folderIds.has(a.folderId));
-    }
-
-    handleSelectAsset(assetId) {
+    handleSelectAsset (assetId) {
         this.setState({selectedAssetId: assetId});
     }
 
-    handleSelectFolder(folderId) {
+    handleSelectFolder (folderId) {
         this.setState({selectedFolderId: folderId});
     }
 
-    handleJsonFormChange(data) {
+    handleJsonFormChange (data) {
         const assetId = this.state.selectedAssetId;
         if (!assetId) return;
         this.setState(prev => ({
-            assetFormData: {...prev.assetFormData, [assetId]: data},
+            assetFormData: {...prev.assetFormData, [assetId]: data}
         }));
     }
 
-    handleAddContent(name, type) {
+    handleAddContent (name, type) {
         const newAsset = {
             id: genId('content'),
             kind: 'content',
             name,
             contentType: type,
-            folderId: this.state.selectedFolderId
-                && !['root_json', 'root_java', 'root_bundles'].includes(this.state.selectedFolderId)
-                ? this.state.selectedFolderId
-                : 'root_json',
+            folderId: this.state.selectedFolderId &&
+                !['root_json', 'root_java', 'root_bundles'].includes(this.state.selectedFolderId) ?
+                this.state.selectedFolderId :
+                'root_json'
         };
         this.setState(prev => {
             const newKeys = generateBundleKeys([newAsset], prev.modConfig);
@@ -348,28 +335,28 @@ class Interface extends React.Component {
             return {
                 assets: [...prev.assets, newAsset],
                 selectedAssetId: newAsset.id,
-                assetFormData,
+                assetFormData
             };
         });
     }
 
-    handleAddJava(name) {
+    handleAddJava (name) {
         const newAsset = {
             id: genId('java'),
             kind: 'java',
             name,
-            folderId: this.state.selectedFolderId
-                && !['root_json', 'root_java', 'root_bundles'].includes(this.state.selectedFolderId)
-                ? this.state.selectedFolderId
-                : 'root_java',
+            folderId: this.state.selectedFolderId &&
+                !['root_json', 'root_java', 'root_bundles'].includes(this.state.selectedFolderId) ?
+                this.state.selectedFolderId :
+                'root_java'
         };
         this.setState(prev => ({
             assets: [...prev.assets, newAsset],
-            selectedAssetId: newAsset.id,
+            selectedAssetId: newAsset.id
         }));
     }
 
-    handleAddBundle(lang) {
+    handleAddBundle (lang) {
         const filename = lang === 'en' ? 'bundle.properties' : `bundle_${lang}.properties`;
         const existing = this.state.assets.find(a => a.kind === 'bundle' && a.name === filename);
         if (existing) {
@@ -380,16 +367,17 @@ class Interface extends React.Component {
             id: genId('bundle'),
             kind: 'bundle',
             name: filename,
-            folderId: 'root_bundles',
+            folderId: 'root_bundles'
         };
         this.setState(prev => ({
             assets: [...prev.assets, newAsset],
-            selectedAssetId: newAsset.id,
+            selectedAssetId: newAsset.id
         }));
     }
 
-    handleAddFolder() {
+    handleAddFolder () {
         const parentId = this.state.selectedFolderId;
+        // eslint-disable-next-line no-alert
         const name = prompt('文件夹名：');
         if (!name || !name.trim()) return;
         const kind = parentId ? (
@@ -399,30 +387,31 @@ class Interface extends React.Component {
             id: genId('folder'),
             name: name.trim(),
             parentId: parentId,
-            kind: kind || 'content',
+            kind: kind || 'content'
         };
         this.setState(prev => ({
             folders: [...prev.folders, newFolder],
-            selectedFolderId: newFolder.id,
+            selectedFolderId: newFolder.id
         }));
     }
 
-    handleRenameFolder(id, name) {
+    handleRenameFolder (id, name) {
         this.setState(prev => ({
             folders: prev.folders.map(f =>
-                f.id === id ? {...f, name} : f
-            ),
+                (f.id === id ? {...f, name} : f)
+            )
         }));
     }
 
-    handleDeleteFolder(id) {
+    handleDeleteFolder (id) {
         if (['root_json', 'root_java'].includes(id)) {
+            // eslint-disable-next-line no-alert
             alert('不能删除根文件夹');
             return;
         }
         this.setState(prev => {
             const idsToRemove = new Set();
-            const collect = (fid) => {
+            const collect = fid => {
                 idsToRemove.add(fid);
                 for (const f of prev.folders) {
                     if (f.parentId === fid) collect(f.id);
@@ -435,29 +424,55 @@ class Interface extends React.Component {
                 selectedFolderId:
                     prev.selectedFolderId === id ? null : prev.selectedFolderId,
                 selectedAssetId:
-                    idsToRemove.has(prev.selectedAssetId) ? null : prev.selectedAssetId,
+                    idsToRemove.has(prev.selectedAssetId) ? null : prev.selectedAssetId
             };
         });
     }
 
-    handleRenameAsset(id, name) {
-        this.setState(prev => ({
-            assets: prev.assets.map(a => a.id === id ? {...a, name} : a),
-        }));
+    handleRenameAsset (id, name) {
+        this.setState(prev => {
+            const oldAsset = prev.assets.find(a => a.id === id);
+            const newAssets = prev.assets.map(a => (a.id === id ? {...a, name} : a));
+            const result = {assets: newAssets};
+            if (oldAsset && oldAsset.kind === 'content') {
+                const modName = (prev.modConfig && prev.modConfig.name) || 'my-mod';
+                const prefix = getBundlePrefix(oldAsset.contentType);
+                const oldKeyPrefix = `${prefix}.${modName}-${oldAsset.name}.`;
+                const newKeyPrefix = `${prefix}.${modName}-${name}.`;
+                const bundleId = prev.assets.find(a => a.kind === 'bundle')?.id;
+                if (bundleId && prev.assetFormData[bundleId]) {
+                    const oldEntries = prev.assetFormData[bundleId];
+                    const newEntries = {};
+                    for (const key of Object.keys(oldEntries)) {
+                        if (key.startsWith(oldKeyPrefix)) {
+                            const suffix = key.slice(oldKeyPrefix.length);
+                            newEntries[`${newKeyPrefix}${suffix}`] = oldEntries[key];
+                        } else {
+                            newEntries[key] = oldEntries[key];
+                        }
+                    }
+                    result.assetFormData = {
+                        ...prev.assetFormData,
+                        [bundleId]: newEntries
+                    };
+                }
+            }
+            return result;
+        });
     }
 
-    handleDuplicateAsset(id) {
+    handleDuplicateAsset (id) {
         this.setState(prev => {
             const src = prev.assets.find(a => a.id === id);
             if (!src) return null;
             const newAsset = {
                 ...src,
                 id: genId(src.kind),
-                name: src.name + '_副本',
+                name: `${src.name}_副本`
             };
             const result = {
                 assets: [...prev.assets, newAsset],
-                selectedAssetId: newAsset.id,
+                selectedAssetId: newAsset.id
             };
             if (src.kind === 'content') {
                 const newKeys = generateBundleKeys([newAsset], prev.modConfig);
@@ -472,43 +487,66 @@ class Interface extends React.Component {
         });
     }
 
-    handleDeleteAsset(id) {
+    handleDeleteAsset (id) {
         if (id === this.state.assets.find(a => a.id === '__url_param__')?.id) return;
         if (id === '__mod_config__') {
+            // eslint-disable-next-line no-alert
             alert('不能删除模组配置文件');
             return;
         }
         if (id === '__bundle_en__' || id === '__bundle_zh__') {
+            // eslint-disable-next-line no-alert
             alert('不能删除默认本地化文件');
             return;
         }
         this.setState(prev => {
-            const fallback = prev.selectedAssetId === id
-                ? (prev.assets.find(a => a.id === '__mod_config__')?.id || null)
-                : prev.selectedAssetId;
-            return {
+            const oldAsset = prev.assets.find(a => a.id === id);
+            const fallback = prev.selectedAssetId === id ?
+                (prev.assets.find(a => a.id === '__mod_config__')?.id || null) :
+                prev.selectedAssetId;
+            const result = {
                 assets: prev.assets.filter(a => a.id !== id),
-                selectedAssetId: fallback,
+                selectedAssetId: fallback
             };
+            if (oldAsset && oldAsset.kind === 'content') {
+                const modName = (prev.modConfig && prev.modConfig.name) || 'my-mod';
+                const prefix = getBundlePrefix(oldAsset.contentType);
+                const oldKeyPrefix = `${prefix}.${modName}-${oldAsset.name}.`;
+                const bundleId = prev.assets.find(a => a.kind === 'bundle')?.id;
+                if (bundleId && prev.assetFormData[bundleId]) {
+                    const oldEntries = prev.assetFormData[bundleId];
+                    const newEntries = {};
+                    for (const key of Object.keys(oldEntries)) {
+                        if (!key.startsWith(oldKeyPrefix)) {
+                            newEntries[key] = oldEntries[key];
+                        }
+                    }
+                    result.assetFormData = {
+                        ...prev.assetFormData,
+                        [bundleId]: newEntries
+                    };
+                }
+            }
+            return result;
         });
     }
 
-    handleModConfigChange(key, value) {
+    handleModConfigChange (key, value) {
         this.setState(prev => ({
-            modConfig: {...prev.modConfig, [key]: value},
+            modConfig: {...prev.modConfig, [key]: value}
         }));
     }
 
-    handleImportProject() {
+    handleImportProject () {
         const input = document.createElement('input');
         input.type = 'file';
         input.accept = '.mproj,.json';
         input.style = 'display: none';
-        input.onchange = (e) => {
+        input.onchange = e => {
             const file = e.target.files && e.target.files[0];
             if (!file) return;
             const reader = new FileReader();
-            reader.onload = (ev) => {
+            reader.onload = ev => {
                 try {
                     const data = JSON.parse(ev.target.result);
                     if (data && data.version === 1) {
@@ -518,13 +556,15 @@ class Interface extends React.Component {
                             modConfig: data.modConfig || this.state.modConfig,
                             assetFormData: data.assetData || {},
                             selectedAssetId: null,
-                            selectedFolderId: null,
+                            selectedFolderId: null
                         });
                     } else {
+                        // eslint-disable-next-line no-alert
                         alert('无效的项目文件');
                     }
                 } catch (err) {
-                    alert('项目文件解析失败：' + err.message);
+                    // eslint-disable-next-line no-alert
+                    alert(`项目文件解析失败：${err.message}`);
                 } finally {
                     document.body.removeChild(input);
                 }
@@ -535,14 +575,16 @@ class Interface extends React.Component {
         input.click();
     }
 
-    handleExport() {
+    handleExport () {
         const {assets, modConfig} = this.state;
         const hasJava = assets.some(a => a.kind === 'java');
         if (hasJava && !modConfig.java) {
+            // eslint-disable-next-line no-alert
             alert('检测到 Java 文件，但 mod.hjson 中未勾选 java: true。\n请先在 mod.hjson 中启用 Java 并设置 main 类。');
             return;
         }
         if (hasJava) {
+            // eslint-disable-next-line no-alert
             const proceed = window.confirm(
                 '此模组包含 Java 代码，需要 JDK 17 及 Gradle 构建。\n' +
                 '参考模板：/home/zyk/.tmp/MindustryWorkspace/MindustryJavaModTemplate\n\n' +
@@ -552,11 +594,24 @@ class Interface extends React.Component {
         }
         exportMod(assets, this.state.folders, modConfig, this.state.assetFormData);
     }
-    componentDidUpdate (prevProps) {
-        if (prevProps.isLoading && !this.props.isLoading) {
-            loadServiceWorker();
-        }
+    getSelectedAsset () {
+        return this.state.assets.find(a => a.id === this.state.selectedAssetId) || null;
     }
+
+    getFilteredAssets () {
+        const {assets, selectedFolderId} = this.state;
+        if (!selectedFolderId) return assets;
+        const folderIds = new Set();
+        const collect = id => {
+            folderIds.add(id);
+            for (const f of this.state.folders) {
+                if (f.parentId === id) collect(f.id);
+            }
+        };
+        collect(selectedFolderId);
+        return assets.filter(a => !a.folderId || folderIds.has(a.folderId));
+    }
+
     handleUpdateProjectTitle (title, isDefault) {
         if (isDefault || !title) {
             document.title = `${APP_NAME} - ${this.props.intl.formatMessage(messages.defaultTitle)}`;
@@ -625,11 +680,13 @@ class Interface extends React.Component {
                         onDuplicateAsset={this.handleDuplicateAsset}
                         onAddBundle={this.handleAddBundle}
                         onDeleteAsset={this.handleDeleteAsset}
-                        contentType={this.getSelectedAsset() && this.getSelectedAsset().kind === 'content' ? this.getSelectedAsset().contentType : null}
+                        contentType={this.getSelectedAsset() &&
+                            this.getSelectedAsset().kind === 'content' ?
+                            this.getSelectedAsset().contentType : null}
                         selectedContentData={
-                            this.state.selectedAssetId
-                                ? this.state.assetFormData[this.state.selectedAssetId] || {}
-                                : {}
+                            this.state.selectedAssetId ?
+                                this.state.assetFormData[this.state.selectedAssetId] || {} :
+                                {}
                         }
                         onContentDataChange={this.handleJsonFormChange}
                         folders={this.state.folders}
@@ -743,6 +800,7 @@ class Interface extends React.Component {
 
 Interface.propTypes = {
     intl: intlShape,
+    vm: PropTypes.object,
     hasCloudVariables: PropTypes.bool,
     customStageSize: PropTypes.shape({
         width: PropTypes.number,
