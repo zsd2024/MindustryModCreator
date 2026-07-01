@@ -21,7 +21,7 @@
   flex: 1;
   padding: 4px 8px;
   border: 1px solid $ui-tertiary;
-  border-radius: 4px;
+  border-radius: $form-radius;
   font-size: 0.75rem;
   outline: none;
 }
@@ -33,7 +33,7 @@
 .btn {
   padding: 4px 12px;
   border: 1px solid $ui-black-transparent;
-  border-radius: 4px;
+  border-radius: $form-radius;
   background: $motion-primary;
   color: $ui-white;
   cursor: pointer;
@@ -97,7 +97,7 @@
   width: 100%;
   padding: 3px 6px;
   border: 1px solid transparent;
-  border-radius: 3px;
+  border-radius: $form-radius;
   font-size: 0.72rem;
   outline: none;
   background: transparent;
@@ -123,7 +123,7 @@
   cursor: pointer;
   font-size: 1rem;
   line-height: 1;
-  border-radius: 3px;
+  border-radius: $form-radius;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -146,7 +146,7 @@
 .addRow input {
   padding: 4px 6px;
   border: 1px solid $ui-black-transparent;
-  border-radius: 3px;
+  border-radius: $form-radius;
   font-size: 0.72rem;
   outline: none;
 }
@@ -159,7 +159,7 @@
   width: 26px;
   height: 26px;
   border: 1px solid $ui-black-transparent;
-  border-radius: 3px;
+  border-radius: $form-radius;
   background: $motion-primary;
   color: $ui-white;
   cursor: pointer;

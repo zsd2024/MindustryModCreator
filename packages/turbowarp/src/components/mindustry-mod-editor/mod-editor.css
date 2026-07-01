@@ -60,7 +60,7 @@
   width: 100%;
   padding: 7px 10px;
   border: 1px solid $ui-tertiary;
-  border-radius: 5px;
+  border-radius: $form-radius;
   background: $ui-white;
   color: $text-primary;
   font-size: 0.85rem;
@@ -76,7 +76,7 @@
   width: 100%;
   padding: 7px 10px;
   border: 1px solid $ui-tertiary;
-  border-radius: 5px;
+  border-radius: $form-radius;
   background: $ui-white;
   color: $text-primary;
   font-size: 0.85rem;
@@ -141,6 +141,10 @@
   transform: translateX(20px);
 }
 
+[dir="rtl"] .toggleSwitch input:checked + .toggleSlider::before {
+  transform: translateX(-20px);
+}
+
 .toggleLabel {
   font-size: 0.85rem;
   color: $text-primary;
@@ -184,7 +188,7 @@
   flex: 1;
   padding: 5px 8px;
   border: 1px solid $ui-tertiary;
-  border-radius: 4px;
+  border-radius: $form-radius;
   background: $ui-white;
   color: $text-primary;
   font-size: 0.8rem;
@@ -198,7 +202,7 @@
 .arrayAddBtn {
   padding: 5px 10px;
   border: 1px solid $motion-primary;
-  border-radius: 4px;
+  border-radius: $form-radius;
   background: $motion-primary;
   color: $ui-white;
   font-size: 0.8rem;
