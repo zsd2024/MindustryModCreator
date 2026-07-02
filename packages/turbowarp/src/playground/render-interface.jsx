@@ -45,6 +45,7 @@ import InvalidEmbed from '../components/tw-invalid-embed/invalid-embed.jsx';
 import {APP_NAME} from '../lib/brand.js';
 import exportMod from '../lib/mindustry/mod-export';
 import {generateBundleKeys, getBundlePrefix} from '../lib/mindustry/content-type-utils';
+import Modal from '../components/modal/modal.jsx';
 
 import styles from './interface.css';
 
@@ -249,7 +250,12 @@ class Interface extends React.Component {
             },
             modConfig
         };
-        this.state = initialState;
+        this.state = {
+            ...initialState,
+            alertMsg: '',
+            confirmMsg: '',
+            folderPromptOpen: false
+        };
 
         // Override VM save to return project file when in Mindustry mode
         if (this.props.vm) {
@@ -281,11 +287,17 @@ class Interface extends React.Component {
         this.handleRenameFolder = this.handleRenameFolder.bind(this);
         this.handleDeleteFolder = this.handleDeleteFolder.bind(this);
         this.handleRenameAsset = this.handleRenameAsset.bind(this);
-
         this.handleDeleteAsset = this.handleDeleteAsset.bind(this);
         this.handleModConfigChange = this.handleModConfigChange.bind(this);
         this.handleExport = this.handleExport.bind(this);
         this.handleImportProject = this.handleImportProject.bind(this);
+        this.handleCloseAlert = this.handleCloseAlert.bind(this);
+        this.handleCloseConfirm = this.handleCloseConfirm.bind(this);
+        this.handleConfirmOk = this.handleConfirmOk.bind(this);
+        this.handleCloseFolderPrompt = this.handleCloseFolderPrompt.bind(this);
+        this.handleConfirmFolderPrompt = this.handleConfirmFolderPrompt.bind(this);
+        this.handleFolderPromptChange = this.handleFolderPromptChange.bind(this);
+        this.handleFolderPromptKeyDown = this.handleFolderPromptKeyDown.bind(this);
     }
 
     componentDidUpdate (prevProps) {
@@ -323,12 +335,13 @@ class Interface extends React.Component {
         };
         this.setState(prev => {
             const newKeys = generateBundleKeys([newAsset], prev.modConfig);
-            let bundleData = {...prev.assetFormData[prev.assets.find(a => a.kind === 'bundle')?.id]};
+            const englishBundleId = prev.assets.find(a => a.kind === 'bundle' && a.name === 'bundle.properties')?.id;
+            let bundleData = {...prev.assetFormData[englishBundleId]};
             if (bundleData) {
                 bundleData = {...bundleData, ...newKeys};
             }
             const assetFormData = {...prev.assetFormData};
-            const bundleId = prev.assets.find(a => a.kind === 'bundle')?.id;
+            const bundleId = prev.assets.find(a => a.kind === 'bundle' && a.name === 'bundle.properties')?.id;
             if (bundleId && bundleData) {
                 assetFormData[bundleId] = bundleData;
             }
@@ -376,23 +389,7 @@ class Interface extends React.Component {
     }
 
     handleAddFolder () {
-        const parentId = this.state.selectedFolderId;
-        // eslint-disable-next-line no-alert
-        const name = prompt('文件夹名：');
-        if (!name || !name.trim()) return;
-        const kind = parentId ? (
-            this.state.folders.find(f => f.id === parentId) || {}
-        ).kind : 'content';
-        const newFolder = {
-            id: genId('folder'),
-            name: name.trim(),
-            parentId: parentId,
-            kind: kind || 'content'
-        };
-        this.setState(prev => ({
-            folders: [...prev.folders, newFolder],
-            selectedFolderId: newFolder.id
-        }));
+        this.setState({folderPromptOpen: true, folderPromptName: ''});
     }
 
     handleRenameFolder (id, name) {
@@ -405,8 +402,7 @@ class Interface extends React.Component {
 
     handleDeleteFolder (id) {
         if (['root_json', 'root_java'].includes(id)) {
-            // eslint-disable-next-line no-alert
-            alert('不能删除根文件夹');
+            this.setState({alertMsg: '不能删除根文件夹'});
             return;
         }
         this.setState(prev => {
@@ -439,7 +435,7 @@ class Interface extends React.Component {
                 const prefix = getBundlePrefix(oldAsset.contentType);
                 const oldKeyPrefix = `${prefix}.${modName}-${oldAsset.name}.`;
                 const newKeyPrefix = `${prefix}.${modName}-${name}.`;
-                const bundleId = prev.assets.find(a => a.kind === 'bundle')?.id;
+                const bundleId = prev.assets.find(a => a.kind === 'bundle' && a.name === 'bundle.properties')?.id;
                 if (bundleId && prev.assetFormData[bundleId]) {
                     const oldEntries = prev.assetFormData[bundleId];
                     const newEntries = {};
@@ -477,7 +473,7 @@ class Interface extends React.Component {
             if (src.kind === 'content') {
                 const newKeys = generateBundleKeys([newAsset], prev.modConfig);
                 const assetFormData = {...prev.assetFormData};
-                const bundleId = prev.assets.find(a => a.kind === 'bundle')?.id;
+                const bundleId = prev.assets.find(a => a.kind === 'bundle' && a.name === 'bundle.properties')?.id;
                 if (bundleId) {
                     assetFormData[bundleId] = {...(assetFormData[bundleId] || {}), ...newKeys};
                 }
@@ -490,13 +486,11 @@ class Interface extends React.Component {
     handleDeleteAsset (id) {
         if (id === this.state.assets.find(a => a.id === '__url_param__')?.id) return;
         if (id === '__mod_config__') {
-            // eslint-disable-next-line no-alert
-            alert('不能删除模组配置文件');
+            this.setState({alertMsg: '不能删除模组配置文件'});
             return;
         }
         if (id === '__bundle_en__' || id === '__bundle_zh__') {
-            // eslint-disable-next-line no-alert
-            alert('不能删除默认本地化文件');
+            this.setState({alertMsg: '不能删除默认本地化文件'});
             return;
         }
         this.setState(prev => {
@@ -512,7 +506,7 @@ class Interface extends React.Component {
                 const modName = (prev.modConfig && prev.modConfig.name) || 'my-mod';
                 const prefix = getBundlePrefix(oldAsset.contentType);
                 const oldKeyPrefix = `${prefix}.${modName}-${oldAsset.name}.`;
-                const bundleId = prev.assets.find(a => a.kind === 'bundle')?.id;
+                const bundleId = prev.assets.find(a => a.kind === 'bundle' && a.name === 'bundle.properties')?.id;
                 if (bundleId && prev.assetFormData[bundleId]) {
                     const oldEntries = prev.assetFormData[bundleId];
                     const newEntries = {};
@@ -559,12 +553,10 @@ class Interface extends React.Component {
                             selectedFolderId: null
                         });
                     } else {
-                        // eslint-disable-next-line no-alert
-                        alert('无效的项目文件');
+                        this.setState({alertMsg: '无效的项目文件'});
                     }
                 } catch (err) {
-                    // eslint-disable-next-line no-alert
-                    alert(`项目文件解析失败：${err.message}`);
+                    this.setState({alertMsg: `项目文件解析失败：${err.message}`});
                 } finally {
                     document.body.removeChild(input);
                 }
@@ -579,18 +571,17 @@ class Interface extends React.Component {
         const {assets, modConfig} = this.state;
         const hasJava = assets.some(a => a.kind === 'java');
         if (hasJava && !modConfig.java) {
-            // eslint-disable-next-line no-alert
-            alert('检测到 Java 文件，但 mod.hjson 中未勾选 java: true。\n请先在 mod.hjson 中启用 Java 并设置 main 类。');
+            this.setState({alertMsg: '检测到 Java 文件，但 mod.hjson 中未勾选 java: true。\n请先在 mod.hjson 中启用 Java 并设置 main 类。'});
             return;
         }
         if (hasJava) {
-            // eslint-disable-next-line no-alert
-            const proceed = window.confirm(
-                '此模组包含 Java 代码，需要 JDK 17 及 Gradle 构建。\n' +
-                '参考模板：~/.tmp/MindustryWorkspace/MindustryJavaModTemplate\n\n' +
-                '仍要导出？'
-            );
-            if (!proceed) return;
+            this._confirmCallback = () => {
+                exportMod(assets, this.state.folders, modConfig, this.state.assetFormData);
+            };
+            const confirmText = '此模组包含 Java 代码，需要 JDK 17 及 Gradle 构建。\n' +
+                '参考模板：~/.tmp/MindustryWorkspace/MindustryJavaModTemplate\n\n仍要导出？';
+            this.setState({confirmMsg: confirmText});
+            return;
         }
         exportMod(assets, this.state.folders, modConfig, this.state.assetFormData);
     }
@@ -610,6 +601,57 @@ class Interface extends React.Component {
         };
         collect(selectedFolderId);
         return assets.filter(a => !a.folderId || folderIds.has(a.folderId));
+    }
+
+    // ── dialog handlers ──
+
+    handleCloseAlert () {
+        this.setState({alertMsg: ''});
+    }
+
+    handleCloseConfirm () {
+        this.setState({confirmMsg: ''});
+    }
+
+    handleConfirmOk () {
+        const cb = this._confirmCallback;
+        this._confirmCallback = null;
+        this.setState({confirmMsg: ''});
+        if (cb) cb();
+    }
+
+    handleCloseFolderPrompt () {
+        this.setState({folderPromptOpen: false, folderPromptName: ''});
+    }
+
+    handleConfirmFolderPrompt () {
+        const name = this.state.folderPromptName;
+        if (!name || !name.trim()) return;
+        const parentId = this.state.selectedFolderId;
+        const kind = parentId ? (
+            this.state.folders.find(f => f.id === parentId) || {}
+        ).kind : 'content';
+        const newFolder = {
+            id: genId('folder'),
+            name: name.trim(),
+            parentId: parentId,
+            kind: kind || 'content'
+        };
+        this.setState(prev => ({
+            folderPromptOpen: false,
+            folderPromptName: '',
+            folders: [...prev.folders, newFolder],
+            selectedFolderId: newFolder.id
+        }));
+    }
+
+    handleFolderPromptChange (e) {
+        this.setState({folderPromptName: e.target.value});
+    }
+
+    handleFolderPromptKeyDown (e) {
+        if (e.key === 'Enter') this.handleConfirmFolderPrompt();
+        if (e.key === 'Escape') this.handleCloseFolderPrompt();
     }
 
     handleUpdateProjectTitle (title, isDefault) {
@@ -793,6 +835,162 @@ class Interface extends React.Component {
                     ) : null}
                 </div>
                 {isHomepage && <Footer />}
+
+                {this.state.alertMsg && (
+                    <Modal
+                        contentLabel="提示"
+                        onRequestClose={this.handleCloseAlert}
+                    >
+                        <div
+                            style={{
+                                padding: '1rem 1.5rem 1.5rem',
+                                background: 'var(--ui-modal-background, #fff)'
+                            }}
+                        >
+                            <p
+                                style={{
+                                    margin: '0 0 1rem',
+                                    color: 'var(--text-primary, #000)',
+                                    whiteSpace: 'pre-line'
+                                }}
+                            >
+                                {this.state.alertMsg}
+                            </p>
+                            <div style={{display: 'flex', justifyContent: 'flex-end'}}>
+                                <button
+                                    style={{
+                                        padding: '6px 18px',
+                                        border: '1px solid var(--ui-tertiary, #ccc)',
+                                        borderRadius: '4px',
+                                        background: 'var(--motion-primary, #4c97ff)',
+                                        color: '#fff',
+                                        cursor: 'pointer'
+                                    }}
+                                    onClick={this.handleCloseAlert}
+                                >
+                                    {'确定'}
+                                </button>
+                            </div>
+                        </div>
+                    </Modal>
+                )}
+                {this.state.confirmMsg && (
+                    <Modal
+                        contentLabel="确认"
+                        onRequestClose={this.handleCloseConfirm}
+                    >
+                        <div
+                            style={{
+                                padding: '1rem 1.5rem 1.5rem',
+                                background: 'var(--ui-modal-background, #fff)'
+                            }}
+                        >
+                            <p
+                                style={{
+                                    margin: '0 0 1rem',
+                                    color: 'var(--text-primary, #000)',
+                                    whiteSpace: 'pre-line'
+                                }}
+                            >
+                                {this.state.confirmMsg}
+                            </p>
+                            <div style={{display: 'flex', justifyContent: 'flex-end', gap: '8px'}}>
+                                <button
+                                    style={{
+                                        padding: '6px 18px',
+                                        border: '1px solid var(--ui-tertiary, #ccc)',
+                                        borderRadius: '4px',
+                                        background: 'var(--ui-primary, #fff)',
+                                        color: 'var(--text-primary, #000)',
+                                        cursor: 'pointer'
+                                    }}
+                                    onClick={this.handleCloseConfirm}
+                                >
+                                    {'取消'}
+                                </button>
+                                <button
+                                    style={{
+                                        padding: '6px 18px',
+                                        border: '1px solid var(--ui-tertiary, #ccc)',
+                                        borderRadius: '4px',
+                                        background: 'var(--motion-primary, #4c97ff)',
+                                        color: '#fff',
+                                        cursor: 'pointer'
+                                    }}
+                                    onClick={this.handleConfirmOk}
+                                >
+                                    {'确定'}
+                                </button>
+                            </div>
+                        </div>
+                    </Modal>
+                )}
+                {this.state.folderPromptOpen && (
+                    <Modal
+                        contentLabel="新建文件夹"
+                        onRequestClose={this.handleCloseFolderPrompt}
+                    >
+                        <div
+                            style={{
+                                padding: '1rem 1.5rem 1.5rem',
+                                background: 'var(--ui-modal-background, #fff)'
+                            }}
+                        >
+                            <p
+                                style={{
+                                    margin: '0 0 0.5rem',
+                                    color: 'var(--text-primary, #000)'
+                                }}
+                            >
+                                {'文件夹名：'}
+                            </p>
+                            <input
+                                autoFocus
+                                value={this.state.folderPromptName || ''}
+                                onChange={this.handleFolderPromptChange}
+                                onKeyDown={this.handleFolderPromptKeyDown}
+                                style={{
+                                    width: '100%',
+                                    padding: '6px 10px',
+                                    border: '1px solid var(--ui-tertiary, #ccc)',
+                                    borderRadius: '4px',
+                                    background: 'var(--ui-primary, #fff)',
+                                    color: 'var(--text-primary, #000)',
+                                    fontSize: '0.85rem',
+                                    boxSizing: 'border-box'
+                                }}
+                            />
+                            <div style={{display: 'flex', justifyContent: 'flex-end', gap: '8px', marginTop: '1rem'}}>
+                                <button
+                                    style={{
+                                        padding: '6px 18px',
+                                        border: '1px solid var(--ui-tertiary, #ccc)',
+                                        borderRadius: '4px',
+                                        background: 'var(--ui-primary, #fff)',
+                                        color: 'var(--text-primary, #000)',
+                                        cursor: 'pointer'
+                                    }}
+                                    onClick={this.handleCloseFolderPrompt}
+                                >
+                                    {'取消'}
+                                </button>
+                                <button
+                                    style={{
+                                        padding: '6px 18px',
+                                        border: '1px solid var(--ui-tertiary, #ccc)',
+                                        borderRadius: '4px',
+                                        background: 'var(--motion-primary, #4c97ff)',
+                                        color: '#fff',
+                                        cursor: 'pointer'
+                                    }}
+                                    onClick={this.handleConfirmFolderPrompt}
+                                >
+                                    {'确定'}
+                                </button>
+                            </div>
+                        </div>
+                    </Modal>
+                )}
             </div>
         );
     }
