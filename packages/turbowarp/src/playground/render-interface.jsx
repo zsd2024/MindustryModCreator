@@ -246,7 +246,8 @@ class Interface extends React.Component {
             selectedAssetId: initialSelectedId || '__mod_config__',
             selectedFolderId: null,
             assetFormData: {
-                [bundleEn.id]: bundleKeys
+                [bundleEn.id]: bundleKeys,
+                [bundleZh.id]: {...bundleKeys}
             },
             modConfig
         };
@@ -335,15 +336,11 @@ class Interface extends React.Component {
         };
         this.setState(prev => {
             const newKeys = generateBundleKeys([newAsset], prev.modConfig);
-            const englishBundleId = prev.assets.find(a => a.kind === 'bundle' && a.name === 'bundle.properties')?.id;
-            let bundleData = {...prev.assetFormData[englishBundleId]};
-            if (bundleData) {
-                bundleData = {...bundleData, ...newKeys};
-            }
             const assetFormData = {...prev.assetFormData};
-            const bundleId = prev.assets.find(a => a.kind === 'bundle' && a.name === 'bundle.properties')?.id;
-            if (bundleId && bundleData) {
-                assetFormData[bundleId] = bundleData;
+            for (const a of prev.assets) {
+                if (a.kind !== 'bundle') continue;
+                const existing = assetFormData[a.id] || {};
+                assetFormData[a.id] = {...existing, ...newKeys};
             }
             return {
                 assets: [...prev.assets, newAsset],
@@ -435,9 +432,11 @@ class Interface extends React.Component {
                 const prefix = getBundlePrefix(oldAsset.contentType);
                 const oldKeyPrefix = `${prefix}.${modName}-${oldAsset.name}.`;
                 const newKeyPrefix = `${prefix}.${modName}-${name}.`;
-                const bundleId = prev.assets.find(a => a.kind === 'bundle' && a.name === 'bundle.properties')?.id;
-                if (bundleId && prev.assetFormData[bundleId]) {
-                    const oldEntries = prev.assetFormData[bundleId];
+                const assetFormData = {...prev.assetFormData};
+                for (const a of prev.assets) {
+                    if (a.kind !== 'bundle') continue;
+                    const oldEntries = assetFormData[a.id];
+                    if (!oldEntries) continue;
                     const newEntries = {};
                     for (const key of Object.keys(oldEntries)) {
                         if (key.startsWith(oldKeyPrefix)) {
@@ -447,11 +446,9 @@ class Interface extends React.Component {
                             newEntries[key] = oldEntries[key];
                         }
                     }
-                    result.assetFormData = {
-                        ...prev.assetFormData,
-                        [bundleId]: newEntries
-                    };
+                    assetFormData[a.id] = newEntries;
                 }
+                result.assetFormData = assetFormData;
             }
             return result;
         });
@@ -473,9 +470,9 @@ class Interface extends React.Component {
             if (src.kind === 'content') {
                 const newKeys = generateBundleKeys([newAsset], prev.modConfig);
                 const assetFormData = {...prev.assetFormData};
-                const bundleId = prev.assets.find(a => a.kind === 'bundle' && a.name === 'bundle.properties')?.id;
-                if (bundleId) {
-                    assetFormData[bundleId] = {...(assetFormData[bundleId] || {}), ...newKeys};
+                for (const a of prev.assets) {
+                    if (a.kind !== 'bundle') continue;
+                    assetFormData[a.id] = {...(assetFormData[a.id] || {}), ...newKeys};
                 }
                 result.assetFormData = assetFormData;
             }
@@ -506,20 +503,20 @@ class Interface extends React.Component {
                 const modName = (prev.modConfig && prev.modConfig.name) || 'my-mod';
                 const prefix = getBundlePrefix(oldAsset.contentType);
                 const oldKeyPrefix = `${prefix}.${modName}-${oldAsset.name}.`;
-                const bundleId = prev.assets.find(a => a.kind === 'bundle' && a.name === 'bundle.properties')?.id;
-                if (bundleId && prev.assetFormData[bundleId]) {
-                    const oldEntries = prev.assetFormData[bundleId];
+                const assetFormData = {...prev.assetFormData};
+                for (const a of prev.assets) {
+                    if (a.kind !== 'bundle') continue;
+                    const oldEntries = assetFormData[a.id];
+                    if (!oldEntries) continue;
                     const newEntries = {};
                     for (const key of Object.keys(oldEntries)) {
                         if (!key.startsWith(oldKeyPrefix)) {
                             newEntries[key] = oldEntries[key];
                         }
                     }
-                    result.assetFormData = {
-                        ...prev.assetFormData,
-                        [bundleId]: newEntries
-                    };
+                    assetFormData[a.id] = newEntries;
                 }
+                result.assetFormData = assetFormData;
             }
             return result;
         });
