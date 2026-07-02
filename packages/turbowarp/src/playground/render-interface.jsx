@@ -835,6 +835,7 @@ class Interface extends React.Component {
 
                 {this.state.alertMsg && (
                     <Modal
+                        className={styles.dialogModal}
                         contentLabel="提示"
                         onRequestClose={this.handleCloseAlert}
                     >
@@ -873,6 +874,7 @@ class Interface extends React.Component {
                 )}
                 {this.state.confirmMsg && (
                     <Modal
+                        className={styles.dialogModal}
                         contentLabel="确认"
                         onRequestClose={this.handleCloseConfirm}
                     >
@@ -924,6 +926,7 @@ class Interface extends React.Component {
                 )}
                 {this.state.folderPromptOpen && (
                     <Modal
+                        className={styles.dialogModal}
                         contentLabel="新建文件夹"
                         onRequestClose={this.handleCloseFolderPrompt}
                     >

@@ -115,3 +115,7 @@ a {
     border-color: #ff52526e;
     background-color: #ff525240;
 }
+
+.dialogModal {
+    width: 400px;
+}
