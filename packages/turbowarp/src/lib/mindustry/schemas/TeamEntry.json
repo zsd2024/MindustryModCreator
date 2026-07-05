@@ -1,0 +1,12 @@
+{
+    "type": "TeamEntry",
+    "parentType": "UnlockableContent",
+    "fields": [
+        {
+            "name": "team",
+            "type": "Team",
+            "defaultValue": "sharded",
+            "notes": "The team this entry represents (int index or Team name string)."
+        }
+    ]
+}

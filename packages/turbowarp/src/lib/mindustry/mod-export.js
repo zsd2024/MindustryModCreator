@@ -31,15 +31,22 @@ const contentTypeToFolder = {
     NavalUnitType: 'units',
     ParticleWeather: 'weather',
     Planet: 'planets',
-    SectorPreset: 'sectors'
+    SectorPreset: 'sectors',
+    TeamEntry: 'teams'
 };
 
 /**
  * @param {string} contentType - content type name
  * @returns {string} folder name
  */
+const knownFolders = new Set(Object.values(contentTypeToFolder));
+
 const getContentFolder = function (contentType) {
-    return contentTypeToFolder[contentType] || 'blocks';
+    const folder = contentTypeToFolder[contentType];
+    if (!folder) {
+        console.warn(`[mod-export] Unknown content type '${contentType}', falling back to 'blocks'`);
+    }
+    return folder || 'blocks';
 };
 
 /**

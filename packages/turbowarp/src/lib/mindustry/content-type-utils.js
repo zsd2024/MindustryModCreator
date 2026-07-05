@@ -27,11 +27,16 @@ export const contentTypePrefix = {
     ParticleWeather: 'weather',
     RainWeather: 'weather',
     Planet: 'planet',
-    SectorPreset: 'sector'
+    SectorPreset: 'sector',
+    TeamEntry: 'team'
 };
 
 export const getBundlePrefix = function (contentType) {
-    return contentTypePrefix[contentType] || 'block';
+    const prefix = contentTypePrefix[contentType];
+    if (!prefix) {
+        console.warn(`[content-type-utils] Unknown content type '${contentType}', falling back to 'block'`);
+    }
+    return prefix || 'block';
 };
 
 export const generateBundleKeys = function (assets, modConfig) {

@@ -17,7 +17,7 @@ const loadSchema = function (type) {
             return schema;
         }
     } catch (e) {
-    // ignore
+        console.warn(`[resolve-schema] Failed to load schema for '${type}':`, e.message);
     }
     return null;
 };

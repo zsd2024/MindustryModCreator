@@ -1,0 +1,84 @@
+{
+    "type": "UnlockableContent",
+    "parentType": null,
+    "fields": [
+        {
+            "name": "localizedName",
+            "type": "string",
+            "defaultValue": "",
+            "notes": "Display name for this content. Can also be set via bundle."
+        },
+        {
+            "name": "description",
+            "type": "string",
+            "defaultValue": "",
+            "notes": "Description text. Can also be set via bundle."
+        },
+        {
+            "name": "details",
+            "type": "string",
+            "defaultValue": "",
+            "notes": "Detailed description shown in the database."
+        },
+        {
+            "name": "hidden",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "If true, this content is hidden from the database."
+        },
+        {
+            "name": "alwaysUnlocked",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "If true, this content is always available regardless of tech tree progress."
+        },
+        {
+            "name": "hideDetails",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "If true, details are hidden until the content is researched."
+        },
+        {
+            "name": "hideDatabase",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "If true, this content does not appear in the database at all."
+        },
+        {
+            "name": "generateIcons",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "If false, icons will not be auto-generated from the content type."
+        },
+        {
+            "name": "inlineDescription",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "If true, the description is inlined from a bundle, not the JSON field."
+        },
+        {
+            "name": "allDatabaseTabs",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "If true, this content shows up in all database tab categories."
+        },
+        {
+            "name": "databaseCategory",
+            "type": "string",
+            "defaultValue": "",
+            "notes": "Custom database category for grouping this content."
+        },
+        {
+            "name": "databaseTag",
+            "type": "string",
+            "defaultValue": "",
+            "notes": "Custom database search tag for this content."
+        },
+        {
+            "name": "selectionSize",
+            "type": "float",
+            "defaultValue": "24.0",
+            "notes": "Size of the selection box in the editor."
+        }
+    ]
+}

@@ -1,0 +1,354 @@
+{
+    "type": "Planet",
+    "parentType": "UnlockableContent",
+    "fields": [
+        {
+            "name": "radius",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": "Radius of this planet's sphere. ContentParser default: 1."
+        },
+        {
+            "name": "sectorSize",
+            "type": "int",
+            "defaultValue": "0",
+            "notes": "Sector grid size. 0 means no grid (cannot land)."
+        },
+        {
+            "name": "parent",
+            "type": "Planet",
+            "defaultValue": "null",
+            "notes": "Parent body that this planet orbits around. If null, this planet is a sun."
+        },
+        {
+            "name": "orbitRadius",
+            "type": "float",
+            "defaultValue": "auto",
+            "notes": "Orbital radius around the parent."
+        },
+        {
+            "name": "orbitTime",
+            "type": "float",
+            "defaultValue": "auto",
+            "notes": "Time for the planet to orbit around the sun once, in seconds."
+        },
+        {
+            "name": "rotateTime",
+            "type": "float",
+            "defaultValue": "1440.0",
+            "notes": "Time for a full rotation, in seconds."
+        },
+        {
+            "name": "tidalLock",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "Whether this planet is tidally locked to its parent."
+        },
+        {
+            "name": "accessible",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "Whether this planet is listed in the planet access UI."
+        },
+        {
+            "name": "startSector",
+            "type": "int",
+            "defaultValue": "0",
+            "notes": "The default starting sector displayed."
+        },
+        {
+            "name": "defaultCore",
+            "type": "Block",
+            "defaultValue": "coreShard",
+            "notes": "Default core block for launching."
+        },
+        {
+            "name": "defaultEnv",
+            "type": "int",
+            "defaultValue": "terrestrial | spores | groundOil | groundWater | oxygen",
+            "notes": "Environment flags for sectors on this planet."
+        },
+        {
+            "name": "defaultAttributes",
+            "type": "Attributes",
+            "defaultValue": "new Attributes()",
+            "notes": "Default environment attributes."
+        },
+        {
+            "name": "updateLighting",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "Whether day/night cycle is simulated."
+        },
+        {
+            "name": "lightSrcFrom",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "Day/night cycle - light source start."
+        },
+        {
+            "name": "lightSrcTo",
+            "type": "float",
+            "defaultValue": "0.8",
+            "notes": "Day/night cycle - light source end."
+        },
+        {
+            "name": "lightDstFrom",
+            "type": "float",
+            "defaultValue": "0.2",
+            "notes": "Day/night cycle - light destination start."
+        },
+        {
+            "name": "lightDstTo",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": "Day/night cycle - light destination end."
+        },
+        {
+            "name": "bloom",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "Whether bloom render effect is enabled."
+        },
+        {
+            "name": "visible",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "Whether this planet is displayed."
+        },
+        {
+            "name": "hasAtmosphere",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "Whether this planet has an atmosphere."
+        },
+        {
+            "name": "atmosphereRadIn",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "Atmosphere inner radius."
+        },
+        {
+            "name": "atmosphereRadOut",
+            "type": "float",
+            "defaultValue": "0.3",
+            "notes": "Atmosphere outer radius."
+        },
+        {
+            "name": "atmosphereColor",
+            "type": "Color",
+            "defaultValue": "4db8ffff",
+            "notes": "Atmosphere tint color."
+        },
+        {
+            "name": "lightColor",
+            "type": "Color",
+            "defaultValue": "ffffffff",
+            "notes": "Light color (for suns)."
+        },
+        {
+            "name": "iconColor",
+            "type": "Color",
+            "defaultValue": "ffffffff",
+            "notes": "Icon color in planet list."
+        },
+        {
+            "name": "icon",
+            "type": "string",
+            "defaultValue": "planet",
+            "notes": "Icon name for the planet selection dialog."
+        },
+        {
+            "name": "landCloudColor",
+            "type": "Color",
+            "defaultValue": "ffffff80",
+            "notes": "Tint of clouds displayed when landing."
+        },
+        {
+            "name": "mesh",
+            "type": "GenericMesh",
+            "defaultValue": "null",
+            "notes": "Planet mesh (NoiseMesh, SunMesh, HexSkyMesh, or ShaderSphereMesh)."
+        },
+        {
+            "name": "cloudMesh",
+            "type": "GenericMesh",
+            "defaultValue": "null",
+            "notes": "Cloud mesh overlay."
+        },
+        {
+            "name": "minZoom",
+            "type": "float",
+            "defaultValue": "0.5",
+            "notes": "Minimum camera zoom."
+        },
+        {
+            "name": "maxZoom",
+            "type": "float",
+            "defaultValue": "2.0",
+            "notes": "Maximum camera zoom."
+        },
+        {
+            "name": "drawOrbit",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "Whether to draw the orbital circle."
+        },
+        {
+            "name": "allowLaunchSchematics",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "Allow custom launch schematic."
+        },
+        {
+            "name": "allowLaunchLoadout",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "Allow custom launch loadout."
+        },
+        {
+            "name": "allowSectorInvasion",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "Simulate sector invasions from enemy bases."
+        },
+        {
+            "name": "allowWaves",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "Whether waves are created on sector loss."
+        },
+        {
+            "name": "allowLaunchToNumbered",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "Allow launching to numbered sectors."
+        },
+        {
+            "name": "enemyBuildSpeedMultiplier",
+            "type": "float",
+            "defaultValue": "1.0",
+            "notes": "Enemy rebuild speed multiplier."
+        },
+        {
+            "name": "enemyInfiniteItems",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "Enemy team has infinite items."
+        },
+        {
+            "name": "prebuildBase",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "Build up blocks on landing."
+        },
+        {
+            "name": "ruleSetter",
+            "type": "Rules",
+            "defaultValue": "r -> {}",
+            "notes": "Rules setup. Object that will be applied as sector rules."
+        },
+        {
+            "name": "launchCapacityMultiplier",
+            "type": "float",
+            "defaultValue": "0.25",
+            "notes": "Core item capacity multiplier when launching."
+        },
+        {
+            "name": "launchMusic",
+            "type": "Music",
+            "defaultValue": "launch",
+            "notes": "Music played in the planet dialog."
+        },
+        {
+            "name": "unlockedOnLand",
+            "type": "UnlockableContent[]",
+            "defaultValue": "[]",
+            "notes": "Content unlocked upon first landing."
+        },
+        {
+            "name": "orbitSpacing",
+            "type": "float",
+            "defaultValue": "12.0",
+            "notes": "Orbital spacing between this planet and its children."
+        },
+        {
+            "name": "camRadius",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "Camera radius offset. 0 means auto."
+        },
+        {
+            "name": "clipRadius",
+            "type": "float",
+            "defaultValue": "-1.0",
+            "notes": "Frustum sphere clip radius. -1 means auto."
+        },
+        {
+            "name": "sectorSeed",
+            "type": "int",
+            "defaultValue": "-1",
+            "notes": "Seed for sector generation. -1 uses random based on ID."
+        },
+        {
+            "name": "allowCampaignRules",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "Allow players to change difficulty/rules in the planet UI."
+        },
+        {
+            "name": "allowLegacyLaunchPads",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "If true, legacy launch pads can be enabled."
+        },
+        {
+            "name": "clearSectorOnLose",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "If true, sector saves are cleared when lost."
+        },
+        {
+            "name": "enemyFactoryActivationDelay",
+            "type": "float",
+            "defaultValue": "0.0",
+            "notes": "Default activation delay for enemy factories."
+        },
+        {
+            "name": "enemyCoreSpawnReplace",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "If true, enemy cores are replaced with spawn points."
+        },
+        {
+            "name": "alwaysPlayMusic",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "Overrides ambient music to always play."
+        },
+        {
+            "name": "autoAssignPlanet",
+            "type": "boolean",
+            "defaultValue": "true",
+            "notes": "If true, tech tree content auto-assigns this planet."
+        },
+        {
+            "name": "allowSelfSectorLaunch",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "Allow interplanetary accelerators to launch to 'any' sector on this planet."
+        },
+        {
+            "name": "showRtsAIRule",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "If true, RTS AI rules can be customized."
+        },
+        {
+            "name": "loadPlanetData",
+            "type": "boolean",
+            "defaultValue": "false",
+            "notes": "If true, planet data is loaded from 'planets/{name}.json'. Vanilla only!"
+        }
+    ]
+}

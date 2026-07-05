@@ -27,8 +27,7 @@ const IGNORED_TYPES = new Set([
     'Effect', 'ExplosionEffect', 'MultiEffect', 'ParticleEffect',
     'RadialEffect', 'SeqEffect', 'SoundEffect', 'WaveEffect', 'WrapEffect',
     'Weather', 'ParticleWeather', 'RainWeather',
-    'CharacterOverlay', 'RuneOverlay',
-    'SectorPreset'
+    'CharacterOverlay', 'RuneOverlay'
 ]);
 
 const CATEGORIES = [
@@ -105,7 +104,10 @@ const CATEGORIES = [
     ],
     label: '能力'},
     {types: ['Effect'], label: '效果'},
-    {types: ['Weather'], label: '天气'}
+    {types: ['Weather'], label: '天气'},
+    {types: ['SectorPreset'], label: '关卡'},
+    {types: ['Planet'], label: '星球'},
+    {types: ['TeamEntry'], label: '队伍'}
 ];
 
 /**
@@ -135,6 +137,9 @@ const iconForAsset = function (asset) {
         ct.includes('Fracker') || ct.includes('Incinerator')) return '\uD83C\uDFED';
     if (ct.includes('Bridge') || ct.includes('MassDriver') || ct.includes('Launch')) return '\uD83D\uDCE1';
     if (ct.includes('Effect') || ct.includes('Weather')) return '\uD83C\uDF0A';
+    if (ct === 'SectorPreset') return '\uD83C\uDF0D';
+    if (ct === 'Planet') return '\uD83E\uDE90';
+    if (ct === 'TeamEntry') return '\uD83C\uDFC6';
     return '\uD83D\uDCC4';
 };
 
