@@ -1,20 +1,15 @@
-import zhDocs from './zh-docs.json';
-
 const schemaCache = {};
+const zhCache = {};
 const schemasContext = require.context('./schemas', false, /\.json$/);
+const zhContext = require.context('./schemas/zh_CN', false, /\.json$/);
 
-/**
- * @param {string} type - content type name
- * @returns {object|null} schema object or null
- */
 const loadSchema = function (type) {
     if (schemaCache[type]) return schemaCache[type];
     try {
         const key = `./${type}.json`;
         if (schemasContext.keys().includes(key)) {
-            const schema = schemasContext(key);
-            schemaCache[type] = schema;
-            return schema;
+            schemaCache[type] = schemasContext(key);
+            return schemaCache[type];
         }
     } catch (e) {
         console.warn(`[resolve-schema] Failed to load schema for '${type}':`, e.message);
@@ -22,45 +17,44 @@ const loadSchema = function (type) {
     return null;
 };
 
-/**
- * @param {string} key - class key
- * @returns {string|null} zh label or null
- */
+const loadZh = function (type) {
+    if (zhCache[type]) return zhCache[type];
+    try {
+        const key = `./${type}.json`;
+        if (zhContext.keys().includes(key)) {
+            zhCache[type] = zhContext(key);
+            return zhCache[type];
+        }
+    } catch (e) {
+        console.warn(`[resolve-schema] Failed to load zh_CN for '${type}':`, e.message);
+    }
+    return null;
+};
+
 const getZhLabel = function (key) {
-    return zhDocs[`Class.${key}.name`] || null;
+    const zh = loadZh(key);
+    return zh?.localizedName || null;
 };
 
-/**
- * @param {string} key - class key
- * @returns {string|null} zh doc or null
- */
 const getZhDoc = function (key) {
-    return zhDocs[`Class.${key}.doc`] || null;
+    const zh = loadZh(key);
+    return zh?.notes || null;
 };
 
-/**
- * @param {string} type - content type name
- * @param {string} fieldName - field name
- * @returns {string} field label
- */
 const getFieldLabel = function (type, fieldName) {
-    return zhDocs[`Class.${type}.field.${fieldName}.name`] || fieldName;
+    const zh = loadZh(type);
+    if (!zh?.fields) return fieldName;
+    const field = zh.fields.find(f => f.name === fieldName);
+    return field?.localizedName || fieldName;
 };
 
-/**
- * @param {string} type - content type name
- * @param {string} fieldName - field name
- * @returns {string} field doc
- */
 const getFieldDoc = function (type, fieldName) {
-    return zhDocs[`Class.${type}.field.${fieldName}.doc`] || '';
+    const zh = loadZh(type);
+    if (!zh?.fields) return '';
+    const field = zh.fields.find(f => f.name === fieldName);
+    return field?.notes || '';
 };
 
-/**
- * @param {string} type - content type name
- * @param {Set} [visited] - visited types set
- * @returns {Array} resolved fields
- */
 const resolveFields = function (type, visited = new Set()) {
     if (!type || visited.has(type)) return [];
     visited.add(type);
@@ -80,7 +74,6 @@ const resolveFields = function (type, visited = new Set()) {
     return [...parentFields, ...ownFields];
 };
 
-/** @returns {string[]} all type names */
 const getAllTypes = function () {
     return schemasContext.keys()
         .map(k => k.replace('./', '').replace('.json', ''))
