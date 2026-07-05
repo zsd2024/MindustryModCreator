@@ -1,0 +1,10 @@
+{
+    "localizedName": "队伍条目",
+    "fields": [
+        {
+            "name": "team",
+            "localizedName": "队伍",
+            "notes": "此条目对应的队伍。\n\n**Notes**: The team this entry represents."
+        }
+    ]
+}

@@ -1,6 +1,4 @@
 {
-    "type": "Planet",
-    "parentType": "UnlockableContent",
     "localizedName": "行星",
     "fields": [
         {
