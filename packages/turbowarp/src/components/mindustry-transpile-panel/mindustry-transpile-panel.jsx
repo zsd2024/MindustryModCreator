@@ -42,7 +42,11 @@ class TranspilePanel extends React.Component {
             } else if (selectedAsset.kind === 'content' && formData && Object.keys(formData).length > 0) {
                 const changed = diffData(selectedAsset.contentType, formData);
                 if (changed) {
-                    code = hjson.stringify(changed, {bracesSameLine: false, emitRootBraces: false});
+                    const remapped = {};
+                    for (const k of Object.keys(changed)) {
+                        remapped[k === 'localizedName' ? 'name' : k] = changed[k];
+                    }
+                    code = hjson.stringify(remapped, {bracesSameLine: false, emitRootBraces: false});
                 } else {
                     code = '// 未修改任何字段\n// 修改字段后此处显示差异';
                 }

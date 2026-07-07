@@ -79,6 +79,12 @@
             "type": "float",
             "defaultValue": "24.0",
             "notes": "Size of the selection box in the editor."
+        },
+        {
+            "name": "research",
+            "type": "string",
+            "defaultValue": "",
+            "notes": "Name of the parent node in the tech tree, or a research object. If empty, content is not researchable."
         }
     ]
 }

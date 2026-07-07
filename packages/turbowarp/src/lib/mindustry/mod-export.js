@@ -70,12 +70,16 @@ const findFolderPath = function (folders, folderId) {
  * @param {object} data - form data
  * @returns {string} HJSON string
  */
+const KEY_MAP = {
+    localizedName: 'name'
+};
+
 const buildContentHjson = function (data) {
     const clean = {};
     for (const k of Object.keys(data)) {
         const v = data[k];
         if (v === void 0 || v === null || v === '' || (Array.isArray(v) && v.length === 0)) continue;
-        clean[k] = v;
+        clean[KEY_MAP[k] || k] = v;
     }
     return `${hjson.stringify(clean, {bracesSameLine: false, emitRootBraces: false})}\n`;
 };

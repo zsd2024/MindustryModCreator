@@ -3,6 +3,12 @@
     "parentType": "UnlockableContent",
     "fields": [
         {
+            "name": "type",
+            "type": "string",
+            "defaultValue": "Block",
+            "notes": "Java class name for this block. Determines block behavior. Examples: GenericCrafter, ItemTurret, Battery, Drill, Wall, Floor."
+        },
+        {
             "name": "hasItems",
             "type": "boolean",
             "defaultValue": "false",

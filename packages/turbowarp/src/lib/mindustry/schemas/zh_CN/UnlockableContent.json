@@ -52,6 +52,11 @@
         {
             "name": "selectionSize",
             "localizedName": "选择框大小"
+        },
+        {
+            "name": "research",
+            "localizedName": "科技树父节点",
+            "notes": "科技树中的父节点\n\n**Notes**: 填写父节点（在模组中的）内部名称。也可以填写为复杂对象。留空表示不可研究。"
         }
     ]
 }
