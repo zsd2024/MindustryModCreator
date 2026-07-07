@@ -25,8 +25,17 @@ class MindustryJsonEditor extends React.Component {
     super(props);
     this.state = {
       data: this.initData(props.contentType, props.initialData || {}),
-      collapsedSections: new Set(),
+      collapsedSections: this.initCollapsedSections(props.contentType),
     };
+  }
+
+  initCollapsedSections(contentType) {
+    if (!contentType) return new Set();
+    const fields = resolveFields(contentType);
+    const sourceTypes = [...new Set(fields.map(f => f.sourceType).filter(Boolean))];
+    const collapsed = new Set(sourceTypes);
+    collapsed.delete(contentType);
+    return collapsed;
   }
 
   initData(contentType, initial) {

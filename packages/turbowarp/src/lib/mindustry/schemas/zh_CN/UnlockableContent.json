@@ -1,71 +1,57 @@
 {
     "localizedName": "可解锁内容",
-    "notes": "可解锁内容类型的基类接口。\n\n**Notes**: UnlockableContent 是所有科技树可解锁内容的基类，提供统一的解锁、研究、核心数据库显示机制。",
     "fields": [
         {
             "name": "localizedName",
-            "localizedName": "显示名称",
-            "notes": "本地化的正式名称。永不为 null。未在 bundle 中找到时使用内部名称。\n\n**Notes**: 通过 Bundle.get(getContentType() + \".\" + name + \".name\", name) 从 bundle 初始化；也可在 JSON 中用 localizedName 字段覆盖。"
+            "localizedName": "显示名称"
         },
         {
             "name": "description",
-            "localizedName": "描述",
-            "notes": "本地化的描述信息和详细说明。可能为 null。\n\n**Notes**: 通过 Bundle.getOrNull(getContentType() + \".\" + name + \".description\") 从 bundle 读取。"
+            "localizedName": "描述"
         },
         {
             "name": "details",
-            "localizedName": "详细信息",
-            "notes": "核心数据库中显示的详细描述。可能为 null。\n\n**Notes**: 通过 Bundle.getOrNull(getContentType() + \".\" + name + \".details\") 从 bundle 读取。"
+            "localizedName": "详细信息"
         },
         {
             "name": "hidden",
-            "localizedName": "隐藏",
-            "notes": "此内容是否始终在核心数据库对话框中隐藏。\n\n**Notes**: 对应 isHidden() 方法，默认返回 false。子类可重写此方法实现条件隐藏。"
+            "localizedName": "隐藏"
         },
         {
             "name": "alwaysUnlocked",
-            "localizedName": "始终解锁",
-            "notes": "此内容是否始终在科技树中解锁。\n\n**Notes**: 默认 false。若为 true，不受解锁状态约束，始终可用。"
+            "localizedName": "始终解锁"
         },
         {
             "name": "hideDetails",
-            "localizedName": "隐藏详细信息",
-            "notes": "在自定义游戏中，若此内容未在战役模式中解锁，是否隐藏详细信息。\n\n**Notes**: 默认 true。控制研究对话框预览中的描述显示。"
+            "localizedName": "隐藏详细信息"
         },
         {
             "name": "hideDatabase",
-            "localizedName": "从核心数据库中隐藏",
-            "notes": "是否从核心数据库中隐藏。\n\n**Notes**: 默认 false。若为 true，内容完全不出现在核心数据库中。"
+            "localizedName": "从核心数据库中隐藏"
         },
         {
             "name": "generateIcons",
-            "localizedName": "自动生成图标",
-            "notes": "若为 false，禁用此内容的所有图标生成；不调用 createIcons。\n\n**Notes**: 默认 true。禁用时不会自动从内容类型生成图标，适用于需要自定义图标的模组内容。"
+            "localizedName": "自动生成图标"
         },
         {
             "name": "inlineDescription",
-            "localizedName": "内联描述",
-            "notes": "是否在研究对话框预览中显示描述。\n\n**Notes**: 默认 true。描述通过 Bundle.get(getContentType() + \".\" + name + \".description\") 内联获取，而非从 JSON 中的 description 字段读取。"
+            "localizedName": "内联描述"
         },
         {
             "name": "allDatabaseTabs",
-            "localizedName": "全部数据库标签",
-            "notes": "此内容是否出现在所有核心数据库标签页中。\n\n**Notes**: 默认 false。若为 true，内容在所有核心数据库分类标签下均可见。"
+            "localizedName": "全部数据库标签"
         },
         {
             "name": "databaseCategory",
-            "localizedName": "数据库分类",
-            "notes": "内容分类。定义核心数据库中内容分类的主类别。例如 \"block\"、\"liquid\"、\"unit\"。值为 null 或空时使用 getContentType().name() 作为回退。\n\n**Notes**: 在 postInit() 中初始化，默认使用 content type 名称。可在 JSON 中通过该字段覆盖。"
+            "localizedName": "数据库分类"
         },
         {
             "name": "databaseTag",
-            "localizedName": "数据库标签",
-            "notes": "类别标签。核心数据库中内容分类的二级类别。例如 databaseCategory 为 \"block\" 下的 \"turret\"、\"wall\"。值为 null 或空时使用 \"default\" 作为回退；使用 \"default\" 时不显示额外标签。\n\n**Notes**: 在 postInit() 中初始化为 \"default\"，可在 JSON 中覆盖。"
+            "localizedName": "数据库标签"
         },
         {
             "name": "selectionSize",
-            "localizedName": "选择框大小",
-            "notes": "此内容在某些选择菜单中的显示大小。\n\n**Notes**: 默认值 24f。影响编辑器中内容的选中框大小。"
+            "localizedName": "选择框大小"
         }
     ]
 }
