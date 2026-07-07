@@ -41,9 +41,21 @@ class TranspilePanel extends React.Component {
                 code = hjson.stringify(out, {bracesSameLine: false, emitRootBraces: false});
             } else if (selectedAsset.kind === 'content' && formData && Object.keys(formData).length > 0) {
                 let changed = diffData(selectedAsset.contentType, formData);
-                const needsType = ['Block', 'UnitType', 'ErekirUnitType', 'MechUnitType',
-                    'PayloadUnitType', 'TankUnitType', 'LegsUnitType', 'NavalUnitType'];
-                if (needsType.includes(selectedAsset.contentType)) {
+                const folder = {
+                    Item: 'items', Liquid: 'liquids', CellLiquid: 'liquids',
+                    BulletType: 'bullets', BasicBulletType: 'bullets',
+                    ArtilleryBulletType: 'bullets', ContinuousBulletType: 'bullets',
+                    FlakBulletType: 'bullets', GasBulletType: 'bullets',
+                    LiquidBulletType: 'bullets', MassDriverBolt: 'bullets',
+                    MissileBulletType: 'bullets', PointBulletType: 'bullets',
+                    RailBulletType: 'bullets', ShrapnelBulletType: 'bullets',
+                    StatusEffect: 'statuses', UnitType: 'units', ErekirUnitType: 'units',
+                    MechUnitType: 'units', PayloadUnitType: 'units',
+                    TankUnitType: 'units', LegsUnitType: 'units',
+                    NavalUnitType: 'units', ParticleWeather: 'weather',
+                    Planet: 'planets', SectorPreset: 'sectors', TeamEntry: 'teams'
+                }[selectedAsset.contentType] || 'blocks';
+                if (folder === 'blocks' || folder === 'units') {
                     if (!changed) changed = {type: selectedAsset.contentType};
                     else changed.type = selectedAsset.contentType;
                 }

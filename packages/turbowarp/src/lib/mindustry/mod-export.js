@@ -112,15 +112,12 @@ const exportMod = function (assets, folders, modConfig, assetFormData) {
     const javaAssets = assets.filter(a => a.kind === 'java');
     const contentAssets = assets.filter(a => a.kind === 'content');
 
-    const needsType = new Set([
-        'Block', 'UnitType', 'ErekirUnitType', 'MechUnitType',
-        'PayloadUnitType', 'TankUnitType', 'LegsUnitType', 'NavalUnitType'
-    ]);
+    const foldersNeedingType = new Set(['blocks', 'units']);
 
     for (const asset of contentAssets) {
         const folder = getContentFolder(asset.contentType);
         let data = diffData(asset.contentType, assetFormData[asset.id]);
-        if (needsType.has(asset.contentType)) {
+        if (foldersNeedingType.has(folder)) {
             if (!data) data = {type: asset.contentType};
             else data.type = asset.contentType;
         }
