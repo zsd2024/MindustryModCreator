@@ -4,7 +4,7 @@
         {
             "name": "trailSpacing",
             "localizedName": "拖尾间距",
-            "notes": "拖尾效果间距"
+            "notes": "拖尾效果间距\n\n**Notes**: 点防御子弹拖尾效果之间的间隔距离。默认 10。"
         }
     ]
 }

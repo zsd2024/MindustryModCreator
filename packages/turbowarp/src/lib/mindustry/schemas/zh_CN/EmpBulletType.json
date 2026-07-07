@@ -4,52 +4,52 @@
         {
             "name": "radius",
             "localizedName": "作用半径",
-            "notes": "EMP作用半径"
+            "notes": "EMP作用半径\n\n**Notes**: 电磁脉冲效果的作用范围半径。默认 100。"
         },
         {
             "name": "timeIncrease",
             "localizedName": "时间倍率增加量",
-            "notes": "时间倍率增加量"
+            "notes": "时间倍率增加量\n\n**Notes**: 击中目标后其建筑/单位的时间倍率增加量。默认 2.5。"
         },
         {
             "name": "timeDuration",
             "localizedName": "时间倍率持续时间",
-            "notes": "时间倍率持续时间"
+            "notes": "时间倍率持续时间\n\n**Notes**: 时间倍率效果的持续时长。默认 600 刻（10 秒）。"
         },
         {
             "name": "powerDamageScl",
             "localizedName": "电力伤害缩放",
-            "notes": "电力伤害缩放"
+            "notes": "电力伤害缩放\n\n**Notes**: 对带电单位的伤害缩放倍率。默认 2.0。"
         },
         {
             "name": "powerSclDecrease",
             "localizedName": "电力缩放衰减",
-            "notes": "电力缩放衰减"
+            "notes": "电力缩放衰减\n\n**Notes**: 电力伤害缩放随距离或时间的衰减率。默认 0.2。"
         },
         {
             "name": "hitPowerEffect",
             "localizedName": "击中电力效果",
-            "notes": "击中电力效果"
+            "notes": "击中电力效果\n\n**Notes**: EMP击中时产生的电力特效。默认 Fx.hitEmpSpark。"
         },
         {
             "name": "chainEffect",
             "localizedName": "连锁效果",
-            "notes": "连锁效果"
+            "notes": "连锁效果\n\n**Notes**: EMP在目标间连锁传导时的特效。默认 Fx.chainEmp。"
         },
         {
             "name": "applyEffect",
             "localizedName": "应用效果",
-            "notes": "应用效果"
+            "notes": "应用效果\n\n**Notes**: 对目标应用EMP效果时的特效。默认 Fx.heal。"
         },
         {
             "name": "hitUnits",
             "localizedName": "是否击中单位",
-            "notes": "是否击中单位"
+            "notes": "是否击中单位\n\n**Notes**: EMP效果是否作用于单位。默认 true。若设为 false 则只影响建筑。"
         },
         {
             "name": "unitDamageScl",
             "localizedName": "单位伤害缩放",
-            "notes": "单位伤害缩放"
+            "notes": "单位伤害缩放\n\n**Notes**: 对单位的伤害缩放倍率。默认 0.7。"
         }
     ]
 }

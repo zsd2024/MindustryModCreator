@@ -4,22 +4,22 @@
         {
             "name": "explodeRange",
             "localizedName": "触发爆炸检测范围",
-            "notes": "触发爆炸的检测范围"
+            "notes": "触发爆炸的检测范围\n\n**Notes**: 检测目标进入此范围时触发炮弹爆炸。默认 30。"
         },
         {
             "name": "explodeDelay",
             "localizedName": "爆炸延迟时间",
-            "notes": "爆炸延迟时间（刻数）"
+            "notes": "爆炸延迟时间（刻数）\n\n**Notes**: 触发后延迟多少刻爆炸。默认 5。"
         },
         {
             "name": "flakDelay",
             "localizedName": "检测目标前延迟",
-            "notes": "开始检测目标前的延迟"
+            "notes": "开始检测目标前的延迟\n\n**Notes**: 炮弹发射后延迟多少刻才开始检测目标。默认 0。"
         },
         {
             "name": "flakInterval",
             "localizedName": "目标检测间隔",
-            "notes": "目标检测间隔（刻数）"
+            "notes": "目标检测间隔（刻数）\n\n**Notes**: 炮弹对目标的检测间隔。默认 6。"
         }
     ]
 }

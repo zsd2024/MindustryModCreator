@@ -4,57 +4,57 @@
         {
             "name": "length",
             "localizedName": "弹片长度",
-            "notes": "弹片长度"
+            "notes": "弹片长度\n\n**Notes**: 弹片散射范围的长度。默认 100。"
         },
         {
             "name": "width",
             "localizedName": "弹片宽度",
-            "notes": "弹片宽度"
+            "notes": "弹片宽度\n\n**Notes**: 弹片效果的宽度。默认 20。"
         },
         {
             "name": "fromColor",
             "localizedName": "起始颜色",
-            "notes": "起始颜色"
+            "notes": "起始颜色\n\n**Notes**: 弹片效果的起始颜色。默认 Color.white。"
         },
         {
             "name": "toColor",
             "localizedName": "结束颜色",
-            "notes": "结束颜色"
+            "notes": "结束颜色\n\n**Notes**: 弹片效果的结束颜色。默认 Pal.lancerLaser。"
         },
         {
             "name": "hitLarge",
             "localizedName": "大范围判定",
-            "notes": "是否使用大范围伤害判定"
+            "notes": "是否使用大范围伤害判定\n\n**Notes**: 使用更大的碰撞判定范围。默认 false。"
         },
         {
             "name": "serrations",
             "localizedName": "锯齿数量",
-            "notes": "锯齿数量"
+            "notes": "锯齿数量\n\n**Notes**: 弹片边缘锯齿的数量。默认 7。"
         },
         {
             "name": "serrationLenScl",
             "localizedName": "锯齿长度缩放",
-            "notes": "锯齿长度缩放"
+            "notes": "锯齿长度缩放\n\n**Notes**: 锯齿长度的缩放因子。默认 10。"
         },
         {
             "name": "serrationWidth",
             "localizedName": "锯齿宽度",
-            "notes": "锯齿宽度"
+            "notes": "锯齿宽度\n\n**Notes**: 锯齿的宽度。默认 4。"
         },
         {
             "name": "serrationSpacing",
             "localizedName": "锯齿间距",
-            "notes": "锯齿间距"
+            "notes": "锯齿间距\n\n**Notes**: 锯齿之间的间距。默认 8。"
         },
         {
             "name": "serrationSpaceOffset",
             "localizedName": "锯齿空间偏移",
-            "notes": "锯齿空间偏移"
+            "notes": "锯齿空间偏移\n\n**Notes**: 锯齿起始位置的偏移量。默认 80。"
         },
         {
             "name": "serrationFadeOffset",
             "localizedName": "锯齿淡出偏移",
-            "notes": "锯齿淡出偏移"
+            "notes": "锯齿淡出偏移\n\n**Notes**: 锯齿淡出效果的偏移量。默认 0.5。"
         }
     ]
 }

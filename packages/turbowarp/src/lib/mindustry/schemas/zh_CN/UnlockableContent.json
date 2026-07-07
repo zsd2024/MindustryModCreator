@@ -50,7 +50,7 @@
         {
             "name": "allDatabaseTabs",
             "localizedName": "全部数据库标签",
-            "notes": "此内容是否出现在所有数据库标签页中。\n\n**Notes**: 默认 false。若为 true，内容在所有数据库分类标签下均可见。"
+            "notes": "此内容是否出现在所有核心数据库标签页中。\n\n**Notes**: 默认 false。若为 true，内容在所有核心数据库分类标签下均可见。"
         },
         {
             "name": "databaseCategory",

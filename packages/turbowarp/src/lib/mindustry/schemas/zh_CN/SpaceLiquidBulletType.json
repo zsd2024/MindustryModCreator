@@ -4,7 +4,7 @@
         {
             "name": "orbSize",
             "localizedName": "液滴大小",
-            "notes": "液滴大小"
+            "notes": "液滴大小\n\n**Notes**: 太空环境中的液体子弹液滴大小。默认 5.5。"
         }
     ]
 }

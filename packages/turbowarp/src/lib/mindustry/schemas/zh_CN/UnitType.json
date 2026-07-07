@@ -464,7 +464,7 @@
         {
             "name": "hidden",
             "localizedName": "隐藏",
-            "notes": "若为true，此单位不会出现在数据库或各种其他UI中。\n\n**Notes**: 控制单位是否在数据库中隐藏。"
+            "notes": "若为true，此单位不会出现在核心数据库或各种其他UI中。\n\n**Notes**: 控制单位是否在核心数据库中隐藏。"
         },
         {
             "name": "internal",
@@ -949,7 +949,7 @@
         {
             "name": "legContinuousMove",
             "localizedName": "腿持续运动",
-            "notes": "若为true，即使单位不移动，腿也始终尝试移动（导致更自然的行为）。\n\nNotes: 控制腿是否持续运动。"
+            "notes": "若为true，即使单位不移动，腿也始终尝试移动（导致更自然的行为）。\n\n**Notes**: 控制腿是否持续运动。默认 false。启用后腿部单位的运动行为更自然。"
         },
         {
             "name": "flipBackLegs",

@@ -4,62 +4,62 @@
         {
             "name": "fadeTime",
             "localizedName": "淡出时间",
-            "notes": "淡出时间（刻数）"
+            "notes": "淡出时间（刻数）\n\n**Notes**: 激光消失前的淡出动画持续时间，单位为游戏刻。默认 16。"
         },
         {
             "name": "lightStroke",
             "localizedName": "灯光描边",
-            "notes": "灯光描边尺寸"
+            "notes": "灯光描边尺寸\n\n**Notes**: 激光束外围光晕的描边宽度。默认 40。"
         },
         {
             "name": "divisions",
             "localizedName": "分段数",
-            "notes": "激光分段数"
+            "notes": "激光分段数\n\n**Notes**: 激光渲染的分段数量，影响平滑度。默认 13。"
         },
         {
             "name": "colors",
             "localizedName": "颜色数组",
-            "notes": "颜色数组（从核心到边缘）"
+            "notes": "颜色数组（从核心到边缘）\n\n**Notes**: 定义激光从内到外的渐变颜色数组。支持透明度。"
         },
         {
             "name": "strokeFrom",
             "localizedName": "起始描边",
-            "notes": "起始描边宽度"
+            "notes": "起始描边宽度\n\n**Notes**: 激光束起始端的描边宽度。默认 2.0。"
         },
         {
             "name": "strokeTo",
             "localizedName": "结束描边",
-            "notes": "结束描边宽度"
+            "notes": "结束描边宽度\n\n**Notes**: 激光束末端的描边宽度。默认 0.5。"
         },
         {
             "name": "pointyScaling",
             "localizedName": "尖端缩放",
-            "notes": "尖端缩放"
+            "notes": "尖端缩放\n\n**Notes**: 激光尖端缩放比例，控制激光末端的尖锐程度。默认 0.75。"
         },
         {
             "name": "backLength",
             "localizedName": "后端长度",
-            "notes": "后端椭圆长度"
+            "notes": "后端椭圆长度\n\n**Notes**: 激光尾部椭圆效果的长度。默认 7。"
         },
         {
             "name": "frontLength",
             "localizedName": "前端长度",
-            "notes": "前端椭圆长度"
+            "notes": "前端椭圆长度\n\n**Notes**: 激光前端椭圆效果的长度。默认 35。"
         },
         {
             "name": "width",
             "localizedName": "激光宽度",
-            "notes": "激光宽度"
+            "notes": "激光宽度\n\n**Notes**: 激光束的基本宽度。默认 9.0。"
         },
         {
             "name": "oscScl",
             "localizedName": "振荡缩放",
-            "notes": "振荡缩放"
+            "notes": "振荡缩放\n\n**Notes**: 激光宽度振荡的缩放因子。默认 0.8。"
         },
         {
             "name": "oscMag",
             "localizedName": "振荡幅度",
-            "notes": "振荡幅度"
+            "notes": "振荡幅度\n\n**Notes**: 激光宽度振荡的幅度。默认 1.5。"
         }
     ]
 }

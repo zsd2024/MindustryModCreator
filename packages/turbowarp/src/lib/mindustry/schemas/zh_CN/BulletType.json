@@ -89,7 +89,7 @@
         {
             "name": "maxDamageFraction",
             "localizedName": "最大伤害比例",
-            "notes": "如果为正值，限制非溅射伤害不超过目标最大生命值的比例。\n\nNotes: 对单目标的最大伤害比例限制。"
+            "notes": "如果为正值，限制非溅射伤害不超过目标最大生命值的比例。\n\n**Notes**: 对单目标的最大伤害比例限制。对非溅射伤害场景下的伤害上限控制。"
         },
         {
             "name": "removeAfterPierce",

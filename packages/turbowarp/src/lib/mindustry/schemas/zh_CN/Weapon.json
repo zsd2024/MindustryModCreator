@@ -44,7 +44,7 @@
         {
             "name": "showStatSprite",
             "localizedName": "数据库显示精灵",
-            "notes": "是否在数据库中显示武器的精灵。\n\n**Notes**: 控制武器精灵在数据库中的显示。"
+            "notes": "是否在核心数据库中显示武器的精灵。\n\n**Notes**: 控制武器精灵在核心数据库中的显示。"
         },
         {
             "name": "baseRotation",

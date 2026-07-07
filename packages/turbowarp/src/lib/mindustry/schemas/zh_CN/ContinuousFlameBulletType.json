@@ -4,77 +4,77 @@
         {
             "name": "lightStroke",
             "localizedName": "灯光描边",
-            "notes": "灯光描边尺寸"
+            "notes": "灯光描边尺寸\n\n**Notes**: 火焰光束外围光晕的描边宽度。默认 40。"
         },
         {
             "name": "width",
             "localizedName": "火焰宽度",
-            "notes": "火焰宽度"
+            "notes": "火焰宽度\n\n**Notes**: 火焰光束的基本宽度。默认 3.7。"
         },
         {
             "name": "oscScl",
             "localizedName": "振荡缩放",
-            "notes": "振荡缩放"
+            "notes": "振荡缩放\n\n**Notes**: 火焰宽度振荡的缩放因子。默认 1.2。"
         },
         {
             "name": "oscMag",
             "localizedName": "振荡幅度",
-            "notes": "振荡幅度"
+            "notes": "振荡幅度\n\n**Notes**: 火焰宽度振荡的幅度。默认 0.02。"
         },
         {
             "name": "divisions",
             "localizedName": "分段数",
-            "notes": "火焰分段数"
+            "notes": "火焰分段数\n\n**Notes**: 火焰渲染的分段数量，影响平滑度。默认 25。"
         },
         {
             "name": "drawFlare",
             "localizedName": "绘制闪光",
-            "notes": "是否绘制闪光"
+            "notes": "是否绘制闪光\n\n**Notes**: 是否在火焰中心绘制闪光效果。默认 true。"
         },
         {
             "name": "flareColor",
             "localizedName": "闪光颜色",
-            "notes": "闪光颜色"
+            "notes": "闪光颜色\n\n**Notes**: 火焰闪光部分的颜色。默认 \"e189f5\"。"
         },
         {
             "name": "flareWidth",
             "localizedName": "闪光宽度",
-            "notes": "闪光宽度"
+            "notes": "闪光宽度\n\n**Notes**: 闪光的宽度。默认 3。"
         },
         {
             "name": "flareInnerScl",
             "localizedName": "闪光内部缩放",
-            "notes": "闪光内部缩放"
+            "notes": "闪光内部缩放\n\n**Notes**: 闪光内部区域的缩放比例。默认 0.5。"
         },
         {
             "name": "flareLength",
             "localizedName": "闪光长度",
-            "notes": "闪光长度"
+            "notes": "闪光长度\n\n**Notes**: 闪光沿火焰方向的长度。默认 40。"
         },
         {
             "name": "flareInnerLenScl",
             "localizedName": "闪光内部长度缩放",
-            "notes": "闪光内部长度缩放"
+            "notes": "闪光内部长度缩放\n\n**Notes**: 闪光内部区域长度的缩放比例。默认 0.5。"
         },
         {
             "name": "flareLayer",
             "localizedName": "闪光渲染层级",
-            "notes": "闪光渲染层级"
+            "notes": "闪光渲染层级\n\n**Notes**: 闪光渲染的 Z 层级。默认在子弹层之下。"
         },
         {
             "name": "flareRotSpeed",
             "localizedName": "闪光旋转速度",
-            "notes": "闪光旋转速度"
+            "notes": "闪光旋转速度\n\n**Notes**: 闪光围绕火焰旋转的速度。默认 1.2。"
         },
         {
             "name": "rotateFlare",
             "localizedName": "闪光随子弹旋转",
-            "notes": "闪光是否随子弹旋转"
+            "notes": "闪光是否随子弹旋转\n\n**Notes**: 控制闪光是否跟随子弹方向旋转。默认 false。"
         },
         {
             "name": "lengthInterp",
             "localizedName": "长度插值函数",
-            "notes": "长度插值函数"
+            "notes": "长度插值函数\n\n**Notes**: 火焰长度随生命期的插值函数。默认 Interp.slope。"
         },
         {
             "name": "lengthWidthPans",
@@ -84,7 +84,7 @@
         {
             "name": "colors",
             "localizedName": "颜色数组",
-            "notes": "颜色数组，从外到内渐变"
+            "notes": "颜色数组（从外到内渐变）\n\n**Notes**: 火焰从外层到内层的渐变颜色数组。支持透明度。默认 5 层紫色系渐变。"
         }
     ]
 }

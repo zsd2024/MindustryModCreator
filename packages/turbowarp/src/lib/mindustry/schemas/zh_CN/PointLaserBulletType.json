@@ -4,57 +4,57 @@
         {
             "name": "sprite",
             "localizedName": "精灵名称",
-            "notes": "精灵图名称"
+            "notes": "精灵图名称\n\n**Notes**: 点激光使用的精灵图名称。默认 \"point-laser\"。"
         },
         {
             "name": "laser",
             "localizedName": "激光纹理",
-            "notes": "激光纹理区域"
+            "notes": "激光纹理区域\n\n**Notes**: 激光主体纹理的 TextureRegion。运行时从精灵图加载。"
         },
         {
             "name": "laserEnd",
             "localizedName": "激光末端纹理",
-            "notes": "激光末端纹理区域"
+            "notes": "激光末端纹理区域\n\n**Notes**: 激光末端纹理的 TextureRegion。运行时从精灵图加载。"
         },
         {
             "name": "color",
             "localizedName": "激光颜色",
-            "notes": "激光颜色"
+            "notes": "激光颜色\n\n**Notes**: 激光光束的颜色。默认 Color.white。"
         },
         {
             "name": "beamEffect",
             "localizedName": "光束特效",
-            "notes": "光束效果"
+            "notes": "光束效果\n\n**Notes**: 光束上产生的粒子特效。默认 Fx.colorTrail。"
         },
         {
             "name": "beamEffectInterval",
             "localizedName": "光束特效间隔",
-            "notes": "光束效果间隔（刻数）"
+            "notes": "光束效果间隔（刻数）\n\n**Notes**: 光束特效生成的间隔。默认 3。"
         },
         {
             "name": "beamEffectSize",
             "localizedName": "光束特效大小",
-            "notes": "光束效果大小"
+            "notes": "光束效果大小\n\n**Notes**: 光束特效粒子的尺寸。默认 3.5。"
         },
         {
             "name": "oscScl",
             "localizedName": "振荡缩放",
-            "notes": "振荡缩放"
+            "notes": "振荡缩放\n\n**Notes**: 激光宽度振荡的缩放因子。默认 2.0。"
         },
         {
             "name": "oscMag",
             "localizedName": "振荡幅度",
-            "notes": "振荡幅度"
+            "notes": "振荡幅度\n\n**Notes**: 激光宽度振荡的幅度。默认 0.3。"
         },
         {
             "name": "damageInterval",
             "localizedName": "伤害间隔",
-            "notes": "伤害判定间隔（刻数）"
+            "notes": "伤害判定间隔（刻数）\n\n**Notes**: 持续激光每次伤害判定的间隔。默认 5。"
         },
         {
             "name": "shake",
             "localizedName": "震动强度",
-            "notes": "屏幕震动强度"
+            "notes": "屏幕震动强度\n\n**Notes**: 激光发射时的屏幕震动强度。默认 0。"
         }
     ]
 }

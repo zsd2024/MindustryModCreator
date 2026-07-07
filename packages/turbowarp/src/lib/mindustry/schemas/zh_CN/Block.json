@@ -154,7 +154,7 @@
         {
             "name": "isDuct",
             "localizedName": "是否为管道",
-            "notes": "若为true，此方块作为管道工作，可从侧面连接装甲管道。\n\nNotes: 控制方块是否为管道类型。"
+            "notes": "若为true，此方块作为管道工作，可从侧面连接装甲管道。\n\n**Notes**: 控制方块是否为管道类型。影响与装甲管道的侧面连接行为。"
         },
         {
             "name": "allowResupply",

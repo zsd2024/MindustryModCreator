@@ -4,62 +4,62 @@
         {
             "name": "colors",
             "localizedName": "颜色数组",
-            "notes": "颜色数组（从外到内）"
+            "notes": "颜色数组（从外到内）\n\n**Notes**: 激光从外层到内层的渐变颜色数组。默认 lancerLaser 色系。"
         },
         {
             "name": "laserEffect",
             "localizedName": "激光发射效果",
-            "notes": "激光发射效果"
+            "notes": "激光发射效果\n\n**Notes**: 发射激光时的特效。默认 Fx.lancerLaserShootSmoke。"
         },
         {
             "name": "length",
             "localizedName": "激光长度",
-            "notes": "激光长度"
+            "notes": "激光长度\n\n**Notes**: 激光的最大长度。默认 160。"
         },
         {
             "name": "width",
             "localizedName": "激光宽度",
-            "notes": "激光宽度"
+            "notes": "激光宽度\n\n**Notes**: 激光束的宽度。默认 15。"
         },
         {
             "name": "lengthFalloff",
             "localizedName": "长度衰减系数",
-            "notes": "长度衰减系数"
+            "notes": "长度衰减系数\n\n**Notes**: 激光宽度随距离衰减的系数。默认 0.5。"
         },
         {
             "name": "sideLength",
             "localizedName": "侧翼长度",
-            "notes": "侧翼长度"
+            "notes": "侧翼长度\n\n**Notes**: 激光侧翼分支的长度。默认 29。"
         },
         {
             "name": "sideWidth",
             "localizedName": "侧翼宽度",
-            "notes": "侧翼宽度"
+            "notes": "侧翼宽度\n\n**Notes**: 激光侧翼分支的宽度。默认 0.7。"
         },
         {
             "name": "sideAngle",
             "localizedName": "侧翼角度",
-            "notes": "侧翼角度"
+            "notes": "侧翼角度\n\n**Notes**: 激光侧翼分支相对主激光的角度。默认 90。"
         },
         {
             "name": "lightningSpacing",
             "localizedName": "闪电间距",
-            "notes": "闪电间距（-1表示禁用）"
+            "notes": "闪电间距（-1表示禁用）\n\n**Notes**: 激光附带闪电的间距。为 -1 时禁用闪电效果。"
         },
         {
             "name": "lightningDelay",
             "localizedName": "闪电延迟",
-            "notes": "闪电延迟"
+            "notes": "闪电延迟\n\n**Notes**: 激光生成后的闪电出现延迟。默认 0.1。"
         },
         {
             "name": "lightningAngleRand",
             "localizedName": "闪电角度随机偏移",
-            "notes": "闪电角度随机偏移"
+            "notes": "闪电角度随机偏移\n\n**Notes**: 闪电分支角度的随机偏移量。"
         },
         {
             "name": "largeHit",
             "localizedName": "是否使用大范围伤害判定",
-            "notes": "是否使用大范围伤害判定"
+            "notes": "是否使用大范围伤害判定\n\n**Notes**: 使用更大的碰撞判定范围。默认 false。"
         }
     ]
 }

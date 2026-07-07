@@ -4,22 +4,22 @@
         {
             "name": "liquid",
             "localizedName": "液体类型",
-            "notes": "液体类型"
+            "notes": "液体类型\n\n**Notes**: 子弹使用的液体类型。必填字段。"
         },
         {
             "name": "puddleSize",
             "localizedName": "水坑大小",
-            "notes": "水坑大小"
+            "notes": "水坑大小\n\n**Notes**: 子弹落地后形成的水坑大小。默认 6。"
         },
         {
             "name": "orbSize",
             "localizedName": "液滴大小",
-            "notes": "液滴大小"
+            "notes": "液滴大小\n\n**Notes**: 子弹液滴的视觉大小。默认 3。"
         },
         {
             "name": "boilTime",
             "localizedName": "蒸发时间",
-            "notes": "蒸发时间（刻数）"
+            "notes": "蒸发时间（刻数）\n\n**Notes**: 水坑蒸发前存在的时间。默认 5 刻。"
         }
     ]
 }

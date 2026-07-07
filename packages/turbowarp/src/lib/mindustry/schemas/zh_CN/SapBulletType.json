@@ -4,42 +4,42 @@
         {
             "name": "length",
             "localizedName": "汲取长度",
-            "notes": "汲取长度"
+            "notes": "汲取长度\n\n**Notes**: 汲取光束的最大长度。默认 100。"
         },
         {
             "name": "lengthRand",
             "localizedName": "长度随机增量",
-            "notes": "汲取长度随机增量"
+            "notes": "汲取长度随机增量\n\n**Notes**: 汲取长度的随机浮动范围。默认 0。"
         },
         {
             "name": "sapStrength",
             "localizedName": "汲取回复比例",
-            "notes": "汲取回复比例"
+            "notes": "汲取回复比例\n\n**Notes**: 汲取伤害转化为生命回复的比例。默认 0.5。"
         },
         {
             "name": "color",
             "localizedName": "光束颜色",
-            "notes": "汲取光束颜色"
+            "notes": "汲取光束颜色\n\n**Notes**: 汲取光束的颜色。默认 Color.white。"
         },
         {
             "name": "width",
             "localizedName": "光束宽度",
-            "notes": "汲取光束宽度"
+            "notes": "汲取光束宽度\n\n**Notes**: 汲取光束的渲染宽度。默认 0.4。"
         },
         {
             "name": "sprite",
             "localizedName": "精灵图名称",
-            "notes": "精灵图名称"
+            "notes": "精灵图名称\n\n**Notes**: 汲取光束使用的精灵图名称。默认 \"laser\"。"
         },
         {
             "name": "laserRegion",
             "localizedName": "激光纹理",
-            "notes": "激光纹理区域"
+            "notes": "激光纹理区域\n\n**Notes**: 激光主体纹理的 TextureRegion。运行时加载。"
         },
         {
             "name": "laserEndRegion",
             "localizedName": "激光末端纹理",
-            "notes": "激光末端纹理区域"
+            "notes": "激光末端纹理区域\n\n**Notes**: 激光末端纹理的 TextureRegion。运行时加载。"
         }
     ]
 }

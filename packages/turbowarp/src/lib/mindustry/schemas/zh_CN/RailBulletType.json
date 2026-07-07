@@ -4,32 +4,32 @@
         {
             "name": "pierceEffect",
             "localizedName": "穿透效果",
-            "notes": "穿透效果"
+            "notes": "穿透效果\n\n**Notes**: 轨道炮穿透目标时产生的特效。默认 Fx.hitBulletSmall。"
         },
         {
             "name": "pointEffect",
             "localizedName": "轨迹点效果",
-            "notes": "轨迹点效果"
+            "notes": "轨迹点效果\n\n**Notes**: 轨道轨迹点上产生的特效。默认 Fx.none。"
         },
         {
             "name": "lineEffect",
             "localizedName": "线条效果",
-            "notes": "线条效果"
+            "notes": "线条效果\n\n**Notes**: 轨道轨迹线产生的特效。默认 Fx.none。"
         },
         {
             "name": "endEffect",
             "localizedName": "末端效果",
-            "notes": "末端效果"
+            "notes": "末端效果\n\n**Notes**: 轨道末端产生的特效。默认 Fx.none。"
         },
         {
             "name": "length",
             "localizedName": "轨道长度",
-            "notes": "轨道长度"
+            "notes": "轨道长度\n\n**Notes**: 轨道炮的最大攻击距离。默认 100。"
         },
         {
             "name": "pointEffectSpace",
             "localizedName": "轨迹点间距",
-            "notes": "轨迹点间距"
+            "notes": "轨迹点间距\n\n**Notes**: 轨道轨迹点之间的间隔距离。默认 20。"
         }
     ]
 }

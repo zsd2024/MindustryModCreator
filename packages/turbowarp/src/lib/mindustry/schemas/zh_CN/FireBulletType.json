@@ -4,52 +4,52 @@
         {
             "name": "colorFrom",
             "localizedName": "起始颜色",
-            "notes": "起始颜色"
+            "notes": "起始颜色\n\n**Notes**: 火焰粒子的起始颜色。默认 Pal.lightFlame。"
         },
         {
             "name": "colorMid",
             "localizedName": "中间颜色",
-            "notes": "中间颜色"
+            "notes": "中间颜色\n\n**Notes**: 火焰粒子的中间颜色。默认 Pal.darkFlame。"
         },
         {
             "name": "colorTo",
             "localizedName": "结束颜色",
-            "notes": "结束颜色"
+            "notes": "结束颜色\n\n**Notes**: 火焰粒子结束时的颜色。默认 Color.gray。"
         },
         {
             "name": "radius",
             "localizedName": "火球半径",
-            "notes": "火球半径"
+            "notes": "火球半径\n\n**Notes**: 火焰粒子的基础半径。默认 3。"
         },
         {
             "name": "velMin",
             "localizedName": "最小速度",
-            "notes": "最小速度"
+            "notes": "最小速度\n\n**Notes**: 火焰粒子速度的最小值。默认 0.6。"
         },
         {
             "name": "velMax",
             "localizedName": "最大速度",
-            "notes": "最大速度"
+            "notes": "最大速度\n\n**Notes**: 火焰粒子速度的最大值。默认 2.6。"
         },
         {
             "name": "fireTrailChance",
             "localizedName": "火焰拖尾生成概率",
-            "notes": "火焰拖尾生成概率"
+            "notes": "火焰拖尾生成概率\n\n**Notes**: 每刻生成火焰拖尾效果的概率。默认 0.04。"
         },
         {
             "name": "trailEffect2",
             "localizedName": "第二种拖尾效果",
-            "notes": "第二种拖尾效果"
+            "notes": "第二种拖尾效果\n\n**Notes**: 额外的拖尾效果，与默认拖尾同时生成。默认 Fx.ballfire。"
         },
         {
             "name": "fireEffectChance",
             "localizedName": "火焰效果概率",
-            "notes": "火焰效果概率"
+            "notes": "火焰效果概率\n\n**Notes**: 第一种火焰特效的生成概率。默认 0.1。"
         },
         {
             "name": "fireEffectChance2",
             "localizedName": "第二种火焰效果概率",
-            "notes": "第二种火焰效果概率"
+            "notes": "第二种火焰效果概率\n\n**Notes**: 第二种火焰特效的生成概率。默认 0.1。"
         }
     ]
 }

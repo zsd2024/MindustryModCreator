@@ -4,27 +4,27 @@
         {
             "name": "length",
             "localizedName": "光束长度",
-            "notes": "光束长度"
+            "notes": "光束长度\n\n**Notes**: 持续光束的最大长度。默认 220。"
         },
         {
             "name": "shake",
             "localizedName": "屏幕震动",
-            "notes": "屏幕震动强度"
+            "notes": "屏幕震动强度\n\n**Notes**: 光束发射时的屏幕震动强度。默认 0。"
         },
         {
             "name": "damageInterval",
             "localizedName": "伤害间隔",
-            "notes": "伤害判定间隔（刻数）"
+            "notes": "伤害判定间隔（刻数）\n\n**Notes**: 持续光束每次伤害判定的间隔。默认 5。"
         },
         {
             "name": "largeHit",
             "localizedName": "大范围伤害",
-            "notes": "是否使用大范围伤害判定"
+            "notes": "是否使用大范围伤害判定\n\n**Notes**: 使用更大的碰撞判定范围。默认 false。"
         },
         {
             "name": "continuous",
             "localizedName": "持续光束",
-            "notes": "是否为持续光束"
+            "notes": "是否为持续光束\n\n**Notes**: 控制子弹是否为持续光束类型。默认 true。"
         },
         {
             "name": "timescaleDamage",

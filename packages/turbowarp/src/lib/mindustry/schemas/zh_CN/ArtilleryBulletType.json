@@ -4,12 +4,12 @@
         {
             "name": "trailMult",
             "localizedName": "拖尾间隔倍数",
-            "notes": "拖尾效果间隔倍数"
+            "notes": "拖尾效果间隔倍数\n\n**Notes**: 拖尾效果生成间隔的倍率。默认为 1.0，越大拖尾越稀疏。"
         },
         {
             "name": "trailSize",
             "localizedName": "拖尾大小因子",
-            "notes": "拖尾效果大小因子"
+            "notes": "拖尾效果大小因子\n\n**Notes**: 拖尾效果大小的倍率。默认为 4.0，越大拖尾越明显。"
         }
     ]
 }

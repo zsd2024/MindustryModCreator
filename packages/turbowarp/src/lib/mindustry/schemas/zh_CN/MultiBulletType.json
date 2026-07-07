@@ -4,7 +4,7 @@
         {
             "name": "bullets",
             "localizedName": "子弹数组",
-            "notes": "子子弹类型数组"
+            "notes": "子子弹类型数组\n\n**Notes**: 包含多个子子弹类型的数组；发射时同时创建所有子子弹。"
         },
         {
             "name": "repeat",

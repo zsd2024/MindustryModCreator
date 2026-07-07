@@ -4,12 +4,12 @@
         {
             "name": "width",
             "localizedName": "激光线条宽度",
-            "notes": "激光线条宽度"
+            "notes": "激光线条宽度\n\n**Notes**: 激光弹的渲染宽度。默认 2.0。"
         },
         {
             "name": "height",
             "localizedName": "激光线条长度",
-            "notes": "激光线条长度"
+            "notes": "激光线条长度\n\n**Notes**: 激光弹的渲染长度。默认 7.0。"
         }
     ]
 }
