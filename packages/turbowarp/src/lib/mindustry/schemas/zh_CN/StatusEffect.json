@@ -88,8 +88,8 @@
         },
         {
             "name": "show",
-            "localizedName": "显示在图鉴",
-            "notes": "是否在数据库中显示该效果。\n\n**Notes**: 控制效果是否在图鉴中显示。"
+            "localizedName": "在核心数据库中显示",
+            "notes": "是否在数据库中显示该效果。\n\n**Notes**: 控制效果是否在核心数据库中显示。"
         },
         {
             "name": "color",
