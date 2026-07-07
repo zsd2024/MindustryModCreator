@@ -25,8 +25,17 @@ class MindustryJsonEditor extends React.Component {
     super(props);
     this.state = {
       data: this.initData(props.contentType, props.initialData || {}),
-      collapsedSections: new Set(),
+      collapsedSections: this.initCollapsedSections(props.contentType),
     };
+  }
+
+  initCollapsedSections(contentType) {
+    if (!contentType) return new Set();
+    const fields = resolveFields(contentType);
+    const sourceTypes = [...new Set(fields.map(f => f.sourceType).filter(Boolean))];
+    const collapsed = new Set(sourceTypes);
+    collapsed.delete(contentType);
+    return collapsed;
   }
 
   initData(contentType, initial) {
@@ -244,7 +253,12 @@ class MindustryJsonEditor extends React.Component {
     }
 
     const sections = {};
+    let researchField = null;
     for (const f of fields) {
+      if (f.name === 'research') {
+        researchField = f;
+        continue;
+      }
       if (!sections[f.sourceType]) sections[f.sourceType] = [];
       sections[f.sourceType].push(f);
     }
@@ -256,6 +270,7 @@ class MindustryJsonEditor extends React.Component {
         </div>
         <div className={styles.sectionsContainer}>
           {Object.keys(sections).map(st => this.renderSection(st, sections[st]))}
+          {researchField && this.renderSection('research', [researchField])}
         </div>
       </div>
     );
