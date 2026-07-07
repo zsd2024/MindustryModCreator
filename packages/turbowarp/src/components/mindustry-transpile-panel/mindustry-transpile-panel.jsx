@@ -40,7 +40,13 @@ class TranspilePanel extends React.Component {
                 }
                 code = hjson.stringify(out, {bracesSameLine: false, emitRootBraces: false});
             } else if (selectedAsset.kind === 'content' && formData && Object.keys(formData).length > 0) {
-                const changed = diffData(selectedAsset.contentType, formData);
+                let changed = diffData(selectedAsset.contentType, formData);
+                const needsType = ['Block', 'UnitType', 'ErekirUnitType', 'MechUnitType',
+                    'PayloadUnitType', 'TankUnitType', 'LegsUnitType', 'NavalUnitType'];
+                if (needsType.includes(selectedAsset.contentType)) {
+                    if (!changed) changed = {type: selectedAsset.contentType};
+                    else changed.type = selectedAsset.contentType;
+                }
                 if (changed) {
                     const remapped = {};
                     for (const k of Object.keys(changed)) {

@@ -138,6 +138,28 @@ class MindustryJsonEditor extends React.Component {
         );
       }
 
+      if (field.name === 'research' && this.props.assets) {
+        const suggestions = this.props.assets
+          .filter(a => a.kind === 'content' && a.id !== this.props.assetId)
+          .map(a => a.name)
+          .filter(Boolean);
+        const listId = `research-suggest-${field.name}`;
+        return (
+          <>
+            <input
+              type="text"
+              value={value}
+              list={listId}
+              onChange={e => this.handleChange(field.name, e.target.value)}
+              className={styles.textInput}
+            />
+            <datalist id={listId}>
+              {suggestions.map(s => <option key={s} value={s} />)}
+            </datalist>
+          </>
+        );
+      }
+
       return (
         <input
           type="text"
@@ -253,6 +275,8 @@ MindustryJsonEditor.propTypes = {
   contentType: PropTypes.string,
   initialData: PropTypes.object,
   onChange: PropTypes.func,
+  assets: PropTypes.array,
+  assetId: PropTypes.string,
 };
 
 MindustryJsonEditor.defaultProps = {

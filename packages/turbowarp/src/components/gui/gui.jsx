@@ -459,6 +459,8 @@ const GUIComponent = props => {
                                                 contentType={selectedAsset.contentType}
                                                 initialData={selectedContentData}
                                                 onChange={onContentDataChange}
+                                                assets={assets}
+                                                assetId={selectedAsset.id}
                                             />
                                         </Box>
                                     ) : selectedAsset && selectedAsset.kind === 'bundle' ? (

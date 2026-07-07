@@ -2,11 +2,6 @@
     "localizedName": "方块基类",
     "fields": [
         {
-            "name": "type",
-            "localizedName": "Java类名",
-            "notes": "方块使用的Java类名。决定了方块的行为类型。\n\n**Notes**: 例如 GenericCrafter（普通工厂）、ItemTurret（物品炮塔）、Battery（电池）、Drill（钻机）、Wall（墙）、Floor（地板）。"
-        },
-        {
             "name": "hasItems",
             "localizedName": "拥有物品模块",
             "notes": "若为true，建筑拥有ItemModule。\n\n**Notes**: 该字段控制是否启用物品模块；当设为true时，建筑会拥有ItemModule实例来管理物品存储和交互。"

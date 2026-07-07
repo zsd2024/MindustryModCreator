@@ -112,9 +112,18 @@ const exportMod = function (assets, folders, modConfig, assetFormData) {
     const javaAssets = assets.filter(a => a.kind === 'java');
     const contentAssets = assets.filter(a => a.kind === 'content');
 
+    const needsType = new Set([
+        'Block', 'UnitType', 'ErekirUnitType', 'MechUnitType',
+        'PayloadUnitType', 'TankUnitType', 'LegsUnitType', 'NavalUnitType'
+    ]);
+
     for (const asset of contentAssets) {
         const folder = getContentFolder(asset.contentType);
-        const data = diffData(asset.contentType, assetFormData[asset.id]);
+        let data = diffData(asset.contentType, assetFormData[asset.id]);
+        if (needsType.has(asset.contentType)) {
+            if (!data) data = {type: asset.contentType};
+            else data.type = asset.contentType;
+        }
         if (data && Object.keys(data).length > 0) {
             const hjsonContent = buildContentHjson(data);
             zip.file(`content/${folder}/${asset.name}.hjson`, hjsonContent);
