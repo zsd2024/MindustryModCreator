@@ -2,6 +2,7 @@ import JSZip from '@turbowarp/jszip';
 // eslint-disable-next-line import/no-unresolved
 import hjson from 'hjson';
 import downloadBlob from '../../lib/download-blob';
+import {diffData} from './resolve-schema';
 
 const contentTypeToFolder = {
     Item: 'items',
@@ -109,7 +110,7 @@ const exportMod = function (assets, folders, modConfig, assetFormData) {
 
     for (const asset of contentAssets) {
         const folder = getContentFolder(asset.contentType);
-        const data = assetFormData[asset.id];
+        const data = diffData(asset.contentType, assetFormData[asset.id]);
         if (data && Object.keys(data).length > 0) {
             const hjsonContent = buildContentHjson(data);
             zip.file(`content/${folder}/${asset.name}.hjson`, hjsonContent);

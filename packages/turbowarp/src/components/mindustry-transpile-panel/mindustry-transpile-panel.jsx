@@ -1,59 +1,9 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import {resolveFields} from '../../lib/mindustry/resolve-schema';
+import {diffData} from '../../lib/mindustry/resolve-schema';
 // eslint-disable-next-line import/no-unresolved
 import hjson from 'hjson';
 import styles from './mindustry-transpile-panel.css';
-
-/**
- * @param {object} field - field descriptor
- * @returns {boolean|number|string} parsed default value
- */
-const parseDefault = function (field) {
-    if (field.defaultValue === void 0 || field.defaultValue === '') {
-        if (field.type === 'boolean') return false;
-        if (field.type === 'int' || field.type === 'float') return 0;
-        return '';
-    }
-    if (field.type === 'boolean') return field.defaultValue === 'true';
-    if (field.type === 'int') return parseInt(field.defaultValue, 10) || 0;
-    if (field.type === 'float') return parseFloat(field.defaultValue) || 0;
-    return field.defaultValue;
-};
-
-/**
- * @param {string} contentType - content type name
- * @returns {object} default values map
- */
-const computeDefaults = function (contentType) {
-    const fields = resolveFields(contentType);
-    const defs = {};
-    for (const f of fields) {
-        defs[f.name] = parseDefault(f);
-    }
-    return defs;
-};
-
-/**
- * @param {string} contentType - content type name
- * @param {object} currentData - current form data
- * @returns {object|null} diff data or null
- */
-const diffData = function (contentType, currentData) {
-    if (!currentData || Object.keys(currentData).length === 0) return null;
-    const defaults = computeDefaults(contentType);
-    const result = {};
-    for (const key of Object.keys(currentData)) {
-        const dv = defaults[key];
-        if (dv === void 0) {
-            // field not in schema — still include it
-            result[key] = currentData[key];
-        } else if (hjson.stringify(currentData[key]) !== hjson.stringify(dv)) {
-            result[key] = currentData[key];
-        }
-    }
-    return Object.keys(result).length > 0 ? result : null;
-};
 
 const PLACEHOLDER_TEXT = '添加并选中资源后显示转译结果';
 

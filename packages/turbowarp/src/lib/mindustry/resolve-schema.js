@@ -1,3 +1,6 @@
+// eslint-disable-next-line import/no-unresolved
+import hjson from 'hjson';
+
 const schemaCache = {};
 const zhCache = {};
 const schemasContext = require.context('./schemas', false, /\.json$/);
@@ -74,6 +77,42 @@ const resolveFields = function (type, visited = new Set()) {
     return [...parentFields, ...ownFields];
 };
 
+const parseDefault = function (field) {
+    if (field.defaultValue === void 0 || field.defaultValue === '') {
+        if (field.type === 'boolean') return false;
+        if (field.type === 'int' || field.type === 'float') return 0;
+        return '';
+    }
+    if (field.type === 'boolean') return field.defaultValue === 'true';
+    if (field.type === 'int') return parseInt(field.defaultValue, 10) || 0;
+    if (field.type === 'float') return parseFloat(field.defaultValue) || 0;
+    return field.defaultValue;
+};
+
+const computeDefaults = function (contentType) {
+    const fields = resolveFields(contentType);
+    const defs = {};
+    for (const f of fields) {
+        defs[f.name] = parseDefault(f);
+    }
+    return defs;
+};
+
+const diffData = function (contentType, currentData) {
+    if (!currentData || Object.keys(currentData).length === 0) return null;
+    const defaults = computeDefaults(contentType);
+    const result = {};
+    for (const key of Object.keys(currentData)) {
+        const dv = defaults[key];
+        if (dv === void 0) {
+            result[key] = currentData[key];
+        } else if (hjson.stringify(currentData[key]) !== hjson.stringify(dv)) {
+            result[key] = currentData[key];
+        }
+    }
+    return Object.keys(result).length > 0 ? result : null;
+};
+
 const getAllTypes = function () {
     return schemasContext.keys()
         .map(k => k.replace('./', '').replace('.json', ''))
@@ -87,5 +126,8 @@ export {
     getZhDoc,
     getFieldLabel,
     getFieldDoc,
-    getAllTypes
+    getAllTypes,
+    parseDefault,
+    computeDefaults,
+    diffData
 };
