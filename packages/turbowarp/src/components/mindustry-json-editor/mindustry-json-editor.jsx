@@ -91,88 +91,13 @@ class MindustryJsonEditor extends React.Component {
     const friendlyType = FRIENDLY_TYPE_NAMES[field.type] || '文本';
 
     const renderControl = () => {
-      if (field.type === 'boolean') {
-        return (
-          <label className={styles.toggleSwitch}>
-            <input
-              type="checkbox"
-              checked={!!value}
-              onChange={e => this.handleChange(field.name, e.target.checked)}
-            />
-            <span className={styles.toggleSlider} />
-          </label>
-        );
+      if (field.type === 'object' && field.fields) {
+        return this.renderObjectField(field, value);
       }
 
-      if (field.type === 'Color') {
-        const hex = String(value || '000000ff');
-        return (
-          <div className={styles.colorGroup}>
-            <span
-              className={styles.colorSwatch}
-              style={{backgroundColor: `#${hex.slice(0, 6)}`}}
-            />
-            <input
-              type="color"
-              value={`#${hex.replace('#', '').slice(0, 6)}`}
-              onChange={e => {
-                const c = e.target.value.replace('#', '');
-                this.handleChange(field.name, c + 'ff');
-              }}
-              className={styles.colorPicker}
-            />
-          </div>
-        );
-      }
-
-      if (field.type === 'int' || field.type === 'float') {
-        if (field.name === 'size') {
-          return this.renderSizeSelector(value, field);
-        }
-        return (
-          <input
-            type="number"
-            value={value}
-            onChange={e => {
-              const v = field.type === 'int' ? parseInt(e.target.value, 10) || 0 : parseFloat(e.target.value) || 0;
-              this.handleChange(field.name, v);
-            }}
-            step={field.type === 'float' ? '0.1' : '1'}
-            className={styles.numInput}
-          />
-        );
-      }
-
-      if (field.name === 'research' && this.props.assets) {
-        const suggestions = this.props.assets
-          .filter(a => a.kind === 'content' && a.id !== this.props.assetId)
-          .map(a => a.name)
-          .filter(Boolean);
-        const listId = `research-suggest-${field.name}`;
-        return (
-          <>
-            <input
-              type="text"
-              value={value}
-              list={listId}
-              onChange={e => this.handleChange(field.name, e.target.value)}
-              className={styles.textInput}
-            />
-            <datalist id={listId}>
-              {suggestions.map(s => <option key={s} value={s} />)}
-            </datalist>
-          </>
-        );
-      }
-
-      return (
-        <input
-          type="text"
-          value={value}
-          onChange={e => this.handleChange(field.name, e.target.value)}
-          className={styles.textInput}
-        />
-      );
+      return this.renderControlInline(field, value, (newVal) => {
+        this.handleChange(field.name, newVal);
+      });
     };
 
     return (
@@ -188,7 +113,109 @@ class MindustryJsonEditor extends React.Component {
     );
   }
 
-  renderSizeSelector(value, field) {
+  renderObjectField(field, value) {
+    const currentValue = value || {};
+    const subFields = field.fields || [];
+    return (
+      <div className={styles.nestedObject}>
+        {subFields.map(subF => {
+          const subValue = currentValue[subF.name] !== undefined
+            ? currentValue[subF.name]
+            : this.parseDefault(subF);
+          return (
+            <div className={styles.nestedFieldRow} key={subF.name}>
+              <span className={styles.nestedFieldLabel}>
+                {getFieldLabel(field.sourceType, subF.name) || subF.localizedName || subF.name}
+              </span>
+              <div className={styles.nestedFieldControl}>
+                {this.renderControlInline(subF, subValue, (newVal) => {
+                  const updated = { ...currentValue, [subF.name]: newVal };
+                  this.handleChange(field.name, updated);
+                })}
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    );
+  }
+
+  renderControlInline(field, value, onChange) {
+    if (field.type === 'boolean') {
+      return (
+        <label className={styles.toggleSwitch}>
+          <input type="checkbox" checked={!!value} onChange={e => onChange(e.target.checked)} />
+          <span className={styles.toggleSlider} />
+        </label>
+      );
+    }
+
+    if (field.type === 'Color') {
+      const hex = String(value || '000000ff');
+      return (
+        <div className={styles.colorGroup}>
+          <span className={styles.colorSwatch} style={{backgroundColor: `#${hex.slice(0, 6)}`}} />
+          <input
+            type="color"
+            value={`#${hex.replace('#', '').slice(0, 6)}`}
+            onChange={e => onChange(e.target.value.replace('#', '') + 'ff')}
+            className={styles.colorPicker}
+          />
+        </div>
+      );
+    }
+
+    if (field.type === 'int' || field.type === 'float') {
+      if (field.name === 'size') {
+        return this.renderSizeSelector(value, field, onChange);
+      }
+      return (
+        <input
+          type="number"
+          value={value}
+          onChange={e => {
+            const v = field.type === 'int' ? parseInt(e.target.value, 10) || 0 : parseFloat(e.target.value) || 0;
+            onChange(v);
+          }}
+          step={field.type === 'float' ? '0.1' : '1'}
+          className={styles.numInput}
+        />
+      );
+    }
+
+    if (field.name === 'research' && this.props.assets) {
+      const suggestions = this.props.assets
+        .filter(a => a.kind === 'content' && a.id !== this.props.assetId)
+        .map(a => a.name)
+        .filter(Boolean);
+      const listId = `research-suggest-${field.name}`;
+      return (
+        <>
+          <input
+            type="text"
+            value={value}
+            list={listId}
+            onChange={e => onChange(e.target.value)}
+            className={styles.textInput}
+          />
+          <datalist id={listId}>
+            {suggestions.map(s => <option key={s} value={s} />)}
+          </datalist>
+        </>
+      );
+    }
+
+    return (
+      <input
+        type="text"
+        value={value}
+        onChange={e => onChange(e.target.value)}
+        className={styles.textInput}
+      />
+    );
+  }
+
+  renderSizeSelector(value, field, onChange) {
     const sizes = [
       {label: '1x1', value: 1},
       {label: '2x2', value: 2},
@@ -196,13 +223,14 @@ class MindustryJsonEditor extends React.Component {
       {label: '4x4', value: 4},
       {label: '5x5', value: 5},
     ];
+    const handleSizeChange = onChange || ((v) => this.handleChange(field.name, v));
     return (
       <div className={styles.sizeGrid}>
         {sizes.map(s => (
           <button
             key={s.value}
             className={`${styles.sizeBtn} ${value === s.value ? styles.sizeBtnActive : ''}`}
-            onClick={() => this.handleChange(field.name, s.value)}
+            onClick={() => handleSizeChange(s.value)}
           >
             {s.label}
           </button>
