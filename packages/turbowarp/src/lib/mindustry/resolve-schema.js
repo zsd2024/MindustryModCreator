@@ -2,8 +2,10 @@
 import hjson from 'hjson';
 
 const schemaCache = {};
+const curatedSchemaCache = {};
 const zhCache = {};
 const schemasContext = require.context('./schemas', false, /\.json$/);
+const curatedSchemasContext = require.context('./schemas/curated', true, /\.json$/);
 const zhContext = require.context('./schemas/zh_CN', false, /\.json$/);
 
 const loadSchema = function (type) {
@@ -16,6 +18,20 @@ const loadSchema = function (type) {
         }
     } catch (e) {
         console.warn(`[resolve-schema] Failed to load schema for '${type}':`, e.message);
+    }
+    return null;
+};
+
+const loadCuratedSchema = function (type) {
+    if (curatedSchemaCache[type]) return curatedSchemaCache[type];
+    try {
+        const key = `./${type}.json`;
+        if (curatedSchemasContext.keys().includes(key)) {
+            curatedSchemaCache[type] = curatedSchemasContext(key);
+            return curatedSchemaCache[type];
+        }
+    } catch (e) {
+        // ignore
     }
     return null;
 };
@@ -58,15 +74,18 @@ const getFieldDoc = function (type, fieldName) {
     return field?.notes || '';
 };
 
-const resolveFields = function (type, visited = new Set()) {
+const resolveFields = function (type, mode = 'curated', visited = new Set()) {
     if (!type || visited.has(type)) return [];
     visited.add(type);
 
-    const schema = loadSchema(type);
+    const schema = mode === 'curated'
+        ? (loadCuratedSchema(type) || loadSchema(type))
+        : loadSchema(type);
+
     if (!schema) return [];
 
     const parentFields = schema.parentType ?
-        resolveFields(schema.parentType, visited) :
+        resolveFields(schema.parentType, mode, visited) :
         [];
 
     const ownFields = (schema.fields || []).map(f => ({
@@ -90,7 +109,7 @@ const parseDefault = function (field) {
 };
 
 const computeDefaults = function (contentType) {
-    const fields = resolveFields(contentType);
+    const fields = resolveFields(contentType, 'full');
     const defs = {};
     for (const f of fields) {
         defs[f.name] = parseDefault(f);
@@ -121,6 +140,7 @@ const getAllTypes = function () {
 
 export {
     loadSchema,
+    loadCuratedSchema,
     resolveFields,
     getZhLabel,
     getZhDoc,
