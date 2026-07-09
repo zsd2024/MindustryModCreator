@@ -20,6 +20,12 @@ const FRIENDLY_TYPE_NAMES = {
   TextureRegion: '纹理',
 };
 
+const REFERENCE_TYPES = new Set([
+  'Item', 'Liquid', 'Block', 'UnitType', 'BulletType',
+  'StatusEffect', 'Weather', 'Planet', 'SectorPreset',
+  'Sound', 'TextureRegion', 'Research',
+]);
+
 class MindustryJsonEditor extends React.Component {
   constructor(props) {
     super(props);
@@ -261,26 +267,8 @@ class MindustryJsonEditor extends React.Component {
       );
     }
 
-    if (field.name === 'research' && this.props.assets) {
-      const suggestions = this.props.assets
-        .filter(a => a.kind === 'content' && a.id !== this.props.assetId)
-        .map(a => a.name)
-        .filter(Boolean);
-      const listId = `research-suggest-${field.name}`;
-      return (
-        <>
-          <input
-            type="text"
-            value={value}
-            list={listId}
-            onChange={e => onChange(e.target.value)}
-            className={styles.textInput}
-          />
-          <datalist id={listId}>
-            {suggestions.map(s => <option key={s} value={s} />)}
-          </datalist>
-        </>
-      );
+    if (REFERENCE_TYPES.has(field.type)) {
+      return this.renderReferenceInput(field, value, onChange);
     }
 
     return (
@@ -290,6 +278,28 @@ class MindustryJsonEditor extends React.Component {
         onChange={e => onChange(e.target.value)}
         className={styles.textInput}
       />
+    );
+  }
+
+  renderReferenceInput(field, value, onChange) {
+    const { assets } = this.props;
+    const suggestions = assets
+      ? assets.map(a => a.name).filter(Boolean)
+      : [];
+    const listId = `ref-${field.name}-${Math.random().toString(36).slice(2, 8)}`;
+    return (
+      <>
+        <input
+          type="text"
+          value={value || ''}
+          list={listId}
+          onChange={e => onChange(e.target.value)}
+          placeholder={`输入${field.localizedName || field.name}名称...`}
+        />
+        <datalist id={listId}>
+          {suggestions.map(s => <option key={s} value={s} />)}
+        </datalist>
+      </>
     );
   }
 
