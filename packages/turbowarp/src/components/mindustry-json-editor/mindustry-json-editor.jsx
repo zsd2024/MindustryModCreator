@@ -95,6 +95,10 @@ class MindustryJsonEditor extends React.Component {
         return this.renderObjectField(field, value);
       }
 
+      if (field.type === 'array') {
+        return this.renderArrayField(field, value);
+      }
+
       return this.renderControlInline(field, value, (newVal) => {
         this.handleChange(field.name, newVal);
       });
@@ -105,10 +109,84 @@ class MindustryJsonEditor extends React.Component {
         <div className={styles.fieldHeader}>
           <span className={styles.fieldLabel}>{label}</span>
           {hint && <span className={styles.fieldHint}>{renderMarkdown(hint)}</span>}
+          {field.type === 'array' && Array.isArray(value) && (
+            <span className={styles.fieldCount}>{value.length} 项</span>
+          )}
         </div>
         <div className={styles.fieldControl}>
           {renderControl()}
         </div>
+      </div>
+    );
+  }
+
+  renderArrayField(field, value) {
+    const items = Array.isArray(value) ? value : [];
+    const itemDef = field.items;
+    const subFields = itemDef && itemDef.fields;
+
+    const addItem = () => {
+      const defaults = {};
+      if (subFields) {
+        for (const sf of subFields) {
+          if (sf.defaultValue !== undefined) {
+            defaults[sf.name] = this.parseDefault(sf);
+          }
+        }
+      }
+      const newItems = [...items, defaults];
+      this.handleChange(field.name, newItems);
+    };
+
+    const removeItem = (idx) => {
+      const newItems = items.filter((_, i) => i !== idx);
+      this.handleChange(field.name, newItems);
+    };
+
+    const updateItem = (idx, name, val) => {
+      const newItems = items.map((item, i) =>
+        i === idx ? { ...item, [name]: val } : item
+      );
+      this.handleChange(field.name, newItems);
+    };
+
+    return (
+      <div className={styles.arrayField}>
+        {items.length === 0 && (
+          <div className={styles.arrayEmpty}>暂未添加</div>
+        )}
+        {items.map((item, idx) => (
+          <div className={styles.arrayItem} key={idx}>
+            <div className={styles.arrayItemHeader}>
+              <span className={styles.arrayItemIndex}>#{idx + 1}</span>
+              <button
+                className={styles.arrayRemoveBtn}
+                onClick={() => removeItem(idx)}
+                title="删除此项"
+              >✕</button>
+            </div>
+            <div className={styles.arrayItemBody}>
+              {(subFields || []).map(sf => {
+                const sfValue = item[sf.name] !== undefined
+                  ? item[sf.name]
+                  : this.parseDefault(sf);
+                return (
+                  <div className={styles.nestedFieldRow} key={sf.name}>
+                    <span className={styles.nestedFieldLabel}>
+                      {getFieldLabel(field.sourceType, sf.name) || sf.localizedName || sf.name}
+                    </span>
+                    <div className={styles.nestedFieldControl}>
+                      {this.renderControlInline(sf, sfValue, (val) => updateItem(idx, sf.name, val))}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        ))}
+        <button className={styles.arrayAddBtn} onClick={addItem}>
+          + 添加
+        </button>
       </div>
     );
   }

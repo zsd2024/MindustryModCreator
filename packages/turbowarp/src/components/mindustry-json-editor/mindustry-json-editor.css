@@ -154,6 +154,14 @@
   font-size: 0.78rem;
 }
 
+.fieldCount {
+  font-size: 0.75rem;
+  color: $text-primary;
+  opacity: 0.4;
+  margin-left: 8px;
+  white-space: nowrap;
+}
+
 .fieldControl {
   display: flex;
   align-items: center;
@@ -316,6 +324,83 @@
 
 .nestedFieldControl {
   flex: 1;
+}
+
+.arrayField {
+  width: 100%;
+}
+
+.arrayEmpty {
+  color: $text-primary;
+  opacity: 0.4;
+  font-size: 0.85rem;
+  padding: 12px;
+  text-align: center;
+  border: 1px dashed $ui-tertiary;
+  border-radius: 6px;
+  margin: 4px 0;
+}
+
+.arrayItem {
+  border: 1px solid $ui-tertiary;
+  border-radius: 6px;
+  margin: 6px 0;
+  padding: 10px;
+  background: $ui-secondary;
+}
+
+.arrayItemHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.arrayItemIndex {
+  font-size: 0.75rem;
+  color: $text-primary;
+  opacity: 0.5;
+  font-weight: 600;
+}
+
+.arrayRemoveBtn {
+  background: none;
+  border: none;
+  color: #ff5555;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 0 4px;
+  line-height: 1;
+  opacity: 0.7;
+  transition: opacity 0.15s;
+}
+
+.arrayRemoveBtn:hover {
+  opacity: 1;
+}
+
+.arrayItemBody {
+  /* container for nested fields */
+}
+
+.arrayAddBtn {
+  width: 100%;
+  padding: 8px;
+  margin-top: 4px;
+  background: $ui-primary;
+  border: 1px dashed $ui-tertiary;
+  border-radius: 6px;
+  color: $text-primary;
+  opacity: 0.6;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: all 0.15s;
+}
+
+.arrayAddBtn:hover {
+  opacity: 1;
+  border-color: $motion-primary;
+  background: $ui-secondary;
 }
 
 .emptyState {
