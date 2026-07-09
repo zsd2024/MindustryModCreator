@@ -26,12 +26,13 @@ class MindustryJsonEditor extends React.Component {
     this.state = {
       data: this.initData(props.contentType, props.initialData || {}),
       collapsedSections: this.initCollapsedSections(props.contentType),
+      advancedMode: false,
     };
   }
 
   initCollapsedSections(contentType) {
     if (!contentType) return new Set();
-    const fields = resolveFields(contentType);
+    const fields = resolveFields(contentType, 'full');
     const sourceTypes = [...new Set(fields.map(f => f.sourceType).filter(Boolean))];
     const collapsed = new Set(sourceTypes);
     collapsed.delete(contentType);
@@ -40,7 +41,7 @@ class MindustryJsonEditor extends React.Component {
 
   initData(contentType, initial) {
     if (!contentType) return {};
-    const fields = resolveFields(contentType);
+    const fields = resolveFields(contentType, 'full');
     const data = {...initial};
     for (const f of fields) {
       if (data[f.name] === undefined || data[f.name] === null) {
@@ -76,6 +77,10 @@ class MindustryJsonEditor extends React.Component {
       collapsed.has(key) ? collapsed.delete(key) : collapsed.add(key);
       return {collapsedSections: collapsed};
     });
+  }
+
+  toggleAdvancedMode() {
+    this.setState(prev => ({ advancedMode: !prev.advancedMode }));
   }
 
   renderField(field) {
@@ -242,7 +247,8 @@ class MindustryJsonEditor extends React.Component {
       );
     }
 
-    const fields = resolveFields(contentType);
+    const mode = this.state.advancedMode ? 'full' : 'curated';
+    const fields = resolveFields(contentType, mode);
     if (fields.length === 0) {
       return (
         <div className={styles.emptyState}>
@@ -267,6 +273,17 @@ class MindustryJsonEditor extends React.Component {
       <div className={styles.editor}>
         <div className={styles.editorHeader}>
           <span className={styles.editorTitle}>{getZhLabel(contentType) || contentType}</span>
+          <label className={styles.advancedToggle}>
+            <span className={styles.advancedToggleLabel}>⚡ 高级模式</span>
+            <span className={styles.toggleSwitch}>
+              <input
+                type="checkbox"
+                checked={this.state.advancedMode}
+                onChange={() => this.toggleAdvancedMode()}
+              />
+              <span className={styles.toggleSlider} />
+            </span>
+          </label>
         </div>
         <div className={styles.sectionsContainer}>
           {Object.keys(sections).map(st => this.renderSection(st, sections[st]))}
