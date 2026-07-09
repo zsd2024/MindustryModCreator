@@ -37,5 +37,8 @@
   "engines": {
     "node": ">=24.0.0",
     "bun": ">=1.0.0"
+  },
+  "dependencies": {
+    "hjson": "^3.2.2"
   }
 }
