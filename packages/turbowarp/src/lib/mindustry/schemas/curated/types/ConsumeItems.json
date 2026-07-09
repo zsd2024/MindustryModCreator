@@ -1,0 +1,14 @@
+{
+    "type": "object",
+    "fields": [
+        {
+            "name": "item",
+            "type": "Item"
+        },
+        {
+            "name": "amount",
+            "type": "int",
+            "defaultValue": "1"
+        }
+    ]
+}

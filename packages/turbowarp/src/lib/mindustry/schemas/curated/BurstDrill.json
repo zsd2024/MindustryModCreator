@@ -1,0 +1,150 @@
+{
+    "localizedName": "BurstDrill",
+    "parentType": "Drill",
+    "fields": [
+        {
+            "name": "size",
+            "type": "int"
+        },
+        {
+            "name": "drillTime",
+            "type": "int"
+        },
+        {
+            "name": "itemCapacity",
+            "type": "int"
+        },
+        {
+            "name": "tier",
+            "type": "int"
+        },
+        {
+            "name": "shake",
+            "type": "float"
+        },
+        {
+            "name": "consumes",
+            "type": "object",
+            "fields": [
+                {
+                    "name": "liquid",
+                    "type": "string"
+                },
+                {
+                    "name": "liquids",
+                    "type": "string"
+                },
+                {
+                    "name": "power",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "category",
+            "type": "string"
+        },
+        {
+            "name": "requirements",
+            "type": "array"
+        },
+        {
+            "name": "arrows",
+            "type": "float"
+        },
+        {
+            "name": "drillEffect",
+            "type": "array"
+        },
+        {
+            "name": "invertedTime",
+            "type": "float"
+        },
+        {
+            "name": "drillSound",
+            "type": "string"
+        },
+        {
+            "name": "drillSoundVolume",
+            "type": "float"
+        },
+        {
+            "name": "liquidCapacity",
+            "type": "int"
+        },
+        {
+            "name": "squareSprite",
+            "type": "boolean"
+        },
+        {
+            "name": "arrowColor",
+            "type": "string"
+        },
+        {
+            "name": "glowColor",
+            "type": "string"
+        },
+        {
+            "name": "blockedItem",
+            "type": "string"
+        },
+        {
+            "name": "arrowOffset",
+            "type": "float"
+        },
+        {
+            "name": "canOverdrive",
+            "type": "boolean"
+        },
+        {
+            "name": "customShadow",
+            "type": "boolean"
+        },
+        {
+            "name": "dumpTime",
+            "type": "float"
+        },
+        {
+            "name": "arrowSpacing",
+            "type": "float"
+        },
+        {
+            "name": "placeableLiquid",
+            "type": "boolean"
+        },
+        {
+            "name": "research",
+            "type": "object",
+            "fields": [
+                {
+                    "name": "objectives",
+                    "type": "string"
+                },
+                {
+                    "name": "parent",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "breakEffect",
+            "type": "array"
+        },
+        {
+            "name": "hasPower",
+            "type": "boolean"
+        },
+        {
+            "name": "baseArrowColor",
+            "type": "string"
+        },
+        {
+            "name": "blockedItems",
+            "type": "array"
+        },
+        {
+            "name": "forceTeam",
+            "type": "float"
+        }
+    ]
+}

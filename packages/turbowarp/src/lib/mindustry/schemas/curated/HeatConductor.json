@@ -1,0 +1,56 @@
+{
+    "localizedName": "HeatConductor",
+    "parentType": "Block",
+    "fields": [
+        {
+            "name": "name",
+            "type": "string"
+        },
+        {
+            "name": "description",
+            "type": "string"
+        },
+        {
+            "name": "requirements",
+            "type": "array"
+        },
+        {
+            "name": "category",
+            "type": "string"
+        },
+        {
+            "name": "research",
+            "type": "string"
+        },
+        {
+            "name": "researchCostMultiplier",
+            "type": "float"
+        },
+        {
+            "name": "size",
+            "type": "int"
+        },
+        {
+            "name": "drawer",
+            "type": "object",
+            "fields": [
+                {
+                    "name": "drawers",
+                    "type": "string"
+                },
+                {
+                    "name": "type",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "regionRotated1",
+            "type": "float"
+        },
+        {
+            "name": "splitHeat",
+            "type": "boolean"
+        }
+    ]
+}

@@ -1,0 +1,54 @@
+{
+    "localizedName": "PayloadMassDriver",
+    "parentType": "PayloadBlock",
+    "fields": [
+        {
+            "name": "size",
+            "type": "int"
+        },
+        {
+            "name": "category",
+            "type": "string"
+        },
+        {
+            "name": "range",
+            "type": "int"
+        },
+        {
+            "name": "maxPayloadSize",
+            "type": "float"
+        },
+        {
+            "name": "reload",
+            "type": "int"
+        },
+        {
+            "name": "chargeTime",
+            "type": "float"
+        },
+        {
+            "name": "payloadSpeed",
+            "type": "float"
+        },
+        {
+            "name": "outlineIcon",
+            "type": "boolean"
+        },
+        {
+            "name": "hasPower",
+            "type": "boolean"
+        },
+        {
+            "name": "research",
+            "type": "string"
+        },
+        {
+            "name": "requirements",
+            "type": "array"
+        },
+        {
+            "name": "breakEffect",
+            "type": "array"
+        }
+    ]
+}

@@ -1,0 +1,70 @@
+{
+    "localizedName": "LaunchPad",
+    "parentType": "Block",
+    "fields": [
+        {
+            "name": "health",
+            "type": "int"
+        },
+        {
+            "name": "name",
+            "type": "string"
+        },
+        {
+            "name": "description",
+            "type": "string"
+        },
+        {
+            "name": "launchTime",
+            "type": "float"
+        },
+        {
+            "name": "lightColor",
+            "type": "string"
+        },
+        {
+            "name": "itemCapacity",
+            "type": "int"
+        },
+        {
+            "name": "size",
+            "type": "int"
+        },
+        {
+            "name": "consumes",
+            "type": "object",
+            "fields": [
+                {
+                    "name": "liquid",
+                    "type": "string"
+                },
+                {
+                    "name": "power",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "category",
+            "type": "string"
+        },
+        {
+            "name": "research",
+            "type": "object",
+            "fields": [
+                {
+                    "name": "objectives",
+                    "type": "string"
+                },
+                {
+                    "name": "parent",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "requirements",
+            "type": "array"
+        }
+    ]
+}

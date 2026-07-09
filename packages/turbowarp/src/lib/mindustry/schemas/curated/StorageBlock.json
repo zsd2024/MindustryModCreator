@@ -1,0 +1,98 @@
+{
+    "localizedName": "StorageBlock",
+    "parentType": "Block",
+    "fields": [
+        {
+            "name": "size",
+            "type": "int"
+        },
+        {
+            "name": "itemCapacity",
+            "type": "int"
+        },
+        {
+            "name": "requirements",
+            "type": "array"
+        },
+        {
+            "name": "squareSprite",
+            "type": "boolean"
+        },
+        {
+            "name": "health",
+            "type": "int"
+        },
+        {
+            "name": "category",
+            "type": "string"
+        },
+        {
+            "name": "research",
+            "type": "object",
+            "fields": [
+                {
+                    "name": "parent",
+                    "type": "string"
+                },
+                {
+                    "name": "requirements",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "armor",
+            "type": "int"
+        },
+        {
+            "name": "breakEffect",
+            "type": "array"
+        },
+        {
+            "name": "forceTeam",
+            "type": "float"
+        },
+        {
+            "name": "placeEffect",
+            "type": "array"
+        },
+        {
+            "name": "enableDrawStatus",
+            "type": "boolean"
+        },
+        {
+            "name": "hasPower",
+            "type": "boolean"
+        },
+        {
+            "name": "conductivePower",
+            "type": "boolean"
+        },
+        {
+            "name": "consumesPower",
+            "type": "boolean"
+        },
+        {
+            "name": "outputsPower",
+            "type": "boolean"
+        },
+        {
+            "name": "consumes",
+            "type": "object",
+            "fields": [
+                {
+                    "name": "powerBuffered",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "unitCapModifier",
+            "type": "float"
+        },
+        {
+            "name": "placeablePlayer",
+            "type": "boolean"
+        }
+    ]
+}

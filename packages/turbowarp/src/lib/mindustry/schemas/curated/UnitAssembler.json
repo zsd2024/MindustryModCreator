@@ -1,0 +1,105 @@
+{
+    "localizedName": "UnitAssembler",
+    "parentType": "PayloadBlock",
+    "fields": [
+        {
+            "name": "size",
+            "type": "int"
+        },
+        {
+            "name": "areaSize",
+            "type": "float"
+        },
+        {
+            "name": "liquidCapacity",
+            "type": "int"
+        },
+        {
+            "name": "consumes",
+            "type": "object",
+            "fields": [
+                {
+                    "name": "liquids",
+                    "type": "string"
+                },
+                {
+                    "name": "power",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "plans",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "fields": [
+                    {
+                        "name": "requirements",
+                        "type": "string"
+                    },
+                    {
+                        "name": "time",
+                        "type": "string"
+                    },
+                    {
+                        "name": "type",
+                        "type": "string"
+                    },
+                    {
+                        "name": "unit",
+                        "type": "string"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "category",
+            "type": "string"
+        },
+        {
+            "name": "droneType",
+            "type": "string"
+        },
+        {
+            "name": "payloadSpeed",
+            "type": "float"
+        },
+        {
+            "name": "dronesCreated",
+            "type": "float"
+        },
+        {
+            "name": "hasLiquids",
+            "type": "boolean"
+        },
+        {
+            "name": "buildVisibility",
+            "type": "string"
+        },
+        {
+            "name": "scaledHealth",
+            "type": "float"
+        },
+        {
+            "name": "requirements",
+            "type": "array"
+        },
+        {
+            "name": "forceTeam",
+            "type": "float"
+        },
+        {
+            "name": "floating",
+            "type": "boolean"
+        },
+        {
+            "name": "health",
+            "type": "int"
+        },
+        {
+            "name": "shownPlanets",
+            "type": "array"
+        }
+    ]
+}

@@ -1,0 +1,74 @@
+{
+    "localizedName": "BeamNode",
+    "parentType": "PowerBlock",
+    "fields": [
+        {
+            "name": "range",
+            "type": "int"
+        },
+        {
+            "name": "consumesPower",
+            "type": "boolean"
+        },
+        {
+            "name": "conductivePower",
+            "type": "boolean"
+        },
+        {
+            "name": "laserWidth",
+            "type": "float"
+        },
+        {
+            "name": "pulseScl",
+            "type": "float"
+        },
+        {
+            "name": "pulseMag",
+            "type": "float"
+        },
+        {
+            "name": "consumes",
+            "type": "object",
+            "fields": [
+                {
+                    "name": "power",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "canOverdrive",
+            "type": "boolean"
+        },
+        {
+            "name": "category",
+            "type": "string"
+        },
+        {
+            "name": "research",
+            "type": "object",
+            "fields": [
+                {
+                    "name": "objectives",
+                    "type": "string"
+                },
+                {
+                    "name": "parent",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "requirements",
+            "type": "array"
+        },
+        {
+            "name": "breakEffect",
+            "type": "array"
+        },
+        {
+            "name": "size",
+            "type": "int"
+        }
+    ]
+}

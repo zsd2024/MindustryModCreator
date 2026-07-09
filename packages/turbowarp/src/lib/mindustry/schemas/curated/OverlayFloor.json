@@ -1,0 +1,17 @@
+{
+    "localizedName": "OverlayFloor",
+    "fields": [
+        {
+            "name": "needsSurface",
+            "type": "boolean"
+        },
+        {
+            "name": "itemDrop",
+            "type": "string"
+        },
+        {
+            "name": "variants",
+            "type": "float"
+        }
+    ]
+}

@@ -1,0 +1,42 @@
+{
+    "localizedName": "RegenProjector",
+    "parentType": "Block",
+    "fields": [
+        {
+            "name": "health",
+            "type": "int"
+        },
+        {
+            "name": "hasPower",
+            "type": "boolean"
+        },
+        {
+            "name": "range",
+            "type": "int"
+        },
+        {
+            "name": "optionalMultiplier",
+            "type": "float"
+        },
+        {
+            "name": "baseColor",
+            "type": "string"
+        },
+        {
+            "name": "category",
+            "type": "string"
+        },
+        {
+            "name": "research",
+            "type": "string"
+        },
+        {
+            "name": "requirements",
+            "type": "array"
+        },
+        {
+            "name": "size",
+            "type": "int"
+        }
+    ]
+}

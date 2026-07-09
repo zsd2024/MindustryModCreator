@@ -1,0 +1,67 @@
+{
+    "localizedName": "Conveyor",
+    "parentType": "Block",
+    "fields": [
+        {
+            "name": "health",
+            "type": "int"
+        },
+        {
+            "name": "speed",
+            "type": "float"
+        },
+        {
+            "name": "displayedSpeed",
+            "type": "float"
+        },
+        {
+            "name": "requirements",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "fields": [
+                    {
+                        "name": "amount",
+                        "type": "int"
+                    },
+                    {
+                        "name": "item",
+                        "type": "string"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "category",
+            "type": "string"
+        },
+        {
+            "name": "buildCostMultiplier",
+            "type": "float"
+        },
+        {
+            "name": "itemCapacity",
+            "type": "int"
+        },
+        {
+            "name": "buildVisibility",
+            "type": "string"
+        },
+        {
+            "name": "name",
+            "type": "string"
+        },
+        {
+            "name": "description",
+            "type": "string"
+        },
+        {
+            "name": "details",
+            "type": "string"
+        },
+        {
+            "name": "research",
+            "type": "string"
+        }
+    ]
+}

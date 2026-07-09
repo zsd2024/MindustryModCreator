@@ -1,0 +1,118 @@
+{
+    "localizedName": "mech",
+    "parentType": "UnitType",
+    "fields": [
+        {
+            "name": "health",
+            "type": "int"
+        },
+        {
+            "name": "speed",
+            "type": "float"
+        },
+        {
+            "name": "weapons",
+            "type": "array"
+        },
+        {
+            "name": "hitSize",
+            "type": "float"
+        },
+        {
+            "name": "armor",
+            "type": "int"
+        },
+        {
+            "name": "name",
+            "type": "string"
+        },
+        {
+            "name": "description",
+            "type": "string"
+        },
+        {
+            "name": "flying",
+            "type": "boolean"
+        },
+        {
+            "name": "range",
+            "type": "int"
+        },
+        {
+            "name": "mechSideSway",
+            "type": "float"
+        },
+        {
+            "name": "outlineColor",
+            "type": "string"
+        },
+        {
+            "name": "mechLegColor",
+            "type": "string"
+        },
+        {
+            "name": "canBoost",
+            "type": "boolean"
+        },
+        {
+            "name": "boostMultiplier",
+            "type": "float"
+        },
+        {
+            "name": "stepSoundVolume",
+            "type": "float"
+        },
+        {
+            "name": "itemCapacity",
+            "type": "int"
+        },
+        {
+            "name": "rotateSpeed",
+            "type": "float"
+        },
+        {
+            "name": "mechFrontSway",
+            "type": "float"
+        },
+        {
+            "name": "shadowElevationScl",
+            "type": "float"
+        },
+        {
+            "name": "mechStepParticles",
+            "type": "boolean"
+        },
+        {
+            "name": "faceTarget",
+            "type": "boolean"
+        },
+        {
+            "name": "parts",
+            "type": "array"
+        },
+        {
+            "name": "defaultCommand",
+            "type": "string"
+        },
+        {
+            "name": "mineItems",
+            "type": "array"
+        },
+        {
+            "name": "defaultController",
+            "type": "string"
+        },
+        {
+            "name": "targetAir",
+            "type": "boolean"
+        },
+        {
+            "name": "immunities",
+            "type": "array"
+        },
+        {
+            "name": "research",
+            "type": "string"
+        }
+    ]
+}

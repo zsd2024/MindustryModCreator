@@ -1,0 +1,156 @@
+{
+    "localizedName": "TallBlock",
+    "parentType": "Block",
+    "fields": [
+        {
+            "name": "destructible",
+            "type": "boolean"
+        },
+        {
+            "name": "solid",
+            "type": "boolean"
+        },
+        {
+            "name": "itemDrop",
+            "type": "string"
+        },
+        {
+            "name": "size",
+            "type": "int"
+        },
+        {
+            "name": "update",
+            "type": "boolean"
+        },
+        {
+            "name": "customShadow",
+            "type": "boolean"
+        },
+        {
+            "name": "drawTeamOverlay",
+            "type": "boolean"
+        },
+        {
+            "name": "allowDerelictRepair",
+            "type": "boolean"
+        },
+        {
+            "name": "alwaysReplace",
+            "type": "boolean"
+        },
+        {
+            "name": "buildVisibility",
+            "type": "string"
+        },
+        {
+            "name": "rotationRand",
+            "type": "float"
+        },
+        {
+            "name": "layer",
+            "type": "float"
+        },
+        {
+            "name": "shadowLayer",
+            "type": "float"
+        },
+        {
+            "name": "shadowOffset",
+            "type": "float"
+        },
+        {
+            "name": "shadowAlpha",
+            "type": "float"
+        },
+        {
+            "name": "health",
+            "type": "int"
+        },
+        {
+            "name": "buildTime",
+            "type": "float"
+        },
+        {
+            "name": "instantDeconstruct",
+            "type": "boolean"
+        },
+        {
+            "name": "clipSize",
+            "type": "float"
+        },
+        {
+            "name": "breakSound",
+            "type": "string"
+        },
+        {
+            "name": "destroySound",
+            "type": "string"
+        },
+        {
+            "name": "drawCracks",
+            "type": "boolean"
+        },
+        {
+            "name": "createRubble",
+            "type": "boolean"
+        },
+        {
+            "name": "breakEffect",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "fields": [
+                    {
+                        "name": "amount",
+                        "type": "int"
+                    },
+                    {
+                        "name": "effect",
+                        "type": "string"
+                    },
+                    {
+                        "name": "lengthOffset",
+                        "type": "string"
+                    },
+                    {
+                        "name": "rotationSpacing",
+                        "type": "string"
+                    },
+                    {
+                        "name": "type",
+                        "type": "string"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "destroyEffect",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "fields": [
+                    {
+                        "name": "amount",
+                        "type": "int"
+                    },
+                    {
+                        "name": "effect",
+                        "type": "string"
+                    },
+                    {
+                        "name": "lengthOffset",
+                        "type": "string"
+                    },
+                    {
+                        "name": "rotationSpacing",
+                        "type": "string"
+                    },
+                    {
+                        "name": "type",
+                        "type": "string"
+                    }
+                ]
+            }
+        }
+    ]
+}

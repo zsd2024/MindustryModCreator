@@ -1,0 +1,187 @@
+{
+    "localizedName": "naval",
+    "parentType": "UnitType",
+    "fields": [
+        {
+            "name": "hitSize",
+            "type": "float"
+        },
+        {
+            "name": "health",
+            "type": "int"
+        },
+        {
+            "name": "armor",
+            "type": "int"
+        },
+        {
+            "name": "speed",
+            "type": "float"
+        },
+        {
+            "name": "rotateSpeed",
+            "type": "float"
+        },
+        {
+            "name": "drag",
+            "type": "float"
+        },
+        {
+            "name": "weapons",
+            "type": "array"
+        },
+        {
+            "name": "accel",
+            "type": "float"
+        },
+        {
+            "name": "waveTrailX",
+            "type": "float"
+        },
+        {
+            "name": "trailLength",
+            "type": "float"
+        },
+        {
+            "name": "trailScl",
+            "type": "float"
+        },
+        {
+            "name": "outlines",
+            "type": "boolean"
+        },
+        {
+            "name": "waveTrailY",
+            "type": "float"
+        },
+        {
+            "name": "abilities",
+            "type": "array"
+        },
+        {
+            "name": "name",
+            "type": "string"
+        },
+        {
+            "name": "description",
+            "type": "string"
+        },
+        {
+            "name": "faceTarget",
+            "type": "boolean"
+        },
+        {
+            "name": "research",
+            "type": "string"
+        },
+        {
+            "name": "shadowElevationScl",
+            "type": "float"
+        },
+        {
+            "name": "immunities",
+            "type": "array"
+        },
+        {
+            "name": "parts",
+            "type": "array"
+        },
+        {
+            "name": "range",
+            "type": "int"
+        },
+        {
+            "name": "localizedName",
+            "type": "string"
+        },
+        {
+            "name": "drawBody",
+            "type": "boolean"
+        },
+        {
+            "name": "drawCell",
+            "type": "boolean"
+        },
+        {
+            "name": "deathSound",
+            "type": "string"
+        },
+        {
+            "name": "deathExplosionEffect",
+            "type": "array"
+        },
+        {
+            "name": "rotateMoveFirst",
+            "type": "boolean"
+        },
+        {
+            "name": "lowAltitude",
+            "type": "boolean"
+        },
+        {
+            "name": "flyingLayer",
+            "type": "float"
+        },
+        {
+            "name": "engineSize",
+            "type": "float"
+        },
+        {
+            "name": "shadowElevation",
+            "type": "float"
+        },
+        {
+            "name": "canBoost",
+            "type": "boolean"
+        },
+        {
+            "name": "boostMultiplier",
+            "type": "float"
+        },
+        {
+            "name": "riseSpeed",
+            "type": "float"
+        },
+        {
+            "name": "aimDst",
+            "type": "float"
+        },
+        {
+            "name": "engines",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "fields": [
+                    {
+                        "name": "radius",
+                        "type": "string"
+                    },
+                    {
+                        "name": "rotation",
+                        "type": "string"
+                    },
+                    {
+                        "name": "x",
+                        "type": "string"
+                    },
+                    {
+                        "name": "y",
+                        "type": "string"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "createWreck",
+            "type": "boolean"
+        },
+        {
+            "name": "envRequired",
+            "type": "float"
+        },
+        {
+            "name": "envDisabled",
+            "type": "float"
+        }
+    ]
+}

@@ -1,0 +1,66 @@
+{
+    "localizedName": "SeaBush",
+    "parentType": "Prop",
+    "fields": [
+        {
+            "name": "customShadow",
+            "type": "boolean"
+        },
+        {
+            "name": "lobesMin",
+            "type": "float"
+        },
+        {
+            "name": "lobesMax",
+            "type": "float"
+        },
+        {
+            "name": "timeRange",
+            "type": "float"
+        },
+        {
+            "name": "sclMin",
+            "type": "float"
+        },
+        {
+            "name": "sclMax",
+            "type": "float"
+        },
+        {
+            "name": "magMin",
+            "type": "float"
+        },
+        {
+            "name": "magMax",
+            "type": "float"
+        },
+        {
+            "name": "buildVisibility",
+            "type": "string"
+        },
+        {
+            "name": "botAngle",
+            "type": "float"
+        },
+        {
+            "name": "clipSize",
+            "type": "float"
+        },
+        {
+            "name": "breakSound",
+            "type": "string"
+        },
+        {
+            "name": "destroySound",
+            "type": "string"
+        },
+        {
+            "name": "breakEffect",
+            "type": "object"
+        },
+        {
+            "name": "destroyEffect",
+            "type": "object"
+        }
+    ]
+}

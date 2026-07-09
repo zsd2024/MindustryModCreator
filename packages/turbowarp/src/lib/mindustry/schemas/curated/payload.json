@@ -1,0 +1,199 @@
+{
+    "localizedName": "payload",
+    "parentType": "UnitType",
+    "fields": [
+        {
+            "name": "hitSize",
+            "type": "float"
+        },
+        {
+            "name": "speed",
+            "type": "float"
+        },
+        {
+            "name": "payloadCapacity",
+            "type": "float"
+        },
+        {
+            "name": "health",
+            "type": "int"
+        },
+        {
+            "name": "armor",
+            "type": "int"
+        },
+        {
+            "name": "engineSize",
+            "type": "float"
+        },
+        {
+            "name": "weapons",
+            "type": "array"
+        },
+        {
+            "name": "lowAltitude",
+            "type": "boolean"
+        },
+        {
+            "name": "abilities",
+            "type": "array"
+        },
+        {
+            "name": "flying",
+            "type": "boolean"
+        },
+        {
+            "name": "rotateSpeed",
+            "type": "float"
+        },
+        {
+            "name": "outlines",
+            "type": "boolean"
+        },
+        {
+            "name": "engines",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "fields": [
+                    {
+                        "name": "engineColor",
+                        "type": "string"
+                    },
+                    {
+                        "name": "radius",
+                        "type": "string"
+                    },
+                    {
+                        "name": "rotation",
+                        "type": "string"
+                    },
+                    {
+                        "name": "x",
+                        "type": "string"
+                    },
+                    {
+                        "name": "y",
+                        "type": "string"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "strafePenalty",
+            "type": "float"
+        },
+        {
+            "name": "accel",
+            "type": "float"
+        },
+        {
+            "name": "drag",
+            "type": "float"
+        },
+        {
+            "name": "squareShape",
+            "type": "boolean"
+        },
+        {
+            "name": "rotateMoveFirst",
+            "type": "boolean"
+        },
+        {
+            "name": "omniMovement",
+            "type": "boolean"
+        },
+        {
+            "name": "canBoost",
+            "type": "boolean"
+        },
+        {
+            "name": "riseSpeed",
+            "type": "float"
+        },
+        {
+            "name": "faceTarget",
+            "type": "boolean"
+        },
+        {
+            "name": "crawlSlowdown",
+            "type": "float"
+        },
+        {
+            "name": "drawShields",
+            "type": "boolean"
+        },
+        {
+            "name": "singleTarget",
+            "type": "boolean"
+        },
+        {
+            "name": "name",
+            "type": "string"
+        },
+        {
+            "name": "description",
+            "type": "string"
+        },
+        {
+            "name": "range",
+            "type": "int"
+        },
+        {
+            "name": "research",
+            "type": "string"
+        },
+        {
+            "name": "physics",
+            "type": "boolean"
+        },
+        {
+            "name": "isEnemy",
+            "type": "boolean"
+        },
+        {
+            "name": "targetable",
+            "type": "boolean"
+        },
+        {
+            "name": "vulnerableWithPayloads",
+            "type": "boolean"
+        },
+        {
+            "name": "itemCapacity",
+            "type": "int"
+        },
+        {
+            "name": "drawCell",
+            "type": "boolean"
+        },
+        {
+            "name": "buildSpeed",
+            "type": "float"
+        },
+        {
+            "name": "drawBuildBeam",
+            "type": "boolean"
+        },
+        {
+            "name": "envEnabled",
+            "type": "float"
+        },
+        {
+            "name": "envDisabled",
+            "type": "float"
+        },
+        {
+            "name": "engineColor",
+            "type": "string"
+        },
+        {
+            "name": "engineOffset",
+            "type": "float"
+        },
+        {
+            "name": "shadowElevationScl",
+            "type": "float"
+        }
+    ]
+}

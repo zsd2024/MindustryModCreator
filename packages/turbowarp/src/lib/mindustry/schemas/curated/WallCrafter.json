@@ -1,0 +1,64 @@
+{
+    "localizedName": "WallCrafter",
+    "parentType": "Block",
+    "fields": [
+        {
+            "name": "customShadow",
+            "type": "boolean"
+        },
+        {
+            "name": "size",
+            "type": "int"
+        },
+        {
+            "name": "drillTime",
+            "type": "int"
+        },
+        {
+            "name": "output",
+            "type": "string"
+        },
+        {
+            "name": "consumes",
+            "type": "object",
+            "fields": [
+                {
+                    "name": "liquids",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "rotateSpeed",
+            "type": "float"
+        },
+        {
+            "name": "dumpTime",
+            "type": "float"
+        },
+        {
+            "name": "itemCapacity",
+            "type": "int"
+        },
+        {
+            "name": "ambientSound",
+            "type": "string"
+        },
+        {
+            "name": "ambientSoundVolume",
+            "type": "float"
+        },
+        {
+            "name": "category",
+            "type": "string"
+        },
+        {
+            "name": "research",
+            "type": "string"
+        },
+        {
+            "name": "requirements",
+            "type": "array"
+        }
+    ]
+}

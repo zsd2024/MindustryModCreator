@@ -1,0 +1,268 @@
+{
+    "localizedName": "LiquidTurret",
+    "parentType": "Turret",
+    "fields": [
+        {
+            "name": "reload",
+            "type": "int"
+        },
+        {
+            "name": "range",
+            "type": "int"
+        },
+        {
+            "name": "rotateSpeed",
+            "type": "float"
+        },
+        {
+            "name": "recoil",
+            "type": "float"
+        },
+        {
+            "name": "size",
+            "type": "int"
+        },
+        {
+            "name": "shootY",
+            "type": "float"
+        },
+        {
+            "name": "ammoTypes",
+            "type": "object",
+            "fields": [
+                {
+                    "name": "fluid-energy",
+                    "type": "string"
+                },
+                {
+                    "name": "liquid-baenara",
+                    "type": "string"
+                },
+                {
+                    "name": "water",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "requirements",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "fields": [
+                    {
+                        "name": "amount",
+                        "type": "int"
+                    },
+                    {
+                        "name": "item",
+                        "type": "string"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "liquidCapacity",
+            "type": "int"
+        },
+        {
+            "name": "drawer",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "fields": [
+                    {
+                        "name": "buildingRotate",
+                        "type": "string"
+                    },
+                    {
+                        "name": "drawers",
+                        "type": "string"
+                    },
+                    {
+                        "name": "iconOverride",
+                        "type": "string"
+                    },
+                    {
+                        "name": "parts",
+                        "type": "string"
+                    },
+                    {
+                        "name": "suffix",
+                        "type": "string"
+                    },
+                    {
+                        "name": "type",
+                        "type": "string"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "targetGround",
+            "type": "boolean"
+        },
+        {
+            "name": "targetAir",
+            "type": "boolean"
+        },
+        {
+            "name": "health",
+            "type": "int"
+        },
+        {
+            "name": "alwaysShooting",
+            "type": "boolean"
+        },
+        {
+            "name": "shootSound",
+            "type": "string"
+        },
+        {
+            "name": "shoot",
+            "type": "object",
+            "fields": [
+                {
+                    "name": "firstShotDelay",
+                    "type": "string"
+                },
+                {
+                    "name": "shots",
+                    "type": "int"
+                },
+                {
+                    "name": "spread",
+                    "type": "string"
+                },
+                {
+                    "name": "type",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "outlineIcon",
+            "type": "boolean"
+        },
+        {
+            "name": "shootCone",
+            "type": "float"
+        },
+        {
+            "name": "category",
+            "type": "string"
+        },
+        {
+            "name": "research",
+            "type": "object",
+            "fields": [
+                {
+                    "name": "objectives",
+                    "type": "string"
+                },
+                {
+                    "name": "parent",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "buildTime",
+            "type": "float"
+        },
+        {
+            "name": "fullOverride",
+            "type": "string"
+        },
+        {
+            "name": "createRubble",
+            "type": "boolean"
+        },
+        {
+            "name": "destroySound",
+            "type": "string"
+        },
+        {
+            "name": "destroyEffect",
+            "type": "string"
+        },
+        {
+            "name": "squareSprite",
+            "type": "boolean"
+        },
+        {
+            "name": "loopSound",
+            "type": "string"
+        },
+        {
+            "name": "breakEffect",
+            "type": "array"
+        },
+        {
+            "name": "group",
+            "type": "string"
+        },
+        {
+            "name": "shootEffect",
+            "type": "object"
+        },
+        {
+            "name": "extinguish",
+            "type": "boolean"
+        },
+        {
+            "name": "targetHealing",
+            "type": "boolean"
+        },
+        {
+            "name": "hasPower",
+            "type": "boolean"
+        },
+        {
+            "name": "conductivePower",
+            "type": "boolean"
+        },
+        {
+            "name": "consumesPower",
+            "type": "boolean"
+        },
+        {
+            "name": "outputsPower",
+            "type": "boolean"
+        },
+        {
+            "name": "consumes",
+            "type": "object",
+            "fields": [
+                {
+                    "name": "power",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "shootWarmupSpeed",
+            "type": "float"
+        },
+        {
+            "name": "minWarmup",
+            "type": "float"
+        },
+        {
+            "name": "linearWarmup",
+            "type": "boolean"
+        },
+        {
+            "name": "name",
+            "type": "string"
+        },
+        {
+            "name": "description",
+            "type": "string"
+        },
+        {
+            "name": "shootX",
+            "type": "float"
+        }
+    ]
+}

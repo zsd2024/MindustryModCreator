@@ -1,0 +1,30 @@
+{
+    "localizedName": "Prop",
+    "parentType": "Block",
+    "fields": [
+        {
+            "name": "variants",
+            "type": "float"
+        },
+        {
+            "name": "buildVisibility",
+            "type": "string"
+        },
+        {
+            "name": "hasShadow",
+            "type": "boolean"
+        },
+        {
+            "name": "placeableLiquid",
+            "type": "boolean"
+        },
+        {
+            "name": "customShadow",
+            "type": "boolean"
+        },
+        {
+            "name": "layer",
+            "type": "float"
+        }
+    ]
+}

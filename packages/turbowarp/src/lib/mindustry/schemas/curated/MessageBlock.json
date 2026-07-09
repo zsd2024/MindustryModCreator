@@ -1,0 +1,38 @@
+{
+    "localizedName": "MessageBlock",
+    "parentType": "Block",
+    "fields": [
+        {
+            "name": "size",
+            "type": "int"
+        },
+        {
+            "name": "requirements",
+            "type": "array"
+        },
+        {
+            "name": "maxTextLength",
+            "type": "float"
+        },
+        {
+            "name": "buildVisibility",
+            "type": "string"
+        },
+        {
+            "name": "health",
+            "type": "int"
+        },
+        {
+            "name": "category",
+            "type": "string"
+        },
+        {
+            "name": "forceTeam",
+            "type": "float"
+        },
+        {
+            "name": "squareSprite",
+            "type": "boolean"
+        }
+    ]
+}

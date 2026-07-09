@@ -1,0 +1,19 @@
+{
+    "type": "object",
+    "fields": [
+        {
+            "name": "usage",
+            "type": "float",
+            "defaultValue": "1"
+        },
+        {
+            "name": "capacity",
+            "type": "float"
+        },
+        {
+            "name": "buffered",
+            "type": "boolean",
+            "defaultValue": "false"
+        }
+    ]
+}

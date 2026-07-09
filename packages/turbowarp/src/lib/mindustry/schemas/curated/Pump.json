@@ -1,0 +1,145 @@
+{
+    "localizedName": "Pump",
+    "parentType": "LiquidBlock",
+    "fields": [
+        {
+            "name": "size",
+            "type": "int"
+        },
+        {
+            "name": "liquidCapacity",
+            "type": "int"
+        },
+        {
+            "name": "pumpAmount",
+            "type": "float"
+        },
+        {
+            "name": "squareSprite",
+            "type": "boolean"
+        },
+        {
+            "name": "consumes",
+            "type": "object",
+            "fields": [
+                {
+                    "name": "liquid",
+                    "type": "string"
+                },
+                {
+                    "name": "liquidFlammable",
+                    "type": "string"
+                },
+                {
+                    "name": "power",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "requirements",
+            "type": "array"
+        },
+        {
+            "name": "category",
+            "type": "string"
+        },
+        {
+            "name": "research",
+            "type": "object",
+            "fields": [
+                {
+                    "name": "parent",
+                    "type": "string"
+                },
+                {
+                    "name": "requirements",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "customShadow",
+            "type": "boolean"
+        },
+        {
+            "name": "hasPower",
+            "type": "boolean"
+        },
+        {
+            "name": "drawer",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "fields": [
+                    {
+                        "name": "drawers",
+                        "type": "string"
+                    },
+                    {
+                        "name": "type",
+                        "type": "string"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "health",
+            "type": "int"
+        },
+        {
+            "name": "armor",
+            "type": "int"
+        },
+        {
+            "name": "breakEffect",
+            "type": "array"
+        },
+        {
+            "name": "destroyEffect",
+            "type": "array"
+        },
+        {
+            "name": "destroyBullet",
+            "type": "object",
+            "fields": [
+                {
+                    "name": "absorbable",
+                    "type": "string"
+                },
+                {
+                    "name": "fragBullet",
+                    "type": "string"
+                },
+                {
+                    "name": "fragBullets",
+                    "type": "string"
+                },
+                {
+                    "name": "fragLifeMin",
+                    "type": "string"
+                },
+                {
+                    "name": "lifetime",
+                    "type": "string"
+                },
+                {
+                    "name": "type",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "name",
+            "type": "string"
+        },
+        {
+            "name": "description",
+            "type": "string"
+        },
+        {
+            "name": "hasLiquids",
+            "type": "boolean"
+        }
+    ]
+}

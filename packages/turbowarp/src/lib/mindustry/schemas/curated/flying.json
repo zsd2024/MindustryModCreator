@@ -1,0 +1,415 @@
+{
+    "localizedName": "flying",
+    "parentType": "UnitType",
+    "fields": [
+        {
+            "name": "flying",
+            "type": "boolean"
+        },
+        {
+            "name": "speed",
+            "type": "float"
+        },
+        {
+            "name": "health",
+            "type": "int"
+        },
+        {
+            "name": "weapons",
+            "type": "array"
+        },
+        {
+            "name": "hitSize",
+            "type": "float"
+        },
+        {
+            "name": "drag",
+            "type": "float"
+        },
+        {
+            "name": "armor",
+            "type": "int"
+        },
+        {
+            "name": "accel",
+            "type": "float"
+        },
+        {
+            "name": "rotateSpeed",
+            "type": "float"
+        },
+        {
+            "name": "lowAltitude",
+            "type": "boolean"
+        },
+        {
+            "name": "engineSize",
+            "type": "float"
+        },
+        {
+            "name": "abilities",
+            "type": "array"
+        },
+        {
+            "name": "outlines",
+            "type": "boolean"
+        },
+        {
+            "name": "engineOffset",
+            "type": "float"
+        },
+        {
+            "name": "range",
+            "type": "int"
+        },
+        {
+            "name": "itemCapacity",
+            "type": "int"
+        },
+        {
+            "name": "parts",
+            "type": "array"
+        },
+        {
+            "name": "envDisabled",
+            "type": "float"
+        },
+        {
+            "name": "envEnabled",
+            "type": "float"
+        },
+        {
+            "name": "drawCell",
+            "type": "boolean"
+        },
+        {
+            "name": "engines",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "fields": [
+                    {
+                        "name": "engineColor",
+                        "type": "string"
+                    },
+                    {
+                        "name": "radius",
+                        "type": "string"
+                    },
+                    {
+                        "name": "rotation",
+                        "type": "string"
+                    },
+                    {
+                        "name": "x",
+                        "type": "string"
+                    },
+                    {
+                        "name": "y",
+                        "type": "string"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "strafePenalty",
+            "type": "float"
+        },
+        {
+            "name": "faceTarget",
+            "type": "boolean"
+        },
+        {
+            "name": "shadowElevationScl",
+            "type": "float"
+        },
+        {
+            "name": "maxRange",
+            "type": "float"
+        },
+        {
+            "name": "immunities",
+            "type": "array"
+        },
+        {
+            "name": "drawBody",
+            "type": "boolean"
+        },
+        {
+            "name": "name",
+            "type": "string"
+        },
+        {
+            "name": "description",
+            "type": "string"
+        },
+        {
+            "name": "omniMovement",
+            "type": "boolean"
+        },
+        {
+            "name": "outlineColor",
+            "type": "string"
+        },
+        {
+            "name": "deathSound",
+            "type": "string"
+        },
+        {
+            "name": "deathExplosionEffect",
+            "type": "object",
+            "fields": [
+                {
+                    "name": "effects",
+                    "type": "string"
+                },
+                {
+                    "name": "lifetime",
+                    "type": "string"
+                },
+                {
+                    "name": "type",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "engineColor",
+            "type": "string"
+        },
+        {
+            "name": "createWreck",
+            "type": "boolean"
+        },
+        {
+            "name": "lightRadius",
+            "type": "float"
+        },
+        {
+            "name": "fogRadius",
+            "type": "float"
+        },
+        {
+            "name": "createScorch",
+            "type": "boolean"
+        },
+        {
+            "name": "loopSound",
+            "type": "string"
+        },
+        {
+            "name": "research",
+            "type": "string"
+        },
+        {
+            "name": "drawSoftShadow",
+            "type": "boolean"
+        },
+        {
+            "name": "controller",
+            "type": "string"
+        },
+        {
+            "name": "circleTarget",
+            "type": "boolean"
+        },
+        {
+            "name": "buildSpeed",
+            "type": "float"
+        },
+        {
+            "name": "engineLayer",
+            "type": "float"
+        },
+        {
+            "name": "targetFlags",
+            "type": "array"
+        },
+        {
+            "name": "deathShake",
+            "type": "float"
+        },
+        {
+            "name": "targetAir",
+            "type": "boolean"
+        },
+        {
+            "name": "healColor",
+            "type": "string"
+        },
+        {
+            "name": "shieldColor",
+            "type": "string"
+        },
+        {
+            "name": "template",
+            "type": "string"
+        },
+        {
+            "name": "wobble",
+            "type": "boolean"
+        },
+        {
+            "name": "isEnemy",
+            "type": "boolean"
+        },
+        {
+            "name": "fallSpeed",
+            "type": "float"
+        },
+        {
+            "name": "crashDamageMultiplier",
+            "type": "float"
+        },
+        {
+            "name": "buildBeamOffset",
+            "type": "float"
+        },
+        {
+            "name": "trailColor",
+            "type": "string"
+        },
+        {
+            "name": "trailLength",
+            "type": "float"
+        },
+        {
+            "name": "loopSoundVolume",
+            "type": "float"
+        },
+        {
+            "name": "coreUnitDock",
+            "type": "boolean"
+        },
+        {
+            "name": "mineSpeed",
+            "type": "float"
+        },
+        {
+            "name": "mineTier",
+            "type": "float"
+        },
+        {
+            "name": "details",
+            "type": "string"
+        },
+        {
+            "name": "lightOpacity",
+            "type": "float"
+        },
+        {
+            "name": "defaultController",
+            "type": "string"
+        },
+        {
+            "name": "lightColor",
+            "type": "string"
+        },
+        {
+            "name": "hittable",
+            "type": "boolean"
+        },
+        {
+            "name": "targetable",
+            "type": "boolean"
+        },
+        {
+            "name": "physics",
+            "type": "boolean"
+        },
+        {
+            "name": "bounded",
+            "type": "boolean"
+        },
+        {
+            "name": "useUnitCap",
+            "type": "boolean"
+        },
+        {
+            "name": "forceMultiTarget",
+            "type": "boolean"
+        },
+        {
+            "name": "baseRotateSpeed",
+            "type": "float"
+        },
+        {
+            "name": "autoDropBombs",
+            "type": "boolean"
+        },
+        {
+            "name": "alwaysUnlocked",
+            "type": "boolean"
+        },
+        {
+            "name": "localizedName",
+            "type": "string"
+        },
+        {
+            "name": "drawShields",
+            "type": "boolean"
+        },
+        {
+            "name": "envRequired",
+            "type": "float"
+        },
+        {
+            "name": "fallEngineEffect",
+            "type": "string"
+        },
+        {
+            "name": "fallEffect",
+            "type": "object"
+        },
+        {
+            "name": "rotateToBuilding",
+            "type": "boolean"
+        },
+        {
+            "name": "buildRange",
+            "type": "float"
+        },
+        {
+            "name": "ammoType",
+            "type": "object",
+            "fields": [
+                {
+                    "name": "totalPower",
+                    "type": "string"
+                },
+                {
+                    "name": "type",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "moveSound",
+            "type": "string"
+        },
+        {
+            "name": "playerControllable",
+            "type": "boolean"
+        },
+        {
+            "name": "defaultCommand",
+            "type": "string"
+        },
+        {
+            "name": "commands",
+            "type": "array"
+        },
+        {
+            "name": "autoDropBomb",
+            "type": "boolean"
+        },
+        {
+            "name": "wreckHealthMultiplier",
+            "type": "float"
+        },
+        {
+            "name": "aimDst",
+            "type": "float"
+        }
+    ]
+}

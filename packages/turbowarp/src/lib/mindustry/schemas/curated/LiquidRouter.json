@@ -1,0 +1,100 @@
+{
+    "localizedName": "LiquidRouter",
+    "parentType": "LiquidBlock",
+    "fields": [
+        {
+            "name": "liquidCapacity",
+            "type": "int"
+        },
+        {
+            "name": "requirements",
+            "type": "array"
+        },
+        {
+            "name": "size",
+            "type": "int"
+        },
+        {
+            "name": "liquidPadding",
+            "type": "float"
+        },
+        {
+            "name": "category",
+            "type": "string"
+        },
+        {
+            "name": "squareSprite",
+            "type": "boolean"
+        },
+        {
+            "name": "health",
+            "type": "int"
+        },
+        {
+            "name": "research",
+            "type": "object",
+            "fields": [
+                {
+                    "name": "parent",
+                    "type": "string"
+                },
+                {
+                    "name": "requirements",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "placeableLiquid",
+            "type": "boolean"
+        },
+        {
+            "name": "forceTeam",
+            "type": "float"
+        },
+        {
+            "name": "scaledHealth",
+            "type": "float"
+        },
+        {
+            "name": "armor",
+            "type": "int"
+        },
+        {
+            "name": "customShadow",
+            "type": "boolean"
+        },
+        {
+            "name": "underBullets",
+            "type": "boolean"
+        },
+        {
+            "name": "placeEffect",
+            "type": "array"
+        },
+        {
+            "name": "breakEffect",
+            "type": "array"
+        },
+        {
+            "name": "placeablePlayer",
+            "type": "boolean"
+        },
+        {
+            "name": "buildCostMultiplier",
+            "type": "float"
+        },
+        {
+            "name": "name",
+            "type": "string"
+        },
+        {
+            "name": "description",
+            "type": "string"
+        },
+        {
+            "name": "solid",
+            "type": "boolean"
+        }
+    ]
+}

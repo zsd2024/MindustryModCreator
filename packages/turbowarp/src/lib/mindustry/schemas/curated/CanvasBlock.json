@@ -1,0 +1,34 @@
+{
+    "localizedName": "CanvasBlock",
+    "parentType": "Block",
+    "fields": [
+        {
+            "name": "size",
+            "type": "int"
+        },
+        {
+            "name": "palette",
+            "type": "array"
+        },
+        {
+            "name": "canvasSize",
+            "type": "float"
+        },
+        {
+            "name": "padding",
+            "type": "float"
+        },
+        {
+            "name": "category",
+            "type": "string"
+        },
+        {
+            "name": "requirements",
+            "type": "array"
+        },
+        {
+            "name": "breakEffect",
+            "type": "array"
+        }
+    ]
+}

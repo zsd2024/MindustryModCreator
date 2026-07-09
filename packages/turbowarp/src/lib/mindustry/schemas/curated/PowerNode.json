@@ -1,0 +1,111 @@
+{
+    "localizedName": "PowerNode",
+    "parentType": "PowerBlock",
+    "fields": [
+        {
+            "name": "size",
+            "type": "int"
+        },
+        {
+            "name": "laserRange",
+            "type": "float"
+        },
+        {
+            "name": "maxNodes",
+            "type": "int"
+        },
+        {
+            "name": "category",
+            "type": "string"
+        },
+        {
+            "name": "research",
+            "type": "object",
+            "fields": [
+                {
+                    "name": "objectives",
+                    "type": "string"
+                },
+                {
+                    "name": "parent",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "requirements",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "fields": [
+                    {
+                        "name": "amount",
+                        "type": "int"
+                    },
+                    {
+                        "name": "item",
+                        "type": "string"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "name",
+            "type": "string"
+        },
+        {
+            "name": "description",
+            "type": "string"
+        },
+        {
+            "name": "health",
+            "type": "int"
+        },
+        {
+            "name": "configurable",
+            "type": "boolean"
+        },
+        {
+            "name": "laserColor1",
+            "type": "string"
+        },
+        {
+            "name": "laserColor2",
+            "type": "string"
+        },
+        {
+            "name": "laserScale",
+            "type": "float"
+        },
+        {
+            "name": "consumesPower",
+            "type": "boolean"
+        },
+        {
+            "name": "conductivePower",
+            "type": "boolean"
+        },
+        {
+            "name": "consumes",
+            "type": "object",
+            "fields": [
+                {
+                    "name": "power",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "canOverdrive",
+            "type": "boolean"
+        },
+        {
+            "name": "breakEffect",
+            "type": "array"
+        },
+        {
+            "name": "details",
+            "type": "string"
+        }
+    ]
+}

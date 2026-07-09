@@ -1,0 +1,208 @@
+{
+    "localizedName": "ConsumeGenerator",
+    "parentType": "PowerGenerator",
+    "fields": [
+        {
+            "name": "size",
+            "type": "int"
+        },
+        {
+            "name": "powerProduction",
+            "type": "float"
+        },
+        {
+            "name": "requirements",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "fields": [
+                    {
+                        "name": "amount",
+                        "type": "int"
+                    },
+                    {
+                        "name": "item",
+                        "type": "string"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "category",
+            "type": "string"
+        },
+        {
+            "name": "consumes",
+            "type": "object",
+            "fields": [
+                {
+                    "name": "itemExplode",
+                    "type": "string"
+                },
+                {
+                    "name": "itemFlammable",
+                    "type": "string"
+                },
+                {
+                    "name": "items",
+                    "type": "string"
+                },
+                {
+                    "name": "liquid",
+                    "type": "string"
+                },
+                {
+                    "name": "liquids",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "drawer",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "fields": [
+                    {
+                        "name": "drawers",
+                        "type": "string"
+                    },
+                    {
+                        "name": "iconOverride",
+                        "type": "string"
+                    },
+                    {
+                        "name": "type",
+                        "type": "string"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "liquidCapacity",
+            "type": "int"
+        },
+        {
+            "name": "research",
+            "type": "object",
+            "fields": [
+                {
+                    "name": "objectives",
+                    "type": "string"
+                },
+                {
+                    "name": "parent",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "outputLiquid",
+            "type": "string"
+        },
+        {
+            "name": "itemDuration",
+            "type": "float"
+        },
+        {
+            "name": "generateEffect",
+            "type": "object"
+        },
+        {
+            "name": "squareSprite",
+            "type": "boolean"
+        },
+        {
+            "name": "effectChance",
+            "type": "float"
+        },
+        {
+            "name": "warmupSpeed",
+            "type": "float"
+        },
+        {
+            "name": "generateEffectRange",
+            "type": "float"
+        },
+        {
+            "name": "breakEffect",
+            "type": "array"
+        },
+        {
+            "name": "destroyBullet",
+            "type": "object"
+        },
+        {
+            "name": "destroyEffect",
+            "type": "array"
+        },
+        {
+            "name": "hasLiquids",
+            "type": "boolean"
+        },
+        {
+            "name": "customShadow",
+            "type": "boolean"
+        },
+        {
+            "name": "itemCapacity",
+            "type": "int"
+        },
+        {
+            "name": "canOverdrive",
+            "type": "boolean"
+        },
+        {
+            "name": "baseExplosiveness",
+            "type": "float"
+        },
+        {
+            "name": "hasPower",
+            "type": "boolean"
+        },
+        {
+            "name": "hasItems",
+            "type": "boolean"
+        },
+        {
+            "name": "name",
+            "type": "string"
+        },
+        {
+            "name": "description",
+            "type": "string"
+        },
+        {
+            "name": "lightLiquid",
+            "type": "string"
+        },
+        {
+            "name": "buildTime",
+            "type": "float"
+        },
+        {
+            "name": "health",
+            "type": "int"
+        },
+        {
+            "name": "armor",
+            "type": "int"
+        },
+        {
+            "name": "destroySound",
+            "type": "string"
+        },
+        {
+            "name": "explodeOnFull",
+            "type": "boolean"
+        },
+        {
+            "name": "ambientSound",
+            "type": "string"
+        },
+        {
+            "name": "ambientSoundVolume",
+            "type": "float"
+        }
+    ]
+}

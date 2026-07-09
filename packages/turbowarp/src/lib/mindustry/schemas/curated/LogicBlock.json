@@ -1,0 +1,34 @@
+{
+    "localizedName": "LogicBlock",
+    "parentType": "Block",
+    "fields": [
+        {
+            "name": "requirements",
+            "type": "array"
+        },
+        {
+            "name": "size",
+            "type": "int"
+        },
+        {
+            "name": "instructionPerTick",
+            "type": "float"
+        },
+        {
+            "name": "health",
+            "type": "int"
+        },
+        {
+            "name": "category",
+            "type": "string"
+        },
+        {
+            "name": "forceTeam",
+            "type": "float"
+        },
+        {
+            "name": "range",
+            "type": "int"
+        }
+    ]
+}

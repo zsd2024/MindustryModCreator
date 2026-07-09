@@ -1,0 +1,130 @@
+{
+    "localizedName": "BeamDrill",
+    "parentType": "Block",
+    "fields": [
+        {
+            "name": "size",
+            "type": "int"
+        },
+        {
+            "name": "range",
+            "type": "int"
+        },
+        {
+            "name": "drillTime",
+            "type": "int"
+        },
+        {
+            "name": "tier",
+            "type": "int"
+        },
+        {
+            "name": "consumes",
+            "type": "object",
+            "fields": [
+                {
+                    "name": "liquid",
+                    "type": "string"
+                },
+                {
+                    "name": "liquids",
+                    "type": "string"
+                },
+                {
+                    "name": "power",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "requirements",
+            "type": "array"
+        },
+        {
+            "name": "category",
+            "type": "string"
+        },
+        {
+            "name": "sparks",
+            "type": "float"
+        },
+        {
+            "name": "sparkRecurrence",
+            "type": "float"
+        },
+        {
+            "name": "sparkLife",
+            "type": "float"
+        },
+        {
+            "name": "sparkSpread",
+            "type": "float"
+        },
+        {
+            "name": "sparkRange",
+            "type": "float"
+        },
+        {
+            "name": "liquidCapacity",
+            "type": "int"
+        },
+        {
+            "name": "optionalBoostIntensity",
+            "type": "float"
+        },
+        {
+            "name": "research",
+            "type": "object",
+            "fields": [
+                {
+                    "name": "objectives",
+                    "type": "string"
+                },
+                {
+                    "name": "parent",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "itemCapacity",
+            "type": "int"
+        },
+        {
+            "name": "name",
+            "type": "string"
+        },
+        {
+            "name": "description",
+            "type": "string"
+        },
+        {
+            "name": "fogRadius",
+            "type": "float"
+        },
+        {
+            "name": "researchCost",
+            "type": "array"
+        },
+        {
+            "name": "dumpTime",
+            "type": "float"
+        },
+        {
+            "name": "boostHeatColor",
+            "type": "string"
+        },
+        {
+            "name": "ambientSound",
+            "type": "string"
+        },
+        {
+            "name": "ambientSoundVolume",
+            "type": "float"
+        },
+        {
+            "name": "breakEffect",
+            "type": "array"
+        }
+    ]
+}

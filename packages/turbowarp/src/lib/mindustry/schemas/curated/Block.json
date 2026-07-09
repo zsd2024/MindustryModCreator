@@ -1,0 +1,34 @@
+{
+    "localizedName": "Block",
+    "parentType": "UnlockableContent",
+    "fields": [
+        {
+            "name": "solid",
+            "type": "boolean"
+        },
+        {
+            "name": "update",
+            "type": "boolean"
+        },
+        {
+            "name": "insulated",
+            "type": "boolean"
+        },
+        {
+            "name": "category",
+            "type": "string"
+        },
+        {
+            "name": "requirements",
+            "type": "array"
+        },
+        {
+            "name": "placeEffect",
+            "type": "array"
+        },
+        {
+            "name": "breakEffect",
+            "type": "array"
+        }
+    ]
+}

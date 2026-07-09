@@ -1,0 +1,23 @@
+{
+    "type": "object",
+    "fields": [
+        {
+            "name": "parent",
+            "type": "string"
+        },
+        {
+            "name": "requirements",
+            "type": "array",
+            "items": {
+                "$ref": "types/StackRequirement"
+            }
+        },
+        {
+            "name": "objectives",
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        }
+    ]
+}

@@ -1,0 +1,48 @@
+{
+    "localizedName": "RepairTower",
+    "parentType": "Block",
+    "fields": [
+        {
+            "name": "localizedName",
+            "type": "string"
+        },
+        {
+            "name": "description",
+            "type": "string"
+        },
+        {
+            "name": "category",
+            "type": "string"
+        },
+        {
+            "name": "requirements",
+            "type": "array"
+        },
+        {
+            "name": "size",
+            "type": "int"
+        },
+        {
+            "name": "range",
+            "type": "int"
+        },
+        {
+            "name": "healAmount",
+            "type": "float"
+        },
+        {
+            "name": "consumes",
+            "type": "object",
+            "fields": [
+                {
+                    "name": "liquid",
+                    "type": "string"
+                },
+                {
+                    "name": "power",
+                    "type": "string"
+                }
+            ]
+        }
+    ]
+}

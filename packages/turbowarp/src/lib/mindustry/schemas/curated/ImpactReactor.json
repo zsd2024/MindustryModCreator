@@ -1,0 +1,204 @@
+{
+    "localizedName": "ImpactReactor",
+    "parentType": "PowerGenerator",
+    "fields": [
+        {
+            "name": "liquidCapacity",
+            "type": "int"
+        },
+        {
+            "name": "size",
+            "type": "int"
+        },
+        {
+            "name": "powerProduction",
+            "type": "float"
+        },
+        {
+            "name": "consumes",
+            "type": "object",
+            "fields": [
+                {
+                    "name": "items",
+                    "type": "string"
+                },
+                {
+                    "name": "liquid",
+                    "type": "string"
+                },
+                {
+                    "name": "liquids",
+                    "type": "string"
+                },
+                {
+                    "name": "power",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "requirements",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "fields": [
+                    {
+                        "name": "amount",
+                        "type": "int"
+                    },
+                    {
+                        "name": "item",
+                        "type": "string"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "category",
+            "type": "string"
+        },
+        {
+            "name": "hasLiquids",
+            "type": "boolean"
+        },
+        {
+            "name": "squareSprite",
+            "type": "boolean"
+        },
+        {
+            "name": "drawer",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "fields": [
+                    {
+                        "name": "drawers",
+                        "type": "string"
+                    },
+                    {
+                        "name": "type",
+                        "type": "string"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "ambientSound",
+            "type": "string"
+        },
+        {
+            "name": "ambientSoundVolume",
+            "type": "float"
+        },
+        {
+            "name": "research",
+            "type": "object",
+            "fields": [
+                {
+                    "name": "objectives",
+                    "type": "string"
+                },
+                {
+                    "name": "parent",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "itemDuration",
+            "type": "float"
+        },
+        {
+            "name": "health",
+            "type": "int"
+        },
+        {
+            "name": "explosionRadius",
+            "type": "float"
+        },
+        {
+            "name": "explodeSound",
+            "type": "string"
+        },
+        {
+            "name": "customShadow",
+            "type": "boolean"
+        },
+        {
+            "name": "breakEffect",
+            "type": "array"
+        },
+        {
+            "name": "warmupSpeed",
+            "type": "float"
+        },
+        {
+            "name": "unitCapModifier",
+            "type": "float"
+        },
+        {
+            "name": "baseExplosiveness",
+            "type": "float"
+        },
+        {
+            "name": "explosivenessScale",
+            "type": "float"
+        },
+        {
+            "name": "baseShake",
+            "type": "float"
+        },
+        {
+            "name": "explosinDamage",
+            "type": "float"
+        },
+        {
+            "name": "explodeEffect",
+            "type": "string"
+        },
+        {
+            "name": "rebuildable",
+            "type": "boolean"
+        },
+        {
+            "name": "buildTime",
+            "type": "float"
+        },
+        {
+            "name": "forceTeam",
+            "type": "float"
+        },
+        {
+            "name": "name",
+            "type": "string"
+        },
+        {
+            "name": "description",
+            "type": "string"
+        },
+        {
+            "name": "hasPower",
+            "type": "boolean"
+        },
+        {
+            "name": "hasItems",
+            "type": "boolean"
+        },
+        {
+            "name": "explosionShake",
+            "type": "float"
+        },
+        {
+            "name": "lightColor",
+            "type": "string"
+        },
+        {
+            "name": "itemCapacity",
+            "type": "int"
+        },
+        {
+            "name": "explosionDamage",
+            "type": "float"
+        }
+    ]
+}

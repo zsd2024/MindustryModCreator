@@ -1,0 +1,78 @@
+{
+    "localizedName": "Turret",
+    "parentType": "ReloadTurret",
+    "fields": [
+        {
+            "name": "reload",
+            "type": "string"
+        },
+        {
+            "name": "range",
+            "type": "string"
+        },
+        {
+            "name": "inaccuracy",
+            "type": "float"
+        },
+        {
+            "name": "shootCone",
+            "type": "float"
+        },
+        {
+            "name": "shootSound",
+            "type": "Sound"
+        },
+        {
+            "name": "shoot",
+            "type": "ShootPattern"
+        },
+        {
+            "name": "ammo",
+            "type": "string"
+        },
+        {
+            "name": "ammoTypes",
+            "type": "string"
+        },
+        {
+            "name": "targetAir",
+            "type": "boolean"
+        },
+        {
+            "name": "targetGround",
+            "type": "boolean"
+        },
+        {
+            "name": "rotateSpeed",
+            "type": "string"
+        },
+        {
+            "name": "coolantMultiplier",
+            "type": "string"
+        },
+        {
+            "name": "heatColor",
+            "type": "Color"
+        },
+        {
+            "name": "shootEffect",
+            "type": "Effect"
+        },
+        {
+            "name": "smokeEffect",
+            "type": "Effect"
+        },
+        {
+            "name": "warmupSpeed",
+            "type": "string"
+        },
+        {
+            "name": "minWarmup",
+            "type": "float"
+        },
+        {
+            "name": "display",
+            "type": "string"
+        }
+    ]
+}

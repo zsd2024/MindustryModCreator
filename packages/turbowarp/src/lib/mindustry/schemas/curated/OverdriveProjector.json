@@ -1,0 +1,93 @@
+{
+    "localizedName": "OverdriveProjector",
+    "parentType": "Block",
+    "fields": [
+        {
+            "name": "range",
+            "type": "int"
+        },
+        {
+            "name": "speedBoost",
+            "type": "float"
+        },
+        {
+            "name": "hasBoost",
+            "type": "boolean"
+        },
+        {
+            "name": "consumes",
+            "type": "object",
+            "fields": [
+                {
+                    "name": "items",
+                    "type": "string"
+                },
+                {
+                    "name": "liquid",
+                    "type": "string"
+                },
+                {
+                    "name": "power",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "requirements",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "fields": [
+                    {
+                        "name": "amount",
+                        "type": "int"
+                    },
+                    {
+                        "name": "item",
+                        "type": "string"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "category",
+            "type": "string"
+        },
+        {
+            "name": "size",
+            "type": "int"
+        },
+        {
+            "name": "health",
+            "type": "int"
+        },
+        {
+            "name": "baseColor",
+            "type": "string"
+        },
+        {
+            "name": "itemDuration",
+            "type": "float"
+        },
+        {
+            "name": "forceTeam",
+            "type": "float"
+        },
+        {
+            "name": "name",
+            "type": "string"
+        },
+        {
+            "name": "description",
+            "type": "string"
+        },
+        {
+            "name": "reload",
+            "type": "int"
+        },
+        {
+            "name": "research",
+            "type": "string"
+        }
+    ]
+}

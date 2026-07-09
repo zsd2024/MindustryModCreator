@@ -1,0 +1,69 @@
+{
+    "localizedName": "MassDriver",
+    "parentType": "Block",
+    "fields": [
+        {
+            "name": "name",
+            "type": "string"
+        },
+        {
+            "name": "health",
+            "type": "int"
+        },
+        {
+            "name": "description",
+            "type": "string"
+        },
+        {
+            "name": "itemCapacity",
+            "type": "int"
+        },
+        {
+            "name": "reload",
+            "type": "int"
+        },
+        {
+            "name": "range",
+            "type": "int"
+        },
+        {
+            "name": "size",
+            "type": "int"
+        },
+        {
+            "name": "consumes",
+            "type": "object",
+            "fields": [
+                {
+                    "name": "power",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "requirements",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "fields": [
+                    {
+                        "name": "amount",
+                        "type": "int"
+                    },
+                    {
+                        "name": "item",
+                        "type": "string"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "category",
+            "type": "string"
+        },
+        {
+            "name": "research",
+            "type": "string"
+        }
+    ]
+}

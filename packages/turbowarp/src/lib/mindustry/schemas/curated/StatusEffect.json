@@ -1,0 +1,82 @@
+{
+    "localizedName": "StatusEffect",
+    "parentType": "UnlockableContent",
+    "fields": [
+        {
+            "name": "speedMultiplier",
+            "type": "float"
+        },
+        {
+            "name": "effect",
+            "type": "array"
+        },
+        {
+            "name": "damage",
+            "type": "float"
+        },
+        {
+            "name": "reloadMultiplier",
+            "type": "float"
+        },
+        {
+            "name": "effectChance",
+            "type": "float"
+        },
+        {
+            "name": "healthMultiplier",
+            "type": "float"
+        },
+        {
+            "name": "name",
+            "type": "string"
+        },
+        {
+            "name": "dragMultiplier",
+            "type": "float"
+        },
+        {
+            "name": "damageMultiplier",
+            "type": "float"
+        },
+        {
+            "name": "alwaysUnlocked",
+            "type": "boolean"
+        },
+        {
+            "name": "buildSpeedMultiplier",
+            "type": "float"
+        },
+        {
+            "name": "permanent",
+            "type": "boolean"
+        },
+        {
+            "name": "color",
+            "type": "string"
+        },
+        {
+            "name": "disarm",
+            "type": "boolean"
+        },
+        {
+            "name": "show",
+            "type": "boolean"
+        },
+        {
+            "name": "parentizeApplyEffect",
+            "type": "boolean"
+        },
+        {
+            "name": "applyEffect",
+            "type": "array"
+        },
+        {
+            "name": "applyColor",
+            "type": "string"
+        },
+        {
+            "name": "lightningColor",
+            "type": "string"
+        }
+    ]
+}

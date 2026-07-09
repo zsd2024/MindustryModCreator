@@ -1,0 +1,30 @@
+{
+    "localizedName": "UnitCargoUnloadPoint",
+    "parentType": "Block",
+    "fields": [
+        {
+            "name": "size",
+            "type": "int"
+        },
+        {
+            "name": "itemCapacity",
+            "type": "int"
+        },
+        {
+            "name": "requirements",
+            "type": "array"
+        },
+        {
+            "name": "squareSprite",
+            "type": "boolean"
+        },
+        {
+            "name": "scaledHealth",
+            "type": "float"
+        },
+        {
+            "name": "forceTeam",
+            "type": "float"
+        }
+    ]
+}

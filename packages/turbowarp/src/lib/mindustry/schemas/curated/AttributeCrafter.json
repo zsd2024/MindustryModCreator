@@ -1,0 +1,332 @@
+{
+    "localizedName": "AttributeCrafter",
+    "parentType": "GenericCrafter",
+    "fields": [
+        {
+            "name": "size",
+            "type": "int"
+        },
+        {
+            "name": "category",
+            "type": "string"
+        },
+        {
+            "name": "requirements",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "fields": [
+                    {
+                        "name": "amount",
+                        "type": "int"
+                    },
+                    {
+                        "name": "item",
+                        "type": "string"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "baseEfficiency",
+            "type": "float"
+        },
+        {
+            "name": "minEfficiency",
+            "type": "float"
+        },
+        {
+            "name": "drawer",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "fields": [
+                    {
+                        "name": "drawLiquid",
+                        "type": "string"
+                    },
+                    {
+                        "name": "drawers",
+                        "type": "string"
+                    },
+                    {
+                        "name": "iconOverride",
+                        "type": "string"
+                    },
+                    {
+                        "name": "layer",
+                        "type": "string"
+                    },
+                    {
+                        "name": "padding",
+                        "type": "string"
+                    },
+                    {
+                        "name": "type",
+                        "type": "string"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "boostScale",
+            "type": "float"
+        },
+        {
+            "name": "craftTime",
+            "type": "float"
+        },
+        {
+            "name": "consumes",
+            "type": "object",
+            "fields": [
+                {
+                    "name": "items",
+                    "type": "string"
+                },
+                {
+                    "name": "liquid",
+                    "type": "string"
+                },
+                {
+                    "name": "liquids",
+                    "type": "string"
+                },
+                {
+                    "name": "power",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "maxBoost",
+            "type": "float"
+        },
+        {
+            "name": "attribute",
+            "type": "string"
+        },
+        {
+            "name": "liquidCapacity",
+            "type": "int"
+        },
+        {
+            "name": "itemCapacity",
+            "type": "int"
+        },
+        {
+            "name": "squareSprite",
+            "type": "boolean"
+        },
+        {
+            "name": "outputItem",
+            "type": "object",
+            "fields": [
+                {
+                    "name": "amount",
+                    "type": "int"
+                },
+                {
+                    "name": "item",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "research",
+            "type": "object",
+            "fields": [
+                {
+                    "name": "objectives",
+                    "type": "string"
+                },
+                {
+                    "name": "parent",
+                    "type": "string"
+                },
+                {
+                    "name": "requirements",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "customShadow",
+            "type": "boolean"
+        },
+        {
+            "name": "ambientSound",
+            "type": "string"
+        },
+        {
+            "name": "ambientSoundVolume",
+            "type": "float"
+        },
+        {
+            "name": "hasLiquids",
+            "type": "boolean"
+        },
+        {
+            "name": "craftEffect",
+            "type": "array"
+        },
+        {
+            "name": "liquidOutputDirections",
+            "type": "array"
+        },
+        {
+            "name": "outputLiquids",
+            "type": "array"
+        },
+        {
+            "name": "updateEffect",
+            "type": "object"
+        },
+        {
+            "name": "floating",
+            "type": "boolean"
+        },
+        {
+            "name": "outputLiquid",
+            "type": "string"
+        },
+        {
+            "name": "displayEfficiency",
+            "type": "boolean"
+        },
+        {
+            "name": "dumpTime",
+            "type": "float"
+        },
+        {
+            "name": "rotate",
+            "type": "boolean"
+        },
+        {
+            "name": "warmupSpeed",
+            "type": "float"
+        },
+        {
+            "name": "quickRotate",
+            "type": "boolean"
+        },
+        {
+            "name": "envEnabled",
+            "type": "float"
+        },
+        {
+            "name": "envDisabled",
+            "type": "float"
+        },
+        {
+            "name": "liquidPressure",
+            "type": "float"
+        },
+        {
+            "name": "hasPower",
+            "type": "boolean"
+        },
+        {
+            "name": "dumpExtraLiquid",
+            "type": "boolean"
+        },
+        {
+            "name": "scaledHealth",
+            "type": "float"
+        },
+        {
+            "name": "armor",
+            "type": "int"
+        },
+        {
+            "name": "breakEffect",
+            "type": "array"
+        },
+        {
+            "name": "health",
+            "type": "int"
+        },
+        {
+            "name": "drawLiquidLight",
+            "type": "boolean"
+        },
+        {
+            "name": "hasItems",
+            "type": "boolean"
+        },
+        {
+            "name": "name",
+            "type": "string"
+        },
+        {
+            "name": "description",
+            "type": "string"
+        },
+        {
+            "name": "ignoreLiquidFullness",
+            "type": "boolean"
+        },
+        {
+            "name": "rotateDraw",
+            "type": "boolean"
+        },
+        {
+            "name": "conductivePower",
+            "type": "boolean"
+        },
+        {
+            "name": "destroyEffect",
+            "type": "array"
+        },
+        {
+            "name": "destroyBullet",
+            "type": "object",
+            "fields": [
+                {
+                    "name": "absorbable",
+                    "type": "string"
+                },
+                {
+                    "name": "fragBullet",
+                    "type": "string"
+                },
+                {
+                    "name": "fragBullets",
+                    "type": "string"
+                },
+                {
+                    "name": "fragLifeMin",
+                    "type": "string"
+                },
+                {
+                    "name": "lifetime",
+                    "type": "string"
+                },
+                {
+                    "name": "type",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "updateEffectChance",
+            "type": "float"
+        },
+        {
+            "name": "updateEffectSpread",
+            "type": "float"
+        },
+        {
+            "name": "regionRotated1",
+            "type": "float"
+        },
+        {
+            "name": "forceTeam",
+            "type": "float"
+        },
+        {
+            "name": "envRequired",
+            "type": "float"
+        }
+    ]
+}

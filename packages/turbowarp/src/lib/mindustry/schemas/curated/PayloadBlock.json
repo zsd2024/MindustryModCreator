@@ -1,0 +1,18 @@
+{
+    "localizedName": "PayloadBlock",
+    "parentType": "Block",
+    "fields": [
+        {
+            "name": "payloadCapacity",
+            "type": "string"
+        },
+        {
+            "name": "payloadSpeed",
+            "type": "float"
+        },
+        {
+            "name": "payloadColor",
+            "type": "string"
+        }
+    ]
+}

@@ -1,0 +1,50 @@
+{
+    "localizedName": "Duct",
+    "parentType": "Block",
+    "fields": [
+        {
+            "name": "health",
+            "type": "int"
+        },
+        {
+            "name": "speed",
+            "type": "float"
+        },
+        {
+            "name": "requirements",
+            "type": "array"
+        },
+        {
+            "name": "bridgeReplacement",
+            "type": "string"
+        },
+        {
+            "name": "category",
+            "type": "string"
+        },
+        {
+            "name": "underBullet",
+            "type": "boolean"
+        },
+        {
+            "name": "junctionReplacement",
+            "type": "string"
+        },
+        {
+            "name": "forceTeam",
+            "type": "float"
+        },
+        {
+            "name": "customShadow",
+            "type": "boolean"
+        },
+        {
+            "name": "research",
+            "type": "string"
+        },
+        {
+            "name": "armored",
+            "type": "boolean"
+        }
+    ]
+}

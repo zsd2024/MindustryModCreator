@@ -1,0 +1,117 @@
+{
+    "localizedName": "Drill",
+    "parentType": "Block",
+    "fields": [
+        {
+            "name": "size",
+            "type": "int"
+        },
+        {
+            "name": "tier",
+            "type": "int"
+        },
+        {
+            "name": "drillTime",
+            "type": "int"
+        },
+        {
+            "name": "itemCapacity",
+            "type": "int"
+        },
+        {
+            "name": "consumes",
+            "type": "object",
+            "fields": [
+                {
+                    "name": "liquid",
+                    "type": "string"
+                },
+                {
+                    "name": "liquids",
+                    "type": "string"
+                },
+                {
+                    "name": "power",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "category",
+            "type": "string"
+        },
+        {
+            "name": "requirements",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "fields": [
+                    {
+                        "name": "amount",
+                        "type": "int"
+                    },
+                    {
+                        "name": "item",
+                        "type": "string"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "hardnessDrillMultiplier",
+            "type": "float"
+        },
+        {
+            "name": "liquidBoostIntensity",
+            "type": "float"
+        },
+        {
+            "name": "liquidCapacity",
+            "type": "int"
+        },
+        {
+            "name": "rotateSpeed",
+            "type": "float"
+        },
+        {
+            "name": "warmupSpeed",
+            "type": "float"
+        },
+        {
+            "name": "updateEffectChance",
+            "type": "float"
+        },
+        {
+            "name": "ambientSound",
+            "type": "string"
+        },
+        {
+            "name": "ambientSoundVolume",
+            "type": "float"
+        },
+        {
+            "name": "drawRim",
+            "type": "boolean"
+        },
+        {
+            "name": "name",
+            "type": "string"
+        },
+        {
+            "name": "description",
+            "type": "string"
+        },
+        {
+            "name": "research",
+            "type": "string"
+        },
+        {
+            "name": "heatColor",
+            "type": "string"
+        },
+        {
+            "name": "drawMineItem",
+            "type": "boolean"
+        }
+    ]
+}

@@ -1,0 +1,38 @@
+{
+    "localizedName": "Sorter",
+    "parentType": "Block",
+    "fields": [
+        {
+            "name": "requirements",
+            "type": "array"
+        },
+        {
+            "name": "category",
+            "type": "string"
+        },
+        {
+            "name": "invert",
+            "type": "boolean"
+        },
+        {
+            "name": "forceTeam",
+            "type": "float"
+        },
+        {
+            "name": "health",
+            "type": "int"
+        },
+        {
+            "name": "buildCostMultiplier",
+            "type": "float"
+        },
+        {
+            "name": "squareSprite",
+            "type": "boolean"
+        },
+        {
+            "name": "buildVisibility",
+            "type": "string"
+        }
+    ]
+}

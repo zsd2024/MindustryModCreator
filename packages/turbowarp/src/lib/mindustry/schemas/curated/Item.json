@@ -1,0 +1,64 @@
+{
+    "localizedName": "Item",
+    "parentType": "UnlockableContent",
+    "fields": [
+        {
+            "name": "color",
+            "type": "float"
+        },
+        {
+            "name": "cost",
+            "type": "int"
+        },
+        {
+            "name": "shownPlanets",
+            "type": "array"
+        },
+        {
+            "name": "research",
+            "type": "object",
+            "fields": [
+                {
+                    "name": "objectives",
+                    "type": "string"
+                },
+                {
+                    "name": "parent",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "hardness",
+            "type": "int"
+        },
+        {
+            "name": "healthScaling",
+            "type": "float"
+        },
+        {
+            "name": "radioactivity",
+            "type": "float"
+        },
+        {
+            "name": "charge",
+            "type": "float"
+        },
+        {
+            "name": "explosiveness",
+            "type": "float"
+        },
+        {
+            "name": "flammability",
+            "type": "float"
+        },
+        {
+            "name": "alwaysUnlocked",
+            "type": "boolean"
+        },
+        {
+            "name": "buildable",
+            "type": "boolean"
+        }
+    ]
+}

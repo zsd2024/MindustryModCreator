@@ -1,0 +1,434 @@
+{
+    "localizedName": "GenericCrafter",
+    "parentType": "Block",
+    "fields": [
+        {
+            "name": "category",
+            "type": "string"
+        },
+        {
+            "name": "size",
+            "type": "int"
+        },
+        {
+            "name": "consumes",
+            "type": "object",
+            "fields": [
+                {
+                    "name": "items",
+                    "type": "string"
+                },
+                {
+                    "name": "liquid",
+                    "type": "string"
+                },
+                {
+                    "name": "liquids",
+                    "type": "string"
+                },
+                {
+                    "name": "power",
+                    "type": "string"
+                },
+                {
+                    "name": "powerBuffered",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "requirements",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "fields": [
+                    {
+                        "name": "amount",
+                        "type": "int"
+                    },
+                    {
+                        "name": "item",
+                        "type": "string"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "craftTime",
+            "type": "float"
+        },
+        {
+            "name": "research",
+            "type": "object",
+            "fields": [
+                {
+                    "name": "objectives",
+                    "type": "string"
+                },
+                {
+                    "name": "parent",
+                    "type": "string"
+                },
+                {
+                    "name": "requirements",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "drawer",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "fields": [
+                    {
+                        "name": "drawers",
+                        "type": "string"
+                    },
+                    {
+                        "name": "iconOverride",
+                        "type": "string"
+                    },
+                    {
+                        "name": "layer",
+                        "type": "string"
+                    },
+                    {
+                        "name": "parts",
+                        "type": "string"
+                    },
+                    {
+                        "name": "suffix",
+                        "type": "string"
+                    },
+                    {
+                        "name": "type",
+                        "type": "string"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "outputItem",
+            "type": "object",
+            "fields": [
+                {
+                    "name": "amount",
+                    "type": "int"
+                },
+                {
+                    "name": "item",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "itemCapacity",
+            "type": "int"
+        },
+        {
+            "name": "liquidCapacity",
+            "type": "int"
+        },
+        {
+            "name": "craftEffect",
+            "type": "array"
+        },
+        {
+            "name": "name",
+            "type": "string"
+        },
+        {
+            "name": "description",
+            "type": "string"
+        },
+        {
+            "name": "hasItems",
+            "type": "boolean"
+        },
+        {
+            "name": "hasLiquids",
+            "type": "boolean"
+        },
+        {
+            "name": "hasPower",
+            "type": "boolean"
+        },
+        {
+            "name": "updateEffect",
+            "type": "array"
+        },
+        {
+            "name": "outputLiquid",
+            "type": "object",
+            "fields": [
+                {
+                    "name": "amount",
+                    "type": "int"
+                },
+                {
+                    "name": "liquid",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "squareSprite",
+            "type": "boolean"
+        },
+        {
+            "name": "health",
+            "type": "int"
+        },
+        {
+            "name": "rotate",
+            "type": "boolean"
+        },
+        {
+            "name": "ambientSoundVolume",
+            "type": "float"
+        },
+        {
+            "name": "liquidOutputDirections",
+            "type": "array"
+        },
+        {
+            "name": "ambientSound",
+            "type": "string"
+        },
+        {
+            "name": "conductivePower",
+            "type": "boolean"
+        },
+        {
+            "name": "breakEffect",
+            "type": "array"
+        },
+        {
+            "name": "forceTeam",
+            "type": "float"
+        },
+        {
+            "name": "outputLiquids",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "fields": [
+                    {
+                        "name": "amount",
+                        "type": "int"
+                    },
+                    {
+                        "name": "liquid",
+                        "type": "string"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "scaledHealth",
+            "type": "float"
+        },
+        {
+            "name": "outputItems",
+            "type": "array"
+        },
+        {
+            "name": "liquidPressure",
+            "type": "float"
+        },
+        {
+            "name": "buildVisibility",
+            "type": "string"
+        },
+        {
+            "name": "customShadow",
+            "type": "boolean"
+        },
+        {
+            "name": "hasLiquid",
+            "type": "boolean"
+        },
+        {
+            "name": "quickRotate",
+            "type": "boolean"
+        },
+        {
+            "name": "placeableLiquid",
+            "type": "boolean"
+        },
+        {
+            "name": "updateEffectSpread",
+            "type": "float"
+        },
+        {
+            "name": "enableDrawStatus",
+            "type": "boolean"
+        },
+        {
+            "name": "floating",
+            "type": "boolean"
+        },
+        {
+            "name": "canOverdrive",
+            "type": "boolean"
+        },
+        {
+            "name": "ignoreLiquidFullness",
+            "type": "boolean"
+        },
+        {
+            "name": "updateEffectChance",
+            "type": "float"
+        },
+        {
+            "name": "ambiantSound",
+            "type": "string"
+        },
+        {
+            "name": "destructible",
+            "type": "boolean"
+        },
+        {
+            "name": "hasShadow",
+            "type": "boolean"
+        },
+        {
+            "name": "underBullets",
+            "type": "boolean"
+        },
+        {
+            "name": "forceDark",
+            "type": "boolean"
+        },
+        {
+            "name": "drawTeamOverlay",
+            "type": "boolean"
+        },
+        {
+            "name": "drawArrow",
+            "type": "boolean"
+        },
+        {
+            "name": "armor",
+            "type": "int"
+        },
+        {
+            "name": "placeEffect",
+            "type": "array"
+        },
+        {
+            "name": "warmupSpeed",
+            "type": "float"
+        },
+        {
+            "name": "invertFlip",
+            "type": "boolean"
+        },
+        {
+            "name": "regionRotated1",
+            "type": "float"
+        },
+        {
+            "name": "loopSound",
+            "type": "string"
+        },
+        {
+            "name": "loopSoundVolume",
+            "type": "float"
+        },
+        {
+            "name": "envEnabled",
+            "type": "float"
+        },
+        {
+            "name": "envRequired",
+            "type": "float"
+        },
+        {
+            "name": "envDisabled",
+            "type": "float"
+        },
+        {
+            "name": "group",
+            "type": "string"
+        },
+        {
+            "name": "priority",
+            "type": "float"
+        },
+        {
+            "name": "solid",
+            "type": "boolean"
+        },
+        {
+            "name": "update",
+            "type": "boolean"
+        },
+        {
+            "name": "baseExplosiveness",
+            "type": "float"
+        },
+        {
+            "name": "placeablePlayer",
+            "type": "boolean"
+        },
+        {
+            "name": "rotateDraw",
+            "type": "boolean"
+        },
+        {
+            "name": "buildTime",
+            "type": "float"
+        },
+        {
+            "name": "dumpExtraLiquid",
+            "type": "boolean"
+        },
+        {
+            "name": "hideDetails",
+            "type": "boolean"
+        },
+        {
+            "name": "consumesPower",
+            "type": "boolean"
+        },
+        {
+            "name": "outputsPower",
+            "type": "boolean"
+        },
+        {
+            "name": "dumpTime",
+            "type": "float"
+        },
+        {
+            "name": "drawLiquidLight",
+            "type": "boolean"
+        },
+        {
+            "name": "researchCostMultiplier",
+            "type": "float"
+        },
+        {
+            "name": "fogRadius",
+            "type": "float"
+        },
+        {
+            "name": "researchCost",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "fields": [
+                    {
+                        "name": "amount",
+                        "type": "int"
+                    },
+                    {
+                        "name": "item",
+                        "type": "string"
+                    }
+                ]
+            }
+        }
+    ]
+}

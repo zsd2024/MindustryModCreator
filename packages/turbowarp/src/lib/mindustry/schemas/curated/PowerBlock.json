@@ -1,0 +1,25 @@
+{
+    "localizedName": "PowerBlock",
+    "fields": [
+        {
+            "name": "laserRange",
+            "type": "string"
+        },
+        {
+            "name": "maxNodes",
+            "type": "string"
+        },
+        {
+            "name": "laserColor",
+            "type": "string"
+        },
+        {
+            "name": "blockLoss",
+            "type": "string"
+        },
+        {
+            "name": "tower",
+            "type": "string"
+        }
+    ]
+}

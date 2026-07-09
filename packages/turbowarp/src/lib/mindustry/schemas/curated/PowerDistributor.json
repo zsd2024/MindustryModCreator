@@ -1,0 +1,13 @@
+{
+    "localizedName": "PowerDistributor",
+    "fields": [
+        {
+            "name": "laserRange",
+            "type": "string"
+        },
+        {
+            "name": "maxNodes",
+            "type": "string"
+        }
+    ]
+}

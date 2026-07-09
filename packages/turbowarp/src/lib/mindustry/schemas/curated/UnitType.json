@@ -1,0 +1,98 @@
+{
+    "localizedName": "UnitType",
+    "parentType": "UnlockableContent",
+    "fields": [
+        {
+            "name": "speed",
+            "type": "float"
+        },
+        {
+            "name": "health",
+            "type": "float"
+        },
+        {
+            "name": "armor",
+            "type": "float"
+        },
+        {
+            "name": "hitSize",
+            "type": "float"
+        },
+        {
+            "name": "flying",
+            "type": "boolean"
+        },
+        {
+            "name": "drag",
+            "type": "float"
+        },
+        {
+            "name": "accel",
+            "type": "float"
+        },
+        {
+            "name": "rotateSpeed",
+            "type": "float"
+        },
+        {
+            "name": "engineSize",
+            "type": "float"
+        },
+        {
+            "name": "engineOffset",
+            "type": "float"
+        },
+        {
+            "name": "engineColor",
+            "type": "Color"
+        },
+        {
+            "name": "itemCapacity",
+            "type": "int"
+        },
+        {
+            "name": "weapons",
+            "type": "Seq of Weapon"
+        },
+        {
+            "name": "abilities",
+            "type": "Seq of Ability"
+        },
+        {
+            "name": "controller",
+            "type": "Func of Unit, ? extends UnitController"
+        },
+        {
+            "name": "research",
+            "type": "string"
+        },
+        {
+            "name": "mineSpeed",
+            "type": "float"
+        },
+        {
+            "name": "mineTier",
+            "type": "int"
+        },
+        {
+            "name": "buildSpeed",
+            "type": "float"
+        },
+        {
+            "name": "payloadCapacity",
+            "type": "float"
+        },
+        {
+            "name": "trailLength",
+            "type": "int"
+        },
+        {
+            "name": "outlineColor",
+            "type": "Color"
+        },
+        {
+            "name": "hovering",
+            "type": "boolean"
+        }
+    ]
+}

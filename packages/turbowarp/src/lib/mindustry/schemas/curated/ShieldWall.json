@@ -1,0 +1,50 @@
+{
+    "localizedName": "ShieldWall",
+    "parentType": "Wall",
+    "fields": [
+        {
+            "name": "hasPower",
+            "type": "boolean"
+        },
+        {
+            "name": "health",
+            "type": "int"
+        },
+        {
+            "name": "shieldHealth",
+            "type": "float"
+        },
+        {
+            "name": "breakCooldown",
+            "type": "float"
+        },
+        {
+            "name": "regenSpeed",
+            "type": "float"
+        },
+        {
+            "name": "size",
+            "type": "int"
+        },
+        {
+            "name": "chanceDeflect",
+            "type": "float"
+        },
+        {
+            "name": "glowColor",
+            "type": "string"
+        },
+        {
+            "name": "requirements",
+            "type": "array"
+        },
+        {
+            "name": "category",
+            "type": "string"
+        },
+        {
+            "name": "research",
+            "type": "string"
+        }
+    ]
+}

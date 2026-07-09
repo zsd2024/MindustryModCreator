@@ -1,0 +1,87 @@
+{
+    "localizedName": "LiquidBridge",
+    "fields": [
+        {
+            "name": "squareSprite",
+            "type": "boolean"
+        },
+        {
+            "name": "underBullets",
+            "type": "boolean"
+        },
+        {
+            "name": "liquidCapacity",
+            "type": "int"
+        },
+        {
+            "name": "health",
+            "type": "int"
+        },
+        {
+            "name": "category",
+            "type": "string"
+        },
+        {
+            "name": "range",
+            "type": "int"
+        },
+        {
+            "name": "requirements",
+            "type": "array"
+        },
+        {
+            "name": "hasPower",
+            "type": "boolean"
+        },
+        {
+            "name": "research",
+            "type": "string"
+        },
+        {
+            "name": "placeEffect",
+            "type": "array"
+        },
+        {
+            "name": "breakEffect",
+            "type": "array"
+        },
+        {
+            "name": "fadeIn",
+            "type": "boolean"
+        },
+        {
+            "name": "arrowSpacing",
+            "type": "float"
+        },
+        {
+            "name": "arrowPeriod",
+            "type": "float"
+        },
+        {
+            "name": "consumes",
+            "type": "object",
+            "fields": [
+                {
+                    "name": "power",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "placeableLiquid",
+            "type": "boolean"
+        },
+        {
+            "name": "botColor",
+            "type": "string"
+        },
+        {
+            "name": "buildCostMultiplier",
+            "type": "float"
+        },
+        {
+            "name": "forceTeam",
+            "type": "float"
+        }
+    ]
+}

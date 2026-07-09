@@ -1,0 +1,42 @@
+{
+    "localizedName": "Unloader",
+    "parentType": "Block",
+    "fields": [
+        {
+            "name": "speed",
+            "type": "float"
+        },
+        {
+            "name": "squareSprite",
+            "type": "boolean"
+        },
+        {
+            "name": "requirements",
+            "type": "array"
+        },
+        {
+            "name": "category",
+            "type": "string"
+        },
+        {
+            "name": "size",
+            "type": "int"
+        },
+        {
+            "name": "underBullet",
+            "type": "boolean"
+        },
+        {
+            "name": "health",
+            "type": "int"
+        },
+        {
+            "name": "forceTeam",
+            "type": "float"
+        },
+        {
+            "name": "buildVisibility",
+            "type": "string"
+        }
+    ]
+}

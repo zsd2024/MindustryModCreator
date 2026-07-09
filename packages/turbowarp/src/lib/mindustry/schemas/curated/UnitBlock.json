@@ -1,0 +1,21 @@
+{
+    "localizedName": "UnitBlock",
+    "fields": [
+        {
+            "name": "plans",
+            "type": "string"
+        },
+        {
+            "name": "configurable",
+            "type": "string"
+        },
+        {
+            "name": "shownPlanets",
+            "type": "string"
+        },
+        {
+            "name": "forceTeam",
+            "type": "string"
+        }
+    ]
+}

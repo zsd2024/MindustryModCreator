@@ -1,0 +1,173 @@
+{
+    "localizedName": "ForceProjector",
+    "parentType": "Block",
+    "fields": [
+        {
+            "name": "radius",
+            "type": "float"
+        },
+        {
+            "name": "shieldHealth",
+            "type": "float"
+        },
+        {
+            "name": "cooldownNormal",
+            "type": "float"
+        },
+        {
+            "name": "cooldownBrokenBase",
+            "type": "float"
+        },
+        {
+            "name": "size",
+            "type": "int"
+        },
+        {
+            "name": "consumes",
+            "type": "object",
+            "fields": [
+                {
+                    "name": "liquids",
+                    "type": "string"
+                },
+                {
+                    "name": "power",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "sides",
+            "type": "float"
+        },
+        {
+            "name": "consumeCoolant",
+            "type": "boolean"
+        },
+        {
+            "name": "buildVisibility",
+            "type": "string"
+        },
+        {
+            "name": "hasItems",
+            "type": "boolean"
+        },
+        {
+            "name": "shieldRotation",
+            "type": "float"
+        },
+        {
+            "name": "shieldBreakEffect",
+            "type": "object",
+            "fields": [
+                {
+                    "name": "amount",
+                    "type": "int"
+                },
+                {
+                    "name": "effect",
+                    "type": "string"
+                },
+                {
+                    "name": "lengthOffset",
+                    "type": "string"
+                },
+                {
+                    "name": "rotationOffset",
+                    "type": "string"
+                },
+                {
+                    "name": "type",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "liquidCapacity",
+            "type": "int"
+        },
+        {
+            "name": "cooldownLiquid",
+            "type": "float"
+        },
+        {
+            "name": "coolantConsumption",
+            "type": "float"
+        },
+        {
+            "name": "requirements",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "fields": [
+                    {
+                        "name": "amount",
+                        "type": "int"
+                    },
+                    {
+                        "name": "item",
+                        "type": "string"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "category",
+            "type": "string"
+        },
+        {
+            "name": "health",
+            "type": "int"
+        },
+        {
+            "name": "hasPower",
+            "type": "boolean"
+        },
+        {
+            "name": "hasLiquids",
+            "type": "boolean"
+        },
+        {
+            "name": "phaseRadiusBoost",
+            "type": "float"
+        },
+        {
+            "name": "phaseShieldBoost",
+            "type": "float"
+        },
+        {
+            "name": "itemConsumer",
+            "type": "object",
+            "fields": [
+                {
+                    "name": "items",
+                    "type": "string"
+                },
+                {
+                    "name": "type",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "squareSprite",
+            "type": "boolean"
+        },
+        {
+            "name": "forceTeam",
+            "type": "float"
+        },
+        {
+            "name": "name",
+            "type": "string"
+        },
+        {
+            "name": "description",
+            "type": "string"
+        },
+        {
+            "name": "research",
+            "type": "string"
+        }
+    ]
+}

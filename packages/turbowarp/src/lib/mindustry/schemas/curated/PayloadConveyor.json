@@ -1,0 +1,64 @@
+{
+    "localizedName": "PayloadConveyor",
+    "parentType": "Block",
+    "fields": [
+        {
+            "name": "size",
+            "type": "int"
+        },
+        {
+            "name": "moveTime",
+            "type": "float"
+        },
+        {
+            "name": "payloadLimit",
+            "type": "float"
+        },
+        {
+            "name": "category",
+            "type": "string"
+        },
+        {
+            "name": "requirements",
+            "type": "array"
+        },
+        {
+            "name": "interp",
+            "type": "string"
+        },
+        {
+            "name": "moveForce",
+            "type": "float"
+        },
+        {
+            "name": "research",
+            "type": "object",
+            "fields": [
+                {
+                    "name": "objectives",
+                    "type": "string"
+                },
+                {
+                    "name": "parent",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "placeEffect",
+            "type": "array"
+        },
+        {
+            "name": "breakEffect",
+            "type": "array"
+        },
+        {
+            "name": "canOverdrive",
+            "type": "boolean"
+        },
+        {
+            "name": "forceTeam",
+            "type": "float"
+        }
+    ]
+}

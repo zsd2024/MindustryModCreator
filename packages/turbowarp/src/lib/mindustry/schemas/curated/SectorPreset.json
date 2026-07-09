@@ -1,0 +1,50 @@
+{
+    "localizedName": "SectorPreset",
+    "parentType": "UnlockableContent",
+    "fields": [
+        {
+            "name": "sector",
+            "type": "float"
+        },
+        {
+            "name": "planet",
+            "type": "string"
+        },
+        {
+            "name": "difficulty",
+            "type": "float"
+        },
+        {
+            "name": "localizedName",
+            "type": "string"
+        },
+        {
+            "name": "description",
+            "type": "string"
+        },
+        {
+            "name": "allowLaunchLoadout",
+            "type": "boolean"
+        },
+        {
+            "name": "addStartingItems",
+            "type": "boolean"
+        },
+        {
+            "name": "captureWave",
+            "type": "float"
+        },
+        {
+            "name": "allowLaunchSchematics",
+            "type": "boolean"
+        },
+        {
+            "name": "research",
+            "type": "string"
+        },
+        {
+            "name": "noLighting",
+            "type": "boolean"
+        }
+    ]
+}

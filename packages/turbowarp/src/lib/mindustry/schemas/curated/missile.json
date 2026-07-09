@@ -1,0 +1,343 @@
+{
+    "localizedName": "missile",
+    "parentType": "UnitType",
+    "fields": [
+        {
+            "name": "lifetime",
+            "type": "float"
+        },
+        {
+            "name": "weapons",
+            "type": "array"
+        },
+        {
+            "name": "template",
+            "type": "string"
+        },
+        {
+            "name": "speed",
+            "type": "float"
+        },
+        {
+            "name": "deathExplosionEffect",
+            "type": "array"
+        },
+        {
+            "name": "drawCell",
+            "type": "boolean"
+        },
+        {
+            "name": "deathSound",
+            "type": "string"
+        },
+        {
+            "name": "rotateSpeed",
+            "type": "float"
+        },
+        {
+            "name": "hittable",
+            "type": "boolean"
+        },
+        {
+            "name": "targetable",
+            "type": "boolean"
+        },
+        {
+            "name": "engineSize",
+            "type": "float"
+        },
+        {
+            "name": "drawBody",
+            "type": "boolean"
+        },
+        {
+            "name": "controller",
+            "type": "string"
+        },
+        {
+            "name": "hitSize",
+            "type": "float"
+        },
+        {
+            "name": "outlines",
+            "type": "boolean"
+        },
+        {
+            "name": "parts",
+            "type": "array"
+        },
+        {
+            "name": "flying",
+            "type": "boolean"
+        },
+        {
+            "name": "defaultController",
+            "type": "string"
+        },
+        {
+            "name": "createWreck",
+            "type": "boolean"
+        },
+        {
+            "name": "envEnabled",
+            "type": "float"
+        },
+        {
+            "name": "envDisabled",
+            "type": "float"
+        },
+        {
+            "name": "createScorch",
+            "type": "boolean"
+        },
+        {
+            "name": "deathShake",
+            "type": "float"
+        },
+        {
+            "name": "trailLength",
+            "type": "float"
+        },
+        {
+            "name": "abilities",
+            "type": "array"
+        },
+        {
+            "name": "trailColor",
+            "type": "string"
+        },
+        {
+            "name": "hidden",
+            "type": "boolean"
+        },
+        {
+            "name": "physics",
+            "type": "boolean"
+        },
+        {
+            "name": "immunities",
+            "type": "array"
+        },
+        {
+            "name": "maxRange",
+            "type": "float"
+        },
+        {
+            "name": "lowAltitude",
+            "type": "boolean"
+        },
+        {
+            "name": "engineColor",
+            "type": "string"
+        },
+        {
+            "name": "health",
+            "type": "int"
+        },
+        {
+            "name": "range",
+            "type": "int"
+        },
+        {
+            "name": "groundLayer",
+            "type": "float"
+        },
+        {
+            "name": "useUnitCap",
+            "type": "boolean"
+        },
+        {
+            "name": "engineLayer",
+            "type": "float"
+        },
+        {
+            "name": "shadowElevationScl",
+            "type": "float"
+        },
+        {
+            "name": "loopSound",
+            "type": "string"
+        },
+        {
+            "name": "internal",
+            "type": "boolean"
+        },
+        {
+            "name": "hovering",
+            "type": "boolean"
+        },
+        {
+            "name": "fullOverride",
+            "type": "string"
+        },
+        {
+            "name": "homingDelay",
+            "type": "float"
+        },
+        {
+            "name": "localizedName",
+            "type": "string"
+        },
+        {
+            "name": "outlineRadius",
+            "type": "float"
+        },
+        {
+            "name": "targetAir",
+            "type": "boolean"
+        },
+        {
+            "name": "trailWidth",
+            "type": "float"
+        },
+        {
+            "name": "trailEffect",
+            "type": "string"
+        },
+        {
+            "name": "drawSoftShadow",
+            "type": "boolean"
+        },
+        {
+            "name": "drag",
+            "type": "float"
+        },
+        {
+            "name": "loopSoundVolume",
+            "type": "float"
+        },
+        {
+            "name": "missileAccelTime",
+            "type": "float"
+        },
+        {
+            "name": "outlineColor",
+            "type": "string"
+        },
+        {
+            "name": "targetMissiles",
+            "type": "boolean"
+        },
+        {
+            "name": "engineOffset",
+            "type": "float"
+        },
+        {
+            "name": "fallSpeed",
+            "type": "float"
+        },
+        {
+            "name": "shieldColor",
+            "type": "string"
+        },
+        {
+            "name": "playerControllable",
+            "type": "boolean"
+        },
+        {
+            "name": "armor",
+            "type": "int"
+        },
+        {
+            "name": "wobble",
+            "type": "boolean"
+        },
+        {
+            "name": "drawShields",
+            "type": "boolean"
+        },
+        {
+            "name": "bounded",
+            "type": "boolean"
+        },
+        {
+            "name": "isEnemy",
+            "type": "boolean"
+        },
+        {
+            "name": "fogRadius",
+            "type": "float"
+        },
+        {
+            "name": "crashDamageMultiplier",
+            "type": "float"
+        },
+        {
+            "name": "engines",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "fields": [
+                    {
+                        "name": "engineColor",
+                        "type": "string"
+                    },
+                    {
+                        "name": "radius",
+                        "type": "string"
+                    },
+                    {
+                        "name": "rotation",
+                        "type": "string"
+                    },
+                    {
+                        "name": "x",
+                        "type": "string"
+                    },
+                    {
+                        "name": "y",
+                        "type": "string"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "hoverable",
+            "type": "boolean"
+        },
+        {
+            "name": "buildSpeed",
+            "type": "float"
+        },
+        {
+            "name": "buildRange",
+            "type": "float"
+        },
+        {
+            "name": "fallEffect",
+            "type": "string"
+        },
+        {
+            "name": "fallEngineEffect",
+            "type": "string"
+        },
+        {
+            "name": "drawBuildBeam",
+            "type": "boolean"
+        },
+        {
+            "name": "allowedInPayloads",
+            "type": "boolean"
+        },
+        {
+            "name": "accel",
+            "type": "float"
+        },
+        {
+            "name": "targetPriority",
+            "type": "float"
+        },
+        {
+            "name": "targetUnderBlocks",
+            "type": "boolean"
+        },
+        {
+            "name": "loopSounfVolume",
+            "type": "float"
+        },
+        {
+            "name": "allowedIOnPayloads",
+            "type": "boolean"
+        }
+    ]
+}

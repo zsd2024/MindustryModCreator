@@ -1,0 +1,159 @@
+{
+    "localizedName": "CoreBlock",
+    "parentType": "StorageBlock",
+    "fields": [
+        {
+            "name": "size",
+            "type": "int"
+        },
+        {
+            "name": "health",
+            "type": "int"
+        },
+        {
+            "name": "unitType",
+            "type": "string"
+        },
+        {
+            "name": "unitCapModifier",
+            "type": "float"
+        },
+        {
+            "name": "itemCapacity",
+            "type": "int"
+        },
+        {
+            "name": "category",
+            "type": "string"
+        },
+        {
+            "name": "requirements",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "fields": [
+                    {
+                        "name": "amount",
+                        "type": "int"
+                    },
+                    {
+                        "name": "item",
+                        "type": "string"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "research",
+            "type": "object",
+            "fields": [
+                {
+                    "name": "objectives",
+                    "type": "string"
+                },
+                {
+                    "name": "parent",
+                    "type": "string"
+                },
+                {
+                    "name": "requirements",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "squareSprite",
+            "type": "boolean"
+        },
+        {
+            "name": "armor",
+            "type": "int"
+        },
+        {
+            "name": "name",
+            "type": "string"
+        },
+        {
+            "name": "description",
+            "type": "string"
+        },
+        {
+            "name": "researchCostMultiplier",
+            "type": "float"
+        },
+        {
+            "name": "isFirstTier",
+            "type": "boolean"
+        },
+        {
+            "name": "enableDrawStatus",
+            "type": "boolean"
+        },
+        {
+            "name": "thrusterLength",
+            "type": "float"
+        },
+        {
+            "name": "hasPower",
+            "type": "boolean"
+        },
+        {
+            "name": "conductivePower",
+            "type": "boolean"
+        },
+        {
+            "name": "consumesPower",
+            "type": "boolean"
+        },
+        {
+            "name": "outputsPower",
+            "type": "boolean"
+        },
+        {
+            "name": "consumes",
+            "type": "object",
+            "fields": [
+                {
+                    "name": "powerBuffered",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "fullOverride",
+            "type": "string"
+        },
+        {
+            "name": "fogRadius",
+            "type": "float"
+        },
+        {
+            "name": "customShadow",
+            "type": "boolean"
+        },
+        {
+            "name": "breakEffect",
+            "type": "array"
+        },
+        {
+            "name": "baseExplosiveness",
+            "type": "float"
+        },
+        {
+            "name": "explosivenessScale",
+            "type": "float"
+        },
+        {
+            "name": "flammabilityScale",
+            "type": "float"
+        },
+        {
+            "name": "incinerateNonBuildable",
+            "type": "boolean"
+        },
+        {
+            "name": "details",
+            "type": "string"
+        }
+    ]
+}

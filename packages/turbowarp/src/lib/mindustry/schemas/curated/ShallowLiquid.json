@@ -1,0 +1,68 @@
+{
+    "localizedName": "ShallowLiquid",
+    "parentType": "Floor",
+    "fields": [
+        {
+            "name": "liquidDrop",
+            "type": "string"
+        },
+        {
+            "name": "status",
+            "type": "string"
+        },
+        {
+            "name": "cacheLayer",
+            "type": "string"
+        },
+        {
+            "name": "attributes",
+            "type": "object",
+            "fields": [
+                {
+                    "name": "heat",
+                    "type": "string"
+                },
+                {
+                    "name": "sand",
+                    "type": "string"
+                },
+                {
+                    "name": "water",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "variants",
+            "type": "float"
+        },
+        {
+            "name": "liquidMultiplier",
+            "type": "float"
+        },
+        {
+            "name": "statusDuration",
+            "type": "float"
+        },
+        {
+            "name": "emitLight",
+            "type": "boolean"
+        },
+        {
+            "name": "lightRadius",
+            "type": "float"
+        },
+        {
+            "name": "lightColor",
+            "type": "string"
+        },
+        {
+            "name": "isLiquid",
+            "type": "boolean"
+        },
+        {
+            "name": "speedMultiplier",
+            "type": "float"
+        }
+    ]
+}

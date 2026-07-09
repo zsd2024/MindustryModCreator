@@ -1,0 +1,22 @@
+{
+    "localizedName": "PowerGenerator",
+    "parentType": "PowerDistributor",
+    "fields": [
+        {
+            "name": "powerProduction",
+            "type": "float"
+        },
+        {
+            "name": "powerCapacity",
+            "type": "string"
+        },
+        {
+            "name": "itemCapacity",
+            "type": "string"
+        },
+        {
+            "name": "consumes",
+            "type": "string"
+        }
+    ]
+}

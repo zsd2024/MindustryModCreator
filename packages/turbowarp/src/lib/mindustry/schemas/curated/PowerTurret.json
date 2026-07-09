@@ -1,0 +1,452 @@
+{
+    "localizedName": "PowerTurret",
+    "parentType": "Turret",
+    "fields": [
+        {
+            "name": "size",
+            "type": "int"
+        },
+        {
+            "name": "reload",
+            "type": "int"
+        },
+        {
+            "name": "shootType",
+            "type": "object"
+        },
+        {
+            "name": "consumes",
+            "type": "object",
+            "fields": [
+                {
+                    "name": "coolant",
+                    "type": "string"
+                },
+                {
+                    "name": "liquids",
+                    "type": "string"
+                },
+                {
+                    "name": "power",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "recoil",
+            "type": "float"
+        },
+        {
+            "name": "rotateSpeed",
+            "type": "float"
+        },
+        {
+            "name": "shootSound",
+            "type": "string"
+        },
+        {
+            "name": "range",
+            "type": "int"
+        },
+        {
+            "name": "requirements",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "fields": [
+                    {
+                        "name": "amount",
+                        "type": "int"
+                    },
+                    {
+                        "name": "item",
+                        "type": "string"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "category",
+            "type": "string"
+        },
+        {
+            "name": "drawer",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "fields": [
+                    {
+                        "name": "basePrefix",
+                        "type": "string"
+                    },
+                    {
+                        "name": "drawers",
+                        "type": "string"
+                    },
+                    {
+                        "name": "iconOverride",
+                        "type": "string"
+                    },
+                    {
+                        "name": "parts",
+                        "type": "string"
+                    },
+                    {
+                        "name": "type",
+                        "type": "string"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "research",
+            "type": "object",
+            "fields": [
+                {
+                    "name": "objectives",
+                    "type": "string"
+                },
+                {
+                    "name": "parent",
+                    "type": "string"
+                },
+                {
+                    "name": "requirements",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "shootY",
+            "type": "float"
+        },
+        {
+            "name": "shootCone",
+            "type": "float"
+        },
+        {
+            "name": "shoot",
+            "type": "object",
+            "fields": [
+                {
+                    "name": "barrels",
+                    "type": "string"
+                },
+                {
+                    "name": "firstShotDelay",
+                    "type": "string"
+                },
+                {
+                    "name": "radius",
+                    "type": "string"
+                },
+                {
+                    "name": "shotDelay",
+                    "type": "string"
+                },
+                {
+                    "name": "shots",
+                    "type": "int"
+                },
+                {
+                    "name": "spread",
+                    "type": "string"
+                },
+                {
+                    "name": "type",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "squareSprite",
+            "type": "boolean"
+        },
+        {
+            "name": "health",
+            "type": "int"
+        },
+        {
+            "name": "outlineIcon",
+            "type": "boolean"
+        },
+        {
+            "name": "shake",
+            "type": "float"
+        },
+        {
+            "name": "shootWarmupSpeed",
+            "type": "float"
+        },
+        {
+            "name": "recoilTime",
+            "type": "float"
+        },
+        {
+            "name": "coolantMultiplier",
+            "type": "float"
+        },
+        {
+            "name": "canOverdrive",
+            "type": "boolean"
+        },
+        {
+            "name": "liquidCapacity",
+            "type": "int"
+        },
+        {
+            "name": "coolant",
+            "type": "object",
+            "fields": [
+                {
+                    "name": "amount",
+                    "type": "int"
+                },
+                {
+                    "name": "liquid",
+                    "type": "string"
+                },
+                {
+                    "name": "type",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "alwaysShooting",
+            "type": "boolean"
+        },
+        {
+            "name": "rotate",
+            "type": "boolean"
+        },
+        {
+            "name": "outlineColor",
+            "type": "float"
+        },
+        {
+            "name": "unitSort",
+            "type": "string"
+        },
+        {
+            "name": "heatColor",
+            "type": "string"
+        },
+        {
+            "name": "customShadow",
+            "type": "boolean"
+        },
+        {
+            "name": "targetGround",
+            "type": "boolean"
+        },
+        {
+            "name": "targetAir",
+            "type": "boolean"
+        },
+        {
+            "name": "shootEffect",
+            "type": "object",
+            "fields": [
+                {
+                    "name": "effects",
+                    "type": "string"
+                },
+                {
+                    "name": "type",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "minWarmup",
+            "type": "float"
+        },
+        {
+            "name": "destroyBullet",
+            "type": "object"
+        },
+        {
+            "name": "breakEffect",
+            "type": "array"
+        },
+        {
+            "name": "cooldownTime",
+            "type": "float"
+        },
+        {
+            "name": "name",
+            "type": "string"
+        },
+        {
+            "name": "description",
+            "type": "string"
+        },
+        {
+            "name": "inaccuracy",
+            "type": "float"
+        },
+        {
+            "name": "armor",
+            "type": "int"
+        },
+        {
+            "name": "destroyEffect",
+            "type": "array"
+        },
+        {
+            "name": "recoils",
+            "type": "float"
+        },
+        {
+            "name": "smokeEffect",
+            "type": "object",
+            "fields": [
+                {
+                    "name": "effect",
+                    "type": "string"
+                },
+                {
+                    "name": "maxPitch",
+                    "type": "string"
+                },
+                {
+                    "name": "maxVolume",
+                    "type": "string"
+                },
+                {
+                    "name": "minPitch",
+                    "type": "string"
+                },
+                {
+                    "name": "minVolume",
+                    "type": "string"
+                },
+                {
+                    "name": "sound",
+                    "type": "string"
+                },
+                {
+                    "name": "type",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "envDisabled",
+            "type": "float"
+        },
+        {
+            "name": "group",
+            "type": "string"
+        },
+        {
+            "name": "hasLiquids",
+            "type": "boolean"
+        },
+        {
+            "name": "warmupMaintainTime",
+            "type": "float"
+        },
+        {
+            "name": "clipSize",
+            "type": "float"
+        },
+        {
+            "name": "conductivePower",
+            "type": "boolean"
+        },
+        {
+            "name": "priority",
+            "type": "float"
+        },
+        {
+            "name": "regionRotated1",
+            "type": "float"
+        },
+        {
+            "name": "chargeSound",
+            "type": "string"
+        },
+        {
+            "name": "destroySound",
+            "type": "string"
+        },
+        {
+            "name": "loopSound",
+            "type": "string"
+        },
+        {
+            "name": "loopSoundVolume",
+            "type": "float"
+        },
+        {
+            "name": "hasItems",
+            "type": "boolean"
+        },
+        {
+            "name": "hasPower",
+            "type": "boolean"
+        },
+        {
+            "name": "drawTeamOverlay",
+            "type": "boolean"
+        },
+        {
+            "name": "envEnabled",
+            "type": "float"
+        },
+        {
+            "name": "rebuildable",
+            "type": "boolean"
+        },
+        {
+            "name": "breakable",
+            "type": "boolean"
+        },
+        {
+            "name": "destructible",
+            "type": "boolean"
+        },
+        {
+            "name": "placeEffect",
+            "type": "array"
+        },
+        {
+            "name": "ammoPerShot",
+            "type": "float"
+        },
+        {
+            "name": "solid",
+            "type": "boolean"
+        },
+        {
+            "name": "predictTarget",
+            "type": "boolean"
+        },
+        {
+            "name": "linearWarmup",
+            "type": "boolean"
+        },
+        {
+            "name": "buildTime",
+            "type": "float"
+        },
+        {
+            "name": "elevation",
+            "type": "float"
+        },
+        {
+            "name": "shootSoundVolume",
+            "type": "float"
+        },
+        {
+            "name": "targetMissile",
+            "type": "boolean"
+        },
+        {
+            "name": "forceTeam",
+            "type": "float"
+        }
+    ]
+}

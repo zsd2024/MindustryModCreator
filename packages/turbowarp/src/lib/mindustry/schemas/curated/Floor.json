@@ -1,0 +1,132 @@
+{
+    "localizedName": "Floor",
+    "parentType": "Block",
+    "fields": [
+        {
+            "name": "attributes",
+            "type": "object",
+            "fields": [
+                {
+                    "name": "array",
+                    "type": "string"
+                },
+                {
+                    "name": "chemical",
+                    "type": "string"
+                },
+                {
+                    "name": "flow",
+                    "type": "string"
+                },
+                {
+                    "name": "gravel",
+                    "type": "string"
+                },
+                {
+                    "name": "heat",
+                    "type": "string"
+                },
+                {
+                    "name": "sand",
+                    "type": "string"
+                },
+                {
+                    "name": "water",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "variants",
+            "type": "float"
+        },
+        {
+            "name": "liquidDrop",
+            "type": "string"
+        },
+        {
+            "name": "speedMultiplier",
+            "type": "float"
+        },
+        {
+            "name": "cacheLayer",
+            "type": "string"
+        },
+        {
+            "name": "isLiquid",
+            "type": "boolean"
+        },
+        {
+            "name": "liquidMultiplier",
+            "type": "float"
+        },
+        {
+            "name": "name",
+            "type": "string"
+        },
+        {
+            "name": "emitLight",
+            "type": "boolean"
+        },
+        {
+            "name": "lightRadius",
+            "type": "float"
+        },
+        {
+            "name": "lightColor",
+            "type": "string"
+        },
+        {
+            "name": "status",
+            "type": "string"
+        },
+        {
+            "name": "shallow",
+            "type": "boolean"
+        },
+        {
+            "name": "statusDuration",
+            "type": "float"
+        },
+        {
+            "name": "blendGroup",
+            "type": "string"
+        },
+        {
+            "name": "drownTime",
+            "type": "float"
+        },
+        {
+            "name": "itemDrop",
+            "type": "string"
+        },
+        {
+            "name": "description",
+            "type": "string"
+        },
+        {
+            "name": "albedo",
+            "type": "float"
+        },
+        {
+            "name": "supportsOverlay",
+            "type": "boolean"
+        },
+        {
+            "name": "floating",
+            "type": "boolean"
+        },
+        {
+            "name": "wall",
+            "type": "string"
+        },
+        {
+            "name": "playerUnmineable",
+            "type": "boolean"
+        },
+        {
+            "name": "placeableOn",
+            "type": "boolean"
+        }
+    ]
+}

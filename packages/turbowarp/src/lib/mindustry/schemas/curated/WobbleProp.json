@@ -1,0 +1,62 @@
+{
+    "localizedName": "WobbleProp",
+    "parentType": "Prop",
+    "fields": [
+        {
+            "name": "variants",
+            "type": "float"
+        },
+        {
+            "name": "update",
+            "type": "boolean"
+        },
+        {
+            "name": "solid",
+            "type": "boolean"
+        },
+        {
+            "name": "breakable",
+            "type": "boolean"
+        },
+        {
+            "name": "destructible",
+            "type": "boolean"
+        },
+        {
+            "name": "drawTeamOverlay",
+            "type": "boolean"
+        },
+        {
+            "name": "health",
+            "type": "int"
+        },
+        {
+            "name": "customShadow",
+            "type": "boolean"
+        },
+        {
+            "name": "targetable",
+            "type": "boolean"
+        },
+        {
+            "name": "underBullets",
+            "type": "boolean"
+        },
+        {
+            "name": "buildVisibility",
+            "type": "string"
+        },
+        {
+            "name": "instantDeconstruct",
+            "type": "boolean"
+        },
+        {
+            "name": "breakSound",
+            "type": "string"
+        },
+        {
+            "name": "breakEffect",
+            "type": "string"
+        }
+    ]
+}

@@ -1,0 +1,27 @@
+{
+    "localizedName": "StaticWall",
+    "parentType": "Prop",
+    "fields": [
+        {
+            "name": "name",
+            "type": "string"
+        },
+        {
+            "name": "variants",
+            "type": "float"
+        },
+        {
+            "name": "attributes",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "fields": [
+                    {
+                        "name": "granite",
+                        "type": "string"
+                    }
+                ]
+            }
+        }
+    ]
+}

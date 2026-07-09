@@ -1,0 +1,52 @@
+{
+    "localizedName": "SteamVent",
+    "parentType": "Floor",
+    "fields": [
+        {
+            "name": "parent",
+            "type": "string"
+        },
+        {
+            "name": "blendGroup",
+            "type": "string"
+        },
+        {
+            "name": "variants",
+            "type": "float"
+        },
+        {
+            "name": "effectSpacing",
+            "type": "float"
+        },
+        {
+            "name": "effect",
+            "type": "array"
+        },
+        {
+            "name": "liquidDrop",
+            "type": "string"
+        },
+        {
+            "name": "isLiquid",
+            "type": "boolean"
+        },
+        {
+            "name": "attributes",
+            "type": "object",
+            "fields": [
+                {
+                    "name": "corium",
+                    "type": "string"
+                },
+                {
+                    "name": "heat",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "allowCorePlacement",
+            "type": "boolean"
+        }
+    ]
+}

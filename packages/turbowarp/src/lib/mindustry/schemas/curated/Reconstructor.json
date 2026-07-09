@@ -1,0 +1,73 @@
+{
+    "localizedName": "Reconstructor",
+    "parentType": "UnitBlock",
+    "fields": [
+        {
+            "name": "name",
+            "type": "string"
+        },
+        {
+            "name": "description",
+            "type": "string"
+        },
+        {
+            "name": "health",
+            "type": "int"
+        },
+        {
+            "name": "size",
+            "type": "int"
+        },
+        {
+            "name": "constructTime",
+            "type": "float"
+        },
+        {
+            "name": "upgrades",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "fields": [
+                    {
+                        "name": "0",
+                        "type": "string"
+                    },
+                    {
+                        "name": "1",
+                        "type": "string"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "consumes",
+            "type": "object",
+            "fields": [
+                {
+                    "name": "items",
+                    "type": "string"
+                },
+                {
+                    "name": "liquid",
+                    "type": "string"
+                },
+                {
+                    "name": "power",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "requirements",
+            "type": "array"
+        },
+        {
+            "name": "category",
+            "type": "string"
+        },
+        {
+            "name": "research",
+            "type": "string"
+        }
+    ]
+}

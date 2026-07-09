@@ -1,0 +1,88 @@
+{
+    "localizedName": "Conduit",
+    "parentType": "LiquidBlock",
+    "fields": [
+        {
+            "name": "health",
+            "type": "int"
+        },
+        {
+            "name": "liquidCapacity",
+            "type": "int"
+        },
+        {
+            "name": "requirements",
+            "type": "array"
+        },
+        {
+            "name": "leaks",
+            "type": "boolean"
+        },
+        {
+            "name": "botColor",
+            "type": "float"
+        },
+        {
+            "name": "category",
+            "type": "string"
+        },
+        {
+            "name": "junctionReplacement",
+            "type": "string"
+        },
+        {
+            "name": "research",
+            "type": "object",
+            "fields": [
+                {
+                    "name": "objectives",
+                    "type": "string"
+                },
+                {
+                    "name": "parent",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "underBullets",
+            "type": "boolean"
+        },
+        {
+            "name": "bridgeReplacement",
+            "type": "string"
+        },
+        {
+            "name": "armor",
+            "type": "int"
+        },
+        {
+            "name": "liquidPressure",
+            "type": "float"
+        },
+        {
+            "name": "customShadow",
+            "type": "boolean"
+        },
+        {
+            "name": "placeEffect",
+            "type": "array"
+        },
+        {
+            "name": "breakEffect",
+            "type": "array"
+        },
+        {
+            "name": "placeableLiquid",
+            "type": "boolean"
+        },
+        {
+            "name": "buildCostMultiplier",
+            "type": "float"
+        },
+        {
+            "name": "forceTeam",
+            "type": "float"
+        }
+    ]
+}

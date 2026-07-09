@@ -1,0 +1,290 @@
+{
+    "localizedName": "legs",
+    "parentType": "UnitType",
+    "fields": [
+        {
+            "name": "speed",
+            "type": "float"
+        },
+        {
+            "name": "health",
+            "type": "int"
+        },
+        {
+            "name": "armor",
+            "type": "int"
+        },
+        {
+            "name": "legCount",
+            "type": "float"
+        },
+        {
+            "name": "rotateSpeed",
+            "type": "float"
+        },
+        {
+            "name": "weapons",
+            "type": "array"
+        },
+        {
+            "name": "groundLayer",
+            "type": "float"
+        },
+        {
+            "name": "hitSize",
+            "type": "float"
+        },
+        {
+            "name": "hovering",
+            "type": "boolean"
+        },
+        {
+            "name": "legLength",
+            "type": "float"
+        },
+        {
+            "name": "drag",
+            "type": "float"
+        },
+        {
+            "name": "legForwardScl",
+            "type": "float"
+        },
+        {
+            "name": "legBaseOffset",
+            "type": "float"
+        },
+        {
+            "name": "legMoveSpace",
+            "type": "float"
+        },
+        {
+            "name": "shadowElevation",
+            "type": "float"
+        },
+        {
+            "name": "immunities",
+            "type": "array"
+        },
+        {
+            "name": "abilities",
+            "type": "array"
+        },
+        {
+            "name": "itemCapacity",
+            "type": "int"
+        },
+        {
+            "name": "parts",
+            "type": "array"
+        },
+        {
+            "name": "stepShake",
+            "type": "float"
+        },
+        {
+            "name": "envEnabled",
+            "type": "float"
+        },
+        {
+            "name": "envDisabled",
+            "type": "float"
+        },
+        {
+            "name": "controller",
+            "type": "string"
+        },
+        {
+            "name": "drownTimeMultiplier",
+            "type": "float"
+        },
+        {
+            "name": "outlineColor",
+            "type": "string"
+        },
+        {
+            "name": "legPairOffset",
+            "type": "float"
+        },
+        {
+            "name": "rippleScale",
+            "type": "float"
+        },
+        {
+            "name": "legSpeed",
+            "type": "float"
+        },
+        {
+            "name": "name",
+            "type": "string"
+        },
+        {
+            "name": "description",
+            "type": "string"
+        },
+        {
+            "name": "faceTarget",
+            "type": "boolean"
+        },
+        {
+            "name": "outlines",
+            "type": "boolean"
+        },
+        {
+            "name": "legLengthScl",
+            "type": "float"
+        },
+        {
+            "name": "template",
+            "type": "string"
+        },
+        {
+            "name": "stepSound",
+            "type": "string"
+        },
+        {
+            "name": "stepSoundVolume",
+            "type": "float"
+        },
+        {
+            "name": "legSplashDamage",
+            "type": "float"
+        },
+        {
+            "name": "legSplashRange",
+            "type": "float"
+        },
+        {
+            "name": "legExtension",
+            "type": "float"
+        },
+        {
+            "name": "buildSpeed",
+            "type": "float"
+        },
+        {
+            "name": "legContinuousMove",
+            "type": "boolean"
+        },
+        {
+            "name": "accel",
+            "type": "float"
+        },
+        {
+            "name": "stepSoundPitch",
+            "type": "float"
+        },
+        {
+            "name": "range",
+            "type": "int"
+        },
+        {
+            "name": "research",
+            "type": "string"
+        },
+        {
+            "name": "localizedName",
+            "type": "string"
+        },
+        {
+            "name": "physics",
+            "type": "boolean"
+        },
+        {
+            "name": "hittable",
+            "type": "boolean"
+        },
+        {
+            "name": "targetable",
+            "type": "boolean"
+        },
+        {
+            "name": "buildRange",
+            "type": "float"
+        },
+        {
+            "name": "isEnemy",
+            "type": "boolean"
+        },
+        {
+            "name": "healFlash",
+            "type": "boolean"
+        },
+        {
+            "name": "fullOverride",
+            "type": "string"
+        },
+        {
+            "name": "engineSize",
+            "type": "float"
+        },
+        {
+            "name": "fallSpeed",
+            "type": "float"
+        },
+        {
+            "name": "drawMinimap",
+            "type": "boolean"
+        },
+        {
+            "name": "drawBuildBeam",
+            "type": "boolean"
+        },
+        {
+            "name": "drawCell",
+            "type": "boolean"
+        },
+        {
+            "name": "drawShields",
+            "type": "boolean"
+        },
+        {
+            "name": "drawBody",
+            "type": "boolean"
+        },
+        {
+            "name": "internal",
+            "type": "boolean"
+        },
+        {
+            "name": "legGroupSize",
+            "type": "float"
+        },
+        {
+            "name": "legStraightness",
+            "type": "float"
+        },
+        {
+            "name": "lockLegBase",
+            "type": "boolean"
+        },
+        {
+            "name": "softShadowScl",
+            "type": "float"
+        },
+        {
+            "name": "tepSoundPitch",
+            "type": "float"
+        },
+        {
+            "name": "legMovespace",
+            "type": "float"
+        },
+        {
+            "name": "legLenghtScl",
+            "type": "float"
+        },
+        {
+            "name": "legMaxLength",
+            "type": "float"
+        },
+        {
+            "name": "maxRange",
+            "type": "float"
+        },
+        {
+            "name": "targetAir",
+            "type": "boolean"
+        }
+    ]
+}

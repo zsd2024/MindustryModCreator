@@ -1,0 +1,96 @@
+{
+    "localizedName": "Liquid",
+    "parentType": "UnlockableContent",
+    "fields": [
+        {
+            "name": "color",
+            "type": "string"
+        },
+        {
+            "name": "heatCapacity",
+            "type": "float"
+        },
+        {
+            "name": "flammability",
+            "type": "float"
+        },
+        {
+            "name": "temperature",
+            "type": "float"
+        },
+        {
+            "name": "explosiveness",
+            "type": "float"
+        },
+        {
+            "name": "research",
+            "type": "object",
+            "fields": [
+                {
+                    "name": "objectives",
+                    "type": "string"
+                },
+                {
+                    "name": "parent",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "shownPlanets",
+            "type": "array"
+        },
+        {
+            "name": "viscosity",
+            "type": "float"
+        },
+        {
+            "name": "gas",
+            "type": "boolean"
+        },
+        {
+            "name": "effect",
+            "type": "string"
+        },
+        {
+            "name": "coolant",
+            "type": "boolean"
+        },
+        {
+            "name": "lightColor",
+            "type": "string"
+        },
+        {
+            "name": "name",
+            "type": "string"
+        },
+        {
+            "name": "description",
+            "type": "string"
+        },
+        {
+            "name": "gasColor",
+            "type": "string"
+        },
+        {
+            "name": "Type",
+            "type": "string"
+        },
+        {
+            "name": "hidden",
+            "type": "boolean"
+        },
+        {
+            "name": "collant",
+            "type": "boolean"
+        },
+        {
+            "name": "boilPoint",
+            "type": "float"
+        },
+        {
+            "name": "incinerable",
+            "type": "boolean"
+        }
+    ]
+}

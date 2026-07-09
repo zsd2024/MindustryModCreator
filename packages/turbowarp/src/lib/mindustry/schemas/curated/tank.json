@@ -1,0 +1,131 @@
+{
+    "localizedName": "tank",
+    "parentType": "UnitType",
+    "fields": [
+        {
+            "name": "health",
+            "type": "int"
+        },
+        {
+            "name": "armor",
+            "type": "int"
+        },
+        {
+            "name": "faceTarget",
+            "type": "boolean"
+        },
+        {
+            "name": "treadRects",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "fields": [
+                    {
+                        "name": "height",
+                        "type": "string"
+                    },
+                    {
+                        "name": "width",
+                        "type": "string"
+                    },
+                    {
+                        "name": "x",
+                        "type": "string"
+                    },
+                    {
+                        "name": "y",
+                        "type": "string"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "rotateSpeed",
+            "type": "float"
+        },
+        {
+            "name": "weapons",
+            "type": "array"
+        },
+        {
+            "name": "crushDamage",
+            "type": "float"
+        },
+        {
+            "name": "hitSize",
+            "type": "float"
+        },
+        {
+            "name": "treadPullOffset",
+            "type": "float"
+        },
+        {
+            "name": "shadowElevation",
+            "type": "float"
+        },
+        {
+            "name": "template",
+            "type": "string"
+        },
+        {
+            "name": "speed",
+            "type": "float"
+        },
+        {
+            "name": "accel",
+            "type": "float"
+        },
+        {
+            "name": "drag",
+            "type": "float"
+        },
+        {
+            "name": "drownTimeMultiplier",
+            "type": "float"
+        },
+        {
+            "name": "treadFrames",
+            "type": "float"
+        },
+        {
+            "name": "outlineColor",
+            "type": "float"
+        },
+        {
+            "name": "groundLayer",
+            "type": "float"
+        },
+        {
+            "name": "name",
+            "type": "string"
+        },
+        {
+            "name": "description",
+            "type": "string"
+        },
+        {
+            "name": "singleTarget",
+            "type": "boolean"
+        },
+        {
+            "name": "omniMovement",
+            "type": "boolean"
+        },
+        {
+            "name": "research",
+            "type": "string"
+        },
+        {
+            "name": "squareShape",
+            "type": "boolean"
+        },
+        {
+            "name": "flying",
+            "type": "boolean"
+        },
+        {
+            "name": "range",
+            "type": "int"
+        }
+    ]
+}

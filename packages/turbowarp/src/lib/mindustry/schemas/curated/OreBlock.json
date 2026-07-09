@@ -1,0 +1,53 @@
+{
+    "localizedName": "OreBlock",
+    "fields": [
+        {
+            "name": "itemDrop",
+            "type": "string"
+        },
+        {
+            "name": "variants",
+            "type": "float"
+        },
+        {
+            "name": "wallOre",
+            "type": "boolean"
+        },
+        {
+            "name": "hasColor",
+            "type": "boolean"
+        },
+        {
+            "name": "oreDefault",
+            "type": "boolean"
+        },
+        {
+            "name": "oreScale",
+            "type": "float"
+        },
+        {
+            "name": "oreThreshold",
+            "type": "float"
+        },
+        {
+            "name": "name",
+            "type": "string"
+        },
+        {
+            "name": "localizedName",
+            "type": "string"
+        },
+        {
+            "name": "mapColor",
+            "type": "string"
+        },
+        {
+            "name": "needsSurface",
+            "type": "boolean"
+        },
+        {
+            "name": "description",
+            "type": "string"
+        }
+    ]
+}

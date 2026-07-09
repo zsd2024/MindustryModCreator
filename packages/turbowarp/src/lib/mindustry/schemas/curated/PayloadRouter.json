@@ -1,0 +1,58 @@
+{
+    "localizedName": "PayloadRouter",
+    "parentType": "PayloadConveyor",
+    "fields": [
+        {
+            "name": "category",
+            "type": "string"
+        },
+        {
+            "name": "requirements",
+            "type": "array"
+        },
+        {
+            "name": "size",
+            "type": "int"
+        },
+        {
+            "name": "moveTime",
+            "type": "float"
+        },
+        {
+            "name": "moveForce",
+            "type": "float"
+        },
+        {
+            "name": "payloadLimit",
+            "type": "float"
+        },
+        {
+            "name": "interp",
+            "type": "string"
+        },
+        {
+            "name": "outputFacing",
+            "type": "boolean"
+        },
+        {
+            "name": "research",
+            "type": "string"
+        },
+        {
+            "name": "placeEffect",
+            "type": "array"
+        },
+        {
+            "name": "breakEffect",
+            "type": "array"
+        },
+        {
+            "name": "canOverdrive",
+            "type": "boolean"
+        },
+        {
+            "name": "forceTeam",
+            "type": "float"
+        }
+    ]
+}

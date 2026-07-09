@@ -1,0 +1,14 @@
+{
+    "type": "object",
+    "fields": [
+        {
+            "name": "liquid",
+            "type": "Liquid"
+        },
+        {
+            "name": "amount",
+            "type": "float",
+            "defaultValue": "0.1"
+        }
+    ]
+}

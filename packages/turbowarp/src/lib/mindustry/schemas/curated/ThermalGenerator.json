@@ -1,0 +1,144 @@
+{
+    "localizedName": "ThermalGenerator",
+    "parentType": "PowerGenerator",
+    "fields": [
+        {
+            "name": "powerProduction",
+            "type": "float"
+        },
+        {
+            "name": "requirements",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "fields": [
+                    {
+                        "name": "amount",
+                        "type": "int"
+                    },
+                    {
+                        "name": "item",
+                        "type": "string"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "category",
+            "type": "string"
+        },
+        {
+            "name": "research",
+            "type": "string"
+        },
+        {
+            "name": "size",
+            "type": "int"
+        },
+        {
+            "name": "attribute",
+            "type": "string"
+        },
+        {
+            "name": "drawer",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "fields": [
+                    {
+                        "name": "color",
+                        "type": "string"
+                    },
+                    {
+                        "name": "drawers",
+                        "type": "string"
+                    },
+                    {
+                        "name": "layer",
+                        "type": "string"
+                    },
+                    {
+                        "name": "rotateSpeed",
+                        "type": "string"
+                    },
+                    {
+                        "name": "suffix",
+                        "type": "string"
+                    },
+                    {
+                        "name": "type",
+                        "type": "string"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "generateEffect",
+            "type": "string"
+        },
+        {
+            "name": "ambientSound",
+            "type": "string"
+        },
+        {
+            "name": "ambientSoundVolume",
+            "type": "float"
+        },
+        {
+            "name": "minEfficiency",
+            "type": "float"
+        },
+        {
+            "name": "name",
+            "type": "string"
+        },
+        {
+            "name": "description",
+            "type": "string"
+        },
+        {
+            "name": "floating",
+            "type": "boolean"
+        },
+        {
+            "name": "placeableLiquid",
+            "type": "boolean"
+        },
+        {
+            "name": "customShadow",
+            "type": "boolean"
+        },
+        {
+            "name": "breakEffect",
+            "type": "array"
+        },
+        {
+            "name": "displayEfficiencyScale",
+            "type": "float"
+        },
+        {
+            "name": "displayEfficiency",
+            "type": "boolean"
+        },
+        {
+            "name": "effectChance",
+            "type": "float"
+        },
+        {
+            "name": "hasLiquids",
+            "type": "boolean"
+        },
+        {
+            "name": "outputLiquid",
+            "type": "string"
+        },
+        {
+            "name": "fogRadius",
+            "type": "float"
+        },
+        {
+            "name": "researchCost",
+            "type": "array"
+        }
+    ]
+}

@@ -1,0 +1,201 @@
+{
+    "localizedName": "Wall",
+    "parentType": "Block",
+    "fields": [
+        {
+            "name": "size",
+            "type": "int"
+        },
+        {
+            "name": "health",
+            "type": "int"
+        },
+        {
+            "name": "requirements",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "fields": [
+                    {
+                        "name": "amount",
+                        "type": "int"
+                    },
+                    {
+                        "name": "item",
+                        "type": "string"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "research",
+            "type": "object",
+            "fields": [
+                {
+                    "name": "parent",
+                    "type": "string"
+                },
+                {
+                    "name": "requirements",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "name",
+            "type": "string"
+        },
+        {
+            "name": "description",
+            "type": "string"
+        },
+        {
+            "name": "category",
+            "type": "string"
+        },
+        {
+            "name": "buildVisibility",
+            "type": "string"
+        },
+        {
+            "name": "customShadow",
+            "type": "boolean"
+        },
+        {
+            "name": "alwaysUnlocked",
+            "type": "boolean"
+        },
+        {
+            "name": "armor",
+            "type": "int"
+        },
+        {
+            "name": "placeablePlayer",
+            "type": "boolean"
+        },
+        {
+            "name": "details",
+            "type": "string"
+        },
+        {
+            "name": "databaseTag",
+            "type": "string"
+        },
+        {
+            "name": "insulated",
+            "type": "boolean"
+        },
+        {
+            "name": "absorbLasers",
+            "type": "boolean"
+        },
+        {
+            "name": "envDisabled",
+            "type": "float"
+        },
+        {
+            "name": "variants",
+            "type": "float"
+        },
+        {
+            "name": "update",
+            "type": "boolean"
+        },
+        {
+            "name": "breakable",
+            "type": "boolean"
+        },
+        {
+            "name": "destructible",
+            "type": "boolean"
+        },
+        {
+            "name": "buildCostMultiplier",
+            "type": "float"
+        },
+        {
+            "name": "chanceDeflect",
+            "type": "float"
+        },
+        {
+            "name": "drawTeamOverlay",
+            "type": "boolean"
+        },
+        {
+            "name": "targetable",
+            "type": "boolean"
+        },
+        {
+            "name": "underBullets",
+            "type": "boolean"
+        },
+        {
+            "name": "instantDeconstruct",
+            "type": "boolean"
+        },
+        {
+            "name": "breakSound",
+            "type": "string"
+        },
+        {
+            "name": "breakEffect",
+            "type": "string"
+        },
+        {
+            "name": "destroyEffect",
+            "type": "array"
+        },
+        {
+            "name": "destroyBullet",
+            "type": "object"
+        },
+        {
+            "name": "schematicPriority",
+            "type": "float"
+        },
+        {
+            "name": "lightningChance",
+            "type": "float"
+        },
+        {
+            "name": "lightningDamage",
+            "type": "float"
+        },
+        {
+            "name": "solid",
+            "type": "boolean"
+        },
+        {
+            "name": "alwaysReplace",
+            "type": "boolean"
+        },
+        {
+            "name": "forceTeam",
+            "type": "float"
+        },
+        {
+            "name": "lightningLength",
+            "type": "float"
+        },
+        {
+            "name": "hasShadow",
+            "type": "boolean"
+        },
+        {
+            "name": "forceDark",
+            "type": "boolean"
+        },
+        {
+            "name": "itemDrop",
+            "type": "string"
+        },
+        {
+            "name": "allowDerelictRepair",
+            "type": "boolean"
+        },
+        {
+            "name": "flashHit",
+            "type": "boolean"
+        }
+    ]
+}

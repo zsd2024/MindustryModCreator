@@ -1,0 +1,90 @@
+{
+    "localizedName": "crawl",
+    "parentType": "UnitType",
+    "fields": [
+        {
+            "name": "name",
+            "type": "string"
+        },
+        {
+            "name": "description",
+            "type": "string"
+        },
+        {
+            "name": "health",
+            "type": "int"
+        },
+        {
+            "name": "armor",
+            "type": "int"
+        },
+        {
+            "name": "drawCell",
+            "type": "boolean"
+        },
+        {
+            "name": "outlines",
+            "type": "boolean"
+        },
+        {
+            "name": "hitSize",
+            "type": "float"
+        },
+        {
+            "name": "squareShape",
+            "type": "boolean"
+        },
+        {
+            "name": "segments",
+            "type": "float"
+        },
+        {
+            "name": "omniMovement",
+            "type": "boolean"
+        },
+        {
+            "name": "rotateSpeed",
+            "type": "float"
+        },
+        {
+            "name": "drownTimeMultiplier",
+            "type": "float"
+        },
+        {
+            "name": "drawBody",
+            "type": "boolean"
+        },
+        {
+            "name": "hidden",
+            "type": "boolean"
+        },
+        {
+            "name": "crushDamage",
+            "type": "float"
+        },
+        {
+            "name": "targetAir",
+            "type": "boolean"
+        },
+        {
+            "name": "segmentScl",
+            "type": "float"
+        },
+        {
+            "name": "segmentPhase",
+            "type": "float"
+        },
+        {
+            "name": "speed",
+            "type": "float"
+        },
+        {
+            "name": "weapons",
+            "type": "array"
+        },
+        {
+            "name": "abilities",
+            "type": "array"
+        }
+    ]
+}
