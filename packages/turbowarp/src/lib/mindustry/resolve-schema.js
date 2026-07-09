@@ -74,6 +74,39 @@ const getFieldDoc = function (type, fieldName) {
     return field?.notes || '';
 };
 
+const refCache = {};
+
+const resolveFieldRef = function (refPath) {
+    const key = `./types/${refPath.replace('types/', '')}.json`;
+    if (refCache[refPath]) return refCache[refPath];
+    try {
+        if (curatedSchemasContext.keys().includes(key)) {
+            const def = curatedSchemasContext(key);
+            refCache[refPath] = def.fields || [];
+            return refCache[refPath];
+        }
+    } catch (e) { /* fall through */ }
+    refCache[refPath] = [];
+    return [];
+};
+
+const resolveFieldWithRef = function (f) {
+    if (f.$ref) {
+        return resolveFieldRef(f.$ref);
+    }
+    if (f.items && f.items.$ref) {
+        return [{
+            ...f,
+            items: {
+                type: 'object',
+                fields: resolveFieldRef(f.items.$ref),
+                refFrom: f.items.$ref,
+            }
+        }];
+    }
+    return [f];
+};
+
 const resolveFields = function (type, mode = 'curated', visited = new Set()) {
     if (!type || visited.has(type)) return [];
     visited.add(type);
@@ -88,7 +121,7 @@ const resolveFields = function (type, mode = 'curated', visited = new Set()) {
         resolveFields(schema.parentType, mode, visited) :
         [];
 
-    const ownFields = (schema.fields || []).map(f => ({
+    const ownFields = (schema.fields || []).flatMap(f => resolveFieldWithRef(f)).map(f => ({
         ...f,
         sourceType: type
     }));
@@ -141,6 +174,7 @@ const getAllTypes = function () {
 export {
     loadSchema,
     loadCuratedSchema,
+    resolveFieldRef,
     resolveFields,
     getZhLabel,
     getZhDoc,
