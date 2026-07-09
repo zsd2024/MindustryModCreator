@@ -1,0 +1,281 @@
+{
+    "type": "object",
+    "localizedName": "能力",
+    "fields": [
+        { "name": "type", "type": "string", "localizedName": "类型", "notes": "能力类型。可选: ArmorPlateAbility, EnergyFieldAbility, ForceFieldAbility, LiquidExplodeAbility, LiquidRegenAbility, MoveEffectAbility, MoveLightningAbility, RegenAbility, RepairFieldAbility, ShieldArcAbility, ShieldRegenFieldAbility, SpawnDeathAbility, StatusFieldAbility, SuppressionFieldAbility, UnitSpawnAbility" },
+        { "name": "display", "type": "boolean", "localizedName": "显示状态", "defaultValue": "true", "notes": "如果为false，该能力不会显示在单位状态中。" },
+        { "name": "data", "type": "number", "localizedName": "同步数据变量", "defaultValue": "0.0", "notes": "唯一一个同步的数据变量，用于在客户端之间传递能力的运行时状态。" }
+    ],
+    "abilityTypes": {
+        "ArmorPlateAbility": {
+            "localizedName": "装甲板能力",
+            "parentType": "Ability",
+            "fields": [
+                { "name": "plateRegion", "type": "string", "localizedName": "装甲板纹理", "defaultValue": "null" },
+                { "name": "shineRegion", "type": "string", "localizedName": "光泽纹理", "defaultValue": "null" },
+                { "name": "plateSuffix", "type": "string", "localizedName": "装甲板纹理后缀", "defaultValue": "\"-armor\"" },
+                { "name": "shineSuffix", "type": "string", "localizedName": "光泽纹理后缀", "defaultValue": "\"-shine\"" },
+                { "name": "color", "type": "string", "localizedName": "光泽颜色", "defaultValue": "null", "notes": "光泽的颜色。若为 null，则使用队伍颜色。" },
+                { "name": "shineSpeed", "type": "number", "localizedName": "光泽动画速度", "defaultValue": "1.0" },
+                { "name": "z", "type": "number", "localizedName": "绘制层级", "defaultValue": "-1.0" },
+                { "name": "drawPlate", "type": "boolean", "localizedName": "绘制装甲板", "defaultValue": "true", "notes": "是否绘制装甲板区域。" },
+                { "name": "drawShine", "type": "boolean", "localizedName": "绘制光泽", "defaultValue": "true", "notes": "是否在装甲板区域上方绘制光泽。" },
+                { "name": "healthMultiplier", "type": "number", "localizedName": "生命值倍率加成", "defaultValue": "0.2" }
+            ]
+        },
+        "EnergyFieldAbility": {
+            "localizedName": "能量场能力",
+            "parentType": "Ability",
+            "fields": [
+                { "name": "damage", "type": "number", "localizedName": "伤害值", "defaultValue": "1.0" },
+                { "name": "reload", "type": "number", "localizedName": "装填时间", "defaultValue": "100.0" },
+                { "name": "range", "type": "number", "localizedName": "范围", "defaultValue": "60.0" },
+                { "name": "healEffect", "type": "string", "localizedName": "治疗效果", "defaultValue": "heal" },
+                { "name": "hitEffect", "type": "string", "localizedName": "命中效果", "defaultValue": "hitLaserBlast" },
+                { "name": "damageEffect", "type": "string", "localizedName": "伤害效果", "defaultValue": "chainLightning" },
+                { "name": "status", "type": "string", "localizedName": "状态效果", "defaultValue": "electrified" },
+                { "name": "shootSound", "type": "string", "localizedName": "射击音效", "defaultValue": "shootEnergyField" },
+                { "name": "statusDuration", "type": "number", "localizedName": "状态效果持续时间", "defaultValue": "360.0" },
+                { "name": "x", "type": "number", "localizedName": "效果偏移X", "defaultValue": "0.0" },
+                { "name": "y", "type": "number", "localizedName": "效果偏移Y", "defaultValue": "0.0" },
+                { "name": "targetGround", "type": "boolean", "localizedName": "是否目标地面单位", "defaultValue": "true" },
+                { "name": "targetAir", "type": "boolean", "localizedName": "是否目标空中单位", "defaultValue": "true" },
+                { "name": "hitBuildings", "type": "boolean", "localizedName": "是否命中建筑", "defaultValue": "true" },
+                { "name": "hitUnits", "type": "boolean", "localizedName": "是否命中单位", "defaultValue": "true" },
+                { "name": "maxTargets", "type": "number", "localizedName": "最大目标数", "defaultValue": "25" },
+                { "name": "healPercent", "type": "number", "localizedName": "治疗百分比", "defaultValue": "3.0" },
+                { "name": "sameTypeHealMult", "type": "number", "localizedName": "同类型治疗倍率", "defaultValue": "1.0", "notes": "同类型单位的治疗量乘以该倍数。" },
+                { "name": "displayHeal", "type": "boolean", "localizedName": "是否显示治疗描述", "defaultValue": "true" },
+                { "name": "layer", "type": "number", "localizedName": "绘制层级", "defaultValue": "99.999" },
+                { "name": "blinkScl", "type": "number", "localizedName": "闪烁缩放", "defaultValue": "20.0" },
+                { "name": "blinkSize", "type": "number", "localizedName": "闪烁大小", "defaultValue": "0.1" },
+                { "name": "effectRadius", "type": "number", "localizedName": "效果半径", "defaultValue": "5.0" },
+                { "name": "sectorRad", "type": "number", "localizedName": "扇形弧度", "defaultValue": "0.14" },
+                { "name": "rotateSpeed", "type": "number", "localizedName": "旋转速度", "defaultValue": "0.5" },
+                { "name": "sectors", "type": "number", "localizedName": "扇形数量", "defaultValue": "5" },
+                { "name": "color", "type": "string", "localizedName": "颜色", "defaultValue": "98ffa9ff" },
+                { "name": "useAmmo", "type": "boolean", "localizedName": "是否使用弹药", "defaultValue": "true" }
+            ]
+        },
+        "ForceFieldAbility": {
+            "localizedName": "力场护盾能力",
+            "parentType": "Ability",
+            "fields": [
+                { "name": "radius", "type": "number", "localizedName": "护盾半径", "defaultValue": "60.0", "notes": "护盾半径。" },
+                { "name": "regen", "type": "number", "localizedName": "护盾恢复速度", "defaultValue": "0.1", "notes": "护盾恢复速度（伤害/tick）。" },
+                { "name": "max", "type": "number", "localizedName": "最大护盾值", "defaultValue": "200.0", "notes": "最大护盾值。" },
+                { "name": "cooldown", "type": "number", "localizedName": "护盾冷却时间", "defaultValue": "300.0", "notes": "护盾破碎后的冷却时间（tick）。" },
+                { "name": "sides", "type": "number", "localizedName": "护盾多边形边数", "defaultValue": "6", "notes": "护盾多边形边数。" },
+                { "name": "rotation", "type": "number", "localizedName": "护盾旋转角度", "defaultValue": "0.0", "notes": "护盾的旋转。" },
+                { "name": "breakSound", "type": "string", "localizedName": "护盾破碎音效", "defaultValue": "shieldBreakSmall" },
+                { "name": "hitSound", "type": "string", "localizedName": "护盾受击音效", "defaultValue": "shieldHit" },
+                { "name": "hitSoundVolume", "type": "number", "localizedName": "受击音效音量", "defaultValue": "0.12" }
+            ]
+        },
+        "LiquidExplodeAbility": {
+            "localizedName": "液体爆炸能力",
+            "parentType": "Ability",
+            "fields": [
+                { "name": "liquid", "type": "string", "localizedName": "液体类型", "defaultValue": "water" },
+                { "name": "amount", "type": "number", "localizedName": "液体量", "defaultValue": "120.0" },
+                { "name": "radAmountScale", "type": "number", "localizedName": "半径液体量缩放", "defaultValue": "5.0" },
+                { "name": "radScale", "type": "number", "localizedName": "半径缩放", "defaultValue": "1.0" },
+                { "name": "noiseMag", "type": "number", "localizedName": "噪声幅度", "defaultValue": "6.5" },
+                { "name": "noiseScl", "type": "number", "localizedName": "噪声缩放", "defaultValue": "5.0" }
+            ]
+        },
+        "LiquidRegenAbility": {
+            "localizedName": "液体回复能力",
+            "parentType": "Ability",
+            "fields": [
+                { "name": "liquid", "type": "string", "localizedName": "液体类型", "defaultValue": "null" },
+                { "name": "slurpSpeed", "type": "number", "localizedName": "吸取速度", "defaultValue": "5.0" },
+                { "name": "regenPerSlurp", "type": "number", "localizedName": "每次吸取回复量", "defaultValue": "6.0" },
+                { "name": "slurpEffectChance", "type": "number", "localizedName": "吸取效果概率", "defaultValue": "0.4" },
+                { "name": "slurpEffect", "type": "string", "localizedName": "吸取效果", "defaultValue": "heal" }
+            ]
+        },
+        "MoveEffectAbility": {
+            "localizedName": "移动特效能力",
+            "parentType": "Ability",
+            "fields": [
+                { "name": "minVelocity", "type": "number", "localizedName": "最小速度", "defaultValue": "0.08" },
+                { "name": "interval", "type": "number", "localizedName": "效果间隔", "defaultValue": "3.0" },
+                { "name": "chance", "type": "number", "localizedName": "触发概率", "defaultValue": "0.0" },
+                { "name": "amount", "type": "number", "localizedName": "效果数量", "defaultValue": "1" },
+                { "name": "x", "type": "number", "localizedName": "偏移X", "defaultValue": "0.0" },
+                { "name": "y", "type": "number", "localizedName": "偏移Y", "defaultValue": "0.0" },
+                { "name": "rotation", "type": "number", "localizedName": "旋转角度", "defaultValue": "0.0" },
+                { "name": "rangeX", "type": "number", "localizedName": "X轴随机范围", "defaultValue": "0.0" },
+                { "name": "rangeY", "type": "number", "localizedName": "Y轴随机范围", "defaultValue": "0.0" },
+                { "name": "rangeLengthMin", "type": "number", "localizedName": "随机长度最小值", "defaultValue": "0.0" },
+                { "name": "rangeLengthMax", "type": "number", "localizedName": "随机长度最大值", "defaultValue": "0.0" },
+                { "name": "rotateEffect", "type": "boolean", "localizedName": "旋转效果", "defaultValue": "false" },
+                { "name": "effectParam", "type": "number", "localizedName": "效果参数", "defaultValue": "3.0" },
+                { "name": "teamColor", "type": "boolean", "localizedName": "队伍颜色", "defaultValue": "false" },
+                { "name": "parentizeEffects", "type": "boolean", "localizedName": "继承父级", "defaultValue": "false" },
+                { "name": "color", "type": "string", "localizedName": "颜色", "defaultValue": "ffffffff" },
+                { "name": "effect", "type": "string", "localizedName": "特效", "defaultValue": "missileTrail" }
+            ]
+        },
+        "MoveLightningAbility": {
+            "localizedName": "移动闪电能力",
+            "parentType": "Ability",
+            "fields": [
+                { "name": "damage", "type": "number", "localizedName": "闪电伤害", "defaultValue": "35.0", "notes": "闪电伤害" },
+                { "name": "chance", "type": "number", "localizedName": "触发概率", "defaultValue": "0.15", "notes": "每 tick 触发概率。设置为 >= 1 可在最大速度下每 tick 必定触发闪电。" },
+                { "name": "length", "type": "number", "localizedName": "闪电长度", "defaultValue": "12", "notes": "闪电长度。<= 0 禁用。" },
+                { "name": "minSpeed", "type": "number", "localizedName": "最小速度", "defaultValue": "0.8", "notes": "开始触发闪电的速度和停止加速的速度。" },
+                { "name": "maxSpeed", "type": "number", "localizedName": "最大速度", "defaultValue": "1.2", "notes": "开始触发闪电的速度和停止加速的速度。" },
+                { "name": "color", "type": "string", "localizedName": "闪电颜色", "defaultValue": "a9d8ffff", "notes": "闪电颜色" },
+                { "name": "y", "type": "number", "localizedName": "Y轴偏移", "defaultValue": "0.0", "notes": "沿 Y 轴偏移闪电生成位置。" },
+                { "name": "x", "type": "number", "localizedName": "X轴偏移", "defaultValue": "0.0", "notes": "沿 X 轴偏移。" },
+                { "name": "alternate", "type": "boolean", "localizedName": "交替侧", "defaultValue": "true", "notes": "生成侧是否交替。" },
+                { "name": "heatRegion", "type": "string", "localizedName": "热浪纹理", "defaultValue": "\"error\"", "notes": "抖动热浪纹理，类似 v5 Javelin 的护盾。" },
+                { "name": "bullet", "type": "string", "localizedName": "子弹类型", "defaultValue": "null", "notes": "发射的子弹类型。可为 null。" },
+                { "name": "bulletAngle", "type": "number", "localizedName": "子弹角度", "defaultValue": "0.0", "notes": "子弹角度参数" },
+                { "name": "bulletSpread", "type": "number", "localizedName": "子弹散布", "defaultValue": "0.0", "notes": "子弹角度参数" },
+                { "name": "shootEffect", "type": "string", "localizedName": "射击特效", "defaultValue": "sparkShoot" },
+                { "name": "parentizeEffects", "type": "boolean", "localizedName": "继承父级", "defaultValue": "false" },
+                { "name": "shootSound", "type": "string", "localizedName": "射击音效", "defaultValue": "shootArc" }
+            ]
+        },
+        "RegenAbility": {
+            "localizedName": "再生能力",
+            "parentType": "Ability",
+            "fields": [
+                { "name": "percentAmount", "type": "number", "localizedName": "百分比恢复量", "defaultValue": "0.0", "notes": "每 tick 恢复的生命值百分比。" },
+                { "name": "amount", "type": "number", "localizedName": "固定恢复量", "defaultValue": "0.0", "notes": "每 tick 恢复的固定生命值。" }
+            ]
+        },
+        "RepairFieldAbility": {
+            "localizedName": "修复场能力",
+            "parentType": "Ability",
+            "fields": [
+                { "name": "amount", "type": "number", "localizedName": "治疗量", "defaultValue": "1.0" },
+                { "name": "reload", "type": "number", "localizedName": "装填时间", "defaultValue": "100.0" },
+                { "name": "range", "type": "number", "localizedName": "范围", "defaultValue": "60.0" },
+                { "name": "healPercent", "type": "number", "localizedName": "治疗百分比", "defaultValue": "0.0" },
+                { "name": "healEffect", "type": "string", "localizedName": "治疗效果", "defaultValue": "heal" },
+                { "name": "activeEffect", "type": "string", "localizedName": "激活效果", "defaultValue": "healWaveDynamic" },
+                { "name": "sound", "type": "string", "localizedName": "音效", "defaultValue": "healWave" },
+                { "name": "soundVolume", "type": "number", "localizedName": "音效音量", "defaultValue": "0.5" },
+                { "name": "parentizeEffects", "type": "boolean", "localizedName": "继承父级效果", "defaultValue": "false" },
+                { "name": "sameTypeHealMult", "type": "number", "localizedName": "同类型治疗倍率", "defaultValue": "1.0", "notes": "同类型单位的治疗量乘以该倍数。" }
+            ]
+        },
+        "ShieldArcAbility": {
+            "localizedName": "弧形护盾能力",
+            "parentType": "Ability",
+            "fields": [
+                { "name": "radius", "type": "number", "localizedName": "护盾半径", "defaultValue": "60.0", "notes": "护盾半径。" },
+                { "name": "regen", "type": "number", "localizedName": "恢复速度", "defaultValue": "0.1", "notes": "护盾恢复速度（伤害/tick）。" },
+                { "name": "max", "type": "number", "localizedName": "最大护盾值", "defaultValue": "200.0", "notes": "最大护盾值。" },
+                { "name": "cooldown", "type": "number", "localizedName": "冷却时间", "defaultValue": "300.0", "notes": "护盾破碎后的冷却时间（tick）。" },
+                { "name": "angle", "type": "number", "localizedName": "护盾弧角度", "defaultValue": "80.0", "notes": "护盾弧的角度。" },
+                { "name": "angleOffset", "type": "number", "localizedName": "角度偏移", "defaultValue": "0.0", "notes": "护盾偏移参数。" },
+                { "name": "x", "type": "number", "localizedName": "X偏移", "defaultValue": "0.0", "notes": "护盾偏移参数。" },
+                { "name": "y", "type": "number", "localizedName": "Y偏移", "defaultValue": "0.0", "notes": "护盾偏移参数。" },
+                { "name": "whenShooting", "type": "boolean", "localizedName": "射击时激活", "defaultValue": "true", "notes": "若为 true，仅在射击时激活。" },
+                { "name": "width", "type": "number", "localizedName": "护盾线宽度", "defaultValue": "6.0", "notes": "护盾线宽度。" },
+                { "name": "chanceDeflect", "type": "number", "localizedName": "偏转概率", "defaultValue": "-1.0", "notes": "子弹偏转概率。设为 -1 禁用。" },
+                { "name": "reflectBuildingDamage", "type": "number", "localizedName": "反射建筑伤害倍率", "defaultValue": "1.0", "notes": "反射子弹对建筑伤害倍率。设为 -1 禁用。" },
+                { "name": "reflectVel", "type": "number", "localizedName": "反射速度倍率", "defaultValue": "1.0", "notes": "反射子弹在相反轴上的速度倍率。" },
+                { "name": "reflectTime", "type": "number", "localizedName": "反射时间倍率", "defaultValue": "0.5", "notes": "反射子弹的时间倍率。" },
+                { "name": "deflectSound", "type": "string", "localizedName": "偏转音效", "defaultValue": "none", "notes": "偏转音效。" },
+                { "name": "breakSound", "type": "string", "localizedName": "破碎音效", "defaultValue": "shieldBreakSmall" },
+                { "name": "hitSound", "type": "string", "localizedName": "受击音效", "defaultValue": "shieldHit" },
+                { "name": "hitSoundVolume", "type": "number", "localizedName": "受击音效音量", "defaultValue": "0.12" },
+                { "name": "missileUnitMultiplier", "type": "number", "localizedName": "导弹伤害倍率", "defaultValue": "2.0", "notes": "导弹单位对护盾伤害的倍率。" },
+                { "name": "drawArc", "type": "boolean", "localizedName": "绘制弧线", "defaultValue": "true", "notes": "是否绘制弧形线。" },
+                { "name": "region", "type": "string", "localizedName": "顶部纹理名称", "defaultValue": "null", "notes": "若非 null，将在顶部绘制。" },
+                { "name": "color", "type": "string", "localizedName": "护盾颜色", "defaultValue": "null", "notes": "护盾颜色覆盖。默认使用单位护盾颜色。" },
+                { "name": "offsetRegion", "type": "boolean", "localizedName": "偏移纹理位置", "defaultValue": "false", "notes": "若为 true，精灵位置将受 x/y 影响。" },
+                { "name": "pushUnits", "type": "boolean", "localizedName": "推开单位", "defaultValue": "true", "notes": "若为 true，推开敌方单位。" },
+                { "name": "pushEffect", "type": "string", "localizedName": "推开效果", "defaultValue": "circleColorSpark" }
+            ]
+        },
+        "ShieldRegenFieldAbility": {
+            "localizedName": "护盾恢复场能力",
+            "parentType": "Ability",
+            "fields": [
+                { "name": "amount", "type": "number", "localizedName": "护盾恢复量", "defaultValue": "1.0" },
+                { "name": "max", "type": "number", "localizedName": "最大护盾值", "defaultValue": "100.0" },
+                { "name": "reload", "type": "number", "localizedName": "装填时间", "defaultValue": "100.0" },
+                { "name": "range", "type": "number", "localizedName": "范围", "defaultValue": "60.0" },
+                { "name": "applyEffect", "type": "string", "localizedName": "应用效果", "defaultValue": "shieldApply" },
+                { "name": "activeEffect", "type": "string", "localizedName": "激活效果", "defaultValue": "shieldWave" },
+                { "name": "sound", "type": "string", "localizedName": "音效", "defaultValue": "shieldWave" },
+                { "name": "soundVolume", "type": "number", "localizedName": "音效音量", "defaultValue": "0.7" },
+                { "name": "parentizeEffects", "type": "boolean", "localizedName": "继承父级效果", "defaultValue": "false" }
+            ]
+        },
+        "SpawnDeathAbility": {
+            "localizedName": "死亡生成能力",
+            "parentType": "Ability",
+            "fields": [
+                { "name": "unit", "type": "string", "localizedName": "生成单位类型", "defaultValue": "null" },
+                { "name": "amount", "type": "number", "localizedName": "生成数量", "defaultValue": "1" },
+                { "name": "randAmount", "type": "number", "localizedName": "随机额外数量", "defaultValue": "0" },
+                { "name": "spread", "type": "number", "localizedName": "散布范围", "defaultValue": "8.0", "notes": "单位生成时远离生成点的随机散布。" },
+                { "name": "faceOutwards", "type": "boolean", "localizedName": "面朝外部", "defaultValue": "true", "notes": "若为 true，生成的单位面向外部。" }
+            ]
+        },
+        "StatusFieldAbility": {
+            "localizedName": "状态场能力",
+            "parentType": "Ability",
+            "fields": [
+                { "name": "effect", "type": "string", "localizedName": "状态效果", "defaultValue": "null" },
+                { "name": "duration", "type": "number", "localizedName": "持续时间", "defaultValue": "60.0" },
+                { "name": "reload", "type": "number", "localizedName": "装填时间", "defaultValue": "100.0" },
+                { "name": "range", "type": "number", "localizedName": "范围", "defaultValue": "20.0" },
+                { "name": "onShoot", "type": "boolean", "localizedName": "射击时触发", "defaultValue": "false", "notes": "是否仅在射击时触发" },
+                { "name": "applyEffect", "type": "string", "localizedName": "应用效果", "defaultValue": "none" },
+                { "name": "activeEffect", "type": "string", "localizedName": "激活效果", "defaultValue": "overdriveWave" },
+                { "name": "effectX", "type": "number", "localizedName": "效果X偏移", "defaultValue": "0.0" },
+                { "name": "effectY", "type": "number", "localizedName": "效果Y偏移", "defaultValue": "0.0" },
+                { "name": "parentizeEffects", "type": "boolean", "localizedName": "继承父级效果", "defaultValue": "false" },
+                { "name": "effectSizeParam", "type": "boolean", "localizedName": "效果尺寸参数", "defaultValue": "true" },
+                { "name": "color", "type": "string", "localizedName": "颜色", "defaultValue": "ffd37fff" }
+            ]
+        },
+        "SuppressionFieldAbility": {
+            "localizedName": "压制场能力",
+            "parentType": "Ability",
+            "fields": [
+                { "name": "reload", "type": "number", "localizedName": "装填时间", "defaultValue": "90.0" },
+                { "name": "maxDelay", "type": "number", "localizedName": "最大延迟", "defaultValue": "90.0" },
+                { "name": "range", "type": "number", "localizedName": "范围", "defaultValue": "200.0" },
+                { "name": "orbRadius", "type": "number", "localizedName": "球体半径", "defaultValue": "4.1" },
+                { "name": "orbMidScl", "type": "number", "localizedName": "球体中段缩放", "defaultValue": "0.33" },
+                { "name": "orbSinScl", "type": "number", "localizedName": "球体正弦缩放", "defaultValue": "8.0" },
+                { "name": "orbSinMag", "type": "number", "localizedName": "球体正弦幅度", "defaultValue": "1.0" },
+                { "name": "color", "type": "string", "localizedName": "颜色", "defaultValue": "a393feff" },
+                { "name": "layer", "type": "number", "localizedName": "绘制层级", "defaultValue": "110.0" },
+                { "name": "x", "type": "number", "localizedName": "X偏移", "defaultValue": "0.0" },
+                { "name": "y", "type": "number", "localizedName": "Y偏移", "defaultValue": "0.0" },
+                { "name": "particles", "type": "number", "localizedName": "粒子数量", "defaultValue": "15" },
+                { "name": "particleSize", "type": "number", "localizedName": "粒子大小", "defaultValue": "4.0" },
+                { "name": "particleLen", "type": "number", "localizedName": "粒子长度", "defaultValue": "7.0" },
+                { "name": "rotateScl", "type": "number", "localizedName": "旋转缩放", "defaultValue": "3.0" },
+                { "name": "particleLife", "type": "number", "localizedName": "粒子寿命", "defaultValue": "110.0" },
+                { "name": "active", "type": "boolean", "localizedName": "激活状态", "defaultValue": "true" },
+                { "name": "particleColor", "type": "string", "localizedName": "粒子颜色", "defaultValue": "665c9fff" },
+                { "name": "effectColor", "type": "string", "localizedName": "效果颜色", "defaultValue": "bf92f9ff" },
+                { "name": "applyParticleChance", "type": "number", "localizedName": "应用粒子概率", "defaultValue": "13.0" }
+            ]
+        },
+        "UnitSpawnAbility": {
+            "localizedName": "单位生成能力",
+            "parentType": "Ability",
+            "fields": [
+                { "name": "unit", "type": "string", "localizedName": "单位类型", "defaultValue": "null" },
+                { "name": "spawnTime", "type": "number", "localizedName": "生成时间", "defaultValue": "60.0" },
+                { "name": "spawnX", "type": "number", "localizedName": "生成偏移X", "defaultValue": "0.0" },
+                { "name": "spawnY", "type": "number", "localizedName": "生成偏移Y", "defaultValue": "0.0" },
+                { "name": "spawnEffect", "type": "string", "localizedName": "生成特效", "defaultValue": "spawn" },
+                { "name": "parentizeEffects", "type": "boolean", "localizedName": "效果继承父级", "defaultValue": "false" }
+            ]
+        }
+    }
+}

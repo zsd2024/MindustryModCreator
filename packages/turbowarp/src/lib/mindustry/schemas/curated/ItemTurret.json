@@ -32,7 +32,10 @@
         },
         {
             "name": "requirements",
-            "type": "array"
+            "type": "array",
+            "items": {
+                "$ref": "types/StackRequirement"
+            }
         },
         {
             "name": "health",
@@ -48,41 +51,7 @@
         },
         {
             "name": "shoot",
-            "type": "object",
-            "fields": [
-                {
-                    "name": "barrels",
-                    "type": "string"
-                },
-                {
-                    "name": "dest",
-                    "type": "string"
-                },
-                {
-                    "name": "firstShotDelay",
-                    "type": "string"
-                },
-                {
-                    "name": "shotDelay",
-                    "type": "string"
-                },
-                {
-                    "name": "shots",
-                    "type": "int"
-                },
-                {
-                    "name": "source",
-                    "type": "string"
-                },
-                {
-                    "name": "spread",
-                    "type": "string"
-                },
-                {
-                    "name": "type",
-                    "type": "string"
-                }
-            ]
+            "$ref": "types/Shoot"
         },
         {
             "name": "drawer",
@@ -122,7 +91,7 @@
                 },
                 {
                     "name": "liquid",
-                    "type": "string"
+                    "$ref": "types/ConsumeLiquid"
                 },
                 {
                     "name": "liquids",
@@ -130,7 +99,7 @@
                 },
                 {
                     "name": "power",
-                    "type": "string"
+                    "$ref": "types/ConsumePower"
                 }
             ]
         },

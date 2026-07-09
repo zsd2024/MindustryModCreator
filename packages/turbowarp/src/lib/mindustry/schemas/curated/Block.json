@@ -29,6 +29,28 @@
         {
             "name": "breakEffect",
             "type": "array"
+        },
+        {
+            "name": "consumes",
+            "type": "object",
+            "fields": [
+                {
+                    "name": "power",
+                    "$ref": "types/ConsumePower"
+                },
+                {
+                    "name": "items",
+                    "$ref": "types/ConsumeItems"
+                },
+                {
+                    "name": "liquid",
+                    "$ref": "types/ConsumeLiquid"
+                }
+            ]
+        },
+        {
+            "name": "drawer",
+            "type": "string"
         }
     ]
 }

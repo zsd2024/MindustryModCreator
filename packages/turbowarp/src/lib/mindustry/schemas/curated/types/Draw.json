@@ -1,0 +1,1870 @@
+{
+    "type": "object",
+    "localizedName": "Drawer",
+    "fields": [
+        {
+            "name": "type",
+            "localizedName": "Type",
+            "type": "string",
+            "notes": "Drawer type. Options: DrawDefault, DrawRegion, DrawMulti, DrawArcSmelt, DrawBlockParts, DrawBlurSpin, DrawBubbles, DrawCells, DrawCircles, DrawCrucibleFlame, DrawCultivator, DrawFade, DrawFlame, DrawFrames, DrawGlowRegion, DrawHeatInput, DrawHeatOutput, DrawHeatRegion, DrawLiquidOutputs, DrawLiquidRegion, DrawLiquidTile, DrawMultiWeave, DrawParticles, DrawPistons, DrawPlasma, DrawPower, DrawPulseShape, DrawPumpLiquid, DrawShape, DrawSideRegion, DrawSoftParticles, DrawSpikes, DrawTurret, DrawWarmupRegion, DrawWeave"
+        }
+    ],
+    "drawTypes": {
+        "DrawDefault": {
+            "localizedName": "Default Draw",
+            "fields": []
+        },
+        "DrawMulti": {
+            "localizedName": "Multi Draw",
+            "fields": [
+                {
+                    "name": "drawers",
+                    "type": "array",
+                    "localizedName": "Drawers",
+                    "items": {
+                        "$ref": "types/Draw"
+                    }
+                }
+            ]
+        },
+        "DrawRegion": {
+            "localizedName": "Region Draw",
+            "fields": [
+                {
+                    "name": "region",
+                    "type": "string",
+                    "localizedName": "Region",
+                    "defaultValue": "null"
+                },
+                {
+                    "name": "suffix",
+                    "type": "string",
+                    "localizedName": "Suffix",
+                    "defaultValue": "\"\""
+                },
+                {
+                    "name": "name",
+                    "type": "string",
+                    "localizedName": "Name",
+                    "defaultValue": "null"
+                },
+                {
+                    "name": "color",
+                    "type": "string",
+                    "localizedName": "Color",
+                    "defaultValue": "null"
+                },
+                {
+                    "name": "spinSprite",
+                    "type": "boolean",
+                    "localizedName": "Spin Sprite",
+                    "defaultValue": "false"
+                },
+                {
+                    "name": "drawPlan",
+                    "type": "boolean",
+                    "localizedName": "Draw Plan",
+                    "defaultValue": "true"
+                },
+                {
+                    "name": "buildingRotate",
+                    "type": "boolean",
+                    "localizedName": "Building Rotate",
+                    "defaultValue": "false"
+                },
+                {
+                    "name": "rotateSpeed",
+                    "type": "number",
+                    "localizedName": "Rotate Speed",
+                    "defaultValue": "0.0"
+                },
+                {
+                    "name": "x",
+                    "type": "number",
+                    "localizedName": "X Offset",
+                    "defaultValue": "0.0"
+                },
+                {
+                    "name": "y",
+                    "type": "number",
+                    "localizedName": "Y Offset",
+                    "defaultValue": "0.0"
+                },
+                {
+                    "name": "rotation",
+                    "type": "number",
+                    "localizedName": "Rotation",
+                    "defaultValue": "0.0"
+                },
+                {
+                    "name": "layer",
+                    "type": "number",
+                    "localizedName": "Layer",
+                    "defaultValue": "-1.0"
+                }
+            ]
+        },
+        "DrawArcSmelt": {
+            "localizedName": "Arc Smelt Draw",
+            "fields": [
+                {
+                    "name": "flameColor",
+                    "type": "string",
+                    "localizedName": "Flame Color",
+                    "defaultValue": "f58349ff"
+                },
+                {
+                    "name": "midColor",
+                    "type": "string",
+                    "localizedName": "Mid Color",
+                    "defaultValue": "f2d585ff"
+                },
+                {
+                    "name": "flameRad",
+                    "type": "number",
+                    "localizedName": "Flame Radius",
+                    "defaultValue": "1.0"
+                },
+                {
+                    "name": "circleSpace",
+                    "type": "number",
+                    "localizedName": "Circle Space",
+                    "defaultValue": "2.0"
+                },
+                {
+                    "name": "flameRadiusScl",
+                    "type": "number",
+                    "localizedName": "Flame Radius Scale",
+                    "defaultValue": "3.0"
+                },
+                {
+                    "name": "flameRadiusMag",
+                    "type": "number",
+                    "localizedName": "Flame Radius Magnitude",
+                    "defaultValue": "0.3"
+                },
+                {
+                    "name": "circleStroke",
+                    "type": "number",
+                    "localizedName": "Circle Stroke",
+                    "defaultValue": "1.5"
+                },
+                {
+                    "name": "x",
+                    "type": "number",
+                    "localizedName": "X Offset",
+                    "defaultValue": "0.0"
+                },
+                {
+                    "name": "y",
+                    "type": "number",
+                    "localizedName": "Y Offset",
+                    "defaultValue": "0.0"
+                },
+                {
+                    "name": "alpha",
+                    "type": "number",
+                    "localizedName": "Alpha",
+                    "defaultValue": "0.68"
+                },
+                {
+                    "name": "particles",
+                    "type": "number",
+                    "localizedName": "Particles",
+                    "defaultValue": "25"
+                },
+                {
+                    "name": "particleLife",
+                    "type": "number",
+                    "localizedName": "Particle Life",
+                    "defaultValue": "40.0"
+                },
+                {
+                    "name": "particleRad",
+                    "type": "number",
+                    "localizedName": "Particle Radius",
+                    "defaultValue": "7.0"
+                },
+                {
+                    "name": "particleStroke",
+                    "type": "number",
+                    "localizedName": "Particle Stroke",
+                    "defaultValue": "1.1"
+                },
+                {
+                    "name": "particleLen",
+                    "type": "number",
+                    "localizedName": "Particle Length",
+                    "defaultValue": "3.0"
+                },
+                {
+                    "name": "drawCenter",
+                    "type": "boolean",
+                    "localizedName": "Draw Center",
+                    "defaultValue": "true"
+                },
+                {
+                    "name": "blending",
+                    "type": "string",
+                    "localizedName": "Blending",
+                    "defaultValue": "additive"
+                }
+            ]
+        },
+        "DrawBlockParts": {
+            "localizedName": "Block Parts Draw",
+            "fields": [
+                {
+                    "name": "parts",
+                    "type": "array",
+                    "localizedName": "Parts",
+                    "defaultValue": "[]",
+                    "items": {
+                        "$ref": "types/DrawPart"
+                    }
+                },
+                {
+                    "name": "preview",
+                    "type": "string",
+                    "localizedName": "Preview",
+                    "defaultValue": "null"
+                }
+            ]
+        },
+        "DrawBlurSpin": {
+            "localizedName": "Blur Spin Draw",
+            "fields": [
+                {
+                    "name": "region",
+                    "type": "string",
+                    "localizedName": "Region",
+                    "defaultValue": "null"
+                },
+                {
+                    "name": "blurRegion",
+                    "type": "string",
+                    "localizedName": "Blur Region",
+                    "defaultValue": "null"
+                },
+                {
+                    "name": "suffix",
+                    "type": "string",
+                    "localizedName": "Suffix",
+                    "defaultValue": "\"\""
+                },
+                {
+                    "name": "rotateSpeed",
+                    "type": "number",
+                    "localizedName": "Rotate Speed",
+                    "defaultValue": "1.0"
+                },
+                {
+                    "name": "x",
+                    "type": "number",
+                    "localizedName": "X Offset",
+                    "defaultValue": "0.0"
+                },
+                {
+                    "name": "y",
+                    "type": "number",
+                    "localizedName": "Y Offset",
+                    "defaultValue": "0.0"
+                },
+                {
+                    "name": "blurThresh",
+                    "type": "number",
+                    "localizedName": "Blur Threshold",
+                    "defaultValue": "0.7"
+                }
+            ]
+        },
+        "DrawBubbles": {
+            "localizedName": "Bubbles Draw",
+            "fields": [
+                {
+                    "name": "color",
+                    "type": "string",
+                    "localizedName": "Color",
+                    "defaultValue": "7457ceff"
+                },
+                {
+                    "name": "amount",
+                    "type": "number",
+                    "localizedName": "Amount",
+                    "defaultValue": "12"
+                },
+                {
+                    "name": "sides",
+                    "type": "number",
+                    "localizedName": "Sides",
+                    "defaultValue": "8"
+                },
+                {
+                    "name": "strokeMin",
+                    "type": "number",
+                    "localizedName": "Stroke Min",
+                    "defaultValue": "0.2"
+                },
+                {
+                    "name": "spread",
+                    "type": "number",
+                    "localizedName": "Spread",
+                    "defaultValue": "3.0"
+                },
+                {
+                    "name": "timeScl",
+                    "type": "number",
+                    "localizedName": "Time Scale",
+                    "defaultValue": "30.0"
+                },
+                {
+                    "name": "recurrence",
+                    "type": "number",
+                    "localizedName": "Recurrence",
+                    "defaultValue": "6.0"
+                },
+                {
+                    "name": "radius",
+                    "type": "number",
+                    "localizedName": "Radius",
+                    "defaultValue": "3.0"
+                },
+                {
+                    "name": "fill",
+                    "type": "boolean",
+                    "localizedName": "Fill",
+                    "defaultValue": "false"
+                }
+            ]
+        },
+        "DrawCells": {
+            "localizedName": "Cells Draw",
+            "fields": [
+                {
+                    "name": "middle",
+                    "type": "string",
+                    "localizedName": "Middle",
+                    "defaultValue": "null"
+                },
+                {
+                    "name": "color",
+                    "type": "string",
+                    "localizedName": "Color",
+                    "defaultValue": "ffffffff"
+                },
+                {
+                    "name": "particleColorFrom",
+                    "type": "string",
+                    "localizedName": "Particle Color From",
+                    "defaultValue": "000000ff"
+                },
+                {
+                    "name": "particleColorTo",
+                    "type": "string",
+                    "localizedName": "Particle Color To",
+                    "defaultValue": "000000ff"
+                },
+                {
+                    "name": "particles",
+                    "type": "number",
+                    "localizedName": "Particles",
+                    "defaultValue": "12"
+                },
+                {
+                    "name": "range",
+                    "type": "number",
+                    "localizedName": "Range",
+                    "defaultValue": "4.0"
+                },
+                {
+                    "name": "recurrence",
+                    "type": "number",
+                    "localizedName": "Recurrence",
+                    "defaultValue": "2.0"
+                },
+                {
+                    "name": "radius",
+                    "type": "number",
+                    "localizedName": "Radius",
+                    "defaultValue": "1.8"
+                },
+                {
+                    "name": "lifetime",
+                    "type": "number",
+                    "localizedName": "Lifetime",
+                    "defaultValue": "180.0"
+                }
+            ]
+        },
+        "DrawCircles": {
+            "localizedName": "Circles Draw",
+            "fields": [
+                {
+                    "name": "color",
+                    "type": "string",
+                    "localizedName": "Color",
+                    "defaultValue": "7457ceff"
+                },
+                {
+                    "name": "amount",
+                    "type": "number",
+                    "localizedName": "Amount",
+                    "defaultValue": "5"
+                },
+                {
+                    "name": "sides",
+                    "type": "number",
+                    "localizedName": "Sides",
+                    "defaultValue": "15"
+                },
+                {
+                    "name": "strokeMin",
+                    "type": "number",
+                    "localizedName": "Stroke Min",
+                    "defaultValue": "0.2"
+                },
+                {
+                    "name": "strokeMax",
+                    "type": "number",
+                    "localizedName": "Stroke Max",
+                    "defaultValue": "2.0"
+                },
+                {
+                    "name": "timeScl",
+                    "type": "number",
+                    "localizedName": "Time Scale",
+                    "defaultValue": "160.0"
+                },
+                {
+                    "name": "radius",
+                    "type": "number",
+                    "localizedName": "Radius",
+                    "defaultValue": "12.0"
+                },
+                {
+                    "name": "radiusOffset",
+                    "type": "number",
+                    "localizedName": "Radius Offset",
+                    "defaultValue": "0.0"
+                },
+                {
+                    "name": "x",
+                    "type": "number",
+                    "localizedName": "X Offset",
+                    "defaultValue": "0.0"
+                },
+                {
+                    "name": "y",
+                    "type": "number",
+                    "localizedName": "Y Offset",
+                    "defaultValue": "0.0"
+                }
+            ]
+        },
+        "DrawCrucibleFlame": {
+            "localizedName": "Crucible Flame Draw",
+            "fields": [
+                {
+                    "name": "flameColor",
+                    "type": "string",
+                    "localizedName": "Flame Color",
+                    "defaultValue": "f58349ff"
+                },
+                {
+                    "name": "midColor",
+                    "type": "string",
+                    "localizedName": "Mid Color",
+                    "defaultValue": "f2d585ff"
+                },
+                {
+                    "name": "flameRad",
+                    "type": "number",
+                    "localizedName": "Flame Radius",
+                    "defaultValue": "1.0"
+                },
+                {
+                    "name": "circleSpace",
+                    "type": "number",
+                    "localizedName": "Circle Space",
+                    "defaultValue": "2.0"
+                },
+                {
+                    "name": "flameRadiusScl",
+                    "type": "number",
+                    "localizedName": "Flame Radius Scale",
+                    "defaultValue": "10.0"
+                },
+                {
+                    "name": "flameRadiusMag",
+                    "type": "number",
+                    "localizedName": "Flame Radius Magnitude",
+                    "defaultValue": "0.6"
+                },
+                {
+                    "name": "circleStroke",
+                    "type": "number",
+                    "localizedName": "Circle Stroke",
+                    "defaultValue": "1.5"
+                },
+                {
+                    "name": "x",
+                    "type": "number",
+                    "localizedName": "X Offset",
+                    "defaultValue": "0.0"
+                },
+                {
+                    "name": "y",
+                    "type": "number",
+                    "localizedName": "Y Offset",
+                    "defaultValue": "0.0"
+                },
+                {
+                    "name": "alpha",
+                    "type": "number",
+                    "localizedName": "Alpha",
+                    "defaultValue": "0.5"
+                },
+                {
+                    "name": "particles",
+                    "type": "number",
+                    "localizedName": "Particles",
+                    "defaultValue": "30"
+                },
+                {
+                    "name": "particleLife",
+                    "type": "number",
+                    "localizedName": "Particle Life",
+                    "defaultValue": "70.0"
+                },
+                {
+                    "name": "particleRad",
+                    "type": "number",
+                    "localizedName": "Particle Radius",
+                    "defaultValue": "7.0"
+                },
+                {
+                    "name": "particleSize",
+                    "type": "number",
+                    "localizedName": "Particle Size",
+                    "defaultValue": "3.0"
+                },
+                {
+                    "name": "fadeMargin",
+                    "type": "number",
+                    "localizedName": "Fade Margin",
+                    "defaultValue": "0.4"
+                },
+                {
+                    "name": "rotateScl",
+                    "type": "number",
+                    "localizedName": "Rotate Scale",
+                    "defaultValue": "1.5"
+                }
+            ]
+        },
+        "DrawCultivator": {
+            "localizedName": "Cultivator Draw",
+            "fields": [
+                {
+                    "name": "plantColor",
+                    "type": "string",
+                    "localizedName": "Plant Color",
+                    "defaultValue": "5541b1ff"
+                },
+                {
+                    "name": "plantColorLight",
+                    "type": "string",
+                    "localizedName": "Plant Color Light",
+                    "defaultValue": "7457ceff"
+                },
+                {
+                    "name": "bottomColor",
+                    "type": "string",
+                    "localizedName": "Bottom Color",
+                    "defaultValue": "474747ff"
+                },
+                {
+                    "name": "bubbles",
+                    "type": "number",
+                    "localizedName": "Bubbles",
+                    "defaultValue": "12"
+                },
+                {
+                    "name": "sides",
+                    "type": "number",
+                    "localizedName": "Sides",
+                    "defaultValue": "8"
+                },
+                {
+                    "name": "strokeMin",
+                    "type": "number",
+                    "localizedName": "Stroke Min",
+                    "defaultValue": "0.2"
+                },
+                {
+                    "name": "spread",
+                    "type": "number",
+                    "localizedName": "Spread",
+                    "defaultValue": "3.0"
+                },
+                {
+                    "name": "timeScl",
+                    "type": "number",
+                    "localizedName": "Time Scale",
+                    "defaultValue": "70.0"
+                },
+                {
+                    "name": "recurrence",
+                    "type": "number",
+                    "localizedName": "Recurrence",
+                    "defaultValue": "6.0"
+                },
+                {
+                    "name": "radius",
+                    "type": "number",
+                    "localizedName": "Radius",
+                    "defaultValue": "3.0"
+                },
+                {
+                    "name": "x",
+                    "type": "number",
+                    "localizedName": "X Offset",
+                    "defaultValue": "0.0"
+                },
+                {
+                    "name": "y",
+                    "type": "number",
+                    "localizedName": "Y Offset",
+                    "defaultValue": "0.0"
+                },
+                {
+                    "name": "middle",
+                    "type": "string",
+                    "localizedName": "Middle",
+                    "defaultValue": "null"
+                }
+            ]
+        },
+        "DrawFade": {
+            "localizedName": "Fade Draw",
+            "fields": [
+                {
+                    "name": "suffix",
+                    "type": "string",
+                    "localizedName": "Suffix",
+                    "defaultValue": "\"-top\""
+                },
+                {
+                    "name": "alpha",
+                    "type": "number",
+                    "localizedName": "Alpha",
+                    "defaultValue": "0.6"
+                },
+                {
+                    "name": "scale",
+                    "type": "number",
+                    "localizedName": "Scale",
+                    "defaultValue": "3.0"
+                },
+                {
+                    "name": "x",
+                    "type": "number",
+                    "localizedName": "X Offset",
+                    "defaultValue": "0.0"
+                },
+                {
+                    "name": "y",
+                    "type": "number",
+                    "localizedName": "Y Offset",
+                    "defaultValue": "0.0"
+                },
+                {
+                    "name": "region",
+                    "type": "string",
+                    "localizedName": "Region",
+                    "defaultValue": "null"
+                }
+            ]
+        },
+        "DrawFlame": {
+            "localizedName": "Flame Draw",
+            "fields": [
+                {
+                    "name": "flameColor",
+                    "type": "string",
+                    "localizedName": "Flame Color",
+                    "defaultValue": "ffc999ff"
+                },
+                {
+                    "name": "top",
+                    "type": "string",
+                    "localizedName": "Top",
+                    "defaultValue": "null"
+                },
+                {
+                    "name": "lightRadius",
+                    "type": "number",
+                    "localizedName": "Light Radius",
+                    "defaultValue": "60.0"
+                },
+                {
+                    "name": "lightAlpha",
+                    "type": "number",
+                    "localizedName": "Light Alpha",
+                    "defaultValue": "0.65"
+                },
+                {
+                    "name": "lightSinScl",
+                    "type": "number",
+                    "localizedName": "Light Sine Scale",
+                    "defaultValue": "10.0"
+                },
+                {
+                    "name": "lightSinMag",
+                    "type": "number",
+                    "localizedName": "Light Sine Magnitude",
+                    "defaultValue": "5.0"
+                },
+                {
+                    "name": "flameRadius",
+                    "type": "number",
+                    "localizedName": "Flame Radius",
+                    "defaultValue": "3.0"
+                },
+                {
+                    "name": "flameRadiusIn",
+                    "type": "number",
+                    "localizedName": "Flame Radius Inner",
+                    "defaultValue": "1.9"
+                },
+                {
+                    "name": "flameRadiusScl",
+                    "type": "number",
+                    "localizedName": "Flame Radius Scale",
+                    "defaultValue": "5.0"
+                },
+                {
+                    "name": "flameRadiusMag",
+                    "type": "number",
+                    "localizedName": "Flame Radius Magnitude",
+                    "defaultValue": "2.0"
+                },
+                {
+                    "name": "flameRadiusInMag",
+                    "type": "number",
+                    "localizedName": "Flame Radius Inner Magnitude",
+                    "defaultValue": "1.0"
+                },
+                {
+                    "name": "flameX",
+                    "type": "number",
+                    "localizedName": "Flame X Offset",
+                    "defaultValue": "0.0"
+                },
+                {
+                    "name": "flameY",
+                    "type": "number",
+                    "localizedName": "Flame Y Offset",
+                    "defaultValue": "0.0"
+                }
+            ]
+        },
+        "DrawFrames": {
+            "localizedName": "Frames Draw",
+            "fields": [
+                {
+                    "name": "frames",
+                    "type": "number",
+                    "localizedName": "Frames",
+                    "defaultValue": "3"
+                },
+                {
+                    "name": "interval",
+                    "type": "number",
+                    "localizedName": "Interval",
+                    "defaultValue": "5.0"
+                },
+                {
+                    "name": "sine",
+                    "type": "boolean",
+                    "localizedName": "Sine",
+                    "defaultValue": "true"
+                },
+                {
+                    "name": "regions",
+                    "type": "array",
+                    "localizedName": "Regions",
+                    "defaultValue": "null",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            ]
+        },
+        "DrawGlowRegion": {
+            "localizedName": "Glow Region Draw",
+            "fields": [
+                {
+                    "name": "blending",
+                    "type": "string",
+                    "localizedName": "Blending",
+                    "defaultValue": "additive"
+                },
+                {
+                    "name": "suffix",
+                    "type": "string",
+                    "localizedName": "Suffix",
+                    "defaultValue": "\"-glow\""
+                },
+                {
+                    "name": "alpha",
+                    "type": "number",
+                    "localizedName": "Alpha",
+                    "defaultValue": "0.9"
+                },
+                {
+                    "name": "glowScale",
+                    "type": "number",
+                    "localizedName": "Glow Scale",
+                    "defaultValue": "10.0"
+                },
+                {
+                    "name": "glowIntensity",
+                    "type": "number",
+                    "localizedName": "Glow Intensity",
+                    "defaultValue": "0.5"
+                },
+                {
+                    "name": "rotateSpeed",
+                    "type": "number",
+                    "localizedName": "Rotate Speed",
+                    "defaultValue": "0.0"
+                },
+                {
+                    "name": "layer",
+                    "type": "number",
+                    "localizedName": "Layer",
+                    "defaultValue": "31.0"
+                },
+                {
+                    "name": "rotate",
+                    "type": "boolean",
+                    "localizedName": "Rotate",
+                    "defaultValue": "false"
+                },
+                {
+                    "name": "color",
+                    "type": "string",
+                    "localizedName": "Color",
+                    "defaultValue": "ff0000ff"
+                },
+                {
+                    "name": "region",
+                    "type": "string",
+                    "localizedName": "Region",
+                    "defaultValue": "null"
+                }
+            ]
+        },
+        "DrawHeatInput": {
+            "localizedName": "Heat Input Draw",
+            "fields": [
+                {
+                    "name": "suffix",
+                    "type": "string",
+                    "localizedName": "Suffix",
+                    "defaultValue": "\"-heat\""
+                },
+                {
+                    "name": "heatColor",
+                    "type": "string",
+                    "localizedName": "Heat Color",
+                    "defaultValue": "ff3838cc"
+                },
+                {
+                    "name": "heatPulse",
+                    "type": "number",
+                    "localizedName": "Heat Pulse",
+                    "defaultValue": "0.3"
+                },
+                {
+                    "name": "heatPulseScl",
+                    "type": "number",
+                    "localizedName": "Heat Pulse Scale",
+                    "defaultValue": "10.0"
+                },
+                {
+                    "name": "heat",
+                    "type": "string",
+                    "localizedName": "Heat",
+                    "defaultValue": "null"
+                }
+            ]
+        },
+        "DrawHeatOutput": {
+            "localizedName": "Heat Output Draw",
+            "fields": [
+                {
+                    "name": "heat",
+                    "type": "string",
+                    "localizedName": "Heat",
+                    "defaultValue": "null"
+                },
+                {
+                    "name": "glow",
+                    "type": "string",
+                    "localizedName": "Glow",
+                    "defaultValue": "null"
+                },
+                {
+                    "name": "top1",
+                    "type": "string",
+                    "localizedName": "Top 1",
+                    "defaultValue": "null"
+                },
+                {
+                    "name": "top2",
+                    "type": "string",
+                    "localizedName": "Top 2",
+                    "defaultValue": "null"
+                },
+                {
+                    "name": "heatColor",
+                    "type": "string",
+                    "localizedName": "Heat Color",
+                    "defaultValue": "ff3838cc"
+                },
+                {
+                    "name": "heatPulse",
+                    "type": "number",
+                    "localizedName": "Heat Pulse",
+                    "defaultValue": "0.3"
+                },
+                {
+                    "name": "heatPulseScl",
+                    "type": "number",
+                    "localizedName": "Heat Pulse Scale",
+                    "defaultValue": "10.0"
+                },
+                {
+                    "name": "glowMult",
+                    "type": "number",
+                    "localizedName": "Glow Multiplier",
+                    "defaultValue": "1.2"
+                },
+                {
+                    "name": "rotOffset",
+                    "type": "number",
+                    "localizedName": "Rotation Offset",
+                    "defaultValue": "0"
+                },
+                {
+                    "name": "drawGlow",
+                    "type": "boolean",
+                    "localizedName": "Draw Glow",
+                    "defaultValue": "true"
+                }
+            ]
+        },
+        "DrawHeatRegion": {
+            "localizedName": "Heat Region Draw",
+            "fields": [
+                {
+                    "name": "color",
+                    "type": "string",
+                    "localizedName": "Color",
+                    "defaultValue": "ff3838cc"
+                },
+                {
+                    "name": "pulse",
+                    "type": "number",
+                    "localizedName": "Pulse",
+                    "defaultValue": "0.3"
+                },
+                {
+                    "name": "pulseScl",
+                    "type": "number",
+                    "localizedName": "Pulse Scale",
+                    "defaultValue": "10.0"
+                },
+                {
+                    "name": "layer",
+                    "type": "number",
+                    "localizedName": "Layer",
+                    "defaultValue": "31.0"
+                },
+                {
+                    "name": "heat",
+                    "type": "string",
+                    "localizedName": "Heat",
+                    "defaultValue": "null"
+                },
+                {
+                    "name": "suffix",
+                    "type": "string",
+                    "localizedName": "Suffix",
+                    "defaultValue": "\"-glow\""
+                }
+            ]
+        },
+        "DrawLiquidOutputs": {
+            "localizedName": "Liquid Outputs Draw",
+            "fields": [
+                {
+                    "name": "liquidOutputRegions",
+                    "type": "array",
+                    "localizedName": "Liquid Output Regions",
+                    "defaultValue": "null",
+                    "items": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                }
+            ]
+        },
+        "DrawLiquidRegion": {
+            "localizedName": "Liquid Region Draw",
+            "fields": [
+                {
+                    "name": "drawLiquid",
+                    "type": "string",
+                    "localizedName": "Draw Liquid",
+                    "defaultValue": "null"
+                },
+                {
+                    "name": "liquid",
+                    "type": "string",
+                    "localizedName": "Liquid",
+                    "defaultValue": "null"
+                },
+                {
+                    "name": "suffix",
+                    "type": "string",
+                    "localizedName": "Suffix",
+                    "defaultValue": "\"-liquid\""
+                },
+                {
+                    "name": "alpha",
+                    "type": "number",
+                    "localizedName": "Alpha",
+                    "defaultValue": "1.0"
+                }
+            ]
+        },
+        "DrawLiquidTile": {
+            "localizedName": "Liquid Tile Draw",
+            "fields": [
+                {
+                    "name": "drawLiquid",
+                    "type": "string",
+                    "localizedName": "Draw Liquid",
+                    "defaultValue": "null"
+                },
+                {
+                    "name": "padding",
+                    "type": "number",
+                    "localizedName": "Padding",
+                    "defaultValue": "0.0"
+                },
+                {
+                    "name": "padLeft",
+                    "type": "number",
+                    "localizedName": "Pad Left",
+                    "defaultValue": "-1.0"
+                },
+                {
+                    "name": "padRight",
+                    "type": "number",
+                    "localizedName": "Pad Right",
+                    "defaultValue": "-1.0"
+                },
+                {
+                    "name": "padTop",
+                    "type": "number",
+                    "localizedName": "Pad Top",
+                    "defaultValue": "-1.0"
+                },
+                {
+                    "name": "padBottom",
+                    "type": "number",
+                    "localizedName": "Pad Bottom",
+                    "defaultValue": "-1.0"
+                },
+                {
+                    "name": "alpha",
+                    "type": "number",
+                    "localizedName": "Alpha",
+                    "defaultValue": "1.0"
+                }
+            ]
+        },
+        "DrawMultiWeave": {
+            "localizedName": "Multi Weave Draw",
+            "fields": [
+                {
+                    "name": "weave",
+                    "type": "string",
+                    "localizedName": "Weave",
+                    "defaultValue": "null"
+                },
+                {
+                    "name": "glow",
+                    "type": "string",
+                    "localizedName": "Glow",
+                    "defaultValue": "null"
+                },
+                {
+                    "name": "rotateSpeed",
+                    "type": "number",
+                    "localizedName": "Rotate Speed",
+                    "defaultValue": "1.0"
+                },
+                {
+                    "name": "rotateSpeed2",
+                    "type": "number",
+                    "localizedName": "Rotate Speed 2",
+                    "defaultValue": "-0.9"
+                },
+                {
+                    "name": "fadeWeave",
+                    "type": "boolean",
+                    "localizedName": "Fade Weave",
+                    "defaultValue": "false"
+                },
+                {
+                    "name": "glowColor",
+                    "type": "string",
+                    "localizedName": "Glow Color",
+                    "defaultValue": "ff6666cc"
+                },
+                {
+                    "name": "weaveColor",
+                    "type": "string",
+                    "localizedName": "Weave Color",
+                    "defaultValue": "ffffffff"
+                },
+                {
+                    "name": "pulse",
+                    "type": "number",
+                    "localizedName": "Pulse",
+                    "defaultValue": "0.3"
+                },
+                {
+                    "name": "pulseScl",
+                    "type": "number",
+                    "localizedName": "Pulse Scale",
+                    "defaultValue": "10.0"
+                }
+            ]
+        },
+        "DrawParticles": {
+            "localizedName": "Particles Draw",
+            "fields": [
+                {
+                    "name": "color",
+                    "type": "string",
+                    "localizedName": "Color",
+                    "defaultValue": "f2d585ff"
+                },
+                {
+                    "name": "sides",
+                    "type": "number",
+                    "localizedName": "Sides",
+                    "defaultValue": "12"
+                },
+                {
+                    "name": "x",
+                    "type": "number",
+                    "localizedName": "X Offset",
+                    "defaultValue": "0.0"
+                },
+                {
+                    "name": "y",
+                    "type": "number",
+                    "localizedName": "Y Offset",
+                    "defaultValue": "0.0"
+                },
+                {
+                    "name": "alpha",
+                    "type": "number",
+                    "localizedName": "Alpha",
+                    "defaultValue": "0.5"
+                },
+                {
+                    "name": "particles",
+                    "type": "number",
+                    "localizedName": "Particles",
+                    "defaultValue": "30"
+                },
+                {
+                    "name": "particleRotation",
+                    "type": "number",
+                    "localizedName": "Particle Rotation",
+                    "defaultValue": "0.0"
+                },
+                {
+                    "name": "particleLife",
+                    "type": "number",
+                    "localizedName": "Particle Life",
+                    "defaultValue": "70.0"
+                },
+                {
+                    "name": "particleRad",
+                    "type": "number",
+                    "localizedName": "Particle Radius",
+                    "defaultValue": "7.0"
+                },
+                {
+                    "name": "particleSize",
+                    "type": "number",
+                    "localizedName": "Particle Size",
+                    "defaultValue": "3.0"
+                },
+                {
+                    "name": "fadeMargin",
+                    "type": "number",
+                    "localizedName": "Fade Margin",
+                    "defaultValue": "0.4"
+                },
+                {
+                    "name": "rotateScl",
+                    "type": "number",
+                    "localizedName": "Rotate Scale",
+                    "defaultValue": "3.0"
+                },
+                {
+                    "name": "reverse",
+                    "type": "boolean",
+                    "localizedName": "Reverse",
+                    "defaultValue": "false"
+                },
+                {
+                    "name": "poly",
+                    "type": "boolean",
+                    "localizedName": "Poly",
+                    "defaultValue": "false"
+                },
+                {
+                    "name": "blending",
+                    "type": "string",
+                    "localizedName": "Blending",
+                    "defaultValue": "normal"
+                }
+            ]
+        },
+        "DrawPistons": {
+            "localizedName": "Pistons Draw",
+            "fields": [
+                {
+                    "name": "sinMag",
+                    "type": "number",
+                    "localizedName": "Sine Magnitude",
+                    "defaultValue": "4.0"
+                },
+                {
+                    "name": "sinScl",
+                    "type": "number",
+                    "localizedName": "Sine Scale",
+                    "defaultValue": "6.0"
+                },
+                {
+                    "name": "sinOffset",
+                    "type": "number",
+                    "localizedName": "Sine Offset",
+                    "defaultValue": "50.0"
+                },
+                {
+                    "name": "sideOffset",
+                    "type": "number",
+                    "localizedName": "Side Offset",
+                    "defaultValue": "0.0"
+                },
+                {
+                    "name": "lenOffset",
+                    "type": "number",
+                    "localizedName": "Length Offset",
+                    "defaultValue": "-1.0"
+                },
+                {
+                    "name": "horiOffset",
+                    "type": "number",
+                    "localizedName": "Horizontal Offset",
+                    "defaultValue": "0.0"
+                },
+                {
+                    "name": "angleOffset",
+                    "type": "number",
+                    "localizedName": "Angle Offset",
+                    "defaultValue": "0.0"
+                },
+                {
+                    "name": "x",
+                    "type": "number",
+                    "localizedName": "X Offset",
+                    "defaultValue": "0.0"
+                },
+                {
+                    "name": "y",
+                    "type": "number",
+                    "localizedName": "Y Offset",
+                    "defaultValue": "0.0"
+                },
+                {
+                    "name": "sides",
+                    "type": "number",
+                    "localizedName": "Sides",
+                    "defaultValue": "4"
+                },
+                {
+                    "name": "suffix",
+                    "type": "string",
+                    "localizedName": "Suffix",
+                    "defaultValue": "\"-piston\""
+                },
+                {
+                    "name": "region1",
+                    "type": "string",
+                    "localizedName": "Region 1",
+                    "defaultValue": "null"
+                },
+                {
+                    "name": "region2",
+                    "type": "string",
+                    "localizedName": "Region 2",
+                    "defaultValue": "null"
+                },
+                {
+                    "name": "regiont",
+                    "type": "string",
+                    "localizedName": "Region Top",
+                    "defaultValue": "null"
+                },
+                {
+                    "name": "iconRegion",
+                    "type": "string",
+                    "localizedName": "Icon Region",
+                    "defaultValue": "null"
+                }
+            ]
+        },
+        "DrawPlasma": {
+            "localizedName": "Plasma Draw",
+            "fields": [
+                {
+                    "name": "x",
+                    "type": "number",
+                    "localizedName": "X Offset",
+                    "defaultValue": "0.0"
+                },
+                {
+                    "name": "y",
+                    "type": "number",
+                    "localizedName": "Y Offset",
+                    "defaultValue": "0.0"
+                },
+                {
+                    "name": "regions",
+                    "type": "array",
+                    "localizedName": "Regions",
+                    "defaultValue": "null",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "name": "suffix",
+                    "type": "string",
+                    "localizedName": "Suffix",
+                    "defaultValue": "\"-plasma-\""
+                },
+                {
+                    "name": "plasmas",
+                    "type": "number",
+                    "localizedName": "Plasmas",
+                    "defaultValue": "4"
+                },
+                {
+                    "name": "plasma1",
+                    "type": "string",
+                    "localizedName": "Plasma Color 1",
+                    "defaultValue": "ffd06bff"
+                },
+                {
+                    "name": "plasma2",
+                    "type": "string",
+                    "localizedName": "Plasma Color 2",
+                    "defaultValue": "ff361bff"
+                }
+            ]
+        },
+        "DrawPower": {
+            "localizedName": "Power Draw",
+            "fields": [
+                {
+                    "name": "emptyRegion",
+                    "type": "string",
+                    "localizedName": "Empty Region",
+                    "defaultValue": "null"
+                },
+                {
+                    "name": "fullRegion",
+                    "type": "string",
+                    "localizedName": "Full Region",
+                    "defaultValue": "null"
+                },
+                {
+                    "name": "suffix",
+                    "type": "string",
+                    "localizedName": "Suffix",
+                    "defaultValue": "\"-power\""
+                },
+                {
+                    "name": "drawPlan",
+                    "type": "boolean",
+                    "localizedName": "Draw Plan",
+                    "defaultValue": "true"
+                },
+                {
+                    "name": "mixcol",
+                    "type": "boolean",
+                    "localizedName": "Mix Color",
+                    "defaultValue": "true"
+                },
+                {
+                    "name": "emptyLightColor",
+                    "type": "string",
+                    "localizedName": "Empty Light Color",
+                    "defaultValue": "f8c266ff"
+                },
+                {
+                    "name": "fullLightColor",
+                    "type": "string",
+                    "localizedName": "Full Light Color",
+                    "defaultValue": "fb9567ff"
+                },
+                {
+                    "name": "layer",
+                    "type": "number",
+                    "localizedName": "Layer",
+                    "defaultValue": "-1.0"
+                }
+            ]
+        },
+        "DrawPulseShape": {
+            "localizedName": "Pulse Shape Draw",
+            "fields": [
+                {
+                    "name": "color",
+                    "type": "string",
+                    "localizedName": "Color",
+                    "defaultValue": "ffd37fff"
+                },
+                {
+                    "name": "stroke",
+                    "type": "number",
+                    "localizedName": "Stroke",
+                    "defaultValue": "2.0"
+                },
+                {
+                    "name": "timeScl",
+                    "type": "number",
+                    "localizedName": "Time Scale",
+                    "defaultValue": "100.0"
+                },
+                {
+                    "name": "minStroke",
+                    "type": "number",
+                    "localizedName": "Min Stroke",
+                    "defaultValue": "0.2"
+                },
+                {
+                    "name": "x",
+                    "type": "number",
+                    "localizedName": "X Offset",
+                    "defaultValue": "0.0"
+                },
+                {
+                    "name": "y",
+                    "type": "number",
+                    "localizedName": "Y Offset",
+                    "defaultValue": "0.0"
+                },
+                {
+                    "name": "radiusScl",
+                    "type": "number",
+                    "localizedName": "Radius Scale",
+                    "defaultValue": "1.0"
+                },
+                {
+                    "name": "layer",
+                    "type": "number",
+                    "localizedName": "Layer",
+                    "defaultValue": "-1.0"
+                },
+                {
+                    "name": "square",
+                    "type": "boolean",
+                    "localizedName": "Square",
+                    "defaultValue": "true"
+                }
+            ]
+        },
+        "DrawPumpLiquid": {
+            "localizedName": "Pump Liquid Draw",
+            "fields": [
+                {
+                    "name": "liquid",
+                    "type": "string",
+                    "localizedName": "Liquid",
+                    "defaultValue": "null"
+                }
+            ]
+        },
+        "DrawShape": {
+            "localizedName": "Shape Draw",
+            "fields": [
+                {
+                    "name": "color",
+                    "type": "string",
+                    "localizedName": "Color",
+                    "defaultValue": "ffd37fff"
+                },
+                {
+                    "name": "sides",
+                    "type": "number",
+                    "localizedName": "Sides",
+                    "defaultValue": "4"
+                },
+                {
+                    "name": "radius",
+                    "type": "number",
+                    "localizedName": "Radius",
+                    "defaultValue": "2.0"
+                },
+                {
+                    "name": "timeScl",
+                    "type": "number",
+                    "localizedName": "Time Scale",
+                    "defaultValue": "1.0"
+                },
+                {
+                    "name": "layer",
+                    "type": "number",
+                    "localizedName": "Layer",
+                    "defaultValue": "-1.0"
+                },
+                {
+                    "name": "x",
+                    "type": "number",
+                    "localizedName": "X Offset",
+                    "defaultValue": "0.0"
+                },
+                {
+                    "name": "y",
+                    "type": "number",
+                    "localizedName": "Y Offset",
+                    "defaultValue": "0.0"
+                },
+                {
+                    "name": "useWarmupRadius",
+                    "type": "boolean",
+                    "localizedName": "Use Warmup Radius",
+                    "defaultValue": "false"
+                }
+            ]
+        },
+        "DrawSideRegion": {
+            "localizedName": "Side Region Draw",
+            "fields": [
+                {
+                    "name": "top1",
+                    "type": "string",
+                    "localizedName": "Top 1",
+                    "defaultValue": "null"
+                },
+                {
+                    "name": "top2",
+                    "type": "string",
+                    "localizedName": "Top 2",
+                    "defaultValue": "null"
+                }
+            ]
+        },
+        "DrawSoftParticles": {
+            "localizedName": "Soft Particles Draw",
+            "fields": [
+                {
+                    "name": "region",
+                    "type": "string",
+                    "localizedName": "Region",
+                    "defaultValue": "null"
+                },
+                {
+                    "name": "color",
+                    "type": "string",
+                    "localizedName": "Color",
+                    "defaultValue": "e3ae6fff"
+                },
+                {
+                    "name": "color2",
+                    "type": "string",
+                    "localizedName": "Color 2",
+                    "defaultValue": "d04d46ff"
+                },
+                {
+                    "name": "x",
+                    "type": "number",
+                    "localizedName": "X Offset",
+                    "defaultValue": "0.0"
+                },
+                {
+                    "name": "y",
+                    "type": "number",
+                    "localizedName": "Y Offset",
+                    "defaultValue": "0.0"
+                },
+                {
+                    "name": "alpha",
+                    "type": "number",
+                    "localizedName": "Alpha",
+                    "defaultValue": "0.5"
+                },
+                {
+                    "name": "particles",
+                    "type": "number",
+                    "localizedName": "Particles",
+                    "defaultValue": "30"
+                },
+                {
+                    "name": "particleLife",
+                    "type": "number",
+                    "localizedName": "Particle Life",
+                    "defaultValue": "70.0"
+                },
+                {
+                    "name": "particleRad",
+                    "type": "number",
+                    "localizedName": "Particle Radius",
+                    "defaultValue": "7.0"
+                },
+                {
+                    "name": "particleSize",
+                    "type": "number",
+                    "localizedName": "Particle Size",
+                    "defaultValue": "3.0"
+                },
+                {
+                    "name": "fadeMargin",
+                    "type": "number",
+                    "localizedName": "Fade Margin",
+                    "defaultValue": "0.4"
+                },
+                {
+                    "name": "rotateScl",
+                    "type": "number",
+                    "localizedName": "Rotate Scale",
+                    "defaultValue": "1.5"
+                }
+            ]
+        },
+        "DrawSpikes": {
+            "localizedName": "Spikes Draw",
+            "fields": [
+                {
+                    "name": "color",
+                    "type": "string",
+                    "localizedName": "Color",
+                    "defaultValue": "7457ceff"
+                },
+                {
+                    "name": "amount",
+                    "type": "number",
+                    "localizedName": "Amount",
+                    "defaultValue": "10"
+                },
+                {
+                    "name": "layers",
+                    "type": "number",
+                    "localizedName": "Layers",
+                    "defaultValue": "1"
+                },
+                {
+                    "name": "stroke",
+                    "type": "number",
+                    "localizedName": "Stroke",
+                    "defaultValue": "2.0"
+                },
+                {
+                    "name": "rotateSpeed",
+                    "type": "number",
+                    "localizedName": "Rotate Speed",
+                    "defaultValue": "0.8"
+                },
+                {
+                    "name": "radius",
+                    "type": "number",
+                    "localizedName": "Radius",
+                    "defaultValue": "6.0"
+                },
+                {
+                    "name": "length",
+                    "type": "number",
+                    "localizedName": "Length",
+                    "defaultValue": "4.0"
+                },
+                {
+                    "name": "x",
+                    "type": "number",
+                    "localizedName": "X Offset",
+                    "defaultValue": "0.0"
+                },
+                {
+                    "name": "y",
+                    "type": "number",
+                    "localizedName": "Y Offset",
+                    "defaultValue": "0.0"
+                },
+                {
+                    "name": "layerSpeed",
+                    "type": "number",
+                    "localizedName": "Layer Speed",
+                    "defaultValue": "-1.0"
+                }
+            ]
+        },
+        "DrawTurret": {
+            "localizedName": "Turret Draw",
+            "fields": [
+                {
+                    "name": "parts",
+                    "type": "array",
+                    "localizedName": "Parts",
+                    "defaultValue": "[]",
+                    "items": {
+                        "$ref": "types/DrawPart"
+                    }
+                },
+                {
+                    "name": "basePrefix",
+                    "type": "string",
+                    "localizedName": "Base Prefix",
+                    "defaultValue": "\"\""
+                },
+                {
+                    "name": "liquidDraw",
+                    "type": "string",
+                    "localizedName": "Liquid Draw",
+                    "defaultValue": "null"
+                },
+                {
+                    "name": "turretLayer",
+                    "type": "number",
+                    "localizedName": "Turret Layer",
+                    "defaultValue": "50.0"
+                },
+                {
+                    "name": "shadowLayer",
+                    "type": "number",
+                    "localizedName": "Shadow Layer",
+                    "defaultValue": "49.5"
+                },
+                {
+                    "name": "heatLayer",
+                    "type": "number",
+                    "localizedName": "Heat Layer",
+                    "defaultValue": "50.1"
+                },
+                {
+                    "name": "base",
+                    "type": "string",
+                    "localizedName": "Base",
+                    "defaultValue": "null"
+                },
+                {
+                    "name": "liquid",
+                    "type": "string",
+                    "localizedName": "Liquid",
+                    "defaultValue": "null"
+                },
+                {
+                    "name": "top",
+                    "type": "string",
+                    "localizedName": "Top",
+                    "defaultValue": "null"
+                },
+                {
+                    "name": "heat",
+                    "type": "string",
+                    "localizedName": "Heat",
+                    "defaultValue": "null"
+                },
+                {
+                    "name": "preview",
+                    "type": "string",
+                    "localizedName": "Preview",
+                    "defaultValue": "null"
+                },
+                {
+                    "name": "outline",
+                    "type": "string",
+                    "localizedName": "Outline",
+                    "defaultValue": "null"
+                }
+            ]
+        },
+        "DrawWarmupRegion": {
+            "localizedName": "Warmup Region Draw",
+            "fields": [
+                {
+                    "name": "sinMag",
+                    "type": "number",
+                    "localizedName": "Sine Magnitude",
+                    "defaultValue": "0.6"
+                },
+                {
+                    "name": "sinScl",
+                    "type": "number",
+                    "localizedName": "Sine Scale",
+                    "defaultValue": "8.0"
+                },
+                {
+                    "name": "color",
+                    "type": "string",
+                    "localizedName": "Color",
+                    "defaultValue": "ff9b59ff"
+                },
+                {
+                    "name": "region",
+                    "type": "string",
+                    "localizedName": "Region",
+                    "defaultValue": "null"
+                }
+            ]
+        },
+        "DrawWeave": {
+            "localizedName": "Weave Draw",
+            "fields": [
+                {
+                    "name": "weave",
+                    "type": "string",
+                    "localizedName": "Weave",
+                    "defaultValue": "null"
+                },
+                {
+                    "name": "x",
+                    "type": "number",
+                    "localizedName": "X Offset",
+                    "defaultValue": "0.0"
+                },
+                {
+                    "name": "y",
+                    "type": "number",
+                    "localizedName": "Y Offset",
+                    "defaultValue": "0.0"
+                }
+            ]
+        }
+    }
+}

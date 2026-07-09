@@ -48,17 +48,7 @@
             "name": "requirements",
             "type": "array",
             "items": {
-                "type": "object",
-                "fields": [
-                    {
-                        "name": "amount",
-                        "type": "int"
-                    },
-                    {
-                        "name": "item",
-                        "type": "string"
-                    }
-                ]
+                "$ref": "types/StackRequirement"
             }
         },
         {
@@ -120,25 +110,7 @@
         },
         {
             "name": "shoot",
-            "type": "object",
-            "fields": [
-                {
-                    "name": "firstShotDelay",
-                    "type": "string"
-                },
-                {
-                    "name": "shots",
-                    "type": "int"
-                },
-                {
-                    "name": "spread",
-                    "type": "string"
-                },
-                {
-                    "name": "type",
-                    "type": "string"
-                }
-            ]
+            "$ref": "types/Shoot"
         },
         {
             "name": "outlineIcon",
@@ -236,7 +208,7 @@
             "fields": [
                 {
                     "name": "power",
-                    "type": "string"
+                    "$ref": "types/ConsumePower"
                 }
             ]
         },

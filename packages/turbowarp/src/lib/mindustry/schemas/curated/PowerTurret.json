@@ -28,7 +28,7 @@
                 },
                 {
                     "name": "power",
-                    "type": "string"
+                    "$ref": "types/ConsumePower"
                 }
             ]
         },
@@ -52,17 +52,7 @@
             "name": "requirements",
             "type": "array",
             "items": {
-                "type": "object",
-                "fields": [
-                    {
-                        "name": "amount",
-                        "type": "int"
-                    },
-                    {
-                        "name": "item",
-                        "type": "string"
-                    }
-                ]
+                "$ref": "types/StackRequirement"
             }
         },
         {
@@ -126,37 +116,7 @@
         },
         {
             "name": "shoot",
-            "type": "object",
-            "fields": [
-                {
-                    "name": "barrels",
-                    "type": "string"
-                },
-                {
-                    "name": "firstShotDelay",
-                    "type": "string"
-                },
-                {
-                    "name": "radius",
-                    "type": "string"
-                },
-                {
-                    "name": "shotDelay",
-                    "type": "string"
-                },
-                {
-                    "name": "shots",
-                    "type": "int"
-                },
-                {
-                    "name": "spread",
-                    "type": "string"
-                },
-                {
-                    "name": "type",
-                    "type": "string"
-                }
-            ]
+            "$ref": "types/Shoot"
         },
         {
             "name": "squareSprite",
