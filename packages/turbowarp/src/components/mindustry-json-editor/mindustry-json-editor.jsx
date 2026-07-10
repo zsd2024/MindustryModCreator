@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import {resolveFields, getFieldLabel, getFieldDoc, getZhLabel, getZhDoc} from '../../lib/mindustry/resolve-schema';
+import {normalizeType} from '../../lib/mindustry/compound-types';
 import {VANILLA_CONTENT} from '../../lib/mindustry/vanilla-content';
 import styles from './mindustry-json-editor.css';
 
@@ -112,7 +113,8 @@ class MindustryJsonEditor extends React.Component {
     this.setState(prev => ({ advancedMode: !prev.advancedMode }));
   }
 
-  renderField(field) {
+  renderField(rawField) {
+    const field = normalizeType(rawField);
     const {data} = this.state;
     const value = data[field.name] !== undefined ? data[field.name] : this.parseDefault(field);
     const label = getFieldLabel(field.sourceType, field.name);
