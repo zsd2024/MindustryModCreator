@@ -477,13 +477,11 @@ class MindustryJsonEditor extends React.Component {
                 left: `${rect.left}px`,
                 width: `${rect.width}px`,
                 zIndex: 1000,
-                ...(up ? {
-                    bottom: `${window.innerHeight - rect.top}px`,
-                    maxHeight: `${Math.min(DROPDOWN_ESTIMATED_HEIGHT, spaceAbove)}px`
-                } : {
-                    top: `${rect.bottom}px`,
-                    maxHeight: `${Math.min(DROPDOWN_ESTIMATED_HEIGHT, spaceBelow)}px`
-                })
+                top: up ? 'auto' : `${rect.bottom}px`,
+                bottom: up ? `${window.innerHeight - rect.top}px` : 'auto',
+                maxHeight: up ?
+                    `${Math.min(DROPDOWN_ESTIMATED_HEIGHT, spaceAbove)}px` :
+                    `${Math.min(DROPDOWN_ESTIMATED_HEIGHT, spaceBelow)}px`
             },
             up
         };
