@@ -308,6 +308,9 @@ class MindustryJsonEditor extends React.Component {
     };
 
     handleContentToggle = e => {
+        console.log('[DEBUG] handleContentToggle |', 'e:', !!e,
+            'ddkey:', e?.currentTarget?.dataset?.ddkey);
+        if (!e || !e.currentTarget) return;
         const key = e.currentTarget.dataset.ddkey;
         this.setState(prev => ({
             _dd: {...prev._dd, [`${key}_open`]: !prev._dd?.[`${key}_open`]}
@@ -315,6 +318,10 @@ class MindustryJsonEditor extends React.Component {
     };
 
     handleContentSearch = e => {
+        console.log('[DEBUG] handleContentSearch |', 'e:', !!e,
+            'ct:', !!e?.currentTarget, 't:', !!e?.target,
+            'ddkey:', e?.currentTarget?.dataset?.ddkey,
+            'value:', e?.target?.value);
         if (!e || !e.currentTarget || !e.target) return;
         const key = e.currentTarget.dataset.ddkey;
         this.setState(prev => ({
@@ -323,6 +330,8 @@ class MindustryJsonEditor extends React.Component {
     };
 
     handleContentBlur = e => {
+        console.log('[DEBUG] handleContentBlur |', 'e:', !!e,
+            'ddkey:', e?.currentTarget?.dataset?.ddkey);
         if (!e || !e.currentTarget) return;
         const key = e.currentTarget.dataset.ddkey;
         setTimeout(() => {
@@ -333,6 +342,10 @@ class MindustryJsonEditor extends React.Component {
     };
 
     handleContentSelect = e => {
+        console.log('[DEBUG] handleContentSelect |', 'e:', !!e,
+            'ddkey:', e?.currentTarget?.dataset?.ddkey,
+            'optname:', e?.currentTarget?.dataset?.optname,
+            'ckey:', e?.currentTarget?.dataset?.ckey);
         if (!e || !e.currentTarget) return;
         const key = e.currentTarget.dataset.ddkey;
         const optName = e.currentTarget.dataset.optname;
@@ -440,6 +453,9 @@ class MindustryJsonEditor extends React.Component {
             }
         }
 
+        console.log('[DEBUG] getAllContentOptions returns',
+            result.length, 'items, VANILLA keys:',
+            Object.keys(VANILLA_CONTENT));
         return result;
     }
 
@@ -512,6 +528,11 @@ class MindustryJsonEditor extends React.Component {
         const filtered = options.filter(o => !search ||
             o.name.includes(search) || o.cn.includes(search));
         const selected = options.find(o => o.name === value);
+        console.log('[DEBUG] renderContentSelect |', 'ddKey:', ddKey,
+            'open:', open, 'search:', search,
+            'options:', options.length,
+            'filtered:', filtered.length,
+            'selected:', selected?.name);
 
         return (
             <div className={styles.selectWrap}>
@@ -835,17 +856,25 @@ class MindustryJsonEditor extends React.Component {
 
         const renderControl = () => {
             if (field.name === 'research') {
+                console.log('[DEBUG] research field |',
+                    'type:', field.type,
+                    'value:', JSON.stringify(value),
+                    'typeof:', typeof value,
+                    'fields:', field.fields);
                 if (typeof value === 'string') {
                     this._onChangeMap.set(ckey, newVal => {
                         this.handleChange(field.name, newVal);
                     });
                     const allContent = this.getAllContentOptions();
+                    console.log('[DEBUG] renderContentSelect with', allContent.length, 'options');
                     return this.renderContentSelect(allContent, value, null, field.name, ckey, ckey);
                 }
                 // Object value: fall through to normal object rendering (with ENHANCED_RESEARCH sub-fields)
             }
 
             if (field.type === 'object' && field.fields) {
+                console.log('[DEBUG] renderObjectField for',
+                    field.name, 'type:', field.type);
                 return this.renderObjectField(field, value, ckey);
             }
 
@@ -939,6 +968,15 @@ class MindustryJsonEditor extends React.Component {
             if (!sections[f.sourceType]) sections[f.sourceType] = [];
             sections[f.sourceType].push(f);
         }
+        console.log('[DEBUG] render |', 'type:', contentType,
+            'mode:', mode, 'fields:', fields.length,
+            'research:',
+            researchField ?
+                JSON.stringify({name: researchField.name,
+                    type: researchField.type,
+                    hf: !!researchField.fields}) :
+                'null',
+            'data.research:', JSON.stringify(this.state.data?.research));
 
         return (
             <div className={styles.editor}>
