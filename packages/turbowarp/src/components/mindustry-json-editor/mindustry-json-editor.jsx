@@ -149,6 +149,23 @@ const ENUM_VALUES = {
     {value: 'message', cn: '信息板'},
     {value: 'all', cn: '全部'},
   ],
+  Attribute: [
+    {value: 'water', cn: '水'},
+    {value: 'heat', cn: '热量'},
+    {value: 'oil', cn: '石油'},
+    {value: 'sand', cn: '沙'},
+    {value: 'spores', cn: '孢子'},
+  ],
+  Sortf: [
+    {value: 'closest', cn: '最近'},
+    {value: 'farthest', cn: '最远'},
+    {value: 'health', cn: '生命值'},
+    {value: 'maxHealth', cn: '最大生命值'},
+    {value: 'shield', cn: '护盾'},
+    {value: 'damage', cn: '伤害'},
+    {value: 'armor', cn: '护甲'},
+    {value: 'speed', cn: '速度'},
+  ],
 };
 
 class MindustryJsonEditor extends React.Component {
