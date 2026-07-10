@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import ReactDOM from 'react-dom';
 import {resolveFields, getFieldLabel, getFieldDoc, getZhLabel, getZhDoc} from '../../lib/mindustry/resolve-schema';
 import {normalizeType} from '../../lib/mindustry/compound-types';
 import {VANILLA_CONTENT} from '../../lib/mindustry/vanilla-content';
@@ -308,6 +309,21 @@ class MindustryJsonEditor extends React.Component {
         }));
     };
 
+    handleDropdownClose = ddKey => {
+        this.setState(prev => ({
+            _dd: {...prev._dd, [`${ddKey}_open`]: false, [`${ddKey}_search`]: ''}
+        }));
+    };
+
+    handleBackdropClick = e => {
+        if (!e || !e.currentTarget) return;
+        this.handleDropdownClose(e.currentTarget.dataset.ddkey);
+    };
+
+    handlePortalDropdownClick = e => {
+        e.stopPropagation();
+    };
+
     handleContentToggle = e => {
         if (!e || !e.currentTarget) return;
         const key = e.currentTarget.dataset.ddkey;
@@ -454,7 +470,7 @@ class MindustryJsonEditor extends React.Component {
             o.value.includes(search) || o.cn.includes(search));
         const selected = options.find(o => o.value === value);
 
-        return (
+        const trigger = (
             <div className={styles.selectWrap}>
                 <div
                     className={styles.selectDisplay}
@@ -466,41 +482,70 @@ class MindustryJsonEditor extends React.Component {
                     </span>
                     <span className={styles.selectArrow}>{open ? '▲' : '▼'}</span>
                 </div>
-                {open && (
-                    <div className={styles.selectDropdown}>
-                        <input
-                            type="text"
-                            value={search}
-                            placeholder={S.search}
-                            data-ddkey={ddKey}
-                            autoFocus
-                            onChange={this.handleEnumSearch}
-                            onBlur={this.handleEnumBlur}
-                            className={styles.selectSearch}
-                        />
-                        <div className={styles.selectOptions}>
-                            {filtered.length === 0 && (
-                                <div className={styles.selectEmpty}>{S.noMatch}</div>
-                            )}
-                            {filtered.map(opt => (
-                                <div
-                                    key={opt.value}
-                                    className={
-                                        `${styles.selectOption} ${value === opt.value ? styles.selectOptionActive : ''}`
-                                    }
-                                    data-ddkey={ddKey}
-                                    data-ckey={ckey}
-                                    data-optvalue={opt.value}
-                                    onMouseDown={this.handleEnumSelect}
-                                >
-                                    <span className={styles.selectOptCn}>{opt.cn}</span>
-                                    <span className={styles.selectOptId}>{opt.value}</span>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                )}
             </div>
+        );
+
+        if (!open) return trigger;
+
+        const triggerEl = document.querySelector(`[data-ddkey="${ddKey}"]`);
+        const rect = triggerEl ? triggerEl.getBoundingClientRect() : null;
+        const portalStyle = rect ? {
+            position: 'fixed',
+            left: `${rect.left}px`,
+            top: `${rect.bottom}px`,
+            width: `${rect.width}px`,
+            zIndex: 1000
+        } : {};
+
+        return (
+            <>{trigger}
+                {ReactDOM.createPortal(
+                    <div
+                        className={styles.portalBackdrop}
+                        data-ddkey={ddKey}
+                        onMouseDown={this.handleBackdropClick}
+                    >
+                        <div
+                            className={styles.selectDropdown}
+                            style={portalStyle}
+                            onMouseDown={this.handlePortalDropdownClick}
+                        >
+                            <input
+                                type="text"
+                                value={search}
+                                placeholder={S.search}
+                                data-ddkey={ddKey}
+                                autoFocus
+                                onChange={this.handleEnumSearch}
+                                onBlur={this.handleEnumBlur}
+                                className={styles.selectSearch}
+                            />
+                            <div className={styles.selectOptions}>
+                                {filtered.length === 0 && (
+                                    <div className={styles.selectEmpty}>{S.noMatch}</div>
+                                )}
+                                {filtered.map(opt => (
+                                    <div
+                                        key={opt.value}
+                                        className={
+                                            `${styles.selectOption} ${
+                                                value === opt.value ? styles.selectOptionActive : ''}`
+                                        }
+                                        data-ddkey={ddKey}
+                                        data-ckey={ckey}
+                                        data-optvalue={opt.value}
+                                        onMouseDown={this.handleEnumSelect}
+                                    >
+                                        <span className={styles.selectOptCn}>{opt.cn}</span>
+                                        <span className={styles.selectOptId}>{opt.value}</span>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </div>,
+                    document.body
+                )}
+            </>
         );
     }
 
@@ -516,7 +561,7 @@ class MindustryJsonEditor extends React.Component {
             o.name.includes(search) || o.cn.includes(search));
         const selected = options.find(o => o.name === value);
 
-        return (
+        const trigger = (
             <div className={styles.selectWrap}>
                 <div
                     className={styles.selectDisplay}
@@ -526,41 +571,70 @@ class MindustryJsonEditor extends React.Component {
                     <span className={styles.selectDisplayLabel}>{selected ? selected.cn : (value || '--')}</span>
                     <span className={styles.selectArrow}>{open ? '▲' : '▼'}</span>
                 </div>
-                {open && (
-                    <div className={styles.selectDropdown}>
-                        <input
-                            type="text"
-                            value={search}
-                            placeholder={S.search}
-                            data-ddkey={ddKey}
-                            autoFocus
-                            onChange={this.handleContentSearch}
-                            onBlur={this.handleContentBlur}
-                            className={styles.selectSearch}
-                        />
-                        <div className={styles.selectOptions}>
-                            {filtered.length === 0 && (
-                                <div className={styles.selectEmpty}>{S.noMatch}</div>
-                            )}
-                            {filtered.map(opt => (
-                                <div
-                                    key={opt.name}
-                                    className={
-                                        `${styles.selectOption} ${value === opt.name ? styles.selectOptionActive : ''}`
-                                    }
-                                    data-ddkey={ddKey}
-                                    data-ckey={ckey}
-                                    data-optname={opt.name}
-                                    onMouseDown={this.handleContentSelect}
-                                >
-                                    <span className={styles.selectOptCn}>{opt.cn}</span>
-                                    <span className={styles.selectOptId}>{opt.name}</span>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                )}
             </div>
+        );
+
+        if (!open) return trigger;
+
+        const triggerEl = document.querySelector(`[data-ddkey="${ddKey}"]`);
+        const rect = triggerEl ? triggerEl.getBoundingClientRect() : null;
+        const portalStyle = rect ? {
+            position: 'fixed',
+            left: `${rect.left}px`,
+            top: `${rect.bottom}px`,
+            width: `${rect.width}px`,
+            zIndex: 1000
+        } : {};
+
+        return (
+            <>{trigger}
+                {ReactDOM.createPortal(
+                    <div
+                        className={styles.portalBackdrop}
+                        data-ddkey={ddKey}
+                        onMouseDown={this.handleBackdropClick}
+                    >
+                        <div
+                            className={styles.selectDropdown}
+                            style={portalStyle}
+                            onMouseDown={this.handlePortalDropdownClick}
+                        >
+                            <input
+                                type="text"
+                                value={search}
+                                placeholder={S.search}
+                                data-ddkey={ddKey}
+                                autoFocus
+                                onChange={this.handleContentSearch}
+                                onBlur={this.handleContentBlur}
+                                className={styles.selectSearch}
+                            />
+                            <div className={styles.selectOptions}>
+                                {filtered.length === 0 && (
+                                    <div className={styles.selectEmpty}>{S.noMatch}</div>
+                                )}
+                                {filtered.map(opt => (
+                                    <div
+                                        key={opt.name}
+                                        className={
+                                            `${styles.selectOption} ${
+                                                value === opt.name ? styles.selectOptionActive : ''}`
+                                        }
+                                        data-ddkey={ddKey}
+                                        data-ckey={ckey}
+                                        data-optname={opt.name}
+                                        onMouseDown={this.handleContentSelect}
+                                    >
+                                        <span className={styles.selectOptCn}>{opt.cn}</span>
+                                        <span className={styles.selectOptId}>{opt.name}</span>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </div>,
+                    document.body
+                )}
+            </>
         );
     }
 
