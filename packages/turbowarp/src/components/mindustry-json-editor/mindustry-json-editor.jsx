@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import {resolveFields, getFieldLabel, getFieldDoc, getZhLabel, getZhDoc} from '../../lib/mindustry/resolve-schema';
+import {VANILLA_CONTENT} from '../../lib/mindustry/vanilla-content';
 import styles from './mindustry-json-editor.css';
 
 import ReactMarkdown from 'react-markdown';
@@ -25,6 +26,28 @@ const REFERENCE_TYPES = new Set([
   'StatusEffect', 'Weather', 'Planet', 'SectorPreset',
   'Sound', 'TextureRegion', 'Research',
 ]);
+
+const ENUM_VALUES = {
+  buildVisibility: [
+    {value: 'hidden', cn: '隐藏'},
+    {value: 'shown', cn: '显示'},
+    {value: 'sandboxOnly', cn: '沙盒仅限'},
+    {value: 'editorOnly', cn: '编辑器仅限'},
+    {value: 'lightingOnly', cn: '光照仅限'},
+  ],
+  category: [
+    {value: 'distribution', cn: '物品输送'},
+    {value: 'crafting', cn: '制造'},
+    {value: 'defense', cn: '防御'},
+    {value: 'effect', cn: '效果'},
+    {value: 'liquid', cn: '液体'},
+    {value: 'logic', cn: '逻辑'},
+    {value: 'power', cn: '电力'},
+    {value: 'production', cn: '生产'},
+    {value: 'turret', cn: '炮塔'},
+    {value: 'units', cn: '单位'},
+  ],
+};
 
 class MindustryJsonEditor extends React.Component {
   constructor(props) {
@@ -249,6 +272,12 @@ class MindustryJsonEditor extends React.Component {
       );
     }
 
+    const rawOptions = field.options || ENUM_VALUES[field.name];
+    if (rawOptions) {
+      const enumOptions = rawOptions.map(o => typeof o === 'string' ? {value: o, cn: o} : {...o, cn: o.cn || o.value});
+      return this.renderSearchableSelect(enumOptions, value, onChange, field.name);
+    }
+
     if (field.type === 'int' || field.type === 'float') {
       if (field.name === 'size') {
         return this.renderSizeSelector(value, field, onChange);
@@ -267,8 +296,8 @@ class MindustryJsonEditor extends React.Component {
       );
     }
 
-    if (REFERENCE_TYPES.has(field.type)) {
-      return this.renderReferenceInput(field, value, onChange);
+    if (field.name === 'research' || REFERENCE_TYPES.has(field.type)) {
+      return this.renderContentSelect(field, value, onChange);
     }
 
     return (
@@ -281,48 +310,186 @@ class MindustryJsonEditor extends React.Component {
     );
   }
 
-  renderReferenceInput(field, value, onChange) {
+  getAllContentOptions() {
     const { assets } = this.props;
-    const suggestions = assets
-      ? assets.map(a => a.name).filter(Boolean)
-      : [];
-    const listId = `ref-${field.name}-${Math.random().toString(36).slice(2, 8)}`;
+    const seen = new Set();
+    const result = [];
+
+    for (const [type, items] of Object.entries(VANILLA_CONTENT)) {
+      for (const item of items) {
+        if (!seen.has(item.name)) {
+          seen.add(item.name);
+          result.push({ ...item, type, source: 'vanilla' });
+        }
+      }
+    }
+
+    if (assets) {
+      for (const asset of assets) {
+        if (asset.kind !== 'content') continue;
+        if (!seen.has(asset.name)) {
+          seen.add(asset.name);
+          result.push({
+            name: asset.name,
+            cn: asset.name,
+            type: asset.contentType,
+            source: 'mod',
+          });
+        }
+      }
+    }
+
+    return result;
+  }
+
+  renderContentSelect(field, value, onChange) {
+    const allOptions = this.getAllContentOptions();
+    const isResearch = field.name === 'research';
+
+    const options = isResearch
+      ? allOptions
+      : allOptions.filter(o => o.type === field.type);
+
+    const stateKey = `_cnt_${field.name}`;
+    const open = this.state[`${stateKey}_open`];
+    const search = this.state[`${stateKey}_search`] || '';
+    const filtered = options.filter(o => !search ||
+      o.name.includes(search) || o.cn.includes(search));
+
+    const selected = options.find(o => o.name === value);
+
     return (
-      <>
-        <input
-          type="text"
-          value={value || ''}
-          list={listId}
-          onChange={e => onChange(e.target.value)}
-          placeholder={`输入${field.localizedName || field.name}名称...`}
-        />
-        <datalist id={listId}>
-          {suggestions.map(s => <option key={s} value={s} />)}
-        </datalist>
-      </>
+      <div className={styles.selectWrap}>
+        <div className={styles.selectDisplay} onClick={() => this.setState({[`${stateKey}_open`]: !open})}>
+          <span className={styles.selectDisplayLabel}>{selected ? selected.cn : (value || '--')}</span>
+          <span className={styles.selectArrow}>{open ? '▲' : '▼'}</span>
+        </div>
+        {open && (
+          <div className={styles.selectDropdown}>
+            <input
+              type="text"
+              value={search}
+              placeholder="搜索..."
+              autoFocus
+              onChange={e => this.setState({[`${stateKey}_search`]: e.target.value})}
+              onBlur={() => setTimeout(() => this.setState({
+                [`${stateKey}_open`]: false,
+                [`${stateKey}_search`]: '',
+              }), 150)}
+              className={styles.selectSearch}
+            />
+            <div className={styles.selectOptions}>
+              {filtered.length === 0 && (
+                <div className={styles.selectEmpty}>无匹配</div>
+              )}
+              {filtered.map(opt => (
+                <div
+                  key={opt.name}
+                  className={`${styles.selectOption} ${value === opt.name ? styles.selectOptionActive : ''}`}
+                  onMouseDown={() => {
+                    onChange(opt.name);
+                    this.setState({
+                      [`${stateKey}_open`]: false,
+                      [`${stateKey}_search`]: '',
+                    });
+                  }}
+                >
+                  <span className={styles.selectOptCn}>{opt.cn}</span>
+                  <span className={styles.selectOptId}>{opt.name}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+      </div>
     );
   }
 
   renderSizeSelector(value, field, onChange) {
-    const sizes = [
-      {label: '1x1', value: 1},
-      {label: '2x2', value: 2},
-      {label: '3x3', value: 3},
-      {label: '4x4', value: 4},
-      {label: '5x5', value: 5},
-    ];
+    const sizes = [1, 2, 3, 4, 5];
     const handleSizeChange = onChange || ((v) => this.handleChange(field.name, v));
     return (
-      <div className={styles.sizeGrid}>
-        {sizes.map(s => (
-          <button
-            key={s.value}
-            className={`${styles.sizeBtn} ${value === s.value ? styles.sizeBtnActive : ''}`}
-            onClick={() => handleSizeChange(s.value)}
-          >
-            {s.label}
-          </button>
-        ))}
+      <div className={styles.sizeWrap}>
+        <div className={styles.sizeGrid}>
+          {sizes.map(s => (
+            <button
+              key={s}
+              className={`${styles.sizeBtn} ${value === s ? styles.sizeBtnActive : ''}`}
+              onClick={() => handleSizeChange(s)}
+            >
+              {s}x{s}
+            </button>
+          ))}
+        </div>
+        <div className={styles.sizeCustom}>
+          <input
+            type="number"
+            min="1"
+            value={value}
+            onChange={e => {
+              const v = parseInt(e.target.value, 10);
+              if (v > 0) handleSizeChange(v);
+            }}
+            className={styles.numInput}
+          />
+          <span className={styles.sizeSuffix}>x{value}</span>
+        </div>
+      </div>
+    );
+  }
+
+  renderSearchableSelect(options, value, onChange, fieldName) {
+    const stateKey = `_enum_${fieldName}`;
+    const open = this.state[`${stateKey}_open`];
+    const search = this.state[`${stateKey}_search`] || '';
+    const filtered = options.filter(o => !search ||
+      o.value.includes(search) || o.cn.includes(search));
+
+    const selected = options.find(o => o.value === value);
+
+    return (
+      <div className={styles.selectWrap}>
+        <div className={styles.selectDisplay} onClick={() => this.setState({[`${stateKey}_open`]: !open})}>
+          <span className={styles.selectDisplayLabel}>{selected ? selected.cn : (value || '--')}</span>
+          <span className={styles.selectArrow}>{open ? '▲' : '▼'}</span>
+        </div>
+        {open && (
+          <div className={styles.selectDropdown}>
+            <input
+              type="text"
+              value={search}
+              placeholder="搜索..."
+              autoFocus
+              onChange={e => this.setState({[`${stateKey}_search`]: e.target.value})}
+              onBlur={() => setTimeout(() => this.setState({
+                [`${stateKey}_open`]: false,
+                [`${stateKey}_search`]: '',
+              }), 150)}
+              className={styles.selectSearch}
+            />
+            <div className={styles.selectOptions}>
+              {filtered.length === 0 && (
+                <div className={styles.selectEmpty}>无匹配</div>
+              )}
+              {filtered.map(opt => (
+                <div
+                  key={opt.value}
+                  className={`${styles.selectOption} ${value === opt.value ? styles.selectOptionActive : ''}`}
+                  onMouseDown={() => {
+                    onChange(opt.value);
+                    this.setState({
+                      [`${stateKey}_open`]: false,
+                      [`${stateKey}_search`]: '',
+                    });
+                  }}
+                >
+                  <span className={styles.selectOptCn}>{opt.cn}</span>
+                  <span className={styles.selectOptId}>{opt.value}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
       </div>
     );
   }

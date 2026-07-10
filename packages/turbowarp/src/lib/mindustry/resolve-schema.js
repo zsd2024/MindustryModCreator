@@ -61,17 +61,31 @@ const getZhDoc = function (key) {
 };
 
 const getFieldLabel = function (type, fieldName) {
-    const zh = loadZh(type);
-    if (!zh?.fields) return fieldName;
-    const field = zh.fields.find(f => f.name === fieldName);
-    return field?.localizedName || fieldName;
+    let t = type;
+    while (t) {
+        const zh = loadZh(t);
+        if (zh?.fields) {
+            const field = zh.fields.find(f => f.name === fieldName);
+            if (field?.localizedName) return field.localizedName;
+        }
+        const schema = loadCuratedSchema(t) || loadSchema(t);
+        t = schema?.parentType || null;
+    }
+    return fieldName;
 };
 
 const getFieldDoc = function (type, fieldName) {
-    const zh = loadZh(type);
-    if (!zh?.fields) return '';
-    const field = zh.fields.find(f => f.name === fieldName);
-    return field?.notes || '';
+    let t = type;
+    while (t) {
+        const zh = loadZh(t);
+        if (zh?.fields) {
+            const field = zh.fields.find(f => f.name === fieldName);
+            if (field?.notes) return field.notes;
+        }
+        const schema = loadCuratedSchema(t) || loadSchema(t);
+        t = schema?.parentType || null;
+    }
+    return '';
 };
 
 const refCache = {};

@@ -270,10 +270,30 @@
   border-color: $motion-primary;
 }
 
+.sizeWrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
 .sizeGrid {
   display: flex;
   gap: 6px;
   flex-wrap: wrap;
+}
+
+.sizeCustom {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.sizeSuffix {
+  font-size: 0.85rem;
+  color: $text-primary;
+  opacity: 0.6;
+  white-space: nowrap;
 }
 
 .sizeBtn {
@@ -296,6 +316,133 @@
   border-color: $motion-primary;
   background: $motion-primary;
   color: $ui-white;
+}
+
+.selectWrap {
+  position: relative;
+  width: 100%;
+}
+
+.selectDisplay {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 10px;
+  border: 1px solid $ui-tertiary;
+  border-radius: $form-radius;
+  background: $ui-secondary;
+  cursor: pointer;
+  user-select: none;
+  transition: border-color 0.15s;
+}
+
+.selectDisplay:hover {
+  border-color: $motion-primary;
+}
+
+.selectValue {
+  font-size: 0.9rem;
+  color: $text-primary;
+  flex: 1;
+}
+
+.selectDisplayLabel {
+  font-size: 0.9rem;
+  color: $text-primary;
+  flex: 1;
+}
+
+.selectArrow {
+  font-size: 10px;
+  color: $text-primary;
+  opacity: 0.5;
+  margin-left: 8px;
+}
+
+.selectDropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  margin-top: 2px;
+  border: 1px solid $ui-tertiary;
+  border-radius: $form-radius;
+  background: $ui-primary;
+  box-shadow: 0 4px 12px $shadow;
+  max-height: 260px;
+  display: flex;
+  flex-direction: column;
+}
+
+.selectSearch {
+  width: 100%;
+  padding: 8px 10px;
+  border: none;
+  border-bottom: 1px solid $ui-tertiary;
+  background: $ui-secondary;
+  color: $text-primary;
+  font-size: 0.85rem;
+  outline: none;
+  box-sizing: border-box;
+  flex-shrink: 0;
+}
+
+.selectSearch:focus {
+  border-bottom-color: $motion-primary;
+}
+
+.selectOptions {
+  overflow-y: auto;
+  flex: 1;
+}
+
+.selectOption {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 10px;
+  font-size: 0.85rem;
+  color: $text-primary;
+  cursor: pointer;
+  transition: background 0.1s;
+  gap: 12px;
+}
+
+.selectOption:hover {
+  background: $ui-secondary;
+}
+
+.selectOptionActive {
+  background: $motion-primary;
+  color: $ui-white;
+}
+
+.selectOptCn {
+  color: inherit;
+  white-space: nowrap;
+}
+
+.selectOptId {
+  color: inherit;
+  opacity: 0.5;
+  text-align: right;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  direction: rtl;
+}
+
+.selectOptionActive .selectOptId {
+  opacity: 0.7;
+}
+
+.selectEmpty {
+  padding: 12px;
+  text-align: center;
+  font-size: 0.85rem;
+  color: $text-primary;
+  opacity: 0.4;
 }
 
 .nestedObject {
