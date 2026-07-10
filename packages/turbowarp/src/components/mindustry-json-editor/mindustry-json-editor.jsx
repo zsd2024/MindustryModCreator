@@ -1,5 +1,3 @@
-/* eslint-disable react/jsx-no-bind, react/jsx-no-literals, max-len, no-undefined */
-
 import PropTypes from 'prop-types';
 import React from 'react';
 import {resolveFields, getFieldLabel, getFieldDoc, getZhLabel, getZhDoc} from '../../lib/mindustry/resolve-schema';
@@ -12,6 +10,25 @@ import ReactMarkdown from 'react-markdown';
 const renderMarkdown = function (text) {
     if (!text) return null;
     return <ReactMarkdown>{text}</ReactMarkdown>;
+};
+
+const S = {
+    itemCount: '项',
+    arrayEmpty: '暂未添加',
+    arrayRemoveTitle: '删除此项',
+    arrayAdd: '+ 添加',
+    noMatch: '无匹配',
+    search: '搜索...',
+    emptyIcon: '📝',
+    emptyText: '在左侧资产区选择一个内容来编辑',
+    notFoundIcon: '❓',
+    notFoundPrefix: '未找到 ',
+    notFoundSuffix: ' 的配置信息',
+    advancedMode: '⚡ 高级模式',
+    itemIndexPrefix: '#',
+    removeBtn: '✕',
+    sizeLabel: 'x',
+    defaultDisplay: '--'
 };
 
 const REFERENCE_TYPES = new Set([
@@ -168,6 +185,8 @@ class MindustryJsonEditor extends React.Component {
             collapsedSections: this.initCollapsedSections(props.contentType),
             advancedMode: false
         };
+        this._curOnChange = null;
+        this._ddState = {};
     }
 
     initCollapsedSections (contentType) {
@@ -184,7 +203,7 @@ class MindustryJsonEditor extends React.Component {
         const fields = resolveFields(contentType, 'full');
         const data = {...initial};
         for (const f of fields) {
-            if (data[f.name] === undefined || data[f.name] === null) {
+            if (data[f.name] === null || data[f.name] === void 0) {
                 data[f.name] = this.parseDefault(f);
             }
         }
@@ -192,7 +211,7 @@ class MindustryJsonEditor extends React.Component {
     }
 
     parseDefault (field) {
-        if (field.defaultValue === undefined || field.defaultValue === '') {
+        if (field.defaultValue === void 0 || field.defaultValue === '') {
             if (field.type === 'boolean') return false;
             if (field.type === 'int' || field.type === 'float') return 0;
             return '';
@@ -211,253 +230,145 @@ class MindustryJsonEditor extends React.Component {
         });
     }
 
-    toggleSection (key) {
-        this.setState(prev => {
-            const collapsed = new Set(prev.collapsedSections);
-            if (collapsed.has(key)) {
-                collapsed.delete(key);
-            } else {
-                collapsed.add(key);
-            }
-            return {collapsedSections: collapsed};
-        });
-    }
+    handleCheckboxChange = e => {
+        if (this._curOnChange) this._curOnChange(e.target.checked);
+    };
 
-    toggleAdvancedMode () {
-        this.setState(prev => ({advancedMode: !prev.advancedMode}));
-    }
+    handleColorChange = e => {
+        if (this._curOnChange) this._curOnChange(`${e.target.value.replace('#', '')}ff`);
+    };
 
-    renderField (rawField) {
-        const field = normalizeType(rawField);
-        const {data} = this.state;
-        const value = data[field.name] === undefined ? this.parseDefault(field) : data[field.name];
-        const label = getFieldLabel(field.sourceType, field.name);
-        const hint = getFieldDoc(field.sourceType, field.name) || field.notes || '';
+    handleTextChange = e => {
+        if (this._curOnChange) this._curOnChange(e.target.value);
+    };
 
-        const renderControl = () => {
-            if (field.type === 'object' && field.fields) {
-                return this.renderObjectField(field, value);
-            }
+    handleNumberChange = e => {
+        if (!this._curOnChange) return;
+        const type = e.currentTarget.dataset.type;
+        const v = type === 'int' ?
+            parseInt(e.target.value, 10) || 0 :
+            parseFloat(e.target.value) || 0;
+        this._curOnChange(v);
+    };
 
-            if (field.type === 'array') {
-                return this.renderArrayField(field, value);
-            }
+    handleEnumToggle = e => {
+        const key = e.currentTarget.dataset.ddkey;
+        this.setState(prev => ({
+            _dd: {...prev._dd, [`${key}_open`]: !prev._dd?.[`${key}_open`]}
+        }));
+    };
 
-            return this.renderControlInline(field, value, newVal => {
-                this.handleChange(field.name, newVal);
-            });
-        };
+    handleEnumSearch = e => {
+        const key = e.currentTarget.dataset.ddkey;
+        this.setState(prev => ({
+            _dd: {...prev._dd, [`${key}_search`]: e.target.value}
+        }));
+    };
 
-        return (
-            <div
-                className={styles.fieldRow}
-                key={field.name}
-            >
-                <div className={styles.fieldHeader}>
-                    <span className={styles.fieldLabel}>{label}</span>
-                    {hint && <span className={styles.fieldHint}>{renderMarkdown(hint)}</span>}
-                    {field.type === 'array' && Array.isArray(value) && (
-                        <span className={styles.fieldCount}>{value.length} 项</span>
-                    )}
-                </div>
-                <div className={styles.fieldControl}>
-                    {renderControl()}
-                </div>
-            </div>
-        );
-    }
+    handleEnumBlur = e => {
+        const key = e.currentTarget.dataset.ddkey;
+        setTimeout(() => {
+            this.setState(prev => ({
+                _dd: {...prev._dd, [`${key}_open`]: false, [`${key}_search`]: ''}
+            }));
+        }, 150);
+    };
 
-    renderArrayField (field, value) {
-        const items = Array.isArray(value) ? value : [];
-        const itemDef = field.items;
+    handleEnumSelect = e => {
+        const key = e.currentTarget.dataset.ddkey;
+        const optValue = e.currentTarget.dataset.optvalue;
+        if (this._curOnChange) this._curOnChange(optValue);
+        this.setState(prev => ({
+            _dd: {...prev._dd, [`${key}_open`]: false, [`${key}_search`]: ''}
+        }));
+    };
+
+    handleContentToggle = e => {
+        const key = e.currentTarget.dataset.ddkey;
+        this.setState(prev => ({
+            _dd: {...prev._dd, [`${key}_open`]: !prev._dd?.[`${key}_open`]}
+        }));
+    };
+
+    handleContentSearch = e => {
+        const key = e.currentTarget.dataset.ddkey;
+        this.setState(prev => ({
+            _dd: {...prev._dd, [`${key}_search`]: e.target.value}
+        }));
+    };
+
+    handleContentBlur = e => {
+        const key = e.currentTarget.dataset.ddkey;
+        setTimeout(() => {
+            this.setState(prev => ({
+                _dd: {...prev._dd, [`${key}_open`]: false, [`${key}_search`]: ''}
+            }));
+        }, 150);
+    };
+
+    handleContentSelect = e => {
+        const key = e.currentTarget.dataset.ddkey;
+        const optName = e.currentTarget.dataset.optname;
+        if (this._curOnChange) this._curOnChange(optName);
+        this.setState(prev => ({
+            _dd: {...prev._dd, [`${key}_open`]: false, [`${key}_search`]: ''}
+        }));
+    };
+
+    handleSizeClick = e => {
+        const s = parseInt(e.currentTarget.dataset.size, 10);
+        if (this._curOnChange) this._curOnChange(s);
+    };
+
+    handleSizeCustom = e => {
+        const v = parseInt(e.target.value, 10);
+        if (v > 0 && this._curOnChange) this._curOnChange(v);
+    };
+
+    handleArrayRemove = e => {
+        const fieldName = e.currentTarget.dataset.fieldname;
+        const idx = parseInt(e.currentTarget.dataset.idx, 10);
+        const items = this.state.data[fieldName] || [];
+        this.handleChange(fieldName, items.filter((_, i) => i !== idx));
+    };
+
+    handleArrayAdd = e => {
+        const fieldName = e.currentTarget.dataset.fieldname;
+        const itemDefStr = e.currentTarget.dataset.itemdef;
+        const itemDef = itemDefStr ? JSON.parse(itemDefStr) : null;
+        const items = this.state.data[fieldName] || [];
         const normalizedItemDef = itemDef ? normalizeType(itemDef) : null;
         const subFields = normalizedItemDef && normalizedItemDef.fields;
-
-        const isObjectArray = subFields && subFields.length > 0;
-
-        const addItem = () => {
-            if (!isObjectArray) {
-                const defaultVal = itemDef ? this.parseDefault(itemDef) : '';
-                this.handleChange(field.name, [...items, defaultVal]);
-                return;
-            }
+        if (subFields && subFields.length > 0) {
             const defaults = {};
             for (const sf of subFields) {
-                if (sf.defaultValue !== undefined) {
+                if (sf.defaultValue !== void 0) {
                     defaults[sf.name] = this.parseDefault(sf);
                 }
             }
-            this.handleChange(field.name, [...items, defaults]);
-        };
-
-        const removeItem = idx => {
-            this.handleChange(field.name, items.filter((_, i) => i !== idx));
-        };
-
-        const updateItem = (idx, name, val) => {
-            this.handleChange(field.name, items.map((item, i) =>
-                (i === idx ? (name ? {...item, [name]: val} : val) : item)
-            ));
-        };
-
-        return (
-            <div className={styles.arrayField}>
-                {items.length === 0 && (
-                    <div className={styles.arrayEmpty}>暂未添加</div>
-                )}
-                {items.map((item, idx) => (
-                    <div
-                        className={styles.arrayItem}
-                        key={idx}
-                    >
-                        <div className={styles.arrayItemHeader}>
-                            <span className={styles.arrayItemIndex}>#{idx + 1}</span>
-                            <button
-                                className={styles.arrayRemoveBtn}
-                                onClick={() => removeItem(idx)}
-                                title="删除此项"
-                            >✕</button>
-                        </div>
-                        <div className={styles.arrayItemBody}>
-                            {isObjectArray ? ((subFields || []).map(sf => {
-                                const sfValue = item[sf.name] === undefined ?
-                                    this.parseDefault(sf) :
-                                    item[sf.name];
-                                return (
-                                    <div
-                                        className={styles.nestedFieldRow}
-                                        key={sf.name}
-                                    >
-                                        <span className={styles.nestedFieldLabel}>
-                                            {getFieldLabel(field.sourceType, sf.name) || sf.localizedName || sf.name}
-                                        </span>
-                                        <div className={styles.nestedFieldControl}>
-                                            {this.renderControlInline(sf, sfValue, val => updateItem(idx, sf.name, val))}
-                                        </div>
-                                    </div>
-                                );
-                            })) : (
-                                <div className={styles.nestedFieldControl}>
-                                    {this.renderControlInline(
-                                        normalizedItemDef || {type: 'string'},
-                                        item,
-                                        val => updateItem(idx, null, val),
-                                        `${field.name}[${idx}]`
-                                    )}
-                                </div>
-                            )}
-                        </div>
-                    </div>
-                ))}
-                <button
-                    className={styles.arrayAddBtn}
-                    onClick={addItem}
-                >
-                    + 添加
-                </button>
-            </div>
-        );
-    }
-
-    renderObjectField (field, value) {
-        const currentValue = value || {};
-        const subFields = field.fields || [];
-        return (
-            <div className={styles.nestedObject}>
-                {subFields.map(subF => {
-                    const subValue = currentValue[subF.name] === undefined ?
-                        this.parseDefault(subF) :
-                        currentValue[subF.name];
-                    return (
-                        <div
-                            className={styles.nestedFieldRow}
-                            key={subF.name}
-                        >
-                            <span className={styles.nestedFieldLabel}>
-                                {getFieldLabel(field.sourceType, subF.name) || subF.localizedName || subF.name}
-                            </span>
-                            <div className={styles.nestedFieldControl}>
-                                {this.renderControlInline(subF, subValue, newVal => {
-                                    const updated = {...currentValue, [subF.name]: newVal};
-                                    this.handleChange(field.name, updated);
-                                })}
-                            </div>
-                        </div>
-                    );
-                })}
-            </div>
-        );
-    }
-
-    renderControlInline (field, value, onChange, contextKey) {
-        if (field.type === 'boolean') {
-            return (
-                <label className={styles.toggleSwitch}>
-                    <input
-                        type="checkbox"
-                        checked={!!value}
-                        onChange={e => onChange(e.target.checked)}
-                    />
-                    <span className={styles.toggleSlider} />
-                </label>
-            );
+            this.handleChange(fieldName, [...items, defaults]);
+        } else {
+            const defaultVal = itemDef ? this.parseDefault(itemDef) : '';
+            this.handleChange(fieldName, [...items, defaultVal]);
         }
+    };
 
-        if (field.type === 'Color') {
-            const hex = String(value || '000000ff');
-            return (
-                <div className={styles.colorGroup}>
-                    <span
-                        className={styles.colorSwatch}
-                        style={{backgroundColor: `#${hex.slice(0, 6)}`}}
-                    />
-                    <input
-                        type="color"
-                        value={`#${hex.replace('#', '').slice(0, 6)}`}
-                        onChange={e => onChange(`${e.target.value.replace('#', '')}ff`)}
-                        className={styles.colorPicker}
-                    />
-                </div>
-            );
-        }
-
-        const rawOptions = field.options || ENUM_VALUES[field.name] || ENUM_VALUES[field.type];
-        if (rawOptions) {
-            const enumOptions = rawOptions.map(o => (typeof o === 'string' ? {value: o, cn: o} : {...o, cn: o.cn || o.value}));
-            return this.renderSearchableSelect(enumOptions, value, onChange, contextKey || field.name);
-        }
-
-        if (field.type === 'int' || field.type === 'float') {
-            if (field.name === 'size') {
-                return this.renderSizeSelector(value, field, onChange);
+    handleSectionToggle = e => {
+        const typeName = e.currentTarget.dataset.typename;
+        this.setState(prev => {
+            const collapsed = new Set(prev.collapsedSections);
+            if (collapsed.has(typeName)) {
+                collapsed.delete(typeName);
+            } else {
+                collapsed.add(typeName);
             }
-            return (
-                <input
-                    type="number"
-                    value={value}
-                    onChange={e => {
-                        const v = field.type === 'int' ? parseInt(e.target.value, 10) || 0 : parseFloat(e.target.value) || 0;
-                        onChange(v);
-                    }}
-                    step={field.type === 'float' ? '0.1' : '1'}
-                    className={styles.numInput}
-                />
-            );
-        }
+            return {collapsedSections: collapsed};
+        });
+    };
 
-        if (field.name === 'research' || REFERENCE_TYPES.has(field.type)) {
-            return this.renderContentSelect(field, value, onChange, contextKey);
-        }
-
-        return (
-            <input
-                type="text"
-                value={value}
-                onChange={e => onChange(e.target.value)}
-                className={styles.textInput}
-            />
-        );
-    }
+    handleAdvancedToggle = () => {
+        this.setState(prev => ({advancedMode: !prev.advancedMode}));
+    };
 
     getAllContentOptions () {
         const {assets} = this.props;
@@ -491,28 +402,81 @@ class MindustryJsonEditor extends React.Component {
         return result;
     }
 
-    renderContentSelect (field, value, onChange, contextKey) {
-        const allOptions = this.getAllContentOptions();
-        const key = contextKey || field.name;
-        const isResearch = field.name === 'research';
+    renderSearchableSelect (options, value, ddKey) {
+        const dd = this.state._dd || {};
+        const open = dd[`${ddKey}_open`];
+        const search = dd[`${ddKey}_search`] || '';
+        const filtered = options.filter(o => !search ||
+            o.value.includes(search) || o.cn.includes(search));
+        const selected = options.find(o => o.value === value);
 
+        return (
+            <div className={styles.selectWrap}>
+                <div
+                    className={styles.selectDisplay}
+                    data-ddkey={ddKey}
+                    onClick={this.handleEnumToggle}
+                >
+                    <span className={styles.selectDisplayLabel}>
+                        {selected ? selected.cn : (value || S.defaultDisplay)}
+                    </span>
+                    <span className={styles.selectArrow}>{open ? '▲' : '▼'}</span>
+                </div>
+                {open && (
+                    <div className={styles.selectDropdown}>
+                        <input
+                            type="text"
+                            value={search}
+                            placeholder={S.search}
+                            data-ddkey={ddKey}
+                            autoFocus
+                            onChange={this.handleEnumSearch}
+                            onBlur={this.handleEnumBlur}
+                            className={styles.selectSearch}
+                        />
+                        <div className={styles.selectOptions}>
+                            {filtered.length === 0 && (
+                                <div className={styles.selectEmpty}>{S.noMatch}</div>
+                            )}
+                            {filtered.map(opt => (
+                                <div
+                                    key={opt.value}
+                                    className={
+                                        `${styles.selectOption} ${value === opt.value ? styles.selectOptionActive : ''}`
+                                    }
+                                    data-ddkey={ddKey}
+                                    data-optvalue={opt.value}
+                                    onMouseDown={this.handleEnumSelect}
+                                >
+                                    <span className={styles.selectOptCn}>{opt.cn}</span>
+                                    <span className={styles.selectOptId}>{opt.value}</span>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                )}
+            </div>
+        );
+    }
+
+    renderContentSelect (allOptions, value, fieldType, fieldName, ddKey) {
+        const isResearch = fieldName === 'research';
         const options = isResearch ?
             allOptions :
-            allOptions.filter(o => o.type === field.type);
-
-        const stateKey = `_cnt_${key}`;
-        const open = this.state[`${stateKey}_open`];
-        const search = this.state[`${stateKey}_search`] || '';
+            allOptions.filter(o => o.type === fieldType);
+        const dd = this.state._dd || {};
+        const open = dd[`${ddKey}_open`];
+        const search = dd[`${ddKey}_search`] || '';
         const filtered = options.filter(o => !search ||
-      o.name.includes(search) || o.cn.includes(search));
-
+            o.name.includes(search) || o.cn.includes(search));
         const selected = options.find(o => o.name === value);
 
         return (
             <div className={styles.selectWrap}>
                 <div
                     className={styles.selectDisplay}
-                    onClick={() => this.setState({[`${stateKey}_open`]: !open})}
+                    data-ddkey={ddKey}
+                    onClick={this.handleContentToggle}
                 >
                     <span className={styles.selectDisplayLabel}>{selected ? selected.cn : (value || '--')}</span>
                     <span className={styles.selectArrow}>{open ? '▲' : '▼'}</span>
@@ -522,30 +486,26 @@ class MindustryJsonEditor extends React.Component {
                         <input
                             type="text"
                             value={search}
-                            placeholder="搜索..."
+                            placeholder={S.search}
+                            data-ddkey={ddKey}
                             autoFocus
-                            onChange={e => this.setState({[`${stateKey}_search`]: e.target.value})}
-                            onBlur={() => setTimeout(() => this.setState({
-                                [`${stateKey}_open`]: false,
-                                [`${stateKey}_search`]: ''
-                            }), 150)}
+                            onChange={this.handleContentSearch}
+                            onBlur={this.handleContentBlur}
                             className={styles.selectSearch}
                         />
                         <div className={styles.selectOptions}>
                             {filtered.length === 0 && (
-                                <div className={styles.selectEmpty}>无匹配</div>
+                                <div className={styles.selectEmpty}>{S.noMatch}</div>
                             )}
                             {filtered.map(opt => (
                                 <div
                                     key={opt.name}
-                                    className={`${styles.selectOption} ${value === opt.name ? styles.selectOptionActive : ''}`}
-                                    onMouseDown={() => {
-                                        onChange(opt.name);
-                                        this.setState({
-                                            [`${stateKey}_open`]: false,
-                                            [`${stateKey}_search`]: ''
-                                        });
-                                    }}
+                                    className={
+                                        `${styles.selectOption} ${value === opt.name ? styles.selectOptionActive : ''}`
+                                    }
+                                    data-ddkey={ddKey}
+                                    data-optname={opt.name}
+                                    onMouseDown={this.handleContentSelect}
                                 >
                                     <span className={styles.selectOptCn}>{opt.cn}</span>
                                     <span className={styles.selectOptId}>{opt.name}</span>
@@ -558,9 +518,8 @@ class MindustryJsonEditor extends React.Component {
         );
     }
 
-    renderSizeSelector (value, field, onChange) {
+    renderSizeSelector (value) {
         const sizes = [1, 2, 3, 4, 5];
-        const handleSizeChange = onChange || (v => this.handleChange(field.name, v));
         return (
             <div className={styles.sizeWrap}>
                 <div className={styles.sizeGrid}>
@@ -568,9 +527,10 @@ class MindustryJsonEditor extends React.Component {
                         <button
                             key={s}
                             className={`${styles.sizeBtn} ${value === s ? styles.sizeBtnActive : ''}`}
-                            onClick={() => handleSizeChange(s)}
+                            data-size={s}
+                            onClick={this.handleSizeClick}
                         >
-                            {s}x{s}
+                            {s}{S.sizeLabel}{s}
                         </button>
                     ))}
                 </div>
@@ -579,73 +539,238 @@ class MindustryJsonEditor extends React.Component {
                         type="number"
                         min="1"
                         value={value}
-                        onChange={e => {
-                            const v = parseInt(e.target.value, 10);
-                            if (v > 0) handleSizeChange(v);
-                        }}
+                        onChange={this.handleSizeCustom}
                         className={styles.numInput}
                     />
-                    <span className={styles.sizeSuffix}>x{value}</span>
+                    <span className={styles.sizeSuffix}>{S.sizeLabel}{value}</span>
                 </div>
             </div>
         );
     }
 
-    renderSearchableSelect (options, value, onChange, fieldName) {
-        const stateKey = `_enum_${fieldName}`;
-        const open = this.state[`${stateKey}_open`];
-        const search = this.state[`${stateKey}_search`] || '';
-        const filtered = options.filter(o => !search ||
-      o.value.includes(search) || o.cn.includes(search));
+    renderControlInline (field, value, onChange, contextKey) {
+        this._curOnChange = onChange;
 
-        const selected = options.find(o => o.value === value);
+        if (field.type === 'boolean') {
+            return (
+                <label className={styles.toggleSwitch}>
+                    <input
+                        type="checkbox"
+                        checked={!!value}
+                        onChange={this.handleCheckboxChange}
+                    />
+                    <span className={styles.toggleSlider} />
+                </label>
+            );
+        }
+
+        if (field.type === 'Color') {
+            const hex = String(value || '000000ff');
+            return (
+                <div className={styles.colorGroup}>
+                    <span
+                        className={styles.colorSwatch}
+                        style={{backgroundColor: `#${hex.slice(0, 6)}`}}
+                    />
+                    <input
+                        type="color"
+                        value={`#${hex.replace('#', '').slice(0, 6)}`}
+                        onChange={this.handleColorChange}
+                        className={styles.colorPicker}
+                    />
+                </div>
+            );
+        }
+
+        const rawOptions = field.options || ENUM_VALUES[field.name] || ENUM_VALUES[field.type];
+        if (rawOptions) {
+            const enumOptions = rawOptions.map(o => (
+                typeof o === 'string' ? {value: o, cn: o} : {...o, cn: o.cn || o.value}
+            ));
+            return this.renderSearchableSelect(enumOptions, value, contextKey || field.name);
+        }
+
+        if (field.type === 'int' || field.type === 'float') {
+            if (field.name === 'size') {
+                return this.renderSizeSelector(value);
+            }
+            return (
+                <input
+                    type="number"
+                    value={value}
+                    data-type={field.type}
+                    onChange={this.handleNumberChange}
+                    step={field.type === 'float' ? '0.1' : '1'}
+                    className={styles.numInput}
+                />
+            );
+        }
+
+        if (field.name === 'research' || REFERENCE_TYPES.has(field.type)) {
+            const allContent = this.getAllContentOptions();
+            return this.renderContentSelect(allContent, value, field.type, field.name, contextKey || field.name);
+        }
 
         return (
-            <div className={styles.selectWrap}>
-                <div
-                    className={styles.selectDisplay}
-                    onClick={() => this.setState({[`${stateKey}_open`]: !open})}
-                >
-                    <span className={styles.selectDisplayLabel}>{selected ? selected.cn : (value || '--')}</span>
-                    <span className={styles.selectArrow}>{open ? '▲' : '▼'}</span>
-                </div>
-                {open && (
-                    <div className={styles.selectDropdown}>
-                        <input
-                            type="text"
-                            value={search}
-                            placeholder="搜索..."
-                            autoFocus
-                            onChange={e => this.setState({[`${stateKey}_search`]: e.target.value})}
-                            onBlur={() => setTimeout(() => this.setState({
-                                [`${stateKey}_open`]: false,
-                                [`${stateKey}_search`]: ''
-                            }), 150)}
-                            className={styles.selectSearch}
-                        />
-                        <div className={styles.selectOptions}>
-                            {filtered.length === 0 && (
-                                <div className={styles.selectEmpty}>无匹配</div>
-                            )}
-                            {filtered.map(opt => (
-                                <div
-                                    key={opt.value}
-                                    className={`${styles.selectOption} ${value === opt.value ? styles.selectOptionActive : ''}`}
-                                    onMouseDown={() => {
-                                        onChange(opt.value);
-                                        this.setState({
-                                            [`${stateKey}_open`]: false,
-                                            [`${stateKey}_search`]: ''
-                                        });
-                                    }}
-                                >
-                                    <span className={styles.selectOptCn}>{opt.cn}</span>
-                                    <span className={styles.selectOptId}>{opt.value}</span>
+            <input
+                type="text"
+                value={value}
+                onChange={this.handleTextChange}
+                className={styles.textInput}
+            />
+        );
+    }
+
+    renderArrayField (field, value) {
+        const items = Array.isArray(value) ? value : [];
+        const itemDef = field.items;
+        const normalizedItemDef = itemDef ? normalizeType(itemDef) : null;
+        const subFields = normalizedItemDef && normalizedItemDef.fields;
+        const isObjectArray = subFields && subFields.length > 0;
+
+        return (
+            <div className={styles.arrayField}>
+                {items.length === 0 && (
+                    <div className={styles.arrayEmpty}>{S.arrayEmpty}</div>
+                )}
+                {items.map((item, idx) => (
+                    <div
+                        className={styles.arrayItem}
+                        key={idx}
+                    >
+                        <div className={styles.arrayItemHeader}>
+                            <span className={styles.arrayItemIndex}>{S.itemIndexPrefix}{idx + 1}</span>
+                            <button
+                                className={styles.arrayRemoveBtn}
+                                data-fieldname={field.name}
+                                data-idx={idx}
+                                onClick={this.handleArrayRemove}
+                                title={S.arrayRemoveTitle}
+                            >{S.removeBtn}</button>
+                        </div>
+                        <div className={styles.arrayItemBody}>
+                            {isObjectArray ? ((subFields || []).map(sf => {
+                                const sfValue = item[sf.name] === void 0 ?
+                                    this.parseDefault(sf) :
+                                    item[sf.name];
+                                return (
+                                    <div
+                                        className={styles.nestedFieldRow}
+                                        key={sf.name}
+                                    >
+                                        <span className={styles.nestedFieldLabel}>
+                                            {getFieldLabel(field.sourceType, sf.name) || sf.localizedName || sf.name}
+                                        </span>
+                                        <div className={styles.nestedFieldControl}>
+                                            {this.renderControlInline(
+                                                sf,
+                                                sfValue,
+                                                val => {
+                                                    const updated = {...item, [sf.name]: val};
+                                                    this.handleChange(field.name, items.map((it, i) =>
+                                                        (i === idx ? updated : it)
+                                                    ));
+                                                },
+                                                `${field.name}[${idx}]`
+                                            )}
+                                        </div>
+                                    </div>
+                                );
+                            })) : (
+                                <div className={styles.nestedFieldControl}>
+                                    {this.renderControlInline(
+                                        normalizedItemDef || {type: 'string'},
+                                        item,
+                                        val => {
+                                            this.handleChange(field.name, items.map((it, i) =>
+                                                (i === idx ? val : it)
+                                            ));
+                                        },
+                                        `${field.name}[${idx}]`
+                                    )}
                                 </div>
-                            ))}
+                            )}
                         </div>
                     </div>
-                )}
+                ))}
+                <button
+                    className={styles.arrayAddBtn}
+                    data-fieldname={field.name}
+                    data-itemdef={itemDef ? JSON.stringify(itemDef) : ''}
+                    onClick={this.handleArrayAdd}
+                >
+                    {S.arrayAdd}
+                </button>
+            </div>
+        );
+    }
+
+    renderObjectField (field, value) {
+        const currentValue = value || {};
+        const subFields = field.fields || [];
+        return (
+            <div className={styles.nestedObject}>
+                {subFields.map(subF => {
+                    const subValue = currentValue[subF.name] === void 0 ?
+                        this.parseDefault(subF) :
+                        currentValue[subF.name];
+                    return (
+                        <div
+                            className={styles.nestedFieldRow}
+                            key={subF.name}
+                        >
+                            <span className={styles.nestedFieldLabel}>
+                                {getFieldLabel(field.sourceType, subF.name) || subF.localizedName || subF.name}
+                            </span>
+                            <div className={styles.nestedFieldControl}>
+                                {this.renderControlInline(subF, subValue, newVal => {
+                                    const updated = {...currentValue, [subF.name]: newVal};
+                                    this.handleChange(field.name, updated);
+                                })}
+                            </div>
+                        </div>
+                    );
+                })}
+            </div>
+        );
+    }
+
+    renderField (rawField) {
+        const field = normalizeType(rawField);
+        const {data} = this.state;
+        const value = data[field.name] === void 0 ? this.parseDefault(field) : data[field.name];
+        const label = getFieldLabel(field.sourceType, field.name);
+        const hint = getFieldDoc(field.sourceType, field.name) || field.notes || '';
+
+        const renderControl = () => {
+            if (field.type === 'object' && field.fields) {
+                return this.renderObjectField(field, value);
+            }
+
+            if (field.type === 'array') {
+                return this.renderArrayField(field, value);
+            }
+
+            return this.renderControlInline(field, value, newVal => {
+                this.handleChange(field.name, newVal);
+            });
+        };
+
+        return (
+            <div
+                className={styles.fieldRow}
+                key={field.name}
+            >
+                <div className={styles.fieldHeader}>
+                    <span className={styles.fieldLabel}>{label}</span>
+                    {hint && <span className={styles.fieldHint}>{renderMarkdown(hint)}</span>}
+                    {field.type === 'array' && Array.isArray(value) && (
+                        <span className={styles.fieldCount}>{value.length}{S.itemCount}</span>
+                    )}
+                </div>
+                <div className={styles.fieldControl}>
+                    {renderControl()}
+                </div>
             </div>
         );
     }
@@ -663,7 +788,8 @@ class MindustryJsonEditor extends React.Component {
             >
                 <div
                     className={styles.sectionHeader}
-                    onClick={() => this.toggleSection(typeName)}
+                    data-typename={typeName}
+                    onClick={this.handleSectionToggle}
                 >
                     <span className={styles.sectionArrow}>{isCollapsed ? '▶' : '▼'}</span>
                     <span className={styles.sectionTitle}>{zhLabel}</span>
@@ -683,8 +809,8 @@ class MindustryJsonEditor extends React.Component {
         if (!contentType) {
             return (
                 <div className={styles.emptyState}>
-                    <div className={styles.emptyIcon}>📝</div>
-                    <p className={styles.emptyText}>在左侧资产区选择一个内容来编辑</p>
+                    <div className={styles.emptyIcon}>{S.emptyIcon}</div>
+                    <p className={styles.emptyText}>{S.emptyText}</p>
                 </div>
             );
         }
@@ -694,8 +820,8 @@ class MindustryJsonEditor extends React.Component {
         if (fields.length === 0) {
             return (
                 <div className={styles.emptyState}>
-                    <div className={styles.emptyIcon}>❓</div>
-                    <p className={styles.emptyText}>未找到 {contentType} 的配置信息</p>
+                    <div className={styles.emptyIcon}>{S.notFoundIcon}</div>
+                    <p className={styles.emptyText}>{S.notFoundPrefix}{contentType}{S.notFoundSuffix}</p>
                 </div>
             );
         }
@@ -716,12 +842,12 @@ class MindustryJsonEditor extends React.Component {
                 <div className={styles.editorHeader}>
                     <span className={styles.editorTitle}>{getZhLabel(contentType) || contentType}</span>
                     <label className={styles.advancedToggle}>
-                        <span className={styles.advancedToggleLabel}>⚡ 高级模式</span>
+                        <span className={styles.advancedToggleLabel}>{S.advancedMode}</span>
                         <span className={styles.toggleSwitch}>
                             <input
                                 type="checkbox"
                                 checked={this.state.advancedMode}
-                                onChange={() => this.toggleAdvancedMode()}
+                                onChange={this.handleAdvancedToggle}
                             />
                             <span className={styles.toggleSlider} />
                         </span>
