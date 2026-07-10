@@ -12,6 +12,20 @@ const renderMarkdown = function (text) {
     return <ReactMarkdown>{text}</ReactMarkdown>;
 };
 
+const STACK_REQUIREMENT = {
+    type: 'object',
+    fields: [
+        {name: 'item', type: 'Item'},
+        {name: 'amount', type: 'int', defaultValue: 1}
+    ]
+};
+
+const ENHANCED_RESEARCH = {
+    parent: {type: 'Block'},
+    objectives: {type: 'array', items: {type: 'string'}},
+    requirements: {type: 'array', items: STACK_REQUIREMENT}
+};
+
 const S = {
     itemCount: '项',
     arrayEmpty: '暂未添加',
@@ -214,11 +228,13 @@ class MindustryJsonEditor extends React.Component {
         if (field.defaultValue === void 0 || field.defaultValue === '') {
             if (field.type === 'boolean') return false;
             if (field.type === 'int' || field.type === 'float') return 0;
+            if (field.type === 'array') return [];
             return '';
         }
         if (field.type === 'boolean') return field.defaultValue === 'true';
         if (field.type === 'int') return parseInt(field.defaultValue, 10) || 0;
         if (field.type === 'float') return parseFloat(field.defaultValue) || 0;
+        if (field.type === 'array') return [];
         return field.defaultValue;
     }
 
@@ -338,28 +354,37 @@ class MindustryJsonEditor extends React.Component {
     handleArrayRemove = e => {
         const fieldName = e.currentTarget.dataset.fieldname;
         const idx = parseInt(e.currentTarget.dataset.idx, 10);
-        const items = this.state.data[fieldName] || [];
-        this.handleChange(fieldName, items.filter((_, i) => i !== idx));
+        const ckey = e.currentTarget.dataset.ckey;
+        const getPath = e.currentTarget.dataset.getpath;
+        const items = Array.isArray(this.getNestedData(getPath)) ? this.getNestedData(getPath) : [];
+        const onChange = this._onChangeMap.get(ckey);
+        if (onChange) {
+            onChange(fieldName, items.filter((_, i) => i !== idx));
+        } else {
+            this.handleChange(fieldName, items.filter((_, i) => i !== idx));
+        }
     };
 
     handleArrayAdd = e => {
         const fieldName = e.currentTarget.dataset.fieldname;
+        const ckey = e.currentTarget.dataset.ckey;
+        const getPath = e.currentTarget.dataset.getpath;
         const itemDefStr = e.currentTarget.dataset.itemdef;
         const itemDef = itemDefStr ? JSON.parse(itemDefStr) : null;
-        const items = this.state.data[fieldName] || [];
+        const items = Array.isArray(this.getNestedData(getPath)) ? this.getNestedData(getPath) : [];
         const normalizedItemDef = itemDef ? normalizeType(itemDef) : null;
         const subFields = normalizedItemDef && normalizedItemDef.fields;
+        const onChange = this._onChangeMap.get(ckey);
+        const doChange = onChange || ((name, val) => this.handleChange(name, val));
         if (subFields && subFields.length > 0) {
             const defaults = {};
             for (const sf of subFields) {
-                if (sf.defaultValue !== void 0) {
-                    defaults[sf.name] = this.parseDefault(sf);
-                }
+                defaults[sf.name] = this.parseDefault(sf);
             }
-            this.handleChange(fieldName, [...items, defaults]);
+            doChange(fieldName, [...items, defaults]);
         } else {
-            const defaultVal = itemDef ? this.parseDefault(itemDef) : '';
-            this.handleChange(fieldName, [...items, defaultVal]);
+            const defaultVal = itemDef ? this.parseDefault(normalizedItemDef) : '';
+            doChange(fieldName, [...items, defaultVal]);
         }
     };
 
@@ -640,13 +665,22 @@ class MindustryJsonEditor extends React.Component {
         );
     }
 
-    renderArrayField (field, value, path) {
+    getNestedData (path) {
+        if (!path) return void 0;
+        return path.split('.').reduce((obj, key) => obj && obj[key], this.state.data);
+    }
+
+    renderArrayField (field, value, path, onArrayChange) {
         const items = Array.isArray(value) ? value : [];
         const itemDef = field.items;
         const normalizedItemDef = itemDef ? normalizeType(itemDef) : null;
         const subFields = normalizedItemDef && normalizedItemDef.fields;
         const isObjectArray = subFields && subFields.length > 0;
         const prefix = path || field.name;
+        const ckey = prefix;
+        const dataPath = path || field.name;
+        const handleArrayChange = onArrayChange || ((name, val) => this.handleChange(name, val));
+        this._onChangeMap.set(ckey, handleArrayChange);
 
         return (
             <div className={styles.arrayField}>
@@ -663,6 +697,8 @@ class MindustryJsonEditor extends React.Component {
                             <button
                                 className={styles.arrayRemoveBtn}
                                 data-fieldname={field.name}
+                                data-getpath={dataPath}
+                                data-ckey={ckey}
                                 data-idx={idx}
                                 onClick={this.handleArrayRemove}
                                 title={S.arrayRemoveTitle}
@@ -687,7 +723,7 @@ class MindustryJsonEditor extends React.Component {
                                                 sfValue,
                                                 val => {
                                                     const updated = {...item, [sf.name]: val};
-                                                    this.handleChange(field.name, items.map((it, i) =>
+                                                    handleArrayChange(field.name, items.map((it, i) =>
                                                         (i === idx ? updated : it)
                                                     ));
                                                 },
@@ -702,7 +738,7 @@ class MindustryJsonEditor extends React.Component {
                                         normalizedItemDef || {type: 'string'},
                                         item,
                                         val => {
-                                            this.handleChange(field.name, items.map((it, i) =>
+                                            handleArrayChange(field.name, items.map((it, i) =>
                                                 (i === idx ? val : it)
                                             ));
                                         },
@@ -716,6 +752,8 @@ class MindustryJsonEditor extends React.Component {
                 <button
                     className={styles.arrayAddBtn}
                     data-fieldname={field.name}
+                    data-getpath={dataPath}
+                    data-ckey={ckey}
                     data-itemdef={itemDef ? JSON.stringify(itemDef) : ''}
                     onClick={this.handleArrayAdd}
                 >
@@ -723,6 +761,22 @@ class MindustryJsonEditor extends React.Component {
                 </button>
             </div>
         );
+    }
+
+    renderSubFieldControl (subF, subValue, onChange, subCkey, parentFieldName) {
+        const enhanced = (parentFieldName === 'research' && ENHANCED_RESEARCH[subF.name]) ?
+            {...subF, ...ENHANCED_RESEARCH[subF.name]} :
+            subF;
+        const value = subValue === void 0 ? this.parseDefault(enhanced) : subValue;
+        if (enhanced.type === 'array' && enhanced.items) {
+            return this.renderArrayField(enhanced, value, subCkey, (name, val) => {
+                onChange(val);
+            });
+        }
+        if (enhanced.type === 'object' && enhanced.fields) {
+            return this.renderObjectField(enhanced, value, subCkey);
+        }
+        return this.renderControlInline(enhanced, value, onChange, subCkey);
     }
 
     renderObjectField (field, value, path) {
@@ -735,6 +789,12 @@ class MindustryJsonEditor extends React.Component {
                     const subValue = currentValue[subF.name] === void 0 ?
                         this.parseDefault(subF) :
                         currentValue[subF.name];
+                    const subCkey = `${prefix}.${subF.name}`;
+                    const onSubChange = newVal => {
+                        const fresh = this.state.data[field.name] || {};
+                        const updated = {...fresh, [subF.name]: newVal};
+                        this.handleChange(field.name, updated);
+                    };
                     return (
                         <div
                             className={styles.nestedFieldRow}
@@ -744,10 +804,7 @@ class MindustryJsonEditor extends React.Component {
                                 {getFieldLabel(field.sourceType, subF.name) || subF.localizedName || subF.name}
                             </span>
                             <div className={styles.nestedFieldControl}>
-                                {this.renderControlInline(subF, subValue, newVal => {
-                                    const updated = {...currentValue, [subF.name]: newVal};
-                                    this.handleChange(field.name, updated);
-                                }, `${prefix}.${subF.name}`)}
+                                {this.renderSubFieldControl(subF, subValue, onSubChange, subCkey, field.name)}
                             </div>
                         </div>
                     );
@@ -765,6 +822,14 @@ class MindustryJsonEditor extends React.Component {
         const ckey = field.name;
 
         const renderControl = () => {
+            if (field.name === 'research') {
+                if (typeof value === 'string') {
+                    const allContent = this.getAllContentOptions();
+                    return this.renderContentSelect(allContent, value, null, field.name, ckey, ckey);
+                }
+                // Object value: fall through to normal object rendering (with ENHANCED_RESEARCH sub-fields)
+            }
+
             if (field.type === 'object' && field.fields) {
                 return this.renderObjectField(field, value, ckey);
             }
