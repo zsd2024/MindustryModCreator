@@ -15,15 +15,15 @@ const renderMarkdown = function (text) {
 const STACK_REQUIREMENT = {
     type: 'object',
     fields: [
-        {name: 'item', type: 'Item'},
-        {name: 'amount', type: 'int', defaultValue: 1}
+        {name: 'item', type: 'Item', localizedName: '物品'},
+        {name: 'amount', type: 'int', defaultValue: 1, localizedName: '数量'}
     ]
 };
 
 const ENHANCED_RESEARCH = {
-    parent: {type: 'Block'},
-    objectives: {type: 'array', items: {type: 'string'}},
-    requirements: {type: 'array', items: STACK_REQUIREMENT}
+    parent: {type: 'Block', localizedName: '父节点'},
+    objectives: {type: 'array', items: {type: 'string'}, localizedName: '目标'},
+    requirements: {type: 'array', items: STACK_REQUIREMENT, localizedName: '需求'}
 };
 
 const S = {
@@ -916,6 +916,7 @@ class MindustryJsonEditor extends React.Component {
         const sections = {};
         let researchField = null;
         for (const f of fields) {
+            if (f.name === 'name') continue;
             if (f.name === 'research') {
                 researchField = f;
                 continue;
