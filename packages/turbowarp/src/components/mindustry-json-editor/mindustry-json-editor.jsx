@@ -92,7 +92,7 @@ const ENUM_VALUES = {
     {value: 'bounceIn', cn: '弹跳入'},
     {value: 'bounceOut', cn: '弹跳出'},
     {value: 'bounceInOut', cn: '弹跳出入'},
-    {value: 'fade', cn: '淡入淡出'},
+    {value: 'fade', cn: '渐隐'},
     {value: 'fadeIn', cn: '淡入'},
     {value: 'fadeOut', cn: '淡出'},
     {value: 'fadeInOut', cn: '淡入淡出'},
@@ -335,9 +335,10 @@ class MindustryJsonEditor extends React.Component {
               })) : (
                 <div className={styles.nestedFieldControl}>
                   {this.renderControlInline(
-                    itemDef || {type: 'string'},
+                    normalizedItemDef || {type: 'string'},
                     item,
-                    (val) => updateItem(idx, null, val)
+                    (val) => updateItem(idx, null, val),
+                    `${field.name}[${idx}]`
                   )}
                 </div>
               )}
@@ -378,7 +379,7 @@ class MindustryJsonEditor extends React.Component {
     );
   }
 
-  renderControlInline(field, value, onChange) {
+  renderControlInline(field, value, onChange, contextKey) {
     if (field.type === 'boolean') {
       return (
         <label className={styles.toggleSwitch}>
@@ -406,7 +407,7 @@ class MindustryJsonEditor extends React.Component {
     const rawOptions = field.options || ENUM_VALUES[field.name] || ENUM_VALUES[field.type];
     if (rawOptions) {
       const enumOptions = rawOptions.map(o => typeof o === 'string' ? {value: o, cn: o} : {...o, cn: o.cn || o.value});
-      return this.renderSearchableSelect(enumOptions, value, onChange, field.name);
+      return this.renderSearchableSelect(enumOptions, value, onChange, contextKey || field.name);
     }
 
     if (field.type === 'int' || field.type === 'float') {
@@ -428,7 +429,7 @@ class MindustryJsonEditor extends React.Component {
     }
 
     if (field.name === 'research' || REFERENCE_TYPES.has(field.type)) {
-      return this.renderContentSelect(field, value, onChange);
+      return this.renderContentSelect(field, value, onChange, contextKey);
     }
 
     return (
@@ -473,15 +474,16 @@ class MindustryJsonEditor extends React.Component {
     return result;
   }
 
-  renderContentSelect(field, value, onChange) {
+  renderContentSelect(field, value, onChange, contextKey) {
     const allOptions = this.getAllContentOptions();
+    const key = contextKey || field.name;
     const isResearch = field.name === 'research';
 
     const options = isResearch
       ? allOptions
       : allOptions.filter(o => o.type === field.type);
 
-    const stateKey = `_cnt_${field.name}`;
+    const stateKey = `_cnt_${key}`;
     const open = this.state[`${stateKey}_open`];
     const search = this.state[`${stateKey}_search`] || '';
     const filtered = options.filter(o => !search ||
