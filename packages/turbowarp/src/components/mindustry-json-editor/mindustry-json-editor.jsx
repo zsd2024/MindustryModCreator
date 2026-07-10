@@ -568,7 +568,7 @@ class MindustryJsonEditor extends React.Component {
     }
 
     renderContentSelect (allOptions, value, fieldType, fieldName, ddKey, ckey) {
-        const isResearch = fieldName === 'research';
+        const isResearch = fieldName === 'research' || ckey?.startsWith('research.');
         const options = isResearch ?
             allOptions :
             allOptions.filter(o => o.type === fieldType);
