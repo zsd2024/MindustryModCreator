@@ -3,12 +3,6 @@
     "parentType": "Object",
     "fields": [
         {
-            "name": "name",
-            "type": "String",
-            "defaultValue": "Weapon Name",
-            "notes": "displayed weapon region"
-        },
-        {
             "name": "bullet",
             "type": "BulletType",
             "defaultValue": "placeholder",

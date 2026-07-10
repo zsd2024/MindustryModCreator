@@ -30,10 +30,6 @@
             "type": "float"
         },
         {
-            "name": "name",
-            "type": "string"
-        },
-        {
             "name": "localizedName",
             "type": "string"
         },

@@ -763,10 +763,7 @@ class MindustryJsonEditor extends React.Component {
         );
     }
 
-    renderSubFieldControl (subF, subValue, onChange, subCkey, parentFieldName) {
-        const enhanced = (parentFieldName === 'research' && ENHANCED_RESEARCH[subF.name]) ?
-            {...subF, ...ENHANCED_RESEARCH[subF.name]} :
-            subF;
+    renderSubFieldControl (enhanced, subValue, onChange, subCkey) {
         const value = subValue === void 0 ? this.parseDefault(enhanced) : subValue;
         if (enhanced.type === 'array' && enhanced.items) {
             return this.renderArrayField(enhanced, value, subCkey, (name, val) => {
@@ -779,6 +776,13 @@ class MindustryJsonEditor extends React.Component {
         return this.renderControlInline(enhanced, value, onChange, subCkey);
     }
 
+    enhanceField (subF, parentFieldName) {
+        if (parentFieldName === 'research' && ENHANCED_RESEARCH[subF.name]) {
+            return {...subF, ...ENHANCED_RESEARCH[subF.name]};
+        }
+        return subF;
+    }
+
     renderObjectField (field, value, path) {
         const currentValue = value || {};
         const subFields = field.fields || [];
@@ -786,25 +790,27 @@ class MindustryJsonEditor extends React.Component {
         return (
             <div className={styles.nestedObject}>
                 {subFields.map(subF => {
-                    const subValue = currentValue[subF.name] === void 0 ?
-                        this.parseDefault(subF) :
-                        currentValue[subF.name];
-                    const subCkey = `${prefix}.${subF.name}`;
+                    const enhanced = this.enhanceField(subF, field.name);
+                    const subValue = currentValue[enhanced.name] === void 0 ?
+                        this.parseDefault(enhanced) :
+                        currentValue[enhanced.name];
+                    const subCkey = `${prefix}.${enhanced.name}`;
                     const onSubChange = newVal => {
                         const fresh = this.state.data[field.name] || {};
-                        const updated = {...fresh, [subF.name]: newVal};
+                        const updated = {...fresh, [enhanced.name]: newVal};
                         this.handleChange(field.name, updated);
                     };
                     return (
                         <div
                             className={styles.nestedFieldRow}
-                            key={subF.name}
+                            key={enhanced.name}
                         >
                             <span className={styles.nestedFieldLabel}>
-                                {getFieldLabel(field.sourceType, subF.name) || subF.localizedName || subF.name}
+                                {getFieldLabel(field.sourceType, enhanced.name) ||
+                                    enhanced.localizedName || enhanced.name}
                             </span>
                             <div className={styles.nestedFieldControl}>
-                                {this.renderSubFieldControl(subF, subValue, onSubChange, subCkey, field.name)}
+                                {this.renderSubFieldControl(enhanced, subValue, onSubChange, subCkey)}
                             </div>
                         </div>
                     );

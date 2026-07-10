@@ -128,10 +128,6 @@
             "type": "boolean"
         },
         {
-            "name": "name",
-            "type": "string"
-        },
-        {
             "name": "description",
             "type": "string"
         },

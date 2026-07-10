@@ -15,12 +15,6 @@
             "notes": ""
         },
         {
-            "name": "name",
-            "type": "String",
-            "defaultValue": "null",
-            "notes": "If set, overrides the region name."
-        },
-        {
             "name": "color",
             "type": "Color",
             "defaultValue": "null",

@@ -3,10 +3,6 @@
     "parentType": "Block",
     "fields": [
         {
-            "name": "name",
-            "type": "string"
-        },
-        {
             "name": "health",
             "type": "int"
         },

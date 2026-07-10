@@ -61,10 +61,6 @@
             "type": "float"
         },
         {
-            "name": "name",
-            "type": "string"
-        },
-        {
             "name": "emitLight",
             "type": "boolean"
         },
