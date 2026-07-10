@@ -1,4 +1,9 @@
 export const contentTypePrefix = {
+    Block: 'block',
+    Wall: 'block',
+    OreBlock: 'block',
+    Floor: 'block',
+    OverlayFloor: 'block',
     Item: 'item',
     Liquid: 'item',
     CellLiquid: 'item',
