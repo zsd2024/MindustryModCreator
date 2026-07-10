@@ -132,6 +132,23 @@ const ENUM_VALUES = {
     {value: 'logic', cn: '逻辑'},
     {value: 'cells', cn: '细胞'},
   ],
+  BlockFlag: [
+    {value: 'core', cn: '核心'},
+    {value: 'reactor', cn: '反应堆'},
+    {value: 'generator', cn: '发电机'},
+    {value: 'drill', cn: '钻头'},
+    {value: 'factory', cn: '工厂'},
+    {value: 'battery', cn: '电池'},
+    {value: 'turret', cn: '炮塔'},
+    {value: 'repair', cn: '维修'},
+    {value: 'launchPad', cn: '发射台'},
+    {value: 'command', cn: '指挥'},
+    {value: 'unitFactory', cn: '单位工厂'},
+    {value: 'overdriveProjector', cn: '超速投影'},
+    {value: 'forceProjector', cn: '力墙投影'},
+    {value: 'message', cn: '信息板'},
+    {value: 'all', cn: '全部'},
+  ],
 };
 
 class MindustryJsonEditor extends React.Component {

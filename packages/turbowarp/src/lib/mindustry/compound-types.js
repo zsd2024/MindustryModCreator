@@ -82,6 +82,11 @@ function normalizeType(field) {
     };
   }
 
+  const enumSetMatch = type.match(/^EnumSet of (.+)$/);
+  if (enumSetMatch) {
+    return { ...field, type: 'array', items: { type: enumSetMatch[1] } };
+  }
+
   return field;
 }
 
