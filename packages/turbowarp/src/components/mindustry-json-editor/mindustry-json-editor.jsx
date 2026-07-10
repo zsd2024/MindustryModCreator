@@ -890,8 +890,9 @@ class MindustryJsonEditor extends React.Component {
                         currentValue[enhanced.name];
                     const subCkey = `${prefix}.${enhanced.name}`;
                     const onSubChange = newVal => {
-                        const fresh = this.state.data[field.name] || {};
-                        const updated = {...fresh, [enhanced.name]: newVal};
+                        const raw = this.state.data[field.name];
+                        const base = (raw && typeof raw === 'object') ? raw : {};
+                        const updated = {...base, [enhanced.name]: newVal};
                         this.handleChange(field.name, updated);
                     };
                     return (
@@ -923,14 +924,16 @@ class MindustryJsonEditor extends React.Component {
 
         const renderControl = () => {
             if (field.name === 'research') {
-                if (typeof value === 'string') {
+                if (typeof value === 'string' && value !== '') {
                     this._onChangeMap.set(ckey, newVal => {
                         this.handleChange(field.name, newVal);
                     });
                     const allContent = this.getAllContentOptions();
                     return this.renderContentSelect(allContent, value, null, field.name, ckey, ckey);
                 }
-                // Object value: fall through to normal object rendering (with ENHANCED_RESEARCH sub-fields)
+                // Empty string or object: render research sub-fields
+                const researchValue = typeof value === 'string' ? {} : value;
+                return this.renderObjectField(field, researchValue, ckey);
             }
 
             if (field.type === 'object' && field.fields) {
