@@ -154,31 +154,34 @@ class MindustryJsonEditor extends React.Component {
   renderArrayField(field, value) {
     const items = Array.isArray(value) ? value : [];
     const itemDef = field.items;
-    const subFields = itemDef && itemDef.fields;
+    const normalizedItemDef = itemDef ? normalizeType(itemDef) : null;
+    const subFields = normalizedItemDef && normalizedItemDef.fields;
+
+    const isObjectArray = subFields && subFields.length > 0;
 
     const addItem = () => {
+      if (!isObjectArray) {
+        const defaultVal = itemDef ? this.parseDefault(itemDef) : '';
+        this.handleChange(field.name, [...items, defaultVal]);
+        return;
+      }
       const defaults = {};
-      if (subFields) {
-        for (const sf of subFields) {
-          if (sf.defaultValue !== undefined) {
-            defaults[sf.name] = this.parseDefault(sf);
-          }
+      for (const sf of subFields) {
+        if (sf.defaultValue !== undefined) {
+          defaults[sf.name] = this.parseDefault(sf);
         }
       }
-      const newItems = [...items, defaults];
-      this.handleChange(field.name, newItems);
+      this.handleChange(field.name, [...items, defaults]);
     };
 
     const removeItem = (idx) => {
-      const newItems = items.filter((_, i) => i !== idx);
-      this.handleChange(field.name, newItems);
+      this.handleChange(field.name, items.filter((_, i) => i !== idx));
     };
 
     const updateItem = (idx, name, val) => {
-      const newItems = items.map((item, i) =>
-        i === idx ? { ...item, [name]: val } : item
-      );
-      this.handleChange(field.name, newItems);
+      this.handleChange(field.name, items.map((item, i) =>
+        i === idx ? (name ? { ...item, [name]: val } : val) : item
+      ));
     };
 
     return (
@@ -197,7 +200,7 @@ class MindustryJsonEditor extends React.Component {
               >✕</button>
             </div>
             <div className={styles.arrayItemBody}>
-              {(subFields || []).map(sf => {
+              {isObjectArray ? ((subFields || []).map(sf => {
                 const sfValue = item[sf.name] !== undefined
                   ? item[sf.name]
                   : this.parseDefault(sf);
@@ -211,7 +214,15 @@ class MindustryJsonEditor extends React.Component {
                     </div>
                   </div>
                 );
-              })}
+              })) : (
+                <div className={styles.nestedFieldControl}>
+                  {this.renderControlInline(
+                    itemDef || {type: 'string'},
+                    item,
+                    (val) => updateItem(idx, null, val)
+                  )}
+                </div>
+              )}
             </div>
           </div>
         ))}
