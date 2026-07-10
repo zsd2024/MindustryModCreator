@@ -183,10 +183,10 @@ class MindustryJsonEditor extends React.Component {
         this.state = {
             data: this.initData(props.contentType, props.initialData || {}),
             collapsedSections: this.initCollapsedSections(props.contentType),
-            advancedMode: false
+            advancedMode: false,
+            _dd: {}
         };
-        this._curOnChange = null;
-        this._ddState = {};
+        this._onChangeMap = new Map();
     }
 
     initCollapsedSections (contentType) {
@@ -231,24 +231,28 @@ class MindustryJsonEditor extends React.Component {
     }
 
     handleCheckboxChange = e => {
-        if (this._curOnChange) this._curOnChange(e.target.checked);
+        const cb = this._onChangeMap.get(e.currentTarget.dataset.ckey);
+        if (cb) cb(e.target.checked);
     };
 
     handleColorChange = e => {
-        if (this._curOnChange) this._curOnChange(`${e.target.value.replace('#', '')}ff`);
+        const cb = this._onChangeMap.get(e.currentTarget.dataset.ckey);
+        if (cb) cb(`${e.target.value.replace('#', '')}ff`);
     };
 
     handleTextChange = e => {
-        if (this._curOnChange) this._curOnChange(e.target.value);
+        const cb = this._onChangeMap.get(e.currentTarget.dataset.ckey);
+        if (cb) cb(e.target.value);
     };
 
     handleNumberChange = e => {
-        if (!this._curOnChange) return;
+        const cb = this._onChangeMap.get(e.currentTarget.dataset.ckey);
+        if (!cb) return;
         const type = e.currentTarget.dataset.type;
         const v = type === 'int' ?
             parseInt(e.target.value, 10) || 0 :
             parseFloat(e.target.value) || 0;
-        this._curOnChange(v);
+        cb(v);
     };
 
     handleEnumToggle = e => {
@@ -277,7 +281,8 @@ class MindustryJsonEditor extends React.Component {
     handleEnumSelect = e => {
         const key = e.currentTarget.dataset.ddkey;
         const optValue = e.currentTarget.dataset.optvalue;
-        if (this._curOnChange) this._curOnChange(optValue);
+        const cb = this._onChangeMap.get(e.currentTarget.dataset.ckey);
+        if (cb) cb(optValue);
         this.setState(prev => ({
             _dd: {...prev._dd, [`${key}_open`]: false, [`${key}_search`]: ''}
         }));
@@ -309,7 +314,8 @@ class MindustryJsonEditor extends React.Component {
     handleContentSelect = e => {
         const key = e.currentTarget.dataset.ddkey;
         const optName = e.currentTarget.dataset.optname;
-        if (this._curOnChange) this._curOnChange(optName);
+        const cb = this._onChangeMap.get(e.currentTarget.dataset.ckey);
+        if (cb) cb(optName);
         this.setState(prev => ({
             _dd: {...prev._dd, [`${key}_open`]: false, [`${key}_search`]: ''}
         }));
@@ -317,12 +323,16 @@ class MindustryJsonEditor extends React.Component {
 
     handleSizeClick = e => {
         const s = parseInt(e.currentTarget.dataset.size, 10);
-        if (this._curOnChange) this._curOnChange(s);
+        const cb = this._onChangeMap.get(e.currentTarget.dataset.ckey);
+        if (cb) cb(s);
     };
 
     handleSizeCustom = e => {
         const v = parseInt(e.target.value, 10);
-        if (v > 0 && this._curOnChange) this._curOnChange(v);
+        if (v > 0) {
+            const cb = this._onChangeMap.get(e.currentTarget.dataset.ckey);
+            if (cb) cb(v);
+        }
     };
 
     handleArrayRemove = e => {
@@ -402,7 +412,7 @@ class MindustryJsonEditor extends React.Component {
         return result;
     }
 
-    renderSearchableSelect (options, value, ddKey) {
+    renderSearchableSelect (options, value, ddKey, ckey) {
         const dd = this.state._dd || {};
         const open = dd[`${ddKey}_open`];
         const search = dd[`${ddKey}_search`] || '';
@@ -445,6 +455,7 @@ class MindustryJsonEditor extends React.Component {
                                         `${styles.selectOption} ${value === opt.value ? styles.selectOptionActive : ''}`
                                     }
                                     data-ddkey={ddKey}
+                                    data-ckey={ckey}
                                     data-optvalue={opt.value}
                                     onMouseDown={this.handleEnumSelect}
                                 >
@@ -459,7 +470,7 @@ class MindustryJsonEditor extends React.Component {
         );
     }
 
-    renderContentSelect (allOptions, value, fieldType, fieldName, ddKey) {
+    renderContentSelect (allOptions, value, fieldType, fieldName, ddKey, ckey) {
         const isResearch = fieldName === 'research';
         const options = isResearch ?
             allOptions :
@@ -504,6 +515,7 @@ class MindustryJsonEditor extends React.Component {
                                         `${styles.selectOption} ${value === opt.name ? styles.selectOptionActive : ''}`
                                     }
                                     data-ddkey={ddKey}
+                                    data-ckey={ckey}
                                     data-optname={opt.name}
                                     onMouseDown={this.handleContentSelect}
                                 >
@@ -518,7 +530,7 @@ class MindustryJsonEditor extends React.Component {
         );
     }
 
-    renderSizeSelector (value) {
+    renderSizeSelector (value, ckey) {
         const sizes = [1, 2, 3, 4, 5];
         return (
             <div className={styles.sizeWrap}>
@@ -528,6 +540,7 @@ class MindustryJsonEditor extends React.Component {
                             key={s}
                             className={`${styles.sizeBtn} ${value === s ? styles.sizeBtnActive : ''}`}
                             data-size={s}
+                            data-ckey={ckey}
                             onClick={this.handleSizeClick}
                         >
                             {s}{S.sizeLabel}{s}
@@ -539,6 +552,7 @@ class MindustryJsonEditor extends React.Component {
                         type="number"
                         min="1"
                         value={value}
+                        data-ckey={ckey}
                         onChange={this.handleSizeCustom}
                         className={styles.numInput}
                     />
@@ -549,7 +563,8 @@ class MindustryJsonEditor extends React.Component {
     }
 
     renderControlInline (field, value, onChange, contextKey) {
-        this._curOnChange = onChange;
+        const ckey = contextKey || field.name;
+        this._onChangeMap.set(ckey, onChange);
 
         if (field.type === 'boolean') {
             return (
@@ -557,6 +572,7 @@ class MindustryJsonEditor extends React.Component {
                     <input
                         type="checkbox"
                         checked={!!value}
+                        data-ckey={ckey}
                         onChange={this.handleCheckboxChange}
                     />
                     <span className={styles.toggleSlider} />
@@ -575,6 +591,7 @@ class MindustryJsonEditor extends React.Component {
                     <input
                         type="color"
                         value={`#${hex.replace('#', '').slice(0, 6)}`}
+                        data-ckey={ckey}
                         onChange={this.handleColorChange}
                         className={styles.colorPicker}
                     />
@@ -587,18 +604,19 @@ class MindustryJsonEditor extends React.Component {
             const enumOptions = rawOptions.map(o => (
                 typeof o === 'string' ? {value: o, cn: o} : {...o, cn: o.cn || o.value}
             ));
-            return this.renderSearchableSelect(enumOptions, value, contextKey || field.name);
+            return this.renderSearchableSelect(enumOptions, value, contextKey || field.name, ckey);
         }
 
         if (field.type === 'int' || field.type === 'float') {
             if (field.name === 'size') {
-                return this.renderSizeSelector(value);
+                return this.renderSizeSelector(value, ckey);
             }
             return (
                 <input
                     type="number"
                     value={value}
                     data-type={field.type}
+                    data-ckey={ckey}
                     onChange={this.handleNumberChange}
                     step={field.type === 'float' ? '0.1' : '1'}
                     className={styles.numInput}
@@ -608,25 +626,27 @@ class MindustryJsonEditor extends React.Component {
 
         if (field.name === 'research' || REFERENCE_TYPES.has(field.type)) {
             const allContent = this.getAllContentOptions();
-            return this.renderContentSelect(allContent, value, field.type, field.name, contextKey || field.name);
+            return this.renderContentSelect(allContent, value, field.type, field.name, contextKey || field.name, ckey);
         }
 
         return (
             <input
                 type="text"
                 value={value}
+                data-ckey={ckey}
                 onChange={this.handleTextChange}
                 className={styles.textInput}
             />
         );
     }
 
-    renderArrayField (field, value) {
+    renderArrayField (field, value, path) {
         const items = Array.isArray(value) ? value : [];
         const itemDef = field.items;
         const normalizedItemDef = itemDef ? normalizeType(itemDef) : null;
         const subFields = normalizedItemDef && normalizedItemDef.fields;
         const isObjectArray = subFields && subFields.length > 0;
+        const prefix = path || field.name;
 
         return (
             <div className={styles.arrayField}>
@@ -671,7 +691,7 @@ class MindustryJsonEditor extends React.Component {
                                                         (i === idx ? updated : it)
                                                     ));
                                                 },
-                                                `${field.name}[${idx}]`
+                                                `${prefix}[${idx}].${sf.name}`
                                             )}
                                         </div>
                                     </div>
@@ -686,7 +706,7 @@ class MindustryJsonEditor extends React.Component {
                                                 (i === idx ? val : it)
                                             ));
                                         },
-                                        `${field.name}[${idx}]`
+                                        `${prefix}[${idx}]`
                                     )}
                                 </div>
                             )}
@@ -705,9 +725,10 @@ class MindustryJsonEditor extends React.Component {
         );
     }
 
-    renderObjectField (field, value) {
+    renderObjectField (field, value, path) {
         const currentValue = value || {};
         const subFields = field.fields || [];
+        const prefix = path || field.name;
         return (
             <div className={styles.nestedObject}>
                 {subFields.map(subF => {
@@ -726,7 +747,7 @@ class MindustryJsonEditor extends React.Component {
                                 {this.renderControlInline(subF, subValue, newVal => {
                                     const updated = {...currentValue, [subF.name]: newVal};
                                     this.handleChange(field.name, updated);
-                                })}
+                                }, `${prefix}.${subF.name}`)}
                             </div>
                         </div>
                     );
@@ -741,19 +762,20 @@ class MindustryJsonEditor extends React.Component {
         const value = data[field.name] === void 0 ? this.parseDefault(field) : data[field.name];
         const label = getFieldLabel(field.sourceType, field.name);
         const hint = getFieldDoc(field.sourceType, field.name) || field.notes || '';
+        const ckey = field.name;
 
         const renderControl = () => {
             if (field.type === 'object' && field.fields) {
-                return this.renderObjectField(field, value);
+                return this.renderObjectField(field, value, ckey);
             }
 
             if (field.type === 'array') {
-                return this.renderArrayField(field, value);
+                return this.renderArrayField(field, value, ckey);
             }
 
             return this.renderControlInline(field, value, newVal => {
                 this.handleChange(field.name, newVal);
-            });
+            }, ckey);
         };
 
         return (
