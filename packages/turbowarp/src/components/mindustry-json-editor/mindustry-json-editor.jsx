@@ -462,6 +462,33 @@ class MindustryJsonEditor extends React.Component {
         return result;
     }
 
+    getDropdownPortalStyle (ddKey) {
+        const DROPDOWN_ESTIMATED_HEIGHT = 260;
+        const triggerEl = document.querySelector(`[data-ddkey="${ddKey}"]`);
+        if (!triggerEl) return {style: {}, up: false};
+        const rect = triggerEl.getBoundingClientRect();
+        const spaceBelow = window.innerHeight - rect.bottom;
+        const spaceAbove = rect.top;
+        const need = Math.min(DROPDOWN_ESTIMATED_HEIGHT, spaceBelow);
+        const up = spaceBelow < DROPDOWN_ESTIMATED_HEIGHT && spaceAbove >= need;
+        return {
+            style: {
+                position: 'fixed',
+                left: `${rect.left}px`,
+                width: `${rect.width}px`,
+                zIndex: 1000,
+                ...(up ? {
+                    bottom: `${window.innerHeight - rect.top}px`,
+                    maxHeight: `${Math.min(DROPDOWN_ESTIMATED_HEIGHT, spaceAbove)}px`
+                } : {
+                    top: `${rect.bottom}px`,
+                    maxHeight: `${Math.min(DROPDOWN_ESTIMATED_HEIGHT, spaceBelow)}px`
+                })
+            },
+            up
+        };
+    }
+
     renderSearchableSelect (options, value, ddKey, ckey) {
         const dd = this.state._dd || {};
         const open = dd[`${ddKey}_open`];
@@ -487,15 +514,8 @@ class MindustryJsonEditor extends React.Component {
 
         if (!open) return trigger;
 
-        const triggerEl = document.querySelector(`[data-ddkey="${ddKey}"]`);
-        const rect = triggerEl ? triggerEl.getBoundingClientRect() : null;
-        const portalStyle = rect ? {
-            position: 'fixed',
-            left: `${rect.left}px`,
-            top: `${rect.bottom}px`,
-            width: `${rect.width}px`,
-            zIndex: 1000
-        } : {};
+        const {style: portalStyle, up} = this.getDropdownPortalStyle(ddKey);
+        const ddClass = up ? `${styles.selectDropdown} ${styles.selectDropdownUp}` : styles.selectDropdown;
 
         return (
             <>{trigger}
@@ -506,7 +526,7 @@ class MindustryJsonEditor extends React.Component {
                         onMouseDown={this.handleBackdropClick}
                     >
                         <div
-                            className={styles.selectDropdown}
+                            className={ddClass}
                             style={portalStyle}
                             onMouseDown={this.handlePortalDropdownClick}
                         >
@@ -576,15 +596,8 @@ class MindustryJsonEditor extends React.Component {
 
         if (!open) return trigger;
 
-        const triggerEl = document.querySelector(`[data-ddkey="${ddKey}"]`);
-        const rect = triggerEl ? triggerEl.getBoundingClientRect() : null;
-        const portalStyle = rect ? {
-            position: 'fixed',
-            left: `${rect.left}px`,
-            top: `${rect.bottom}px`,
-            width: `${rect.width}px`,
-            zIndex: 1000
-        } : {};
+        const {style: portalStyle, up} = this.getDropdownPortalStyle(ddKey);
+        const ddClass = up ? `${styles.selectDropdown} ${styles.selectDropdownUp}` : styles.selectDropdown;
 
         return (
             <>{trigger}
@@ -595,7 +608,7 @@ class MindustryJsonEditor extends React.Component {
                         onMouseDown={this.handleBackdropClick}
                     >
                         <div
-                            className={styles.selectDropdown}
+                            className={ddClass}
                             style={portalStyle}
                             onMouseDown={this.handlePortalDropdownClick}
                         >

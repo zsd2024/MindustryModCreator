@@ -381,6 +381,11 @@
   flex-direction: column;
 }
 
+.selectDropdownUp {
+  margin-top: 0;
+  margin-bottom: 2px;
+}
+
 .selectSearch {
   width: 100%;
   padding: 8px 10px;
