@@ -279,6 +279,7 @@ class MindustryJsonEditor extends React.Component {
     };
 
     handleEnumSearch = e => {
+        if (!e || !e.currentTarget || !e.target) return;
         const key = e.currentTarget.dataset.ddkey;
         this.setState(prev => ({
             _dd: {...prev._dd, [`${key}_search`]: e.target.value}
@@ -286,6 +287,7 @@ class MindustryJsonEditor extends React.Component {
     };
 
     handleEnumBlur = e => {
+        if (!e || !e.currentTarget) return;
         const key = e.currentTarget.dataset.ddkey;
         setTimeout(() => {
             this.setState(prev => ({
@@ -295,6 +297,7 @@ class MindustryJsonEditor extends React.Component {
     };
 
     handleEnumSelect = e => {
+        if (!e || !e.currentTarget) return;
         const key = e.currentTarget.dataset.ddkey;
         const optValue = e.currentTarget.dataset.optvalue;
         const cb = this._onChangeMap.get(e.currentTarget.dataset.ckey);
@@ -312,6 +315,7 @@ class MindustryJsonEditor extends React.Component {
     };
 
     handleContentSearch = e => {
+        if (!e || !e.currentTarget || !e.target) return;
         const key = e.currentTarget.dataset.ddkey;
         this.setState(prev => ({
             _dd: {...prev._dd, [`${key}_search`]: e.target.value}
@@ -319,6 +323,7 @@ class MindustryJsonEditor extends React.Component {
     };
 
     handleContentBlur = e => {
+        if (!e || !e.currentTarget) return;
         const key = e.currentTarget.dataset.ddkey;
         setTimeout(() => {
             this.setState(prev => ({
@@ -328,6 +333,7 @@ class MindustryJsonEditor extends React.Component {
     };
 
     handleContentSelect = e => {
+        if (!e || !e.currentTarget) return;
         const key = e.currentTarget.dataset.ddkey;
         const optName = e.currentTarget.dataset.optname;
         const cb = this._onChangeMap.get(e.currentTarget.dataset.ckey);
@@ -406,7 +412,7 @@ class MindustryJsonEditor extends React.Component {
     };
 
     getAllContentOptions () {
-        const {assets} = this.props;
+        const {assets, contentLocalizedNames} = this.props;
         const seen = new Set();
         const result = [];
 
@@ -426,7 +432,7 @@ class MindustryJsonEditor extends React.Component {
                     seen.add(asset.name);
                     result.push({
                         name: asset.name,
-                        cn: asset.name,
+                        cn: (contentLocalizedNames && contentLocalizedNames[asset.name]) || asset.name,
                         type: asset.contentType,
                         source: 'mod'
                     });
@@ -830,6 +836,9 @@ class MindustryJsonEditor extends React.Component {
         const renderControl = () => {
             if (field.name === 'research') {
                 if (typeof value === 'string') {
+                    this._onChangeMap.set(ckey, newVal => {
+                        this.handleChange(field.name, newVal);
+                    });
                     const allContent = this.getAllContentOptions();
                     return this.renderContentSelect(allContent, value, null, field.name, ckey, ckey);
                 }
@@ -960,11 +969,13 @@ MindustryJsonEditor.propTypes = {
     contentType: PropTypes.string,
     initialData: PropTypes.object,
     onChange: PropTypes.func,
-    assets: PropTypes.array
+    assets: PropTypes.array,
+    contentLocalizedNames: PropTypes.objectOf(PropTypes.string)
 };
 
 MindustryJsonEditor.defaultProps = {
-    initialData: {}
+    initialData: {},
+    contentLocalizedNames: {}
 };
 
 export default MindustryJsonEditor;

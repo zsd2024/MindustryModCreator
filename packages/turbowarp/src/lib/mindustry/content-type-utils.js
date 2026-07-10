@@ -51,3 +51,27 @@ export const generateBundleKeys = function (assets, modConfig) {
     }
     return keys;
 };
+
+export const getBundleNameMap = function (assetFormData, assets, modConfig) {
+    const modName = (modConfig && modConfig.name) || 'my-mod';
+    if (!assets || !assetFormData) return {};
+    const zhBundle = assets.find(
+        a => a.kind === 'bundle' && a.name === 'bundle_zh_CN.properties'
+    );
+    if (!zhBundle || !assetFormData[zhBundle.id]) return {};
+    const bundleData = assetFormData[zhBundle.id];
+    const nameMap = {};
+    for (const [key, value] of Object.entries(bundleData)) {
+        if (!key.endsWith('.name')) continue;
+        const parts = key.split('.');
+        const internalName = parts.slice(1, -1).join('.');
+        const prefix = `${modName}-`;
+        const assetName = internalName.startsWith(prefix) ?
+            internalName.slice(prefix.length) :
+            internalName;
+        if (value) {
+            nameMap[assetName] = value;
+        }
+    }
+    return nameMap;
+};

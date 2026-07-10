@@ -44,7 +44,7 @@ import runAddons from '../addons/entry';
 import InvalidEmbed from '../components/tw-invalid-embed/invalid-embed.jsx';
 import {APP_NAME} from '../lib/brand.js';
 import exportMod from '../lib/mindustry/mod-export';
-import {generateBundleKeys, getBundlePrefix} from '../lib/mindustry/content-type-utils';
+import {generateBundleKeys, getBundlePrefix, getBundleNameMap} from '../lib/mindustry/content-type-utils';
 import Modal from '../components/modal/modal.jsx';
 
 import styles from './interface.css';
@@ -708,6 +708,9 @@ class Interface extends React.Component {
                     <GUI
                         onClickAddonSettings={handleClickAddonSettings}
                         onUpdateProjectTitle={this.handleUpdateProjectTitle}
+                        contentLocalizedNames={getBundleNameMap(
+                            this.state.assetFormData, this.state.assets, this.state.modConfig
+                        )}
                         selectedAsset={this.getSelectedAsset()}
                         filteredAssets={this.getFilteredAssets()}
                         assets={this.state.assets}

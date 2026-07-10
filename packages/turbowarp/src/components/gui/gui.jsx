@@ -127,6 +127,7 @@ const GUIComponent = props => {
         onContentDataChange,
         selectedAsset,
         assets,
+        contentLocalizedNames,
         filteredAssets,
         selectedAssetId,
         onSelectAsset,
@@ -461,6 +462,7 @@ const GUIComponent = props => {
                                                 onChange={onContentDataChange}
                                                 assets={assets}
                                                 assetId={selectedAsset.id}
+                                                contentLocalizedNames={contentLocalizedNames}
                                             />
                                         </Box>
                                     ) : selectedAsset && selectedAsset.kind === 'bundle' ? (
@@ -648,6 +650,7 @@ GUIComponent.propTypes = {
     selectedAsset: PropTypes.object,
     selectedAssetId: PropTypes.string,
     assets: PropTypes.array,
+    contentLocalizedNames: PropTypes.objectOf(PropTypes.string),
     filteredAssets: PropTypes.array,
     contentType: PropTypes.string,
     selectedContentData: PropTypes.object,
