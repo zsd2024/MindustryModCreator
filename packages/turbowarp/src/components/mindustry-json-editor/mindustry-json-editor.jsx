@@ -503,10 +503,7 @@ class MindustryJsonEditor extends React.Component {
                     onClick={this.handleEnumToggle}
                 >
                     <span className={styles.selectDisplayLabel}>
-                        {selected ? <>
-                            {selected.color && <span style={{display: 'inline-block', width: 10, height: 10, borderRadius: '50%', background: selected.color, marginRight: 4, verticalAlign: 'middle'}} />}
-                            {selected.cn}
-                        </> : (value || S.defaultDisplay)}
+                        {selected ? <span style={{color: selected.color}}>{selected.cn}</span> : (value || S.defaultDisplay)}
                     </span>
                     <span className={styles.selectArrow}>{open ? '▲' : '▼'}</span>
                 </div>
@@ -557,8 +554,7 @@ class MindustryJsonEditor extends React.Component {
                                         data-optvalue={opt.value}
                                         onMouseDown={this.handleEnumSelect}
                                     >
-                                        {opt.color && <span style={{display: 'inline-block', width: 10, height: 10, borderRadius: '50%', background: opt.color, marginRight: 6, verticalAlign: 'middle', flexShrink: 0}} />}
-                                        <span className={styles.selectOptCn}>{opt.cn}</span>
+                                        <span className={styles.selectOptCn} style={{color: opt.color}}>{opt.cn}</span>
                                         <span className={styles.selectOptId}>{opt.value}</span>
                                     </div>
                                 ))}
@@ -735,7 +731,12 @@ class MindustryJsonEditor extends React.Component {
             const teamOpts = [{value: '-1', cn: '-1 - 默认', color: '#888888'}];
             for (let i = 0; i < 256; i++) {
                 const names = ['灰(Derelict)', '黄(Sharded)', '红(Crux)', '紫(Malis)', '绿(Green)', '蓝(Blue)', 'Neoplastic'];
-                const color = i < teamColors.length ? teamColors[i] : '#aaaaaa';
+                const color = i < teamColors.length ? teamColors[i] : (() => {
+                    const hue = (i * 137.5 + 20) % 360;
+                    const sat = 55 + (i % 25);
+                    const lig = 55 + (i % 20);
+                    return `hsl(${hue}, ${sat}%, ${lig}%)`;
+                })();
                 const cn = i === 6 ? `${i} - Neoplastic` : (i < 6 ? `${i} - ${names[i]}` : String(i));
                 teamOpts.push({value: String(i), cn, color});
             }
