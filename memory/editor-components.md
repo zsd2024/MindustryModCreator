@@ -1,0 +1,52 @@
+# Editor Components
+
+## Main Component: `mindustry-json-editor.jsx` (1087 lines)
+React class component. Key rendering flow:
+
+### Field Rendering
+1. `render()` → `renderSection()` → `renderField()`
+2. `renderField()` checks field type and delegates:
+   - `enum` → `renderSearchableSelect()`
+   - `forceTeam` → team color selector (特殊处理)
+   - `int/float` → number input (size → special size selector)
+   - `REFERENCE_TYPES` / `research` → `renderContentSelect()` (内容搜索下拉)
+   - `array` → `renderArrayField()`
+   - `object` → `renderObjectEditor()`
+   - `boolean` → checkbox
+   - default → text input
+
+### Key References
+- `REFERENCE_TYPES` (line 49-53): Set of content type names
+- `ENUM_VALUES` (line 14-23): Hardcoded enum options keyed by field name
+- `ENHANCED_RESEARCH` (line 24-28): Research field has `parent` (content ref) + `objectives` + `requirements`
+
+### renderSearchableSelect
+- Portaled dropdown on document.body
+- Search input for filtering
+- Smart up/down orientation
+- Selected item shows in trigger display
+
+### renderContentSelect
+- Filters VANILLA_CONTENT + mod assets by field.type
+- Exception: `research` shows ALL content types
+- Searchable dropdown
+
+### renderArrayField
+- For array of objects: shows nested field rows
+- For array of primitives: shows list with add/remove
+- **Bug history**: `getFieldLabel()` used to return field name as fallback, overriding `sf.localizedName` in `||` chain. Fixed: `getFieldLabel` now returns `null` when no zh_CN match found.
+
+## Label Resolution Order
+`getFieldLabel(type, fieldName)` walks parentType chain:
+1. Check zh_CN for field's localizedName
+2. If not found, check parent type
+3. Returns `null` if not found anywhere (changed from returning fieldName)
+4. Main field label: `getFieldLabel() || field.name`
+5. Array subfield label: `getFieldLabel() || sf.localizedName || sf.name`
+
+## forceTeam Special Selector
+- Shows 256 teams (0-255) + -1 (默认)
+- Team 0-6 have fixed names/colors from Mindustry Team.java
+- Team 7-255 use exact Mindustry xorshift128+ RNG with seed=8 for colors
+- Color applied as text color (color property on option)
+- `-1` represents "use default team"
