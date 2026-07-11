@@ -727,18 +727,55 @@ class MindustryJsonEditor extends React.Component {
         }
 
         if (field.name === 'forceTeam') {
-            const teamColors = ['#4d4e58', '#ffd37f', '#f25555', '#a27ce5', '#54d67d', '#6c87fd', '#e05438'];
+            const M64 = 0xFFFFFFFFFFFFFFFFn;
+            const MUL1 = 0xff51afd7ed558ccdn, MUL2 = 0xc4ceb9fe1a85ec53n;
+            const mh3 = (xv => {
+                let x = BigInt(xv) & M64;
+                x ^= (x >> 33n); x &= M64;
+                x = (x * MUL1) & M64;
+                x ^= (x >> 33n); x &= M64;
+                x = (x * MUL2) & M64;
+                x ^= (x >> 33n);
+                return x & M64;
+            });
             const teamOpts = [{value: '-1', cn: '-1 - 默认', color: '#888888'}];
+            const names = ['灰(Derelict)','黄(Sharded)','红(Crux)','紫(Malis)','绿(Green)','蓝(Blue)','Neoplastic'];
+            const fixedColors = ['#4d4e58','#ffd37f','#f25555','#a27ce5','#54d67d','#6c87fd','#e05438'];
+
+            let seed0 = mh3(8), seed1 = mh3(seed0);
+            const nf = () => {
+                let s1 = seed0; const s0 = seed1;
+                seed0 = s0;
+                s1 = (s1 ^ (s1 << 23n)) & M64;
+                const ns1 = (s1 ^ s0 ^ (s1 >> 17n) ^ (s0 >> 26n)) & M64;
+                seed1 = ns1;
+                return Number((((ns1 + s0) & M64) >> 40n) & 0xFFFFFFn) / (1 << 24);
+            };
+            for (let i = 0; i < 3; i++) nf();
+
             for (let i = 0; i < 256; i++) {
-                const names = ['灰(Derelict)', '黄(Sharded)', '红(Crux)', '紫(Malis)', '绿(Green)', '蓝(Blue)', 'Neoplastic'];
-                const color = i < teamColors.length ? teamColors[i] : (() => {
-                    const hue = (i * 137.5 + 20) % 360;
-                    const sat = 55 + (i % 25);
-                    const lig = 55 + (i % 20);
-                    return `hsl(${hue}, ${sat}%, ${lig}%)`;
-                })();
-                const cn = i < names.length ? `${i} - ${names[i]}` : String(i);
-                teamOpts.push({value: String(i), cn, color});
+                if (i < fixedColors.length) {
+                    teamOpts.push({value: String(i), cn: `${i} - ${names[i]}`, color: fixedColors[i]});
+                } else {
+                    const h = 360 * nf();
+                    const S = 40 + 60 * nf();
+                    const V = 60 + 40 * nf();
+                    const C = S / 100 * V / 100;
+                    const X = C * (1 - Math.abs((h / 60) % 2 - 1));
+                    const m = V / 100 - C;
+                    let r, g, b;
+                    if (h < 60) [r,g,b] = [C,X,0];
+                    else if (h < 120) [r,g,b] = [X,C,0];
+                    else if (h < 180) [r,g,b] = [0,C,X];
+                    else if (h < 240) [r,g,b] = [0,X,C];
+                    else if (h < 300) [r,g,b] = [X,0,C];
+                    else [r,g,b] = [C,0,X];
+                    const rr = Math.round((r + m) * 255);
+                    const gg = Math.round((g + m) * 255);
+                    const bb = Math.round((b + m) * 255);
+                    const hex = '#' + [rr,gg,bb].map(c => c.toString(16).padStart(2,'0')).join('');
+                    teamOpts.push({value: String(i), cn: String(i), color: hex});
+                }
             }
             this._onChangeMap.set(ckey, val => onChange(parseInt(val, 10)));
             const strValue = value == null ? '-1' : String(value);
