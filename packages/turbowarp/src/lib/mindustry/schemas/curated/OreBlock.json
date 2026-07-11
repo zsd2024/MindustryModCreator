@@ -30,20 +30,12 @@
             "type": "float"
         },
         {
-            "name": "localizedName",
-            "type": "string"
-        },
-        {
             "name": "mapColor",
             "type": "string"
         },
         {
             "name": "needsSurface",
             "type": "boolean"
-        },
-        {
-            "name": "description",
-            "type": "string"
         }
     ]
 }

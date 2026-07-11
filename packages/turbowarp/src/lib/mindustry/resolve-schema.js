@@ -60,6 +60,12 @@ const getZhDoc = function (key) {
     return zh?.notes || null;
 };
 
+const getCuratedTypes = function () {
+    return curatedSchemasContext.keys()
+        .filter(k => !k.startsWith('./types/'))
+        .map(k => k.replace('./', '').replace('.json', ''));
+};
+
 const getFieldLabel = function (type, fieldName) {
     let t = type;
     while (t) {
@@ -194,6 +200,7 @@ export {
     getZhDoc,
     getFieldLabel,
     getFieldDoc,
+    getCuratedTypes,
     getAllTypes,
     parseDefault,
     computeDefaults,

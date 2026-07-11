@@ -800,6 +800,23 @@ class MenuBar extends React.Component {
                                             )}
                                         </MenuItem>
                                     )}</TurboMode>
+                                    {this.props.advancedMode !== undefined ? (
+                                        <MenuItem onClick={this.props.onToggleAdvancedMode}>
+                                            {this.props.advancedMode ? (
+                                                <FormattedMessage
+                                                    defaultMessage="Turn off Advanced Mode"
+                                                    description="Menu bar item for turning off advanced mode"
+                                                    id="gui.menuBar.advancedModeOff"
+                                                />
+                                            ) : (
+                                                <FormattedMessage
+                                                    defaultMessage="Turn on Advanced Mode"
+                                                    description="Menu bar item for turning on advanced mode"
+                                                    id="gui.menuBar.advancedModeOn"
+                                                />
+                                            )}
+                                        </MenuItem>
+                                    ) : null}
                                     <FramerateChanger>{(changeFramerate, {framerate}) => (
                                         <MenuItem onClick={changeFramerate}>
                                             {framerate === 60 ? (
@@ -1110,6 +1127,8 @@ MenuBar.propTypes = {
     currentLocale: PropTypes.string.isRequired,
     editMenuOpen: PropTypes.bool,
     enableCommunity: PropTypes.bool,
+    advancedMode: PropTypes.bool,
+    onToggleAdvancedMode: PropTypes.func,
     fileMenuOpen: PropTypes.bool,
     handleSaveProject: PropTypes.func,
     intl: intlShape,

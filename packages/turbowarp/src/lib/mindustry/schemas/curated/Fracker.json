@@ -3,10 +3,6 @@
     "parentType": "SolidPump",
     "fields": [
         {
-            "name": "description",
-            "type": "string"
-        },
-        {
             "name": "health",
             "type": "int"
         },

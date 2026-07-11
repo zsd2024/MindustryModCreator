@@ -225,10 +225,6 @@
             "type": "boolean"
         },
         {
-            "name": "description",
-            "type": "string"
-        },
-        {
             "name": "shootX",
             "type": "float"
         }

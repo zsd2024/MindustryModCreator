@@ -74,10 +74,6 @@
             "type": "float"
         },
         {
-            "name": "description",
-            "type": "string"
-        },
-        {
             "name": "reload",
             "type": "int"
         },

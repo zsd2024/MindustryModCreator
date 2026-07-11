@@ -3,7 +3,7 @@ import React from 'react';
 import {ContextMenuTrigger} from 'react-contextmenu';
 import {ContextMenu, MenuItem, DangerousMenuItem} from '../context-menu/context-menu.jsx';
 import Modal from '../modal/modal.jsx';
-import {getZhLabel} from '../../lib/mindustry/resolve-schema';
+import {getZhLabel, getCuratedTypes} from '../../lib/mindustry/resolve-schema';
 import styles from './mindustry-asset-cards.css';
 
 const BUILTIN_IDS = new Set(['__mod_config__', '__bundle_en__', '__bundle_zh__']);
@@ -314,9 +314,11 @@ class AssetCards extends React.Component {
     // ── picker ──
     renderPicker () {
         const {dialogType, dialogSearch} = this.state;
+        const curatedTypes = new Set(getCuratedTypes());
         const filtered = CATEGORIES.map(cat => ({
             ...cat,
             types: cat.types.filter(t => {
+                if (!this.props.advancedMode && !curatedTypes.has(t)) return false;
                 const zh = getZhLabel(t);
                 if (!zh) return false;
                 if (IGNORED_TYPES.has(t)) return false;

@@ -42,10 +42,6 @@
             ]
         },
         {
-            "name": "description",
-            "type": "string"
-        },
-        {
             "name": "category",
             "type": "string"
         },

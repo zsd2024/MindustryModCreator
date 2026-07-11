@@ -40,14 +40,6 @@
             "type": "boolean"
         },
         {
-            "name": "localizedName",
-            "type": "string"
-        },
-        {
-            "name": "description",
-            "type": "string"
-        },
-        {
             "name": "size",
             "type": "int"
         },

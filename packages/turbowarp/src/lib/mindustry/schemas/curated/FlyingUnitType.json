@@ -136,10 +136,6 @@
             "type": "boolean"
         },
         {
-            "name": "description",
-            "type": "string"
-        },
-        {
             "name": "omniMovement",
             "type": "boolean"
         },
@@ -336,10 +332,6 @@
         {
             "name": "alwaysUnlocked",
             "type": "boolean"
-        },
-        {
-            "name": "localizedName",
-            "type": "string"
         },
         {
             "name": "drawShields",

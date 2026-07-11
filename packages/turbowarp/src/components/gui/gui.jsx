@@ -155,6 +155,8 @@ const GUIComponent = props => {
         onLogOut,
         onOpenRegistration,
         onToggleLoginOpen,
+        advancedMode,
+        onToggleAdvancedMode,
         onActivateCostumesTab,
         onActivateSoundsTab,
         onActivateTab,
@@ -374,6 +376,8 @@ const GUIComponent = props => {
                     onClickDesktopSettings={onClickDesktopSettings}
                     onClickNewWindow={onClickNewWindow}
                     onClickPackager={onClickPackager}
+                    advancedMode={advancedMode}
+                    onToggleAdvancedMode={onToggleAdvancedMode}
                     onExport={onExport}
                     onImportProject={onImportProject}
                     onClickLogo={onClickLogo}
@@ -457,6 +461,8 @@ const GUIComponent = props => {
                                     ) : selectedAsset && selectedAsset.kind === 'content' ? (
                                         <Box className={styles.blocksWrapper}>
                                             <MindustryJsonEditor
+                                                advancedMode={advancedMode}
+                                                onToggleAdvancedMode={onToggleAdvancedMode}
                                                 contentType={selectedAsset.contentType}
                                                 initialData={selectedContentData}
                                                 onChange={onContentDataChange}
@@ -548,6 +554,7 @@ const GUIComponent = props => {
                                     onDeleteFolder={onDeleteFolder}
                                 />
                                 <AssetCards
+                                    advancedMode={advancedMode}
                                     assets={filteredAssets}
                                     selectedId={selectedAssetId}
                                     onSelect={onSelectAsset}

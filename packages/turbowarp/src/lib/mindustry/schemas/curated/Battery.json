@@ -68,14 +68,6 @@
             "type": "array"
         },
         {
-            "name": "localizedName",
-            "type": "string"
-        },
-        {
-            "name": "description",
-            "type": "string"
-        },
-        {
             "name": "hasPower",
             "type": "boolean"
         }

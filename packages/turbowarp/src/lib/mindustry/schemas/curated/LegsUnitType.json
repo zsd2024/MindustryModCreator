@@ -115,10 +115,6 @@
             "type": "float"
         },
         {
-            "name": "description",
-            "type": "string"
-        },
-        {
             "name": "faceTarget",
             "type": "boolean"
         },
@@ -176,10 +172,6 @@
         },
         {
             "name": "research",
-            "type": "string"
-        },
-        {
-            "name": "localizedName",
             "type": "string"
         },
         {

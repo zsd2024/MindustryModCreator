@@ -97,10 +97,6 @@
             "type": "Item"
         },
         {
-            "name": "description",
-            "type": "string"
-        },
-        {
             "name": "albedo",
             "type": "float"
         },

@@ -130,10 +130,6 @@
             ]
         },
         {
-            "name": "description",
-            "type": "string"
-        },
-        {
             "name": "hasLiquids",
             "type": "boolean"
         }

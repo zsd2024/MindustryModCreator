@@ -100,10 +100,6 @@
             "type": "array"
         },
         {
-            "name": "description",
-            "type": "string"
-        },
-        {
             "name": "rotateDraw",
             "type": "boolean"
         },

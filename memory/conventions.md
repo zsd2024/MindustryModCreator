@@ -37,6 +37,13 @@
 
 这些子类型的字段修改需要**单独处理**，递归脚本需覆盖这些 key。
 
+## 高级模式
+- 状态位于 `render-interface.jsx`（`this.state.advancedMode`）
+- 通过 `advancedMode` + `onToggleAdvancedMode` props 向下传递
+- json-editor、asset-cards、menu-bar 均通过 props 获取
+- 编辑菜单中切换（Turbo Mode 下方）
+- `getCuratedTypes()` 从 `require.context` 程序化获取类型列表
+
 ## 中文翻译
 - zh_CN 文件覆盖部分 Schema 的 localizedName
 - `getFieldLabel()` 现在返回 `null` 而非 fieldName（修复标签优先级 bug）

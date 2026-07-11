@@ -158,10 +158,6 @@
             "type": "float"
         },
         {
-            "name": "description",
-            "type": "string"
-        },
-        {
             "name": "research",
             "type": "string"
         }

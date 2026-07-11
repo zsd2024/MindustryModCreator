@@ -96,10 +96,6 @@
             "type": "float"
         },
         {
-            "name": "description",
-            "type": "string"
-        },
-        {
             "name": "singleTarget",
             "type": "boolean"
         },

@@ -34,6 +34,14 @@
 - `Bullet.json`: spawnUnit, despawnUnit, puddleLiquid, liquid (LiquidBulletType), trailEffect2 (56 fields)
 - `Draw.json`: DrawLiquidRegion.liquid, DrawPumpLiquid.liquid, DrawTurret.liquid
 
+### 重构: 高级模式提升为全局设置
+- 高级模式开关从 json-editor 局部状态移至编辑菜单（加速模式下方）
+- `render-interface.jsx` 持有 `advancedMode` 状态，通过 gui 链传递
+- `getCuratedTypes()` 从文件系统程序化获取精选类型列表（无需硬编码）
+- 非高级模式：新建菜单只显示有 curated schema 的内容类型
+- 重命名 8 个单位变体 curated 文件（mech→MechUnitType 等），修复查找 Bug
+- 移除全部 curated schema 中的 `localizedName`/`description` 字段
+
 ## Earlier
 - forceTeam 初始实现（NAME_TO_TYPE 方式）
 - research 字段增强：parent 选择器显示所有内容类型

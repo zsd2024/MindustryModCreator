@@ -3,10 +3,6 @@
     "parentType": "UnitType",
     "fields": [
         {
-            "name": "description",
-            "type": "string"
-        },
-        {
             "name": "health",
             "type": "int"
         },

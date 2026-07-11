@@ -94,10 +94,6 @@
             "type": "boolean"
         },
         {
-            "name": "description",
-            "type": "string"
-        },
-        {
             "name": "research",
             "type": "string"
         },

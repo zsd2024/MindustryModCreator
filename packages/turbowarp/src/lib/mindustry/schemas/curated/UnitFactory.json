@@ -67,10 +67,6 @@
             }
         },
         {
-            "name": "description",
-            "type": "string"
-        },
-        {
             "name": "unitType",
             "type": "UnitType"
         },

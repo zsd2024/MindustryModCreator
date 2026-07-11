@@ -255,10 +255,6 @@
             "type": "boolean"
         },
         {
-            "name": "description",
-            "type": "string"
-        },
-        {
             "name": "ignoreLiquidFullness",
             "type": "boolean"
         },

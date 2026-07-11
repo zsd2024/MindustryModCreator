@@ -253,6 +253,7 @@ class Interface extends React.Component {
         };
         this.state = {
             ...initialState,
+            advancedMode: false,
             alertMsg: '',
             confirmMsg: '',
             folderPromptOpen: false
@@ -295,6 +296,7 @@ class Interface extends React.Component {
         this.handleCloseAlert = this.handleCloseAlert.bind(this);
         this.handleCloseConfirm = this.handleCloseConfirm.bind(this);
         this.handleConfirmOk = this.handleConfirmOk.bind(this);
+        this.handleToggleAdvancedMode = this.handleToggleAdvancedMode.bind(this);
         this.handleCloseFolderPrompt = this.handleCloseFolderPrompt.bind(this);
         this.handleConfirmFolderPrompt = this.handleConfirmFolderPrompt.bind(this);
         this.handleFolderPromptChange = this.handleFolderPromptChange.bind(this);
@@ -651,6 +653,10 @@ class Interface extends React.Component {
         if (e.key === 'Escape') this.handleCloseFolderPrompt();
     }
 
+    handleToggleAdvancedMode () {
+        this.setState(prev => ({advancedMode: !prev.advancedMode}));
+    }
+
     handleUpdateProjectTitle (title, isDefault) {
         if (isDefault || !title) {
             document.title = `${APP_NAME} - ${this.props.intl.formatMessage(messages.defaultTitle)}`;
@@ -706,6 +712,8 @@ class Interface extends React.Component {
                     }) : null}
                 >
                     <GUI
+                        advancedMode={this.state.advancedMode}
+                        onToggleAdvancedMode={this.handleToggleAdvancedMode}
                         onClickAddonSettings={handleClickAddonSettings}
                         onUpdateProjectTitle={this.handleUpdateProjectTitle}
                         contentLocalizedNames={getBundleNameMap(

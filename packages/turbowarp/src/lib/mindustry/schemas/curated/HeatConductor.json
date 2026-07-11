@@ -3,10 +3,6 @@
     "parentType": "Block",
     "fields": [
         {
-            "name": "description",
-            "type": "string"
-        },
-        {
             "name": "requirements",
             "type": "array"
         },

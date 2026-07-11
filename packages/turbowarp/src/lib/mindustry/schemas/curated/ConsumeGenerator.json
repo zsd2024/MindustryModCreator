@@ -165,10 +165,6 @@
             "type": "boolean"
         },
         {
-            "name": "description",
-            "type": "string"
-        },
-        {
             "name": "lightLiquid",
             "type": "string"
         },

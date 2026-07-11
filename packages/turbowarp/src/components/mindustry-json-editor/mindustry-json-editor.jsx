@@ -39,7 +39,6 @@ const S = {
     notFoundIcon: '❓',
     notFoundPrefix: '未找到 ',
     notFoundSuffix: ' 的配置信息',
-    advancedMode: '⚡ 高级模式',
     itemIndexPrefix: '#',
     removeBtn: '✕',
     sizeLabel: 'x',
@@ -198,7 +197,6 @@ class MindustryJsonEditor extends React.Component {
         this.state = {
             data: this.initData(props.contentType, props.initialData || {}),
             collapsedSections: this.initCollapsedSections(props.contentType),
-            advancedMode: false,
             _dd: {}
         };
         this._onChangeMap = new Map();
@@ -424,10 +422,6 @@ class MindustryJsonEditor extends React.Component {
             }
             return {collapsedSections: collapsed};
         });
-    };
-
-    handleAdvancedToggle = () => {
-        this.setState(prev => ({advancedMode: !prev.advancedMode}));
     };
 
     getAllContentOptions () {
@@ -738,7 +732,7 @@ class MindustryJsonEditor extends React.Component {
                 x ^= (x >> 33n);
                 return x & M64;
             });
-            const teamOpts = [{value: '-1', cn: '-1 - 默认', color: '#888888'}];
+            const teamOpts = [{value: '-1', cn: '默认', color: '#888888'}];
             const names = ['灰(Derelict)','黄(Sharded)','红(Crux)','紫(Malis)','绿(Green)','蓝(Blue)','Neoplastic'];
             const fixedColors = ['#4d4e58','#ffd37f','#f25555','#a27ce5','#54d67d','#6c87fd','#e05438'];
 
@@ -755,7 +749,7 @@ class MindustryJsonEditor extends React.Component {
 
             for (let i = 0; i < 256; i++) {
                 if (i < fixedColors.length) {
-                    teamOpts.push({value: String(i), cn: `${i} - ${names[i]}`, color: fixedColors[i]});
+                    teamOpts.push({value: String(i), cn: names[i], color: fixedColors[i]});
                 } else {
                     const h = 360 * nf();
                     const S = 40 + 60 * nf();
@@ -1064,7 +1058,7 @@ class MindustryJsonEditor extends React.Component {
             );
         }
 
-        const mode = this.state.advancedMode ? 'full' : 'curated';
+        const mode = this.props.advancedMode ? 'full' : 'curated';
         const fields = resolveFields(contentType, mode);
         if (fields.length === 0) {
             return (
@@ -1090,17 +1084,6 @@ class MindustryJsonEditor extends React.Component {
             <div className={styles.editor}>
                 <div className={styles.editorHeader}>
                     <span className={styles.editorTitle}>{getZhLabel(contentType) || contentType}</span>
-                    <label className={styles.advancedToggle}>
-                        <span className={styles.advancedToggleLabel}>{S.advancedMode}</span>
-                        <span className={styles.toggleSwitch}>
-                            <input
-                                type="checkbox"
-                                checked={this.state.advancedMode}
-                                onChange={this.handleAdvancedToggle}
-                            />
-                            <span className={styles.toggleSlider} />
-                        </span>
-                    </label>
                 </div>
                 <div className={styles.sectionsContainer}>
                     {Object.keys(sections).map(st => this.renderSection(st, sections[st]))}
@@ -1112,6 +1095,8 @@ class MindustryJsonEditor extends React.Component {
 }
 
 MindustryJsonEditor.propTypes = {
+    advancedMode: PropTypes.bool,
+    onToggleAdvancedMode: PropTypes.func,
     contentType: PropTypes.string,
     initialData: PropTypes.object,
     onChange: PropTypes.func,
@@ -1120,6 +1105,7 @@ MindustryJsonEditor.propTypes = {
 };
 
 MindustryJsonEditor.defaultProps = {
+    advancedMode: false,
     initialData: {},
     contentLocalizedNames: {}
 };

@@ -235,10 +235,6 @@
             "type": "float"
         },
         {
-            "name": "description",
-            "type": "string"
-        },
-        {
             "name": "inaccuracy",
             "type": "float"
         },

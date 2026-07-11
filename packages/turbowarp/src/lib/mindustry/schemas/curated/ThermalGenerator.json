@@ -89,10 +89,6 @@
             "type": "float"
         },
         {
-            "name": "description",
-            "type": "string"
-        },
-        {
             "name": "floating",
             "type": "boolean"
         },
