@@ -737,7 +737,7 @@ class MindustryJsonEditor extends React.Component {
                     const lig = 55 + (i % 20);
                     return `hsl(${hue}, ${sat}%, ${lig}%)`;
                 })();
-                const cn = i === 6 ? `${i} - Neoplastic` : (i < 6 ? `${i} - ${names[i]}` : String(i));
+                const cn = i < names.length ? `${i} - ${names[i]}` : String(i);
                 teamOpts.push({value: String(i), cn, color});
             }
             this._onChangeMap.set(ckey, val => onChange(parseInt(val, 10)));
