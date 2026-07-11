@@ -52,6 +52,23 @@ const REFERENCE_TYPES = new Set([
     'Sound', 'TextureRegion', 'Research'
 ]);
 
+const NAME_TO_TYPE = {
+    item: 'Item',
+    items: 'Item',
+    liquid: 'Liquid',
+    liquids: 'Liquid',
+    block: 'Block',
+    bullet: 'BulletType',
+    effect: 'StatusEffect',
+    effects: 'StatusEffect',
+    sound: 'Sound',
+    sounds: 'Sound',
+    unit: 'UnitType',
+    units: 'UnitType',
+    weather: 'Weather',
+    planet: 'Planet',
+};
+
 const ENUM_VALUES = {
     buildVisibility: [
         {value: 'hidden', cn: '隐藏'},
@@ -724,6 +741,27 @@ class MindustryJsonEditor extends React.Component {
                 typeof o === 'string' ? {value: o, cn: o} : {...o, cn: o.cn || o.value}
             ));
             return this.renderSearchableSelect(enumOptions, value, contextKey || field.name, ckey);
+        }
+
+        const nameType = NAME_TO_TYPE[field.name];
+        if (nameType) {
+            const allContent = this.getAllContentOptions();
+            return this.renderContentSelect(allContent, value, nameType, field.name, contextKey || field.name, ckey);
+        }
+
+        if (field.name === 'forceTeam') {
+            const teamOpts = [
+                {value: '-1', cn: '默认'},
+                {value: '0', cn: '灰(Derelict)'},
+                {value: '1', cn: '黄(Sharded)'},
+                {value: '2', cn: '红(Crux)'},
+                {value: '3', cn: '紫(Malis)'},
+                {value: '4', cn: '绿(Green)'},
+                {value: '5', cn: '蓝(Blue)'},
+            ];
+            this._onChangeMap.set(ckey, val => onChange(parseInt(val, 10)));
+            const strValue = value == null ? '-1' : String(value);
+            return this.renderSearchableSelect(teamOpts, strValue, contextKey || field.name, ckey);
         }
 
         if (field.type === 'int' || field.type === 'float') {
