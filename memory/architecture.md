@@ -12,7 +12,36 @@
 
 ## Entry Points
 - Mindustry 编辑器入口: `packages/turbowarp/src/playground/mindustry.jsx`
+- 编辑器根组件(状态持有者): `packages/turbowarp/src/playground/render-interface.jsx`
 - Webpack dev server: `npm start` (默认端口 8601)
+
+## Key Source Files
+- 编辑器组件: `src/components/mindustry-json-editor/mindustry-json-editor.jsx`
+- Schema 解析: `src/lib/mindustry/resolve-schema.js`
+- 原版内容数据: `src/lib/mindustry/vanilla-content.js`
+- 复合类型: `src/lib/mindustry/compound-types.js`
+- 内容类型工具: `src/lib/mindustry/content-type-utils.js`
+- Mod 导出: `src/lib/mindustry/mod-export.js`
+- GUI 组件(菜单栏): `src/components/gui/gui.jsx`
+- 菜单栏: `src/components/menu-bar/menu-bar.jsx`
+- 资产卡片(新建菜单): `src/components/mindustry-asset-cards/mindustry-asset-cards.jsx`
+
+## Schema 目录
+- 完整 Schema: `src/lib/mindustry/schemas/` (~220 JSON)
+- 精选 Schema: `src/lib/mindustry/schemas/curated/` (~85 JSON)
+- 精选子类型($ref): `src/lib/mindustry/schemas/curated/types/`
+- 中文翻译: `src/lib/mindustry/schemas/zh_CN/` (~120 JSON)
+
+## Mindustry 源码参考
+- 核心源码: `~/MindustryWorkspace/Mindustry/core/src/mindustry/`
+- 方块基类: `world/Block.java`
+- 方块实现: `world/blocks/` (含 distribution/production/power/defense/turrets 等子目录)
+- 单位类型: `type/UnitType.java`
+- 物品: `world/Item.java`
+- 液体: `type/Liquid.java`
+- 中文翻译包: `~/MindustryWorkspace/Mindustry/core/assets/bundles/bundle_zh_CN.properties`
+- 内容注册: `content/Blocks.java`, `content/Items.java`, `content/UnitTypes.java` 等
+- 颜色算法(RNG): `Arc/arc-core/src/arc/math/Rand.java`, `Mindustry/core/src/mindustry/game/Team.java`
 
 ## Key Environment Vars
 - `PORT` - dev server port
