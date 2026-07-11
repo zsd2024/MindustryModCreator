@@ -727,16 +727,11 @@ class MindustryJsonEditor extends React.Component {
         }
 
         if (field.name === 'forceTeam') {
-            const teamOpts = [
-                {value: '-1', cn: '-1 - 默认'},
-                {value: '0', cn: '0 - 灰(Derelict)'},
-                {value: '1', cn: '1 - 黄(Sharded)'},
-                {value: '2', cn: '2 - 红(Crux)'},
-                {value: '3', cn: '3 - 紫(Malis)'},
-                {value: '4', cn: '4 - 绿(Green)'},
-                {value: '5', cn: '5 - 蓝(Blue)'},
-                {value: '6', cn: '6 - 新塑(Neoplastic)'},
-            ];
+            const teamOpts = [{value: '-1', cn: '-1 - 默认'}];
+            for (let i = 0; i < 256; i++) {
+                const names = ['灰(Derelict)', '黄(Sharded)', '红(Crux)', '紫(Malis)', '绿(Green)', '蓝(Blue)'];
+                teamOpts.push({value: String(i), cn: i < 6 ? `${i} - ${names[i]}` : String(i)});
+            }
             this._onChangeMap.set(ckey, val => onChange(parseInt(val, 10)));
             const strValue = value == null ? '-1' : String(value);
             return this.renderSearchableSelect(teamOpts, strValue, contextKey || field.name, ckey);
