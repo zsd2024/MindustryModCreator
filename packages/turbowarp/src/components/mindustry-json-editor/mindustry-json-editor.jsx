@@ -503,7 +503,10 @@ class MindustryJsonEditor extends React.Component {
                     onClick={this.handleEnumToggle}
                 >
                     <span className={styles.selectDisplayLabel}>
-                        {selected ? selected.cn : (value || S.defaultDisplay)}
+                        {selected ? <>
+                            {selected.color && <span style={{display: 'inline-block', width: 10, height: 10, borderRadius: '50%', background: selected.color, marginRight: 4, verticalAlign: 'middle'}} />}
+                            {selected.cn}
+                        </> : (value || S.defaultDisplay)}
                     </span>
                     <span className={styles.selectArrow}>{open ? '▲' : '▼'}</span>
                 </div>
@@ -554,6 +557,7 @@ class MindustryJsonEditor extends React.Component {
                                         data-optvalue={opt.value}
                                         onMouseDown={this.handleEnumSelect}
                                     >
+                                        {opt.color && <span style={{display: 'inline-block', width: 10, height: 10, borderRadius: '50%', background: opt.color, marginRight: 6, verticalAlign: 'middle', flexShrink: 0}} />}
                                         <span className={styles.selectOptCn}>{opt.cn}</span>
                                         <span className={styles.selectOptId}>{opt.value}</span>
                                     </div>
@@ -727,10 +731,13 @@ class MindustryJsonEditor extends React.Component {
         }
 
         if (field.name === 'forceTeam') {
-            const teamOpts = [{value: '-1', cn: '-1 - 默认'}];
+            const teamColors = ['#4d4e58', '#ffd37f', '#f25555', '#a27ce5', '#54d67d', '#6c87fd', '#e05438'];
+            const teamOpts = [{value: '-1', cn: '-1 - 默认', color: '#888888'}];
             for (let i = 0; i < 256; i++) {
-                const names = ['灰(Derelict)', '黄(Sharded)', '红(Crux)', '紫(Malis)', '绿(Green)', '蓝(Blue)'];
-                teamOpts.push({value: String(i), cn: i < 6 ? `${i} - ${names[i]}` : String(i)});
+                const names = ['灰(Derelict)', '黄(Sharded)', '红(Crux)', '紫(Malis)', '绿(Green)', '蓝(Blue)', 'Neoplastic'];
+                const color = i < teamColors.length ? teamColors[i] : '#aaaaaa';
+                const cn = i === 6 ? `${i} - Neoplastic` : (i < 6 ? `${i} - ${names[i]}` : String(i));
+                teamOpts.push({value: String(i), cn, color});
             }
             this._onChangeMap.set(ckey, val => onChange(parseInt(val, 10)));
             const strValue = value == null ? '-1' : String(value);
