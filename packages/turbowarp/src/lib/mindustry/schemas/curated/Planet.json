@@ -1,0 +1,131 @@
+{
+    "localizedName": "Planet",
+    "parentType": "UnlockableContent",
+    "fields": [
+        {
+            "name": "radius",
+            "type": "float",
+            "defaultValue": "1.0"
+        },
+        {
+            "name": "sectorSize",
+            "type": "int",
+            "defaultValue": "0"
+        },
+        {
+            "name": "parent",
+            "type": "Planet",
+            "defaultValue": "null"
+        },
+        {
+            "name": "orbitRadius",
+            "type": "float",
+            "defaultValue": "auto"
+        },
+        {
+            "name": "orbitTime",
+            "type": "float",
+            "defaultValue": "auto"
+        },
+        {
+            "name": "rotateTime",
+            "type": "float",
+            "defaultValue": "1440.0"
+        },
+        {
+            "name": "accessible",
+            "type": "boolean",
+            "defaultValue": "true"
+        },
+        {
+            "name": "startSector",
+            "type": "int",
+            "defaultValue": "0"
+        },
+        {
+            "name": "defaultCore",
+            "type": "Block",
+            "defaultValue": "coreShard"
+        },
+        {
+            "name": "defaultEnv",
+            "type": "int",
+            "defaultValue": "terrestrial | spores | groundOil | groundWater | oxygen"
+        },
+        {
+            "name": "updateLighting",
+            "type": "boolean",
+            "defaultValue": "true"
+        },
+        {
+            "name": "hasAtmosphere",
+            "type": "boolean",
+            "defaultValue": "true"
+        },
+        {
+            "name": "atmosphereColor",
+            "type": "Color",
+            "defaultValue": "4db8ffff"
+        },
+        {
+            "name": "iconColor",
+            "type": "Color",
+            "defaultValue": "ffffffff"
+        },
+        {
+            "name": "icon",
+            "type": "string",
+            "defaultValue": "planet"
+        },
+        {
+            "name": "mesh",
+            "type": "GenericMesh",
+            "defaultValue": "null"
+        },
+        {
+            "name": "cloudMesh",
+            "type": "GenericMesh",
+            "defaultValue": "null"
+        },
+        {
+            "name": "allowLaunchSchematics",
+            "type": "boolean",
+            "defaultValue": "false"
+        },
+        {
+            "name": "allowLaunchLoadout",
+            "type": "boolean",
+            "defaultValue": "false"
+        },
+        {
+            "name": "allowSectorInvasion",
+            "type": "boolean",
+            "defaultValue": "false"
+        },
+        {
+            "name": "allowWaves",
+            "type": "boolean",
+            "defaultValue": "false"
+        },
+        {
+            "name": "prebuildBase",
+            "type": "boolean",
+            "defaultValue": "true"
+        },
+        {
+            "name": "ruleSetter",
+            "type": "Rules",
+            "defaultValue": "r -> {}"
+        },
+        {
+            "name": "launchCapacityMultiplier",
+            "type": "float",
+            "defaultValue": "0.25"
+        },
+        {
+            "name": "unlockedOnLand",
+            "type": "string",
+            "defaultValue": "[]"
+        }
+    ]
+}
