@@ -654,7 +654,7 @@
         {
             "name": "stepSoundPitchRange",
             "localizedName": "脚步音调范围",
-            "notes": "脚步音效的基础音调。\n\n**Notes**: 脚步音调范围。"
+            "notes": "脚步音效的音调随机范围。\n\n**Notes**: 脚步音调随机变化范围。"
         },
         {
             "name": "tankMoveSound",

@@ -1,10 +1,10 @@
 {
-    "localizedName": "分配器",
+    "localizedName": "路由器",
     "fields": [
         {
             "name": "speed",
             "localizedName": "传输速度",
-            "notes": "**Notes**: 分配器传输物品的速度。"
+            "notes": "**Notes**: 路由器传输物品的速度。"
         }
     ]
 }

@@ -1,15 +1,15 @@
 {
-    "localizedName": "交叉路口",
+    "localizedName": "交叉器",
     "fields": [
         {
             "name": "speed",
             "localizedName": "传输速度",
-            "notes": "**Notes**: 交叉路口传输物品的速度。"
+            "notes": "**Notes**: 交叉器传输物品的速度。"
         },
         {
             "name": "capacity",
             "localizedName": "物品缓存容量",
-            "notes": "**Notes**: 交叉路口的物品缓存容量。"
+            "notes": "**Notes**: 交叉器的物品缓存容量。"
         },
         {
             "name": "displayedSpeed",
