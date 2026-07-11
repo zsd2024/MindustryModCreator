@@ -16,7 +16,7 @@
         },
         {
             "name": "shootSound",
-            "type": "string"
+            "type": "Sound"
         },
         {
             "name": "range",
@@ -259,7 +259,7 @@
         },
         {
             "name": "chargeSound",
-            "type": "string"
+            "type": "Sound"
         },
         {
             "name": "minRange",

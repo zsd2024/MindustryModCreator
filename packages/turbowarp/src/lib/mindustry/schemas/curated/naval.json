@@ -100,7 +100,7 @@
         },
         {
             "name": "deathSound",
-            "type": "string"
+            "type": "Sound"
         },
         {
             "name": "deathExplosionEffect",

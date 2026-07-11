@@ -18,7 +18,7 @@
                     },
                     {
                         "name": "item",
-                        "type": "string"
+                        "type": "Item"
                     }
                 ]
             }
@@ -74,11 +74,11 @@
         },
         {
             "name": "generateEffect",
-            "type": "string"
+            "type": "Effect"
         },
         {
             "name": "ambientSound",
-            "type": "string"
+            "type": "Sound"
         },
         {
             "name": "ambientSoundVolume",

@@ -117,7 +117,7 @@
         },
         {
             "name": "ambientSound",
-            "type": "string"
+            "type": "Sound"
         },
         {
             "name": "placeablePlayer",

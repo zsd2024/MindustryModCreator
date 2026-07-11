@@ -106,7 +106,7 @@
         },
         {
             "name": "shootSound",
-            "type": "string"
+            "type": "Sound"
         },
         {
             "name": "shoot",
@@ -152,11 +152,11 @@
         },
         {
             "name": "destroySound",
-            "type": "string"
+            "type": "Sound"
         },
         {
             "name": "destroyEffect",
-            "type": "string"
+            "type": "Effect"
         },
         {
             "name": "squareSprite",
@@ -164,7 +164,7 @@
         },
         {
             "name": "loopSound",
-            "type": "string"
+            "type": "Sound"
         },
         {
             "name": "breakEffect",

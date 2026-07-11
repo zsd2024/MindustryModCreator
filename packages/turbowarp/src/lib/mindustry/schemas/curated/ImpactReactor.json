@@ -48,7 +48,7 @@
                     },
                     {
                         "name": "item",
-                        "type": "string"
+                        "type": "Item"
                     }
                 ]
             }
@@ -84,7 +84,7 @@
         },
         {
             "name": "ambientSound",
-            "type": "string"
+            "type": "Sound"
         },
         {
             "name": "ambientSoundVolume",
@@ -118,7 +118,7 @@
         },
         {
             "name": "explodeSound",
-            "type": "string"
+            "type": "Sound"
         },
         {
             "name": "customShadow",
@@ -154,7 +154,7 @@
         },
         {
             "name": "explodeEffect",
-            "type": "string"
+            "type": "Effect"
         },
         {
             "name": "rebuildable",

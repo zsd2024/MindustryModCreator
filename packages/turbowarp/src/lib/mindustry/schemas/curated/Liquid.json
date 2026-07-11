@@ -50,7 +50,7 @@
         },
         {
             "name": "effect",
-            "type": "string"
+            "type": "Effect"
         },
         {
             "name": "coolant",

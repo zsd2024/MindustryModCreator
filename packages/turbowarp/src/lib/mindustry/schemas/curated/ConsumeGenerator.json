@@ -22,7 +22,7 @@
                     },
                     {
                         "name": "item",
-                        "type": "string"
+                        "type": "Item"
                     }
                 ]
             }
@@ -186,7 +186,7 @@
         },
         {
             "name": "destroySound",
-            "type": "string"
+            "type": "Sound"
         },
         {
             "name": "explodeOnFull",
@@ -194,7 +194,7 @@
         },
         {
             "name": "ambientSound",
-            "type": "string"
+            "type": "Sound"
         },
         {
             "name": "ambientSoundVolume",

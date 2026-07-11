@@ -30,7 +30,7 @@
                     },
                     {
                         "name": "item",
-                        "type": "string"
+                        "type": "Item"
                     }
                 ]
             }

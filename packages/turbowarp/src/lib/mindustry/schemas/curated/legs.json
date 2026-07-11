@@ -136,7 +136,7 @@
         },
         {
             "name": "stepSound",
-            "type": "string"
+            "type": "Sound"
         },
         {
             "name": "stepSoundVolume",

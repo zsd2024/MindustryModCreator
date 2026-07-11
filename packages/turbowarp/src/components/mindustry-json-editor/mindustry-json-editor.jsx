@@ -48,26 +48,9 @@ const S = {
 
 const REFERENCE_TYPES = new Set([
     'Item', 'Liquid', 'Block', 'UnitType', 'BulletType',
-    'StatusEffect', 'Weather', 'Planet', 'SectorPreset',
+    'StatusEffect', 'Effect', 'Weather', 'Planet', 'SectorPreset',
     'Sound', 'TextureRegion', 'Research'
 ]);
-
-const NAME_TO_TYPE = {
-    item: 'Item',
-    items: 'Item',
-    liquid: 'Liquid',
-    liquids: 'Liquid',
-    block: 'Block',
-    bullet: 'BulletType',
-    effect: 'StatusEffect',
-    effects: 'StatusEffect',
-    sound: 'Sound',
-    sounds: 'Sound',
-    unit: 'UnitType',
-    units: 'UnitType',
-    weather: 'Weather',
-    planet: 'Planet',
-};
 
 const ENUM_VALUES = {
     buildVisibility: [
@@ -743,12 +726,6 @@ class MindustryJsonEditor extends React.Component {
             return this.renderSearchableSelect(enumOptions, value, contextKey || field.name, ckey);
         }
 
-        const nameType = NAME_TO_TYPE[field.name];
-        if (nameType) {
-            const allContent = this.getAllContentOptions();
-            return this.renderContentSelect(allContent, value, nameType, field.name, contextKey || field.name, ckey);
-        }
-
         if (field.name === 'forceTeam') {
             const teamOpts = [
                 {value: '-1', cn: '默认'},
@@ -758,6 +735,7 @@ class MindustryJsonEditor extends React.Component {
                 {value: '3', cn: '紫(Malis)'},
                 {value: '4', cn: '绿(Green)'},
                 {value: '5', cn: '蓝(Blue)'},
+                {value: '6', cn: '新塑(Neoplastic)'},
             ];
             this._onChangeMap.set(ckey, val => onChange(parseInt(val, 10)));
             const strValue = value == null ? '-1' : String(value);
@@ -956,7 +934,7 @@ class MindustryJsonEditor extends React.Component {
         const field = normalizeType(rawField);
         const {data} = this.state;
         const value = data[field.name] === void 0 ? this.parseDefault(field) : data[field.name];
-        const label = getFieldLabel(field.sourceType, field.name);
+        const label = getFieldLabel(field.sourceType, field.name) || field.name;
         const hint = getFieldDoc(field.sourceType, field.name) || field.notes || '';
         const ckey = field.name;
 

@@ -4,11 +4,11 @@
     "fields": [
         {
             "name": "liquidDrop",
-            "type": "string"
+            "type": "Liquid"
         },
         {
             "name": "status",
-            "type": "string"
+            "type": "StatusEffect"
         },
         {
             "name": "cacheLayer",

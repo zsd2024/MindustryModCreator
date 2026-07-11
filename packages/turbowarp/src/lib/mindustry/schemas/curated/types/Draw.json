@@ -1035,7 +1035,7 @@
                 },
                 {
                     "name": "liquid",
-                    "type": "string",
+                    "type": "Liquid",
                     "localizedName": "Liquid",
                     "defaultValue": "null"
                 },
@@ -1516,7 +1516,7 @@
             "fields": [
                 {
                     "name": "liquid",
-                    "type": "string",
+                    "type": "Liquid",
                     "localizedName": "Liquid",
                     "defaultValue": "null"
                 }
@@ -1784,7 +1784,7 @@
                 },
                 {
                     "name": "liquid",
-                    "type": "string",
+                    "type": "Liquid",
                     "localizedName": "Liquid",
                     "defaultValue": "null"
                 },

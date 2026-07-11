@@ -149,7 +149,7 @@
         },
         {
             "name": "deathSound",
-            "type": "string"
+            "type": "Sound"
         },
         {
             "name": "deathExplosionEffect",
@@ -191,7 +191,7 @@
         },
         {
             "name": "loopSound",
-            "type": "string"
+            "type": "Sound"
         },
         {
             "name": "research",
@@ -351,7 +351,7 @@
         },
         {
             "name": "fallEngineEffect",
-            "type": "string"
+            "type": "Effect"
         },
         {
             "name": "fallEffect",
@@ -381,7 +381,7 @@
         },
         {
             "name": "moveSound",
-            "type": "string"
+            "type": "Sound"
         },
         {
             "name": "playerControllable",

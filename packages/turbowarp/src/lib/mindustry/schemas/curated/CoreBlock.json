@@ -12,7 +12,7 @@
         },
         {
             "name": "unitType",
-            "type": "string"
+            "type": "UnitType"
         },
         {
             "name": "unitCapModifier",
@@ -38,7 +38,7 @@
                     },
                     {
                         "name": "item",
-                        "type": "string"
+                        "type": "Item"
                     }
                 ]
             }

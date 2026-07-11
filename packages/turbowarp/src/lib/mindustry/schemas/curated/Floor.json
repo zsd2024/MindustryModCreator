@@ -42,7 +42,7 @@
         },
         {
             "name": "liquidDrop",
-            "type": "string"
+            "type": "Liquid"
         },
         {
             "name": "speedMultiplier",
@@ -74,7 +74,7 @@
         },
         {
             "name": "status",
-            "type": "string"
+            "type": "StatusEffect"
         },
         {
             "name": "shallow",
@@ -94,7 +94,7 @@
         },
         {
             "name": "itemDrop",
-            "type": "string"
+            "type": "Item"
         },
         {
             "name": "description",
@@ -114,7 +114,7 @@
         },
         {
             "name": "wall",
-            "type": "string"
+            "type": "Block"
         },
         {
             "name": "playerUnmineable",

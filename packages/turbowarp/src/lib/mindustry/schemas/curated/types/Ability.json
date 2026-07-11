@@ -1,280 +1,1247 @@
 {
     "type": "object",
-    "localizedName": "能力",
+    "localizedName": "\u80fd\u529b",
     "fields": [
-        { "name": "type", "type": "string", "localizedName": "类型", "notes": "能力类型。可选: ArmorPlateAbility, EnergyFieldAbility, ForceFieldAbility, LiquidExplodeAbility, LiquidRegenAbility, MoveEffectAbility, MoveLightningAbility, RegenAbility, RepairFieldAbility, ShieldArcAbility, ShieldRegenFieldAbility, SpawnDeathAbility, StatusFieldAbility, SuppressionFieldAbility, UnitSpawnAbility" },
-        { "name": "display", "type": "boolean", "localizedName": "显示状态", "defaultValue": "true", "notes": "如果为false，该能力不会显示在单位状态中。" },
-        { "name": "data", "type": "number", "localizedName": "同步数据变量", "defaultValue": "0.0", "notes": "唯一一个同步的数据变量，用于在客户端之间传递能力的运行时状态。" }
+        {
+            "name": "type",
+            "type": "string",
+            "localizedName": "\u7c7b\u578b",
+            "notes": "\u80fd\u529b\u7c7b\u578b\u3002\u53ef\u9009: ArmorPlateAbility, EnergyFieldAbility, ForceFieldAbility, LiquidExplodeAbility, LiquidRegenAbility, MoveEffectAbility, MoveLightningAbility, RegenAbility, RepairFieldAbility, ShieldArcAbility, ShieldRegenFieldAbility, SpawnDeathAbility, StatusFieldAbility, SuppressionFieldAbility, UnitSpawnAbility"
+        },
+        {
+            "name": "display",
+            "type": "boolean",
+            "localizedName": "\u663e\u793a\u72b6\u6001",
+            "defaultValue": "true",
+            "notes": "\u5982\u679c\u4e3afalse\uff0c\u8be5\u80fd\u529b\u4e0d\u4f1a\u663e\u793a\u5728\u5355\u4f4d\u72b6\u6001\u4e2d\u3002"
+        },
+        {
+            "name": "data",
+            "type": "number",
+            "localizedName": "\u540c\u6b65\u6570\u636e\u53d8\u91cf",
+            "defaultValue": "0.0",
+            "notes": "\u552f\u4e00\u4e00\u4e2a\u540c\u6b65\u7684\u6570\u636e\u53d8\u91cf\uff0c\u7528\u4e8e\u5728\u5ba2\u6237\u7aef\u4e4b\u95f4\u4f20\u9012\u80fd\u529b\u7684\u8fd0\u884c\u65f6\u72b6\u6001\u3002"
+        }
     ],
     "abilityTypes": {
         "ArmorPlateAbility": {
-            "localizedName": "装甲板能力",
+            "localizedName": "\u88c5\u7532\u677f\u80fd\u529b",
             "parentType": "Ability",
             "fields": [
-                { "name": "plateRegion", "type": "string", "localizedName": "装甲板纹理", "defaultValue": "null" },
-                { "name": "shineRegion", "type": "string", "localizedName": "光泽纹理", "defaultValue": "null" },
-                { "name": "plateSuffix", "type": "string", "localizedName": "装甲板纹理后缀", "defaultValue": "\"-armor\"" },
-                { "name": "shineSuffix", "type": "string", "localizedName": "光泽纹理后缀", "defaultValue": "\"-shine\"" },
-                { "name": "color", "type": "string", "localizedName": "光泽颜色", "defaultValue": "null", "notes": "光泽的颜色。若为 null，则使用队伍颜色。" },
-                { "name": "shineSpeed", "type": "number", "localizedName": "光泽动画速度", "defaultValue": "1.0" },
-                { "name": "z", "type": "number", "localizedName": "绘制层级", "defaultValue": "-1.0" },
-                { "name": "drawPlate", "type": "boolean", "localizedName": "绘制装甲板", "defaultValue": "true", "notes": "是否绘制装甲板区域。" },
-                { "name": "drawShine", "type": "boolean", "localizedName": "绘制光泽", "defaultValue": "true", "notes": "是否在装甲板区域上方绘制光泽。" },
-                { "name": "healthMultiplier", "type": "number", "localizedName": "生命值倍率加成", "defaultValue": "0.2" }
+                {
+                    "name": "plateRegion",
+                    "type": "string",
+                    "localizedName": "\u88c5\u7532\u677f\u7eb9\u7406",
+                    "defaultValue": "null"
+                },
+                {
+                    "name": "shineRegion",
+                    "type": "string",
+                    "localizedName": "\u5149\u6cfd\u7eb9\u7406",
+                    "defaultValue": "null"
+                },
+                {
+                    "name": "plateSuffix",
+                    "type": "string",
+                    "localizedName": "\u88c5\u7532\u677f\u7eb9\u7406\u540e\u7f00",
+                    "defaultValue": "\"-armor\""
+                },
+                {
+                    "name": "shineSuffix",
+                    "type": "string",
+                    "localizedName": "\u5149\u6cfd\u7eb9\u7406\u540e\u7f00",
+                    "defaultValue": "\"-shine\""
+                },
+                {
+                    "name": "color",
+                    "type": "string",
+                    "localizedName": "\u5149\u6cfd\u989c\u8272",
+                    "defaultValue": "null",
+                    "notes": "\u5149\u6cfd\u7684\u989c\u8272\u3002\u82e5\u4e3a null\uff0c\u5219\u4f7f\u7528\u961f\u4f0d\u989c\u8272\u3002"
+                },
+                {
+                    "name": "shineSpeed",
+                    "type": "number",
+                    "localizedName": "\u5149\u6cfd\u52a8\u753b\u901f\u5ea6",
+                    "defaultValue": "1.0"
+                },
+                {
+                    "name": "z",
+                    "type": "number",
+                    "localizedName": "\u7ed8\u5236\u5c42\u7ea7",
+                    "defaultValue": "-1.0"
+                },
+                {
+                    "name": "drawPlate",
+                    "type": "boolean",
+                    "localizedName": "\u7ed8\u5236\u88c5\u7532\u677f",
+                    "defaultValue": "true",
+                    "notes": "\u662f\u5426\u7ed8\u5236\u88c5\u7532\u677f\u533a\u57df\u3002"
+                },
+                {
+                    "name": "drawShine",
+                    "type": "boolean",
+                    "localizedName": "\u7ed8\u5236\u5149\u6cfd",
+                    "defaultValue": "true",
+                    "notes": "\u662f\u5426\u5728\u88c5\u7532\u677f\u533a\u57df\u4e0a\u65b9\u7ed8\u5236\u5149\u6cfd\u3002"
+                },
+                {
+                    "name": "healthMultiplier",
+                    "type": "number",
+                    "localizedName": "\u751f\u547d\u503c\u500d\u7387\u52a0\u6210",
+                    "defaultValue": "0.2"
+                }
             ]
         },
         "EnergyFieldAbility": {
-            "localizedName": "能量场能力",
+            "localizedName": "\u80fd\u91cf\u573a\u80fd\u529b",
             "parentType": "Ability",
             "fields": [
-                { "name": "damage", "type": "number", "localizedName": "伤害值", "defaultValue": "1.0" },
-                { "name": "reload", "type": "number", "localizedName": "装填时间", "defaultValue": "100.0" },
-                { "name": "range", "type": "number", "localizedName": "范围", "defaultValue": "60.0" },
-                { "name": "healEffect", "type": "string", "localizedName": "治疗效果", "defaultValue": "heal" },
-                { "name": "hitEffect", "type": "string", "localizedName": "命中效果", "defaultValue": "hitLaserBlast" },
-                { "name": "damageEffect", "type": "string", "localizedName": "伤害效果", "defaultValue": "chainLightning" },
-                { "name": "status", "type": "string", "localizedName": "状态效果", "defaultValue": "electrified" },
-                { "name": "shootSound", "type": "string", "localizedName": "射击音效", "defaultValue": "shootEnergyField" },
-                { "name": "statusDuration", "type": "number", "localizedName": "状态效果持续时间", "defaultValue": "360.0" },
-                { "name": "x", "type": "number", "localizedName": "效果偏移X", "defaultValue": "0.0" },
-                { "name": "y", "type": "number", "localizedName": "效果偏移Y", "defaultValue": "0.0" },
-                { "name": "targetGround", "type": "boolean", "localizedName": "是否目标地面单位", "defaultValue": "true" },
-                { "name": "targetAir", "type": "boolean", "localizedName": "是否目标空中单位", "defaultValue": "true" },
-                { "name": "hitBuildings", "type": "boolean", "localizedName": "是否命中建筑", "defaultValue": "true" },
-                { "name": "hitUnits", "type": "boolean", "localizedName": "是否命中单位", "defaultValue": "true" },
-                { "name": "maxTargets", "type": "number", "localizedName": "最大目标数", "defaultValue": "25" },
-                { "name": "healPercent", "type": "number", "localizedName": "治疗百分比", "defaultValue": "3.0" },
-                { "name": "sameTypeHealMult", "type": "number", "localizedName": "同类型治疗倍率", "defaultValue": "1.0", "notes": "同类型单位的治疗量乘以该倍数。" },
-                { "name": "displayHeal", "type": "boolean", "localizedName": "是否显示治疗描述", "defaultValue": "true" },
-                { "name": "layer", "type": "number", "localizedName": "绘制层级", "defaultValue": "99.999" },
-                { "name": "blinkScl", "type": "number", "localizedName": "闪烁缩放", "defaultValue": "20.0" },
-                { "name": "blinkSize", "type": "number", "localizedName": "闪烁大小", "defaultValue": "0.1" },
-                { "name": "effectRadius", "type": "number", "localizedName": "效果半径", "defaultValue": "5.0" },
-                { "name": "sectorRad", "type": "number", "localizedName": "扇形弧度", "defaultValue": "0.14" },
-                { "name": "rotateSpeed", "type": "number", "localizedName": "旋转速度", "defaultValue": "0.5" },
-                { "name": "sectors", "type": "number", "localizedName": "扇形数量", "defaultValue": "5" },
-                { "name": "color", "type": "string", "localizedName": "颜色", "defaultValue": "98ffa9ff" },
-                { "name": "useAmmo", "type": "boolean", "localizedName": "是否使用弹药", "defaultValue": "true" }
+                {
+                    "name": "damage",
+                    "type": "number",
+                    "localizedName": "\u4f24\u5bb3\u503c",
+                    "defaultValue": "1.0"
+                },
+                {
+                    "name": "reload",
+                    "type": "number",
+                    "localizedName": "\u88c5\u586b\u65f6\u95f4",
+                    "defaultValue": "100.0"
+                },
+                {
+                    "name": "range",
+                    "type": "number",
+                    "localizedName": "\u8303\u56f4",
+                    "defaultValue": "60.0"
+                },
+                {
+                    "name": "healEffect",
+                    "type": "Effect",
+                    "localizedName": "\u6cbb\u7597\u6548\u679c",
+                    "defaultValue": "heal"
+                },
+                {
+                    "name": "hitEffect",
+                    "type": "Effect",
+                    "localizedName": "\u547d\u4e2d\u6548\u679c",
+                    "defaultValue": "hitLaserBlast"
+                },
+                {
+                    "name": "damageEffect",
+                    "type": "Effect",
+                    "localizedName": "\u4f24\u5bb3\u6548\u679c",
+                    "defaultValue": "chainLightning"
+                },
+                {
+                    "name": "status",
+                    "type": "StatusEffect",
+                    "localizedName": "\u72b6\u6001\u6548\u679c",
+                    "defaultValue": "electrified"
+                },
+                {
+                    "name": "shootSound",
+                    "type": "Sound",
+                    "localizedName": "\u5c04\u51fb\u97f3\u6548",
+                    "defaultValue": "shootEnergyField"
+                },
+                {
+                    "name": "statusDuration",
+                    "type": "number",
+                    "localizedName": "\u72b6\u6001\u6548\u679c\u6301\u7eed\u65f6\u95f4",
+                    "defaultValue": "360.0"
+                },
+                {
+                    "name": "x",
+                    "type": "number",
+                    "localizedName": "\u6548\u679c\u504f\u79fbX",
+                    "defaultValue": "0.0"
+                },
+                {
+                    "name": "y",
+                    "type": "number",
+                    "localizedName": "\u6548\u679c\u504f\u79fbY",
+                    "defaultValue": "0.0"
+                },
+                {
+                    "name": "targetGround",
+                    "type": "boolean",
+                    "localizedName": "\u662f\u5426\u76ee\u6807\u5730\u9762\u5355\u4f4d",
+                    "defaultValue": "true"
+                },
+                {
+                    "name": "targetAir",
+                    "type": "boolean",
+                    "localizedName": "\u662f\u5426\u76ee\u6807\u7a7a\u4e2d\u5355\u4f4d",
+                    "defaultValue": "true"
+                },
+                {
+                    "name": "hitBuildings",
+                    "type": "boolean",
+                    "localizedName": "\u662f\u5426\u547d\u4e2d\u5efa\u7b51",
+                    "defaultValue": "true"
+                },
+                {
+                    "name": "hitUnits",
+                    "type": "boolean",
+                    "localizedName": "\u662f\u5426\u547d\u4e2d\u5355\u4f4d",
+                    "defaultValue": "true"
+                },
+                {
+                    "name": "maxTargets",
+                    "type": "number",
+                    "localizedName": "\u6700\u5927\u76ee\u6807\u6570",
+                    "defaultValue": "25"
+                },
+                {
+                    "name": "healPercent",
+                    "type": "number",
+                    "localizedName": "\u6cbb\u7597\u767e\u5206\u6bd4",
+                    "defaultValue": "3.0"
+                },
+                {
+                    "name": "sameTypeHealMult",
+                    "type": "number",
+                    "localizedName": "\u540c\u7c7b\u578b\u6cbb\u7597\u500d\u7387",
+                    "defaultValue": "1.0",
+                    "notes": "\u540c\u7c7b\u578b\u5355\u4f4d\u7684\u6cbb\u7597\u91cf\u4e58\u4ee5\u8be5\u500d\u6570\u3002"
+                },
+                {
+                    "name": "displayHeal",
+                    "type": "boolean",
+                    "localizedName": "\u662f\u5426\u663e\u793a\u6cbb\u7597\u63cf\u8ff0",
+                    "defaultValue": "true"
+                },
+                {
+                    "name": "layer",
+                    "type": "number",
+                    "localizedName": "\u7ed8\u5236\u5c42\u7ea7",
+                    "defaultValue": "99.999"
+                },
+                {
+                    "name": "blinkScl",
+                    "type": "number",
+                    "localizedName": "\u95ea\u70c1\u7f29\u653e",
+                    "defaultValue": "20.0"
+                },
+                {
+                    "name": "blinkSize",
+                    "type": "number",
+                    "localizedName": "\u95ea\u70c1\u5927\u5c0f",
+                    "defaultValue": "0.1"
+                },
+                {
+                    "name": "effectRadius",
+                    "type": "number",
+                    "localizedName": "\u6548\u679c\u534a\u5f84",
+                    "defaultValue": "5.0"
+                },
+                {
+                    "name": "sectorRad",
+                    "type": "number",
+                    "localizedName": "\u6247\u5f62\u5f27\u5ea6",
+                    "defaultValue": "0.14"
+                },
+                {
+                    "name": "rotateSpeed",
+                    "type": "number",
+                    "localizedName": "\u65cb\u8f6c\u901f\u5ea6",
+                    "defaultValue": "0.5"
+                },
+                {
+                    "name": "sectors",
+                    "type": "number",
+                    "localizedName": "\u6247\u5f62\u6570\u91cf",
+                    "defaultValue": "5"
+                },
+                {
+                    "name": "color",
+                    "type": "string",
+                    "localizedName": "\u989c\u8272",
+                    "defaultValue": "98ffa9ff"
+                },
+                {
+                    "name": "useAmmo",
+                    "type": "boolean",
+                    "localizedName": "\u662f\u5426\u4f7f\u7528\u5f39\u836f",
+                    "defaultValue": "true"
+                }
             ]
         },
         "ForceFieldAbility": {
-            "localizedName": "力场护盾能力",
+            "localizedName": "\u529b\u573a\u62a4\u76fe\u80fd\u529b",
             "parentType": "Ability",
             "fields": [
-                { "name": "radius", "type": "number", "localizedName": "护盾半径", "defaultValue": "60.0", "notes": "护盾半径。" },
-                { "name": "regen", "type": "number", "localizedName": "护盾恢复速度", "defaultValue": "0.1", "notes": "护盾恢复速度（伤害/tick）。" },
-                { "name": "max", "type": "number", "localizedName": "最大护盾值", "defaultValue": "200.0", "notes": "最大护盾值。" },
-                { "name": "cooldown", "type": "number", "localizedName": "护盾冷却时间", "defaultValue": "300.0", "notes": "护盾破碎后的冷却时间（tick）。" },
-                { "name": "sides", "type": "number", "localizedName": "护盾多边形边数", "defaultValue": "6", "notes": "护盾多边形边数。" },
-                { "name": "rotation", "type": "number", "localizedName": "护盾旋转角度", "defaultValue": "0.0", "notes": "护盾的旋转。" },
-                { "name": "breakSound", "type": "string", "localizedName": "护盾破碎音效", "defaultValue": "shieldBreakSmall" },
-                { "name": "hitSound", "type": "string", "localizedName": "护盾受击音效", "defaultValue": "shieldHit" },
-                { "name": "hitSoundVolume", "type": "number", "localizedName": "受击音效音量", "defaultValue": "0.12" }
+                {
+                    "name": "radius",
+                    "type": "number",
+                    "localizedName": "\u62a4\u76fe\u534a\u5f84",
+                    "defaultValue": "60.0",
+                    "notes": "\u62a4\u76fe\u534a\u5f84\u3002"
+                },
+                {
+                    "name": "regen",
+                    "type": "number",
+                    "localizedName": "\u62a4\u76fe\u6062\u590d\u901f\u5ea6",
+                    "defaultValue": "0.1",
+                    "notes": "\u62a4\u76fe\u6062\u590d\u901f\u5ea6\uff08\u4f24\u5bb3/tick\uff09\u3002"
+                },
+                {
+                    "name": "max",
+                    "type": "number",
+                    "localizedName": "\u6700\u5927\u62a4\u76fe\u503c",
+                    "defaultValue": "200.0",
+                    "notes": "\u6700\u5927\u62a4\u76fe\u503c\u3002"
+                },
+                {
+                    "name": "cooldown",
+                    "type": "number",
+                    "localizedName": "\u62a4\u76fe\u51b7\u5374\u65f6\u95f4",
+                    "defaultValue": "300.0",
+                    "notes": "\u62a4\u76fe\u7834\u788e\u540e\u7684\u51b7\u5374\u65f6\u95f4\uff08tick\uff09\u3002"
+                },
+                {
+                    "name": "sides",
+                    "type": "number",
+                    "localizedName": "\u62a4\u76fe\u591a\u8fb9\u5f62\u8fb9\u6570",
+                    "defaultValue": "6",
+                    "notes": "\u62a4\u76fe\u591a\u8fb9\u5f62\u8fb9\u6570\u3002"
+                },
+                {
+                    "name": "rotation",
+                    "type": "number",
+                    "localizedName": "\u62a4\u76fe\u65cb\u8f6c\u89d2\u5ea6",
+                    "defaultValue": "0.0",
+                    "notes": "\u62a4\u76fe\u7684\u65cb\u8f6c\u3002"
+                },
+                {
+                    "name": "breakSound",
+                    "type": "Sound",
+                    "localizedName": "\u62a4\u76fe\u7834\u788e\u97f3\u6548",
+                    "defaultValue": "shieldBreakSmall"
+                },
+                {
+                    "name": "hitSound",
+                    "type": "Sound",
+                    "localizedName": "\u62a4\u76fe\u53d7\u51fb\u97f3\u6548",
+                    "defaultValue": "shieldHit"
+                },
+                {
+                    "name": "hitSoundVolume",
+                    "type": "number",
+                    "localizedName": "\u53d7\u51fb\u97f3\u6548\u97f3\u91cf",
+                    "defaultValue": "0.12"
+                }
             ]
         },
         "LiquidExplodeAbility": {
-            "localizedName": "液体爆炸能力",
+            "localizedName": "\u6db2\u4f53\u7206\u70b8\u80fd\u529b",
             "parentType": "Ability",
             "fields": [
-                { "name": "liquid", "type": "string", "localizedName": "液体类型", "defaultValue": "water" },
-                { "name": "amount", "type": "number", "localizedName": "液体量", "defaultValue": "120.0" },
-                { "name": "radAmountScale", "type": "number", "localizedName": "半径液体量缩放", "defaultValue": "5.0" },
-                { "name": "radScale", "type": "number", "localizedName": "半径缩放", "defaultValue": "1.0" },
-                { "name": "noiseMag", "type": "number", "localizedName": "噪声幅度", "defaultValue": "6.5" },
-                { "name": "noiseScl", "type": "number", "localizedName": "噪声缩放", "defaultValue": "5.0" }
+                {
+                    "name": "liquid",
+                    "type": "Liquid",
+                    "localizedName": "\u6db2\u4f53\u7c7b\u578b",
+                    "defaultValue": "water"
+                },
+                {
+                    "name": "amount",
+                    "type": "number",
+                    "localizedName": "\u6db2\u4f53\u91cf",
+                    "defaultValue": "120.0"
+                },
+                {
+                    "name": "radAmountScale",
+                    "type": "number",
+                    "localizedName": "\u534a\u5f84\u6db2\u4f53\u91cf\u7f29\u653e",
+                    "defaultValue": "5.0"
+                },
+                {
+                    "name": "radScale",
+                    "type": "number",
+                    "localizedName": "\u534a\u5f84\u7f29\u653e",
+                    "defaultValue": "1.0"
+                },
+                {
+                    "name": "noiseMag",
+                    "type": "number",
+                    "localizedName": "\u566a\u58f0\u5e45\u5ea6",
+                    "defaultValue": "6.5"
+                },
+                {
+                    "name": "noiseScl",
+                    "type": "number",
+                    "localizedName": "\u566a\u58f0\u7f29\u653e",
+                    "defaultValue": "5.0"
+                }
             ]
         },
         "LiquidRegenAbility": {
-            "localizedName": "液体回复能力",
+            "localizedName": "\u6db2\u4f53\u56de\u590d\u80fd\u529b",
             "parentType": "Ability",
             "fields": [
-                { "name": "liquid", "type": "string", "localizedName": "液体类型", "defaultValue": "null" },
-                { "name": "slurpSpeed", "type": "number", "localizedName": "吸取速度", "defaultValue": "5.0" },
-                { "name": "regenPerSlurp", "type": "number", "localizedName": "每次吸取回复量", "defaultValue": "6.0" },
-                { "name": "slurpEffectChance", "type": "number", "localizedName": "吸取效果概率", "defaultValue": "0.4" },
-                { "name": "slurpEffect", "type": "string", "localizedName": "吸取效果", "defaultValue": "heal" }
+                {
+                    "name": "liquid",
+                    "type": "Liquid",
+                    "localizedName": "\u6db2\u4f53\u7c7b\u578b",
+                    "defaultValue": "null"
+                },
+                {
+                    "name": "slurpSpeed",
+                    "type": "number",
+                    "localizedName": "\u5438\u53d6\u901f\u5ea6",
+                    "defaultValue": "5.0"
+                },
+                {
+                    "name": "regenPerSlurp",
+                    "type": "number",
+                    "localizedName": "\u6bcf\u6b21\u5438\u53d6\u56de\u590d\u91cf",
+                    "defaultValue": "6.0"
+                },
+                {
+                    "name": "slurpEffectChance",
+                    "type": "number",
+                    "localizedName": "\u5438\u53d6\u6548\u679c\u6982\u7387",
+                    "defaultValue": "0.4"
+                },
+                {
+                    "name": "slurpEffect",
+                    "type": "Effect",
+                    "localizedName": "\u5438\u53d6\u6548\u679c",
+                    "defaultValue": "heal"
+                }
             ]
         },
         "MoveEffectAbility": {
-            "localizedName": "移动特效能力",
+            "localizedName": "\u79fb\u52a8\u7279\u6548\u80fd\u529b",
             "parentType": "Ability",
             "fields": [
-                { "name": "minVelocity", "type": "number", "localizedName": "最小速度", "defaultValue": "0.08" },
-                { "name": "interval", "type": "number", "localizedName": "效果间隔", "defaultValue": "3.0" },
-                { "name": "chance", "type": "number", "localizedName": "触发概率", "defaultValue": "0.0" },
-                { "name": "amount", "type": "number", "localizedName": "效果数量", "defaultValue": "1" },
-                { "name": "x", "type": "number", "localizedName": "偏移X", "defaultValue": "0.0" },
-                { "name": "y", "type": "number", "localizedName": "偏移Y", "defaultValue": "0.0" },
-                { "name": "rotation", "type": "number", "localizedName": "旋转角度", "defaultValue": "0.0" },
-                { "name": "rangeX", "type": "number", "localizedName": "X轴随机范围", "defaultValue": "0.0" },
-                { "name": "rangeY", "type": "number", "localizedName": "Y轴随机范围", "defaultValue": "0.0" },
-                { "name": "rangeLengthMin", "type": "number", "localizedName": "随机长度最小值", "defaultValue": "0.0" },
-                { "name": "rangeLengthMax", "type": "number", "localizedName": "随机长度最大值", "defaultValue": "0.0" },
-                { "name": "rotateEffect", "type": "boolean", "localizedName": "旋转效果", "defaultValue": "false" },
-                { "name": "effectParam", "type": "number", "localizedName": "效果参数", "defaultValue": "3.0" },
-                { "name": "teamColor", "type": "boolean", "localizedName": "队伍颜色", "defaultValue": "false" },
-                { "name": "parentizeEffects", "type": "boolean", "localizedName": "继承父级", "defaultValue": "false" },
-                { "name": "color", "type": "string", "localizedName": "颜色", "defaultValue": "ffffffff" },
-                { "name": "effect", "type": "string", "localizedName": "特效", "defaultValue": "missileTrail" }
+                {
+                    "name": "minVelocity",
+                    "type": "number",
+                    "localizedName": "\u6700\u5c0f\u901f\u5ea6",
+                    "defaultValue": "0.08"
+                },
+                {
+                    "name": "interval",
+                    "type": "number",
+                    "localizedName": "\u6548\u679c\u95f4\u9694",
+                    "defaultValue": "3.0"
+                },
+                {
+                    "name": "chance",
+                    "type": "number",
+                    "localizedName": "\u89e6\u53d1\u6982\u7387",
+                    "defaultValue": "0.0"
+                },
+                {
+                    "name": "amount",
+                    "type": "number",
+                    "localizedName": "\u6548\u679c\u6570\u91cf",
+                    "defaultValue": "1"
+                },
+                {
+                    "name": "x",
+                    "type": "number",
+                    "localizedName": "\u504f\u79fbX",
+                    "defaultValue": "0.0"
+                },
+                {
+                    "name": "y",
+                    "type": "number",
+                    "localizedName": "\u504f\u79fbY",
+                    "defaultValue": "0.0"
+                },
+                {
+                    "name": "rotation",
+                    "type": "number",
+                    "localizedName": "\u65cb\u8f6c\u89d2\u5ea6",
+                    "defaultValue": "0.0"
+                },
+                {
+                    "name": "rangeX",
+                    "type": "number",
+                    "localizedName": "X\u8f74\u968f\u673a\u8303\u56f4",
+                    "defaultValue": "0.0"
+                },
+                {
+                    "name": "rangeY",
+                    "type": "number",
+                    "localizedName": "Y\u8f74\u968f\u673a\u8303\u56f4",
+                    "defaultValue": "0.0"
+                },
+                {
+                    "name": "rangeLengthMin",
+                    "type": "number",
+                    "localizedName": "\u968f\u673a\u957f\u5ea6\u6700\u5c0f\u503c",
+                    "defaultValue": "0.0"
+                },
+                {
+                    "name": "rangeLengthMax",
+                    "type": "number",
+                    "localizedName": "\u968f\u673a\u957f\u5ea6\u6700\u5927\u503c",
+                    "defaultValue": "0.0"
+                },
+                {
+                    "name": "rotateEffect",
+                    "type": "boolean",
+                    "localizedName": "\u65cb\u8f6c\u6548\u679c",
+                    "defaultValue": "false"
+                },
+                {
+                    "name": "effectParam",
+                    "type": "number",
+                    "localizedName": "\u6548\u679c\u53c2\u6570",
+                    "defaultValue": "3.0"
+                },
+                {
+                    "name": "teamColor",
+                    "type": "boolean",
+                    "localizedName": "\u961f\u4f0d\u989c\u8272",
+                    "defaultValue": "false"
+                },
+                {
+                    "name": "parentizeEffects",
+                    "type": "boolean",
+                    "localizedName": "\u7ee7\u627f\u7236\u7ea7",
+                    "defaultValue": "false"
+                },
+                {
+                    "name": "color",
+                    "type": "string",
+                    "localizedName": "\u989c\u8272",
+                    "defaultValue": "ffffffff"
+                },
+                {
+                    "name": "effect",
+                    "type": "Effect",
+                    "localizedName": "\u7279\u6548",
+                    "defaultValue": "missileTrail"
+                }
             ]
         },
         "MoveLightningAbility": {
-            "localizedName": "移动闪电能力",
+            "localizedName": "\u79fb\u52a8\u95ea\u7535\u80fd\u529b",
             "parentType": "Ability",
             "fields": [
-                { "name": "damage", "type": "number", "localizedName": "闪电伤害", "defaultValue": "35.0", "notes": "闪电伤害" },
-                { "name": "chance", "type": "number", "localizedName": "触发概率", "defaultValue": "0.15", "notes": "每 tick 触发概率。设置为 >= 1 可在最大速度下每 tick 必定触发闪电。" },
-                { "name": "length", "type": "number", "localizedName": "闪电长度", "defaultValue": "12", "notes": "闪电长度。<= 0 禁用。" },
-                { "name": "minSpeed", "type": "number", "localizedName": "最小速度", "defaultValue": "0.8", "notes": "开始触发闪电的速度和停止加速的速度。" },
-                { "name": "maxSpeed", "type": "number", "localizedName": "最大速度", "defaultValue": "1.2", "notes": "开始触发闪电的速度和停止加速的速度。" },
-                { "name": "color", "type": "string", "localizedName": "闪电颜色", "defaultValue": "a9d8ffff", "notes": "闪电颜色" },
-                { "name": "y", "type": "number", "localizedName": "Y轴偏移", "defaultValue": "0.0", "notes": "沿 Y 轴偏移闪电生成位置。" },
-                { "name": "x", "type": "number", "localizedName": "X轴偏移", "defaultValue": "0.0", "notes": "沿 X 轴偏移。" },
-                { "name": "alternate", "type": "boolean", "localizedName": "交替侧", "defaultValue": "true", "notes": "生成侧是否交替。" },
-                { "name": "heatRegion", "type": "string", "localizedName": "热浪纹理", "defaultValue": "\"error\"", "notes": "抖动热浪纹理，类似 v5 Javelin 的护盾。" },
-                { "name": "bullet", "type": "string", "localizedName": "子弹类型", "defaultValue": "null", "notes": "发射的子弹类型。可为 null。" },
-                { "name": "bulletAngle", "type": "number", "localizedName": "子弹角度", "defaultValue": "0.0", "notes": "子弹角度参数" },
-                { "name": "bulletSpread", "type": "number", "localizedName": "子弹散布", "defaultValue": "0.0", "notes": "子弹角度参数" },
-                { "name": "shootEffect", "type": "string", "localizedName": "射击特效", "defaultValue": "sparkShoot" },
-                { "name": "parentizeEffects", "type": "boolean", "localizedName": "继承父级", "defaultValue": "false" },
-                { "name": "shootSound", "type": "string", "localizedName": "射击音效", "defaultValue": "shootArc" }
+                {
+                    "name": "damage",
+                    "type": "number",
+                    "localizedName": "\u95ea\u7535\u4f24\u5bb3",
+                    "defaultValue": "35.0",
+                    "notes": "\u95ea\u7535\u4f24\u5bb3"
+                },
+                {
+                    "name": "chance",
+                    "type": "number",
+                    "localizedName": "\u89e6\u53d1\u6982\u7387",
+                    "defaultValue": "0.15",
+                    "notes": "\u6bcf tick \u89e6\u53d1\u6982\u7387\u3002\u8bbe\u7f6e\u4e3a >= 1 \u53ef\u5728\u6700\u5927\u901f\u5ea6\u4e0b\u6bcf tick \u5fc5\u5b9a\u89e6\u53d1\u95ea\u7535\u3002"
+                },
+                {
+                    "name": "length",
+                    "type": "number",
+                    "localizedName": "\u95ea\u7535\u957f\u5ea6",
+                    "defaultValue": "12",
+                    "notes": "\u95ea\u7535\u957f\u5ea6\u3002<= 0 \u7981\u7528\u3002"
+                },
+                {
+                    "name": "minSpeed",
+                    "type": "number",
+                    "localizedName": "\u6700\u5c0f\u901f\u5ea6",
+                    "defaultValue": "0.8",
+                    "notes": "\u5f00\u59cb\u89e6\u53d1\u95ea\u7535\u7684\u901f\u5ea6\u548c\u505c\u6b62\u52a0\u901f\u7684\u901f\u5ea6\u3002"
+                },
+                {
+                    "name": "maxSpeed",
+                    "type": "number",
+                    "localizedName": "\u6700\u5927\u901f\u5ea6",
+                    "defaultValue": "1.2",
+                    "notes": "\u5f00\u59cb\u89e6\u53d1\u95ea\u7535\u7684\u901f\u5ea6\u548c\u505c\u6b62\u52a0\u901f\u7684\u901f\u5ea6\u3002"
+                },
+                {
+                    "name": "color",
+                    "type": "string",
+                    "localizedName": "\u95ea\u7535\u989c\u8272",
+                    "defaultValue": "a9d8ffff",
+                    "notes": "\u95ea\u7535\u989c\u8272"
+                },
+                {
+                    "name": "y",
+                    "type": "number",
+                    "localizedName": "Y\u8f74\u504f\u79fb",
+                    "defaultValue": "0.0",
+                    "notes": "\u6cbf Y \u8f74\u504f\u79fb\u95ea\u7535\u751f\u6210\u4f4d\u7f6e\u3002"
+                },
+                {
+                    "name": "x",
+                    "type": "number",
+                    "localizedName": "X\u8f74\u504f\u79fb",
+                    "defaultValue": "0.0",
+                    "notes": "\u6cbf X \u8f74\u504f\u79fb\u3002"
+                },
+                {
+                    "name": "alternate",
+                    "type": "boolean",
+                    "localizedName": "\u4ea4\u66ff\u4fa7",
+                    "defaultValue": "true",
+                    "notes": "\u751f\u6210\u4fa7\u662f\u5426\u4ea4\u66ff\u3002"
+                },
+                {
+                    "name": "heatRegion",
+                    "type": "string",
+                    "localizedName": "\u70ed\u6d6a\u7eb9\u7406",
+                    "defaultValue": "\"error\"",
+                    "notes": "\u6296\u52a8\u70ed\u6d6a\u7eb9\u7406\uff0c\u7c7b\u4f3c v5 Javelin \u7684\u62a4\u76fe\u3002"
+                },
+                {
+                    "name": "bullet",
+                    "type": "BulletType",
+                    "localizedName": "\u5b50\u5f39\u7c7b\u578b",
+                    "defaultValue": "null",
+                    "notes": "\u53d1\u5c04\u7684\u5b50\u5f39\u7c7b\u578b\u3002\u53ef\u4e3a null\u3002"
+                },
+                {
+                    "name": "bulletAngle",
+                    "type": "number",
+                    "localizedName": "\u5b50\u5f39\u89d2\u5ea6",
+                    "defaultValue": "0.0",
+                    "notes": "\u5b50\u5f39\u89d2\u5ea6\u53c2\u6570"
+                },
+                {
+                    "name": "bulletSpread",
+                    "type": "number",
+                    "localizedName": "\u5b50\u5f39\u6563\u5e03",
+                    "defaultValue": "0.0",
+                    "notes": "\u5b50\u5f39\u89d2\u5ea6\u53c2\u6570"
+                },
+                {
+                    "name": "shootEffect",
+                    "type": "Effect",
+                    "localizedName": "\u5c04\u51fb\u7279\u6548",
+                    "defaultValue": "sparkShoot"
+                },
+                {
+                    "name": "parentizeEffects",
+                    "type": "boolean",
+                    "localizedName": "\u7ee7\u627f\u7236\u7ea7",
+                    "defaultValue": "false"
+                },
+                {
+                    "name": "shootSound",
+                    "type": "Sound",
+                    "localizedName": "\u5c04\u51fb\u97f3\u6548",
+                    "defaultValue": "shootArc"
+                }
             ]
         },
         "RegenAbility": {
-            "localizedName": "再生能力",
+            "localizedName": "\u518d\u751f\u80fd\u529b",
             "parentType": "Ability",
             "fields": [
-                { "name": "percentAmount", "type": "number", "localizedName": "百分比恢复量", "defaultValue": "0.0", "notes": "每 tick 恢复的生命值百分比。" },
-                { "name": "amount", "type": "number", "localizedName": "固定恢复量", "defaultValue": "0.0", "notes": "每 tick 恢复的固定生命值。" }
+                {
+                    "name": "percentAmount",
+                    "type": "number",
+                    "localizedName": "\u767e\u5206\u6bd4\u6062\u590d\u91cf",
+                    "defaultValue": "0.0",
+                    "notes": "\u6bcf tick \u6062\u590d\u7684\u751f\u547d\u503c\u767e\u5206\u6bd4\u3002"
+                },
+                {
+                    "name": "amount",
+                    "type": "number",
+                    "localizedName": "\u56fa\u5b9a\u6062\u590d\u91cf",
+                    "defaultValue": "0.0",
+                    "notes": "\u6bcf tick \u6062\u590d\u7684\u56fa\u5b9a\u751f\u547d\u503c\u3002"
+                }
             ]
         },
         "RepairFieldAbility": {
-            "localizedName": "修复场能力",
+            "localizedName": "\u4fee\u590d\u573a\u80fd\u529b",
             "parentType": "Ability",
             "fields": [
-                { "name": "amount", "type": "number", "localizedName": "治疗量", "defaultValue": "1.0" },
-                { "name": "reload", "type": "number", "localizedName": "装填时间", "defaultValue": "100.0" },
-                { "name": "range", "type": "number", "localizedName": "范围", "defaultValue": "60.0" },
-                { "name": "healPercent", "type": "number", "localizedName": "治疗百分比", "defaultValue": "0.0" },
-                { "name": "healEffect", "type": "string", "localizedName": "治疗效果", "defaultValue": "heal" },
-                { "name": "activeEffect", "type": "string", "localizedName": "激活效果", "defaultValue": "healWaveDynamic" },
-                { "name": "sound", "type": "string", "localizedName": "音效", "defaultValue": "healWave" },
-                { "name": "soundVolume", "type": "number", "localizedName": "音效音量", "defaultValue": "0.5" },
-                { "name": "parentizeEffects", "type": "boolean", "localizedName": "继承父级效果", "defaultValue": "false" },
-                { "name": "sameTypeHealMult", "type": "number", "localizedName": "同类型治疗倍率", "defaultValue": "1.0", "notes": "同类型单位的治疗量乘以该倍数。" }
+                {
+                    "name": "amount",
+                    "type": "number",
+                    "localizedName": "\u6cbb\u7597\u91cf",
+                    "defaultValue": "1.0"
+                },
+                {
+                    "name": "reload",
+                    "type": "number",
+                    "localizedName": "\u88c5\u586b\u65f6\u95f4",
+                    "defaultValue": "100.0"
+                },
+                {
+                    "name": "range",
+                    "type": "number",
+                    "localizedName": "\u8303\u56f4",
+                    "defaultValue": "60.0"
+                },
+                {
+                    "name": "healPercent",
+                    "type": "number",
+                    "localizedName": "\u6cbb\u7597\u767e\u5206\u6bd4",
+                    "defaultValue": "0.0"
+                },
+                {
+                    "name": "healEffect",
+                    "type": "Effect",
+                    "localizedName": "\u6cbb\u7597\u6548\u679c",
+                    "defaultValue": "heal"
+                },
+                {
+                    "name": "activeEffect",
+                    "type": "Effect",
+                    "localizedName": "\u6fc0\u6d3b\u6548\u679c",
+                    "defaultValue": "healWaveDynamic"
+                },
+                {
+                    "name": "sound",
+                    "type": "Sound",
+                    "localizedName": "\u97f3\u6548",
+                    "defaultValue": "healWave"
+                },
+                {
+                    "name": "soundVolume",
+                    "type": "number",
+                    "localizedName": "\u97f3\u6548\u97f3\u91cf",
+                    "defaultValue": "0.5"
+                },
+                {
+                    "name": "parentizeEffects",
+                    "type": "boolean",
+                    "localizedName": "\u7ee7\u627f\u7236\u7ea7\u6548\u679c",
+                    "defaultValue": "false"
+                },
+                {
+                    "name": "sameTypeHealMult",
+                    "type": "number",
+                    "localizedName": "\u540c\u7c7b\u578b\u6cbb\u7597\u500d\u7387",
+                    "defaultValue": "1.0",
+                    "notes": "\u540c\u7c7b\u578b\u5355\u4f4d\u7684\u6cbb\u7597\u91cf\u4e58\u4ee5\u8be5\u500d\u6570\u3002"
+                }
             ]
         },
         "ShieldArcAbility": {
-            "localizedName": "弧形护盾能力",
+            "localizedName": "\u5f27\u5f62\u62a4\u76fe\u80fd\u529b",
             "parentType": "Ability",
             "fields": [
-                { "name": "radius", "type": "number", "localizedName": "护盾半径", "defaultValue": "60.0", "notes": "护盾半径。" },
-                { "name": "regen", "type": "number", "localizedName": "恢复速度", "defaultValue": "0.1", "notes": "护盾恢复速度（伤害/tick）。" },
-                { "name": "max", "type": "number", "localizedName": "最大护盾值", "defaultValue": "200.0", "notes": "最大护盾值。" },
-                { "name": "cooldown", "type": "number", "localizedName": "冷却时间", "defaultValue": "300.0", "notes": "护盾破碎后的冷却时间（tick）。" },
-                { "name": "angle", "type": "number", "localizedName": "护盾弧角度", "defaultValue": "80.0", "notes": "护盾弧的角度。" },
-                { "name": "angleOffset", "type": "number", "localizedName": "角度偏移", "defaultValue": "0.0", "notes": "护盾偏移参数。" },
-                { "name": "x", "type": "number", "localizedName": "X偏移", "defaultValue": "0.0", "notes": "护盾偏移参数。" },
-                { "name": "y", "type": "number", "localizedName": "Y偏移", "defaultValue": "0.0", "notes": "护盾偏移参数。" },
-                { "name": "whenShooting", "type": "boolean", "localizedName": "射击时激活", "defaultValue": "true", "notes": "若为 true，仅在射击时激活。" },
-                { "name": "width", "type": "number", "localizedName": "护盾线宽度", "defaultValue": "6.0", "notes": "护盾线宽度。" },
-                { "name": "chanceDeflect", "type": "number", "localizedName": "偏转概率", "defaultValue": "-1.0", "notes": "子弹偏转概率。设为 -1 禁用。" },
-                { "name": "reflectBuildingDamage", "type": "number", "localizedName": "反射建筑伤害倍率", "defaultValue": "1.0", "notes": "反射子弹对建筑伤害倍率。设为 -1 禁用。" },
-                { "name": "reflectVel", "type": "number", "localizedName": "反射速度倍率", "defaultValue": "1.0", "notes": "反射子弹在相反轴上的速度倍率。" },
-                { "name": "reflectTime", "type": "number", "localizedName": "反射时间倍率", "defaultValue": "0.5", "notes": "反射子弹的时间倍率。" },
-                { "name": "deflectSound", "type": "string", "localizedName": "偏转音效", "defaultValue": "none", "notes": "偏转音效。" },
-                { "name": "breakSound", "type": "string", "localizedName": "破碎音效", "defaultValue": "shieldBreakSmall" },
-                { "name": "hitSound", "type": "string", "localizedName": "受击音效", "defaultValue": "shieldHit" },
-                { "name": "hitSoundVolume", "type": "number", "localizedName": "受击音效音量", "defaultValue": "0.12" },
-                { "name": "missileUnitMultiplier", "type": "number", "localizedName": "导弹伤害倍率", "defaultValue": "2.0", "notes": "导弹单位对护盾伤害的倍率。" },
-                { "name": "drawArc", "type": "boolean", "localizedName": "绘制弧线", "defaultValue": "true", "notes": "是否绘制弧形线。" },
-                { "name": "region", "type": "string", "localizedName": "顶部纹理名称", "defaultValue": "null", "notes": "若非 null，将在顶部绘制。" },
-                { "name": "color", "type": "string", "localizedName": "护盾颜色", "defaultValue": "null", "notes": "护盾颜色覆盖。默认使用单位护盾颜色。" },
-                { "name": "offsetRegion", "type": "boolean", "localizedName": "偏移纹理位置", "defaultValue": "false", "notes": "若为 true，精灵位置将受 x/y 影响。" },
-                { "name": "pushUnits", "type": "boolean", "localizedName": "推开单位", "defaultValue": "true", "notes": "若为 true，推开敌方单位。" },
-                { "name": "pushEffect", "type": "string", "localizedName": "推开效果", "defaultValue": "circleColorSpark" }
+                {
+                    "name": "radius",
+                    "type": "number",
+                    "localizedName": "\u62a4\u76fe\u534a\u5f84",
+                    "defaultValue": "60.0",
+                    "notes": "\u62a4\u76fe\u534a\u5f84\u3002"
+                },
+                {
+                    "name": "regen",
+                    "type": "number",
+                    "localizedName": "\u6062\u590d\u901f\u5ea6",
+                    "defaultValue": "0.1",
+                    "notes": "\u62a4\u76fe\u6062\u590d\u901f\u5ea6\uff08\u4f24\u5bb3/tick\uff09\u3002"
+                },
+                {
+                    "name": "max",
+                    "type": "number",
+                    "localizedName": "\u6700\u5927\u62a4\u76fe\u503c",
+                    "defaultValue": "200.0",
+                    "notes": "\u6700\u5927\u62a4\u76fe\u503c\u3002"
+                },
+                {
+                    "name": "cooldown",
+                    "type": "number",
+                    "localizedName": "\u51b7\u5374\u65f6\u95f4",
+                    "defaultValue": "300.0",
+                    "notes": "\u62a4\u76fe\u7834\u788e\u540e\u7684\u51b7\u5374\u65f6\u95f4\uff08tick\uff09\u3002"
+                },
+                {
+                    "name": "angle",
+                    "type": "number",
+                    "localizedName": "\u62a4\u76fe\u5f27\u89d2\u5ea6",
+                    "defaultValue": "80.0",
+                    "notes": "\u62a4\u76fe\u5f27\u7684\u89d2\u5ea6\u3002"
+                },
+                {
+                    "name": "angleOffset",
+                    "type": "number",
+                    "localizedName": "\u89d2\u5ea6\u504f\u79fb",
+                    "defaultValue": "0.0",
+                    "notes": "\u62a4\u76fe\u504f\u79fb\u53c2\u6570\u3002"
+                },
+                {
+                    "name": "x",
+                    "type": "number",
+                    "localizedName": "X\u504f\u79fb",
+                    "defaultValue": "0.0",
+                    "notes": "\u62a4\u76fe\u504f\u79fb\u53c2\u6570\u3002"
+                },
+                {
+                    "name": "y",
+                    "type": "number",
+                    "localizedName": "Y\u504f\u79fb",
+                    "defaultValue": "0.0",
+                    "notes": "\u62a4\u76fe\u504f\u79fb\u53c2\u6570\u3002"
+                },
+                {
+                    "name": "whenShooting",
+                    "type": "boolean",
+                    "localizedName": "\u5c04\u51fb\u65f6\u6fc0\u6d3b",
+                    "defaultValue": "true",
+                    "notes": "\u82e5\u4e3a true\uff0c\u4ec5\u5728\u5c04\u51fb\u65f6\u6fc0\u6d3b\u3002"
+                },
+                {
+                    "name": "width",
+                    "type": "number",
+                    "localizedName": "\u62a4\u76fe\u7ebf\u5bbd\u5ea6",
+                    "defaultValue": "6.0",
+                    "notes": "\u62a4\u76fe\u7ebf\u5bbd\u5ea6\u3002"
+                },
+                {
+                    "name": "chanceDeflect",
+                    "type": "number",
+                    "localizedName": "\u504f\u8f6c\u6982\u7387",
+                    "defaultValue": "-1.0",
+                    "notes": "\u5b50\u5f39\u504f\u8f6c\u6982\u7387\u3002\u8bbe\u4e3a -1 \u7981\u7528\u3002"
+                },
+                {
+                    "name": "reflectBuildingDamage",
+                    "type": "number",
+                    "localizedName": "\u53cd\u5c04\u5efa\u7b51\u4f24\u5bb3\u500d\u7387",
+                    "defaultValue": "1.0",
+                    "notes": "\u53cd\u5c04\u5b50\u5f39\u5bf9\u5efa\u7b51\u4f24\u5bb3\u500d\u7387\u3002\u8bbe\u4e3a -1 \u7981\u7528\u3002"
+                },
+                {
+                    "name": "reflectVel",
+                    "type": "number",
+                    "localizedName": "\u53cd\u5c04\u901f\u5ea6\u500d\u7387",
+                    "defaultValue": "1.0",
+                    "notes": "\u53cd\u5c04\u5b50\u5f39\u5728\u76f8\u53cd\u8f74\u4e0a\u7684\u901f\u5ea6\u500d\u7387\u3002"
+                },
+                {
+                    "name": "reflectTime",
+                    "type": "number",
+                    "localizedName": "\u53cd\u5c04\u65f6\u95f4\u500d\u7387",
+                    "defaultValue": "0.5",
+                    "notes": "\u53cd\u5c04\u5b50\u5f39\u7684\u65f6\u95f4\u500d\u7387\u3002"
+                },
+                {
+                    "name": "deflectSound",
+                    "type": "Sound",
+                    "localizedName": "\u504f\u8f6c\u97f3\u6548",
+                    "defaultValue": "none",
+                    "notes": "\u504f\u8f6c\u97f3\u6548\u3002"
+                },
+                {
+                    "name": "breakSound",
+                    "type": "Sound",
+                    "localizedName": "\u7834\u788e\u97f3\u6548",
+                    "defaultValue": "shieldBreakSmall"
+                },
+                {
+                    "name": "hitSound",
+                    "type": "Sound",
+                    "localizedName": "\u53d7\u51fb\u97f3\u6548",
+                    "defaultValue": "shieldHit"
+                },
+                {
+                    "name": "hitSoundVolume",
+                    "type": "number",
+                    "localizedName": "\u53d7\u51fb\u97f3\u6548\u97f3\u91cf",
+                    "defaultValue": "0.12"
+                },
+                {
+                    "name": "missileUnitMultiplier",
+                    "type": "number",
+                    "localizedName": "\u5bfc\u5f39\u4f24\u5bb3\u500d\u7387",
+                    "defaultValue": "2.0",
+                    "notes": "\u5bfc\u5f39\u5355\u4f4d\u5bf9\u62a4\u76fe\u4f24\u5bb3\u7684\u500d\u7387\u3002"
+                },
+                {
+                    "name": "drawArc",
+                    "type": "boolean",
+                    "localizedName": "\u7ed8\u5236\u5f27\u7ebf",
+                    "defaultValue": "true",
+                    "notes": "\u662f\u5426\u7ed8\u5236\u5f27\u5f62\u7ebf\u3002"
+                },
+                {
+                    "name": "region",
+                    "type": "string",
+                    "localizedName": "\u9876\u90e8\u7eb9\u7406\u540d\u79f0",
+                    "defaultValue": "null",
+                    "notes": "\u82e5\u975e null\uff0c\u5c06\u5728\u9876\u90e8\u7ed8\u5236\u3002"
+                },
+                {
+                    "name": "color",
+                    "type": "string",
+                    "localizedName": "\u62a4\u76fe\u989c\u8272",
+                    "defaultValue": "null",
+                    "notes": "\u62a4\u76fe\u989c\u8272\u8986\u76d6\u3002\u9ed8\u8ba4\u4f7f\u7528\u5355\u4f4d\u62a4\u76fe\u989c\u8272\u3002"
+                },
+                {
+                    "name": "offsetRegion",
+                    "type": "boolean",
+                    "localizedName": "\u504f\u79fb\u7eb9\u7406\u4f4d\u7f6e",
+                    "defaultValue": "false",
+                    "notes": "\u82e5\u4e3a true\uff0c\u7cbe\u7075\u4f4d\u7f6e\u5c06\u53d7 x/y \u5f71\u54cd\u3002"
+                },
+                {
+                    "name": "pushUnits",
+                    "type": "boolean",
+                    "localizedName": "\u63a8\u5f00\u5355\u4f4d",
+                    "defaultValue": "true",
+                    "notes": "\u82e5\u4e3a true\uff0c\u63a8\u5f00\u654c\u65b9\u5355\u4f4d\u3002"
+                },
+                {
+                    "name": "pushEffect",
+                    "type": "Effect",
+                    "localizedName": "\u63a8\u5f00\u6548\u679c",
+                    "defaultValue": "circleColorSpark"
+                }
             ]
         },
         "ShieldRegenFieldAbility": {
-            "localizedName": "护盾恢复场能力",
+            "localizedName": "\u62a4\u76fe\u6062\u590d\u573a\u80fd\u529b",
             "parentType": "Ability",
             "fields": [
-                { "name": "amount", "type": "number", "localizedName": "护盾恢复量", "defaultValue": "1.0" },
-                { "name": "max", "type": "number", "localizedName": "最大护盾值", "defaultValue": "100.0" },
-                { "name": "reload", "type": "number", "localizedName": "装填时间", "defaultValue": "100.0" },
-                { "name": "range", "type": "number", "localizedName": "范围", "defaultValue": "60.0" },
-                { "name": "applyEffect", "type": "string", "localizedName": "应用效果", "defaultValue": "shieldApply" },
-                { "name": "activeEffect", "type": "string", "localizedName": "激活效果", "defaultValue": "shieldWave" },
-                { "name": "sound", "type": "string", "localizedName": "音效", "defaultValue": "shieldWave" },
-                { "name": "soundVolume", "type": "number", "localizedName": "音效音量", "defaultValue": "0.7" },
-                { "name": "parentizeEffects", "type": "boolean", "localizedName": "继承父级效果", "defaultValue": "false" }
+                {
+                    "name": "amount",
+                    "type": "number",
+                    "localizedName": "\u62a4\u76fe\u6062\u590d\u91cf",
+                    "defaultValue": "1.0"
+                },
+                {
+                    "name": "max",
+                    "type": "number",
+                    "localizedName": "\u6700\u5927\u62a4\u76fe\u503c",
+                    "defaultValue": "100.0"
+                },
+                {
+                    "name": "reload",
+                    "type": "number",
+                    "localizedName": "\u88c5\u586b\u65f6\u95f4",
+                    "defaultValue": "100.0"
+                },
+                {
+                    "name": "range",
+                    "type": "number",
+                    "localizedName": "\u8303\u56f4",
+                    "defaultValue": "60.0"
+                },
+                {
+                    "name": "applyEffect",
+                    "type": "Effect",
+                    "localizedName": "\u5e94\u7528\u6548\u679c",
+                    "defaultValue": "shieldApply"
+                },
+                {
+                    "name": "activeEffect",
+                    "type": "Effect",
+                    "localizedName": "\u6fc0\u6d3b\u6548\u679c",
+                    "defaultValue": "shieldWave"
+                },
+                {
+                    "name": "sound",
+                    "type": "Sound",
+                    "localizedName": "\u97f3\u6548",
+                    "defaultValue": "shieldWave"
+                },
+                {
+                    "name": "soundVolume",
+                    "type": "number",
+                    "localizedName": "\u97f3\u6548\u97f3\u91cf",
+                    "defaultValue": "0.7"
+                },
+                {
+                    "name": "parentizeEffects",
+                    "type": "boolean",
+                    "localizedName": "\u7ee7\u627f\u7236\u7ea7\u6548\u679c",
+                    "defaultValue": "false"
+                }
             ]
         },
         "SpawnDeathAbility": {
-            "localizedName": "死亡生成能力",
+            "localizedName": "\u6b7b\u4ea1\u751f\u6210\u80fd\u529b",
             "parentType": "Ability",
             "fields": [
-                { "name": "unit", "type": "string", "localizedName": "生成单位类型", "defaultValue": "null" },
-                { "name": "amount", "type": "number", "localizedName": "生成数量", "defaultValue": "1" },
-                { "name": "randAmount", "type": "number", "localizedName": "随机额外数量", "defaultValue": "0" },
-                { "name": "spread", "type": "number", "localizedName": "散布范围", "defaultValue": "8.0", "notes": "单位生成时远离生成点的随机散布。" },
-                { "name": "faceOutwards", "type": "boolean", "localizedName": "面朝外部", "defaultValue": "true", "notes": "若为 true，生成的单位面向外部。" }
+                {
+                    "name": "unit",
+                    "type": "UnitType",
+                    "localizedName": "\u751f\u6210\u5355\u4f4d\u7c7b\u578b",
+                    "defaultValue": "null"
+                },
+                {
+                    "name": "amount",
+                    "type": "number",
+                    "localizedName": "\u751f\u6210\u6570\u91cf",
+                    "defaultValue": "1"
+                },
+                {
+                    "name": "randAmount",
+                    "type": "number",
+                    "localizedName": "\u968f\u673a\u989d\u5916\u6570\u91cf",
+                    "defaultValue": "0"
+                },
+                {
+                    "name": "spread",
+                    "type": "number",
+                    "localizedName": "\u6563\u5e03\u8303\u56f4",
+                    "defaultValue": "8.0",
+                    "notes": "\u5355\u4f4d\u751f\u6210\u65f6\u8fdc\u79bb\u751f\u6210\u70b9\u7684\u968f\u673a\u6563\u5e03\u3002"
+                },
+                {
+                    "name": "faceOutwards",
+                    "type": "boolean",
+                    "localizedName": "\u9762\u671d\u5916\u90e8",
+                    "defaultValue": "true",
+                    "notes": "\u82e5\u4e3a true\uff0c\u751f\u6210\u7684\u5355\u4f4d\u9762\u5411\u5916\u90e8\u3002"
+                }
             ]
         },
         "StatusFieldAbility": {
-            "localizedName": "状态场能力",
+            "localizedName": "\u72b6\u6001\u573a\u80fd\u529b",
             "parentType": "Ability",
             "fields": [
-                { "name": "effect", "type": "string", "localizedName": "状态效果", "defaultValue": "null" },
-                { "name": "duration", "type": "number", "localizedName": "持续时间", "defaultValue": "60.0" },
-                { "name": "reload", "type": "number", "localizedName": "装填时间", "defaultValue": "100.0" },
-                { "name": "range", "type": "number", "localizedName": "范围", "defaultValue": "20.0" },
-                { "name": "onShoot", "type": "boolean", "localizedName": "射击时触发", "defaultValue": "false", "notes": "是否仅在射击时触发" },
-                { "name": "applyEffect", "type": "string", "localizedName": "应用效果", "defaultValue": "none" },
-                { "name": "activeEffect", "type": "string", "localizedName": "激活效果", "defaultValue": "overdriveWave" },
-                { "name": "effectX", "type": "number", "localizedName": "效果X偏移", "defaultValue": "0.0" },
-                { "name": "effectY", "type": "number", "localizedName": "效果Y偏移", "defaultValue": "0.0" },
-                { "name": "parentizeEffects", "type": "boolean", "localizedName": "继承父级效果", "defaultValue": "false" },
-                { "name": "effectSizeParam", "type": "boolean", "localizedName": "效果尺寸参数", "defaultValue": "true" },
-                { "name": "color", "type": "string", "localizedName": "颜色", "defaultValue": "ffd37fff" }
+                {
+                    "name": "effect",
+                    "type": "Effect",
+                    "localizedName": "\u72b6\u6001\u6548\u679c",
+                    "defaultValue": "null"
+                },
+                {
+                    "name": "duration",
+                    "type": "number",
+                    "localizedName": "\u6301\u7eed\u65f6\u95f4",
+                    "defaultValue": "60.0"
+                },
+                {
+                    "name": "reload",
+                    "type": "number",
+                    "localizedName": "\u88c5\u586b\u65f6\u95f4",
+                    "defaultValue": "100.0"
+                },
+                {
+                    "name": "range",
+                    "type": "number",
+                    "localizedName": "\u8303\u56f4",
+                    "defaultValue": "20.0"
+                },
+                {
+                    "name": "onShoot",
+                    "type": "boolean",
+                    "localizedName": "\u5c04\u51fb\u65f6\u89e6\u53d1",
+                    "defaultValue": "false",
+                    "notes": "\u662f\u5426\u4ec5\u5728\u5c04\u51fb\u65f6\u89e6\u53d1"
+                },
+                {
+                    "name": "applyEffect",
+                    "type": "Effect",
+                    "localizedName": "\u5e94\u7528\u6548\u679c",
+                    "defaultValue": "none"
+                },
+                {
+                    "name": "activeEffect",
+                    "type": "Effect",
+                    "localizedName": "\u6fc0\u6d3b\u6548\u679c",
+                    "defaultValue": "overdriveWave"
+                },
+                {
+                    "name": "effectX",
+                    "type": "number",
+                    "localizedName": "\u6548\u679cX\u504f\u79fb",
+                    "defaultValue": "0.0"
+                },
+                {
+                    "name": "effectY",
+                    "type": "number",
+                    "localizedName": "\u6548\u679cY\u504f\u79fb",
+                    "defaultValue": "0.0"
+                },
+                {
+                    "name": "parentizeEffects",
+                    "type": "boolean",
+                    "localizedName": "\u7ee7\u627f\u7236\u7ea7\u6548\u679c",
+                    "defaultValue": "false"
+                },
+                {
+                    "name": "effectSizeParam",
+                    "type": "boolean",
+                    "localizedName": "\u6548\u679c\u5c3a\u5bf8\u53c2\u6570",
+                    "defaultValue": "true"
+                },
+                {
+                    "name": "color",
+                    "type": "string",
+                    "localizedName": "\u989c\u8272",
+                    "defaultValue": "ffd37fff"
+                }
             ]
         },
         "SuppressionFieldAbility": {
-            "localizedName": "压制场能力",
+            "localizedName": "\u538b\u5236\u573a\u80fd\u529b",
             "parentType": "Ability",
             "fields": [
-                { "name": "reload", "type": "number", "localizedName": "装填时间", "defaultValue": "90.0" },
-                { "name": "maxDelay", "type": "number", "localizedName": "最大延迟", "defaultValue": "90.0" },
-                { "name": "range", "type": "number", "localizedName": "范围", "defaultValue": "200.0" },
-                { "name": "orbRadius", "type": "number", "localizedName": "球体半径", "defaultValue": "4.1" },
-                { "name": "orbMidScl", "type": "number", "localizedName": "球体中段缩放", "defaultValue": "0.33" },
-                { "name": "orbSinScl", "type": "number", "localizedName": "球体正弦缩放", "defaultValue": "8.0" },
-                { "name": "orbSinMag", "type": "number", "localizedName": "球体正弦幅度", "defaultValue": "1.0" },
-                { "name": "color", "type": "string", "localizedName": "颜色", "defaultValue": "a393feff" },
-                { "name": "layer", "type": "number", "localizedName": "绘制层级", "defaultValue": "110.0" },
-                { "name": "x", "type": "number", "localizedName": "X偏移", "defaultValue": "0.0" },
-                { "name": "y", "type": "number", "localizedName": "Y偏移", "defaultValue": "0.0" },
-                { "name": "particles", "type": "number", "localizedName": "粒子数量", "defaultValue": "15" },
-                { "name": "particleSize", "type": "number", "localizedName": "粒子大小", "defaultValue": "4.0" },
-                { "name": "particleLen", "type": "number", "localizedName": "粒子长度", "defaultValue": "7.0" },
-                { "name": "rotateScl", "type": "number", "localizedName": "旋转缩放", "defaultValue": "3.0" },
-                { "name": "particleLife", "type": "number", "localizedName": "粒子寿命", "defaultValue": "110.0" },
-                { "name": "active", "type": "boolean", "localizedName": "激活状态", "defaultValue": "true" },
-                { "name": "particleColor", "type": "string", "localizedName": "粒子颜色", "defaultValue": "665c9fff" },
-                { "name": "effectColor", "type": "string", "localizedName": "效果颜色", "defaultValue": "bf92f9ff" },
-                { "name": "applyParticleChance", "type": "number", "localizedName": "应用粒子概率", "defaultValue": "13.0" }
+                {
+                    "name": "reload",
+                    "type": "number",
+                    "localizedName": "\u88c5\u586b\u65f6\u95f4",
+                    "defaultValue": "90.0"
+                },
+                {
+                    "name": "maxDelay",
+                    "type": "number",
+                    "localizedName": "\u6700\u5927\u5ef6\u8fdf",
+                    "defaultValue": "90.0"
+                },
+                {
+                    "name": "range",
+                    "type": "number",
+                    "localizedName": "\u8303\u56f4",
+                    "defaultValue": "200.0"
+                },
+                {
+                    "name": "orbRadius",
+                    "type": "number",
+                    "localizedName": "\u7403\u4f53\u534a\u5f84",
+                    "defaultValue": "4.1"
+                },
+                {
+                    "name": "orbMidScl",
+                    "type": "number",
+                    "localizedName": "\u7403\u4f53\u4e2d\u6bb5\u7f29\u653e",
+                    "defaultValue": "0.33"
+                },
+                {
+                    "name": "orbSinScl",
+                    "type": "number",
+                    "localizedName": "\u7403\u4f53\u6b63\u5f26\u7f29\u653e",
+                    "defaultValue": "8.0"
+                },
+                {
+                    "name": "orbSinMag",
+                    "type": "number",
+                    "localizedName": "\u7403\u4f53\u6b63\u5f26\u5e45\u5ea6",
+                    "defaultValue": "1.0"
+                },
+                {
+                    "name": "color",
+                    "type": "string",
+                    "localizedName": "\u989c\u8272",
+                    "defaultValue": "a393feff"
+                },
+                {
+                    "name": "layer",
+                    "type": "number",
+                    "localizedName": "\u7ed8\u5236\u5c42\u7ea7",
+                    "defaultValue": "110.0"
+                },
+                {
+                    "name": "x",
+                    "type": "number",
+                    "localizedName": "X\u504f\u79fb",
+                    "defaultValue": "0.0"
+                },
+                {
+                    "name": "y",
+                    "type": "number",
+                    "localizedName": "Y\u504f\u79fb",
+                    "defaultValue": "0.0"
+                },
+                {
+                    "name": "particles",
+                    "type": "number",
+                    "localizedName": "\u7c92\u5b50\u6570\u91cf",
+                    "defaultValue": "15"
+                },
+                {
+                    "name": "particleSize",
+                    "type": "number",
+                    "localizedName": "\u7c92\u5b50\u5927\u5c0f",
+                    "defaultValue": "4.0"
+                },
+                {
+                    "name": "particleLen",
+                    "type": "number",
+                    "localizedName": "\u7c92\u5b50\u957f\u5ea6",
+                    "defaultValue": "7.0"
+                },
+                {
+                    "name": "rotateScl",
+                    "type": "number",
+                    "localizedName": "\u65cb\u8f6c\u7f29\u653e",
+                    "defaultValue": "3.0"
+                },
+                {
+                    "name": "particleLife",
+                    "type": "number",
+                    "localizedName": "\u7c92\u5b50\u5bff\u547d",
+                    "defaultValue": "110.0"
+                },
+                {
+                    "name": "active",
+                    "type": "boolean",
+                    "localizedName": "\u6fc0\u6d3b\u72b6\u6001",
+                    "defaultValue": "true"
+                },
+                {
+                    "name": "particleColor",
+                    "type": "string",
+                    "localizedName": "\u7c92\u5b50\u989c\u8272",
+                    "defaultValue": "665c9fff"
+                },
+                {
+                    "name": "effectColor",
+                    "type": "string",
+                    "localizedName": "\u6548\u679c\u989c\u8272",
+                    "defaultValue": "bf92f9ff"
+                },
+                {
+                    "name": "applyParticleChance",
+                    "type": "number",
+                    "localizedName": "\u5e94\u7528\u7c92\u5b50\u6982\u7387",
+                    "defaultValue": "13.0"
+                }
             ]
         },
         "UnitSpawnAbility": {
-            "localizedName": "单位生成能力",
+            "localizedName": "\u5355\u4f4d\u751f\u6210\u80fd\u529b",
             "parentType": "Ability",
             "fields": [
-                { "name": "unit", "type": "string", "localizedName": "单位类型", "defaultValue": "null" },
-                { "name": "spawnTime", "type": "number", "localizedName": "生成时间", "defaultValue": "60.0" },
-                { "name": "spawnX", "type": "number", "localizedName": "生成偏移X", "defaultValue": "0.0" },
-                { "name": "spawnY", "type": "number", "localizedName": "生成偏移Y", "defaultValue": "0.0" },
-                { "name": "spawnEffect", "type": "string", "localizedName": "生成特效", "defaultValue": "spawn" },
-                { "name": "parentizeEffects", "type": "boolean", "localizedName": "效果继承父级", "defaultValue": "false" }
+                {
+                    "name": "unit",
+                    "type": "UnitType",
+                    "localizedName": "\u5355\u4f4d\u7c7b\u578b",
+                    "defaultValue": "null"
+                },
+                {
+                    "name": "spawnTime",
+                    "type": "number",
+                    "localizedName": "\u751f\u6210\u65f6\u95f4",
+                    "defaultValue": "60.0"
+                },
+                {
+                    "name": "spawnX",
+                    "type": "number",
+                    "localizedName": "\u751f\u6210\u504f\u79fbX",
+                    "defaultValue": "0.0"
+                },
+                {
+                    "name": "spawnY",
+                    "type": "number",
+                    "localizedName": "\u751f\u6210\u504f\u79fbY",
+                    "defaultValue": "0.0"
+                },
+                {
+                    "name": "spawnEffect",
+                    "type": "Effect",
+                    "localizedName": "\u751f\u6210\u7279\u6548",
+                    "defaultValue": "spawn"
+                },
+                {
+                    "name": "parentizeEffects",
+                    "type": "boolean",
+                    "localizedName": "\u6548\u679c\u7ee7\u627f\u7236\u7ea7",
+                    "defaultValue": "false"
+                }
             ]
         }
     }

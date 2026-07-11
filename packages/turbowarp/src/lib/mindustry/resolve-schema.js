@@ -71,7 +71,7 @@ const getFieldLabel = function (type, fieldName) {
         const schema = loadCuratedSchema(t) || loadSchema(t);
         t = schema?.parentType || null;
     }
-    return fieldName;
+    return null;
 };
 
 const getFieldDoc = function (type, fieldName) {

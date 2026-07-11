@@ -42,7 +42,7 @@
         },
         {
             "name": "shootSound",
-            "type": "string"
+            "type": "Sound"
         },
         {
             "name": "range",
@@ -260,7 +260,7 @@
             "fields": [
                 {
                     "name": "effect",
-                    "type": "string"
+                    "type": "Effect"
                 },
                 {
                     "name": "maxPitch",
@@ -280,7 +280,7 @@
                 },
                 {
                     "name": "sound",
-                    "type": "string"
+                    "type": "Sound"
                 },
                 {
                     "name": "type",
@@ -322,15 +322,15 @@
         },
         {
             "name": "chargeSound",
-            "type": "string"
+            "type": "Sound"
         },
         {
             "name": "destroySound",
-            "type": "string"
+            "type": "Sound"
         },
         {
             "name": "loopSound",
-            "type": "string"
+            "type": "Sound"
         },
         {
             "name": "loopSoundVolume",

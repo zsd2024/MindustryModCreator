@@ -108,7 +108,7 @@
                 },
                 {
                     "name": "item",
-                    "type": "string"
+                    "type": "Item"
                 }
             ]
         },
@@ -180,7 +180,7 @@
         },
         {
             "name": "ambientSound",
-            "type": "string"
+            "type": "Sound"
         },
         {
             "name": "conductivePower",
@@ -272,7 +272,7 @@
         },
         {
             "name": "ambiantSound",
-            "type": "string"
+            "type": "Sound"
         },
         {
             "name": "destructible",
@@ -320,7 +320,7 @@
         },
         {
             "name": "loopSound",
-            "type": "string"
+            "type": "Sound"
         },
         {
             "name": "loopSoundVolume",
@@ -414,7 +414,7 @@
                     },
                     {
                         "name": "item",
-                        "type": "string"
+                        "type": "Item"
                     }
                 ]
             }

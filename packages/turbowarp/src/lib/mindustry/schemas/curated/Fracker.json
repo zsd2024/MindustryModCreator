@@ -12,7 +12,7 @@
         },
         {
             "name": "result",
-            "type": "string"
+            "type": "Liquid"
         },
         {
             "name": "pumpAmount",
@@ -46,7 +46,7 @@
                     },
                     {
                         "name": "item",
-                        "type": "string"
+                        "type": "Item"
                     }
                 ]
             }

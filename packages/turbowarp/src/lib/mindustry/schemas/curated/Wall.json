@@ -22,7 +22,7 @@
                     },
                     {
                         "name": "item",
-                        "type": "string"
+                        "type": "Item"
                     }
                 ]
             }
@@ -131,11 +131,11 @@
         },
         {
             "name": "breakSound",
-            "type": "string"
+            "type": "Sound"
         },
         {
             "name": "breakEffect",
-            "type": "string"
+            "type": "Effect"
         },
         {
             "name": "destroyEffect",
@@ -183,7 +183,7 @@
         },
         {
             "name": "itemDrop",
-            "type": "string"
+            "type": "Item"
         },
         {
             "name": "allowDerelictRepair",
