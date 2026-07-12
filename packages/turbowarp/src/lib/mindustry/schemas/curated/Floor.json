@@ -42,7 +42,7 @@
         },
         {
             "name": "liquidDrop",
-            "type": "Liquid"
+            "type": "string"
         },
         {
             "name": "speedMultiplier",
@@ -61,6 +61,10 @@
             "type": "float"
         },
         {
+            "name": "name",
+            "type": "string"
+        },
+        {
             "name": "emitLight",
             "type": "boolean"
         },
@@ -74,7 +78,7 @@
         },
         {
             "name": "status",
-            "type": "StatusEffect"
+            "type": "string"
         },
         {
             "name": "shallow",
@@ -94,7 +98,11 @@
         },
         {
             "name": "itemDrop",
-            "type": "Item"
+            "type": "string"
+        },
+        {
+            "name": "description",
+            "type": "string"
         },
         {
             "name": "albedo",
@@ -110,7 +118,7 @@
         },
         {
             "name": "wall",
-            "type": "Block"
+            "type": "string"
         },
         {
             "name": "playerUnmineable",

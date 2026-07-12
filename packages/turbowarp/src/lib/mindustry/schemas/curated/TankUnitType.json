@@ -1,5 +1,5 @@
 {
-    "localizedName": "tank",
+    "localizedName": "TankUnitType",
     "parentType": "UnitType",
     "fields": [
         {
@@ -94,6 +94,14 @@
         {
             "name": "groundLayer",
             "type": "float"
+        },
+        {
+            "name": "name",
+            "type": "string"
+        },
+        {
+            "name": "description",
+            "type": "string"
         },
         {
             "name": "singleTarget",

@@ -1,0 +1,293 @@
+{
+    "localizedName": "TetheredUnitType",
+    "parentType": "UnitType",
+    "fields": [
+        {
+            "name": "playerControllable",
+            "type": "boolean"
+        },
+        {
+            "name": "speed",
+            "type": "float"
+        },
+        {
+            "name": "rotateSpeed",
+            "type": "float"
+        },
+        {
+            "name": "health",
+            "type": "int"
+        },
+        {
+            "name": "drag",
+            "type": "float"
+        },
+        {
+            "name": "flying",
+            "type": "boolean"
+        },
+        {
+            "name": "hidden",
+            "type": "boolean"
+        },
+        {
+            "name": "controller",
+            "type": "string"
+        },
+        {
+            "name": "defaultController",
+            "type": "string"
+        },
+        {
+            "name": "hitSize",
+            "type": "float"
+        },
+        {
+            "name": "hoverable",
+            "type": "boolean"
+        },
+        {
+            "name": "buildSpeed",
+            "type": "float"
+        },
+        {
+            "name": "buildBeamOffset",
+            "type": "float"
+        },
+        {
+            "name": "engineSize",
+            "type": "float"
+        },
+        {
+            "name": "physics",
+            "type": "boolean"
+        },
+        {
+            "name": "accel",
+            "type": "float"
+        },
+        {
+            "name": "weapons",
+            "type": "array"
+        },
+        {
+            "name": "abilities",
+            "type": "array"
+        },
+        {
+            "name": "engineOffset",
+            "type": "float"
+        },
+        {
+            "name": "drawCell",
+            "type": "boolean"
+        },
+        {
+            "name": "outlines",
+            "type": "boolean"
+        },
+        {
+            "name": "groundLayer",
+            "type": "float"
+        },
+        {
+            "name": "immunities",
+            "type": "array"
+        },
+        {
+            "name": "parts",
+            "type": "array"
+        },
+        {
+            "name": "targetable",
+            "type": "boolean"
+        },
+        {
+            "name": "logicControllable",
+            "type": "boolean"
+        },
+        {
+            "name": "lowAltitude",
+            "type": "boolean"
+        },
+        {
+            "name": "useUnitCap",
+            "type": "boolean"
+        },
+        {
+            "name": "payloadCapacity",
+            "type": "float"
+        },
+        {
+            "name": "drawBody",
+            "type": "boolean"
+        },
+        {
+            "name": "drawShields",
+            "type": "boolean"
+        },
+        {
+            "name": "deathShake",
+            "type": "float"
+        },
+        {
+            "name": "shieldColor",
+            "type": "string"
+        },
+        {
+            "name": "fullOverride",
+            "type": "string"
+        },
+        {
+            "name": "deathSound",
+            "type": "string"
+        },
+        {
+            "name": "createScorch",
+            "type": "boolean"
+        },
+        {
+            "name": "loopSound",
+            "type": "string"
+        },
+        {
+            "name": "loopSoundVolume",
+            "type": "float"
+        },
+        {
+            "name": "deathExplosionEffect",
+            "type": "object",
+            "fields": [
+                {
+                    "name": "baseRotation",
+                    "type": "string"
+                },
+                {
+                    "name": "colorTo",
+                    "type": "string"
+                },
+                {
+                    "name": "lifetime",
+                    "type": "string"
+                },
+                {
+                    "name": "sides",
+                    "type": "string"
+                },
+                {
+                    "name": "sizeFrom",
+                    "type": "string"
+                },
+                {
+                    "name": "sizeTo",
+                    "type": "string"
+                },
+                {
+                    "name": "strokeFrom",
+                    "type": "string"
+                },
+                {
+                    "name": "type",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "buildRange",
+            "type": "float"
+        },
+        {
+            "name": "envDisabled",
+            "type": "float"
+        },
+        {
+            "name": "faceTarget",
+            "type": "boolean"
+        },
+        {
+            "name": "intemCapacity",
+            "type": "float"
+        },
+        {
+            "name": "shadowElevation",
+            "type": "float"
+        },
+        {
+            "name": "shadowElevationScl",
+            "type": "float"
+        },
+        {
+            "name": "controlSelectGlobal",
+            "type": "boolean"
+        },
+        {
+            "name": "drawBuildBeam",
+            "type": "boolean"
+        },
+        {
+            "name": "internal",
+            "type": "boolean"
+        },
+        {
+            "name": "envEnabled",
+            "type": "float"
+        },
+        {
+            "name": "defaultCommand",
+            "type": "string"
+        },
+        {
+            "name": "commands",
+            "type": "array"
+        },
+        {
+            "name": "template",
+            "type": "string"
+        },
+        {
+            "name": "isEnemy",
+            "type": "boolean"
+        },
+        {
+            "name": "allowedInPayloads",
+            "type": "boolean"
+        },
+        {
+            "name": "outlineColor",
+            "type": "string"
+        },
+        {
+            "name": "itemCapacity",
+            "type": "int"
+        },
+        {
+            "name": "engines",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "fields": [
+                    {
+                        "name": "radius",
+                        "type": "string"
+                    },
+                    {
+                        "name": "rotation",
+                        "type": "string"
+                    },
+                    {
+                        "name": "x",
+                        "type": "string"
+                    },
+                    {
+                        "name": "y",
+                        "type": "string"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "unloadTarger",
+            "type": "string"
+        }
+    ]
+}

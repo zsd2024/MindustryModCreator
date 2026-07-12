@@ -26,7 +26,7 @@
                     },
                     {
                         "name": "item",
-                        "type": "Item"
+                        "type": "string"
                     }
                 ]
             }
@@ -45,6 +45,14 @@
         },
         {
             "name": "buildVisibility",
+            "type": "string"
+        },
+        {
+            "name": "name",
+            "type": "string"
+        },
+        {
+            "name": "description",
             "type": "string"
         },
         {

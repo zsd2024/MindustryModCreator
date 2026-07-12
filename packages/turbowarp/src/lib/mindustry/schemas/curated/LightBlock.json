@@ -3,6 +3,14 @@
     "parentType": "Block",
     "fields": [
         {
+            "name": "name",
+            "type": "string"
+        },
+        {
+            "name": "description",
+            "type": "string"
+        },
+        {
             "name": "brightness",
             "type": "float"
         },
@@ -40,7 +48,7 @@
                     },
                     {
                         "name": "item",
-                        "type": "Item"
+                        "type": "string"
                     }
                 ]
             }

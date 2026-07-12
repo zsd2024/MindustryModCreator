@@ -16,11 +16,11 @@
             "fields": [
                 {
                     "name": "items",
-                    "$ref": "types/ConsumeItems"
+                    "type": "string"
                 },
                 {
                     "name": "liquid",
-                    "$ref": "types/ConsumeLiquid"
+                    "type": "string"
                 },
                 {
                     "name": "liquids",
@@ -28,7 +28,7 @@
                 },
                 {
                     "name": "power",
-                    "$ref": "types/ConsumePower"
+                    "type": "string"
                 },
                 {
                     "name": "powerBuffered",
@@ -40,7 +40,17 @@
             "name": "requirements",
             "type": "array",
             "items": {
-                "$ref": "types/StackRequirement"
+                "type": "object",
+                "fields": [
+                    {
+                        "name": "amount",
+                        "type": "int"
+                    },
+                    {
+                        "name": "item",
+                        "type": "string"
+                    }
+                ]
             }
         },
         {
@@ -108,7 +118,7 @@
                 },
                 {
                     "name": "item",
-                    "type": "Item"
+                    "type": "string"
                 }
             ]
         },
@@ -123,6 +133,14 @@
         {
             "name": "craftEffect",
             "type": "array"
+        },
+        {
+            "name": "name",
+            "type": "string"
+        },
+        {
+            "name": "description",
+            "type": "string"
         },
         {
             "name": "hasItems",
@@ -176,7 +194,7 @@
         },
         {
             "name": "ambientSound",
-            "type": "Sound"
+            "type": "string"
         },
         {
             "name": "conductivePower",
@@ -213,10 +231,7 @@
         },
         {
             "name": "outputItems",
-            "type": "array",
-            "items": {
-                "$ref": "types/StackRequirement"
-            }
+            "type": "array"
         },
         {
             "name": "liquidPressure",
@@ -268,7 +283,7 @@
         },
         {
             "name": "ambiantSound",
-            "type": "Sound"
+            "type": "string"
         },
         {
             "name": "destructible",
@@ -316,7 +331,7 @@
         },
         {
             "name": "loopSound",
-            "type": "Sound"
+            "type": "string"
         },
         {
             "name": "loopSoundVolume",
@@ -410,7 +425,7 @@
                     },
                     {
                         "name": "item",
-                        "type": "Item"
+                        "type": "string"
                     }
                 ]
             }

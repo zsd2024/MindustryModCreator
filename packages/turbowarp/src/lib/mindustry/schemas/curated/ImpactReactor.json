@@ -48,7 +48,7 @@
                     },
                     {
                         "name": "item",
-                        "type": "Item"
+                        "type": "string"
                     }
                 ]
             }
@@ -84,7 +84,7 @@
         },
         {
             "name": "ambientSound",
-            "type": "Sound"
+            "type": "string"
         },
         {
             "name": "ambientSoundVolume",
@@ -118,7 +118,7 @@
         },
         {
             "name": "explodeSound",
-            "type": "Sound"
+            "type": "string"
         },
         {
             "name": "customShadow",
@@ -154,7 +154,7 @@
         },
         {
             "name": "explodeEffect",
-            "type": "Effect"
+            "type": "string"
         },
         {
             "name": "rebuildable",
@@ -167,6 +167,14 @@
         {
             "name": "forceTeam",
             "type": "float"
+        },
+        {
+            "name": "name",
+            "type": "string"
+        },
+        {
+            "name": "description",
+            "type": "string"
         },
         {
             "name": "hasPower",

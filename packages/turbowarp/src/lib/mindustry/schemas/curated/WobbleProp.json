@@ -52,11 +52,11 @@
         },
         {
             "name": "breakSound",
-            "type": "Sound"
+            "type": "string"
         },
         {
             "name": "breakEffect",
-            "type": "Effect"
+            "type": "string"
         }
     ]
 }

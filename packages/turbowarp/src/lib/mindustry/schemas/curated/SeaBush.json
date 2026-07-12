@@ -48,11 +48,11 @@
         },
         {
             "name": "breakSound",
-            "type": "Sound"
+            "type": "string"
         },
         {
             "name": "destroySound",
-            "type": "Sound"
+            "type": "string"
         },
         {
             "name": "breakEffect",

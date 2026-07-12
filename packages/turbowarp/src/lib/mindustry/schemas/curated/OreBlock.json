@@ -3,7 +3,7 @@
     "fields": [
         {
             "name": "itemDrop",
-            "type": "Item"
+            "type": "string"
         },
         {
             "name": "variants",
@@ -30,12 +30,24 @@
             "type": "float"
         },
         {
+            "name": "name",
+            "type": "string"
+        },
+        {
+            "name": "localizedName",
+            "type": "string"
+        },
+        {
             "name": "mapColor",
             "type": "string"
         },
         {
             "name": "needsSurface",
             "type": "boolean"
+        },
+        {
+            "name": "description",
+            "type": "string"
         }
     ]
 }

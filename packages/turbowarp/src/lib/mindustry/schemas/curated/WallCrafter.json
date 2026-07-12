@@ -42,7 +42,7 @@
         },
         {
             "name": "ambientSound",
-            "type": "Sound"
+            "type": "string"
         },
         {
             "name": "ambientSoundVolume",

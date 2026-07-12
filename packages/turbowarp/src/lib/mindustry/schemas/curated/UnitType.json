@@ -52,17 +52,11 @@
         },
         {
             "name": "weapons",
-            "type": "array",
-            "items": {
-                "$ref": "types/Weapon"
-            }
+            "type": "Seq of Weapon"
         },
         {
             "name": "abilities",
-            "type": "array",
-            "items": {
-                "$ref": "types/Ability"
-            }
+            "type": "Seq of Ability"
         },
         {
             "name": "controller",
@@ -70,7 +64,7 @@
         },
         {
             "name": "research",
-            "$ref": "types/Research"
+            "type": "string"
         },
         {
             "name": "mineSpeed",

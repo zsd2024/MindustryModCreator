@@ -22,7 +22,7 @@
                     },
                     {
                         "name": "item",
-                        "type": "Item"
+                        "type": "string"
                     }
                 ]
             }
@@ -128,7 +128,7 @@
                 },
                 {
                     "name": "item",
-                    "type": "Item"
+                    "type": "string"
                 }
             ]
         },
@@ -156,7 +156,7 @@
         },
         {
             "name": "ambientSound",
-            "type": "Sound"
+            "type": "string"
         },
         {
             "name": "ambientSoundVolume",
@@ -253,6 +253,14 @@
         {
             "name": "hasItems",
             "type": "boolean"
+        },
+        {
+            "name": "name",
+            "type": "string"
+        },
+        {
+            "name": "description",
+            "type": "string"
         },
         {
             "name": "ignoreLiquidFullness",

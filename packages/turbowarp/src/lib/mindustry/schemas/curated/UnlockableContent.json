@@ -2,6 +2,18 @@
     "localizedName": "UnlockableContent",
     "fields": [
         {
+            "name": "localizedName",
+            "type": "string"
+        },
+        {
+            "name": "name",
+            "type": "string"
+        },
+        {
+            "name": "description",
+            "type": "string"
+        },
+        {
             "name": "details",
             "type": "string"
         },

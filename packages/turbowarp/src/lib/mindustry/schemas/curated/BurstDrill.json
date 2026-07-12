@@ -62,7 +62,7 @@
         },
         {
             "name": "drillSound",
-            "type": "Sound"
+            "type": "string"
         },
         {
             "name": "drillSoundVolume",

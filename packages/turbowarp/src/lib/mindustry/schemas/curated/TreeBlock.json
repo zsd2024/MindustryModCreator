@@ -3,6 +3,14 @@
     "parentType": "Block",
     "fields": [
         {
+            "name": "name",
+            "type": "string"
+        },
+        {
+            "name": "description",
+            "type": "string"
+        },
+        {
             "name": "shadowOffset",
             "type": "float"
         },
@@ -56,11 +64,11 @@
         },
         {
             "name": "breakSound",
-            "type": "Sound"
+            "type": "string"
         },
         {
             "name": "destroySound",
-            "type": "Sound"
+            "type": "string"
         },
         {
             "name": "drawCracks",

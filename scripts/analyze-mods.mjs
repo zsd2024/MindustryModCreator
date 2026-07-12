@@ -1,9 +1,11 @@
 #!/usr/bin/env bun
 import { readdirSync, readFileSync, statSync } from 'fs';
 import { join, basename, dirname } from 'path';
+import { homedir } from 'os';
 import * as hjson from 'hjson';
 
-const MODS_DIR = '~/.tmp/MindustryWorkspace/Mods/JSON';
+const HOME = homedir();
+const MODS_DIR = join(HOME, '.tmp/MindustryWorkspace/Mods/JSON');
 
 // Determine content type from a content file
 function inferContentType(filePath, data) {

@@ -3,6 +3,10 @@
     "parentType": "Prop",
     "fields": [
         {
+            "name": "name",
+            "type": "string"
+        },
+        {
             "name": "variants",
             "type": "float"
         },

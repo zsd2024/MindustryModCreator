@@ -12,7 +12,7 @@
         },
         {
             "name": "unitType",
-            "type": "UnitType"
+            "type": "string"
         },
         {
             "name": "unitCapModifier",
@@ -38,7 +38,7 @@
                     },
                     {
                         "name": "item",
-                        "type": "Item"
+                        "type": "string"
                     }
                 ]
             }
@@ -68,6 +68,14 @@
         {
             "name": "armor",
             "type": "int"
+        },
+        {
+            "name": "name",
+            "type": "string"
+        },
+        {
+            "name": "description",
+            "type": "string"
         },
         {
             "name": "researchCostMultiplier",

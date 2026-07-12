@@ -18,7 +18,7 @@
                     },
                     {
                         "name": "item",
-                        "type": "Item"
+                        "type": "string"
                     }
                 ]
             }
@@ -38,6 +38,14 @@
         {
             "name": "squareSprite",
             "type": "boolean"
+        },
+        {
+            "name": "localizedName",
+            "type": "string"
+        },
+        {
+            "name": "description",
+            "type": "string"
         },
         {
             "name": "size",

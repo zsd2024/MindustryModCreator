@@ -40,7 +40,7 @@
                     },
                     {
                         "name": "item",
-                        "type": "Item"
+                        "type": "string"
                     }
                 ]
             }
@@ -67,8 +67,16 @@
             }
         },
         {
+            "name": "name",
+            "type": "string"
+        },
+        {
+            "name": "description",
+            "type": "string"
+        },
+        {
             "name": "unitType",
-            "type": "UnitType"
+            "type": "string"
         },
         {
             "name": "produceTime",

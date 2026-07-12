@@ -3,12 +3,20 @@
     "parentType": "SolidPump",
     "fields": [
         {
+            "name": "name",
+            "type": "string"
+        },
+        {
+            "name": "description",
+            "type": "string"
+        },
+        {
             "name": "health",
             "type": "int"
         },
         {
             "name": "result",
-            "type": "Liquid"
+            "type": "string"
         },
         {
             "name": "pumpAmount",
@@ -42,7 +50,7 @@
                     },
                     {
                         "name": "item",
-                        "type": "Item"
+                        "type": "string"
                     }
                 ]
             }

@@ -28,7 +28,7 @@
                 },
                 {
                     "name": "power",
-                    "$ref": "types/ConsumePower"
+                    "type": "string"
                 }
             ]
         },
@@ -42,7 +42,7 @@
         },
         {
             "name": "shootSound",
-            "type": "Sound"
+            "type": "string"
         },
         {
             "name": "range",
@@ -52,7 +52,17 @@
             "name": "requirements",
             "type": "array",
             "items": {
-                "$ref": "types/StackRequirement"
+                "type": "object",
+                "fields": [
+                    {
+                        "name": "amount",
+                        "type": "int"
+                    },
+                    {
+                        "name": "item",
+                        "type": "string"
+                    }
+                ]
             }
         },
         {
@@ -116,7 +126,37 @@
         },
         {
             "name": "shoot",
-            "$ref": "types/Shoot"
+            "type": "object",
+            "fields": [
+                {
+                    "name": "barrels",
+                    "type": "string"
+                },
+                {
+                    "name": "firstShotDelay",
+                    "type": "string"
+                },
+                {
+                    "name": "radius",
+                    "type": "string"
+                },
+                {
+                    "name": "shotDelay",
+                    "type": "string"
+                },
+                {
+                    "name": "shots",
+                    "type": "int"
+                },
+                {
+                    "name": "spread",
+                    "type": "string"
+                },
+                {
+                    "name": "type",
+                    "type": "string"
+                }
+            ]
         },
         {
             "name": "squareSprite",
@@ -235,6 +275,14 @@
             "type": "float"
         },
         {
+            "name": "name",
+            "type": "string"
+        },
+        {
+            "name": "description",
+            "type": "string"
+        },
+        {
             "name": "inaccuracy",
             "type": "float"
         },
@@ -256,7 +304,7 @@
             "fields": [
                 {
                     "name": "effect",
-                    "type": "Effect"
+                    "type": "string"
                 },
                 {
                     "name": "maxPitch",
@@ -276,7 +324,7 @@
                 },
                 {
                     "name": "sound",
-                    "type": "Sound"
+                    "type": "string"
                 },
                 {
                     "name": "type",
@@ -318,15 +366,15 @@
         },
         {
             "name": "chargeSound",
-            "type": "Sound"
+            "type": "string"
         },
         {
             "name": "destroySound",
-            "type": "Sound"
+            "type": "string"
         },
         {
             "name": "loopSound",
-            "type": "Sound"
+            "type": "string"
         },
         {
             "name": "loopSoundVolume",

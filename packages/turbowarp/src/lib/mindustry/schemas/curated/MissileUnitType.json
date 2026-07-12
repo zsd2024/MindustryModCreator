@@ -1,5 +1,5 @@
 {
-    "localizedName": "missile",
+    "localizedName": "MissileUnitType",
     "parentType": "UnitType",
     "fields": [
         {
@@ -28,7 +28,7 @@
         },
         {
             "name": "deathSound",
-            "type": "Sound"
+            "type": "string"
         },
         {
             "name": "rotateSpeed",
@@ -156,7 +156,7 @@
         },
         {
             "name": "loopSound",
-            "type": "Sound"
+            "type": "string"
         },
         {
             "name": "internal",
@@ -175,6 +175,10 @@
             "type": "float"
         },
         {
+            "name": "localizedName",
+            "type": "string"
+        },
+        {
             "name": "outlineRadius",
             "type": "float"
         },
@@ -188,7 +192,7 @@
         },
         {
             "name": "trailEffect",
-            "type": "Effect"
+            "type": "string"
         },
         {
             "name": "drawSoftShadow",
@@ -301,11 +305,11 @@
         },
         {
             "name": "fallEffect",
-            "type": "Effect"
+            "type": "string"
         },
         {
             "name": "fallEngineEffect",
-            "type": "Effect"
+            "type": "string"
         },
         {
             "name": "drawBuildBeam",

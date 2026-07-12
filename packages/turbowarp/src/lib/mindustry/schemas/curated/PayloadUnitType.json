@@ -1,5 +1,5 @@
 {
-    "localizedName": "payload",
+    "localizedName": "PayloadUnitType",
     "parentType": "UnitType",
     "fields": [
         {
@@ -126,6 +126,14 @@
         {
             "name": "singleTarget",
             "type": "boolean"
+        },
+        {
+            "name": "name",
+            "type": "string"
+        },
+        {
+            "name": "description",
+            "type": "string"
         },
         {
             "name": "range",

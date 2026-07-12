@@ -1,5 +1,5 @@
 {
-    "localizedName": "naval",
+    "localizedName": "NavalUnitType",
     "parentType": "UnitType",
     "fields": [
         {
@@ -59,6 +59,14 @@
             "type": "array"
         },
         {
+            "name": "name",
+            "type": "string"
+        },
+        {
+            "name": "description",
+            "type": "string"
+        },
+        {
             "name": "faceTarget",
             "type": "boolean"
         },
@@ -83,6 +91,10 @@
             "type": "int"
         },
         {
+            "name": "localizedName",
+            "type": "string"
+        },
+        {
             "name": "drawBody",
             "type": "boolean"
         },
@@ -92,7 +104,7 @@
         },
         {
             "name": "deathSound",
-            "type": "Sound"
+            "type": "string"
         },
         {
             "name": "deathExplosionEffect",

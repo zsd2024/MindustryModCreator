@@ -12,7 +12,7 @@
         },
         {
             "name": "unitType",
-            "type": "UnitType"
+            "type": "string"
         },
         {
             "name": "consumes",

@@ -24,7 +24,7 @@
         },
         {
             "name": "liquidDrop",
-            "type": "Liquid"
+            "type": "string"
         },
         {
             "name": "isLiquid",

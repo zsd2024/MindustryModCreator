@@ -1,5 +1,5 @@
 {
-    "localizedName": "legs",
+    "localizedName": "LegsUnitType",
     "parentType": "UnitType",
     "fields": [
         {
@@ -115,6 +115,14 @@
             "type": "float"
         },
         {
+            "name": "name",
+            "type": "string"
+        },
+        {
+            "name": "description",
+            "type": "string"
+        },
+        {
             "name": "faceTarget",
             "type": "boolean"
         },
@@ -132,7 +140,7 @@
         },
         {
             "name": "stepSound",
-            "type": "Sound"
+            "type": "string"
         },
         {
             "name": "stepSoundVolume",
@@ -172,6 +180,10 @@
         },
         {
             "name": "research",
+            "type": "string"
+        },
+        {
+            "name": "localizedName",
             "type": "string"
         },
         {

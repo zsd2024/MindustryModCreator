@@ -12,7 +12,7 @@
         },
         {
             "name": "itemDrop",
-            "type": "Item"
+            "type": "string"
         },
         {
             "name": "size",
@@ -80,11 +80,11 @@
         },
         {
             "name": "breakSound",
-            "type": "Sound"
+            "type": "string"
         },
         {
             "name": "destroySound",
-            "type": "Sound"
+            "type": "string"
         },
         {
             "name": "drawCracks",
@@ -106,7 +106,7 @@
                     },
                     {
                         "name": "effect",
-                        "type": "Effect"
+                        "type": "string"
                     },
                     {
                         "name": "lengthOffset",
@@ -135,7 +135,7 @@
                     },
                     {
                         "name": "effect",
-                        "type": "Effect"
+                        "type": "string"
                     },
                     {
                         "name": "lengthOffset",

@@ -3,6 +3,14 @@
     "parentType": "Block",
     "fields": [
         {
+            "name": "localizedName",
+            "type": "string"
+        },
+        {
+            "name": "description",
+            "type": "string"
+        },
+        {
             "name": "size",
             "type": "int"
         },
@@ -42,7 +50,7 @@
                     },
                     {
                         "name": "item",
-                        "type": "Item"
+                        "type": "string"
                     }
                 ]
             }

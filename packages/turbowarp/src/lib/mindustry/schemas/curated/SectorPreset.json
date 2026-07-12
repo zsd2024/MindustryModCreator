@@ -8,11 +8,19 @@
         },
         {
             "name": "planet",
-            "type": "Planet"
+            "type": "string"
         },
         {
             "name": "difficulty",
             "type": "float"
+        },
+        {
+            "name": "localizedName",
+            "type": "string"
+        },
+        {
+            "name": "description",
+            "type": "string"
         },
         {
             "name": "allowLaunchLoadout",

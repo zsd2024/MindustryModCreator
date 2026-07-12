@@ -1,5 +1,5 @@
 {
-    "localizedName": "flying",
+    "localizedName": "FlyingUnitType",
     "parentType": "UnitType",
     "fields": [
         {
@@ -136,6 +136,14 @@
             "type": "boolean"
         },
         {
+            "name": "name",
+            "type": "string"
+        },
+        {
+            "name": "description",
+            "type": "string"
+        },
+        {
             "name": "omniMovement",
             "type": "boolean"
         },
@@ -145,7 +153,7 @@
         },
         {
             "name": "deathSound",
-            "type": "Sound"
+            "type": "string"
         },
         {
             "name": "deathExplosionEffect",
@@ -187,7 +195,7 @@
         },
         {
             "name": "loopSound",
-            "type": "Sound"
+            "type": "string"
         },
         {
             "name": "research",
@@ -334,6 +342,10 @@
             "type": "boolean"
         },
         {
+            "name": "localizedName",
+            "type": "string"
+        },
+        {
             "name": "drawShields",
             "type": "boolean"
         },
@@ -343,7 +355,7 @@
         },
         {
             "name": "fallEngineEffect",
-            "type": "Effect"
+            "type": "string"
         },
         {
             "name": "fallEffect",
@@ -373,7 +385,7 @@
         },
         {
             "name": "moveSound",
-            "type": "Sound"
+            "type": "string"
         },
         {
             "name": "playerControllable",

@@ -59,7 +59,7 @@
         },
         {
             "name": "droneType",
-            "type": "UnitType"
+            "type": "string"
         },
         {
             "name": "payloadSpeed",

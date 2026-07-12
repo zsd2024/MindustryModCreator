@@ -3,6 +3,14 @@
     "parentType": "Block",
     "fields": [
         {
+            "name": "localizedName",
+            "type": "string"
+        },
+        {
+            "name": "description",
+            "type": "string"
+        },
+        {
             "name": "category",
             "type": "string"
         },

@@ -3,6 +3,14 @@
     "parentType": "Block",
     "fields": [
         {
+            "name": "name",
+            "type": "string"
+        },
+        {
+            "name": "description",
+            "type": "string"
+        },
+        {
             "name": "health",
             "type": "int"
         },
@@ -34,7 +42,7 @@
                     },
                     {
                         "name": "item",
-                        "type": "Item"
+                        "type": "string"
                     }
                 ]
             }

@@ -50,7 +50,7 @@
         },
         {
             "name": "effect",
-            "type": "Effect"
+            "type": "string"
         },
         {
             "name": "coolant",
@@ -58,6 +58,14 @@
         },
         {
             "name": "lightColor",
+            "type": "string"
+        },
+        {
+            "name": "name",
+            "type": "string"
+        },
+        {
+            "name": "description",
             "type": "string"
         },
         {

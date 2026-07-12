@@ -22,7 +22,7 @@
                     },
                     {
                         "name": "item",
-                        "type": "Item"
+                        "type": "string"
                     }
                 ]
             }
@@ -40,6 +40,14 @@
                     "type": "string"
                 }
             ]
+        },
+        {
+            "name": "name",
+            "type": "string"
+        },
+        {
+            "name": "description",
+            "type": "string"
         },
         {
             "name": "category",
@@ -127,11 +135,11 @@
         },
         {
             "name": "breakSound",
-            "type": "Sound"
+            "type": "string"
         },
         {
             "name": "breakEffect",
-            "type": "Effect"
+            "type": "string"
         },
         {
             "name": "destroyEffect",
@@ -179,7 +187,7 @@
         },
         {
             "name": "itemDrop",
-            "type": "Item"
+            "type": "string"
         },
         {
             "name": "allowDerelictRepair",

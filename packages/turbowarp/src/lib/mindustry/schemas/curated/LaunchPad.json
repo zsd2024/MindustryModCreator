@@ -7,6 +7,14 @@
             "type": "int"
         },
         {
+            "name": "name",
+            "type": "string"
+        },
+        {
+            "name": "description",
+            "type": "string"
+        },
+        {
             "name": "launchTime",
             "type": "float"
         },

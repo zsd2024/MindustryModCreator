@@ -16,7 +16,7 @@
         },
         {
             "name": "shootSound",
-            "type": "Sound"
+            "type": "string"
         },
         {
             "name": "range",
@@ -32,10 +32,7 @@
         },
         {
             "name": "requirements",
-            "type": "array",
-            "items": {
-                "$ref": "types/StackRequirement"
-            }
+            "type": "array"
         },
         {
             "name": "health",
@@ -51,7 +48,41 @@
         },
         {
             "name": "shoot",
-            "$ref": "types/Shoot"
+            "type": "object",
+            "fields": [
+                {
+                    "name": "barrels",
+                    "type": "string"
+                },
+                {
+                    "name": "dest",
+                    "type": "string"
+                },
+                {
+                    "name": "firstShotDelay",
+                    "type": "string"
+                },
+                {
+                    "name": "shotDelay",
+                    "type": "string"
+                },
+                {
+                    "name": "shots",
+                    "type": "int"
+                },
+                {
+                    "name": "source",
+                    "type": "string"
+                },
+                {
+                    "name": "spread",
+                    "type": "string"
+                },
+                {
+                    "name": "type",
+                    "type": "string"
+                }
+            ]
         },
         {
             "name": "drawer",
@@ -91,7 +122,7 @@
                 },
                 {
                     "name": "liquid",
-                    "$ref": "types/ConsumeLiquid"
+                    "type": "string"
                 },
                 {
                     "name": "liquids",
@@ -99,7 +130,7 @@
                 },
                 {
                     "name": "power",
-                    "$ref": "types/ConsumePower"
+                    "type": "string"
                 }
             ]
         },
@@ -202,6 +233,14 @@
             ]
         },
         {
+            "name": "name",
+            "type": "string"
+        },
+        {
+            "name": "description",
+            "type": "string"
+        },
+        {
             "name": "forceTeam",
             "type": "float"
         },
@@ -255,7 +294,7 @@
         },
         {
             "name": "chargeSound",
-            "type": "Sound"
+            "type": "string"
         },
         {
             "name": "minRange",

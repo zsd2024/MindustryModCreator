@@ -3,6 +3,14 @@
     "parentType": "UnitBlock",
     "fields": [
         {
+            "name": "name",
+            "type": "string"
+        },
+        {
+            "name": "description",
+            "type": "string"
+        },
+        {
             "name": "health",
             "type": "int"
         },

@@ -27,6 +27,10 @@
             "type": "float"
         },
         {
+            "name": "name",
+            "type": "string"
+        },
+        {
             "name": "dragMultiplier",
             "type": "float"
         },

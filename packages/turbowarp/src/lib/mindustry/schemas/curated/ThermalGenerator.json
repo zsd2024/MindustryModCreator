@@ -18,7 +18,7 @@
                     },
                     {
                         "name": "item",
-                        "type": "Item"
+                        "type": "string"
                     }
                 ]
             }
@@ -74,11 +74,11 @@
         },
         {
             "name": "generateEffect",
-            "type": "Effect"
+            "type": "string"
         },
         {
             "name": "ambientSound",
-            "type": "Sound"
+            "type": "string"
         },
         {
             "name": "ambientSoundVolume",
@@ -87,6 +87,14 @@
         {
             "name": "minEfficiency",
             "type": "float"
+        },
+        {
+            "name": "name",
+            "type": "string"
+        },
+        {
+            "name": "description",
+            "type": "string"
         },
         {
             "name": "floating",

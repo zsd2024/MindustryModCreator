@@ -7,7 +7,7 @@
         },
         {
             "name": "itemDrop",
-            "type": "Item"
+            "type": "string"
         },
         {
             "name": "variants",

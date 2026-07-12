@@ -3,8 +3,16 @@
     "parentType": "Block",
     "fields": [
         {
+            "name": "name",
+            "type": "string"
+        },
+        {
             "name": "health",
             "type": "int"
+        },
+        {
+            "name": "description",
+            "type": "string"
         },
         {
             "name": "itemCapacity",
@@ -44,7 +52,7 @@
                     },
                     {
                         "name": "item",
-                        "type": "Item"
+                        "type": "string"
                     }
                 ]
             }

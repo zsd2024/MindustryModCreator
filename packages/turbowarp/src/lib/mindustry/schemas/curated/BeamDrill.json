@@ -91,6 +91,14 @@
             "type": "int"
         },
         {
+            "name": "name",
+            "type": "string"
+        },
+        {
+            "name": "description",
+            "type": "string"
+        },
+        {
             "name": "fogRadius",
             "type": "float"
         },
@@ -108,7 +116,7 @@
         },
         {
             "name": "ambientSound",
-            "type": "Sound"
+            "type": "string"
         },
         {
             "name": "ambientSoundVolume",

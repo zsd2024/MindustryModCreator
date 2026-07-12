@@ -105,7 +105,7 @@
                 "fields": [
                     {
                         "name": "effect",
-                        "type": "Effect"
+                        "type": "string"
                     },
                     {
                         "name": "lengthOffset",
@@ -140,7 +140,7 @@
         },
         {
             "name": "updateEffect",
-            "type": "Effect"
+            "type": "string"
         },
         {
             "name": "research",
@@ -193,12 +193,20 @@
             "type": "boolean"
         },
         {
+            "name": "name",
+            "type": "string"
+        },
+        {
+            "name": "description",
+            "type": "string"
+        },
+        {
             "name": "hasItems",
             "type": "boolean"
         },
         {
             "name": "ambientSound",
-            "type": "Sound"
+            "type": "string"
         },
         {
             "name": "ambientSoundVolume",

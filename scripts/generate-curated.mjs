@@ -11,9 +11,11 @@
 
 import { readFileSync, writeFileSync, mkdirSync } from 'fs';
 import { join } from 'path';
+import { homedir } from 'os';
 
-const REPORT = '~/.tmp/MindustryWorkspace/MindustryModCreator/scripts/field-usage-report.json';
-const SCHEMAS_DIR = '~/.tmp/MindustryWorkspace/MindustryModCreator/packages/turbowarp/src/lib/mindustry/schemas';
+const HOME = homedir();
+const REPORT = join(HOME, '.tmp/MindustryWorkspace/MindustryModCreator/scripts/field-usage-report.json');
+const SCHEMAS_DIR = join(HOME, '.tmp/MindustryWorkspace/MindustryModCreator/packages/turbowarp/src/lib/mindustry/schemas');
 const CURATED_DIR = join(SCHEMAS_DIR, 'curated');
 const TYPES_DIR = join(CURATED_DIR, 'types');
 
@@ -51,7 +53,20 @@ function getParentType(type) {
 }
 
 // Unit types map to UnitType parent
-const UNIT_TYPES = ['flying', 'legs', 'naval', 'mech', 'tank', 'payload', 'missile', 'crawl', 'tethered'];
+const UNIT_TYPES = ['FlyingUnitType', 'LegsUnitType', 'NavalUnitType', 'MechUnitType', 'TankUnitType', 'PayloadUnitType', 'MissileUnitType', 'CrawlUnitType', 'TetheredUnitType'];
+
+// Map from mod-discovered type name (lowercase) to canonical PascalCase
+const TYPE_NAME_MAP = {
+  flying: 'FlyingUnitType',
+  mech: 'MechUnitType',
+  legs: 'LegsUnitType',
+  naval: 'NavalUnitType',
+  tank: 'TankUnitType',
+  payload: 'PayloadUnitType',
+  missile: 'MissileUnitType',
+  crawl: 'CrawlUnitType',
+  tether: 'TetheredUnitType',
+};
 
 // Parent type fallback fields (when no direct mod usage data exists)
 const PARENT_FALLBACKS = {
@@ -96,7 +111,15 @@ const TARGET_TYPES = new Set([
 ]);
 
 function generateCurated(type) {
-    const typeData = Object.hasOwn(report, type) ? report[type] : undefined;
+    // Try direct lookup, then inverse map from report lower-case name
+    let typeData = Object.hasOwn(report, type) ? report[type] : undefined;
+    if (!typeData) {
+        const reverseMap = Object.fromEntries(Object.entries(TYPE_NAME_MAP).map(e => [e[1], e[0]]));
+        const altName = reverseMap[type];
+        if (altName && Object.hasOwn(report, altName)) {
+            typeData = report[altName];
+        }
+    }
     if (!typeData || typeof typeData !== 'object' || !typeData.fields) {
         // Use fallback fields for parent types
         const fallbackFields = Object.hasOwn(PARENT_FALLBACKS, type) ? PARENT_FALLBACKS[type] : undefined;
