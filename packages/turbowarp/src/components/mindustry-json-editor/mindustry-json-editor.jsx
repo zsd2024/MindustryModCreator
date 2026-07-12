@@ -37,6 +37,15 @@ const OBJECTIVE_CONTENT_TYPES = {
     OnSector: ['SectorPreset'],
     OnPlanet: ['Planet']
 };
+
+const CONTENT_TYPE_LABELS = {
+    Item: '物品', Liquid: '液体', Block: '方块', UnitType: '单位',
+    BulletType: '子弹', StatusEffect: '状态效果', Effect: '特效',
+    Weather: '天气', Planet: '行星', SectorPreset: '关卡',
+    Sound: '音效', TextureRegion: '纹理'
+};
+
+const RESEARCH_CONTENT_TYPES = ['Block', 'Item', 'Liquid', 'UnitType', 'SectorPreset', 'Planet'];
 const ENHANCED_RESEARCH = {
     parent: {type: 'Block', localizedName: '父节点'},
     objectives: {
@@ -544,8 +553,8 @@ class MindustryJsonEditor extends React.Component {
 
         if (REFERENCE_TYPES.has(field.type)) {
             const allContent = this.getAllContentOptions();
-            const contentOptions = allContent.filter(o => o.type === field.type).map(item => ({value: item.name, cn: item.cn}));
-            return <SearchableSelect options={contentOptions} value={value} onChange={onChange} ddKey={ckey} />;
+            const contentOptions = allContent.filter(o => o.type === field.type).map(item => ({value: item.name, cn: item.cn, type: item.type}));
+            return <SearchableSelect options={contentOptions} value={value} onChange={onChange} ddKey={ckey} labelMap={CONTENT_TYPE_LABELS} />;
         }
 
         return (
@@ -677,7 +686,7 @@ class MindustryJsonEditor extends React.Component {
 
         const getContentOptions = type => {
             const cats = OBJECTIVE_CONTENT_TYPES[type] || [];
-            return allContentOptions.filter(o => cats.includes(o.type)).map(item => ({value: item.name, cn: item.cn}));
+            return allContentOptions.filter(o => cats.includes(o.type)).map(item => ({value: item.name, cn: item.cn, type: item.type}));
         };
 
         return (
@@ -711,6 +720,7 @@ class MindustryJsonEditor extends React.Component {
                                             value={item}
                                             onChange={newVal => updateItem(idx, newVal)}
                                             ddKey={`obj-content-${idx}`}
+                                            labelMap={CONTENT_TYPE_LABELS}
                                         />
                                         <button
                                             className={styles.objectiveConvertBtn}
@@ -741,6 +751,7 @@ class MindustryJsonEditor extends React.Component {
                                                     value={item[fd.name] || ''}
                                                     onChange={newVal => updateItem(idx, {...item, [fd.name]: newVal})}
                                                     ddKey={`obj-${fd.name}-${idx}`}
+                                                    labelMap={CONTENT_TYPE_LABELS}
                                                 />
                                             </div>
                                         ))}
@@ -831,8 +842,8 @@ class MindustryJsonEditor extends React.Component {
             if (field.name === 'research') {
                 if (typeof value === 'string' && value !== '') {
                     const allContent = this.getAllContentOptions();
-                    const options = allContent.map(item => ({value: item.name, cn: item.cn}));
-                    return <SearchableSelect options={options} value={value} onChange={newVal => this.handleChange(field.name, newVal)} ddKey={ckey} />;
+                    const options = allContent.map(item => ({value: item.name, cn: item.cn, type: item.type}));
+                    return <SearchableSelect options={options} value={value} onChange={newVal => this.handleChange(field.name, newVal)} ddKey={ckey} labelMap={CONTENT_TYPE_LABELS} visibleTypes={RESEARCH_CONTENT_TYPES} />;
                 }
                 // Empty string or object: render research sub-fields
                 const researchValue = typeof value === 'string' ? {} : value;

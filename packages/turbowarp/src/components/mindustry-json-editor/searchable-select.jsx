@@ -8,7 +8,7 @@ const DROPDOWN_ESTIMATED_HEIGHT = 260;
 class SearchableSelect extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {open: false, search: ''};
+        this.state = {open: false, search: '', selectedType: null};
         this.triggerRef = React.createRef();
     }
 
@@ -37,20 +37,24 @@ class SearchableSelect extends React.Component {
     }
 
     handleToggle = () => {
-        this.setState(prev => ({open: !prev.open, search: ''}));
+        this.setState(prev => ({open: !prev.open, search: '', selectedType: null}));
     };
 
     handleSelect = (optValue) => {
         this.props.onChange(optValue);
-        this.setState({open: false, search: ''});
+        this.setState({open: false, search: '', selectedType: null});
     };
 
     handleSearchChange = (e) => {
         this.setState({search: e.target.value});
     };
 
+    handleTypeFilter = (type) => {
+        this.setState(prev => ({selectedType: prev.selectedType === type ? null : type, search: ''}));
+    };
+
     handleBackdrop = () => {
-        this.setState({open: false, search: ''});
+        this.setState({open: false, search: '', selectedType: null});
     };
 
     handleDropdownClick = (e) => {
@@ -58,10 +62,15 @@ class SearchableSelect extends React.Component {
     };
 
     render () {
-        const {options, value, placeholder, searchPlaceholder} = this.props;
-        const {open, search} = this.state;
+        const {options, value, placeholder, searchPlaceholder, labelMap, visibleTypes} = this.props;
+        const {open, search, selectedType} = this.state;
 
-        const filtered = options.filter(o => !search ||
+        const allTypes = [...new Set(options.filter(o => o.type).map(o => o.type))].sort();
+        const types = visibleTypes ? allTypes.filter(t => visibleTypes.includes(t)) : allTypes;
+        const hasTypes = types.length >= 2;
+
+        const typeFiltered = hasTypes && selectedType ? options.filter(o => o.type === selectedType) : options;
+        const filtered = typeFiltered.filter(o => !search ||
             o.value.includes(search) || o.cn.includes(search));
         const selected = options.find(o => o.value === value);
 
@@ -100,6 +109,19 @@ class SearchableSelect extends React.Component {
                             style={portalStyle}
                             onMouseDown={this.handleDropdownClick}
                         >
+                            {hasTypes && (
+                                <div className={styles.typeFilterBar}>
+                                    {types.map(t => (
+                                        <button
+                                            key={t}
+                                            className={`${styles.typeFilterBtn} ${selectedType === t ? styles.typeFilterBtnActive : ''}`}
+                                            onMouseDown={() => this.handleTypeFilter(t)}
+                                        >
+                                            {(labelMap && labelMap[t]) || t}
+                                        </button>
+                                    ))}
+                                </div>
+                            )}
                             <input
                                 type="text"
                                 value={search}
@@ -138,12 +160,15 @@ SearchableSelect.propTypes = {
     options: PropTypes.arrayOf(PropTypes.shape({
         value: PropTypes.string.isRequired,
         cn: PropTypes.string.isRequired,
-        color: PropTypes.string
+        color: PropTypes.string,
+        type: PropTypes.string
     })).isRequired,
     value: PropTypes.string,
     onChange: PropTypes.func.isRequired,
     placeholder: PropTypes.string,
-    searchPlaceholder: PropTypes.string
+    searchPlaceholder: PropTypes.string,
+    labelMap: PropTypes.objectOf(PropTypes.string),
+    visibleTypes: PropTypes.arrayOf(PropTypes.string)
 };
 
 export default SearchableSelect;
