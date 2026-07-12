@@ -9,7 +9,7 @@
         {
             "name": "speed",
             "localizedName": "传输速度",
-            "notes": "**Notes**: 传输速度"
+            "notes": "移动速度。\n\n**Notes**: 单位的基础移动速度（世界单位/刻）。直接控制单位的移动快慢。"
         },
         {
             "name": "bufferCapacity",

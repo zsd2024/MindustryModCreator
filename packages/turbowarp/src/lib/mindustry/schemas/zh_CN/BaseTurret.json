@@ -4,7 +4,7 @@
         {
             "name": "range",
             "localizedName": "攻击范围",
-            "notes": "**Notes**: 炮塔的攻击范围，以世界单位计。"
+            "notes": "攻击范围。\n\n**Notes**: 炮塔/单位的最小攻击范围，用于接近目标。可通过设置 > 0 的值覆盖默认值。实际攻击范围由武器决定。"
         },
         {
             "name": "placeOverlapMargin",
@@ -14,7 +14,7 @@
         {
             "name": "rotateSpeed",
             "localizedName": "旋转速度",
-            "notes": "**Notes**: 炮塔旋转速度，度/tick。"
+            "notes": "旋转速度。\n\n**Notes**: 炮塔/单位的旋转速度（度/刻）。控制追踪目标时的响应速度。"
         },
         {
             "name": "fogRadiusMultiplier",
@@ -39,7 +39,7 @@
         {
             "name": "coolantMultiplier",
             "localizedName": "冷却液倍率",
-            "notes": "每单位热容量液体降低的装填时间。\n\n**Notes**: 控制冷却液对装填速度的加成倍率。"
+            "notes": "冷却倍率。\n\n**Notes**: 冷却液对炮塔的冷却效率倍率。影响炮塔过热冷却的速度。"
         },
         {
             "name": "coolant",

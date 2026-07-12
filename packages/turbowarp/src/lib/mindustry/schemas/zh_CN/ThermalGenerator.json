@@ -2,19 +2,104 @@
     "localizedName": "热力发电机",
     "fields": [
         {
+            "name": "maxNodes",
+            "localizedName": "最大节点数",
+            "notes": "**Notes**: 请填写此字段的说明。"
+        },
+        {
+            "name": "powerProduction",
+            "localizedName": "电力产出",
+            "notes": "电力产出。\n\n**Notes**: 此方块产生的电量（每刻）。用于发电机类方块设定发电效率。"
+        },
+        {
+            "name": "powerCapacity",
+            "localizedName": "电力容量",
+            "notes": "电力容量。\n\n**Notes**: 此方块的最大电力存储容量。用于电池和其他可储电的方块。"
+        },
+        {
+            "name": "itemCapacity",
+            "localizedName": "物品容量",
+            "notes": "物品容量。\n\n**Notes**: 方块可存储的最大物品数量。通常是按每种物品单独计算的。对于单位，<0 时会根据碰撞体积自动计算。"
+        },
+        {
+            "name": "consumes",
+            "localizedName": "消耗配置",
+            "notes": "消耗配置。\n\n**Notes**: 配置此内容运行所需的消耗定义。包括消耗的物品、液体、电力等。是制作需要持续消耗资源的方块的关键配置。"
+        },
+        {
+            "name": "requirements",
+            "localizedName": "建造需求",
+            "notes": "建造需求。\n\n**Notes**: 建造此内容所需的物品及数量。如果定义了 researchCost 而此字段未定义，研究花费会自动从建造需求计算。"
+        },
+        {
+            "name": "category",
+            "localizedName": "建造分类",
+            "notes": "建造分类。\n\n**Notes**: 此内容在建造菜单中的分类。决定玩家在哪个分类标签下找到此内容。"
+        },
+        {
+            "name": "research",
+            "localizedName": "科技树",
+            "notes": "科技树配置。\n\n**Notes**: 定义此内容在科技树中的位置和相关需求。可设为字符串（父节点名称）或对象（包含父节点、需求和目标）。具体子字段见科技树配置类型。"
+        },
+        {
+            "name": "size",
+            "localizedName": "尺寸",
+            "notes": "尺寸。\n\n**Notes**: 多格方块的大小，实际占位为 size×size 格。修改后可能导致严重存档兼容性问题。"
+        },
+        {
+            "name": "attribute",
+            "localizedName": "环境属性",
+            "notes": "**Notes**: 依赖的环境属性"
+        },
+        {
             "name": "generateEffect",
             "localizedName": "发电特效",
             "notes": "**Notes**: 发电时的粒子效果"
         },
         {
-            "name": "effectChance",
-            "localizedName": "特效触发概率",
-            "notes": "**Notes**: 效果触发概率"
+            "name": "ambientSound",
+            "localizedName": "环境音效",
+            "notes": "环境音效。\n\n**Notes**: 方块运行时持续播放的环境音效所有方块共用同一音效循环通道。用于营造氛围。"
+        },
+        {
+            "name": "ambientSoundVolume",
+            "localizedName": "环境音量",
+            "notes": "环境音量。\n\n**Notes**: 环境音效的基础音量大小。用于控制方块运行声音的响度。"
         },
         {
             "name": "minEfficiency",
             "localizedName": "最低效率",
             "notes": "**Notes**: 最低效率要求"
+        },
+        {
+            "name": "name",
+            "localizedName": "名称",
+            "notes": "内容在 Mod JSON 中的唯一标识名称。\n\n**Notes**: 此名称用于在 JSON 配置、代码引用和资源文件命名中标识该内容。通常使用小写英文，多个单词用连字符连接。例如 \"copper-wall\"、\"melter\"。注意不是 bundle 中的显示名称。"
+        },
+        {
+            "name": "description",
+            "localizedName": "描述",
+            "notes": "描述文本。\n\n**Notes**: 此内容的描述说明。可通过 bundle 文件设置，也可在 JSON 中定义。在游戏中的内容数据库和提示中显示。"
+        },
+        {
+            "name": "floating",
+            "localizedName": "浮空",
+            "notes": "浮空。\n\n**Notes**: 方块是否可放置在液体边缘（半水半陆）。适用于码头、水泵等需要靠近水源的方块。"
+        },
+        {
+            "name": "placeableLiquid",
+            "localizedName": "可放置在液体上",
+            "notes": "可放置在液面上。\n\n**Notes**: 此方块是否可放置在任何液体表面。用于水上建筑。注意与 requiresWater 不同，此字段不限制只能在水中放置。"
+        },
+        {
+            "name": "customShadow",
+            "localizedName": "自定义阴影",
+            "notes": "自定义阴影。\n\n**Notes**: 为 true 时，此方块的阴影使用自定义的名称-shadow 贴图，而非自动生成的阴影。用于需要特殊投影效果的方块。"
+        },
+        {
+            "name": "breakEffect",
+            "localizedName": "破坏效果",
+            "notes": "拆除特效。\n\n**Notes**: 拆除方块时生成的特效。不同于摧毁，拆除是玩家主动操作。"
         },
         {
             "name": "displayEfficiencyScale",
@@ -27,14 +112,34 @@
             "notes": "**Notes**: 是否显示效率信息"
         },
         {
+            "name": "effectChance",
+            "localizedName": "特效触发概率",
+            "notes": "**Notes**: 效果触发概率"
+        },
+        {
+            "name": "hasLiquids",
+            "localizedName": "拥有液体",
+            "notes": "拥有液体模块。\n\n**Notes**: 为 true 时，方块拥有 LiquidModule 实例，可以存储和交互液体。决定了方块能否接收、存储和输出液体。"
+        },
+        {
             "name": "outputLiquid",
             "localizedName": "输出液体",
             "notes": "**Notes**: 输出的液体"
         },
         {
-            "name": "attribute",
-            "localizedName": "环境属性",
-            "notes": "**Notes**: 依赖的环境属性"
+            "name": "fogRadius",
+            "localizedName": "迷雾半径",
+            "notes": "迷雾半径。\n\n**Notes**: 此方块可驱散的战争迷雾范围（格数）。<= 0 时禁用。用于灯塔、雷达等具有开视野功能的方块。注意：半径不能动态变化。"
+        },
+        {
+            "name": "researchCost",
+            "localizedName": "科技花费",
+            "notes": "科技研究花费。\n\n**Notes**: 覆盖科技树中的默认研究花费。未设置时使用建造需求的物品和数量计算。用于自定义特殊科技成本。"
+        },
+        {
+            "name": "laserRange",
+            "localizedName": "激光范围",
+            "notes": "**Notes**: 请填写此字段的说明。"
         }
     ]
 }

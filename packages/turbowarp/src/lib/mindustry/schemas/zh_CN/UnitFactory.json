@@ -2,6 +2,96 @@
     "localizedName": "单位工厂",
     "fields": [
         {
+            "name": "configurable",
+            "localizedName": "可配置",
+            "notes": "可配置。\n\n**Notes**: 此方块是否可以点击以打开配置界面。设为 true 时，玩家可以点击方块进行参数设置。"
+        },
+        {
+            "name": "shownPlanets",
+            "localizedName": "显示行星",
+            "notes": "显示行星。\n\n**Notes**: 此内容所属的行星。为空时根据物品需求自动决定。目前主要对方块有意义。"
+        },
+        {
+            "name": "forceTeam",
+            "localizedName": "强制队伍",
+            "notes": "强制队伍。\n\n**Notes**: 设置后，所有此类型的方块/单位会被强制分配到指定队伍。用于战役画布或特殊地图机制。"
+        },
+        {
+            "name": "size",
+            "localizedName": "尺寸",
+            "notes": "尺寸。\n\n**Notes**: 多格方块的大小，实际占位为 size×size 格。修改后可能导致严重存档兼容性问题。"
+        },
+        {
+            "name": "consumes",
+            "localizedName": "消耗配置",
+            "notes": "消耗配置。\n\n**Notes**: 配置此内容运行所需的消耗定义。包括消耗的物品、液体、电力等。是制作需要持续消耗资源的方块的关键配置。"
+        },
+        {
+            "name": "category",
+            "localizedName": "建造分类",
+            "notes": "建造分类。\n\n**Notes**: 此内容在建造菜单中的分类。决定玩家在哪个分类标签下找到此内容。"
+        },
+        {
+            "name": "requirements",
+            "localizedName": "建造需求",
+            "notes": "建造需求。\n\n**Notes**: 建造此内容所需的物品及数量。如果定义了 researchCost 而此字段未定义，研究花费会自动从建造需求计算。"
+        },
+        {
+            "name": "name",
+            "localizedName": "名称",
+            "notes": "内容在 Mod JSON 中的唯一标识名称。\n\n**Notes**: 此名称用于在 JSON 配置、代码引用和资源文件命名中标识该内容。通常使用小写英文，多个单词用连字符连接。例如 \"copper-wall\"、\"melter\"。注意不是 bundle 中的显示名称。"
+        },
+        {
+            "name": "description",
+            "localizedName": "描述",
+            "notes": "描述文本。\n\n**Notes**: 此内容的描述说明。可通过 bundle 文件设置，也可在 JSON 中定义。在游戏中的内容数据库和提示中显示。"
+        },
+        {
+            "name": "unitType",
+            "localizedName": "单位类型",
+            "notes": "单位类型。\n\n**Notes**: 此工厂生产的单位类型。指定产出哪种单位。"
+        },
+        {
+            "name": "produceTime",
+            "localizedName": "生产时间",
+            "notes": "生产时间（刻）。\n\n**Notes**: 生产一个单位所需的时间。以游戏刻为单位。"
+        },
+        {
+            "name": "maxSpawn",
+            "localizedName": "最大生成数",
+            "notes": "最大生成数。\n\n**Notes**: 此工厂可同时拥有的最大单位数量。超过后停止生产直到有单位被摧毁。"
+        },
+        {
+            "name": "research",
+            "localizedName": "科技树",
+            "notes": "科技树配置。\n\n**Notes**: 定义此内容在科技树中的位置和相关需求。可设为字符串（父节点名称）或对象（包含父节点、需求和目标）。具体子字段见科技树配置类型。"
+        },
+        {
+            "name": "payloadSpeed",
+            "localizedName": "载荷速度",
+            "notes": "**Notes**: 请填写此字段的说明。"
+        },
+        {
+            "name": "fogRadius",
+            "localizedName": "迷雾半径",
+            "notes": "迷雾半径。\n\n**Notes**: 此方块可驱散的战争迷雾范围（格数）。<= 0 时禁用。用于灯塔、雷达等具有开视野功能的方块。注意：半径不能动态变化。"
+        },
+        {
+            "name": "scaledHealth",
+            "localizedName": "缩放生命值",
+            "notes": "每格生命值。\n\n**Notes**: 此方块每格（tile）的生命值，总生命值 = scaledHealth * size * size。当 health > 0 时此值被覆盖。默认值 40。"
+        },
+        {
+            "name": "liquidCapacity",
+            "localizedName": "液体容量",
+            "notes": "液体容量。\n\n**Notes**: hasLiquids=true 时，方块可存储的最大液体总量。默认值为 10，会随最大液体消耗量自动缩放（ConsumeLiquid）。"
+        },
+        {
+            "name": "itemCapacity",
+            "localizedName": "物品容量",
+            "notes": "物品容量。\n\n**Notes**: 方块可存储的最大物品数量。通常是按每种物品单独计算的。对于单位，<0 时会根据碰撞体积自动计算。"
+        },
+        {
             "name": "capacities",
             "localizedName": "物品容量数组",
             "notes": "**Notes**: 各类物品的容量数组"
@@ -9,7 +99,7 @@
         {
             "name": "plans",
             "localizedName": "生产计划列表",
-            "notes": "**Notes**: 单位生产计划列表"
+            "notes": "转换方案。\n\n**Notes**: 定义此方块可转换的单位类型方案。用于升级器、重构器等可在不同单位类型间转换的建筑。"
         },
         {
             "name": "createSound",

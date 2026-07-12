@@ -2,6 +2,91 @@
     "localizedName": "炮塔",
     "fields": [
         {
+            "name": "range",
+            "localizedName": "范围",
+            "notes": "攻击范围。\n\n**Notes**: 炮塔/单位的最小攻击范围，用于接近目标。可通过设置 > 0 的值覆盖默认值。实际攻击范围由武器决定。"
+        },
+        {
+            "name": "inaccuracy",
+            "localizedName": "散布角度",
+            "notes": "子弹角度的随机偏差，以度为单位。\n\n**Notes**: 控制子弹的散布范围。"
+        },
+        {
+            "name": "shootCone",
+            "localizedName": "射击角度范围",
+            "notes": "炮塔仍会尝试射击的最大角度差。\n\n**Notes**: 控制炮塔射击的精度要求。"
+        },
+        {
+            "name": "shootSound",
+            "localizedName": "射击音效",
+            "notes": "发射单发子弹时的音效。\n\n**Notes**: 炮塔开火音效。"
+        },
+        {
+            "name": "shoot",
+            "localizedName": "射击模式",
+            "notes": "用于子弹的射击模式。\n\n**Notes**: 定义炮弹的发射模式。"
+        },
+        {
+            "name": "ammo",
+            "localizedName": "弹药",
+            "notes": "弹药定义。\n\n**Notes**: 炮塔的弹药条目定义。指定炮塔可以使用哪些物品作为弹药以及对应的子弹类型。"
+        },
+        {
+            "name": "ammoTypes",
+            "localizedName": "弹药类型",
+            "notes": "弹药类型。\n\n**Notes**: 炮塔所有可用弹药类型的映射。包含默认弹药和通过物品转换的弹药。"
+        },
+        {
+            "name": "targetAir",
+            "localizedName": "可攻击空中",
+            "notes": "如果为true，该方块瞄准空中单位。\n\n**Notes**: 控制炮塔是否能攻击空中目标。"
+        },
+        {
+            "name": "targetGround",
+            "localizedName": "可攻击地面",
+            "notes": "如果为true，该方块瞄准地面单位和建筑。\n\n**Notes**: 控制炮塔是否能攻击地面目标。"
+        },
+        {
+            "name": "rotateSpeed",
+            "localizedName": "旋转速度",
+            "notes": "旋转速度。\n\n**Notes**: 炮塔/单位的旋转速度（度/刻）。控制追踪目标时的响应速度。"
+        },
+        {
+            "name": "coolantMultiplier",
+            "localizedName": "冷却倍率",
+            "notes": "冷却倍率。\n\n**Notes**: 冷却液对炮塔的冷却效率倍率。影响炮塔过热冷却的速度。"
+        },
+        {
+            "name": "heatColor",
+            "localizedName": "热力颜色",
+            "notes": "绘制在顶部的热力区域的颜色。\n\n**Notes**: 炮管发热时的颜色。"
+        },
+        {
+            "name": "shootEffect",
+            "localizedName": "射击特效覆盖",
+            "notes": "所有射击效果的可选覆盖。\n\n**Notes**: 如果不为null，覆盖子弹的射击效果。"
+        },
+        {
+            "name": "smokeEffect",
+            "localizedName": "烟雾特效覆盖",
+            "notes": "所有烟雾效果的可选覆盖。\n\n**Notes**: 如果不为null，覆盖子弹的烟雾效果。"
+        },
+        {
+            "name": "warmupSpeed",
+            "localizedName": "预热速度",
+            "notes": "预热速度。\n\n**Notes**: 炮塔射击前的预热速度。影响炮塔达到全速射击所需的时间。"
+        },
+        {
+            "name": "minWarmup",
+            "localizedName": "最小预热值",
+            "notes": "开火所需的最低预热程度。\n\n**Notes**: 控制炮塔需要预热到多少才能开火。"
+        },
+        {
+            "name": "display",
+            "localizedName": "显示",
+            "notes": "**Notes**: 请填写此字段的说明。"
+        },
+        {
             "name": "timerTarget",
             "localizedName": "目标计时器",
             "notes": "**Notes**: 用于寻找目标的计时器索引。"
@@ -42,11 +127,6 @@
             "notes": "如果炮塔使用热量，可能达到的最大效率。\n\n**Notes**: 热量驱动的炮塔的最大效率倍率。"
         },
         {
-            "name": "inaccuracy",
-            "localizedName": "散布角度",
-            "notes": "子弹角度的随机偏差，以度为单位。\n\n**Notes**: 控制子弹的散布范围。"
-        },
-        {
             "name": "velocityRnd",
             "localizedName": "速度随机比例",
             "notes": "子弹速度的随机比例。\n\n**Notes**: 控制子弹速度的随机性。"
@@ -55,11 +135,6 @@
             "name": "scaleLifetimeOffset",
             "localizedName": "寿命缩放偏移",
             "notes": "添加到具有lifeScale的子弹的寿命比例。\n\n**Notes**: 控制根据距离缩放子弹寿命时的偏移量。"
-        },
-        {
-            "name": "shootCone",
-            "localizedName": "射击角度范围",
-            "notes": "炮塔仍会尝试射击的最大角度差。\n\n**Notes**: 控制炮塔射击的精度要求。"
         },
         {
             "name": "shootX",
@@ -92,11 +167,6 @@
             "notes": "最小子弹射程。仅用于火炮。\n\n**Notes**: 炮弹不会攻击小于此距离的目标。"
         },
         {
-            "name": "minWarmup",
-            "localizedName": "最小预热值",
-            "notes": "开火所需的最低预热程度。\n\n**Notes**: 控制炮塔需要预热到多少才能开火。"
-        },
-        {
             "name": "accurateDelay",
             "localizedName": "精确延迟瞄准",
             "notes": "如果为true，炮塔会精确瞄准移动目标，考虑shoot.firstShotDelay。\n\n**Notes**: 控制是否在射击延迟期间预测目标移动。"
@@ -117,21 +187,6 @@
             "notes": "即使炮塔不开火也能维持预热的时间。\n\n**Notes**: 控制预热状态的保持时间。"
         },
         {
-            "name": "shoot",
-            "localizedName": "射击模式",
-            "notes": "用于子弹的射击模式。\n\n**Notes**: 定义炮弹的发射模式。"
-        },
-        {
-            "name": "targetAir",
-            "localizedName": "可攻击空中",
-            "notes": "如果为true，该方块瞄准空中单位。\n\n**Notes**: 控制炮塔是否能攻击空中目标。"
-        },
-        {
-            "name": "targetGround",
-            "localizedName": "可攻击地面",
-            "notes": "如果为true，该方块瞄准地面单位和建筑。\n\n**Notes**: 控制炮塔是否能攻击地面目标。"
-        },
-        {
             "name": "targetBlocks",
             "localizedName": "可攻击建筑",
             "notes": "如果为true，该方块瞄准建筑。\n\n**Notes**: 控制炮塔是否能攻击敌方建筑。"
@@ -144,7 +199,7 @@
         {
             "name": "playerControllable",
             "localizedName": "玩家可控",
-            "notes": "如果为true，该炮塔可以被玩家控制。\n\n**Notes**: 控制玩家是否能手动操作该炮塔。"
+            "notes": "玩家可控。\n\n**Notes**: 为 false 时，玩家不能直接控制此单位。用于限制某些单位（如导弹）的操作权。"
         },
         {
             "name": "displayAmmoMultiplier",
@@ -182,29 +237,9 @@
             "notes": "攻击建筑类型的过滤器。\n\n**Notes**: 定义哪些建筑可以被攻击。"
         },
         {
-            "name": "heatColor",
-            "localizedName": "热力颜色",
-            "notes": "绘制在顶部的热力区域的颜色。\n\n**Notes**: 炮管发热时的颜色。"
-        },
-        {
-            "name": "shootEffect",
-            "localizedName": "射击特效覆盖",
-            "notes": "所有射击效果的可选覆盖。\n\n**Notes**: 如果不为null，覆盖子弹的射击效果。"
-        },
-        {
-            "name": "smokeEffect",
-            "localizedName": "烟雾特效覆盖",
-            "notes": "所有烟雾效果的可选覆盖。\n\n**Notes**: 如果不为null，覆盖子弹的烟雾效果。"
-        },
-        {
             "name": "ammoUseEffect",
             "localizedName": "弹药消耗特效",
             "notes": "消耗弹药时创建的效果。非可选。\n\n**Notes**: 每次消耗弹药时播放的效果。"
-        },
-        {
-            "name": "shootSound",
-            "localizedName": "射击音效",
-            "notes": "发射单发子弹时的音效。\n\n**Notes**: 炮塔开火音效。"
         },
         {
             "name": "shootSoundVolume",
@@ -219,12 +254,12 @@
         {
             "name": "loopSound",
             "localizedName": "循环音效",
-            "notes": "方块在活动时发出的音效。单次循环。不要滥用。\n\n**Notes**: 炮塔持续工作时的循环音效。"
+            "notes": "循环音效。\n\n**Notes**: 单位在附近时循环播放的音效。音量随距离变化。用于让玩家感知单位的接近。"
         },
         {
             "name": "loopSoundVolume",
             "localizedName": "循环音量",
-            "notes": "活动音效的基础音量。\n\n**Notes**: 循环音效的音量。"
+            "notes": "循环音量。\n\n**Notes**: 循环音效的音量大小。"
         },
         {
             "name": "soundPitchMin",

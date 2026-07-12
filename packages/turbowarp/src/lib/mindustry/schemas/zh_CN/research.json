@@ -1,3 +1,35 @@
 {
-    "localizedName": "科技树"
+    "localizedName": "科技树",
+    "fields": [
+        {
+            "name": "parent",
+            "localizedName": "父节点",
+            "notes": "此科技节点的父节点内容名称。\n\n**Notes**: 用于构建科技树的层级关系。指向一个已存在的内容名称（如 \"copper-wall\"），该内容成为此科技的前置节点。必须指向已定义的内容。"
+        },
+        {
+            "name": "requirements",
+            "localizedName": "研究需求",
+            "notes": "研究此科技所需的物品及数量。\n\n**Notes**: 定义研究此科技需要消耗的物品列表。每个条目包含物品类型和数量。未设置时自动从建造需求计算。"
+        },
+        {
+            "name": "objectives",
+            "localizedName": "研究目标",
+            "notes": "解锁此科技需要完成的条件列表。\n\n**Notes**: 支持纯字符串（直接引用内容名称如 \"copper\"）或结构化对象。目标类型包括：Produce（生产某单位/物品）、Research（研究某科技）、SectorComplete（完成某关卡）、OnSector（在某个关卡上）。"
+        },
+        {
+            "name": "root",
+            "localizedName": "根节点",
+            "notes": "是否为此科技树的根节点。\n\n**Notes**: 设为 true 时，此节点成为科技树的起始节点。通常每个行星/分类的起始科技设为根节点。"
+        },
+        {
+            "name": "name",
+            "localizedName": "科技名称",
+            "notes": "此科技节点的标识名称。\n\n**Notes**: 用于在 JSON 中引用此科技节点。通常与对应的内容名称一致。"
+        },
+        {
+            "name": "requiresUnlock",
+            "localizedName": "需要前置解锁",
+            "notes": "是否需要前置解锁条件。\n\n**Notes**: 设为 true 时，必须满足其他条件后才能研究此科技。用于控制科技树的解锁流程和顺序。"
+        }
+    ]
 }

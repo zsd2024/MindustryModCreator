@@ -19,7 +19,7 @@
         {
             "name": "speed",
             "localizedName": "子弹速度",
-            "notes": "速度（单位/tick）。\n\n**Notes**: 子弹每tick移动的距离。"
+            "notes": "移动速度。\n\n**Notes**: 单位的基础移动速度（世界单位/刻）。直接控制单位的移动快慢。"
         },
         {
             "name": "velocityScaleRandMin",
@@ -39,7 +39,7 @@
         {
             "name": "hitSize",
             "localizedName": "碰撞箱大小",
-            "notes": "碰撞箱大小。\n\n**Notes**: 子弹的碰撞检测范围。"
+            "notes": "碰撞体积。\n\n**Notes**: 单位碰撞箱的单边大小。矩形碰撞箱，此值为边长。影响被命中和碰撞检测。"
         },
         {
             "name": "drawSize",
@@ -59,12 +59,12 @@
         {
             "name": "drag",
             "localizedName": "空气阻力",
-            "notes": "阻力（速率比例）。\n\n**Notes**: 子弹每帧的速率衰减比例。"
+            "notes": "阻力。\n\n**Notes**: 单位移动时的阻力系数。值越大，单位停止移动后减速越快。影响单位的惯性。"
         },
         {
             "name": "accel",
             "localizedName": "加速度",
-            "notes": "每帧加速度。\n\n**Notes**: 子弹每帧的加速度。"
+            "notes": "加速度。\n\n**Notes**: 单位从静止到全速的加速比例。值越大，单位达到最大速度越快。"
         },
         {
             "name": "pierce",
@@ -189,7 +189,7 @@
         {
             "name": "buildingDamageMultiplier",
             "localizedName": "建筑伤害倍率",
-            "notes": "对瓦片造成的基础伤害倍率。\n\n**Notes**: 对建筑伤害倍率。"
+            "notes": "对图格造成的基础伤害倍率。\n\n**Notes**: 对建筑伤害倍率。"
         },
         {
             "name": "shieldDamageMultiplier",
@@ -253,13 +253,13 @@
         },
         {
             "name": "collidesTiles",
-            "localizedName": "与瓦片碰撞",
-            "notes": "此子弹类型是否与瓦片碰撞。\n\n**Notes**: 控制子弹是否与地形瓦片碰撞。"
+            "localizedName": "与图格碰撞",
+            "notes": "此子弹类型是否与图格碰撞。\n\n**Notes**: 控制子弹是否与地形图格碰撞。"
         },
         {
             "name": "collidesTeam",
             "localizedName": "与队友碰撞",
-            "notes": "此子弹类型是否与同队伍的瓦片碰撞。\n\n**Notes**: 控制子弹是否与友方目标碰撞。"
+            "notes": "此子弹类型是否与同队伍的图格碰撞。\n\n**Notes**: 控制子弹是否与友方目标碰撞。"
         },
         {
             "name": "collidesAir",
@@ -329,7 +329,7 @@
         {
             "name": "maxRange",
             "localizedName": "最大射程覆盖",
-            "notes": "子弹射程正向覆盖。\n\n**Notes**: 子弹的最大射程覆盖值。"
+            "notes": "最大范围。\n\n**Notes**: 所有武器的最大攻击范围。决定单位可以攻击的最远距离。"
         },
         {
             "name": "rangeOverride",
@@ -349,7 +349,7 @@
         {
             "name": "range",
             "localizedName": "最终射程",
-            "notes": "在init()中初始化的射程。\n\n**Notes**: 子弹的最终计算射程。"
+            "notes": "攻击范围。\n\n**Notes**: 炮塔/单位的最小攻击范围，用于接近目标。可通过设置 > 0 的值覆盖默认值。实际攻击范围由武器决定。"
         },
         {
             "name": "minRangeChange",
@@ -619,7 +619,7 @@
         {
             "name": "parts",
             "localizedName": "绘制部件",
-            "notes": "此子弹的额外视觉部件。\n\n**Notes**: 子弹的额外绘制部件。"
+            "notes": "视觉部件。\n\n**Notes**: 额外的（通常为动画）视觉部件列表。用于为单位添加非武器性的动画元素。"
         },
         {
             "name": "trailColor",
@@ -714,7 +714,7 @@
         {
             "name": "splashDamagePierce",
             "localizedName": "溅射穿透地形",
-            "notes": "若为true，溅射伤害穿透瓦片。\n\n**Notes**: 溅射伤害是否穿透地形。"
+            "notes": "若为true，溅射伤害穿透图格。\n\n**Notes**: 溅射伤害是否穿透地形。"
         },
         {
             "name": "incendAmount",
@@ -829,7 +829,7 @@
         {
             "name": "rotateSpeed",
             "localizedName": "子弹旋转速度",
-            "notes": "子弹飞行时速度的旋转速率。\n\n**Notes**: 子弹旋转速度。"
+            "notes": "旋转速度。\n\n**Notes**: 炮塔/单位的旋转速度（度/刻）。控制追踪目标时的响应速度。"
         },
         {
             "name": "puddles",

@@ -4,7 +4,7 @@
         {
             "name": "radius",
             "localizedName": "护盾半径",
-            "notes": "**Notes**: 护盾半径"
+            "notes": "行星球体半径。\n\n**Notes**: 行星的三维球体半径。影响行星在宇宙视图中的视觉大小。"
         },
         {
             "name": "sides",
@@ -14,7 +14,7 @@
         {
             "name": "shieldColor",
             "localizedName": "护盾颜色",
-            "notes": "**Notes**: 护盾颜色，为空时使用队伍颜色"
+            "notes": "护盾颜色。\n\n**Notes**: 覆写此单位的护盾颜色。默认护盾颜色较浅，通过此字段可自定义护盾色调。"
         }
     ]
 }

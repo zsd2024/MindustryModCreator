@@ -2,14 +2,29 @@
     "localizedName": "扇区预设",
     "fields": [
         {
-            "name": "generator",
-            "localizedName": "地图生成器",
-            "notes": "**Notes**: 此关卡的地图生成器。"
+            "name": "name",
+            "localizedName": "名称",
+            "notes": "内容在 Mod JSON 中的唯一标识名称。\n\n**Notes**: 此名称用于在 JSON 配置、代码引用和资源文件命名中标识该内容。通常使用小写英文，多个单词用连字符连接。例如 \"copper-wall\"、\"melter\"。注意不是 bundle 中的显示名称。"
         },
         {
-            "name": "planet",
-            "localizedName": "所属行星",
-            "notes": "**Notes**: 此关卡所属的行星。"
+            "name": "description",
+            "localizedName": "描述",
+            "notes": "描述文本。\n\n**Notes**: 此内容的描述说明。可通过 bundle 文件设置，也可在 JSON 中定义。在游戏中的内容数据库和提示中显示。"
+        },
+        {
+            "name": "hidden",
+            "localizedName": "隐藏",
+            "notes": "隐藏。\n\n**Notes**: 为 true 时，此内容不会在核心数据库和各种 UI 界面中显示。用于标记已移除或实验性的内容。"
+        },
+        {
+            "name": "alwaysUnlocked",
+            "localizedName": "始终解锁",
+            "notes": "是否始终解锁。\n\n**Notes**: 设为 true 时，此内容在科技树中始终可用，无需研究解锁。适用于开局即可使用的基础内容。"
+        },
+        {
+            "name": "research",
+            "localizedName": "科技树",
+            "notes": "科技树配置。\n\n**Notes**: 定义此内容在科技树中的位置和相关需求。可设为字符串（父节点名称）或对象（包含父节点、需求和目标）。具体子字段见科技树配置类型。"
         },
         {
             "name": "sector",
@@ -17,24 +32,19 @@
             "notes": "**Notes**: 此预设对应的扇区对象。"
         },
         {
-            "name": "captureWave",
-            "localizedName": "占领波次",
-            "notes": "**Notes**: 占领此扇区所需完成的波次。"
-        },
-        {
-            "name": "rules",
-            "localizedName": "规则配置",
-            "notes": "**Notes**: 此扇区使用的规则配置。"
+            "name": "planet",
+            "localizedName": "所属行星",
+            "notes": "行星。\n\n**Notes**: 科技树所属的行星。用于区分不同行星上的独立科技树分支。"
         },
         {
             "name": "difficulty",
             "localizedName": "难度",
-            "notes": "难度，0-10。\n\n**Notes**: Difficulty, 0-10."
+            "notes": "难度（0-10）。\n\n**Notes**: 此关卡的难度等级。影响敌方波次强度、资源丰度等。显示在关卡选择界面。"
         },
         {
-            "name": "startWaveTimeMultiplier",
-            "localizedName": "起始波次时间倍率",
-            "notes": "**Notes**: 起始波次时间间隔的倍率。"
+            "name": "allowLaunchLoadout",
+            "localizedName": "允许发射物资",
+            "notes": "是否允许玩家指定带到此地图的资源。\n\n**Notes**: Whether to allow users to specify the resources they take to this map."
         },
         {
             "name": "addStartingItems",
@@ -42,19 +52,44 @@
             "notes": "**Notes**: 是否添加初始物品。"
         },
         {
+            "name": "captureWave",
+            "localizedName": "占领波次",
+            "notes": "**Notes**: 占领此扇区所需完成的波次。"
+        },
+        {
+            "name": "allowLaunchSchematics",
+            "localizedName": "允许发射蓝图",
+            "notes": "是否允许玩家为此地图指定自定义发射蓝图。\n\n**Notes**: Whether to allow users to specify a custom launch schematic for this map."
+        },
+        {
             "name": "noLighting",
             "localizedName": "禁用光照",
             "notes": "**Notes**: 是否禁用光照。"
         },
         {
+            "name": "generator",
+            "localizedName": "地图生成器",
+            "notes": "**Notes**: 此关卡的地图生成器。"
+        },
+        {
+            "name": "rules",
+            "localizedName": "规则配置",
+            "notes": "**Notes**: 此扇区使用的规则配置。"
+        },
+        {
+            "name": "startWaveTimeMultiplier",
+            "localizedName": "起始波次时间倍率",
+            "notes": "**Notes**: 起始波次时间间隔的倍率。"
+        },
+        {
             "name": "isLastSector",
             "localizedName": "最终扇区",
-            "notes": "若为true，则这是其行星战役中的最后一个扇区。\n\n**Notes**: If true, this is the last sector in its planetary campaign."
+            "notes": "最终关卡。\n\n**Notes**: 为 true 时，此关卡是所在行星路线的最后一个区域。击败后触发通关相关事件。"
         },
         {
             "name": "requireUnlock",
             "localizedName": "需要解锁",
-            "notes": "若为true，则必须先解锁该扇区才能降落。\n\n**Notes**: If true, this sector must be unlocked before landing is permitted."
+            "notes": "需要解锁。\n\n**Notes**: 为 true 时，必须先解锁此关卡才能降落。控制关卡的解锁顺序。"
         },
         {
             "name": "showHidden",
@@ -69,22 +104,12 @@
         {
             "name": "overrideLaunchDefaults",
             "localizedName": "覆盖发射默认值",
-            "notes": "若为true，则使用此扇区的发射字段而非默认值。\n\n**Notes**: If true, uses this sector's launch fields instead"
-        },
-        {
-            "name": "allowLaunchSchematics",
-            "localizedName": "允许发射蓝图",
-            "notes": "是否允许玩家为此地图指定自定义发射蓝图。\n\n**Notes**: Whether to allow users to specify a custom launch schematic for this map."
-        },
-        {
-            "name": "allowLaunchLoadout",
-            "localizedName": "允许发射物资",
-            "notes": "是否允许玩家指定带到此地图的资源。\n\n**Notes**: Whether to allow users to specify the resources they take to this map."
+            "notes": "覆盖发射默认值。\n\n**Notes**: 为 true 时，使用此关卡自身的发射配置而非行星默认设置。用于自定义特殊关卡的发射参数。"
         },
         {
             "name": "attackAfterWaves",
             "localizedName": "波次后攻击模式",
-            "notes": "若为true，则在波次结束后切换到攻击模式。\n\n**Notes**: If true, switches to attack mode after waves end."
+            "notes": "波次后进攻。\n\n**Notes**: 为 true 时，波次防守结束后切换到攻击模式。用于具有攻防转换机制的混合关卡。"
         },
         {
             "name": "originalPosition",

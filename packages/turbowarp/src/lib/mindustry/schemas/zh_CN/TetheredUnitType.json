@@ -1,5 +1,5 @@
 {
-    "localizedName": "海军单位",
+    "localizedName": "栓绳单位",
     "fields": [
         {
             "name": "name",
@@ -117,34 +117,24 @@
             "notes": "轮廓颜色。\n\n**Notes**: 图标轮廓的颜色值。控制生成图标时轮廓部分的颜色。修改后可自定义图标外观。"
         },
         {
-            "name": "waveTrailX",
-            "localizedName": "波浪轨迹X",
-            "notes": "**Notes**: 请填写此字段的说明。"
+            "name": "playerControllable",
+            "localizedName": "玩家可控",
+            "notes": "玩家可控。\n\n**Notes**: 为 false 时，玩家不能直接控制此单位。用于限制某些单位（如导弹）的操作权。"
         },
         {
-            "name": "outlines",
-            "localizedName": "生成轮廓",
-            "notes": "生成轮廓。\n\n**Notes**: 为 false 时，不为此单位生成精灵轮廓贴图。用于减少不需要轮廓的单位的资源消耗。"
+            "name": "hoverable",
+            "localizedName": "悬浮提示",
+            "notes": "悬浮提示。\n\n**Notes**: 此单位是否在鼠标悬停时显示信息提示框。通常设为 true。"
         },
         {
-            "name": "waveTrailY",
-            "localizedName": "波浪轨迹Y",
-            "notes": "**Notes**: 请填写此字段的说明。"
+            "name": "buildBeamOffset",
+            "localizedName": "建造光束偏移",
+            "notes": "建造光束偏移。\n\n**Notes**: 建造光束的前方视觉偏移量。用于调整光束发射位置，使其看起来从正确位置射出。"
         },
         {
-            "name": "faceTarget",
-            "localizedName": "面向目标",
-            "notes": "面向目标。\n\n**Notes**: 为 true 时，单位在攻击/瞄准时会旋转朝向目标。影响单位的攻击动画和朝向行为。"
-        },
-        {
-            "name": "range",
-            "localizedName": "范围",
-            "notes": "攻击范围。\n\n**Notes**: 炮塔/单位的最小攻击范围，用于接近目标。可通过设置 > 0 的值覆盖默认值。实际攻击范围由武器决定。"
-        },
-        {
-            "name": "drawBody",
-            "localizedName": "绘制身体",
-            "notes": "绘制身体。\n\n**Notes**: 为 false 时，不绘制单位的身体贴图。用于只显示特效或部件而不显示主体的单位。"
+            "name": "physics",
+            "localizedName": "物理碰撞",
+            "notes": "物理碰撞。\n\n**Notes**: 为 false 时，此单位不会与其他单位产生物理碰撞（可以互相穿过）。用于幽灵单位或特殊效果。"
         },
         {
             "name": "drawCell",
@@ -152,14 +142,24 @@
             "notes": "绘制队伍标识。\n\n**Notes**: 为 false 时，不绘制单位的队伍标识/指示器。用于隐藏单位的队伍归属。"
         },
         {
-            "name": "deathSound",
-            "localizedName": "死亡音效",
-            "notes": "死亡音效。\n\n**Notes**: 单位爆炸（被击毁）时播放的音效。区别于普通的击落声音。"
+            "name": "outlines",
+            "localizedName": "生成轮廓",
+            "notes": "生成轮廓。\n\n**Notes**: 为 false 时，不为此单位生成精灵轮廓贴图。用于减少不需要轮廓的单位的资源消耗。"
         },
         {
-            "name": "deathExplosionEffect",
-            "localizedName": "死亡爆炸效果",
-            "notes": "死亡爆炸特效。\n\n**Notes**: 单位死亡时生成的特效。通常用于大单位或特殊单位，增加死亡时的视觉冲击。"
+            "name": "groundLayer",
+            "localizedName": "地面图层",
+            "notes": "地面图层。\n\n**Notes**: 地面单位绘制的图层层级。用于控制单位叠放顺序，影响哪个单位绘制在前面。"
+        },
+        {
+            "name": "targetable",
+            "localizedName": "可被瞄准",
+            "notes": "可被瞄准。\n\n**Notes**: 为 false 时，此单位不会被任何东西锁定为目标（但范围伤害仍然有效）。用于无敌/装饰单位。"
+        },
+        {
+            "name": "logicControllable",
+            "localizedName": "逻辑可控",
+            "notes": "逻辑可控。\n\n**Notes**: 为 false 时，逻辑处理器（处理器方块）无法控制此单位。用于防止玩家通过逻辑控制特殊单位。"
         },
         {
             "name": "lowAltitude",
@@ -167,34 +167,114 @@
             "notes": "低空飞行。\n\n**Notes**: 为 true 时，此飞行单位在特效/子弹下方绘制，仅视觉效果。决定单位在渲染层级中的位置。"
         },
         {
-            "name": "shadowElevation",
-            "localizedName": "阴影高度",
-            "notes": "阴影高度。\n\n**Notes**: 地面单位阴影的高度偏移。控制阴影距单位底部的距离，视觉上影响单位的高度感。"
+            "name": "useUnitCap",
+            "localizedName": "计入单位上限",
+            "notes": "计入单位上限。\n\n**Notes**: 为 false 时，此单位不计入单位的数量上限，可以无限生成。用于装饰性或临时单位。"
         },
         {
-            "name": "canBoost",
-            "localizedName": "可加速",
-            "notes": "**Notes**: 请填写此字段的说明。"
+            "name": "drawBody",
+            "localizedName": "绘制身体",
+            "notes": "绘制身体。\n\n**Notes**: 为 false 时，不绘制单位的身体贴图。用于只显示特效或部件而不显示主体的单位。"
         },
         {
-            "name": "boostMultiplier",
-            "localizedName": "加速倍率",
-            "notes": "加速倍率。\n\n**Notes**: 单位在加速状态下的速度倍率。适用于可以升空加速的单位（如 Rise）。"
+            "name": "drawShields",
+            "localizedName": "绘制护盾",
+            "notes": "绘制护盾。\n\n**Notes**: 为 false 时，不绘制单位的护盾效果（通常在波次模式中看到的护盾）。"
         },
         {
-            "name": "engines",
-            "localizedName": "引擎",
-            "notes": "引擎列表。\n\n**Notes**: 引擎/推进器列表。每个引擎有独立的位置、半径和颜色配置。决定引擎火焰的显示效果。"
+            "name": "deathShake",
+            "localizedName": "死亡震动",
+            "notes": "死亡震动。\n\n**Notes**: 单位死亡时屏幕震动的强度。用于增加大单位死亡时的史诗感。"
         },
         {
-            "name": "createWreck",
-            "localizedName": "产生残骸",
-            "notes": "**Notes**: 请填写此字段的说明。"
+            "name": "shieldColor",
+            "localizedName": "护盾颜色",
+            "notes": "护盾颜色。\n\n**Notes**: 覆写此单位的护盾颜色。默认护盾颜色较浅，通过此字段可自定义护盾色调。"
+        },
+        {
+            "name": "deathSound",
+            "localizedName": "死亡音效",
+            "notes": "死亡音效。\n\n**Notes**: 单位爆炸（被击毁）时播放的音效。区别于普通的击落声音。"
+        },
+        {
+            "name": "createScorch",
+            "localizedName": "产生烧痕",
+            "notes": "产生烧痕。\n\n**Notes**: 为 false 时，此单位死亡不在地面上产生烧灼痕迹。可用于减少视觉杂乱。"
+        },
+        {
+            "name": "loopSound",
+            "localizedName": "循环音效",
+            "notes": "循环音效。\n\n**Notes**: 单位在附近时循环播放的音效。音量随距离变化。用于让玩家感知单位的接近。"
+        },
+        {
+            "name": "loopSoundVolume",
+            "localizedName": "循环音量",
+            "notes": "循环音量。\n\n**Notes**: 循环音效的音量大小。"
         },
         {
             "name": "envDisabled",
             "localizedName": "禁用环境",
             "notes": "禁用环境。\n\n**Notes**: 此方块不可运作的环境标志枚举。如果环境匹配其中任何一个，方块将被禁用。与 envEnabled 相反。"
+        },
+        {
+            "name": "faceTarget",
+            "localizedName": "面向目标",
+            "notes": "面向目标。\n\n**Notes**: 为 true 时，单位在攻击/瞄准时会旋转朝向目标。影响单位的攻击动画和朝向行为。"
+        },
+        {
+            "name": "shadowElevation",
+            "localizedName": "阴影高度",
+            "notes": "阴影高度。\n\n**Notes**: 地面单位阴影的高度偏移。控制阴影距单位底部的距离，视觉上影响单位的高度感。"
+        },
+        {
+            "name": "controlSelectGlobal",
+            "localizedName": "全局选择",
+            "notes": "全局选择。\n\n**Notes**: 为 true 时，此单位可通过全局选择快捷键（Shift+G）选中。用于方便管理大量同类型单位。"
+        },
+        {
+            "name": "drawBuildBeam",
+            "localizedName": "绘制建造光束",
+            "notes": "绘制建造光束。\n\n**Notes**: 为 true 时，单位向目标方块绘制建造光束连线。用于工程单位增加视觉反馈。"
+        },
+        {
+            "name": "internal",
+            "localizedName": "内部使用",
+            "notes": "内部使用。\n\n**Notes**: 为 true 时，此单位为内部使用用途，不会自动生成精灵贴图。用于代码内部引用而不需要实际视觉表现的占位单位。"
+        },
+        {
+            "name": "envEnabled",
+            "localizedName": "启用环境",
+            "notes": "启用环境。\n\n**Notes**: 此方块可以正常运作的环境标志枚举。只要环境匹配其中任意一个，方块即可工作。例如太阳能板需要露天环境。"
+        },
+        {
+            "name": "defaultCommand",
+            "localizedName": "默认指令",
+            "notes": "默认指令。\n\n**Notes**: 单位创建时默认分配的 RTS 指令。null 表示使用指令数组中的第一个指令。"
+        },
+        {
+            "name": "commands",
+            "localizedName": "指令",
+            "notes": "RTS 指令列表。\n\n**Notes**: 此单位在 RTS 控制模式下可用的指令列表。控制单位的行为模式，如移动、攻击、巡逻等。"
+        },
+        {
+            "name": "template",
+            "localizedName": "模板",
+            "notes": "模板。\n\n**Notes**: Described in details of the type."
+        },
+        {
+            "name": "isEnemy",
+            "localizedName": "是敌方",
+            "notes": "是敌方。\n\n**Notes**: If true, this unit counts as an enemy in the wave counter."
+        },
+        {
+            "name": "allowedInPayloads",
+            "localizedName": "可装入载荷",
+            "notes": "可装入载荷。\n\n**Notes**: 为 false 时，此单位不能被装入载荷系统（如被载荷运输）。用于防止抓取某些特殊单位。"
+        },
+        {
+            "name": "engines",
+            "localizedName": "引擎",
+            "notes": "引擎列表。\n\n**Notes**: 引擎/推进器列表。每个引擎有独立的位置、半径和颜色配置。决定引擎火焰的显示效果。"
         }
     ]
 }

@@ -2,6 +2,121 @@
     "localizedName": "存储方块",
     "fields": [
         {
+            "name": "name",
+            "localizedName": "名称",
+            "notes": "内容在 Mod JSON 中的唯一标识名称。\n\n**Notes**: 此名称用于在 JSON 配置、代码引用和资源文件命名中标识该内容。通常使用小写英文，多个单词用连字符连接。例如 \"copper-wall\"、\"melter\"。注意不是 bundle 中的显示名称。"
+        },
+        {
+            "name": "description",
+            "localizedName": "描述",
+            "notes": "描述文本。\n\n**Notes**: 此内容的描述说明。可通过 bundle 文件设置，也可在 JSON 中定义。在游戏中的内容数据库和提示中显示。"
+        },
+        {
+            "name": "hidden",
+            "localizedName": "隐藏",
+            "notes": "隐藏。\n\n**Notes**: 为 true 时，此内容不会在核心数据库和各种 UI 界面中显示。用于标记已移除或实验性的内容。"
+        },
+        {
+            "name": "alwaysUnlocked",
+            "localizedName": "始终解锁",
+            "notes": "是否始终解锁。\n\n**Notes**: 设为 true 时，此内容在科技树中始终可用，无需研究解锁。适用于开局即可使用的基础内容。"
+        },
+        {
+            "name": "research",
+            "localizedName": "科技树",
+            "notes": "科技树配置。\n\n**Notes**: 定义此内容在科技树中的位置和相关需求。可设为字符串（父节点名称）或对象（包含父节点、需求和目标）。具体子字段见科技树配置类型。"
+        },
+        {
+            "name": "solid",
+            "localizedName": "实体",
+            "notes": "实体。\n\n**Notes**: 此方块是否为实体（不可穿过）。影响单位寻路和碰撞检测。设为 false 使方块可被穿过。"
+        },
+        {
+            "name": "update",
+            "localizedName": "更新",
+            "notes": "拥有更新实体。\n\n**Notes**: 此方块是否有 TileEntity 来执行每帧更新。决定方块能否执行逻辑、响应事件。需要时须设为 true。"
+        },
+        {
+            "name": "category",
+            "localizedName": "建造分类",
+            "notes": "建造分类。\n\n**Notes**: 此内容在建造菜单中的分类。决定玩家在哪个分类标签下找到此内容。"
+        },
+        {
+            "name": "requirements",
+            "localizedName": "建造需求",
+            "notes": "建造需求。\n\n**Notes**: 建造此内容所需的物品及数量。如果定义了 researchCost 而此字段未定义，研究花费会自动从建造需求计算。"
+        },
+        {
+            "name": "placeEffect",
+            "localizedName": "放置效果",
+            "notes": "放置特效。\n\n**Notes**: 放置方块时生成的特效。以 size 作为旋转角度传递。用于给方块放置增加视觉反馈。"
+        },
+        {
+            "name": "breakEffect",
+            "localizedName": "破坏效果",
+            "notes": "拆除特效。\n\n**Notes**: 拆除方块时生成的特效。不同于摧毁，拆除是玩家主动操作。"
+        },
+        {
+            "name": "size",
+            "localizedName": "尺寸",
+            "notes": "尺寸。\n\n**Notes**: 多格方块的大小，实际占位为 size×size 格。修改后可能导致严重存档兼容性问题。"
+        },
+        {
+            "name": "itemCapacity",
+            "localizedName": "物品容量",
+            "notes": "物品容量。\n\n**Notes**: 方块可存储的最大物品数量。通常是按每种物品单独计算的。对于单位，<0 时会根据碰撞体积自动计算。"
+        },
+        {
+            "name": "squareSprite",
+            "localizedName": "方形贴图",
+            "notes": "方形贴图。\n\n**Notes**: 贴图是否为完整方块。设为 false 时可用于不规则形状的方块。影响渲染裁剪和碰撞箱视觉。"
+        },
+        {
+            "name": "health",
+            "localizedName": "生命值",
+            "notes": "生命值。\n\n**Notes**: 此内容的耐久度。-1 时使用 scaledHealth 根据尺寸自动计算。直接影响方块被击毁所需的伤害量。"
+        },
+        {
+            "name": "armor",
+            "localizedName": "护甲",
+            "notes": "护甲值。\n\n**Notes**: 伤害减免值，直接减少受到的伤害量。与单位的护甲机制相同。适用于高防御方块。"
+        },
+        {
+            "name": "forceTeam",
+            "localizedName": "强制队伍",
+            "notes": "强制队伍。\n\n**Notes**: 设置后，所有此类型的方块/单位会被强制分配到指定队伍。用于战役画布或特殊地图机制。"
+        },
+        {
+            "name": "hasPower",
+            "localizedName": "需要电力",
+            "notes": "拥有电力模块。\n\n**Notes**: 为 true 时，方块拥有 PowerModule 实例，可以连接电力网络。不管方块是消耗还是产生电力，此字段都需要设为 true。"
+        },
+        {
+            "name": "conductivePower",
+            "localizedName": "导电",
+            "notes": "导电性。\n\n**Notes**: 为 true 时，此方块可以像电缆一样传导电力，即使它本身不是 PowerNode。用于创建具有导电特性的特殊方块。"
+        },
+        {
+            "name": "consumesPower",
+            "localizedName": "消耗电力",
+            "notes": "消耗电力。\n\n**Notes**: 部分电力方块（如节点）可设为 false 以标记为不消耗电力。即使此方块没有电力也可以保持默认值 true。实际是否耗电由消耗器决定。"
+        },
+        {
+            "name": "outputsPower",
+            "localizedName": "输出电力",
+            "notes": "产生电力。\n\n**Notes**: 为 true 时，此方块可产生电力，即发电机。决定了电力网络中电力流动的方向。"
+        },
+        {
+            "name": "consumes",
+            "localizedName": "消耗配置",
+            "notes": "消耗配置。\n\n**Notes**: 配置此内容运行所需的消耗定义。包括消耗的物品、液体、电力等。是制作需要持续消耗资源的方块的关键配置。"
+        },
+        {
+            "name": "placeablePlayer",
+            "localizedName": "玩家可放置",
+            "notes": "**Notes**: 请填写此字段的说明。"
+        },
+        {
             "name": "coreMerge",
             "localizedName": "核心合并",
             "notes": "**Notes**: 是否与核心合并物品存储"

@@ -2,6 +2,146 @@
     "localizedName": "墙壁",
     "fields": [
         {
+            "name": "name",
+            "localizedName": "名称",
+            "notes": "内容在 Mod JSON 中的唯一标识名称。\n\n**Notes**: 此名称用于在 JSON 配置、代码引用和资源文件命名中标识该内容。通常使用小写英文，多个单词用连字符连接。例如 \"copper-wall\"、\"melter\"。注意不是 bundle 中的显示名称。"
+        },
+        {
+            "name": "description",
+            "localizedName": "描述",
+            "notes": "描述文本。\n\n**Notes**: 此内容的描述说明。可通过 bundle 文件设置，也可在 JSON 中定义。在游戏中的内容数据库和提示中显示。"
+        },
+        {
+            "name": "hidden",
+            "localizedName": "隐藏",
+            "notes": "隐藏。\n\n**Notes**: 为 true 时，此内容不会在核心数据库和各种 UI 界面中显示。用于标记已移除或实验性的内容。"
+        },
+        {
+            "name": "alwaysUnlocked",
+            "localizedName": "始终解锁",
+            "notes": "是否始终解锁。\n\n**Notes**: 设为 true 时，此内容在科技树中始终可用，无需研究解锁。适用于开局即可使用的基础内容。"
+        },
+        {
+            "name": "research",
+            "localizedName": "科技树",
+            "notes": "科技树配置。\n\n**Notes**: 定义此内容在科技树中的位置和相关需求。可设为字符串（父节点名称）或对象（包含父节点、需求和目标）。具体子字段见科技树配置类型。"
+        },
+        {
+            "name": "solid",
+            "localizedName": "实体",
+            "notes": "实体。\n\n**Notes**: 此方块是否为实体（不可穿过）。影响单位寻路和碰撞检测。设为 false 使方块可被穿过。"
+        },
+        {
+            "name": "update",
+            "localizedName": "更新",
+            "notes": "拥有更新实体。\n\n**Notes**: 此方块是否有 TileEntity 来执行每帧更新。决定方块能否执行逻辑、响应事件。需要时须设为 true。"
+        },
+        {
+            "name": "category",
+            "localizedName": "建造分类",
+            "notes": "建造分类。\n\n**Notes**: 此内容在建造菜单中的分类。决定玩家在哪个分类标签下找到此内容。"
+        },
+        {
+            "name": "requirements",
+            "localizedName": "建造需求",
+            "notes": "建造需求。\n\n**Notes**: 建造此内容所需的物品及数量。如果定义了 researchCost 而此字段未定义，研究花费会自动从建造需求计算。"
+        },
+        {
+            "name": "placeEffect",
+            "localizedName": "放置效果",
+            "notes": "放置特效。\n\n**Notes**: 放置方块时生成的特效。以 size 作为旋转角度传递。用于给方块放置增加视觉反馈。"
+        },
+        {
+            "name": "breakEffect",
+            "localizedName": "破坏效果",
+            "notes": "拆除特效。\n\n**Notes**: 拆除方块时生成的特效。不同于摧毁，拆除是玩家主动操作。"
+        },
+        {
+            "name": "size",
+            "localizedName": "尺寸",
+            "notes": "尺寸。\n\n**Notes**: 多格方块的大小，实际占位为 size×size 格。修改后可能导致严重存档兼容性问题。"
+        },
+        {
+            "name": "health",
+            "localizedName": "生命值",
+            "notes": "生命值。\n\n**Notes**: 此内容的耐久度。-1 时使用 scaledHealth 根据尺寸自动计算。直接影响方块被击毁所需的伤害量。"
+        },
+        {
+            "name": "customShadow",
+            "localizedName": "自定义阴影",
+            "notes": "自定义阴影。\n\n**Notes**: 为 true 时，此方块的阴影使用自定义的名称-shadow 贴图，而非自动生成的阴影。用于需要特殊投影效果的方块。"
+        },
+        {
+            "name": "armor",
+            "localizedName": "护甲",
+            "notes": "护甲值。\n\n**Notes**: 伤害减免值，直接减少受到的伤害量。与单位的护甲机制相同。适用于高防御方块。"
+        },
+        {
+            "name": "placeablePlayer",
+            "localizedName": "玩家可放置",
+            "notes": "**Notes**: 请填写此字段的说明。"
+        },
+        {
+            "name": "databaseTag",
+            "localizedName": "数据库标签",
+            "notes": "数据库次级标签。\n\n**Notes**: 核心数据库中的内容次级分类标签。例如在 \"block\" 分类下可设 \"turret\"、\"wall\"；在 \"units\" 分类下可设 \"core-unit\"、\"ground-unit\"。未设置时默认使用 \"default\"，此时不显示额外标签。"
+        },
+        {
+            "name": "envDisabled",
+            "localizedName": "禁用环境",
+            "notes": "禁用环境。\n\n**Notes**: 此方块不可运作的环境标志枚举。如果环境匹配其中任何一个，方块将被禁用。与 envEnabled 相反。"
+        },
+        {
+            "name": "variants",
+            "localizedName": "变体数量",
+            "notes": "变体数量。\n\n**Notes**: 使用的不同变体贴图数量。例如 variants=3 时，游戏会随机使用 3 种不同外观中的一种。用于增加视觉多样性。"
+        },
+        {
+            "name": "breakable",
+            "localizedName": "可破坏",
+            "notes": "可拆除。\n\n**Notes**: 是否可以通过右键点击来拆除此方块。设为 false 时方块被视为永久性（如地形）。"
+        },
+        {
+            "name": "destructible",
+            "localizedName": "可摧毁",
+            "notes": "可被破坏。\n\n**Notes**: 此方块是否有生命值且可被摧毁。注意：如果 update=false，此设置无效（必须 update=true 才能被摧毁）。"
+        },
+        {
+            "name": "buildCostMultiplier",
+            "localizedName": "建造成本倍率",
+            "notes": "建造速度倍率。\n\n**Notes**: 建造此方块的速度倍率。>1 时建造更快，<1 时建造更慢。用于调整建造速度而不修改原始成本。"
+        },
+        {
+            "name": "chanceDeflect",
+            "localizedName": "偏转概率",
+            "notes": "子弹偏转概率。-1禁用。\n\n**Notes**: 墙壁偏转来袭子弹的概率。"
+        },
+        {
+            "name": "drawTeamOverlay",
+            "localizedName": "绘制队伍覆盖",
+            "notes": "绘制队伍标识。\n\n**Notes**: 是否在方块角落绘制队伍颜色标识。默认 true。多人游戏中用于区分不同队伍的方块。"
+        },
+        {
+            "name": "targetable",
+            "localizedName": "可被瞄准",
+            "notes": "可被瞄准。\n\n**Notes**: 为 false 时，此单位不会被任何东西锁定为目标（但范围伤害仍然有效）。用于无敌/装饰单位。"
+        },
+        {
+            "name": "instantDeconstruct",
+            "localizedName": "立即拆除",
+            "notes": "立即拆除。\n\n**Notes**: If true, this block deconstructs immediately."
+        },
+        {
+            "name": "destroyEffect",
+            "localizedName": "摧毁效果",
+            "notes": "摧毁特效。\n\n**Notes**: 此方块被摧毁时生成的特效。用于增强破坏时的视觉反馈。"
+        },
+        {
+            "name": "destroyBullet",
+            "localizedName": "摧毁子弹",
+            "notes": "摧毁子弹。\n\n**Notes**: 方块被摧毁时产生的子弹类型。可用于实现方块被破坏时的反击或连锁反应效果。"
+        },
+        {
             "name": "lightningChance",
             "localizedName": "闪电概率",
             "notes": "闪电概率。-1禁用。\n\n**Notes**: 被击中时触发闪电反击的概率。"
@@ -12,9 +152,19 @@
             "notes": "**Notes**: 闪电造成的伤害值。"
         },
         {
+            "name": "forceTeam",
+            "localizedName": "强制队伍",
+            "notes": "强制队伍。\n\n**Notes**: 设置后，所有此类型的方块/单位会被强制分配到指定队伍。用于战役画布或特殊地图机制。"
+        },
+        {
             "name": "lightningLength",
             "localizedName": "闪电长度",
             "notes": "**Notes**: 闪电的长度。"
+        },
+        {
+            "name": "flashHit",
+            "localizedName": "命中闪烁",
+            "notes": "**Notes**: 被击中时是否闪烁。"
         },
         {
             "name": "lightningColor",
@@ -25,16 +175,6 @@
             "name": "lightningSound",
             "localizedName": "闪电音效",
             "notes": "**Notes**: 闪电触发时的音效。"
-        },
-        {
-            "name": "chanceDeflect",
-            "localizedName": "偏转概率",
-            "notes": "子弹偏转概率。-1禁用。\n\n**Notes**: 墙壁偏转来袭子弹的概率。"
-        },
-        {
-            "name": "flashHit",
-            "localizedName": "命中闪烁",
-            "notes": "**Notes**: 被击中时是否闪烁。"
         },
         {
             "name": "flashColor",

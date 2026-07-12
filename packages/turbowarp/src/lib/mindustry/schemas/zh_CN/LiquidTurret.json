@@ -2,14 +2,164 @@
     "localizedName": "液体炮塔",
     "fields": [
         {
+            "name": "range",
+            "localizedName": "范围",
+            "notes": "攻击范围。\n\n**Notes**: 炮塔/单位的最小攻击范围，用于接近目标。可通过设置 > 0 的值覆盖默认值。实际攻击范围由武器决定。"
+        },
+        {
+            "name": "ammo",
+            "localizedName": "弹药",
+            "notes": "弹药定义。\n\n**Notes**: 炮塔的弹药条目定义。指定炮塔可以使用哪些物品作为弹药以及对应的子弹类型。"
+        },
+        {
             "name": "ammoTypes",
             "localizedName": "弹药类型映射",
-            "notes": "**Notes**: 液体到子弹类型的映射表，定义该炮塔接受的液体弹药类型。"
+            "notes": "弹药类型。\n\n**Notes**: 炮塔所有可用弹药类型的映射。包含默认弹药和通过物品转换的弹药。"
+        },
+        {
+            "name": "targetAir",
+            "localizedName": "攻击空中",
+            "notes": "**Notes**: 请填写此字段的说明。"
+        },
+        {
+            "name": "targetGround",
+            "localizedName": "攻击地面",
+            "notes": "**Notes**: 请填写此字段的说明。"
+        },
+        {
+            "name": "rotateSpeed",
+            "localizedName": "旋转速度",
+            "notes": "旋转速度。\n\n**Notes**: 炮塔/单位的旋转速度（度/刻）。控制追踪目标时的响应速度。"
+        },
+        {
+            "name": "coolantMultiplier",
+            "localizedName": "冷却倍率",
+            "notes": "冷却倍率。\n\n**Notes**: 冷却液对炮塔的冷却效率倍率。影响炮塔过热冷却的速度。"
+        },
+        {
+            "name": "warmupSpeed",
+            "localizedName": "预热速度",
+            "notes": "预热速度。\n\n**Notes**: 炮塔射击前的预热速度。影响炮塔达到全速射击所需的时间。"
+        },
+        {
+            "name": "display",
+            "localizedName": "显示",
+            "notes": "**Notes**: 请填写此字段的说明。"
+        },
+        {
+            "name": "size",
+            "localizedName": "尺寸",
+            "notes": "尺寸。\n\n**Notes**: 多格方块的大小，实际占位为 size×size 格。修改后可能导致严重存档兼容性问题。"
+        },
+        {
+            "name": "requirements",
+            "localizedName": "建造需求",
+            "notes": "建造需求。\n\n**Notes**: 建造此内容所需的物品及数量。如果定义了 researchCost 而此字段未定义，研究花费会自动从建造需求计算。"
+        },
+        {
+            "name": "liquidCapacity",
+            "localizedName": "液体容量",
+            "notes": "液体容量。\n\n**Notes**: hasLiquids=true 时，方块可存储的最大液体总量。默认值为 10，会随最大液体消耗量自动缩放（ConsumeLiquid）。"
+        },
+        {
+            "name": "health",
+            "localizedName": "生命值",
+            "notes": "生命值。\n\n**Notes**: 此内容的耐久度。-1 时使用 scaledHealth 根据尺寸自动计算。直接影响方块被击毁所需的伤害量。"
+        },
+        {
+            "name": "outlineIcon",
+            "localizedName": "轮廓图标",
+            "notes": "轮廓图标。\n\n**Notes**: 是否在此方块的图标区域上添加轮廓。影响生成图标时的轮廓叠加行为。"
+        },
+        {
+            "name": "category",
+            "localizedName": "建造分类",
+            "notes": "建造分类。\n\n**Notes**: 此内容在建造菜单中的分类。决定玩家在哪个分类标签下找到此内容。"
+        },
+        {
+            "name": "research",
+            "localizedName": "科技树",
+            "notes": "科技树配置。\n\n**Notes**: 定义此内容在科技树中的位置和相关需求。可设为字符串（父节点名称）或对象（包含父节点、需求和目标）。具体子字段见科技树配置类型。"
+        },
+        {
+            "name": "buildTime",
+            "localizedName": "建造时间",
+            "notes": "建造时间（刻）。\n\n**Notes**: 建造此方块所需的时间（游戏刻）。<0 时自动根据物品需求动态计算。"
+        },
+        {
+            "name": "createRubble",
+            "localizedName": "产生碎石",
+            "notes": "**Notes**: 请填写此字段的说明。"
+        },
+        {
+            "name": "destroySound",
+            "localizedName": "摧毁音效",
+            "notes": "摧毁音效。\n\n**Notes**: 此方块被摧毁时播放的音效。用于增强方块被破坏时的反馈。"
+        },
+        {
+            "name": "destroyEffect",
+            "localizedName": "摧毁效果",
+            "notes": "摧毁特效。\n\n**Notes**: 此方块被摧毁时生成的特效。用于增强破坏时的视觉反馈。"
+        },
+        {
+            "name": "squareSprite",
+            "localizedName": "方形贴图",
+            "notes": "方形贴图。\n\n**Notes**: 贴图是否为完整方块。设为 false 时可用于不规则形状的方块。影响渲染裁剪和碰撞箱视觉。"
+        },
+        {
+            "name": "loopSound",
+            "localizedName": "循环音效",
+            "notes": "循环音效。\n\n**Notes**: 单位在附近时循环播放的音效。音量随距离变化。用于让玩家感知单位的接近。"
+        },
+        {
+            "name": "breakEffect",
+            "localizedName": "破坏效果",
+            "notes": "拆除特效。\n\n**Notes**: 拆除方块时生成的特效。不同于摧毁，拆除是玩家主动操作。"
+        },
+        {
+            "name": "group",
+            "localizedName": "组",
+            "notes": "方块组。\n\n**Notes**: 方块所属的分组。同一组内的方块可以相互替换放置（如不同种类的墙）。用于替换放置行为。"
         },
         {
             "name": "extinguish",
             "localizedName": "是否优先灭火",
             "notes": "**Notes**: 如果为true，该炮塔在液体可灭火时会优先瞄准火焰。"
+        },
+        {
+            "name": "hasPower",
+            "localizedName": "需要电力",
+            "notes": "拥有电力模块。\n\n**Notes**: 为 true 时，方块拥有 PowerModule 实例，可以连接电力网络。不管方块是消耗还是产生电力，此字段都需要设为 true。"
+        },
+        {
+            "name": "conductivePower",
+            "localizedName": "导电",
+            "notes": "导电性。\n\n**Notes**: 为 true 时，此方块可以像电缆一样传导电力，即使它本身不是 PowerNode。用于创建具有导电特性的特殊方块。"
+        },
+        {
+            "name": "consumesPower",
+            "localizedName": "消耗电力",
+            "notes": "消耗电力。\n\n**Notes**: 部分电力方块（如节点）可设为 false 以标记为不消耗电力。即使此方块没有电力也可以保持默认值 true。实际是否耗电由消耗器决定。"
+        },
+        {
+            "name": "outputsPower",
+            "localizedName": "输出电力",
+            "notes": "产生电力。\n\n**Notes**: 为 true 时，此方块可产生电力，即发电机。决定了电力网络中电力流动的方向。"
+        },
+        {
+            "name": "consumes",
+            "localizedName": "消耗配置",
+            "notes": "消耗配置。\n\n**Notes**: 配置此内容运行所需的消耗定义。包括消耗的物品、液体、电力等。是制作需要持续消耗资源的方块的关键配置。"
+        },
+        {
+            "name": "name",
+            "localizedName": "名称",
+            "notes": "内容在 Mod JSON 中的唯一标识名称。\n\n**Notes**: 此名称用于在 JSON 配置、代码引用和资源文件命名中标识该内容。通常使用小写英文，多个单词用连字符连接。例如 \"copper-wall\"、\"melter\"。注意不是 bundle 中的显示名称。"
+        },
+        {
+            "name": "description",
+            "localizedName": "描述",
+            "notes": "描述文本。\n\n**Notes**: 此内容的描述说明。可通过 bundle 文件设置，也可在 JSON 中定义。在游戏中的内容数据库和提示中显示。"
         }
     ]
 }

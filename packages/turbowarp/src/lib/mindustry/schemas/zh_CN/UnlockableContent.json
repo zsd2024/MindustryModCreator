@@ -2,74 +2,79 @@
     "localizedName": "可解锁内容",
     "fields": [
         {
-            "name": "localizedName",
-            "localizedName": "显示名称",
-            "notes": "此内容的本地化显示名称。也可通过 bundle 文件设置。"
+            "name": "name",
+            "localizedName": "名称",
+            "notes": "内容在 Mod JSON 中的唯一标识名称。\n\n**Notes**: 此名称用于在 JSON 配置、代码引用和资源文件命名中标识该内容。通常使用小写英文，多个单词用连字符连接。例如 \"copper-wall\"、\"melter\"。注意不是 bundle 中的显示名称。"
         },
         {
             "name": "description",
             "localizedName": "描述",
-            "notes": "描述文本。也可通过 bundle 文件设置。"
+            "notes": "描述文本。\n\n**Notes**: 此内容的描述说明。可通过 bundle 文件设置，也可在 JSON 中定义。在游戏中的内容数据库和提示中显示。"
         },
         {
             "name": "details",
             "localizedName": "详细信息",
-            "notes": "在核心数据库中显示的详细说明。"
+            "notes": "额外详细说明。\n\n**Notes**: 在内容数据库中显示的更详细说明，通常对描述进行补充。同样支持多行文本。可为 null。"
         },
         {
             "name": "hidden",
             "localizedName": "隐藏",
-            "notes": "若为 true，此内容在核心数据库中隐藏。"
+            "notes": "隐藏。\n\n**Notes**: 为 true 时，此内容不会在核心数据库和各种 UI 界面中显示。用于标记已移除或实验性的内容。"
         },
         {
             "name": "alwaysUnlocked",
             "localizedName": "始终解锁",
-            "notes": "若为 true，此内容在科技树中始终可用，不受解锁状态约束。"
-        },
-        {
-            "name": "hideDetails",
-            "localizedName": "隐藏详细信息",
-            "notes": "若为 true，详细信息在内容被研究后才显示。"
-        },
-        {
-            "name": "hideDatabase",
-            "localizedName": "从核心数据库中隐藏",
-            "notes": "若为 true，此内容完全不出现在核心数据库中。"
-        },
-        {
-            "name": "generateIcons",
-            "localizedName": "自动生成图标",
-            "notes": "若为 false，禁用此内容的自动图标生成。"
-        },
-        {
-            "name": "inlineDescription",
-            "localizedName": "内联描述",
-            "notes": "若为 true，描述从 bundle 内联获取，而非 JSON 字段。"
-        },
-        {
-            "name": "allDatabaseTabs",
-            "localizedName": "全部数据库标签",
-            "notes": "若为 true，此内容出现在所有核心数据库分类标签中。"
-        },
-        {
-            "name": "databaseCategory",
-            "localizedName": "数据库分类",
-            "notes": "自定义核心数据库分类，用于分组此内容。"
-        },
-        {
-            "name": "databaseTag",
-            "localizedName": "数据库标签",
-            "notes": "自定义核心数据库搜索标签。"
-        },
-        {
-            "name": "selectionSize",
-            "localizedName": "选择框大小",
-            "notes": "编辑器中此内容的选择框尺寸。"
+            "notes": "是否始终解锁。\n\n**Notes**: 设为 true 时，此内容在科技树中始终可用，无需研究解锁。适用于开局即可使用的基础内容。"
         },
         {
             "name": "research",
             "localizedName": "科技树父节点",
-            "notes": "父节点在科技树中的名称。可设为简单名称或包含子节点/需求的对象。"
+            "notes": "科技树配置。\n\n**Notes**: 定义此内容在科技树中的位置和相关需求。可设为字符串（父节点名称）或对象（包含父节点、需求和目标）。具体子字段见科技树配置类型。"
+        },
+        {
+            "name": "localizedName",
+            "localizedName": "显示名称",
+            "notes": "本地化显示名称。\n\n**Notes**: 通过 bundle 文件加载的名称，在游戏 UI 中展示。如果 bundle 中找不到，则默认使用内部名称。建议在 Mod 中通过 bundle 文件提供中文显示名。"
+        },
+        {
+            "name": "hideDetails",
+            "localizedName": "隐藏详细信息",
+            "notes": "自定义游戏中隐藏细节信息。\n\n**Notes**: 设为 true 时，在自定义游戏的科技树中，未解锁的内容的详细信息会被隐藏。仅在战役模式中表现不同。"
+        },
+        {
+            "name": "hideDatabase",
+            "localizedName": "从核心数据库中隐藏",
+            "notes": "从核心数据库中隐藏。\n\n**Notes**: 设为 true 时，此内容完全不出现在核心数据库（图鉴）中。适用于隐藏某些特殊内容。"
+        },
+        {
+            "name": "generateIcons",
+            "localizedName": "自动生成图标",
+            "notes": "自动生成图标。\n\n**Notes**: 设为 false 时，禁用此内容的自动图标生成，createIcons 不会被调用。此时需要手动管理图标资源。"
+        },
+        {
+            "name": "inlineDescription",
+            "localizedName": "内联描述",
+            "notes": "在研究预览中显示描述。\n\n**Notes**: 设为 true 时，会在研究对话框的预览面板中显示此内容的描述文本。默认启用。"
+        },
+        {
+            "name": "allDatabaseTabs",
+            "localizedName": "全部数据库标签",
+            "notes": "出现在全部数据库标签中。\n\n**Notes**: 设为 true 时，此内容会出现在所有核心数据库的分类标签中，而不是仅出现在其所属分类下。"
+        },
+        {
+            "name": "databaseCategory",
+            "localizedName": "数据库分类",
+            "notes": "数据库主分类。\n\n**Notes**: 核心数据库中的内容主分类。例如 \"block\"、\"liquid\"、\"unit\"。未设置时默认使用 getContentType().name()。决定内容在数据库中的所属面板。"
+        },
+        {
+            "name": "databaseTag",
+            "localizedName": "数据库标签",
+            "notes": "数据库次级标签。\n\n**Notes**: 核心数据库中的内容次级分类标签。例如在 \"block\" 分类下可设 \"turret\"、\"wall\"；在 \"units\" 分类下可设 \"core-unit\"、\"ground-unit\"。未设置时默认使用 \"default\"，此时不显示额外标签。"
+        },
+        {
+            "name": "selectionSize",
+            "localizedName": "选择框大小",
+            "notes": "在菜单中的显示尺寸。\n\n**Notes**: 控制此内容在部分选择菜单中的显示大小。默认 24f。单位为像素。"
         }
     ]
 }

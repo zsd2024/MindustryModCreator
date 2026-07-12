@@ -2,6 +2,41 @@
     "localizedName": "单位升级机",
     "fields": [
         {
+            "name": "configurable",
+            "localizedName": "可配置",
+            "notes": "可配置。\n\n**Notes**: 此方块是否可以点击以打开配置界面。设为 true 时，玩家可以点击方块进行参数设置。"
+        },
+        {
+            "name": "shownPlanets",
+            "localizedName": "显示行星",
+            "notes": "显示行星。\n\n**Notes**: 此内容所属的行星。为空时根据物品需求自动决定。目前主要对方块有意义。"
+        },
+        {
+            "name": "forceTeam",
+            "localizedName": "强制队伍",
+            "notes": "强制队伍。\n\n**Notes**: 设置后，所有此类型的方块/单位会被强制分配到指定队伍。用于战役画布或特殊地图机制。"
+        },
+        {
+            "name": "name",
+            "localizedName": "名称",
+            "notes": "内容在 Mod JSON 中的唯一标识名称。\n\n**Notes**: 此名称用于在 JSON 配置、代码引用和资源文件命名中标识该内容。通常使用小写英文，多个单词用连字符连接。例如 \"copper-wall\"、\"melter\"。注意不是 bundle 中的显示名称。"
+        },
+        {
+            "name": "description",
+            "localizedName": "描述",
+            "notes": "描述文本。\n\n**Notes**: 此内容的描述说明。可通过 bundle 文件设置，也可在 JSON 中定义。在游戏中的内容数据库和提示中显示。"
+        },
+        {
+            "name": "health",
+            "localizedName": "生命值",
+            "notes": "生命值。\n\n**Notes**: 此内容的耐久度。-1 时使用 scaledHealth 根据尺寸自动计算。直接影响方块被击毁所需的伤害量。"
+        },
+        {
+            "name": "size",
+            "localizedName": "尺寸",
+            "notes": "尺寸。\n\n**Notes**: 多格方块的大小，实际占位为 size×size 格。修改后可能导致严重存档兼容性问题。"
+        },
+        {
             "name": "constructTime",
             "localizedName": "建造时间",
             "notes": "**Notes**: 升级建造时间（帧数）"
@@ -10,6 +45,26 @@
             "name": "upgrades",
             "localizedName": "升级路线",
             "notes": "**Notes**: 单位升级路线列表"
+        },
+        {
+            "name": "consumes",
+            "localizedName": "消耗配置",
+            "notes": "消耗配置。\n\n**Notes**: 配置此内容运行所需的消耗定义。包括消耗的物品、液体、电力等。是制作需要持续消耗资源的方块的关键配置。"
+        },
+        {
+            "name": "requirements",
+            "localizedName": "建造需求",
+            "notes": "建造需求。\n\n**Notes**: 建造此内容所需的物品及数量。如果定义了 researchCost 而此字段未定义，研究花费会自动从建造需求计算。"
+        },
+        {
+            "name": "category",
+            "localizedName": "建造分类",
+            "notes": "建造分类。\n\n**Notes**: 此内容在建造菜单中的分类。决定玩家在哪个分类标签下找到此内容。"
+        },
+        {
+            "name": "research",
+            "localizedName": "科技树",
+            "notes": "科技树配置。\n\n**Notes**: 定义此内容在科技树中的位置和相关需求。可设为字符串（父节点名称）或对象（包含父节点、需求和目标）。具体子字段见科技树配置类型。"
         },
         {
             "name": "capacities",
@@ -25,6 +80,11 @@
             "name": "createSoundVolume",
             "localizedName": "创建音效音量",
             "notes": "**Notes**: 创建音效音量"
+        },
+        {
+            "name": "plans",
+            "localizedName": "方案",
+            "notes": "转换方案。\n\n**Notes**: 定义此方块可转换的单位类型方案。用于升级器、重构器等可在不同单位类型间转换的建筑。"
         }
     ]
 }

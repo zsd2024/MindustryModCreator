@@ -2,9 +2,74 @@
     "localizedName": "裂解机",
     "fields": [
         {
+            "name": "description",
+            "localizedName": "描述",
+            "notes": "描述文本。\n\n**Notes**: 此内容的描述说明。可通过 bundle 文件设置，也可在 JSON 中定义。在游戏中的内容数据库和提示中显示。"
+        },
+        {
+            "name": "health",
+            "localizedName": "生命值",
+            "notes": "生命值。\n\n**Notes**: 此内容的耐久度。-1 时使用 scaledHealth 根据尺寸自动计算。直接影响方块被击毁所需的伤害量。"
+        },
+        {
             "name": "itemUseTime",
             "localizedName": "物品消耗时间",
             "notes": "**Notes**: 每次处理消耗一个物品所需的时间"
+        },
+        {
+            "name": "size",
+            "localizedName": "尺寸",
+            "notes": "尺寸。\n\n**Notes**: 多格方块的大小，实际占位为 size×size 格。修改后可能导致严重存档兼容性问题。"
+        },
+        {
+            "name": "requirements",
+            "localizedName": "建造需求",
+            "notes": "建造需求。\n\n**Notes**: 建造此内容所需的物品及数量。如果定义了 researchCost 而此字段未定义，研究花费会自动从建造需求计算。"
+        },
+        {
+            "name": "hasPower",
+            "localizedName": "需要电力",
+            "notes": "拥有电力模块。\n\n**Notes**: 为 true 时，方块拥有 PowerModule 实例，可以连接电力网络。不管方块是消耗还是产生电力，此字段都需要设为 true。"
+        },
+        {
+            "name": "hasLiquids",
+            "localizedName": "拥有液体",
+            "notes": "拥有液体模块。\n\n**Notes**: 为 true 时，方块拥有 LiquidModule 实例，可以存储和交互液体。决定了方块能否接收、存储和输出液体。"
+        },
+        {
+            "name": "hasItems",
+            "localizedName": "拥有物品",
+            "notes": "拥有物品模块。\n\n**Notes**: 为 true 时，方块拥有 ItemModule 实例，可以存储和交互物品。决定了方块能否缓存物品并和其他方块、单位交互。"
+        },
+        {
+            "name": "itemCapacity",
+            "localizedName": "物品容量",
+            "notes": "物品容量。\n\n**Notes**: 方块可存储的最大物品数量。通常是按每种物品单独计算的。对于单位，<0 时会根据碰撞体积自动计算。"
+        },
+        {
+            "name": "liquidCapacity",
+            "localizedName": "液体容量",
+            "notes": "液体容量。\n\n**Notes**: hasLiquids=true 时，方块可存储的最大液体总量。默认值为 10，会随最大液体消耗量自动缩放（ConsumeLiquid）。"
+        },
+        {
+            "name": "consumes",
+            "localizedName": "消耗配置",
+            "notes": "消耗配置。\n\n**Notes**: 配置此内容运行所需的消耗定义。包括消耗的物品、液体、电力等。是制作需要持续消耗资源的方块的关键配置。"
+        },
+        {
+            "name": "category",
+            "localizedName": "建造分类",
+            "notes": "建造分类。\n\n**Notes**: 此内容在建造菜单中的分类。决定玩家在哪个分类标签下找到此内容。"
+        },
+        {
+            "name": "research",
+            "localizedName": "科技树",
+            "notes": "科技树配置。\n\n**Notes**: 定义此内容在科技树中的位置和相关需求。可设为字符串（父节点名称）或对象（包含父节点、需求和目标）。具体子字段见科技树配置类型。"
+        },
+        {
+            "name": "name",
+            "localizedName": "名称",
+            "notes": "内容在 Mod JSON 中的唯一标识名称。\n\n**Notes**: 此名称用于在 JSON 配置、代码引用和资源文件命名中标识该内容。通常使用小写英文，多个单词用连字符连接。例如 \"copper-wall\"、\"melter\"。注意不是 bundle 中的显示名称。"
         }
     ]
 }

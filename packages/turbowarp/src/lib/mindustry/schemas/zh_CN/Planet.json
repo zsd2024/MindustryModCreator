@@ -2,9 +2,34 @@
     "localizedName": "行星",
     "fields": [
         {
+            "name": "name",
+            "localizedName": "名称",
+            "notes": "内容在 Mod JSON 中的唯一标识名称。\n\n**Notes**: 此名称用于在 JSON 配置、代码引用和资源文件命名中标识该内容。通常使用小写英文，多个单词用连字符连接。例如 \"copper-wall\"、\"melter\"。注意不是 bundle 中的显示名称。"
+        },
+        {
+            "name": "description",
+            "localizedName": "描述",
+            "notes": "描述文本。\n\n**Notes**: 此内容的描述说明。可通过 bundle 文件设置，也可在 JSON 中定义。在游戏中的内容数据库和提示中显示。"
+        },
+        {
+            "name": "hidden",
+            "localizedName": "隐藏",
+            "notes": "隐藏。\n\n**Notes**: 为 true 时，此内容不会在核心数据库和各种 UI 界面中显示。用于标记已移除或实验性的内容。"
+        },
+        {
+            "name": "alwaysUnlocked",
+            "localizedName": "始终解锁",
+            "notes": "是否始终解锁。\n\n**Notes**: 设为 true 时，此内容在科技树中始终可用，无需研究解锁。适用于开局即可使用的基础内容。"
+        },
+        {
+            "name": "research",
+            "localizedName": "科技树",
+            "notes": "科技树配置。\n\n**Notes**: 定义此内容在科技树中的位置和相关需求。可设为字符串（父节点名称）或对象（包含父节点、需求和目标）。具体子字段见科技树配置类型。"
+        },
+        {
             "name": "radius",
             "localizedName": "半径",
-            "notes": "此星球的球体半径，不包括卫星。\n\n**Notes**: 必填字段，也可以由 ContentParser 从 JSON 中读取。"
+            "notes": "行星球体半径。\n\n**Notes**: 行星的三维球体半径。影响行星在宇宙视图中的视觉大小。"
         },
         {
             "name": "sectorSize",
@@ -14,37 +39,32 @@
         {
             "name": "parent",
             "localizedName": "母星",
-            "notes": "该行星绕转的母体，若为 null 则被视为恒星。\n\n**Notes**: 通过名称引用其他行星，从 ContentType.planet 中查找。"
+            "notes": "父节点。\n\n**Notes**: 此科技节点的父节点内容名称。用于构建科技树层级关系。"
         },
         {
             "name": "orbitRadius",
             "localizedName": "轨道半径",
-            "notes": "围绕太阳的轨道半径。\n\n**Notes**: 默认由父行星的 totalRadius 和 orbitSpacing 计算得出。除非清楚后果，否则不要手动修改！"
+            "notes": "轨道半径。\n\n**Notes**: 行星围绕恒星的公转轨道半径。决定行星在太阳系中的位置。不要随意修改。"
         },
         {
             "name": "orbitTime",
             "localizedName": "轨道周期",
-            "notes": "行星绕太阳公转一周所需时间，单位秒，即一年。\n\n**Notes**: 基于轨道半径（开普勒第三定律）自动计算：Mathf.pow(orbitRadius, 1.5f) * 1000。"
+            "notes": "公转周期（秒）。\n\n**Notes**: 行星围绕恒星公转一周所需时间（秒）。一年。"
         },
         {
             "name": "rotateTime",
             "localizedName": "自转周期",
-            "notes": "行星完整自转一周所需时间，单位秒，即一天。\n\n**Notes**: 默认值为 1440（24 分钟）。"
-        },
-        {
-            "name": "tidalLock",
-            "localizedName": "潮汐锁定",
-            "notes": "是否相对于母行星潮汐锁定。\n\n**Notes**: 潮汐锁定意味着行星的一面始终朝向母行星。"
+            "notes": "自转周期（秒）。\n\n**Notes**: 行星自转一周所需时间（秒）。一天。"
         },
         {
             "name": "accessible",
             "localizedName": "可访问",
-            "notes": "是否在行星访问界面中列出。\n\n**Notes**: 若为 false，玩家无法在行星选择界面看到此行星。"
+            "notes": "是否可选。\n\n**Notes**: 此行星是否显示在行星选择界面中。设为 false 时隐藏。"
         },
         {
             "name": "startSector",
             "localizedName": "起始扇区",
-            "notes": "地图对话框中默认显示的起始扇区。\n\n**Notes**: 玩家首次进入此行星时默认选中的扇区。"
+            "notes": "起始区域。\n\n**Notes**: 玩家首次进入此行星时默认显示的区域。通常是第一个关卡。"
         },
         {
             "name": "defaultCore",
@@ -54,17 +74,92 @@
         {
             "name": "defaultEnv",
             "localizedName": "默认环境标志",
-            "notes": "此行星上扇区的环境标志位。\n\n**Notes**: 使用 Env 类的常量进行位运算组合，如 terrestrial | spores | groundOil。"
-        },
-        {
-            "name": "defaultAttributes",
-            "localizedName": "默认环境属性",
-            "notes": "默认的环境属性。\n\n**Notes**: Attributes 对象，包含各种环境属性值（如光照、温度等）。"
+            "notes": "默认环境。\n\n**Notes**: 此行星上所有区域的默认环境标志。影响方块是否可在该行星的环境下运作。"
         },
         {
             "name": "updateLighting",
             "localizedName": "模拟昼夜循环",
             "notes": "是否模拟昼夜循环。\n\n**Notes**: 启用后行星上会有昼夜交替效果。"
+        },
+        {
+            "name": "hasAtmosphere",
+            "localizedName": "有大气层",
+            "notes": "有大气层。\n\n**Notes**: 此行星是否渲染大气层效果。影响行星在宇宙视图中的外观。"
+        },
+        {
+            "name": "atmosphereColor",
+            "localizedName": "大气颜色",
+            "notes": "可降落行星的大气色调。\n\n**Notes**: 使用 Color 格式，如 \"4db8ffff\"。"
+        },
+        {
+            "name": "iconColor",
+            "localizedName": "图标颜色",
+            "notes": "行星列表中的图标颜色。\n\n**Notes**: 使用 Color 格式。"
+        },
+        {
+            "name": "icon",
+            "localizedName": "图标名称",
+            "notes": "行星选择对话框中显示的图标。作为字符串，因为可绘制对象在加载时为 null。\n\n**Notes**: 默认为 \"planet\"，使用游戏内已注册的图标名称。"
+        },
+        {
+            "name": "mesh",
+            "localizedName": "渲染网格",
+            "notes": "用于渲染的网格，在 load() 时创建，服务端为 null。\n\n**Notes**: 支持 NoiseMesh、SunMesh、HexSkyMesh、ShaderSphereMesh、MultiMesh 等类型，必须传入对象。在 ContentParser 中被特殊处理并转为 meshLoader。"
+        },
+        {
+            "name": "cloudMesh",
+            "localizedName": "云层网格",
+            "notes": "用于渲染行星云层的网格，若无云层则为 null。\n\n**Notes**: 与 mesh 类似，必须传入对象，在 ContentParser 中被特殊处理并转为 cloudMeshLoader。"
+        },
+        {
+            "name": "allowLaunchSchematics",
+            "localizedName": "允许发射蓝图",
+            "notes": "是否允许玩家为此地图指定自定义发射蓝图。\n\n**Notes**: 若启用，玩家在发射前可以选择建筑蓝图。"
+        },
+        {
+            "name": "allowLaunchLoadout",
+            "localizedName": "允许发射物资",
+            "notes": "是否允许玩家指定带到此地图的资源。\n\n**Notes**: 若启用，玩家在发射前可以选择携带的物品。"
+        },
+        {
+            "name": "allowSectorInvasion",
+            "localizedName": "允许扇区入侵",
+            "notes": "是否模拟敌方基地对本行星扇区的入侵。\n\n**Notes**: 启用后敌方会尝试进攻玩家的扇区。"
+        },
+        {
+            "name": "allowWaves",
+            "localizedName": "失守波次",
+            "notes": "扇区失守时是否生成波次。\n\n**Notes**: 此字段可能在未来版本中移除。"
+        },
+        {
+            "name": "prebuildBase",
+            "localizedName": "预建基地",
+            "notes": "着陆时是否以冲击波方式移除并建造核心周围的方块。\n\n**Notes**: 控制着陆时的基地展开动画效果。"
+        },
+        {
+            "name": "ruleSetter",
+            "localizedName": "规则设置",
+            "notes": "游戏加载时应用于此行星任何扇区的规则设置。在 JSON 模组中该字段名为 rules，需传入对象。\n\n**Notes**: 使用 ContentParser 特殊处理，通过 JsonIO.readFields 读取。规则对象包含 waveSpacing、loadout、fireSpread 等。"
+        },
+        {
+            "name": "launchCapacityMultiplier",
+            "localizedName": "发射容量倍率",
+            "notes": "发射时核心物品容量的倍率。\n\n**Notes**: 影响玩家能从该行星携带到其他行星的物品数量。"
+        },
+        {
+            "name": "unlockedOnLand",
+            "localizedName": "着陆解锁内容",
+            "notes": "首次着陆此行星时解锁的内容（通常是行星专属内容）。\n\n**Notes**: 内容列表，按名称引用 UnlockableContent 类型。"
+        },
+        {
+            "name": "tidalLock",
+            "localizedName": "潮汐锁定",
+            "notes": "是否相对于母行星潮汐锁定。\n\n**Notes**: 潮汐锁定意味着行星的一面始终朝向母行星。"
+        },
+        {
+            "name": "defaultAttributes",
+            "localizedName": "默认环境属性",
+            "notes": "默认的环境属性。\n\n**Notes**: Attributes 对象，包含各种环境属性值（如光照、温度等）。"
         },
         {
             "name": "lightSrcFrom",
@@ -94,12 +189,7 @@
         {
             "name": "visible",
             "localizedName": "可见",
-            "notes": "是否显示此行星。\n\n**Notes**: 若为 false，此行星在游戏内不可见。"
-        },
-        {
-            "name": "hasAtmosphere",
-            "localizedName": "有大气层",
-            "notes": "此行星是否有大气层。\n\n**Notes**: 影响着陆时的视觉效果。"
+            "notes": "是否可见。\n\n**Notes**: 此行星是否在宇宙视图中显示。设为 false 时隐藏。"
         },
         {
             "name": "atmosphereRadIn",
@@ -112,39 +202,14 @@
             "notes": "大气层半径调整参数（外径）。\n\n**Notes**: 控制大气层视觉效果的外部范围。"
         },
         {
-            "name": "atmosphereColor",
-            "localizedName": "大气颜色",
-            "notes": "可降落行星的大气色调。\n\n**Notes**: 使用 Color 格式，如 \"4db8ffff\"。"
-        },
-        {
             "name": "lightColor",
             "localizedName": "光照颜色",
             "notes": "对于恒星，这是照射其他行星的颜色，对子行星无效。\n\n**Notes**: 使用 Color 格式，如 \"ffffffff\"。"
         },
         {
-            "name": "iconColor",
-            "localizedName": "图标颜色",
-            "notes": "行星列表中的图标颜色。\n\n**Notes**: 使用 Color 格式。"
-        },
-        {
-            "name": "icon",
-            "localizedName": "图标名称",
-            "notes": "行星选择对话框中显示的图标。作为字符串，因为可绘制对象在加载时为 null。\n\n**Notes**: 默认为 \"planet\"，使用游戏内已注册的图标名称。"
-        },
-        {
             "name": "landCloudColor",
             "localizedName": "着陆云颜色",
             "notes": "着陆时显示云层的色调。\n\n**Notes**: 使用 Color 格式，如 \"ffffff80\"（半透明白色）。"
-        },
-        {
-            "name": "mesh",
-            "localizedName": "渲染网格",
-            "notes": "用于渲染的网格，在 load() 时创建，服务端为 null。\n\n**Notes**: 支持 NoiseMesh、SunMesh、HexSkyMesh、ShaderSphereMesh、MultiMesh 等类型，必须传入对象。在 ContentParser 中被特殊处理并转为 meshLoader。"
-        },
-        {
-            "name": "cloudMesh",
-            "localizedName": "云层网格",
-            "notes": "用于渲染行星云层的网格，若无云层则为 null。\n\n**Notes**: 与 mesh 类似，必须传入对象，在 ContentParser 中被特殊处理并转为 cloudMeshLoader。"
         },
         {
             "name": "minZoom",
@@ -162,26 +227,6 @@
             "notes": "是否绘制轨道圈。\n\n**Notes**: 在行星选择界面中绘制轨道线。"
         },
         {
-            "name": "allowLaunchSchematics",
-            "localizedName": "允许发射蓝图",
-            "notes": "是否允许玩家为此地图指定自定义发射蓝图。\n\n**Notes**: 若启用，玩家在发射前可以选择建筑蓝图。"
-        },
-        {
-            "name": "allowLaunchLoadout",
-            "localizedName": "允许发射物资",
-            "notes": "是否允许玩家指定带到此地图的资源。\n\n**Notes**: 若启用，玩家在发射前可以选择携带的物品。"
-        },
-        {
-            "name": "allowSectorInvasion",
-            "localizedName": "允许扇区入侵",
-            "notes": "是否模拟敌方基地对本行星扇区的入侵。\n\n**Notes**: 启用后敌方会尝试进攻玩家的扇区。"
-        },
-        {
-            "name": "allowWaves",
-            "localizedName": "失守波次",
-            "notes": "扇区失守时是否生成波次。\n\n**Notes**: 此字段可能在未来版本中移除。"
-        },
-        {
             "name": "allowLaunchToNumbered",
             "localizedName": "允许发射到编号扇区",
             "notes": "若为 false，玩家无法降落到此行星的编号扇区。\n\n**Notes**: 编号扇区是随机生成的扇区，而非预设关卡。"
@@ -197,29 +242,9 @@
             "notes": "敌方队伍是否拥有无限物品。\n\n**Notes**: 若启用，敌方不会因资源不足而停止建造。"
         },
         {
-            "name": "prebuildBase",
-            "localizedName": "预建基地",
-            "notes": "着陆时是否以冲击波方式移除并建造核心周围的方块。\n\n**Notes**: 控制着陆时的基地展开动画效果。"
-        },
-        {
-            "name": "ruleSetter",
-            "localizedName": "规则设置",
-            "notes": "游戏加载时应用于此行星任何扇区的规则设置。在 JSON 模组中该字段名为 rules，需传入对象。\n\n**Notes**: 使用 ContentParser 特殊处理，通过 JsonIO.readFields 读取。规则对象包含 waveSpacing、loadout、fireSpread 等。"
-        },
-        {
-            "name": "launchCapacityMultiplier",
-            "localizedName": "发射容量倍率",
-            "notes": "发射时核心物品容量的倍率。\n\n**Notes**: 影响玩家能从该行星携带到其他行星的物品数量。"
-        },
-        {
             "name": "launchMusic",
             "localizedName": "发射音乐",
             "notes": "在行星对话框中选择此行星时播放的音乐。\n\n**Notes**: 通过名称引用 Musics 类的静态字段。"
-        },
-        {
-            "name": "unlockedOnLand",
-            "localizedName": "着陆解锁内容",
-            "notes": "首次着陆此行星时解锁的内容（通常是行星专属内容）。\n\n**Notes**: 内容列表，按名称引用 UnlockableContent 类型。"
         },
         {
             "name": "orbitSpacing",

@@ -29,7 +29,7 @@
         {
             "name": "rotateSpeed",
             "localizedName": "旋转速度",
-            "notes": "**Notes**: 发光纹理的旋转速度（度/秒）。"
+            "notes": "旋转速度。\n\n**Notes**: 炮塔/单位的旋转速度（度/刻）。控制追踪目标时的响应速度。"
         },
         {
             "name": "layer",
@@ -39,7 +39,7 @@
         {
             "name": "rotate",
             "localizedName": "随建筑旋转",
-            "notes": "**Notes**: 发光纹理是否跟随建筑旋转。"
+            "notes": "可旋转。\n\n**Notes**: 此方块是否可旋转方向。对于需要朝向的方块（如传送带、炮塔）通常设为 true。"
         },
         {
             "name": "color",

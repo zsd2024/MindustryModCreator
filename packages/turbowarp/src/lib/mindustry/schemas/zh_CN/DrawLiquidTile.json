@@ -1,5 +1,5 @@
 {
-    "localizedName": "液体瓦片绘制",
+    "localizedName": "液体图格绘制",
     "fields": [
         {
             "name": "drawLiquid",

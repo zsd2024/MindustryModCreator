@@ -14,7 +14,7 @@
         {
             "name": "range",
             "localizedName": "范围",
-            "notes": "**Notes**: 范围"
+            "notes": "攻击范围。\n\n**Notes**: 炮塔/单位的最小攻击范围，用于接近目标。可通过设置 > 0 的值覆盖默认值。实际攻击范围由武器决定。"
         },
         {
             "name": "healEffect",
@@ -124,7 +124,7 @@
         {
             "name": "rotateSpeed",
             "localizedName": "旋转速度",
-            "notes": "**Notes**: 旋转速度"
+            "notes": "旋转速度。\n\n**Notes**: 炮塔/单位的旋转速度（度/刻）。控制追踪目标时的响应速度。"
         },
         {
             "name": "sectors",

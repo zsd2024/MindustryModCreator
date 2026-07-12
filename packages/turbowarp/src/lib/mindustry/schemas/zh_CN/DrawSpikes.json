@@ -24,12 +24,12 @@
         {
             "name": "rotateSpeed",
             "localizedName": "旋转速度",
-            "notes": "**Notes**: 尖刺的旋转速度。"
+            "notes": "旋转速度。\n\n**Notes**: 炮塔/单位的旋转速度（度/刻）。控制追踪目标时的响应速度。"
         },
         {
             "name": "radius",
             "localizedName": "基础半径",
-            "notes": "**Notes**: 尖刺的基础半径。"
+            "notes": "行星球体半径。\n\n**Notes**: 行星的三维球体半径。影响行星在宇宙视图中的视觉大小。"
         },
         {
             "name": "length",

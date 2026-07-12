@@ -2,6 +2,91 @@
     "localizedName": "电力节点",
     "fields": [
         {
+            "name": "maxNodes",
+            "localizedName": "最大连接数",
+            "notes": "**Notes**: 最大可连接节点数。"
+        },
+        {
+            "name": "size",
+            "localizedName": "尺寸",
+            "notes": "尺寸。\n\n**Notes**: 多格方块的大小，实际占位为 size×size 格。修改后可能导致严重存档兼容性问题。"
+        },
+        {
+            "name": "category",
+            "localizedName": "建造分类",
+            "notes": "建造分类。\n\n**Notes**: 此内容在建造菜单中的分类。决定玩家在哪个分类标签下找到此内容。"
+        },
+        {
+            "name": "research",
+            "localizedName": "科技树",
+            "notes": "科技树配置。\n\n**Notes**: 定义此内容在科技树中的位置和相关需求。可设为字符串（父节点名称）或对象（包含父节点、需求和目标）。具体子字段见科技树配置类型。"
+        },
+        {
+            "name": "requirements",
+            "localizedName": "建造需求",
+            "notes": "建造需求。\n\n**Notes**: 建造此内容所需的物品及数量。如果定义了 researchCost 而此字段未定义，研究花费会自动从建造需求计算。"
+        },
+        {
+            "name": "name",
+            "localizedName": "名称",
+            "notes": "内容在 Mod JSON 中的唯一标识名称。\n\n**Notes**: 此名称用于在 JSON 配置、代码引用和资源文件命名中标识该内容。通常使用小写英文，多个单词用连字符连接。例如 \"copper-wall\"、\"melter\"。注意不是 bundle 中的显示名称。"
+        },
+        {
+            "name": "description",
+            "localizedName": "描述",
+            "notes": "描述文本。\n\n**Notes**: 此内容的描述说明。可通过 bundle 文件设置，也可在 JSON 中定义。在游戏中的内容数据库和提示中显示。"
+        },
+        {
+            "name": "health",
+            "localizedName": "生命值",
+            "notes": "生命值。\n\n**Notes**: 此内容的耐久度。-1 时使用 scaledHealth 根据尺寸自动计算。直接影响方块被击毁所需的伤害量。"
+        },
+        {
+            "name": "configurable",
+            "localizedName": "可配置",
+            "notes": "可配置。\n\n**Notes**: 此方块是否可以点击以打开配置界面。设为 true 时，玩家可以点击方块进行参数设置。"
+        },
+        {
+            "name": "laserColor1",
+            "localizedName": "激光主色",
+            "notes": "**Notes**: 电力激光的主色。"
+        },
+        {
+            "name": "laserColor2",
+            "localizedName": "激光副色",
+            "notes": "**Notes**: 电力激光的副色。"
+        },
+        {
+            "name": "laserScale",
+            "localizedName": "激光粗细",
+            "notes": "**Notes**: 电力激光的粗细缩放。"
+        },
+        {
+            "name": "consumesPower",
+            "localizedName": "消耗电力",
+            "notes": "消耗电力。\n\n**Notes**: 部分电力方块（如节点）可设为 false 以标记为不消耗电力。即使此方块没有电力也可以保持默认值 true。实际是否耗电由消耗器决定。"
+        },
+        {
+            "name": "conductivePower",
+            "localizedName": "导电",
+            "notes": "导电性。\n\n**Notes**: 为 true 时，此方块可以像电缆一样传导电力，即使它本身不是 PowerNode。用于创建具有导电特性的特殊方块。"
+        },
+        {
+            "name": "consumes",
+            "localizedName": "消耗配置",
+            "notes": "消耗配置。\n\n**Notes**: 配置此内容运行所需的消耗定义。包括消耗的物品、液体、电力等。是制作需要持续消耗资源的方块的关键配置。"
+        },
+        {
+            "name": "canOverdrive",
+            "localizedName": "可超速运转",
+            "notes": "可超速运转。\n\n**Notes**: 超速核心是否对此方块有效。设为 false 时，超速核心无法加速此方块。用于防止某些方块被超速破坏平衡。"
+        },
+        {
+            "name": "breakEffect",
+            "localizedName": "破坏效果",
+            "notes": "拆除特效。\n\n**Notes**: 拆除方块时生成的特效。不同于摧毁，拆除是玩家主动操作。"
+        },
+        {
             "name": "laser",
             "localizedName": "激光纹理",
             "notes": "**Notes**: 电力激光纹理区域。"
@@ -15,11 +100,6 @@
             "name": "laserRange",
             "localizedName": "连接范围",
             "notes": "**Notes**: 电力节点的连接范围（格数）。"
-        },
-        {
-            "name": "maxNodes",
-            "localizedName": "最大连接数",
-            "notes": "**Notes**: 最大可连接节点数。"
         },
         {
             "name": "autolink",
@@ -37,24 +117,9 @@
             "notes": "**Notes**: 是否允许连接同类型的方块。"
         },
         {
-            "name": "laserScale",
-            "localizedName": "激光粗细",
-            "notes": "**Notes**: 电力激光的粗细缩放。"
-        },
-        {
             "name": "powerLayer",
             "localizedName": "渲染图层",
             "notes": "**Notes**: 电力线的渲染图层。"
-        },
-        {
-            "name": "laserColor1",
-            "localizedName": "激光主色",
-            "notes": "**Notes**: 电力激光的主色。"
-        },
-        {
-            "name": "laserColor2",
-            "localizedName": "激光副色",
-            "notes": "**Notes**: 电力激光的副色。"
         }
     ]
 }

@@ -1,1 +1,345 @@
-{"localizedName": "飞行单位"}
+{
+    "localizedName": "飞行单位",
+    "fields": [
+        {
+            "name": "name",
+            "localizedName": "名称",
+            "notes": "内容在 Mod JSON 中的唯一标识名称。\n\n**Notes**: 此名称用于在 JSON 配置、代码引用和资源文件命名中标识该内容。通常使用小写英文，多个单词用连字符连接。例如 \"copper-wall\"、\"melter\"。注意不是 bundle 中的显示名称。"
+        },
+        {
+            "name": "description",
+            "localizedName": "描述",
+            "notes": "描述文本。\n\n**Notes**: 此内容的描述说明。可通过 bundle 文件设置，也可在 JSON 中定义。在游戏中的内容数据库和提示中显示。"
+        },
+        {
+            "name": "hidden",
+            "localizedName": "隐藏",
+            "notes": "隐藏。\n\n**Notes**: 为 true 时，此内容不会在核心数据库和各种 UI 界面中显示。用于标记已移除或实验性的内容。"
+        },
+        {
+            "name": "alwaysUnlocked",
+            "localizedName": "始终解锁",
+            "notes": "是否始终解锁。\n\n**Notes**: 设为 true 时，此内容在科技树中始终可用，无需研究解锁。适用于开局即可使用的基础内容。"
+        },
+        {
+            "name": "research",
+            "localizedName": "科技树",
+            "notes": "科技树配置。\n\n**Notes**: 定义此内容在科技树中的位置和相关需求。可设为字符串（父节点名称）或对象（包含父节点、需求和目标）。具体子字段见科技树配置类型。"
+        },
+        {
+            "name": "speed",
+            "localizedName": "移动速度",
+            "notes": "移动速度。\n\n**Notes**: 单位的基础移动速度（世界单位/刻）。直接控制单位的移动快慢。"
+        },
+        {
+            "name": "health",
+            "localizedName": "生命值",
+            "notes": "生命值。\n\n**Notes**: 此内容的耐久度。-1 时使用 scaledHealth 根据尺寸自动计算。直接影响方块被击毁所需的伤害量。"
+        },
+        {
+            "name": "armor",
+            "localizedName": "护甲",
+            "notes": "护甲值。\n\n**Notes**: 伤害减免值，直接减少受到的伤害量。与单位的护甲机制相同。适用于高防御方块。"
+        },
+        {
+            "name": "hitSize",
+            "localizedName": "碰撞体积",
+            "notes": "碰撞体积。\n\n**Notes**: 单位碰撞箱的单边大小。矩形碰撞箱，此值为边长。影响被命中和碰撞检测。"
+        },
+        {
+            "name": "flying",
+            "localizedName": "飞行",
+            "notes": "飞行单位。\n\n**Notes**: 为 true 时，单位始终保持在高度 1（飞行状态）。决定单位是否受地面障碍物影响。"
+        },
+        {
+            "name": "drag",
+            "localizedName": "阻力",
+            "notes": "阻力。\n\n**Notes**: 单位移动时的阻力系数。值越大，单位停止移动后减速越快。影响单位的惯性。"
+        },
+        {
+            "name": "accel",
+            "localizedName": "加速度",
+            "notes": "加速度。\n\n**Notes**: 单位从静止到全速的加速比例。值越大，单位达到最大速度越快。"
+        },
+        {
+            "name": "rotateSpeed",
+            "localizedName": "旋转速度",
+            "notes": "旋转速度。\n\n**Notes**: 炮塔/单位的旋转速度（度/刻）。控制追踪目标时的响应速度。"
+        },
+        {
+            "name": "engineSize",
+            "localizedName": "引擎大小",
+            "notes": "引擎大小。\n\n**Notes**: 主引擎的半径大小。控制引擎火焰的视觉尺寸。"
+        },
+        {
+            "name": "engineOffset",
+            "localizedName": "引擎偏移",
+            "notes": "引擎偏移。\n\n**Notes**: 引擎中心向后的偏移量（从单位中心计算）。控制引擎火焰的绘制位置。"
+        },
+        {
+            "name": "itemCapacity",
+            "localizedName": "物品容量",
+            "notes": "物品容量。\n\n**Notes**: 方块可存储的最大物品数量。通常是按每种物品单独计算的。对于单位，<0 时会根据碰撞体积自动计算。"
+        },
+        {
+            "name": "weapons",
+            "localizedName": "武器",
+            "notes": "武器列表。\n\n**Notes**: 此单位使用的全部武器。每个武器有独立的射速、伤害、弹药类型等配置。支持多种武器同时开火。"
+        },
+        {
+            "name": "abilities",
+            "localizedName": "能力列表",
+            "notes": "能力列表。\n\n**Notes**: 此单位拥有的能力列表。能力是每帧更新的各种行为模块，如力场、治疗、能量护盾等。每个能力有独立的配置参数。"
+        },
+        {
+            "name": "mineSpeed",
+            "localizedName": "开采速度",
+            "notes": "**Notes**: 请填写此字段的说明。"
+        },
+        {
+            "name": "mineTier",
+            "localizedName": "开采等级",
+            "notes": "**Notes**: 请填写此字段的说明。"
+        },
+        {
+            "name": "buildSpeed",
+            "localizedName": "建造速度",
+            "notes": "建造速度。\n\n**Notes**: 建造速度倍率。<0 表示此单位无法建造。用于工程单位，值越大建造越快。"
+        },
+        {
+            "name": "payloadCapacity",
+            "localizedName": "载荷容量",
+            "notes": "载荷容量。\n\n**Notes**: 此内容可承载的载荷容量（世界单位²）。用于单位或方块限制能携带载荷的最大尺寸。"
+        },
+        {
+            "name": "outlineColor",
+            "localizedName": "轮廓颜色",
+            "notes": "轮廓颜色。\n\n**Notes**: 图标轮廓的颜色值。控制生成图标时轮廓部分的颜色。修改后可自定义图标外观。"
+        },
+        {
+            "name": "lowAltitude",
+            "localizedName": "低空飞行",
+            "notes": "低空飞行。\n\n**Notes**: 为 true 时，此飞行单位在特效/子弹下方绘制，仅视觉效果。决定单位在渲染层级中的位置。"
+        },
+        {
+            "name": "outlines",
+            "localizedName": "生成轮廓",
+            "notes": "生成轮廓。\n\n**Notes**: 为 false 时，不为此单位生成精灵轮廓贴图。用于减少不需要轮廓的单位的资源消耗。"
+        },
+        {
+            "name": "range",
+            "localizedName": "范围",
+            "notes": "攻击范围。\n\n**Notes**: 炮塔/单位的最小攻击范围，用于接近目标。可通过设置 > 0 的值覆盖默认值。实际攻击范围由武器决定。"
+        },
+        {
+            "name": "envDisabled",
+            "localizedName": "禁用环境",
+            "notes": "禁用环境。\n\n**Notes**: 此方块不可运作的环境标志枚举。如果环境匹配其中任何一个，方块将被禁用。与 envEnabled 相反。"
+        },
+        {
+            "name": "envEnabled",
+            "localizedName": "启用环境",
+            "notes": "启用环境。\n\n**Notes**: 此方块可以正常运作的环境标志枚举。只要环境匹配其中任意一个，方块即可工作。例如太阳能板需要露天环境。"
+        },
+        {
+            "name": "drawCell",
+            "localizedName": "绘制队伍标识",
+            "notes": "绘制队伍标识。\n\n**Notes**: 为 false 时，不绘制单位的队伍标识/指示器。用于隐藏单位的队伍归属。"
+        },
+        {
+            "name": "engines",
+            "localizedName": "引擎",
+            "notes": "引擎列表。\n\n**Notes**: 引擎/推进器列表。每个引擎有独立的位置、半径和颜色配置。决定引擎火焰的显示效果。"
+        },
+        {
+            "name": "strafePenalty",
+            "localizedName": "侧移惩罚",
+            "notes": "**Notes**: 请填写此字段的说明。"
+        },
+        {
+            "name": "faceTarget",
+            "localizedName": "面向目标",
+            "notes": "面向目标。\n\n**Notes**: 为 true 时，单位在攻击/瞄准时会旋转朝向目标。影响单位的攻击动画和朝向行为。"
+        },
+        {
+            "name": "maxRange",
+            "localizedName": "最大范围",
+            "notes": "最大范围。\n\n**Notes**: 所有武器的最大攻击范围。决定单位可以攻击的最远距离。"
+        },
+        {
+            "name": "drawBody",
+            "localizedName": "绘制身体",
+            "notes": "绘制身体。\n\n**Notes**: 为 false 时，不绘制单位的身体贴图。用于只显示特效或部件而不显示主体的单位。"
+        },
+        {
+            "name": "deathSound",
+            "localizedName": "死亡音效",
+            "notes": "死亡音效。\n\n**Notes**: 单位爆炸（被击毁）时播放的音效。区别于普通的击落声音。"
+        },
+        {
+            "name": "createWreck",
+            "localizedName": "产生残骸",
+            "notes": "**Notes**: 请填写此字段的说明。"
+        },
+        {
+            "name": "lightRadius",
+            "localizedName": "光半径",
+            "notes": "**Notes**: 请填写此字段的说明。"
+        },
+        {
+            "name": "fogRadius",
+            "localizedName": "迷雾半径",
+            "notes": "迷雾半径。\n\n**Notes**: 此方块可驱散的战争迷雾范围（格数）。<= 0 时禁用。用于灯塔、雷达等具有开视野功能的方块。注意：半径不能动态变化。"
+        },
+        {
+            "name": "createScorch",
+            "localizedName": "产生烧痕",
+            "notes": "产生烧痕。\n\n**Notes**: 为 false 时，此单位死亡不在地面上产生烧灼痕迹。可用于减少视觉杂乱。"
+        },
+        {
+            "name": "loopSound",
+            "localizedName": "循环音效",
+            "notes": "循环音效。\n\n**Notes**: 单位在附近时循环播放的音效。音量随距离变化。用于让玩家感知单位的接近。"
+        },
+        {
+            "name": "drawSoftShadow",
+            "localizedName": "绘制软阴影",
+            "notes": "**Notes**: 请填写此字段的说明。"
+        },
+        {
+            "name": "circleTarget",
+            "localizedName": "环绕目标",
+            "notes": "**Notes**: 请填写此字段的说明。"
+        },
+        {
+            "name": "targetFlags",
+            "localizedName": "目标标记",
+            "notes": "**Notes**: 请填写此字段的说明。"
+        },
+        {
+            "name": "deathShake",
+            "localizedName": "死亡震动",
+            "notes": "死亡震动。\n\n**Notes**: 单位死亡时屏幕震动的强度。用于增加大单位死亡时的史诗感。"
+        },
+        {
+            "name": "targetAir",
+            "localizedName": "攻击空中",
+            "notes": "**Notes**: 请填写此字段的说明。"
+        },
+        {
+            "name": "healColor",
+            "localizedName": "治疗颜色",
+            "notes": "**Notes**: 请填写此字段的说明。"
+        },
+        {
+            "name": "shieldColor",
+            "localizedName": "护盾颜色",
+            "notes": "护盾颜色。\n\n**Notes**: 覆写此单位的护盾颜色。默认护盾颜色较浅，通过此字段可自定义护盾色调。"
+        },
+        {
+            "name": "template",
+            "localizedName": "模板",
+            "notes": "模板。\n\n**Notes**: Described in details of the type."
+        },
+        {
+            "name": "wobble",
+            "localizedName": "摇晃",
+            "notes": "**Notes**: 请填写此字段的说明。"
+        },
+        {
+            "name": "isEnemy",
+            "localizedName": "是敌方",
+            "notes": "是敌方。\n\n**Notes**: If true, this unit counts as an enemy in the wave counter."
+        },
+        {
+            "name": "crashDamageMultiplier",
+            "localizedName": "撞击伤害倍率",
+            "notes": "**Notes**: 请填写此字段的说明。"
+        },
+        {
+            "name": "buildBeamOffset",
+            "localizedName": "建造光束偏移",
+            "notes": "建造光束偏移。\n\n**Notes**: 建造光束的前方视觉偏移量。用于调整光束发射位置，使其看起来从正确位置射出。"
+        },
+        {
+            "name": "loopSoundVolume",
+            "localizedName": "循环音量",
+            "notes": "循环音量。\n\n**Notes**: 循环音效的音量大小。"
+        },
+        {
+            "name": "coreUnitDock",
+            "localizedName": "核心单位停靠",
+            "notes": "**Notes**: 请填写此字段的说明。"
+        },
+        {
+            "name": "lightOpacity",
+            "localizedName": "光不透明度",
+            "notes": "**Notes**: 请填写此字段的说明。"
+        },
+        {
+            "name": "lightColor",
+            "localizedName": "光颜色",
+            "notes": "**Notes**: 请填写此字段的说明。"
+        },
+        {
+            "name": "targetable",
+            "localizedName": "可被瞄准",
+            "notes": "可被瞄准。\n\n**Notes**: 为 false 时，此单位不会被任何东西锁定为目标（但范围伤害仍然有效）。用于无敌/装饰单位。"
+        },
+        {
+            "name": "physics",
+            "localizedName": "物理碰撞",
+            "notes": "物理碰撞。\n\n**Notes**: 为 false 时，此单位不会与其他单位产生物理碰撞（可以互相穿过）。用于幽灵单位或特殊效果。"
+        },
+        {
+            "name": "bounded",
+            "localizedName": "边界限制",
+            "notes": "**Notes**: 请填写此字段的说明。"
+        },
+        {
+            "name": "useUnitCap",
+            "localizedName": "计入单位上限",
+            "notes": "计入单位上限。\n\n**Notes**: 为 false 时，此单位不计入单位的数量上限，可以无限生成。用于装饰性或临时单位。"
+        },
+        {
+            "name": "autoDropBombs",
+            "localizedName": "自动投弹",
+            "notes": "**Notes**: 请填写此字段的说明。"
+        },
+        {
+            "name": "drawShields",
+            "localizedName": "绘制护盾",
+            "notes": "绘制护盾。\n\n**Notes**: 为 false 时，不绘制单位的护盾效果（通常在波次模式中看到的护盾）。"
+        },
+        {
+            "name": "rotateToBuilding",
+            "localizedName": "面向建筑",
+            "notes": "**Notes**: 请填写此字段的说明。"
+        },
+        {
+            "name": "moveSound",
+            "localizedName": "移动音效",
+            "notes": "**Notes**: 请填写此字段的说明。"
+        },
+        {
+            "name": "playerControllable",
+            "localizedName": "玩家可控",
+            "notes": "玩家可控。\n\n**Notes**: 为 false 时，玩家不能直接控制此单位。用于限制某些单位（如导弹）的操作权。"
+        },
+        {
+            "name": "defaultCommand",
+            "localizedName": "默认指令",
+            "notes": "默认指令。\n\n**Notes**: 单位创建时默认分配的 RTS 指令。null 表示使用指令数组中的第一个指令。"
+        },
+        {
+            "name": "commands",
+            "localizedName": "指令",
+            "notes": "RTS 指令列表。\n\n**Notes**: 此单位在 RTS 控制模式下可用的指令列表。控制单位的行为模式，如移动、攻击、巡逻等。"
+        },
+        {
+            "name": "wreckHealthMultiplier",
+            "localizedName": "残骸生命倍率",
+            "notes": "**Notes**: 请填写此字段的说明。"
+        }
+    ]
+}

@@ -1,1 +1,15 @@
-{"localizedName": "电力方块"}
+{
+    "localizedName": "电力方块",
+    "fields": [
+        {
+            "name": "maxNodes",
+            "localizedName": "最大节点数",
+            "notes": "**Notes**: 请填写此字段的说明。"
+        },
+        {
+            "name": "laserRange",
+            "localizedName": "激光范围",
+            "notes": "**Notes**: 请填写此字段的说明。"
+        }
+    ]
+}

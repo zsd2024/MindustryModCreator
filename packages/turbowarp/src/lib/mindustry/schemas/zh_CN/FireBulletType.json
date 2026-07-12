@@ -19,7 +19,7 @@
         {
             "name": "radius",
             "localizedName": "火球半径",
-            "notes": "火球半径\n\n**Notes**: 火焰粒子的基础半径。默认 3。"
+            "notes": "行星球体半径。\n\n**Notes**: 行星的三维球体半径。影响行星在宇宙视图中的视觉大小。"
         },
         {
             "name": "velMin",

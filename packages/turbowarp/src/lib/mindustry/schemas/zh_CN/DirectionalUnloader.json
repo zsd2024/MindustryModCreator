@@ -19,7 +19,7 @@
         {
             "name": "speed",
             "localizedName": "卸货速度",
-            "notes": "**Notes**: 卸货间隔（帧数）"
+            "notes": "移动速度。\n\n**Notes**: 单位的基础移动速度（世界单位/刻）。直接控制单位的移动快慢。"
         },
         {
             "name": "allowCoreUnload",

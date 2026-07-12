@@ -29,17 +29,17 @@
         {
             "name": "buildSpeed",
             "localizedName": "建造速度",
-            "notes": "**Notes**: 建造速度"
+            "notes": "建造速度。\n\n**Notes**: 建造速度倍率。<0 表示此单位无法建造。用于工程单位，值越大建造越快。"
         },
         {
             "name": "buildBeamOffset",
             "localizedName": "建造光束偏移",
-            "notes": "**Notes**: 建造光束偏移"
+            "notes": "建造光束偏移。\n\n**Notes**: 建造光束的前方视觉偏移量。用于调整光束发射位置，使其看起来从正确位置射出。"
         },
         {
             "name": "unitType",
             "localizedName": "单位类型",
-            "notes": "**Notes**: 单位类型（在init()中创建，不应手动修改）"
+            "notes": "单位类型。\n\n**Notes**: 此工厂生产的单位类型。指定产出哪种单位。"
         },
         {
             "name": "elevation",

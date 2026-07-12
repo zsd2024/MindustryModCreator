@@ -64,7 +64,7 @@
         {
             "name": "coolantMultiplier",
             "localizedName": "冷却倍率",
-            "notes": "热容量对治疗效果提升的倍率。\n\n**Notes**: 冷却液热容量对治疗效果的提升倍率"
+            "notes": "冷却倍率。\n\n**Notes**: 冷却液对炮塔的冷却效率倍率。影响炮塔过热冷却的速度。"
         },
         {
             "name": "baseRegion",

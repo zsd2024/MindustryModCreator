@@ -1,1 +1,40 @@
-{"localizedName": "矿石方块"}
+{
+    "localizedName": "矿石方块",
+    "fields": [
+        {
+            "name": "variants",
+            "localizedName": "变体数量",
+            "notes": "变体数量。\n\n**Notes**: 使用的不同变体贴图数量。例如 variants=3 时，游戏会随机使用 3 种不同外观中的一种。用于增加视觉多样性。"
+        },
+        {
+            "name": "hasColor",
+            "localizedName": "有颜色",
+            "notes": "**Notes**: 请填写此字段的说明。"
+        },
+        {
+            "name": "oreDefault",
+            "localizedName": "默认矿石",
+            "notes": "默认矿物。\n\n**Notes**: 钻机默认开采的矿物类型。"
+        },
+        {
+            "name": "oreScale",
+            "localizedName": "矿石缩放",
+            "notes": "矿物缩放。\n\n**Notes**: 矿物生成密度的缩放因子。"
+        },
+        {
+            "name": "oreThreshold",
+            "localizedName": "矿石阈值",
+            "notes": "矿物阈值。\n\n**Notes**: 控制钻机开采矿物的阈值。"
+        },
+        {
+            "name": "name",
+            "localizedName": "名称",
+            "notes": "内容在 Mod JSON 中的唯一标识名称。\n\n**Notes**: 此名称用于在 JSON 配置、代码引用和资源文件命名中标识该内容。通常使用小写英文，多个单词用连字符连接。例如 \"copper-wall\"、\"melter\"。注意不是 bundle 中的显示名称。"
+        },
+        {
+            "name": "description",
+            "localizedName": "描述",
+            "notes": "描述文本。\n\n**Notes**: 此内容的描述说明。可通过 bundle 文件设置，也可在 JSON 中定义。在游戏中的内容数据库和提示中显示。"
+        }
+    ]
+}

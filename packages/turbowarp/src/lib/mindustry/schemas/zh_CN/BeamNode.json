@@ -2,9 +2,74 @@
     "localizedName": "光束节点",
     "fields": [
         {
+            "name": "maxNodes",
+            "localizedName": "最大节点数",
+            "notes": "**Notes**: 请填写此字段的说明。"
+        },
+        {
             "name": "range",
             "localizedName": "搜索范围",
-            "notes": "**Notes**: 最大搜索范围，用于寻找可连接的方块"
+            "notes": "攻击范围。\n\n**Notes**: 炮塔/单位的最小攻击范围，用于接近目标。可通过设置 > 0 的值覆盖默认值。实际攻击范围由武器决定。"
+        },
+        {
+            "name": "consumesPower",
+            "localizedName": "消耗电力",
+            "notes": "消耗电力。\n\n**Notes**: 部分电力方块（如节点）可设为 false 以标记为不消耗电力。即使此方块没有电力也可以保持默认值 true。实际是否耗电由消耗器决定。"
+        },
+        {
+            "name": "conductivePower",
+            "localizedName": "导电",
+            "notes": "导电性。\n\n**Notes**: 为 true 时，此方块可以像电缆一样传导电力，即使它本身不是 PowerNode。用于创建具有导电特性的特殊方块。"
+        },
+        {
+            "name": "laserWidth",
+            "localizedName": "激光宽度",
+            "notes": "**Notes**: 激光宽度"
+        },
+        {
+            "name": "pulseScl",
+            "localizedName": "脉冲缩放系数",
+            "notes": "**Notes**: 脉冲缩放系数"
+        },
+        {
+            "name": "pulseMag",
+            "localizedName": "脉冲幅度",
+            "notes": "**Notes**: 脉冲幅度"
+        },
+        {
+            "name": "consumes",
+            "localizedName": "消耗配置",
+            "notes": "消耗配置。\n\n**Notes**: 配置此内容运行所需的消耗定义。包括消耗的物品、液体、电力等。是制作需要持续消耗资源的方块的关键配置。"
+        },
+        {
+            "name": "canOverdrive",
+            "localizedName": "可超速运转",
+            "notes": "可超速运转。\n\n**Notes**: 超速核心是否对此方块有效。设为 false 时，超速核心无法加速此方块。用于防止某些方块被超速破坏平衡。"
+        },
+        {
+            "name": "category",
+            "localizedName": "建造分类",
+            "notes": "建造分类。\n\n**Notes**: 此内容在建造菜单中的分类。决定玩家在哪个分类标签下找到此内容。"
+        },
+        {
+            "name": "research",
+            "localizedName": "科技树",
+            "notes": "科技树配置。\n\n**Notes**: 定义此内容在科技树中的位置和相关需求。可设为字符串（父节点名称）或对象（包含父节点、需求和目标）。具体子字段见科技树配置类型。"
+        },
+        {
+            "name": "requirements",
+            "localizedName": "建造需求",
+            "notes": "建造需求。\n\n**Notes**: 建造此内容所需的物品及数量。如果定义了 researchCost 而此字段未定义，研究花费会自动从建造需求计算。"
+        },
+        {
+            "name": "breakEffect",
+            "localizedName": "破坏效果",
+            "notes": "拆除特效。\n\n**Notes**: 拆除方块时生成的特效。不同于摧毁，拆除是玩家主动操作。"
+        },
+        {
+            "name": "size",
+            "localizedName": "尺寸",
+            "notes": "尺寸。\n\n**Notes**: 多格方块的大小，实际占位为 size×size 格。修改后可能导致严重存档兼容性问题。"
         },
         {
             "name": "laser",
@@ -27,19 +92,9 @@
             "notes": "**Notes**: 激光颜色2"
         },
         {
-            "name": "pulseScl",
-            "localizedName": "脉冲缩放系数",
-            "notes": "**Notes**: 脉冲缩放系数"
-        },
-        {
-            "name": "pulseMag",
-            "localizedName": "脉冲幅度",
-            "notes": "**Notes**: 脉冲幅度"
-        },
-        {
-            "name": "laserWidth",
-            "localizedName": "激光宽度",
-            "notes": "**Notes**: 激光宽度"
+            "name": "laserRange",
+            "localizedName": "激光范围",
+            "notes": "**Notes**: 请填写此字段的说明。"
         }
     ]
 }

@@ -2,9 +2,89 @@
     "localizedName": "泵",
     "fields": [
         {
+            "name": "liquidCapacity",
+            "localizedName": "液体容量",
+            "notes": "液体容量。\n\n**Notes**: hasLiquids=true 时，方块可存储的最大液体总量。默认值为 10，会随最大液体消耗量自动缩放（ConsumeLiquid）。"
+        },
+        {
             "name": "pumpAmount",
             "localizedName": "泵液量",
-            "notes": "每瓦片泵液量。\n\n**Notes**: 每个瓦片的基础泵液量"
+            "notes": "每图格泵液量。\n\n**Notes**: 每个图格的基础泵液量"
+        },
+        {
+            "name": "squareSprite",
+            "localizedName": "方形贴图",
+            "notes": "方形贴图。\n\n**Notes**: 贴图是否为完整方块。设为 false 时可用于不规则形状的方块。影响渲染裁剪和碰撞箱视觉。"
+        },
+        {
+            "name": "consumes",
+            "localizedName": "消耗配置",
+            "notes": "消耗配置。\n\n**Notes**: 配置此内容运行所需的消耗定义。包括消耗的物品、液体、电力等。是制作需要持续消耗资源的方块的关键配置。"
+        },
+        {
+            "name": "requirements",
+            "localizedName": "建造需求",
+            "notes": "建造需求。\n\n**Notes**: 建造此内容所需的物品及数量。如果定义了 researchCost 而此字段未定义，研究花费会自动从建造需求计算。"
+        },
+        {
+            "name": "category",
+            "localizedName": "建造分类",
+            "notes": "建造分类。\n\n**Notes**: 此内容在建造菜单中的分类。决定玩家在哪个分类标签下找到此内容。"
+        },
+        {
+            "name": "research",
+            "localizedName": "科技树",
+            "notes": "科技树配置。\n\n**Notes**: 定义此内容在科技树中的位置和相关需求。可设为字符串（父节点名称）或对象（包含父节点、需求和目标）。具体子字段见科技树配置类型。"
+        },
+        {
+            "name": "customShadow",
+            "localizedName": "自定义阴影",
+            "notes": "自定义阴影。\n\n**Notes**: 为 true 时，此方块的阴影使用自定义的名称-shadow 贴图，而非自动生成的阴影。用于需要特殊投影效果的方块。"
+        },
+        {
+            "name": "hasPower",
+            "localizedName": "需要电力",
+            "notes": "拥有电力模块。\n\n**Notes**: 为 true 时，方块拥有 PowerModule 实例，可以连接电力网络。不管方块是消耗还是产生电力，此字段都需要设为 true。"
+        },
+        {
+            "name": "drawer",
+            "localizedName": "绘制器",
+            "notes": "**Notes**: 绘制器，用于自定义泵的渲染方式"
+        },
+        {
+            "name": "health",
+            "localizedName": "生命值",
+            "notes": "生命值。\n\n**Notes**: 此内容的耐久度。-1 时使用 scaledHealth 根据尺寸自动计算。直接影响方块被击毁所需的伤害量。"
+        },
+        {
+            "name": "armor",
+            "localizedName": "护甲",
+            "notes": "护甲值。\n\n**Notes**: 伤害减免值，直接减少受到的伤害量。与单位的护甲机制相同。适用于高防御方块。"
+        },
+        {
+            "name": "breakEffect",
+            "localizedName": "破坏效果",
+            "notes": "拆除特效。\n\n**Notes**: 拆除方块时生成的特效。不同于摧毁，拆除是玩家主动操作。"
+        },
+        {
+            "name": "destroyEffect",
+            "localizedName": "摧毁效果",
+            "notes": "摧毁特效。\n\n**Notes**: 此方块被摧毁时生成的特效。用于增强破坏时的视觉反馈。"
+        },
+        {
+            "name": "name",
+            "localizedName": "名称",
+            "notes": "内容在 Mod JSON 中的唯一标识名称。\n\n**Notes**: 此名称用于在 JSON 配置、代码引用和资源文件命名中标识该内容。通常使用小写英文，多个单词用连字符连接。例如 \"copper-wall\"、\"melter\"。注意不是 bundle 中的显示名称。"
+        },
+        {
+            "name": "description",
+            "localizedName": "描述",
+            "notes": "描述文本。\n\n**Notes**: 此内容的描述说明。可通过 bundle 文件设置，也可在 JSON 中定义。在游戏中的内容数据库和提示中显示。"
+        },
+        {
+            "name": "hasLiquids",
+            "localizedName": "拥有液体",
+            "notes": "拥有液体模块。\n\n**Notes**: 为 true 时，方块拥有 LiquidModule 实例，可以存储和交互液体。决定了方块能否接收、存储和输出液体。"
         },
         {
             "name": "consumeTime",
@@ -14,12 +94,12 @@
         {
             "name": "warmupSpeed",
             "localizedName": "预热速度",
-            "notes": "**Notes**: 预热速度变化率"
+            "notes": "预热速度。\n\n**Notes**: 炮塔射击前的预热速度。影响炮塔达到全速射击所需的时间。"
         },
         {
-            "name": "drawer",
-            "localizedName": "绘制器",
-            "notes": "**Notes**: 绘制器，用于自定义泵的渲染方式"
+            "name": "size",
+            "localizedName": "尺寸",
+            "notes": "尺寸。\n\n**Notes**: 多格方块的大小，实际占位为 size×size 格。修改后可能导致严重存档兼容性问题。"
         }
     ]
 }

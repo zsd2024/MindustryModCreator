@@ -2,49 +2,109 @@
     "localizedName": "方块基类",
     "fields": [
         {
+            "name": "name",
+            "localizedName": "名称",
+            "notes": "内容在 Mod JSON 中的唯一标识名称。\n\n**Notes**: 此名称用于在 JSON 配置、代码引用和资源文件命名中标识该内容。通常使用小写英文，多个单词用连字符连接。例如 \"copper-wall\"、\"melter\"。注意不是 bundle 中的显示名称。"
+        },
+        {
+            "name": "description",
+            "localizedName": "描述",
+            "notes": "描述文本。\n\n**Notes**: 此内容的描述说明。可通过 bundle 文件设置，也可在 JSON 中定义。在游戏中的内容数据库和提示中显示。"
+        },
+        {
+            "name": "hidden",
+            "localizedName": "隐藏",
+            "notes": "隐藏。\n\n**Notes**: 为 true 时，此内容不会在核心数据库和各种 UI 界面中显示。用于标记已移除或实验性的内容。"
+        },
+        {
+            "name": "alwaysUnlocked",
+            "localizedName": "始终解锁",
+            "notes": "是否始终解锁。\n\n**Notes**: 设为 true 时，此内容在科技树中始终可用，无需研究解锁。适用于开局即可使用的基础内容。"
+        },
+        {
+            "name": "research",
+            "localizedName": "科技树",
+            "notes": "科技树配置。\n\n**Notes**: 定义此内容在科技树中的位置和相关需求。可设为字符串（父节点名称）或对象（包含父节点、需求和目标）。具体子字段见科技树配置类型。"
+        },
+        {
+            "name": "solid",
+            "localizedName": "实心方块",
+            "notes": "实体。\n\n**Notes**: 此方块是否为实体（不可穿过）。影响单位寻路和碰撞检测。设为 false 使方块可被穿过。"
+        },
+        {
+            "name": "update",
+            "localizedName": "每帧更新",
+            "notes": "拥有更新实体。\n\n**Notes**: 此方块是否有 TileEntity 来执行每帧更新。决定方块能否执行逻辑、响应事件。需要时须设为 true。"
+        },
+        {
+            "name": "insulated",
+            "localizedName": "绝缘方块",
+            "notes": "此方块是否具有绝缘特性。\n\n**Notes**: 控制方块是否绝缘。"
+        },
+        {
+            "name": "category",
+            "localizedName": "建造分类",
+            "notes": "建造分类。\n\n**Notes**: 此内容在建造菜单中的分类。决定玩家在哪个分类标签下找到此内容。"
+        },
+        {
+            "name": "requirements",
+            "localizedName": "建造成本",
+            "notes": "建造需求。\n\n**Notes**: 建造此内容所需的物品及数量。如果定义了 researchCost 而此字段未定义，研究花费会自动从建造需求计算。"
+        },
+        {
+            "name": "placeEffect",
+            "localizedName": "放置特效",
+            "notes": "放置特效。\n\n**Notes**: 放置方块时生成的特效。以 size 作为旋转角度传递。用于给方块放置增加视觉反馈。"
+        },
+        {
+            "name": "breakEffect",
+            "localizedName": "拆除特效",
+            "notes": "拆除特效。\n\n**Notes**: 拆除方块时生成的特效。不同于摧毁，拆除是玩家主动操作。"
+        },
+        {
             "name": "hasItems",
             "localizedName": "拥有物品模块",
-            "notes": "若为true，建筑拥有ItemModule。\n\n**Notes**: 该字段控制是否启用物品模块；当设为true时，建筑会拥有ItemModule实例来管理物品存储和交互。"
+            "notes": "拥有物品模块。\n\n**Notes**: 为 true 时，方块拥有 ItemModule 实例，可以存储和交互物品。决定了方块能否缓存物品并和其他方块、单位交互。"
         },
         {
             "name": "hasLiquids",
             "localizedName": "拥有液体模块",
-            "notes": "若为true，建筑拥有LiquidModule。\n\n**Notes**: 该字段控制是否启用液体模块；当设为true时，建筑会拥有LiquidModule实例来管理液体存储和交互。"
+            "notes": "拥有液体模块。\n\n**Notes**: 为 true 时，方块拥有 LiquidModule 实例，可以存储和交互液体。决定了方块能否接收、存储和输出液体。"
         },
         {
             "name": "hasPower",
             "localizedName": "拥有电力模块",
-            "notes": "若为true，建筑拥有PowerModule。\n\n**Notes**: 该字段控制是否启用电力模块；当设为true时，建筑会拥有PowerModule实例来管理电力存储和交互。"
+            "notes": "拥有电力模块。\n\n**Notes**: 为 true 时，方块拥有 PowerModule 实例，可以连接电力网络。不管方块是消耗还是产生电力，此字段都需要设为 true。"
         },
         {
             "name": "outputsLiquid",
             "localizedName": "输出液体",
-            "notes": "用于确定此方块是否在某处输出液体的标志；用于连接。\n\n**Notes**: 控制方块是否具有液体输出能力，影响液体管道的连接判断。"
+            "notes": "输出液体标志。\n\n**Notes**: 用于判断此方块是否在某处输出液体。影响液体管道的连接逻辑，决定相邻方块如何与此方块进行液体交互。"
         },
         {
             "name": "consumesPower",
             "localizedName": "消耗电力",
-            "notes": "某些电力方块（节点）使用此标志标记为不消耗电力。默认为true，即使此方块没有电力模块。\n\n**Notes**: 控制方块是否消耗电力。"
+            "notes": "消耗电力。\n\n**Notes**: 部分电力方块（如节点）可设为 false 以标记为不消耗电力。即使此方块没有电力也可以保持默认值 true。实际是否耗电由消耗器决定。"
         },
         {
             "name": "outputsPower",
             "localizedName": "输出电力",
-            "notes": "若为true，此方块是可以发电的发电机。\n\n**Notes**: 控制方块是否能输出电力。"
+            "notes": "产生电力。\n\n**Notes**: 为 true 时，此方块可产生电力，即发电机。决定了电力网络中电力流动的方向。"
         },
         {
             "name": "connectedPower",
             "localizedName": "可连接电力",
-            "notes": "若为false，电力节点无法连接到此方块。\n\n**Notes**: 控制方块是否允许电力节点连接。"
+            "notes": "可连接电力。\n\n**Notes**: 为 false 时，电力节点不能连接到此方块。可用于某些特殊方块来阻止电力连接。默认为 true。"
         },
         {
             "name": "conductivePower",
             "localizedName": "传导电力",
-            "notes": "若为true，此方块可以像电缆一样传导电力。\n\n**Notes**: 控制方块是否能传导电力（类似于电线）。"
+            "notes": "导电性。\n\n**Notes**: 为 true 时，此方块可以像电缆一样传导电力，即使它本身不是 PowerNode。用于创建具有导电特性的特殊方块。"
         },
         {
             "name": "outputsPayload",
             "localizedName": "输出载荷",
-            "notes": "若为true，此方块可以输出载荷；影响混合。\n\n**Notes**: 控制方块是否能输出载荷。"
+            "notes": "输出载荷。\n\n**Notes**: 为 true 时，此方块可以输出载荷（负载/包裹）。影响与载荷相关的贴图混合。用于载荷运输系统中的输出端。"
         },
         {
             "name": "acceptsUnitPayloads",
@@ -54,7 +114,7 @@
         {
             "name": "acceptsPayload",
             "localizedName": "接收载荷",
-            "notes": "若为true，载荷将尝试移入此方块。\n\n**Notes**: 控制方块是否能接收载荷。"
+            "notes": "接收载荷。\n\n**Notes**: 为 true 时，载荷可以尝试移动进入此方块。用于载荷运输系统中的输入端或处理设备。"
         },
         {
             "name": "acceptsItems",
@@ -79,17 +139,17 @@
         {
             "name": "itemCapacity",
             "localizedName": "物品容量",
-            "notes": "此方块可携带的最大物品数（通常按物品类型计算）。\n\n**Notes**: 控制方块每种物品的最大存储量。"
+            "notes": "物品容量。\n\n**Notes**: 方块可存储的最大物品数量。通常是按每种物品单独计算的。对于单位，<0 时会根据碰撞体积自动计算。"
         },
         {
             "name": "liquidCapacity",
             "localizedName": "液体容量",
-            "notes": "如果hasLiquids = true，此方块可携带的最大总液体量。默认值为10，随ConsumeLiquid中的最大液体消耗按比例调整。\n\n**Notes**: 控制方块的液体存储容量。"
+            "notes": "液体容量。\n\n**Notes**: hasLiquids=true 时，方块可存储的最大液体总量。默认值为 10，会随最大液体消耗量自动缩放（ConsumeLiquid）。"
         },
         {
             "name": "liquidPressure",
             "localizedName": "液体压力",
-            "notes": "更高的数值增加液体输出速度；TODO 移除并用更好的液体系统替代。\n\n**Notes**: 控制液体的输出压力/速度。"
+            "notes": "液体压力。\n\n**Notes**: 较大的值提高液体输出速度。此系统有待改进，目前用于控制液体在管道中的传输效率。"
         },
         {
             "name": "outputFacing",
@@ -104,17 +164,17 @@
         {
             "name": "displayFlow",
             "localizedName": "显示流速",
-            "notes": "是否显示流速。\n\n**Notes**: 控制是否在界面中显示流体/物品流速。"
+            "notes": "显示流速。\n\n**Notes**: 是否在方块上显示液体或物品的流动速率。用于运输类方块，帮助玩家了解当前传输效率。"
         },
         {
             "name": "inEditor",
             "localizedName": "在编辑器中可见",
-            "notes": "此方块是否在地图编辑器中可见。\n\n**Notes**: 控制方块在编辑器中的可见性。"
+            "notes": "在编辑器中显示。\n\n**Notes**: 此方块是否在地图编辑器中可见。设为 false 时在编辑器中隐藏，适用于特殊方块。"
         },
         {
             "name": "editorConfigurable",
             "localizedName": "编辑器可配置",
-            "notes": "若为true，将调用buildEditorConfig(Table)以在编辑器中配置此方块。\n\n**Notes**: 控制方块是否可在编辑器中进行配置。"
+            "notes": "编辑器可配置。\n\n**Notes**: 为 true 时，在编辑器中选择此方块会调用配置界面，允许设置参数。用于功能丰富的地图编辑块。"
         },
         {
             "name": "lastConfig",
@@ -137,19 +197,14 @@
             "notes": "若为true，双击此可配置方块将清除配置。\n\n**Notes**: 控制双击是否清除配置。"
         },
         {
-            "name": "update",
-            "localizedName": "每帧更新",
-            "notes": "此方块是否有更新的瓦片实体。\n\n**Notes**: 控制方块是否有每帧更新的实体。"
-        },
-        {
             "name": "destructible",
             "localizedName": "可被摧毁",
-            "notes": "此方块是否有生命值并可被摧毁。注意：如果update = true，设为false无效！\n\n**Notes**: 控制方块是否可被摧毁。"
+            "notes": "可被破坏。\n\n**Notes**: 此方块是否有生命值且可被摧毁。注意：如果 update=false，此设置无效（必须 update=true 才能被摧毁）。"
         },
         {
             "name": "unloadable",
             "localizedName": "可被卸载",
-            "notes": "卸载器是否对此方块有效。\n\n**Notes**: 控制卸载器是否能从此方块取物。"
+            "notes": "可卸载。\n\n**Notes**: 卸载器是否可以从该方块中取出物品。设为 false 时防止卸载器访问此方块的库存。"
         },
         {
             "name": "isDuct",
@@ -162,14 +217,9 @@
             "notes": "单位是否可以通过从此方块取物来补给。\n\n**Notes**: 控制单位是否能从此方块获取物品。"
         },
         {
-            "name": "solid",
-            "localizedName": "实心方块",
-            "notes": "是否为实心方块。\n\n**Notes**: 控制方块是否阻挡移动和视线。"
-        },
-        {
             "name": "solidifes",
             "localizedName": "可变为实心",
-            "notes": "此方块是否可以变为实心。\n\n**Notes**: 控制方块是否具有实心的能力。"
+            "notes": "可变为实体。\n\n**Notes**: 此方块是否 CAN 成为实体。用于某些可以切换状态的方块（如门），控制其潜在的实体性。"
         },
         {
             "name": "teamPassable",
@@ -184,12 +234,12 @@
         {
             "name": "rotate",
             "localizedName": "可旋转",
-            "notes": "是否可旋转。\n\n**Notes**: 控制方块是否可旋转方向。"
+            "notes": "可旋转。\n\n**Notes**: 此方块是否可旋转方向。对于需要朝向的方块（如传送带、炮塔）通常设为 true。"
         },
         {
             "name": "rotateDraw",
             "localizedName": "绘制时旋转纹理",
-            "notes": "如果rotate为true且此值为false，绘制时纹理不会旋转。\n\n**Notes**: 控制是否在绘制时旋转纹理。"
+            "notes": "旋转贴图。\n\n**Notes**: 如果 rotate=true 且此字段为 false，方块贴图在旋转时不会跟着旋转。用于某些贴图不对称但有特殊显示的方块。"
         },
         {
             "name": "rotateDrawEditor",
@@ -219,27 +269,27 @@
         {
             "name": "variants",
             "localizedName": "变体纹理数量",
-            "notes": "要使用的不同变体纹理数量。\n\n**Notes**: 方块的随机外观变体数量。"
+            "notes": "变体数量。\n\n**Notes**: 使用的不同变体贴图数量。例如 variants=3 时，游戏会随机使用 3 种不同外观中的一种。用于增加视觉多样性。"
         },
         {
             "name": "drawArrow",
             "localizedName": "绘制方向箭头",
-            "notes": "是否绘制旋转箭头——这不适用于线条型方块。\n\n**Notes**: 控制是否在放置预览中绘制方向箭头。"
+            "notes": "绘制方向箭头。\n\n**Notes**: 是否在此方块上绘制旋转方向指示箭头。对于有朝向的方块有帮助，但不在线状方块（如传送带）上生效。"
         },
         {
             "name": "drawTeamOverlay",
             "localizedName": "绘制队伍标识",
-            "notes": "是否默认在角落绘制队伍标识。\n\n**Notes**: 控制是否显示队伍颜色标识。"
+            "notes": "绘制队伍标识。\n\n**Notes**: 是否在方块角落绘制队伍颜色标识。默认 true。多人游戏中用于区分不同队伍的方块。"
         },
         {
             "name": "saveData",
             "localizedName": "保存额外数据",
-            "notes": "仅静态方块：若为true，瓦片的data()会保存在世界数据中。\n\n**Notes**: 控制是否保存方块的额外数据。"
+            "notes": "仅静态方块：若为true，图格的data()会保存在世界数据中。\n\n**Notes**: 控制是否保存方块的额外数据。"
         },
         {
             "name": "breakable",
             "localizedName": "可右键拆除",
-            "notes": "是否可以通过右键拆除。\n\n**Notes**: 控制方块是否可被右键拆除。"
+            "notes": "可拆除。\n\n**Notes**: 是否可以通过右键点击来拆除此方块。设为 false 时方块被视为永久性（如地形）。"
         },
         {
             "name": "unitMoveBreakable",
@@ -249,7 +299,7 @@
         {
             "name": "rebuildable",
             "localizedName": "可被重建",
-            "notes": "是否将此方块添加到brokenblocks列表。\n\n**Notes**: 控制方块被摧毁后是否会出现在待重建列表中。"
+            "notes": "可重建。\n\n**Notes**: 被摧毁后是否保留在 BrokenBlocks 待重建列表中。设为 false 时，方块被摧毁后不会自动标记待修复。"
         },
         {
             "name": "privileged",
@@ -264,7 +314,7 @@
         {
             "name": "placeableLiquid",
             "localizedName": "可放置在液体上",
-            "notes": "此方块是否可以放置在任何液体上。\n\n**Notes**: 控制方块是否能放置在液体上。"
+            "notes": "可放置在液面上。\n\n**Notes**: 此方块是否可放置在任何液体表面。用于水上建筑。注意与 requiresWater 不同，此字段不限制只能在水中放置。"
         },
         {
             "name": "placeablePlayer",
@@ -277,14 +327,9 @@
             "notes": "此地面是否可被放置方块。\n\n**Notes**: 控制此地面是否允许在其上放置其他方块。"
         },
         {
-            "name": "insulated",
-            "localizedName": "绝缘方块",
-            "notes": "此方块是否具有绝缘特性。\n\n**Notes**: 控制方块是否绝缘。"
-        },
-        {
             "name": "squareSprite",
             "localizedName": "正方形精灵",
-            "notes": "精灵是否为完整正方形。\n\n**Notes**: 控制精灵是否为正方形。"
+            "notes": "方形贴图。\n\n**Notes**: 贴图是否为完整方块。设为 false 时可用于不规则形状的方块。影响渲染裁剪和碰撞箱视觉。"
         },
         {
             "name": "absorbLasers",
@@ -354,22 +399,22 @@
         {
             "name": "scaledHealth",
             "localizedName": "缩放生命值",
-            "notes": "此方块每平方瓦片的生命值；本质上乘以size * size。如果health > 0则被覆盖。如果<0，默认值为40。\n\n**Notes**: 基于面积的缩放生命值。"
+            "notes": "每格生命值。\n\n**Notes**: 此方块每格（tile）的生命值，总生命值 = scaledHealth * size * size。当 health > 0 时此值被覆盖。默认值 40。"
         },
         {
             "name": "health",
             "localizedName": "基础生命值",
-            "notes": "建筑生命值；-1使用scaledHealth。\n\n**Notes**: 方块的基础生命值。"
+            "notes": "生命值。\n\n**Notes**: 此内容的耐久度。-1 时使用 scaledHealth 根据尺寸自动计算。直接影响方块被击毁所需的伤害量。"
         },
         {
             "name": "armor",
             "localizedName": "护甲值",
-            "notes": "伤害吸收，类似于单位护甲。\n\n**Notes**: 减少受到的伤害值。"
+            "notes": "护甲值。\n\n**Notes**: 伤害减免值，直接减少受到的伤害量。与单位的护甲机制相同。适用于高防御方块。"
         },
         {
             "name": "baseExplosiveness",
             "localizedName": "基础爆炸性",
-            "notes": "基础方块爆炸性。\n\n**Notes**: 方块被摧毁时的基础爆炸强度。"
+            "notes": "基础爆炸性。\n\n**Notes**: 方块的基础爆炸强度。影响被摧毁时的爆炸威力。默认 0，值越大爆炸越强。"
         },
         {
             "name": "explosivenessScale",
@@ -389,7 +434,7 @@
         {
             "name": "destroyBullet",
             "localizedName": "摧毁发射子弹",
-            "notes": "此方块被摧毁时生成的子弹。\n\n**Notes**: 方块被摧毁时发射的子弹类型。"
+            "notes": "摧毁子弹。\n\n**Notes**: 方块被摧毁时产生的子弹类型。可用于实现方块被破坏时的反击或连锁反应效果。"
         },
         {
             "name": "destroyBulletSameTeam",
@@ -414,12 +459,12 @@
         {
             "name": "floating",
             "localizedName": "可浮空放置",
-            "notes": "此方块是否可以放置在液体边缘。\n\n**Notes**: 控制方块是否能浮在液体上放置。"
+            "notes": "浮空。\n\n**Notes**: 方块是否可放置在液体边缘（半水半陆）。适用于码头、水泵等需要靠近水源的方块。"
         },
         {
             "name": "size",
             "localizedName": "方块尺寸",
-            "notes": "多方块尺寸。\n\n**Notes**: 方块的尺寸（例如2表示2x2）。"
+            "notes": "尺寸。\n\n**Notes**: 多格方块的大小，实际占位为 size×size 格。修改后可能导致严重存档兼容性问题。"
         },
         {
             "name": "offset",
@@ -434,7 +479,7 @@
         {
             "name": "clipSize",
             "localizedName": "裁剪区域大小",
-            "notes": "此方块的裁剪大小。至少应与方块绘制范围一样大。\n\n**Notes**: 控制方块的渲染裁剪区域大小。"
+            "notes": "裁剪尺寸。\n\n**Notes**: 方块的图形裁剪大小。应不小于方块的绘制范围，防止图形被意外裁剪。设为 -1 自动计算。"
         },
         {
             "name": "lightClipSize",
@@ -468,8 +513,8 @@
         },
         {
             "name": "fillsTile",
-            "localizedName": "填满瓦片",
-            "notes": "特殊标志；若为false，即使方块被缓存，地面仍会在其下方绘制。\n\n**Notes**: 控制方块是否填满整个瓦片。"
+            "localizedName": "填满图格",
+            "notes": "特殊标志；若为false，即使方块被缓存，地面仍会在其下方绘制。\n\n**Notes**: 控制方块是否填满整个图格。"
         },
         {
             "name": "forceDark",
@@ -489,7 +534,7 @@
         {
             "name": "group",
             "localizedName": "方块分组",
-            "notes": "方块组。除非重写了canReplace，否则同一组中的方块可以相互替换。\n\n**Notes**: 方块的分类组，用于替换逻辑。"
+            "notes": "方块组。\n\n**Notes**: 方块所属的分组。同一组内的方块可以相互替换放置（如不同种类的墙）。用于替换放置行为。"
         },
         {
             "name": "flags",
@@ -499,7 +544,7 @@
         {
             "name": "priority",
             "localizedName": "目标优先级",
-            "notes": "此方块被敌人视为目标的优先级。\n\n**Notes**: 控制敌人优先攻击此方块的程度。"
+            "notes": "攻击优先级。\n\n**Notes**: 敌方单位对此方块的攻击优先级。值越高的方块越容易被敌方优先攻击。影响 AI 的目标选择。"
         },
         {
             "name": "unitCapModifier",
@@ -509,7 +554,7 @@
         {
             "name": "configurable",
             "localizedName": "可配置",
-            "notes": "方块是否可被点击选中并配置。\n\n**Notes**: 控制方块是否有配置界面。"
+            "notes": "可配置。\n\n**Notes**: 此方块是否可以点击以打开配置界面。设为 true 时，玩家可以点击方块进行参数设置。"
         },
         {
             "name": "configureSound",
@@ -569,12 +614,12 @@
         {
             "name": "envEnabled",
             "localizedName": "可运行环境",
-            "notes": "此方块可运行的环境标志。如果环境匹配其中任何一个，方块将启用。\n\n**Notes**: 方块可运行的环境条件。"
+            "notes": "启用环境。\n\n**Notes**: 此方块可以正常运作的环境标志枚举。只要环境匹配其中任意一个，方块即可工作。例如太阳能板需要露天环境。"
         },
         {
             "name": "envDisabled",
             "localizedName": "禁止运行环境",
-            "notes": "此方块无法运行的环境标志。如果环境匹配其中任何一个，方块将禁用。\n\n**Notes**: 方块无法运行的环境条件。"
+            "notes": "禁用环境。\n\n**Notes**: 此方块不可运作的环境标志枚举。如果环境匹配其中任何一个，方块将被禁用。与 envEnabled 相反。"
         },
         {
             "name": "sync",
@@ -619,7 +664,7 @@
         {
             "name": "targetable",
             "localizedName": "可被瞄准",
-            "notes": "单位是否以此方块为目标。\n\n**Notes**: 控制单位是否会自动瞄准此方块。"
+            "notes": "可被瞄准。\n\n**Notes**: 为 false 时，此单位不会被任何东西锁定为目标（但范围伤害仍然有效）。用于无敌/装饰单位。"
         },
         {
             "name": "attacks",
@@ -634,17 +679,17 @@
         {
             "name": "canOverdrive",
             "localizedName": "可被过载",
-            "notes": "过载核心是否对此方块有任何效果。\n\n**Notes**: 控制方块是否可被过载。"
+            "notes": "可超速运转。\n\n**Notes**: 超速核心是否对此方块有效。设为 false 时，超速核心无法加速此方块。用于防止某些方块被超速破坏平衡。"
         },
         {
             "name": "outlineColor",
             "localizedName": "轮廓颜色",
-            "notes": "轮廓图标颜色。\n\n**Notes**: 方块图标的轮廓颜色。"
+            "notes": "轮廓颜色。\n\n**Notes**: 图标轮廓的颜色值。控制生成图标时轮廓部分的颜色。修改后可自定义图标外观。"
         },
         {
             "name": "outlineIcon",
             "localizedName": "图标轮廓",
-            "notes": "是否有图标区域添加了轮廓。\n\n**Notes**: 控制图标是否生成轮廓。"
+            "notes": "轮廓图标。\n\n**Notes**: 是否在此方块的图标区域上添加轮廓。影响生成图标时的轮廓叠加行为。"
         },
         {
             "name": "outlineRadius",
@@ -664,7 +709,7 @@
         {
             "name": "customShadow",
             "localizedName": "自定义阴影",
-            "notes": "若为true，在此方块下方绘制自定义阴影（名称-shadow）。\n\n**Notes**: 控制方块是否使用自定义阴影纹理。"
+            "notes": "自定义阴影。\n\n**Notes**: 为 true 时，此方块的阴影使用自定义的名称-shadow 贴图，而非自动生成的阴影。用于需要特殊投影效果的方块。"
         },
         {
             "name": "placePitchChange",
@@ -689,7 +734,7 @@
         {
             "name": "destroySound",
             "localizedName": "摧毁音效",
-            "notes": "此方块被摧毁时的音效。\n\n**Notes**: 摧毁音效。"
+            "notes": "摧毁音效。\n\n**Notes**: 此方块被摧毁时播放的音效。用于增强方块被破坏时的反馈。"
         },
         {
             "name": "destroySoundVolume",
@@ -734,42 +779,32 @@
         {
             "name": "fogRadius",
             "localizedName": "驱雾半径",
-            "notes": "此方块驱散多少迷雾（以瓦片为单位）。不能动态变化。<= 0禁用。\n\n**Notes**: 方块的视野驱雾半径。"
+            "notes": "迷雾半径。\n\n**Notes**: 此方块可驱散的战争迷雾范围（格数）。<= 0 时禁用。用于灯塔、雷达等具有开视野功能的方块。注意：半径不能动态变化。"
         },
         {
             "name": "ambientSound",
             "localizedName": "环境音效",
-            "notes": "此方块空闲时播放的音效。所有方块共用一个音效循环。\n\n**Notes**: 环境音效。"
+            "notes": "环境音效。\n\n**Notes**: 方块运行时持续播放的环境音效所有方块共用同一音效循环通道。用于营造氛围。"
         },
         {
             "name": "ambientSoundVolume",
             "localizedName": "环境音效音量",
-            "notes": "空闲音效的基础音量。\n\n**Notes**: 环境音效的音量。"
-        },
-        {
-            "name": "requirements",
-            "localizedName": "建造成本",
-            "notes": "建造此方块的所需材料。\n\n**Notes**: 建造成本列表。"
-        },
-        {
-            "name": "category",
-            "localizedName": "建造分类",
-            "notes": "放置菜单中的分类。\n\n**Notes**: 方块在建造菜单中的分类。"
+            "notes": "环境音量。\n\n**Notes**: 环境音效的基础音量大小。用于控制方块运行声音的响度。"
         },
         {
             "name": "buildTime",
             "localizedName": "建造时间",
-            "notes": "建造此方块的时间（tick数）。如果此值<0，则动态计算。\n\n**Notes**: 方块建造所需的施工时间。"
+            "notes": "建造时间（刻）。\n\n**Notes**: 建造此方块所需的时间（游戏刻）。<0 时自动根据物品需求动态计算。"
         },
         {
             "name": "buildVisibility",
             "localizedName": "建造可见性",
-            "notes": "此方块是否可见并可建造。\n\n**Notes**: 控制方块的建造可见性。"
+            "notes": "建造可见性。\n\n**Notes**: 控制此方块是否在建造菜单中显示以及是否可被建造。用于隐藏开发中或特殊的方块的可见性。"
         },
         {
             "name": "buildCostMultiplier",
             "localizedName": "建造速度倍率",
-            "notes": "建造此方块的速度倍率。\n\n**Notes**: 控制建造速度的倍率。"
+            "notes": "建造速度倍率。\n\n**Notes**: 建造此方块的速度倍率。>1 时建造更快，<1 时建造更慢。用于调整建造速度而不修改原始成本。"
         },
         {
             "name": "deconstructThreshold",
@@ -792,24 +827,14 @@
             "notes": "若为true，此方块即使在'黑暗'区域也可放置。仅用于编辑器静态墙壁。\n\n**Notes**: 控制方块是否无视黑暗区域限制。"
         },
         {
-            "name": "placeEffect",
-            "localizedName": "放置特效",
-            "notes": "放置方块时的特效。将尺寸作为旋转传递给特效。\n\n**Notes**: 放置特效。"
-        },
-        {
-            "name": "breakEffect",
-            "localizedName": "拆除特效",
-            "notes": "拆除方块时的特效。将尺寸作为旋转传递给特效。\n\n**Notes**: 拆除特效。"
-        },
-        {
             "name": "destroyEffect",
             "localizedName": "摧毁特效",
-            "notes": "摧毁方块时的特效。\n\n**Notes**: 摧毁特效。"
+            "notes": "摧毁特效。\n\n**Notes**: 此方块被摧毁时生成的特效。用于增强破坏时的视觉反馈。"
         },
         {
             "name": "researchCostMultiplier",
             "localizedName": "研究成本倍率",
-            "notes": "科技树研究成本的倍率。\n\n**Notes**: 研究成本倍率。"
+            "notes": "科技花费倍率。\n\n**Notes**: 此内容在科技树中的研究花费倍率。值越大，研究消耗的资源越多。可用于平衡后期内容的研究成本。"
         },
         {
             "name": "researchCostMultipliers",
@@ -819,12 +844,12 @@
         {
             "name": "researchCost",
             "localizedName": "研究成本覆盖",
-            "notes": "研究成本的覆盖值。如果未设置，则使用上述倍率和建造成本。\n\n**Notes**: 手动设置的研究成本。"
+            "notes": "科技研究花费。\n\n**Notes**: 覆盖科技树中的默认研究花费。未设置时使用建造需求的物品和数量计算。用于自定义特殊科技成本。"
         },
         {
             "name": "forceTeam",
             "localizedName": "强制队伍",
-            "notes": "若设置，所有方块将被强制归为此队伍。\n\n**Notes**: 强制所有此方块为指定队伍。"
+            "notes": "强制队伍。\n\n**Notes**: 设置后，所有此类型的方块/单位会被强制分配到指定队伍。用于战役画布或特殊地图机制。"
         },
         {
             "name": "instantTransfer",

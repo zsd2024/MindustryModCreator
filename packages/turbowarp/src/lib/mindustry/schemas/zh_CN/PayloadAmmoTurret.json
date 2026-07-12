@@ -4,7 +4,7 @@
         {
             "name": "ammoTypes",
             "localizedName": "弹药类型映射",
-            "notes": "**Notes**: 负载内容到子弹类型的映射表，定义炮塔接受的弹药负载。"
+            "notes": "弹药类型。\n\n**Notes**: 炮塔所有可用弹药类型的映射。包含默认弹药和通过物品转换的弹药。"
         },
         {
             "name": "ammoKeys",

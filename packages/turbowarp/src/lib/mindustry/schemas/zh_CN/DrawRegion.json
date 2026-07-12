@@ -1,60 +1,60 @@
 {
-    "localizedName": "\u533a\u57df\u7ed8\u5236",
+    "localizedName": "区域绘制",
     "fields": [
         {
             "name": "region",
-            "localizedName": "\u7eb9\u7406\u533a\u57df",
-            "notes": "**Notes**: \u8fd0\u884c\u65f6\u52a0\u8f7d\u7684\u7eb9\u7406\u533a\u57df\u3002"
+            "localizedName": "纹理区域",
+            "notes": "**Notes**: 运行时加载的纹理区域。"
         },
         {
             "name": "suffix",
-            "localizedName": "\u7eb9\u7406\u540e\u7f00",
-            "notes": "**Notes**: \u9644\u52a0\u5728\u65b9\u5757\u540d\u79f0\u540e\u7684\u540e\u7f00\u4ee5\u67e5\u627e\u7eb9\u7406\u3002"
+            "localizedName": "纹理后缀",
+            "notes": "**Notes**: 附加在方块名称后的后缀以查找纹理。"
         },
         {
             "name": "color",
-            "localizedName": "\u67d3\u8272\u989c\u8272",
-            "notes": "**Notes**: \u7ed8\u5236\u65f6\u4f7f\u7528\u7684\u989c\u8272\uff0c\u4e3anull\u65f6\u4e0d\u67d3\u8272\u3002"
+            "localizedName": "染色颜色",
+            "notes": "**Notes**: 绘制时使用的颜色，为null时不染色。"
         },
         {
             "name": "spinSprite",
-            "localizedName": "\u81ea\u65cb\u7cbe\u7075",
-            "notes": "**Notes**: \u662f\u5426\u4f7f\u7528\u81ea\u65cb\u7cbe\u7075\u7ed8\u5236\uff08\u81ea\u52a8\u65cb\u8f6c\uff09\u3002"
+            "localizedName": "自旋精灵",
+            "notes": "**Notes**: 是否使用自旋精灵绘制（自动旋转）。"
         },
         {
             "name": "drawPlan",
-            "localizedName": "\u89c4\u5212\u6a21\u5f0f\u7ed8\u5236",
-            "notes": "**Notes**: \u662f\u5426\u5728\u89c4\u5212\u6a21\u5f0f\u4e2d\u7ed8\u5236\u3002"
+            "localizedName": "规划模式绘制",
+            "notes": "**Notes**: 是否在规划模式中绘制。"
         },
         {
             "name": "buildingRotate",
-            "localizedName": "\u5efa\u7b51\u65cb\u8f6c\u53e0\u52a0",
-            "notes": "**Notes**: \u7eb9\u7406\u65cb\u8f6c\u662f\u5426\u53e0\u52a0\u5efa\u7b51\u7684\u65cb\u8f6c\u89d2\u5ea6\u3002"
+            "localizedName": "建筑旋转叠加",
+            "notes": "**Notes**: 纹理旋转是否叠加建筑的旋转角度。"
         },
         {
             "name": "rotateSpeed",
-            "localizedName": "\u81ea\u65cb\u901f\u5ea6",
-            "notes": "**Notes**: \u7eb9\u7406\u7684\u81ea\u65cb\u901f\u5ea6\uff08\u5ea6/\u79d2\uff09\u3002"
+            "localizedName": "自旋速度",
+            "notes": "旋转速度。\n\n**Notes**: 炮塔/单位的旋转速度（度/刻）。控制追踪目标时的响应速度。"
         },
         {
             "name": "x",
-            "localizedName": "X\u8f74\u504f\u79fb",
-            "notes": "**Notes**: \u7eb9\u7406\u7ed8\u5236\u7684X\u8f74\u504f\u79fb\u3002"
+            "localizedName": "X轴偏移",
+            "notes": "**Notes**: 纹理绘制的X轴偏移。"
         },
         {
             "name": "y",
-            "localizedName": "Y\u8f74\u504f\u79fb",
-            "notes": "**Notes**: \u7eb9\u7406\u7ed8\u5236\u7684Y\u8f74\u504f\u79fb\u3002"
+            "localizedName": "Y轴偏移",
+            "notes": "**Notes**: 纹理绘制的Y轴偏移。"
         },
         {
             "name": "rotation",
-            "localizedName": "\u56fa\u5b9a\u65cb\u8f6c\u89d2\u5ea6",
-            "notes": "**Notes**: \u7eb9\u7406\u7684\u56fa\u5b9a\u65cb\u8f6c\u89d2\u5ea6\u3002"
+            "localizedName": "固定旋转角度",
+            "notes": "**Notes**: 纹理的固定旋转角度。"
         },
         {
             "name": "layer",
-            "localizedName": "\u6e32\u67d3\u5c42\u7ea7",
-            "notes": "\u4efb\u4f55\u5c0f\u4e8e\u7b49\u4e8e0\u7684\u503c\u5c06\u7981\u7528\u56fe\u5c42\u66f4\u6539\u3002\n\n**Notes**: Any number <=0 disables layer changes."
+            "localizedName": "渲染层级",
+            "notes": "任何小于等于0的值将禁用图层更改。\n\n**Notes**: Any number <=0 disables layer changes."
         }
     ]
 }

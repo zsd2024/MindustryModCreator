@@ -4,7 +4,7 @@
         {
             "name": "parts",
             "localizedName": "绘制部件序列",
-            "notes": "**Notes**: 方块的绘制部件序列。"
+            "notes": "视觉部件。\n\n**Notes**: 额外的（通常为动画）视觉部件列表。用于为单位添加非武器性的动画元素。"
         },
         {
             "name": "preview",

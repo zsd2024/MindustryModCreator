@@ -2,9 +2,29 @@
     "localizedName": "发电机",
     "fields": [
         {
+            "name": "maxNodes",
+            "localizedName": "最大节点数",
+            "notes": "**Notes**: 请填写此字段的说明。"
+        },
+        {
             "name": "powerProduction",
             "localizedName": "发电量",
-            "notes": "在效率为1.0（即100%）时每tick产生的电量。\n\n**Notes**: 满效率时的发电量。"
+            "notes": "电力产出。\n\n**Notes**: 此方块产生的电量（每刻）。用于发电机类方块设定发电效率。"
+        },
+        {
+            "name": "powerCapacity",
+            "localizedName": "电力容量",
+            "notes": "电力容量。\n\n**Notes**: 此方块的最大电力存储容量。用于电池和其他可储电的方块。"
+        },
+        {
+            "name": "itemCapacity",
+            "localizedName": "物品容量",
+            "notes": "物品容量。\n\n**Notes**: 方块可存储的最大物品数量。通常是按每种物品单独计算的。对于单位，<0 时会根据碰撞体积自动计算。"
+        },
+        {
+            "name": "consumes",
+            "localizedName": "消耗配置",
+            "notes": "消耗配置。\n\n**Notes**: 配置此内容运行所需的消耗定义。包括消耗的物品、液体、电力等。是制作需要持续消耗资源的方块的关键配置。"
         },
         {
             "name": "generationType",
@@ -70,6 +90,11 @@
             "name": "explosionShakeDuration",
             "localizedName": "爆炸震动时长",
             "notes": "**Notes**: 爆炸震屏持续时间。"
+        },
+        {
+            "name": "laserRange",
+            "localizedName": "激光范围",
+            "notes": "**Notes**: 请填写此字段的说明。"
         }
     ]
 }

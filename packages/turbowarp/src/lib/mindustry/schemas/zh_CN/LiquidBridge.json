@@ -1,1 +1,75 @@
-{"localizedName": "液体桥接器"}
+{
+    "localizedName": "液体桥接器",
+    "fields": [
+        {
+            "name": "liquidCapacity",
+            "localizedName": "液体容量",
+            "notes": "液体容量。\n\n**Notes**: hasLiquids=true 时，方块可存储的最大液体总量。默认值为 10，会随最大液体消耗量自动缩放（ConsumeLiquid）。"
+        },
+        {
+            "name": "health",
+            "localizedName": "生命值",
+            "notes": "生命值。\n\n**Notes**: 此内容的耐久度。-1 时使用 scaledHealth 根据尺寸自动计算。直接影响方块被击毁所需的伤害量。"
+        },
+        {
+            "name": "category",
+            "localizedName": "建造分类",
+            "notes": "建造分类。\n\n**Notes**: 此内容在建造菜单中的分类。决定玩家在哪个分类标签下找到此内容。"
+        },
+        {
+            "name": "range",
+            "localizedName": "范围",
+            "notes": "攻击范围。\n\n**Notes**: 炮塔/单位的最小攻击范围，用于接近目标。可通过设置 > 0 的值覆盖默认值。实际攻击范围由武器决定。"
+        },
+        {
+            "name": "requirements",
+            "localizedName": "建造需求",
+            "notes": "建造需求。\n\n**Notes**: 建造此内容所需的物品及数量。如果定义了 researchCost 而此字段未定义，研究花费会自动从建造需求计算。"
+        },
+        {
+            "name": "hasPower",
+            "localizedName": "需要电力",
+            "notes": "拥有电力模块。\n\n**Notes**: 为 true 时，方块拥有 PowerModule 实例，可以连接电力网络。不管方块是消耗还是产生电力，此字段都需要设为 true。"
+        },
+        {
+            "name": "research",
+            "localizedName": "科技树",
+            "notes": "科技树配置。\n\n**Notes**: 定义此内容在科技树中的位置和相关需求。可设为字符串（父节点名称）或对象（包含父节点、需求和目标）。具体子字段见科技树配置类型。"
+        },
+        {
+            "name": "placeEffect",
+            "localizedName": "放置效果",
+            "notes": "放置特效。\n\n**Notes**: 放置方块时生成的特效。以 size 作为旋转角度传递。用于给方块放置增加视觉反馈。"
+        },
+        {
+            "name": "breakEffect",
+            "localizedName": "破坏效果",
+            "notes": "拆除特效。\n\n**Notes**: 拆除方块时生成的特效。不同于摧毁，拆除是玩家主动操作。"
+        },
+        {
+            "name": "consumes",
+            "localizedName": "消耗配置",
+            "notes": "消耗配置。\n\n**Notes**: 配置此内容运行所需的消耗定义。包括消耗的物品、液体、电力等。是制作需要持续消耗资源的方块的关键配置。"
+        },
+        {
+            "name": "placeableLiquid",
+            "localizedName": "可放置在液体上",
+            "notes": "可放置在液面上。\n\n**Notes**: 此方块是否可放置在任何液体表面。用于水上建筑。注意与 requiresWater 不同，此字段不限制只能在水中放置。"
+        },
+        {
+            "name": "buildCostMultiplier",
+            "localizedName": "建造成本倍率",
+            "notes": "建造速度倍率。\n\n**Notes**: 建造此方块的速度倍率。>1 时建造更快，<1 时建造更慢。用于调整建造速度而不修改原始成本。"
+        },
+        {
+            "name": "forceTeam",
+            "localizedName": "强制队伍",
+            "notes": "强制队伍。\n\n**Notes**: 设置后，所有此类型的方块/单位会被强制分配到指定队伍。用于战役画布或特殊地图机制。"
+        },
+        {
+            "name": "squareSprite",
+            "localizedName": "方形贴图",
+            "notes": "方形贴图。\n\n**Notes**: 贴图是否为完整方块。设为 false 时可用于不规则形状的方块。影响渲染裁剪和碰撞箱视觉。"
+        }
+    ]
+}

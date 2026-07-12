@@ -2,9 +2,29 @@
     "localizedName": "液体",
     "fields": [
         {
-            "name": "gas",
-            "localizedName": "是否为气体",
-            "notes": "如果为true，该流体被处理为气体（不会产生水坑）。\n\n**Notes**: 控制流体是气体还是液体形态。"
+            "name": "name",
+            "localizedName": "名称",
+            "notes": "内容在 Mod JSON 中的唯一标识名称。\n\n**Notes**: 此名称用于在 JSON 配置、代码引用和资源文件命名中标识该内容。通常使用小写英文，多个单词用连字符连接。例如 \"copper-wall\"、\"melter\"。注意不是 bundle 中的显示名称。"
+        },
+        {
+            "name": "description",
+            "localizedName": "描述",
+            "notes": "描述文本。\n\n**Notes**: 此内容的描述说明。可通过 bundle 文件设置，也可在 JSON 中定义。在游戏中的内容数据库和提示中显示。"
+        },
+        {
+            "name": "hidden",
+            "localizedName": "是否隐藏",
+            "notes": "隐藏。\n\n**Notes**: 为 true 时，此内容不会在核心数据库和各种 UI 界面中显示。用于标记已移除或实验性的内容。"
+        },
+        {
+            "name": "alwaysUnlocked",
+            "localizedName": "始终解锁",
+            "notes": "是否始终解锁。\n\n**Notes**: 设为 true 时，此内容在科技树中始终可用，无需研究解锁。适用于开局即可使用的基础内容。"
+        },
+        {
+            "name": "research",
+            "localizedName": "科技树",
+            "notes": "科技树配置。\n\n**Notes**: 定义此内容在科技树中的位置和相关需求。可设为字符串（父节点名称）或对象（包含父节点、需求和目标）。具体子字段见科技树配置类型。"
         },
         {
             "name": "color",
@@ -12,19 +32,9 @@
             "notes": "管道和地面中使用的颜色。\n\n**Notes**: 流体的基础颜色。"
         },
         {
-            "name": "gasColor",
-            "localizedName": "气体颜色",
-            "notes": "该流体气体形态的颜色。\n\n**Notes**: 当gas=true时使用的颜色。"
-        },
-        {
-            "name": "barColor",
-            "localizedName": "状态条颜色",
-            "notes": "状态条中使用的颜色。\n\n**Notes**: 如果不为null，覆盖柱状条显示的颜色。"
-        },
-        {
-            "name": "lightColor",
-            "localizedName": "发光颜色",
-            "notes": "绘制灯光时使用的颜色。注意alpha通道用于控制亮度。\n\n**Notes**: 控制流体发出的光的颜色和亮度。"
+            "name": "heatCapacity",
+            "localizedName": "热容量",
+            "notes": "该流体能储存多少热量。0.4=水（中等），更低的值密度更低且冷却效果差。\n\n**Notes**: 控制流体的热容量，影响冷却效果。"
         },
         {
             "name": "flammability",
@@ -37,9 +47,9 @@
             "notes": "温度：0.5为室温，0为极冷，1为熔融热。\n\n**Notes**: 控制流体的温度属性。"
         },
         {
-            "name": "heatCapacity",
-            "localizedName": "热容量",
-            "notes": "该流体能储存多少热量。0.4=水（中等），更低的值密度更低且冷却效果差。\n\n**Notes**: 控制流体的热容量，影响冷却效果。"
+            "name": "explosiveness",
+            "localizedName": "爆炸性",
+            "notes": "该流体在受热时爆炸的倾向。0=无，1=核爆。\n\n**Notes**: 控制流体的爆炸风险。"
         },
         {
             "name": "viscosity",
@@ -47,14 +57,14 @@
             "notes": "该流体的粘稠度。0.5=水（相对粘稠），1=焦油（非常慢）。\n\n**Notes**: 控制流体流动的阻力。"
         },
         {
-            "name": "explosiveness",
-            "localizedName": "爆炸性",
-            "notes": "该流体在受热时爆炸的倾向。0=无，1=核爆。\n\n**Notes**: 控制流体的爆炸风险。"
+            "name": "gas",
+            "localizedName": "是否为气体",
+            "notes": "如果为true，该流体被处理为气体（不会产生水坑）。\n\n**Notes**: 控制流体是气体还是液体形态。"
         },
         {
-            "name": "blockReactive",
-            "localizedName": "是否与方块反应",
-            "notes": "该流体是否在方块中发生反应（例如熔渣与水）。\n\n**Notes**: 控制流体是否会与其他方块交互反应。"
+            "name": "effect",
+            "localizedName": "关联状态效果",
+            "notes": "关联的状态效果。\n\n**Notes**: 接触该流体时施加的状态效果。"
         },
         {
             "name": "coolant",
@@ -62,9 +72,19 @@
             "notes": "如果为false，该流体不能用作冷却剂。\n\n**Notes**: 控制流体是否具有冷却能力。"
         },
         {
-            "name": "moveThroughBlocks",
-            "localizedName": "是否可穿过方块",
-            "notes": "如果为true，该流体可以以水坑形式穿过方块。\n\n**Notes**: 控制流体是否能够穿透方块。"
+            "name": "lightColor",
+            "localizedName": "发光颜色",
+            "notes": "绘制灯光时使用的颜色。注意alpha通道用于控制亮度。\n\n**Notes**: 控制流体发出的光的颜色和亮度。"
+        },
+        {
+            "name": "gasColor",
+            "localizedName": "气体颜色",
+            "notes": "该流体气体形态的颜色。\n\n**Notes**: 当gas=true时使用的颜色。"
+        },
+        {
+            "name": "boilPoint",
+            "localizedName": "汽化温度",
+            "notes": "该液体汽化的温度。这不仅仅是沸腾。\n\n**Notes**: 控制流体蒸发的环境温度阈值。"
         },
         {
             "name": "incinerable",
@@ -72,9 +92,19 @@
             "notes": "如果为true，该流体可以在焚烧炉方块中被销毁。\n\n**Notes**: 控制流体是否可以被焚烧处理。"
         },
         {
-            "name": "effect",
-            "localizedName": "关联状态效果",
-            "notes": "关联的状态效果。\n\n**Notes**: 接触该流体时施加的状态效果。"
+            "name": "barColor",
+            "localizedName": "状态条颜色",
+            "notes": "状态条中使用的颜色。\n\n**Notes**: 如果不为null，覆盖柱状条显示的颜色。"
+        },
+        {
+            "name": "blockReactive",
+            "localizedName": "是否与方块反应",
+            "notes": "该流体是否在方块中发生反应（例如熔渣与水）。\n\n**Notes**: 控制流体是否会与其他方块交互反应。"
+        },
+        {
+            "name": "moveThroughBlocks",
+            "localizedName": "是否可穿过方块",
+            "notes": "如果为true，该流体可以以水坑形式穿过方块。\n\n**Notes**: 控制流体是否能够穿透方块。"
         },
         {
             "name": "particleEffect",
@@ -87,11 +117,6 @@
             "notes": "粒子效果的tick间隔。\n\n**Notes**: 控制粒子效果产生的频率。"
         },
         {
-            "name": "boilPoint",
-            "localizedName": "汽化温度",
-            "notes": "该液体汽化的温度。这不仅仅是沸腾。\n\n**Notes**: 控制流体蒸发的环境温度阈值。"
-        },
-        {
             "name": "capPuddles",
             "localizedName": "是否限制水坑大小",
             "notes": "如果为true，水坑大小有上限。\n\n**Notes**: 控制流体水坑是否具有最大尺寸限制。"
@@ -100,11 +125,6 @@
             "name": "vaporEffect",
             "localizedName": "汽化效果",
             "notes": "该液体汽化时的效果。\n\n**Notes**: 当流体达到沸点蒸发时播放的效果。"
-        },
-        {
-            "name": "hidden",
-            "localizedName": "是否隐藏",
-            "notes": "如果为true，该液体在大多数UI中隐藏。\n\n**Notes**: 控制流体是否在大多数界面中不可见。"
         },
         {
             "name": "canStayOn",

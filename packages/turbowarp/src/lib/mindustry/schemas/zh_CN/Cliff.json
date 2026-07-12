@@ -4,7 +4,7 @@
         {
             "name": "size",
             "localizedName": "纹理尺寸",
-            "notes": "**Notes**: 悬崖纹理的尺寸。"
+            "notes": "尺寸。\n\n**Notes**: 多格方块的大小，实际占位为 size×size 格。修改后可能导致严重存档兼容性问题。"
         },
         {
             "name": "cliffs",

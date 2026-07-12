@@ -4,7 +4,7 @@
         {
             "name": "powerProduction",
             "localizedName": "发电量",
-            "notes": "**Notes**: 电力生产量"
+            "notes": "电力产出。\n\n**Notes**: 此方块产生的电量（每刻）。用于发电机类方块设定发电效率。"
         }
     ]
 }

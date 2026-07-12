@@ -14,7 +14,7 @@
         {
             "name": "warmupSpeed",
             "localizedName": "预热速度",
-            "notes": "**Notes**: 预热速度"
+            "notes": "预热速度。\n\n**Notes**: 炮塔射击前的预热速度。影响炮塔达到全速射击所需的时间。"
         },
         {
             "name": "effect",

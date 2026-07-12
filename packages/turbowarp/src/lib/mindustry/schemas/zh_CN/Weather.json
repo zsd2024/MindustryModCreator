@@ -44,7 +44,7 @@
         {
             "name": "hidden",
             "localizedName": "UI隐藏",
-            "notes": "**Notes**: 如果为true，该天气不会在UI中显示。"
+            "notes": "隐藏。\n\n**Notes**: 为 true 时，此内容不会在核心数据库和各种 UI 界面中显示。用于标记已移除或实验性的内容。"
         },
         {
             "name": "type",

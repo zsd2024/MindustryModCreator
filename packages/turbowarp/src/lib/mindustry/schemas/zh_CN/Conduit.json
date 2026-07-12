@@ -4,7 +4,62 @@
         {
             "name": "liquidCapacity",
             "localizedName": "液体容量",
-            "notes": "**Notes**: 液体的缓存容量。"
+            "notes": "液体容量。\n\n**Notes**: hasLiquids=true 时，方块可存储的最大液体总量。默认值为 10，会随最大液体消耗量自动缩放（ConsumeLiquid）。"
+        },
+        {
+            "name": "requirements",
+            "localizedName": "建造需求",
+            "notes": "建造需求。\n\n**Notes**: 建造此内容所需的物品及数量。如果定义了 researchCost 而此字段未定义，研究花费会自动从建造需求计算。"
+        },
+        {
+            "name": "category",
+            "localizedName": "建造分类",
+            "notes": "建造分类。\n\n**Notes**: 此内容在建造菜单中的分类。决定玩家在哪个分类标签下找到此内容。"
+        },
+        {
+            "name": "research",
+            "localizedName": "科技树",
+            "notes": "科技树配置。\n\n**Notes**: 定义此内容在科技树中的位置和相关需求。可设为字符串（父节点名称）或对象（包含父节点、需求和目标）。具体子字段见科技树配置类型。"
+        },
+        {
+            "name": "armor",
+            "localizedName": "护甲",
+            "notes": "护甲值。\n\n**Notes**: 伤害减免值，直接减少受到的伤害量。与单位的护甲机制相同。适用于高防御方块。"
+        },
+        {
+            "name": "liquidPressure",
+            "localizedName": "液体压力",
+            "notes": "液体压力。\n\n**Notes**: 较大的值提高液体输出速度。此系统有待改进，目前用于控制液体在管道中的传输效率。"
+        },
+        {
+            "name": "customShadow",
+            "localizedName": "自定义阴影",
+            "notes": "自定义阴影。\n\n**Notes**: 为 true 时，此方块的阴影使用自定义的名称-shadow 贴图，而非自动生成的阴影。用于需要特殊投影效果的方块。"
+        },
+        {
+            "name": "placeEffect",
+            "localizedName": "放置效果",
+            "notes": "放置特效。\n\n**Notes**: 放置方块时生成的特效。以 size 作为旋转角度传递。用于给方块放置增加视觉反馈。"
+        },
+        {
+            "name": "breakEffect",
+            "localizedName": "破坏效果",
+            "notes": "拆除特效。\n\n**Notes**: 拆除方块时生成的特效。不同于摧毁，拆除是玩家主动操作。"
+        },
+        {
+            "name": "placeableLiquid",
+            "localizedName": "可放置在液体上",
+            "notes": "可放置在液面上。\n\n**Notes**: 此方块是否可放置在任何液体表面。用于水上建筑。注意与 requiresWater 不同，此字段不限制只能在水中放置。"
+        },
+        {
+            "name": "buildCostMultiplier",
+            "localizedName": "建造成本倍率",
+            "notes": "建造速度倍率。\n\n**Notes**: 建造此方块的速度倍率。>1 时建造更快，<1 时建造更慢。用于调整建造速度而不修改原始成本。"
+        },
+        {
+            "name": "forceTeam",
+            "localizedName": "强制队伍",
+            "notes": "强制队伍。\n\n**Notes**: 设置后，所有此类型的方块/单位会被强制分配到指定队伍。用于战役画布或特殊地图机制。"
         },
         {
             "name": "liquidFlowFactor",
@@ -30,6 +85,11 @@
             "name": "topRegion",
             "localizedName": "顶部纹理",
             "notes": "**Notes**: 顶部纹理区域。"
+        },
+        {
+            "name": "health",
+            "localizedName": "生命值",
+            "notes": "生命值。\n\n**Notes**: 此内容的耐久度。-1 时使用 scaledHealth 根据尺寸自动计算。直接影响方块被击毁所需的伤害量。"
         }
     ]
 }

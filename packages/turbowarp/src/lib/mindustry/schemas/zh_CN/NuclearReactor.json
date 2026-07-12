@@ -2,6 +2,76 @@
     "localizedName": "核反应堆",
     "fields": [
         {
+            "name": "maxNodes",
+            "localizedName": "最大节点数",
+            "notes": "**Notes**: 请填写此字段的说明。"
+        },
+        {
+            "name": "powerProduction",
+            "localizedName": "电力产出",
+            "notes": "电力产出。\n\n**Notes**: 此方块产生的电量（每刻）。用于发电机类方块设定发电效率。"
+        },
+        {
+            "name": "powerCapacity",
+            "localizedName": "电力容量",
+            "notes": "电力容量。\n\n**Notes**: 此方块的最大电力存储容量。用于电池和其他可储电的方块。"
+        },
+        {
+            "name": "itemCapacity",
+            "localizedName": "物品容量",
+            "notes": "物品容量。\n\n**Notes**: 方块可存储的最大物品数量。通常是按每种物品单独计算的。对于单位，<0 时会根据碰撞体积自动计算。"
+        },
+        {
+            "name": "consumes",
+            "localizedName": "消耗配置",
+            "notes": "消耗配置。\n\n**Notes**: 配置此内容运行所需的消耗定义。包括消耗的物品、液体、电力等。是制作需要持续消耗资源的方块的关键配置。"
+        },
+        {
+            "name": "size",
+            "localizedName": "尺寸",
+            "notes": "尺寸。\n\n**Notes**: 多格方块的大小，实际占位为 size×size 格。修改后可能导致严重存档兼容性问题。"
+        },
+        {
+            "name": "health",
+            "localizedName": "生命值",
+            "notes": "生命值。\n\n**Notes**: 此内容的耐久度。-1 时使用 scaledHealth 根据尺寸自动计算。直接影响方块被击毁所需的伤害量。"
+        },
+        {
+            "name": "liquidCapacity",
+            "localizedName": "液体容量",
+            "notes": "液体容量。\n\n**Notes**: hasLiquids=true 时，方块可存储的最大液体总量。默认值为 10，会随最大液体消耗量自动缩放（ConsumeLiquid）。"
+        },
+        {
+            "name": "itemDuration",
+            "localizedName": "燃料消耗时间",
+            "notes": "消耗1个燃料所需的游戏刻数\n\n**Notes**: 消耗1个燃料所需的游戏刻数"
+        },
+        {
+            "name": "fuelItem",
+            "localizedName": "燃料物品",
+            "notes": "**Notes**: 燃料物品类型"
+        },
+        {
+            "name": "requirements",
+            "localizedName": "建造需求",
+            "notes": "建造需求。\n\n**Notes**: 建造此内容所需的物品及数量。如果定义了 researchCost 而此字段未定义，研究花费会自动从建造需求计算。"
+        },
+        {
+            "name": "category",
+            "localizedName": "建造分类",
+            "notes": "建造分类。\n\n**Notes**: 此内容在建造菜单中的分类。决定玩家在哪个分类标签下找到此内容。"
+        },
+        {
+            "name": "research",
+            "localizedName": "科技树",
+            "notes": "科技树配置。\n\n**Notes**: 定义此内容在科技树中的位置和相关需求。可设为字符串（父节点名称）或对象（包含父节点、需求和目标）。具体子字段见科技树配置类型。"
+        },
+        {
+            "name": "destroyBullet",
+            "localizedName": "摧毁子弹",
+            "notes": "摧毁子弹。\n\n**Notes**: 方块被摧毁时产生的子弹类型。可用于实现方块被破坏时的反击或连锁反应效果。"
+        },
+        {
             "name": "timerFuel",
             "localizedName": "燃料计时器",
             "notes": "**Notes**: 燃料消耗计时器ID"
@@ -20,11 +90,6 @@
             "name": "hotColor",
             "localizedName": "过热颜色",
             "notes": "**Notes**: 过热状态颜色"
-        },
-        {
-            "name": "itemDuration",
-            "localizedName": "燃料消耗时间",
-            "notes": "消耗1个燃料所需的游戏刻数\n\n**Notes**: 消耗1个燃料所需的游戏刻数"
         },
         {
             "name": "heating",
@@ -62,11 +127,6 @@
             "notes": "每单位冷却液移除的热量\n\n**Notes**: 每单位冷却液移除的热量"
         },
         {
-            "name": "fuelItem",
-            "localizedName": "燃料物品",
-            "notes": "**Notes**: 燃料物品类型"
-        },
-        {
             "name": "topRegion",
             "localizedName": "顶部纹理",
             "notes": "**Notes**: 顶部纹理"
@@ -75,6 +135,11 @@
             "name": "lightsRegion",
             "localizedName": "灯光纹理",
             "notes": "**Notes**: 灯光纹理"
+        },
+        {
+            "name": "laserRange",
+            "localizedName": "激光范围",
+            "notes": "**Notes**: 请填写此字段的说明。"
         }
     ]
 }

@@ -1,1 +1,10 @@
-{"localizedName": "覆盖地面"}
+{
+    "localizedName": "覆盖地面",
+    "fields": [
+        {
+            "name": "variants",
+            "localizedName": "变体数量",
+            "notes": "变体数量。\n\n**Notes**: 使用的不同变体贴图数量。例如 variants=3 时，游戏会随机使用 3 种不同外观中的一种。用于增加视觉多样性。"
+        }
+    ]
+}

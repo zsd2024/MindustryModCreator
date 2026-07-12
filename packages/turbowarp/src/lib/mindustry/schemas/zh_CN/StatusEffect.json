@@ -2,14 +2,29 @@
     "localizedName": "状态效果",
     "fields": [
         {
-            "name": "damageMultiplier",
-            "localizedName": "伤害倍率",
-            "notes": "具有该效果的单位造成的伤害倍率。\n\n**Notes**: 控制单位输出伤害的倍率。"
+            "name": "name",
+            "localizedName": "名称",
+            "notes": "内容在 Mod JSON 中的唯一标识名称。\n\n**Notes**: 此名称用于在 JSON 配置、代码引用和资源文件命名中标识该内容。通常使用小写英文，多个单词用连字符连接。例如 \"copper-wall\"、\"melter\"。注意不是 bundle 中的显示名称。"
         },
         {
-            "name": "healthMultiplier",
-            "localizedName": "生命倍率",
-            "notes": "单位生命值倍率。\n\n**Notes**: 控制单位的生命值倍率。"
+            "name": "description",
+            "localizedName": "描述",
+            "notes": "描述文本。\n\n**Notes**: 此内容的描述说明。可通过 bundle 文件设置，也可在 JSON 中定义。在游戏中的内容数据库和提示中显示。"
+        },
+        {
+            "name": "hidden",
+            "localizedName": "隐藏",
+            "notes": "隐藏。\n\n**Notes**: 为 true 时，此内容不会在核心数据库和各种 UI 界面中显示。用于标记已移除或实验性的内容。"
+        },
+        {
+            "name": "alwaysUnlocked",
+            "localizedName": "始终解锁",
+            "notes": "是否始终解锁。\n\n**Notes**: 设为 true 时，此内容在科技树中始终可用，无需研究解锁。适用于开局即可使用的基础内容。"
+        },
+        {
+            "name": "research",
+            "localizedName": "科技树",
+            "notes": "科技树配置。\n\n**Notes**: 定义此内容在科技树中的位置和相关需求。可设为字符串（父节点名称）或对象（包含父节点、需求和目标）。具体子字段见科技树配置类型。"
         },
         {
             "name": "speedMultiplier",
@@ -17,14 +32,29 @@
             "notes": "单位速度倍率。\n\n**Notes**: 控制单位移动速度的倍率。"
         },
         {
+            "name": "effect",
+            "localizedName": "粒子效果",
+            "notes": "在受影响单位上方随机发生的效果。\n\n**Notes**: 每帧有一定概率播放的粒子效果。"
+        },
+        {
+            "name": "damage",
+            "localizedName": "持续伤害",
+            "notes": "每帧造成的伤害。\n\n**Notes**: 持续伤害值，负数表示治疗。"
+        },
+        {
             "name": "reloadMultiplier",
             "localizedName": "装填倍率",
             "notes": "单位装填倍率。\n\n**Notes**: 控制单位武器装填速度的倍率。"
         },
         {
-            "name": "buildSpeedMultiplier",
-            "localizedName": "建造速度倍率",
-            "notes": "单位建造速度倍率。\n\n**Notes**: 控制单位建造速度的倍率。"
+            "name": "effectChance",
+            "localizedName": "效果概率",
+            "notes": "效果出现的概率。\n\n**Notes**: 每帧播放粒子效果的概率。"
+        },
+        {
+            "name": "healthMultiplier",
+            "localizedName": "生命倍率",
+            "notes": "单位生命值倍率。\n\n**Notes**: 控制单位的生命值倍率。"
         },
         {
             "name": "dragMultiplier",
@@ -32,9 +62,24 @@
             "notes": "单位阻力倍率。\n\n**Notes**: 控制单位移动阻力的倍率。"
         },
         {
-            "name": "transitionDamage",
-            "localizedName": "转换伤害",
-            "notes": "转换到亲和状态时造成的伤害。\n\n**Notes**: 当两个亲和效果相遇时造成的转换伤害。"
+            "name": "damageMultiplier",
+            "localizedName": "伤害倍率",
+            "notes": "具有该效果的单位造成的伤害倍率。\n\n**Notes**: 控制单位输出伤害的倍率。"
+        },
+        {
+            "name": "buildSpeedMultiplier",
+            "localizedName": "建造速度倍率",
+            "notes": "单位建造速度倍率。\n\n**Notes**: 控制单位建造速度的倍率。"
+        },
+        {
+            "name": "permanent",
+            "localizedName": "永久效果",
+            "notes": "如果为true，该效果永远不会消失。\n\n**Notes**: 永久性效果不会被计时器移除。"
+        },
+        {
+            "name": "color",
+            "localizedName": "效果颜色",
+            "notes": "效果的色调颜色。\n\n**Notes**: 粒子效果的颜色。"
         },
         {
             "name": "disarm",
@@ -42,9 +87,29 @@
             "notes": "单位武器被禁用。\n\n**Notes**: 如果为true，单位的武器将被禁用无法攻击。"
         },
         {
-            "name": "damage",
-            "localizedName": "持续伤害",
-            "notes": "每帧造成的伤害。\n\n**Notes**: 持续伤害值，负数表示治疗。"
+            "name": "show",
+            "localizedName": "在核心数据库中显示",
+            "notes": "是否在数据库中显示该效果。\n\n**Notes**: 控制效果是否在核心数据库中显示。"
+        },
+        {
+            "name": "parentizeApplyEffect",
+            "localizedName": "施加效果跟随父级",
+            "notes": "施加效果是否应赋予父对象。\n\n**Notes**: 控制施加效果是否跟随单位移动。"
+        },
+        {
+            "name": "applyEffect",
+            "localizedName": "施加效果",
+            "notes": "施加到单位时显示一次的效果。\n\n**Notes**: 当效果被施加时播放一次。"
+        },
+        {
+            "name": "applyColor",
+            "localizedName": "施加效果颜色",
+            "notes": "施加效果的色调颜色。\n\n**Notes**: 施加效果的粒子颜色。"
+        },
+        {
+            "name": "transitionDamage",
+            "localizedName": "转换伤害",
+            "notes": "转换到亲和状态时造成的伤害。\n\n**Notes**: 当两个亲和效果相遇时造成的转换伤害。"
         },
         {
             "name": "intervalDamageTime",
@@ -62,19 +127,9 @@
             "notes": "如果为true，间隔伤害无视护甲。\n\n**Notes**: 控制间隔伤害是否具有穿透护甲的效果。"
         },
         {
-            "name": "effectChance",
-            "localizedName": "效果概率",
-            "notes": "效果出现的概率。\n\n**Notes**: 每帧播放粒子效果的概率。"
-        },
-        {
             "name": "parentizeEffect",
             "localizedName": "效果跟随父级",
             "notes": "效果是否应赋予父对象。\n\n**Notes**: 控制粒子效果是否跟随单位移动。"
-        },
-        {
-            "name": "permanent",
-            "localizedName": "永久效果",
-            "notes": "如果为true，该效果永远不会消失。\n\n**Notes**: 永久性效果不会被计时器移除。"
         },
         {
             "name": "reactive",
@@ -87,39 +142,9 @@
             "notes": "带有自定义属性的动态效果类型的特殊标志——请勿使用。\n\n**Notes**: 仅供内部使用的标志位。"
         },
         {
-            "name": "show",
-            "localizedName": "在核心数据库中显示",
-            "notes": "是否在数据库中显示该效果。\n\n**Notes**: 控制效果是否在核心数据库中显示。"
-        },
-        {
-            "name": "color",
-            "localizedName": "效果颜色",
-            "notes": "效果的色调颜色。\n\n**Notes**: 粒子效果的颜色。"
-        },
-        {
-            "name": "effect",
-            "localizedName": "粒子效果",
-            "notes": "在受影响单位上方随机发生的效果。\n\n**Notes**: 每帧有一定概率播放的粒子效果。"
-        },
-        {
-            "name": "applyEffect",
-            "localizedName": "施加效果",
-            "notes": "施加到单位时显示一次的效果。\n\n**Notes**: 当效果被施加时播放一次。"
-        },
-        {
             "name": "applyExtend",
             "localizedName": "延长时播放",
             "notes": "即使效果已存在于单位上，apply效果是否仍然显示。\n\n**Notes**: 控制延长效果时是否再次播放施加效果。"
-        },
-        {
-            "name": "applyColor",
-            "localizedName": "施加效果颜色",
-            "notes": "施加效果的色调颜色。\n\n**Notes**: 施加效果的粒子颜色。"
-        },
-        {
-            "name": "parentizeApplyEffect",
-            "localizedName": "施加效果跟随父级",
-            "notes": "施加效果是否应赋予父对象。\n\n**Notes**: 控制施加效果是否跟随单位移动。"
         },
         {
             "name": "affinities",

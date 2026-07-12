@@ -8,8 +8,8 @@
         },
         {
             "name": "tileRegion",
-            "localizedName": "瓦片纹理数组",
-            "notes": "**Notes**: 瓦片纹理区域数组"
+            "localizedName": "图格纹理数组",
+            "notes": "**Notes**: 图格纹理区域数组"
         },
         {
             "name": "backRegion",

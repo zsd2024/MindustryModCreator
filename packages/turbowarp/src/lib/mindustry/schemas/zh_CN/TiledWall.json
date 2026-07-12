@@ -9,7 +9,7 @@
         {
             "name": "maxSize",
             "localizedName": "最大拼接尺寸",
-            "notes": "**Notes**: 瓦片拼接的最大尺寸。"
+            "notes": "**Notes**: 图格拼接的最大尺寸。"
         }
     ]
 }

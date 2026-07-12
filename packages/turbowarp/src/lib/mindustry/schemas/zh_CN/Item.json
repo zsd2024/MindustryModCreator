@@ -2,19 +2,49 @@
     "localizedName": "物品",
     "fields": [
         {
+            "name": "name",
+            "localizedName": "名称",
+            "notes": "内容在 Mod JSON 中的唯一标识名称。\n\n**Notes**: 此名称用于在 JSON 配置、代码引用和资源文件命名中标识该内容。通常使用小写英文，多个单词用连字符连接。例如 \"copper-wall\"、\"melter\"。注意不是 bundle 中的显示名称。"
+        },
+        {
+            "name": "description",
+            "localizedName": "描述",
+            "notes": "描述文本。\n\n**Notes**: 此内容的描述说明。可通过 bundle 文件设置，也可在 JSON 中定义。在游戏中的内容数据库和提示中显示。"
+        },
+        {
+            "name": "hidden",
+            "localizedName": "是否隐藏",
+            "notes": "隐藏。\n\n**Notes**: 为 true 时，此内容不会在核心数据库和各种 UI 界面中显示。用于标记已移除或实验性的内容。"
+        },
+        {
+            "name": "alwaysUnlocked",
+            "localizedName": "始终解锁",
+            "notes": "是否始终解锁。\n\n**Notes**: 设为 true 时，此内容在科技树中始终可用，无需研究解锁。适用于开局即可使用的基础内容。"
+        },
+        {
+            "name": "research",
+            "localizedName": "科技树",
+            "notes": "科技树配置。\n\n**Notes**: 定义此内容在科技树中的位置和相关需求。可设为字符串（父节点名称）或对象（包含父节点、需求和目标）。具体子字段见科技树配置类型。"
+        },
+        {
             "name": "color",
             "localizedName": "物品颜色",
             "notes": "**Notes**: 物品的颜色属性，用于图标和渲染。"
         },
         {
-            "name": "explosiveness",
-            "localizedName": "爆炸性",
-            "notes": "该物品的爆炸性。\n\n**Notes**: 控制物品作为弹药时的爆炸威力。"
+            "name": "cost",
+            "localizedName": "基础材料成本",
+            "notes": "该物品的基础材料成本，用于计算放置时间；1成本=1tick建造时间。\n\n**Notes**: 影响建筑建造速度的基础成本值。"
         },
         {
-            "name": "flammability",
-            "localizedName": "可燃性",
-            "notes": "可燃性高于0.3的物品可用于燃烧器。\n\n**Notes**: 控制物品在燃烧器中被当做燃料的资格阈值。"
+            "name": "hardness",
+            "localizedName": "钻头硬度",
+            "notes": "物品的钻头硬度。\n\n**Notes**: 决定哪些钻头可以开采该物品。"
+        },
+        {
+            "name": "healthScaling",
+            "localizedName": "生命值加成比例",
+            "notes": "当该物品存在于建造成本中时，建筑的默认生命值乘以1+scaling，scaling对所有物品需求类型求和。\n\n**Notes**: 使用该物品建造时提供的生命值加成比例。"
         },
         {
             "name": "radioactivity",
@@ -27,19 +57,19 @@
             "notes": "该物品的电荷能力。\n\n**Notes**: 控制物品的电学效能。"
         },
         {
-            "name": "hardness",
-            "localizedName": "钻头硬度",
-            "notes": "物品的钻头硬度。\n\n**Notes**: 决定哪些钻头可以开采该物品。"
+            "name": "explosiveness",
+            "localizedName": "爆炸性",
+            "notes": "该物品的爆炸性。\n\n**Notes**: 控制物品作为弹药时的爆炸威力。"
         },
         {
-            "name": "cost",
-            "localizedName": "基础材料成本",
-            "notes": "该物品的基础材料成本，用于计算放置时间；1成本=1tick建造时间。\n\n**Notes**: 影响建筑建造速度的基础成本值。"
+            "name": "flammability",
+            "localizedName": "可燃性",
+            "notes": "可燃性高于0.3的物品可用于燃烧器。\n\n**Notes**: 控制物品在燃烧器中被当做燃料的资格阈值。"
         },
         {
-            "name": "healthScaling",
-            "localizedName": "生命值加成比例",
-            "notes": "当该物品存在于建造成本中时，建筑的默认生命值乘以1+scaling，scaling对所有物品需求类型求和。\n\n**Notes**: 使用该物品建造时提供的生命值加成比例。"
+            "name": "buildable",
+            "localizedName": "是否可用于建筑",
+            "notes": "如果为true，此材料可用于建筑。如果为false，此材料将在某些核心中被销毁。\n\n**Notes**: 控制物品是否能用于建造。"
         },
         {
             "name": "lowPriority",
@@ -60,16 +90,6 @@
             "name": "frameTime",
             "localizedName": "帧间隔时间",
             "notes": "动画帧之间的tick间隔。\n\n**Notes**: 控制动画播放速度。"
-        },
-        {
-            "name": "buildable",
-            "localizedName": "是否可用于建筑",
-            "notes": "如果为true，此材料可用于建筑。如果为false，此材料将在某些核心中被销毁。\n\n**Notes**: 控制物品是否能用于建造。"
-        },
-        {
-            "name": "hidden",
-            "localizedName": "是否隐藏",
-            "notes": "**Notes**: 如果为true，该物品不会出现在行星资源选择界面中。"
         }
     ]
 }
