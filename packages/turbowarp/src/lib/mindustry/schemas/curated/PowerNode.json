@@ -60,7 +60,10 @@
         },
         {
             "name": "requirements",
-            "type": "StackRequirement[]"
+            "type": "array",
+            "items": {
+                "$ref": "types/StackRequirement"
+            }
         },
         {
             "name": "name",

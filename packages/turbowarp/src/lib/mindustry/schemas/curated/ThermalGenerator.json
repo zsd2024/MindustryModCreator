@@ -8,7 +8,10 @@
         },
         {
             "name": "requirements",
-            "type": "StackRequirement[]"
+            "type": "array",
+            "items": {
+                "$ref": "types/StackRequirement"
+            }
         },
         {
             "name": "category",
@@ -132,7 +135,10 @@
         },
         {
             "name": "researchCost",
-            "type": "StackRequirement[]"
+            "type": "array",
+            "items": {
+                "$ref": "types/StackRequirement"
+            }
         }
     ]
 }

@@ -108,13 +108,12 @@ const FIELD_TYPE_MAP = {
   'ammoTypes': 'ammoTypes',
   'consumes': 'consumes',
   'research': 'research',
-  'researchCost': 'StackRequirement[]',
 
   // Array fields with known item structure
   'weapons': 'weapon[]',
   'abilities': 'ability[]',
   'plans': 'plan[]',
-  'requirements': 'StackRequirement[]',
+  // requirements/researchCost: handled by schemaType === 'array' + entry.items = { $ref: 'types/StackRequirement' }
   'parts': 'part[]',
   'drawers': 'drawer[]',
   'barrels': 'float[]',

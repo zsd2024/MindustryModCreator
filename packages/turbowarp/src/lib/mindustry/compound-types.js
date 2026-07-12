@@ -26,6 +26,13 @@ const COMPOUND_TYPES = {
             {name: 'item', type: 'Item'},
             {name: 'sort', type: 'boolean'}
         ]
+    },
+    StackRequirement: {
+        type: 'object',
+        fields: [
+            {name: 'item', type: 'Item'},
+            {name: 'amount', type: 'int', defaultValue: 1}
+        ]
     }
 };
 
