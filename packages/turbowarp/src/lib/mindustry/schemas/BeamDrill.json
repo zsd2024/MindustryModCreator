@@ -83,7 +83,7 @@
         {
             "name": "drillMultipliers",
             "type": "ObjectFloatMap of Item",
-            "defaultValue": "new ObjectFloatMap<>()",
+            "defaultValue": "",
             "notes": "Multipliers of drill speed for each item. Defaults to 1."
         },
         {

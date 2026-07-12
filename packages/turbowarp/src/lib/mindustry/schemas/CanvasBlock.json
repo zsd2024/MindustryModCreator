@@ -29,7 +29,7 @@
         {
             "name": "colorToIndex",
             "type": "IntIntMap",
-            "defaultValue": "new IntIntMap()",
+            "defaultValue": "",
             "notes": ""
         },
         {

@@ -41,7 +41,7 @@
         {
             "name": "bullet",
             "type": "MassDriverBolt",
-            "defaultValue": "new MassDriverBolt()",
+            "defaultValue": "",
             "notes": ""
         },
         {

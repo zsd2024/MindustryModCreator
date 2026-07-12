@@ -131,7 +131,7 @@
         {
             "name": "canStayOn",
             "type": "ObjectSet of Liquid",
-            "defaultValue": "new ObjectSet<>()",
+            "defaultValue": "",
             "notes": "Liquids this puddle can stay on, e.g. oil on water."
         }
     ]

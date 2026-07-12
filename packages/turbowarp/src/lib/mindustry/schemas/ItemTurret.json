@@ -5,7 +5,7 @@
         {
             "name": "ammoTypes",
             "type": "ObjectMap of Item, BulletType",
-            "defaultValue": "new OrderedMap<>()",
+            "defaultValue": "",
             "notes": ""
         }
     ]

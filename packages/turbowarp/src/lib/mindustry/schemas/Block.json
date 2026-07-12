@@ -419,7 +419,7 @@
         {
             "name": "attributes",
             "type": "Attributes",
-            "defaultValue": "new Attributes()",
+            "defaultValue": "",
             "notes": "Array of affinities to certain things."
         },
         {
@@ -977,7 +977,7 @@
         {
             "name": "researchCostMultipliers",
             "type": "ObjectFloatMap of Item",
-            "defaultValue": "new ObjectFloatMap<>()",
+            "defaultValue": "",
             "notes": "Cost multipliers per-item."
         },
         {
@@ -1031,7 +1031,7 @@
         {
             "name": "configurations",
             "type": "ObjectMap of Class of ?, Cons2",
-            "defaultValue": "new ObjectMap<>()",
+            "defaultValue": "",
             "notes": "Configuration handlers by type."
         },
         {

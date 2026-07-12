@@ -29,7 +29,7 @@
         {
             "name": "drawer",
             "type": "DrawBlock",
-            "defaultValue": "new DrawDefault()",
+            "defaultValue": "",
             "notes": ""
         },
         {

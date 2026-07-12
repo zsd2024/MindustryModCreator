@@ -5,7 +5,7 @@
         {
             "name": "ammoTypes",
             "type": "ObjectMap of UnlockableContent, BulletType",
-            "defaultValue": "new ObjectMap<>()",
+            "defaultValue": "",
             "notes": ""
         }
     ]

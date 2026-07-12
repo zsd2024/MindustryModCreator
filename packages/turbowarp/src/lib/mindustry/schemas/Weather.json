@@ -17,7 +17,7 @@
         {
             "name": "attrs",
             "type": "Attributes",
-            "defaultValue": "new Attributes()",
+            "defaultValue": "",
             "notes": ""
         },
         {

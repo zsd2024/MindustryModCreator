@@ -71,7 +71,7 @@
         {
             "name": "itemDurationMultipliers",
             "type": "ObjectFloatMap of Item",
-            "defaultValue": "new ObjectFloatMap<>()",
+            "defaultValue": "",
             "notes": "Multiplies the itemDuration for a given item."
         }
     ]

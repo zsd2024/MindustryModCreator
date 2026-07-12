@@ -149,13 +149,13 @@
         {
             "name": "affinities",
             "type": "ObjectSet of StatusEffect",
-            "defaultValue": "new ObjectSet<>()",
+            "defaultValue": "",
             "notes": "Affinity & opposite values for stat displays."
         },
         {
             "name": "opposites",
             "type": "ObjectSet of StatusEffect",
-            "defaultValue": "new ObjectSet<>()",
+            "defaultValue": "",
             "notes": "Affinity & opposite values for stat displays."
         },
         {

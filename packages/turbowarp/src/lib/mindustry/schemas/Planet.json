@@ -71,7 +71,7 @@
         {
             "name": "defaultAttributes",
             "type": "Attributes",
-            "defaultValue": "new Attributes()",
+            "defaultValue": "",
             "notes": "Default environment attributes."
         },
         {

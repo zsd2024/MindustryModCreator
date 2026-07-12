@@ -221,7 +221,7 @@
         {
             "name": "shoot",
             "type": "ShootPattern",
-            "defaultValue": "new ShootPattern()",
+            "defaultValue": "",
             "notes": "pattern used for bullets"
         },
         {

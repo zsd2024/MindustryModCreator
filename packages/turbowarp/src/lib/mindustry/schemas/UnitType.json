@@ -683,7 +683,7 @@
         {
             "name": "controller",
             "type": "Func of Unit, ? extends UnitController",
-            "defaultValue": "get() : new CommandAI()",
+            "defaultValue": "",
             "notes": "Function that chooses AI controller based on unit entity."
         },
         {
@@ -707,7 +707,7 @@
         {
             "name": "immunities",
             "type": "ObjectSet of StatusEffect",
-            "defaultValue": "new ObjectSet<>()",
+            "defaultValue": "",
             "notes": "None of the status effects in this set can be applied to this unit."
         },
         {
