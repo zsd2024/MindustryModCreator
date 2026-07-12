@@ -214,13 +214,11 @@ class MindustryJsonEditor extends React.Component {
     initData (contentType, initial) {
         if (!contentType) return {};
         const fields = resolveFields(contentType, 'full');
-        const data = {...initial};
+        const data = {};
         for (const f of fields) {
-            if (data[f.name] === null || data[f.name] === void 0) {
-                data[f.name] = this.parseDefault(f);
-            }
+            data[f.name] = this.parseDefault(f);
         }
-        return data;
+        return {...data, ...initial};
     }
 
     parseDefault (field) {

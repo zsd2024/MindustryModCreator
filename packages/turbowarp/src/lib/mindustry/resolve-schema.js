@@ -146,24 +146,24 @@ const resolveFields = function (type, mode = 'curated', visited = new Set()) {
         sourceType: type
     }));
 
+    // Keep last occurrence of each field (child overrides parent)
     const merged = [...parentFields, ...ownFields];
-    const seen = new Set();
-    return merged.filter(f => {
-        if (seen.has(f.name)) return false;
-        seen.add(f.name);
-        return true;
-    });
+    const lastIdx = {};
+    for (let i = 0; i < merged.length; i++) lastIdx[merged[i].name] = i;
+    return merged.filter((_, i) => i === lastIdx[merged[i].name]);
 };
 
 const parseDefault = function (field) {
     if (field.defaultValue === void 0 || field.defaultValue === '') {
         if (field.type === 'boolean') return false;
         if (field.type === 'int' || field.type === 'float') return 0;
+        if (field.type === 'array') return [];
         return '';
     }
     if (field.type === 'boolean') return field.defaultValue === 'true';
     if (field.type === 'int') return parseInt(field.defaultValue, 10) || 0;
     if (field.type === 'float') return parseFloat(field.defaultValue) || 0;
+    if (field.type === 'array') return [];
     return field.defaultValue;
 };
 
