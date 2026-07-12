@@ -6,6 +6,7 @@ import {normalizeType} from '../../lib/mindustry/compound-types';
 import {VANILLA_CONTENT} from '../../lib/mindustry/vanilla-content';
 import styles from './mindustry-json-editor.css';
 
+import SearchableSelect from './searchable-select';
 import ReactMarkdown from 'react-markdown';
 
 const renderMarkdown = function (text) {
@@ -22,27 +23,20 @@ const STACK_REQUIREMENT = {
 };
 
 const OBJECTIVE_TYPE_DEFS = [
-    {
-        value: 'Produce',
-        fields: [{name: 'content', type: 'string', localizedName: '内容/单位'}],
-    },
-    {
-        value: 'Research',
-        fields: [{name: 'content', type: 'string', localizedName: '科技'}],
-    },
-    {
-        value: 'SectorComplete',
-        fields: [{name: 'preset', type: 'string', localizedName: '关卡'}],
-    },
-    {
-        value: 'OnSector',
-        fields: [{name: 'preset', type: 'string', localizedName: '关卡'}],
-    },
-    {
-        value: 'OnPlanet',
-        fields: [{name: 'planet', type: 'string', localizedName: '行星'}],
-    },
+    {value: 'Produce', cn: '生产', fields: [{name: 'content', type: 'string', localizedName: '内容'}]},
+    {value: 'Research', cn: '研究', fields: [{name: 'content', type: 'string', localizedName: '内容'}]},
+    {value: 'SectorComplete', cn: '通关关卡', fields: [{name: 'preset', type: 'string', localizedName: '关卡'}]},
+    {value: 'OnSector', cn: '在某关卡', fields: [{name: 'preset', type: 'string', localizedName: '关卡'}]},
+    {value: 'OnPlanet', cn: '在某行星', fields: [{name: 'planet', type: 'string', localizedName: '行星'}]},
 ];
+
+const OBJECTIVE_CONTENT_TYPES = {
+    Produce: ['Item', 'UnitType', 'Block'],
+    Research: ['Block'],
+    SectorComplete: ['SectorPreset'],
+    OnSector: ['SectorPreset'],
+    OnPlanet: ['Planet']
+};
 const ENHANCED_RESEARCH = {
     parent: {type: 'Block', localizedName: '父节点'},
     objectives: {
@@ -58,7 +52,9 @@ const ENHANCED_RESEARCH = {
         },
         localizedName: '目标'
     },
-    requirements: {type: 'array', items: STACK_REQUIREMENT, localizedName: '需求'}
+    requirements: {type: 'array', items: STACK_REQUIREMENT, localizedName: '需求'},
+    root: {type: 'boolean', localizedName: '根节点'},
+    requiresUnlock: {type: 'boolean', localizedName: '需要前置解锁'}
 };
 
 const S = {
@@ -230,8 +226,7 @@ class MindustryJsonEditor extends React.Component {
         super(props);
         this.state = {
             data: this.initData(props.contentType, props.initialData || {}),
-            collapsedSections: this.initCollapsedSections(props.contentType),
-            _dd: {}
+            collapsedSections: this.initCollapsedSections(props.contentType)
         };
         this._onChangeMap = new Map();
     }
@@ -300,96 +295,6 @@ class MindustryJsonEditor extends React.Component {
             parseInt(e.target.value, 10) || 0 :
             parseFloat(e.target.value) || 0;
         cb(v);
-    };
-
-    handleEnumToggle = e => {
-        const key = e.currentTarget.dataset.ddkey;
-        this.setState(prev => ({
-            _dd: {...prev._dd, [`${key}_open`]: !prev._dd?.[`${key}_open`]}
-        }));
-    };
-
-    handleEnumSearch = e => {
-        if (!e || !e.currentTarget || !e.target) return;
-        const key = e.currentTarget.dataset.ddkey;
-        const val = e.target.value;
-        this.setState(prev => ({
-            _dd: {...prev._dd, [`${key}_search`]: val}
-        }));
-    };
-
-    handleEnumBlur = e => {
-        if (!e || !e.currentTarget) return;
-        const key = e.currentTarget.dataset.ddkey;
-        setTimeout(() => {
-            this.setState(prev => ({
-                _dd: {...prev._dd, [`${key}_open`]: false, [`${key}_search`]: ''}
-            }));
-        }, 150);
-    };
-
-    handleEnumSelect = e => {
-        if (!e || !e.currentTarget) return;
-        const key = e.currentTarget.dataset.ddkey;
-        const optValue = e.currentTarget.dataset.optvalue;
-        const cb = this._onChangeMap.get(e.currentTarget.dataset.ckey);
-        if (cb) cb(optValue);
-        this.setState(prev => ({
-            _dd: {...prev._dd, [`${key}_open`]: false, [`${key}_search`]: ''}
-        }));
-    };
-
-    handleDropdownClose = ddKey => {
-        this.setState(prev => ({
-            _dd: {...prev._dd, [`${ddKey}_open`]: false, [`${ddKey}_search`]: ''}
-        }));
-    };
-
-    handleBackdropClick = e => {
-        if (!e || !e.currentTarget) return;
-        this.handleDropdownClose(e.currentTarget.dataset.ddkey);
-    };
-
-    handlePortalDropdownClick = e => {
-        e.stopPropagation();
-    };
-
-    handleContentToggle = e => {
-        if (!e || !e.currentTarget) return;
-        const key = e.currentTarget.dataset.ddkey;
-        this.setState(prev => ({
-            _dd: {...prev._dd, [`${key}_open`]: !prev._dd?.[`${key}_open`]}
-        }));
-    };
-
-    handleContentSearch = e => {
-        if (!e || !e.currentTarget || !e.target) return;
-        const key = e.currentTarget.dataset.ddkey;
-        const val = e.target.value;
-        this.setState(prev => ({
-            _dd: {...prev._dd, [`${key}_search`]: val}
-        }));
-    };
-
-    handleContentBlur = e => {
-        if (!e || !e.currentTarget) return;
-        const key = e.currentTarget.dataset.ddkey;
-        setTimeout(() => {
-            this.setState(prev => ({
-                _dd: {...prev._dd, [`${key}_open`]: false, [`${key}_search`]: ''}
-            }));
-        }, 150);
-    };
-
-    handleContentSelect = e => {
-        if (!e || !e.currentTarget) return;
-        const key = e.currentTarget.dataset.ddkey;
-        const optName = e.currentTarget.dataset.optname;
-        const cb = this._onChangeMap.get(e.currentTarget.dataset.ckey);
-        if (cb) cb(optName);
-        this.setState(prev => ({
-            _dd: {...prev._dd, [`${key}_open`]: false, [`${key}_search`]: ''}
-        }));
     };
 
     handleSizeClick = e => {
@@ -488,193 +393,6 @@ class MindustryJsonEditor extends React.Component {
         return result;
     }
 
-    getDropdownPortalStyle (ddKey) {
-        const DROPDOWN_ESTIMATED_HEIGHT = 260;
-        const triggerEl = document.querySelector(`[data-ddkey="${ddKey}"]`);
-        if (!triggerEl) return {style: {}, up: false};
-        const rect = triggerEl.getBoundingClientRect();
-        const spaceBelow = window.innerHeight - rect.bottom;
-        const spaceAbove = rect.top;
-        const need = Math.min(DROPDOWN_ESTIMATED_HEIGHT, spaceBelow);
-        const up = spaceBelow < DROPDOWN_ESTIMATED_HEIGHT && spaceAbove >= need;
-        return {
-            style: {
-                position: 'fixed',
-                left: `${rect.left}px`,
-                width: `${rect.width}px`,
-                zIndex: 1000,
-                top: up ? 'auto' : `${rect.bottom}px`,
-                bottom: up ? `${window.innerHeight - rect.top}px` : 'auto',
-                maxHeight: up ?
-                    `${Math.min(DROPDOWN_ESTIMATED_HEIGHT, spaceAbove)}px` :
-                    `${Math.min(DROPDOWN_ESTIMATED_HEIGHT, spaceBelow)}px`
-            },
-            up
-        };
-    }
-
-    renderSearchableSelect (options, value, ddKey, ckey) {
-        const dd = this.state._dd || {};
-        const open = dd[`${ddKey}_open`];
-        const search = dd[`${ddKey}_search`] || '';
-        const filtered = options.filter(o => !search ||
-            o.value.includes(search) || o.cn.includes(search));
-        const selected = options.find(o => o.value === value);
-
-        const trigger = (
-            <div className={styles.selectWrap}>
-                <div
-                    className={styles.selectDisplay}
-                    data-ddkey={ddKey}
-                    onClick={this.handleEnumToggle}
-                >
-                    <span className={styles.selectDisplayLabel}>
-                        {selected ? <span style={{color: selected.color}}>{selected.cn}</span> : (value || S.defaultDisplay)}
-                    </span>
-                    <span className={styles.selectArrow}>{open ? '▲' : '▼'}</span>
-                </div>
-            </div>
-        );
-
-        if (!open) return trigger;
-
-        const {style: portalStyle, up} = this.getDropdownPortalStyle(ddKey);
-        const ddClass = up ? `${styles.selectDropdown} ${styles.selectDropdownUp}` : styles.selectDropdown;
-
-        return (
-            <>{trigger}
-                {ReactDOM.createPortal(
-                    <div
-                        className={styles.portalBackdrop}
-                        data-ddkey={ddKey}
-                        onMouseDown={this.handleBackdropClick}
-                    >
-                        <div
-                            className={ddClass}
-                            style={portalStyle}
-                            onMouseDown={this.handlePortalDropdownClick}
-                        >
-                            <input
-                                type="text"
-                                value={search}
-                                placeholder={S.search}
-                                data-ddkey={ddKey}
-                                autoFocus
-                                onChange={this.handleEnumSearch}
-                                onBlur={this.handleEnumBlur}
-                                className={styles.selectSearch}
-                            />
-                            <div className={styles.selectOptions}>
-                                {filtered.length === 0 && (
-                                    <div className={styles.selectEmpty}>{S.noMatch}</div>
-                                )}
-                                {filtered.map(opt => (
-                                    <div
-                                        key={opt.value}
-                                        className={
-                                            `${styles.selectOption} ${
-                                                value === opt.value ? styles.selectOptionActive : ''}`
-                                        }
-                                        data-ddkey={ddKey}
-                                        data-ckey={ckey}
-                                        data-optvalue={opt.value}
-                                        onMouseDown={this.handleEnumSelect}
-                                    >
-                                        <span className={styles.selectOptCn} style={{color: opt.color}}>{opt.cn}</span>
-                                        <span className={styles.selectOptId}>{opt.value}</span>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-                    </div>,
-                    document.body
-                )}
-            </>
-        );
-    }
-
-    renderContentSelect (allOptions, value, fieldType, fieldName, ddKey, ckey) {
-        const isResearch = fieldName === 'research' || ckey?.startsWith('research.');
-        const options = isResearch ?
-            allOptions :
-            allOptions.filter(o => o.type === fieldType);
-        const dd = this.state._dd || {};
-        const open = dd[`${ddKey}_open`];
-        const search = dd[`${ddKey}_search`] || '';
-        const filtered = options.filter(o => !search ||
-            o.name.includes(search) || o.cn.includes(search));
-        const selected = options.find(o => o.name === value);
-
-        const trigger = (
-            <div className={styles.selectWrap}>
-                <div
-                    className={styles.selectDisplay}
-                    data-ddkey={ddKey}
-                    onClick={this.handleContentToggle}
-                >
-                    <span className={styles.selectDisplayLabel}>{selected ? selected.cn : (value || '--')}</span>
-                    <span className={styles.selectArrow}>{open ? '▲' : '▼'}</span>
-                </div>
-            </div>
-        );
-
-        if (!open) return trigger;
-
-        const {style: portalStyle, up} = this.getDropdownPortalStyle(ddKey);
-        const ddClass = up ? `${styles.selectDropdown} ${styles.selectDropdownUp}` : styles.selectDropdown;
-
-        return (
-            <>{trigger}
-                {ReactDOM.createPortal(
-                    <div
-                        className={styles.portalBackdrop}
-                        data-ddkey={ddKey}
-                        onMouseDown={this.handleBackdropClick}
-                    >
-                        <div
-                            className={ddClass}
-                            style={portalStyle}
-                            onMouseDown={this.handlePortalDropdownClick}
-                        >
-                            <input
-                                type="text"
-                                value={search}
-                                placeholder={S.search}
-                                data-ddkey={ddKey}
-                                autoFocus
-                                onChange={this.handleContentSearch}
-                                onBlur={this.handleContentBlur}
-                                className={styles.selectSearch}
-                            />
-                            <div className={styles.selectOptions}>
-                                {filtered.length === 0 && (
-                                    <div className={styles.selectEmpty}>{S.noMatch}</div>
-                                )}
-                                {filtered.map(opt => (
-                                    <div
-                                        key={opt.name}
-                                        className={
-                                            `${styles.selectOption} ${
-                                                value === opt.name ? styles.selectOptionActive : ''}`
-                                        }
-                                        data-ddkey={ddKey}
-                                        data-ckey={ckey}
-                                        data-optname={opt.name}
-                                        onMouseDown={this.handleContentSelect}
-                                    >
-                                        <span className={styles.selectOptCn}>{opt.cn}</span>
-                                        <span className={styles.selectOptId}>{opt.name}</span>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-                    </div>,
-                    document.body
-                )}
-            </>
-        );
-    }
-
     renderSizeSelector (value, ckey) {
         const sizes = [1, 2, 3, 4, 5];
         return (
@@ -749,7 +467,7 @@ class MindustryJsonEditor extends React.Component {
             const enumOptions = rawOptions.map(o => (
                 typeof o === 'string' ? {value: o, cn: o} : {...o, cn: o.cn || o.value}
             ));
-            return this.renderSearchableSelect(enumOptions, value, contextKey || field.name, ckey);
+            return <SearchableSelect options={enumOptions} value={value} onChange={onChange} ddKey={ckey} />;
         }
 
         if (field.name === 'forceTeam') {
@@ -803,9 +521,8 @@ class MindustryJsonEditor extends React.Component {
                     teamOpts.push({value: String(i), cn: String(i), color: hex});
                 }
             }
-            this._onChangeMap.set(ckey, val => onChange(parseInt(val, 10)));
             const strValue = value == null ? '-1' : String(value);
-            return this.renderSearchableSelect(teamOpts, strValue, contextKey || field.name, ckey);
+            return <SearchableSelect options={teamOpts} value={strValue} onChange={val => onChange(parseInt(val, 10))} ddKey={ckey} />;
         }
 
         if (field.type === 'int' || field.type === 'float') {
@@ -825,9 +542,10 @@ class MindustryJsonEditor extends React.Component {
             );
         }
 
-        if (field.name === 'research' || REFERENCE_TYPES.has(field.type)) {
+        if (REFERENCE_TYPES.has(field.type)) {
             const allContent = this.getAllContentOptions();
-            return this.renderContentSelect(allContent, value, field.type, field.name, contextKey || field.name, ckey);
+            const contentOptions = allContent.filter(o => o.type === field.type).map(item => ({value: item.name, cn: item.cn}));
+            return <SearchableSelect options={contentOptions} value={value} onChange={onChange} ddKey={ckey} />;
         }
 
         return (
@@ -942,6 +660,7 @@ class MindustryJsonEditor extends React.Component {
     renderObjectivesArray (field, items, prefix, onArrayChange) {
         const objTypes = OBJECTIVE_TYPE_DEFS;
         const handleArrayChange = onArrayChange;
+        const allContentOptions = this.getAllContentOptions();
 
         const updateItem = (idx, updated) => {
             handleArrayChange(field.name, items.map((it, i) => (i === idx ? updated : it)));
@@ -954,6 +673,11 @@ class MindustryJsonEditor extends React.Component {
         const addItem = () => {
             const newItem = {type: OBJECTIVE_TYPE_DEFS[0].value};
             handleArrayChange(field.name, [...items, newItem]);
+        };
+
+        const getContentOptions = type => {
+            const cats = OBJECTIVE_CONTENT_TYPES[type] || [];
+            return allContentOptions.filter(o => cats.includes(o.type)).map(item => ({value: item.name, cn: item.cn}));
         };
 
         return (
@@ -982,11 +706,11 @@ class MindustryJsonEditor extends React.Component {
                             <div className={styles.arrayItemBody}>
                                 {isString ? (
                                     <div className={styles.objectiveFieldRow}>
-                                        <input
-                                            type="text"
+                                        <SearchableSelect
+                                            options={getContentOptions('Produce')}
                                             value={item}
-                                            className={styles.textInput}
-                                            onChange={e => updateItem(idx, e.target.value)}
+                                            onChange={newVal => updateItem(idx, newVal)}
+                                            ddKey={`obj-content-${idx}`}
                                         />
                                         <button
                                             className={styles.objectiveConvertBtn}
@@ -1000,26 +724,23 @@ class MindustryJsonEditor extends React.Component {
                                     <div className={styles.objectiveItemGrid}>
                                         <div className={styles.objectiveFieldRow}>
                                             <span className={styles.objectiveFieldLabel}>类型</span>
-                                            <select
-                                                className={styles.objectiveTypeSelect}
+                                            <SearchableSelect
+                                                options={objTypes.map(t => ({value: t.value, cn: t.cn}))}
                                                 value={currentType}
-                                                onChange={e => updateItem(idx, {...item, type: e.target.value})}
-                                            >
-                                                {objTypes.map(t => (
-                                                    <option key={t.value} value={t.value}>{t.value}</option>
-                                                ))}
-                                            </select>
+                                                onChange={newType => updateItem(idx, {...item, type: newType})}
+                                                ddKey={`obj-type-${idx}`}
+                                            />
                                         </div>
                                         {typeDef.fields.map(fd => (
                                             <div className={styles.objectiveFieldRow} key={fd.name}>
                                                 <span className={styles.objectiveFieldLabel}>
                                                     {fd.localizedName || fd.name}
                                                 </span>
-                                                <input
-                                                    type="text"
-                                                    className={styles.textInput}
+                                                <SearchableSelect
+                                                    options={getContentOptions(currentType)}
                                                     value={item[fd.name] || ''}
-                                                    onChange={e => updateItem(idx, {...item, [fd.name]: e.target.value})}
+                                                    onChange={newVal => updateItem(idx, {...item, [fd.name]: newVal})}
+                                                    ddKey={`obj-${fd.name}-${idx}`}
                                                 />
                                             </div>
                                         ))}
@@ -1109,11 +830,9 @@ class MindustryJsonEditor extends React.Component {
         const renderControl = () => {
             if (field.name === 'research') {
                 if (typeof value === 'string' && value !== '') {
-                    this._onChangeMap.set(ckey, newVal => {
-                        this.handleChange(field.name, newVal);
-                    });
                     const allContent = this.getAllContentOptions();
-                    return this.renderContentSelect(allContent, value, null, field.name, ckey, ckey);
+                    const options = allContent.map(item => ({value: item.name, cn: item.cn}));
+                    return <SearchableSelect options={options} value={value} onChange={newVal => this.handleChange(field.name, newVal)} ddKey={ckey} />;
                 }
                 // Empty string or object: render research sub-fields
                 const researchValue = typeof value === 'string' ? {} : value;
