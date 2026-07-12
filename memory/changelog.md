@@ -42,6 +42,10 @@
 - 重命名 8 个单位变体 curated 文件（mech→MechUnitType 等），修复查找 Bug
 - 移除全部 curated schema 中的 `localizedName`/`description` 字段
 
+### 修复: 中文翻译校订
+- WallCrafter: 贴壁钻机→墙壁粉碎机
+- BurstDrill: 脉冲钻机→冲击钻头
+
 ## Earlier
 - forceTeam 初始实现（NAME_TO_TYPE 方式）
 - research 字段增强：parent 选择器显示所有内容类型
