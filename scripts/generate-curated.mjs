@@ -167,6 +167,7 @@ const OBJECT_FIELD_STRUCTURES = {
       { name: 'root', type: 'boolean' },
       { name: 'name', type: 'string' },
       { name: 'requiresUnlock', type: 'boolean' },
+      { name: 'planet', type: 'string' },
     ],
   },
   'consumes': {

@@ -51,6 +51,10 @@
                 {
                     "name": "requiresUnlock",
                     "type": "boolean"
+                },
+                {
+                    "name": "planet",
+                    "type": "string"
                 }
             ]
         },
