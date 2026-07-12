@@ -1,5 +1,14 @@
 # Changelog
 
+## 2026-07-12
+
+### 新增: objectives 类型鉴别编辑器
+- `renderObjectivesArray` 自定义数组渲染器，根据 objective type 动态显示对应子字段
+- 支持 5 种 Mindustry 目标类型: Produce, Research, SectorComplete, OnSector, OnPlanet
+- 兼容旧版字符串格式（如 `"copper"`），提供 "→" 按钮一键转换为 `{type:"Produce",content:"copper"}`
+- 新增按钮创建结构化的 `{type, ...}` 对象
+- 覆盖 `renderField` 顶层 + `renderSubFieldControl` 子字段双入口
+
 ## 2026-07-11
 
 ### 修复: forceTeam 颜色使用原版 RNG

@@ -21,9 +21,43 @@ const STACK_REQUIREMENT = {
     ]
 };
 
+const OBJECTIVE_TYPE_DEFS = [
+    {
+        value: 'Produce',
+        fields: [{name: 'content', type: 'string', localizedName: '内容/单位'}],
+    },
+    {
+        value: 'Research',
+        fields: [{name: 'content', type: 'string', localizedName: '科技'}],
+    },
+    {
+        value: 'SectorComplete',
+        fields: [{name: 'preset', type: 'string', localizedName: '关卡'}],
+    },
+    {
+        value: 'OnSector',
+        fields: [{name: 'preset', type: 'string', localizedName: '关卡'}],
+    },
+    {
+        value: 'OnPlanet',
+        fields: [{name: 'planet', type: 'string', localizedName: '行星'}],
+    },
+];
 const ENHANCED_RESEARCH = {
     parent: {type: 'Block', localizedName: '父节点'},
-    objectives: {type: 'array', items: {type: 'string'}, localizedName: '目标'},
+    objectives: {
+        type: 'array',
+        items: {
+            type: 'object',
+            fields: [
+                {name: 'type', type: 'string'},
+                {name: 'content', type: 'string'},
+                {name: 'preset', type: 'string'},
+                {name: 'planet', type: 'string'}
+            ]
+        },
+        localizedName: '目标'
+    },
     requirements: {type: 'array', items: STACK_REQUIREMENT, localizedName: '需求'}
 };
 
@@ -905,8 +939,110 @@ class MindustryJsonEditor extends React.Component {
         );
     }
 
+    renderObjectivesArray (field, items, prefix, onArrayChange) {
+        const objTypes = OBJECTIVE_TYPE_DEFS;
+        const handleArrayChange = onArrayChange;
+
+        const updateItem = (idx, updated) => {
+            handleArrayChange(field.name, items.map((it, i) => (i === idx ? updated : it)));
+        };
+
+        const removeItem = idx => {
+            handleArrayChange(field.name, items.filter((_, i) => i !== idx));
+        };
+
+        const addItem = () => {
+            const newItem = {type: OBJECTIVE_TYPE_DEFS[0].value};
+            handleArrayChange(field.name, [...items, newItem]);
+        };
+
+        return (
+            <div className={styles.arrayField}>
+                {items.length === 0 && (
+                    <div className={styles.arrayEmpty}>{S.arrayEmpty}</div>
+                )}
+                {items.map((item, idx) => {
+                    const isString = typeof item === 'string';
+                    const currentType = isString ? 'Produce' : (item.type || 'Produce');
+                    const typeDef = objTypes.find(t => t.value === currentType) || objTypes[0];
+                    return (
+                        <div className={styles.arrayItem} key={idx}>
+                            <div className={styles.arrayItemHeader}>
+                                <span className={styles.arrayItemIndex}>
+                                    {S.itemIndexPrefix}{idx + 1}
+                                </span>
+                                <button
+                                    className={styles.arrayRemoveBtn}
+                                    onClick={() => removeItem(idx)}
+                                    title={S.arrayRemoveTitle}
+                                >
+                                    {S.removeBtn}
+                                </button>
+                            </div>
+                            <div className={styles.arrayItemBody}>
+                                {isString ? (
+                                    <div className={styles.objectiveFieldRow}>
+                                        <input
+                                            type="text"
+                                            value={item}
+                                            className={styles.textInput}
+                                            onChange={e => updateItem(idx, e.target.value)}
+                                        />
+                                        <button
+                                            className={styles.objectiveConvertBtn}
+                                            onClick={() => updateItem(idx, {type: 'Produce', content: item})}
+                                            title="转换为对象格式"
+                                        >
+                                            →
+                                        </button>
+                                    </div>
+                                ) : (
+                                    <div className={styles.objectiveItemGrid}>
+                                        <div className={styles.objectiveFieldRow}>
+                                            <span className={styles.objectiveFieldLabel}>类型</span>
+                                            <select
+                                                className={styles.objectiveTypeSelect}
+                                                value={currentType}
+                                                onChange={e => updateItem(idx, {...item, type: e.target.value})}
+                                            >
+                                                {objTypes.map(t => (
+                                                    <option key={t.value} value={t.value}>{t.value}</option>
+                                                ))}
+                                            </select>
+                                        </div>
+                                        {typeDef.fields.map(fd => (
+                                            <div className={styles.objectiveFieldRow} key={fd.name}>
+                                                <span className={styles.objectiveFieldLabel}>
+                                                    {fd.localizedName || fd.name}
+                                                </span>
+                                                <input
+                                                    type="text"
+                                                    className={styles.textInput}
+                                                    value={item[fd.name] || ''}
+                                                    onChange={e => updateItem(idx, {...item, [fd.name]: e.target.value})}
+                                                />
+                                            </div>
+                                        ))}
+                                    </div>
+                                )}
+                            </div>
+                        </div>
+                    );
+                })}
+                <button className={styles.arrayAddBtn} onClick={addItem}>
+                    {S.arrayAdd}
+                </button>
+            </div>
+        );
+    }
+
     renderSubFieldControl (enhanced, subValue, onChange, subCkey) {
         const value = subValue === void 0 ? this.parseDefault(enhanced) : subValue;
+        if (enhanced.name === 'objectives' && enhanced.type === 'array') {
+            return this.renderObjectivesArray(enhanced, value, subCkey, (name, val) => {
+                onChange(val);
+            });
+        }
         if (enhanced.type === 'array' && enhanced.items) {
             return this.renderArrayField(enhanced, value, subCkey, (name, val) => {
                 onChange(val);
@@ -989,6 +1125,11 @@ class MindustryJsonEditor extends React.Component {
             }
 
             if (field.type === 'array') {
+                if (field.name === 'objectives') {
+                    return this.renderObjectivesArray(field, value, ckey, (name, val) => {
+                        this.handleChange(name, val);
+                    });
+                }
                 return this.renderArrayField(field, value, ckey);
             }
 

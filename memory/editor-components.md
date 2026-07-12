@@ -1,6 +1,6 @@
 # Editor Components
 
-## Main Component: `mindustry-json-editor.jsx` (1087 lines)
+## Main Component: `mindustry-json-editor.jsx` (1253 lines)
 React class component. Key rendering flow:
 
 ### Field Rendering
@@ -18,7 +18,9 @@ React class component. Key rendering flow:
 ### Key References
 - `REFERENCE_TYPES` (line 49-53): Set of content type names
 - `ENUM_VALUES` (line 14-23): Hardcoded enum options keyed by field name
-- `ENHANCED_RESEARCH` (line 24-28): Research field has `parent` (content ref) + `objectives` + `requirements`
+- `ENHANCED_RESEARCH` (line 24-28): Research field has `parent` (content ref) + `objectives` (custom type-discriminated editor) + `requirements`
+- `OBJECTIVE_TYPE_DEFS` (line 24-50): 5 objective types (Produce/Research/SectorComplete/OnSector/OnPlanet) each with type-specific sub-fields
+- `renderObjectivesArray()`: Custom array renderer for `objectives` — type dropdown + dynamic sub-fields based on selected type. Handles backward-compatible string items with convert-to-object button.
 
 ### renderSearchableSelect
 - Portaled dropdown on document.body
@@ -34,6 +36,13 @@ React class component. Key rendering flow:
 ### renderArrayField
 - For array of objects: shows nested field rows
 - For array of primitives: shows list with add/remove
+- `renderSubFieldControl` intercepts `name === 'objectives'` before generic array handling
+
+### renderObjectivesArray
+- Type-discriminated renderer for `objectives` array
+- Two entry points: top-level (`renderField`) and nested under research (`renderSubFieldControl`)
+- Each item shows type `<select>` and sub-fields matching selected type only
+- String items (legacy format) shown as text input with convert button
 - **Bug history**: `getFieldLabel()` used to return field name as fallback, overriding `sf.localizedName` in `||` chain. Fixed: `getFieldLabel` now returns `null` when no zh_CN match found.
 
 ## Label Resolution Order

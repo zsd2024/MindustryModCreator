@@ -578,3 +578,58 @@
 .emptyText {
   font-size: 1rem;
 }
+
+.objectiveFieldRow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 4px 0;
+}
+
+.objectiveFieldLabel {
+  font-size: 0.8rem;
+  color: $text-primary;
+  opacity: 0.7;
+  min-width: 56px;
+  flex-shrink: 0;
+}
+
+.objectiveTypeSelect {
+  padding: 6px 8px;
+  border: 1px solid $ui-tertiary;
+  border-radius: $form-radius;
+  background: $ui-secondary;
+  color: $text-primary;
+  font-size: 0.85rem;
+  outline: none;
+  cursor: pointer;
+  min-width: 130px;
+}
+
+.objectiveTypeSelect:focus {
+  border-color: $motion-primary;
+}
+
+.objectiveConvertBtn {
+  padding: 4px 8px;
+  border: 1px solid $ui-tertiary;
+  border-radius: $form-radius;
+  background: $ui-primary;
+  color: $text-primary;
+  font-size: 0.8rem;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: all 0.15s;
+  flex-shrink: 0;
+}
+
+.objectiveConvertBtn:hover {
+  opacity: 1;
+  border-color: $motion-primary;
+}
+
+.objectiveItemGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
