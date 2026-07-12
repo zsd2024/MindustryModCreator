@@ -4,45 +4,35 @@
     "fields": [
         {
             "name": "color",
-            "type": "string"
+            "type": "color"
         },
         {
             "name": "heatCapacity",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "flammability",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "temperature",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "explosiveness",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "research",
-            "type": "object",
-            "fields": [
-                {
-                    "name": "objectives",
-                    "type": "string"
-                },
-                {
-                    "name": "parent",
-                    "type": "string"
-                }
-            ]
+            "type": "research"
         },
         {
             "name": "shownPlanets",
-            "type": "array"
+            "type": "Planet[]"
         },
         {
             "name": "viscosity",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "gas",
@@ -50,7 +40,7 @@
         },
         {
             "name": "effect",
-            "type": "string"
+            "type": "Effect"
         },
         {
             "name": "coolant",
@@ -58,7 +48,7 @@
         },
         {
             "name": "lightColor",
-            "type": "string"
+            "type": "color"
         },
         {
             "name": "name",
@@ -86,7 +76,7 @@
         },
         {
             "name": "boilPoint",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "incinerable",

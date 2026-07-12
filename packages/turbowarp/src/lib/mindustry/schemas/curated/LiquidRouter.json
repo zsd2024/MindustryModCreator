@@ -8,7 +8,7 @@
         },
         {
             "name": "requirements",
-            "type": "array"
+            "type": "StackRequirement[]"
         },
         {
             "name": "size",
@@ -16,11 +16,11 @@
         },
         {
             "name": "liquidPadding",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "category",
-            "type": "string"
+            "type": "category"
         },
         {
             "name": "squareSprite",
@@ -32,17 +32,7 @@
         },
         {
             "name": "research",
-            "type": "object",
-            "fields": [
-                {
-                    "name": "parent",
-                    "type": "string"
-                },
-                {
-                    "name": "requirements",
-                    "type": "string"
-                }
-            ]
+            "type": "research"
         },
         {
             "name": "placeableLiquid",
@@ -50,11 +40,11 @@
         },
         {
             "name": "forceTeam",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "scaledHealth",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "armor",
@@ -82,7 +72,7 @@
         },
         {
             "name": "buildCostMultiplier",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "name",

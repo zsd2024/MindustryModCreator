@@ -28,46 +28,23 @@
         },
         {
             "name": "healPercent",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "requirements",
-            "type": "array",
-            "items": {
-                "type": "object",
-                "fields": [
-                    {
-                        "name": "amount",
-                        "type": "int"
-                    },
-                    {
-                        "name": "item",
-                        "type": "string"
-                    }
-                ]
-            }
+            "type": "StackRequirement[]"
         },
         {
             "name": "category",
-            "type": "string"
+            "type": "category"
         },
         {
             "name": "research",
-            "type": "object",
-            "fields": [
-                {
-                    "name": "parent",
-                    "type": "string"
-                },
-                {
-                    "name": "requirements",
-                    "type": "string"
-                }
-            ]
+            "type": "research"
         },
         {
             "name": "baseColor",
-            "type": "string"
+            "type": "color"
         },
         {
             "name": "phaseColor",
@@ -79,15 +56,64 @@
         },
         {
             "name": "consumes",
-            "type": "object",
+            "type": "consumes",
             "fields": [
                 {
-                    "name": "items",
-                    "type": "string"
+                    "name": "power",
+                    "type": "float"
                 },
                 {
-                    "name": "power",
-                    "type": "string"
+                    "name": "powerBuffered",
+                    "type": "float"
+                },
+                {
+                    "name": "items",
+                    "type": "object",
+                    "fields": [
+                        {
+                            "name": "items",
+                            "type": "array",
+                            "items": {
+                                "$ref": "types/StackRequirement"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "liquid",
+                    "type": "object",
+                    "fields": [
+                        {
+                            "name": "liquid",
+                            "type": "Liquid"
+                        },
+                        {
+                            "name": "amount",
+                            "type": "float"
+                        },
+                        {
+                            "name": "update",
+                            "type": "boolean"
+                        },
+                        {
+                            "name": "optional",
+                            "type": "boolean"
+                        },
+                        {
+                            "name": "booster",
+                            "type": "boolean"
+                        }
+                    ]
+                },
+                {
+                    "name": "coolant",
+                    "type": "object",
+                    "fields": [
+                        {
+                            "name": "amount",
+                            "type": "float"
+                        }
+                    ]
                 }
             ]
         },
@@ -105,7 +131,7 @@
         },
         {
             "name": "envDisabled",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "consumesPower",

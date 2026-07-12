@@ -16,37 +16,78 @@
         },
         {
             "name": "consumes",
-            "type": "object",
+            "type": "consumes",
             "fields": [
                 {
+                    "name": "power",
+                    "type": "float"
+                },
+                {
+                    "name": "powerBuffered",
+                    "type": "float"
+                },
+                {
                     "name": "items",
-                    "type": "string"
+                    "type": "object",
+                    "fields": [
+                        {
+                            "name": "items",
+                            "type": "array",
+                            "items": {
+                                "$ref": "types/StackRequirement"
+                            }
+                        }
+                    ]
                 },
                 {
                     "name": "liquid",
-                    "type": "string"
+                    "type": "object",
+                    "fields": [
+                        {
+                            "name": "liquid",
+                            "type": "Liquid"
+                        },
+                        {
+                            "name": "amount",
+                            "type": "float"
+                        },
+                        {
+                            "name": "update",
+                            "type": "boolean"
+                        },
+                        {
+                            "name": "optional",
+                            "type": "boolean"
+                        },
+                        {
+                            "name": "booster",
+                            "type": "boolean"
+                        }
+                    ]
                 },
                 {
-                    "name": "liquids",
-                    "type": "string"
-                },
-                {
-                    "name": "power",
-                    "type": "string"
+                    "name": "coolant",
+                    "type": "object",
+                    "fields": [
+                        {
+                            "name": "amount",
+                            "type": "float"
+                        }
+                    ]
                 }
             ]
         },
         {
             "name": "requirements",
-            "type": "array"
+            "type": "StackRequirement[]"
         },
         {
             "name": "category",
-            "type": "string"
+            "type": "category"
         },
         {
             "name": "polySides",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "polyColor",
@@ -54,11 +95,11 @@
         },
         {
             "name": "buildTime",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "polyRadius",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "liquidCapacity",
@@ -66,17 +107,7 @@
         },
         {
             "name": "research",
-            "type": "object",
-            "fields": [
-                {
-                    "name": "objectives",
-                    "type": "string"
-                },
-                {
-                    "name": "parent",
-                    "type": "string"
-                }
-            ]
+            "type": "research"
         },
         {
             "name": "squareSprite",
@@ -84,11 +115,11 @@
         },
         {
             "name": "forceTeam",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "scaledHealth",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "health",
@@ -96,7 +127,7 @@
         },
         {
             "name": "polyStroke",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "unloadable",
@@ -104,7 +135,7 @@
         },
         {
             "name": "unitBuildTime",
-            "type": "float"
+            "type": "int"
         }
     ]
 }

@@ -18,6 +18,18 @@
             "items": {
                 "type": "string"
             }
+        },
+        {
+            "name": "root",
+            "type": "boolean"
+        },
+        {
+            "name": "name",
+            "type": "string"
+        },
+        {
+            "name": "requiresUnlock",
+            "type": "boolean"
         }
     ]
 }

@@ -12,19 +12,19 @@
         },
         {
             "name": "canvasSize",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "padding",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "category",
-            "type": "string"
+            "type": "category"
         },
         {
             "name": "requirements",
-            "type": "array"
+            "type": "StackRequirement[]"
         },
         {
             "name": "breakEffect",

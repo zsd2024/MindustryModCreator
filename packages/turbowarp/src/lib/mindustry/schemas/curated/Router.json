@@ -4,24 +4,11 @@
     "fields": [
         {
             "name": "category",
-            "type": "string"
+            "type": "category"
         },
         {
             "name": "requirements",
-            "type": "array",
-            "items": {
-                "type": "object",
-                "fields": [
-                    {
-                        "name": "amount",
-                        "type": "int"
-                    },
-                    {
-                        "name": "item",
-                        "type": "string"
-                    }
-                ]
-            }
+            "type": "StackRequirement[]"
         },
         {
             "name": "speed",
@@ -33,7 +20,7 @@
         },
         {
             "name": "buildCostMultiplier",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "squareSprite",
@@ -53,15 +40,15 @@
         },
         {
             "name": "research",
-            "type": "string"
+            "type": "research"
         },
         {
             "name": "forceTeam",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "buildVisibility",
-            "type": "string"
+            "type": "buildVisibility"
         }
     ]
 }

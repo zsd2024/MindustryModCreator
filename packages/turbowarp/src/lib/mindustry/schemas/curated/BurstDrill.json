@@ -20,37 +20,82 @@
         },
         {
             "name": "shake",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "consumes",
-            "type": "object",
+            "type": "consumes",
             "fields": [
                 {
-                    "name": "liquid",
-                    "type": "string"
-                },
-                {
-                    "name": "liquids",
-                    "type": "string"
-                },
-                {
                     "name": "power",
-                    "type": "string"
+                    "type": "float"
+                },
+                {
+                    "name": "powerBuffered",
+                    "type": "float"
+                },
+                {
+                    "name": "items",
+                    "type": "object",
+                    "fields": [
+                        {
+                            "name": "items",
+                            "type": "array",
+                            "items": {
+                                "$ref": "types/StackRequirement"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "liquid",
+                    "type": "object",
+                    "fields": [
+                        {
+                            "name": "liquid",
+                            "type": "Liquid"
+                        },
+                        {
+                            "name": "amount",
+                            "type": "float"
+                        },
+                        {
+                            "name": "update",
+                            "type": "boolean"
+                        },
+                        {
+                            "name": "optional",
+                            "type": "boolean"
+                        },
+                        {
+                            "name": "booster",
+                            "type": "boolean"
+                        }
+                    ]
+                },
+                {
+                    "name": "coolant",
+                    "type": "object",
+                    "fields": [
+                        {
+                            "name": "amount",
+                            "type": "float"
+                        }
+                    ]
                 }
             ]
         },
         {
             "name": "category",
-            "type": "string"
+            "type": "category"
         },
         {
             "name": "requirements",
-            "type": "array"
+            "type": "StackRequirement[]"
         },
         {
             "name": "arrows",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "drillEffect",
@@ -58,7 +103,7 @@
         },
         {
             "name": "invertedTime",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "drillSound",
@@ -66,7 +111,7 @@
         },
         {
             "name": "drillSoundVolume",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "liquidCapacity",
@@ -82,7 +127,7 @@
         },
         {
             "name": "glowColor",
-            "type": "string"
+            "type": "color"
         },
         {
             "name": "blockedItem",
@@ -90,7 +135,7 @@
         },
         {
             "name": "arrowOffset",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "canOverdrive",
@@ -102,11 +147,11 @@
         },
         {
             "name": "dumpTime",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "arrowSpacing",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "placeableLiquid",
@@ -114,17 +159,7 @@
         },
         {
             "name": "research",
-            "type": "object",
-            "fields": [
-                {
-                    "name": "objectives",
-                    "type": "string"
-                },
-                {
-                    "name": "parent",
-                    "type": "string"
-                }
-            ]
+            "type": "research"
         },
         {
             "name": "breakEffect",
@@ -144,7 +179,7 @@
         },
         {
             "name": "forceTeam",
-            "type": "float"
+            "type": "int"
         }
     ]
 }

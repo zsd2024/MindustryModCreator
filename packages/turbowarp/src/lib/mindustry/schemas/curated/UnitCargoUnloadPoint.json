@@ -12,7 +12,7 @@
         },
         {
             "name": "requirements",
-            "type": "array"
+            "type": "StackRequirement[]"
         },
         {
             "name": "squareSprite",
@@ -20,11 +20,11 @@
         },
         {
             "name": "scaledHealth",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "forceTeam",
-            "type": "float"
+            "type": "int"
         }
     ]
 }

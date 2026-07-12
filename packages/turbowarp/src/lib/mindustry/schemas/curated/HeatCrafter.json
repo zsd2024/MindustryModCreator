@@ -4,7 +4,7 @@
     "fields": [
         {
             "name": "heatRequirement",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "size",
@@ -12,54 +12,74 @@
         },
         {
             "name": "drawer",
-            "type": "array",
-            "items": {
-                "type": "object",
-                "fields": [
-                    {
-                        "name": "drawers",
-                        "type": "string"
-                    },
-                    {
-                        "name": "iconOverride",
-                        "type": "string"
-                    },
-                    {
-                        "name": "layer",
-                        "type": "string"
-                    },
-                    {
-                        "name": "type",
-                        "type": "string"
-                    }
-                ]
-            }
+            "type": "drawer"
         },
         {
             "name": "consumes",
-            "type": "object",
+            "type": "consumes",
             "fields": [
                 {
+                    "name": "power",
+                    "type": "float"
+                },
+                {
+                    "name": "powerBuffered",
+                    "type": "float"
+                },
+                {
                     "name": "items",
-                    "type": "string"
+                    "type": "object",
+                    "fields": [
+                        {
+                            "name": "items",
+                            "type": "array",
+                            "items": {
+                                "$ref": "types/StackRequirement"
+                            }
+                        }
+                    ]
                 },
                 {
                     "name": "liquid",
-                    "type": "string"
+                    "type": "object",
+                    "fields": [
+                        {
+                            "name": "liquid",
+                            "type": "Liquid"
+                        },
+                        {
+                            "name": "amount",
+                            "type": "float"
+                        },
+                        {
+                            "name": "update",
+                            "type": "boolean"
+                        },
+                        {
+                            "name": "optional",
+                            "type": "boolean"
+                        },
+                        {
+                            "name": "booster",
+                            "type": "boolean"
+                        }
+                    ]
                 },
                 {
-                    "name": "liquids",
-                    "type": "string"
-                },
-                {
-                    "name": "power",
-                    "type": "string"
+                    "name": "coolant",
+                    "type": "object",
+                    "fields": [
+                        {
+                            "name": "amount",
+                            "type": "float"
+                        }
+                    ]
                 }
             ]
         },
         {
             "name": "category",
-            "type": "string"
+            "type": "category"
         },
         {
             "name": "liquidCapacity",
@@ -67,11 +87,11 @@
         },
         {
             "name": "craftTime",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "maxEfficiency",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "conductivePower",
@@ -79,7 +99,7 @@
         },
         {
             "name": "buildVisibility",
-            "type": "string"
+            "type": "buildVisibility"
         },
         {
             "name": "itemCapacity",
@@ -128,7 +148,7 @@
         },
         {
             "name": "overheatScale",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "rotateDraw",
@@ -144,25 +164,11 @@
         },
         {
             "name": "research",
-            "type": "object",
-            "fields": [
-                {
-                    "name": "objectives",
-                    "type": "string"
-                },
-                {
-                    "name": "parent",
-                    "type": "string"
-                },
-                {
-                    "name": "requirements",
-                    "type": "string"
-                }
-            ]
+            "type": "research"
         },
         {
             "name": "requirements",
-            "type": "array"
+            "type": "StackRequirement[]"
         },
         {
             "name": "outputLiquids",
@@ -210,7 +216,7 @@
         },
         {
             "name": "ambientSoundVolume",
-            "type": "float"
+            "type": "int"
         }
     ]
 }

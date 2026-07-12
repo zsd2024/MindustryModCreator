@@ -4,11 +4,11 @@
     "fields": [
         {
             "name": "category",
-            "type": "string"
+            "type": "category"
         },
         {
             "name": "requirements",
-            "type": "array"
+            "type": "StackRequirement[]"
         },
         {
             "name": "size",
@@ -16,15 +16,15 @@
         },
         {
             "name": "moveTime",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "moveForce",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "payloadLimit",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "interp",
@@ -36,7 +36,7 @@
         },
         {
             "name": "research",
-            "type": "string"
+            "type": "research"
         },
         {
             "name": "placeEffect",
@@ -52,7 +52,7 @@
         },
         {
             "name": "forceTeam",
-            "type": "float"
+            "type": "int"
         }
     ]
 }

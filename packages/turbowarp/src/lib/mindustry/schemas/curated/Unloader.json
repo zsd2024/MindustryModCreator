@@ -12,11 +12,11 @@
         },
         {
             "name": "requirements",
-            "type": "array"
+            "type": "StackRequirement[]"
         },
         {
             "name": "category",
-            "type": "string"
+            "type": "category"
         },
         {
             "name": "size",
@@ -32,11 +32,11 @@
         },
         {
             "name": "forceTeam",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "buildVisibility",
-            "type": "string"
+            "type": "buildVisibility"
         }
     ]
 }

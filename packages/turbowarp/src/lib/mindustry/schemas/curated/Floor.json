@@ -38,7 +38,7 @@
         },
         {
             "name": "variants",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "liquidDrop",
@@ -46,7 +46,7 @@
         },
         {
             "name": "speedMultiplier",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "cacheLayer",
@@ -58,7 +58,7 @@
         },
         {
             "name": "liquidMultiplier",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "name",
@@ -70,15 +70,15 @@
         },
         {
             "name": "lightRadius",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "lightColor",
-            "type": "string"
+            "type": "color"
         },
         {
             "name": "status",
-            "type": "string"
+            "type": "StatusEffect"
         },
         {
             "name": "shallow",
@@ -86,7 +86,7 @@
         },
         {
             "name": "statusDuration",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "blendGroup",
@@ -94,7 +94,7 @@
         },
         {
             "name": "drownTime",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "itemDrop",
@@ -106,7 +106,7 @@
         },
         {
             "name": "albedo",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "supportsOverlay",

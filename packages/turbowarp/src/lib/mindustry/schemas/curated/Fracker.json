@@ -16,11 +16,11 @@
         },
         {
             "name": "result",
-            "type": "string"
+            "type": "Item"
         },
         {
             "name": "pumpAmount",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "baseEfficiency",
@@ -28,11 +28,11 @@
         },
         {
             "name": "drawer",
-            "type": "string"
+            "type": "drawer"
         },
         {
             "name": "itemUseTime",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "size",
@@ -40,20 +40,7 @@
         },
         {
             "name": "requirements",
-            "type": "array",
-            "items": {
-                "type": "object",
-                "fields": [
-                    {
-                        "name": "amount",
-                        "type": "int"
-                    },
-                    {
-                        "name": "item",
-                        "type": "string"
-                    }
-                ]
-            }
+            "type": "StackRequirement[]"
         },
         {
             "name": "hasPower",
@@ -81,29 +68,74 @@
         },
         {
             "name": "consumes",
-            "type": "object",
+            "type": "consumes",
             "fields": [
                 {
+                    "name": "power",
+                    "type": "float"
+                },
+                {
+                    "name": "powerBuffered",
+                    "type": "float"
+                },
+                {
                     "name": "items",
-                    "type": "string"
+                    "type": "object",
+                    "fields": [
+                        {
+                            "name": "items",
+                            "type": "array",
+                            "items": {
+                                "$ref": "types/StackRequirement"
+                            }
+                        }
+                    ]
                 },
                 {
                     "name": "liquid",
-                    "type": "string"
+                    "type": "object",
+                    "fields": [
+                        {
+                            "name": "liquid",
+                            "type": "Liquid"
+                        },
+                        {
+                            "name": "amount",
+                            "type": "float"
+                        },
+                        {
+                            "name": "update",
+                            "type": "boolean"
+                        },
+                        {
+                            "name": "optional",
+                            "type": "boolean"
+                        },
+                        {
+                            "name": "booster",
+                            "type": "boolean"
+                        }
+                    ]
                 },
                 {
-                    "name": "power",
-                    "type": "string"
+                    "name": "coolant",
+                    "type": "object",
+                    "fields": [
+                        {
+                            "name": "amount",
+                            "type": "float"
+                        }
+                    ]
                 }
             ]
         },
         {
             "name": "category",
-            "type": "string"
+            "type": "category"
         },
         {
             "name": "research",
-            "type": "string"
+            "type": "research"
         }
     ]
 }

@@ -4,15 +4,15 @@
     "fields": [
         {
             "name": "sector",
-            "type": "float"
+            "type": "SectorPreset"
         },
         {
             "name": "planet",
-            "type": "string"
+            "type": "Planet"
         },
         {
             "name": "difficulty",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "localizedName",
@@ -32,7 +32,7 @@
         },
         {
             "name": "captureWave",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "allowLaunchSchematics",
@@ -40,7 +40,7 @@
         },
         {
             "name": "research",
-            "type": "string"
+            "type": "research"
         },
         {
             "name": "noLighting",

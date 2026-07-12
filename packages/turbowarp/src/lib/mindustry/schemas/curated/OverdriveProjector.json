@@ -8,7 +8,7 @@
         },
         {
             "name": "speedBoost",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "hasBoost",
@@ -16,42 +16,74 @@
         },
         {
             "name": "consumes",
-            "type": "object",
+            "type": "consumes",
             "fields": [
                 {
+                    "name": "power",
+                    "type": "float"
+                },
+                {
+                    "name": "powerBuffered",
+                    "type": "float"
+                },
+                {
                     "name": "items",
-                    "type": "string"
+                    "type": "object",
+                    "fields": [
+                        {
+                            "name": "items",
+                            "type": "array",
+                            "items": {
+                                "$ref": "types/StackRequirement"
+                            }
+                        }
+                    ]
                 },
                 {
                     "name": "liquid",
-                    "type": "string"
+                    "type": "object",
+                    "fields": [
+                        {
+                            "name": "liquid",
+                            "type": "Liquid"
+                        },
+                        {
+                            "name": "amount",
+                            "type": "float"
+                        },
+                        {
+                            "name": "update",
+                            "type": "boolean"
+                        },
+                        {
+                            "name": "optional",
+                            "type": "boolean"
+                        },
+                        {
+                            "name": "booster",
+                            "type": "boolean"
+                        }
+                    ]
                 },
                 {
-                    "name": "power",
-                    "type": "string"
+                    "name": "coolant",
+                    "type": "object",
+                    "fields": [
+                        {
+                            "name": "amount",
+                            "type": "float"
+                        }
+                    ]
                 }
             ]
         },
         {
             "name": "requirements",
-            "type": "array",
-            "items": {
-                "type": "object",
-                "fields": [
-                    {
-                        "name": "amount",
-                        "type": "int"
-                    },
-                    {
-                        "name": "item",
-                        "type": "string"
-                    }
-                ]
-            }
+            "type": "StackRequirement[]"
         },
         {
             "name": "category",
-            "type": "string"
+            "type": "category"
         },
         {
             "name": "size",
@@ -63,15 +95,15 @@
         },
         {
             "name": "baseColor",
-            "type": "string"
+            "type": "color"
         },
         {
             "name": "itemDuration",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "forceTeam",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "name",
@@ -87,7 +119,7 @@
         },
         {
             "name": "research",
-            "type": "string"
+            "type": "research"
         }
     ]
 }

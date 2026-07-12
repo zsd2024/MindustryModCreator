@@ -7,7 +7,7 @@
         },
         {
             "name": "variants",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "wallOre",
@@ -23,11 +23,11 @@
         },
         {
             "name": "oreScale",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "oreThreshold",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "name",

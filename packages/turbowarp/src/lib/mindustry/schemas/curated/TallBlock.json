@@ -40,11 +40,11 @@
         },
         {
             "name": "buildVisibility",
-            "type": "string"
+            "type": "buildVisibility"
         },
         {
             "name": "rotationRand",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "layer",
@@ -52,15 +52,15 @@
         },
         {
             "name": "shadowLayer",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "shadowOffset",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "shadowAlpha",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "health",
@@ -68,7 +68,7 @@
         },
         {
             "name": "buildTime",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "instantDeconstruct",
@@ -76,7 +76,7 @@
         },
         {
             "name": "clipSize",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "breakSound",

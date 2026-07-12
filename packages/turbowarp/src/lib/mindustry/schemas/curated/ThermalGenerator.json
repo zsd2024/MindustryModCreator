@@ -8,28 +8,15 @@
         },
         {
             "name": "requirements",
-            "type": "array",
-            "items": {
-                "type": "object",
-                "fields": [
-                    {
-                        "name": "amount",
-                        "type": "int"
-                    },
-                    {
-                        "name": "item",
-                        "type": "string"
-                    }
-                ]
-            }
+            "type": "StackRequirement[]"
         },
         {
             "name": "category",
-            "type": "string"
+            "type": "category"
         },
         {
             "name": "research",
-            "type": "string"
+            "type": "research"
         },
         {
             "name": "size",
@@ -41,36 +28,7 @@
         },
         {
             "name": "drawer",
-            "type": "array",
-            "items": {
-                "type": "object",
-                "fields": [
-                    {
-                        "name": "color",
-                        "type": "string"
-                    },
-                    {
-                        "name": "drawers",
-                        "type": "string"
-                    },
-                    {
-                        "name": "layer",
-                        "type": "string"
-                    },
-                    {
-                        "name": "rotateSpeed",
-                        "type": "string"
-                    },
-                    {
-                        "name": "suffix",
-                        "type": "string"
-                    },
-                    {
-                        "name": "type",
-                        "type": "string"
-                    }
-                ]
-            }
+            "type": "drawer"
         },
         {
             "name": "generateEffect",
@@ -82,11 +40,11 @@
         },
         {
             "name": "ambientSoundVolume",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "minEfficiency",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "name",
@@ -114,7 +72,7 @@
         },
         {
             "name": "displayEfficiencyScale",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "displayEfficiency",
@@ -122,7 +80,7 @@
         },
         {
             "name": "effectChance",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "hasLiquids",
@@ -134,11 +92,11 @@
         },
         {
             "name": "fogRadius",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "researchCost",
-            "type": "array"
+            "type": "StackRequirement[]"
         }
     ]
 }

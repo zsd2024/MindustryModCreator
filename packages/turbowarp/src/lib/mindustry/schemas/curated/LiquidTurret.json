@@ -16,7 +16,7 @@
         },
         {
             "name": "recoil",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "size",
@@ -24,42 +24,15 @@
         },
         {
             "name": "shootY",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "ammoTypes",
-            "type": "object",
-            "fields": [
-                {
-                    "name": "fluid-energy",
-                    "type": "string"
-                },
-                {
-                    "name": "liquid-baenara",
-                    "type": "string"
-                },
-                {
-                    "name": "water",
-                    "type": "string"
-                }
-            ]
+            "type": "ammoTypes"
         },
         {
             "name": "requirements",
-            "type": "array",
-            "items": {
-                "type": "object",
-                "fields": [
-                    {
-                        "name": "amount",
-                        "type": "int"
-                    },
-                    {
-                        "name": "item",
-                        "type": "string"
-                    }
-                ]
-            }
+            "type": "StackRequirement[]"
         },
         {
             "name": "liquidCapacity",
@@ -67,36 +40,7 @@
         },
         {
             "name": "drawer",
-            "type": "array",
-            "items": {
-                "type": "object",
-                "fields": [
-                    {
-                        "name": "buildingRotate",
-                        "type": "string"
-                    },
-                    {
-                        "name": "drawers",
-                        "type": "string"
-                    },
-                    {
-                        "name": "iconOverride",
-                        "type": "string"
-                    },
-                    {
-                        "name": "parts",
-                        "type": "string"
-                    },
-                    {
-                        "name": "suffix",
-                        "type": "string"
-                    },
-                    {
-                        "name": "type",
-                        "type": "string"
-                    }
-                ]
-            }
+            "type": "drawer"
         },
         {
             "name": "targetGround",
@@ -116,29 +60,11 @@
         },
         {
             "name": "shootSound",
-            "type": "string"
+            "type": "Sound"
         },
         {
             "name": "shoot",
-            "type": "object",
-            "fields": [
-                {
-                    "name": "firstShotDelay",
-                    "type": "string"
-                },
-                {
-                    "name": "shots",
-                    "type": "int"
-                },
-                {
-                    "name": "spread",
-                    "type": "string"
-                },
-                {
-                    "name": "type",
-                    "type": "string"
-                }
-            ]
+            "type": "shoot"
         },
         {
             "name": "outlineIcon",
@@ -150,25 +76,15 @@
         },
         {
             "name": "category",
-            "type": "string"
+            "type": "category"
         },
         {
             "name": "research",
-            "type": "object",
-            "fields": [
-                {
-                    "name": "objectives",
-                    "type": "string"
-                },
-                {
-                    "name": "parent",
-                    "type": "string"
-                }
-            ]
+            "type": "research"
         },
         {
             "name": "buildTime",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "fullOverride",
@@ -232,17 +148,70 @@
         },
         {
             "name": "consumes",
-            "type": "object",
+            "type": "consumes",
             "fields": [
                 {
                     "name": "power",
-                    "type": "string"
+                    "type": "float"
+                },
+                {
+                    "name": "powerBuffered",
+                    "type": "float"
+                },
+                {
+                    "name": "items",
+                    "type": "object",
+                    "fields": [
+                        {
+                            "name": "items",
+                            "type": "array",
+                            "items": {
+                                "$ref": "types/StackRequirement"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "liquid",
+                    "type": "object",
+                    "fields": [
+                        {
+                            "name": "liquid",
+                            "type": "Liquid"
+                        },
+                        {
+                            "name": "amount",
+                            "type": "float"
+                        },
+                        {
+                            "name": "update",
+                            "type": "boolean"
+                        },
+                        {
+                            "name": "optional",
+                            "type": "boolean"
+                        },
+                        {
+                            "name": "booster",
+                            "type": "boolean"
+                        }
+                    ]
+                },
+                {
+                    "name": "coolant",
+                    "type": "object",
+                    "fields": [
+                        {
+                            "name": "amount",
+                            "type": "float"
+                        }
+                    ]
                 }
             ]
         },
         {
             "name": "shootWarmupSpeed",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "minWarmup",
@@ -262,7 +231,7 @@
         },
         {
             "name": "shootX",
-            "type": "float"
+            "type": "int"
         }
     ]
 }

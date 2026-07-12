@@ -12,15 +12,15 @@
         },
         {
             "name": "shieldHealth",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "breakCooldown",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "regenSpeed",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "size",
@@ -28,23 +28,23 @@
         },
         {
             "name": "chanceDeflect",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "glowColor",
-            "type": "string"
+            "type": "color"
         },
         {
             "name": "requirements",
-            "type": "array"
+            "type": "StackRequirement[]"
         },
         {
             "name": "category",
-            "type": "string"
+            "type": "category"
         },
         {
             "name": "research",
-            "type": "string"
+            "type": "research"
         }
     ]
 }

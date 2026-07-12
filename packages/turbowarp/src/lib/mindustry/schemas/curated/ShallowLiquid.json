@@ -8,7 +8,7 @@
         },
         {
             "name": "status",
-            "type": "string"
+            "type": "StatusEffect"
         },
         {
             "name": "cacheLayer",
@@ -34,15 +34,15 @@
         },
         {
             "name": "variants",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "liquidMultiplier",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "statusDuration",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "emitLight",
@@ -50,11 +50,11 @@
         },
         {
             "name": "lightRadius",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "lightColor",
-            "type": "string"
+            "type": "color"
         },
         {
             "name": "isLiquid",
@@ -62,7 +62,7 @@
         },
         {
             "name": "speedMultiplier",
-            "type": "float"
+            "type": "int"
         }
     ]
 }

@@ -12,15 +12,15 @@
         },
         {
             "name": "variants",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "effectSpacing",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "effect",
-            "type": "array"
+            "type": "Effect"
         },
         {
             "name": "liquidDrop",

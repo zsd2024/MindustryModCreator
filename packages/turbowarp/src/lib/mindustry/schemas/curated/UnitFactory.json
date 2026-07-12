@@ -8,63 +8,78 @@
         },
         {
             "name": "consumes",
-            "type": "object",
+            "type": "consumes",
             "fields": [
                 {
-                    "name": "items",
-                    "type": "string"
-                },
-                {
-                    "name": "liquids",
-                    "type": "string"
-                },
-                {
                     "name": "power",
-                    "type": "string"
+                    "type": "float"
+                },
+                {
+                    "name": "powerBuffered",
+                    "type": "float"
+                },
+                {
+                    "name": "items",
+                    "type": "object",
+                    "fields": [
+                        {
+                            "name": "items",
+                            "type": "array",
+                            "items": {
+                                "$ref": "types/StackRequirement"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "liquid",
+                    "type": "object",
+                    "fields": [
+                        {
+                            "name": "liquid",
+                            "type": "Liquid"
+                        },
+                        {
+                            "name": "amount",
+                            "type": "float"
+                        },
+                        {
+                            "name": "update",
+                            "type": "boolean"
+                        },
+                        {
+                            "name": "optional",
+                            "type": "boolean"
+                        },
+                        {
+                            "name": "booster",
+                            "type": "boolean"
+                        }
+                    ]
+                },
+                {
+                    "name": "coolant",
+                    "type": "object",
+                    "fields": [
+                        {
+                            "name": "amount",
+                            "type": "float"
+                        }
+                    ]
                 }
             ]
         },
         {
             "name": "category",
-            "type": "string"
+            "type": "category"
         },
         {
             "name": "requirements",
-            "type": "array",
-            "items": {
-                "type": "object",
-                "fields": [
-                    {
-                        "name": "amount",
-                        "type": "int"
-                    },
-                    {
-                        "name": "item",
-                        "type": "string"
-                    }
-                ]
-            }
+            "type": "StackRequirement[]"
         },
         {
             "name": "plans",
-            "type": "array",
-            "items": {
-                "type": "object",
-                "fields": [
-                    {
-                        "name": "requirements",
-                        "type": "string"
-                    },
-                    {
-                        "name": "time",
-                        "type": "string"
-                    },
-                    {
-                        "name": "unit",
-                        "type": "string"
-                    }
-                ]
-            }
+            "type": "plan[]"
         },
         {
             "name": "name",
@@ -80,19 +95,19 @@
         },
         {
             "name": "produceTime",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "maxSpawn",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "research",
-            "type": "string"
+            "type": "research"
         },
         {
             "name": "payloadSpeed",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "configurable",
@@ -100,11 +115,11 @@
         },
         {
             "name": "fogRadius",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "scaledHealth",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "liquidCapacity",
@@ -116,7 +131,7 @@
         },
         {
             "name": "forceTeam",
-            "type": "float"
+            "type": "int"
         }
     ]
 }

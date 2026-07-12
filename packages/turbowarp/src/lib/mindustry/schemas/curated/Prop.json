@@ -4,11 +4,11 @@
     "fields": [
         {
             "name": "variants",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "buildVisibility",
-            "type": "string"
+            "type": "buildVisibility"
         },
         {
             "name": "hasShadow",

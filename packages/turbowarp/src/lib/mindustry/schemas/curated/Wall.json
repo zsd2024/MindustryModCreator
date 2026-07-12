@@ -12,34 +12,11 @@
         },
         {
             "name": "requirements",
-            "type": "array",
-            "items": {
-                "type": "object",
-                "fields": [
-                    {
-                        "name": "amount",
-                        "type": "int"
-                    },
-                    {
-                        "name": "item",
-                        "type": "string"
-                    }
-                ]
-            }
+            "type": "StackRequirement[]"
         },
         {
             "name": "research",
-            "type": "object",
-            "fields": [
-                {
-                    "name": "parent",
-                    "type": "string"
-                },
-                {
-                    "name": "requirements",
-                    "type": "string"
-                }
-            ]
+            "type": "research"
         },
         {
             "name": "name",
@@ -51,11 +28,11 @@
         },
         {
             "name": "category",
-            "type": "string"
+            "type": "category"
         },
         {
             "name": "buildVisibility",
-            "type": "string"
+            "type": "buildVisibility"
         },
         {
             "name": "customShadow",
@@ -91,11 +68,11 @@
         },
         {
             "name": "envDisabled",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "variants",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "update",
@@ -111,11 +88,11 @@
         },
         {
             "name": "buildCostMultiplier",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "chanceDeflect",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "drawTeamOverlay",
@@ -151,15 +128,15 @@
         },
         {
             "name": "schematicPriority",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "lightningChance",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "lightningDamage",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "solid",
@@ -171,11 +148,11 @@
         },
         {
             "name": "forceTeam",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "lightningLength",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "hasShadow",

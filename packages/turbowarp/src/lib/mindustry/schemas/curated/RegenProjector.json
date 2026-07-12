@@ -16,23 +16,23 @@
         },
         {
             "name": "optionalMultiplier",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "baseColor",
-            "type": "string"
+            "type": "color"
         },
         {
             "name": "category",
-            "type": "string"
+            "type": "category"
         },
         {
             "name": "research",
-            "type": "string"
+            "type": "research"
         },
         {
             "name": "requirements",
-            "type": "array"
+            "type": "StackRequirement[]"
         },
         {
             "name": "size",

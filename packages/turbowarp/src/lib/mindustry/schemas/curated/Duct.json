@@ -12,7 +12,7 @@
         },
         {
             "name": "requirements",
-            "type": "array"
+            "type": "StackRequirement[]"
         },
         {
             "name": "bridgeReplacement",
@@ -20,7 +20,7 @@
         },
         {
             "name": "category",
-            "type": "string"
+            "type": "category"
         },
         {
             "name": "underBullet",
@@ -32,7 +32,7 @@
         },
         {
             "name": "forceTeam",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "customShadow",
@@ -40,7 +40,7 @@
         },
         {
             "name": "research",
-            "type": "string"
+            "type": "research"
         },
         {
             "name": "armored",

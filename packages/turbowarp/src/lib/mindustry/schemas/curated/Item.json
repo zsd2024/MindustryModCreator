@@ -4,7 +4,7 @@
     "fields": [
         {
             "name": "color",
-            "type": "float"
+            "type": "color"
         },
         {
             "name": "cost",
@@ -12,21 +12,11 @@
         },
         {
             "name": "shownPlanets",
-            "type": "array"
+            "type": "Planet[]"
         },
         {
             "name": "research",
-            "type": "object",
-            "fields": [
-                {
-                    "name": "objectives",
-                    "type": "string"
-                },
-                {
-                    "name": "parent",
-                    "type": "string"
-                }
-            ]
+            "type": "research"
         },
         {
             "name": "hardness",
@@ -34,23 +24,23 @@
         },
         {
             "name": "healthScaling",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "radioactivity",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "charge",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "explosiveness",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "flammability",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "alwaysUnlocked",

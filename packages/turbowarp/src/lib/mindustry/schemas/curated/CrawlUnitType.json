@@ -36,7 +36,7 @@
         },
         {
             "name": "segments",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "omniMovement",
@@ -48,7 +48,7 @@
         },
         {
             "name": "drownTimeMultiplier",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "drawBody",
@@ -60,7 +60,7 @@
         },
         {
             "name": "crushDamage",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "targetAir",
@@ -68,11 +68,11 @@
         },
         {
             "name": "segmentScl",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "segmentPhase",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "speed",
@@ -80,11 +80,11 @@
         },
         {
             "name": "weapons",
-            "type": "array"
+            "type": "weapon[]"
         },
         {
             "name": "abilities",
-            "type": "array"
+            "type": "ability[]"
         }
     ]
 }

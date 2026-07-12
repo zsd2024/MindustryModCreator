@@ -12,7 +12,7 @@
         },
         {
             "name": "shadowOffset",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "update",
@@ -36,7 +36,7 @@
         },
         {
             "name": "buildVisibility",
-            "type": "string"
+            "type": "buildVisibility"
         },
         {
             "name": "solid",
@@ -52,7 +52,7 @@
         },
         {
             "name": "buildTime",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "instantDeconstruct",
@@ -60,7 +60,7 @@
         },
         {
             "name": "clipSize",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "breakSound",

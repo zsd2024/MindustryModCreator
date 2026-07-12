@@ -4,7 +4,7 @@
     "fields": [
         {
             "name": "requirements",
-            "type": "array"
+            "type": "StackRequirement[]"
         },
         {
             "name": "size",
@@ -12,7 +12,7 @@
         },
         {
             "name": "instructionPerTick",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "health",
@@ -20,11 +20,11 @@
         },
         {
             "name": "category",
-            "type": "string"
+            "type": "category"
         },
         {
             "name": "forceTeam",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "range",

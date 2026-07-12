@@ -8,15 +8,15 @@
         },
         {
             "name": "requirements",
-            "type": "array"
+            "type": "StackRequirement[]"
         },
         {
             "name": "maxTextLength",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "buildVisibility",
-            "type": "string"
+            "type": "buildVisibility"
         },
         {
             "name": "health",
@@ -24,11 +24,11 @@
         },
         {
             "name": "category",
-            "type": "string"
+            "type": "category"
         },
         {
             "name": "forceTeam",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "squareSprite",

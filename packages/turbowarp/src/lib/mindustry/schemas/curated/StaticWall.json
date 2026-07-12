@@ -8,7 +8,7 @@
         },
         {
             "name": "variants",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "attributes",

@@ -16,7 +16,7 @@
         },
         {
             "name": "unitCapModifier",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "itemCapacity",
@@ -24,42 +24,15 @@
         },
         {
             "name": "category",
-            "type": "string"
+            "type": "category"
         },
         {
             "name": "requirements",
-            "type": "array",
-            "items": {
-                "type": "object",
-                "fields": [
-                    {
-                        "name": "amount",
-                        "type": "int"
-                    },
-                    {
-                        "name": "item",
-                        "type": "string"
-                    }
-                ]
-            }
+            "type": "StackRequirement[]"
         },
         {
             "name": "research",
-            "type": "object",
-            "fields": [
-                {
-                    "name": "objectives",
-                    "type": "string"
-                },
-                {
-                    "name": "parent",
-                    "type": "string"
-                },
-                {
-                    "name": "requirements",
-                    "type": "string"
-                }
-            ]
+            "type": "research"
         },
         {
             "name": "squareSprite",
@@ -79,7 +52,7 @@
         },
         {
             "name": "researchCostMultiplier",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "isFirstTier",
@@ -91,7 +64,7 @@
         },
         {
             "name": "thrusterLength",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "hasPower",
@@ -111,11 +84,64 @@
         },
         {
             "name": "consumes",
-            "type": "object",
+            "type": "consumes",
             "fields": [
                 {
+                    "name": "power",
+                    "type": "float"
+                },
+                {
                     "name": "powerBuffered",
-                    "type": "string"
+                    "type": "float"
+                },
+                {
+                    "name": "items",
+                    "type": "object",
+                    "fields": [
+                        {
+                            "name": "items",
+                            "type": "array",
+                            "items": {
+                                "$ref": "types/StackRequirement"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "liquid",
+                    "type": "object",
+                    "fields": [
+                        {
+                            "name": "liquid",
+                            "type": "Liquid"
+                        },
+                        {
+                            "name": "amount",
+                            "type": "float"
+                        },
+                        {
+                            "name": "update",
+                            "type": "boolean"
+                        },
+                        {
+                            "name": "optional",
+                            "type": "boolean"
+                        },
+                        {
+                            "name": "booster",
+                            "type": "boolean"
+                        }
+                    ]
+                },
+                {
+                    "name": "coolant",
+                    "type": "object",
+                    "fields": [
+                        {
+                            "name": "amount",
+                            "type": "float"
+                        }
+                    ]
                 }
             ]
         },
@@ -125,7 +151,7 @@
         },
         {
             "name": "fogRadius",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "customShadow",
@@ -137,15 +163,15 @@
         },
         {
             "name": "baseExplosiveness",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "explosivenessScale",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "flammabilityScale",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "incinerateNonBuildable",

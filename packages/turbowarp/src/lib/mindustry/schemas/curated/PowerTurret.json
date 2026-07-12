@@ -16,25 +16,70 @@
         },
         {
             "name": "consumes",
-            "type": "object",
+            "type": "consumes",
             "fields": [
                 {
-                    "name": "coolant",
-                    "type": "string"
-                },
-                {
-                    "name": "liquids",
-                    "type": "string"
-                },
-                {
                     "name": "power",
-                    "type": "string"
+                    "type": "float"
+                },
+                {
+                    "name": "powerBuffered",
+                    "type": "float"
+                },
+                {
+                    "name": "items",
+                    "type": "object",
+                    "fields": [
+                        {
+                            "name": "items",
+                            "type": "array",
+                            "items": {
+                                "$ref": "types/StackRequirement"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "liquid",
+                    "type": "object",
+                    "fields": [
+                        {
+                            "name": "liquid",
+                            "type": "Liquid"
+                        },
+                        {
+                            "name": "amount",
+                            "type": "float"
+                        },
+                        {
+                            "name": "update",
+                            "type": "boolean"
+                        },
+                        {
+                            "name": "optional",
+                            "type": "boolean"
+                        },
+                        {
+                            "name": "booster",
+                            "type": "boolean"
+                        }
+                    ]
+                },
+                {
+                    "name": "coolant",
+                    "type": "object",
+                    "fields": [
+                        {
+                            "name": "amount",
+                            "type": "float"
+                        }
+                    ]
                 }
             ]
         },
         {
             "name": "recoil",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "rotateSpeed",
@@ -42,7 +87,7 @@
         },
         {
             "name": "shootSound",
-            "type": "string"
+            "type": "Sound"
         },
         {
             "name": "range",
@@ -50,75 +95,23 @@
         },
         {
             "name": "requirements",
-            "type": "array",
-            "items": {
-                "type": "object",
-                "fields": [
-                    {
-                        "name": "amount",
-                        "type": "int"
-                    },
-                    {
-                        "name": "item",
-                        "type": "string"
-                    }
-                ]
-            }
+            "type": "StackRequirement[]"
         },
         {
             "name": "category",
-            "type": "string"
+            "type": "category"
         },
         {
             "name": "drawer",
-            "type": "array",
-            "items": {
-                "type": "object",
-                "fields": [
-                    {
-                        "name": "basePrefix",
-                        "type": "string"
-                    },
-                    {
-                        "name": "drawers",
-                        "type": "string"
-                    },
-                    {
-                        "name": "iconOverride",
-                        "type": "string"
-                    },
-                    {
-                        "name": "parts",
-                        "type": "string"
-                    },
-                    {
-                        "name": "type",
-                        "type": "string"
-                    }
-                ]
-            }
+            "type": "drawer"
         },
         {
             "name": "research",
-            "type": "object",
-            "fields": [
-                {
-                    "name": "objectives",
-                    "type": "string"
-                },
-                {
-                    "name": "parent",
-                    "type": "string"
-                },
-                {
-                    "name": "requirements",
-                    "type": "string"
-                }
-            ]
+            "type": "research"
         },
         {
             "name": "shootY",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "shootCone",
@@ -126,37 +119,7 @@
         },
         {
             "name": "shoot",
-            "type": "object",
-            "fields": [
-                {
-                    "name": "barrels",
-                    "type": "string"
-                },
-                {
-                    "name": "firstShotDelay",
-                    "type": "string"
-                },
-                {
-                    "name": "radius",
-                    "type": "string"
-                },
-                {
-                    "name": "shotDelay",
-                    "type": "string"
-                },
-                {
-                    "name": "shots",
-                    "type": "int"
-                },
-                {
-                    "name": "spread",
-                    "type": "string"
-                },
-                {
-                    "name": "type",
-                    "type": "string"
-                }
-            ]
+            "type": "shoot"
         },
         {
             "name": "squareSprite",
@@ -172,15 +135,15 @@
         },
         {
             "name": "shake",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "shootWarmupSpeed",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "recoilTime",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "coolantMultiplier",
@@ -222,7 +185,7 @@
         },
         {
             "name": "outlineColor",
-            "type": "float"
+            "type": "color"
         },
         {
             "name": "unitSort",
@@ -230,7 +193,7 @@
         },
         {
             "name": "heatColor",
-            "type": "string"
+            "type": "color"
         },
         {
             "name": "customShadow",
@@ -272,7 +235,7 @@
         },
         {
             "name": "cooldownTime",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "name",
@@ -296,7 +259,7 @@
         },
         {
             "name": "recoils",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "smokeEffect",
@@ -334,7 +297,7 @@
         },
         {
             "name": "envDisabled",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "group",
@@ -346,11 +309,11 @@
         },
         {
             "name": "warmupMaintainTime",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "clipSize",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "conductivePower",
@@ -358,11 +321,11 @@
         },
         {
             "name": "priority",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "regionRotated1",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "chargeSound",
@@ -378,7 +341,7 @@
         },
         {
             "name": "loopSoundVolume",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "hasItems",
@@ -394,7 +357,7 @@
         },
         {
             "name": "envEnabled",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "rebuildable",
@@ -414,7 +377,7 @@
         },
         {
             "name": "ammoPerShot",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "solid",
@@ -430,15 +393,15 @@
         },
         {
             "name": "buildTime",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "elevation",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "shootSoundVolume",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "targetMissile",
@@ -446,7 +409,7 @@
         },
         {
             "name": "forceTeam",
-            "type": "float"
+            "type": "int"
         }
     ]
 }

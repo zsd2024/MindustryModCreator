@@ -11,7 +11,7 @@
         },
         {
             "name": "variants",
-            "type": "float"
+            "type": "int"
         }
     ]
 }

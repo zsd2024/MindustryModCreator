@@ -16,7 +16,7 @@
         },
         {
             "name": "legCount",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "rotateSpeed",
@@ -24,11 +24,11 @@
         },
         {
             "name": "weapons",
-            "type": "array"
+            "type": "weapon[]"
         },
         {
             "name": "groundLayer",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "hitSize",
@@ -40,7 +40,7 @@
         },
         {
             "name": "legLength",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "drag",
@@ -48,27 +48,27 @@
         },
         {
             "name": "legForwardScl",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "legBaseOffset",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "legMoveSpace",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "shadowElevation",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "immunities",
-            "type": "array"
+            "type": "StatusEffect[]"
         },
         {
             "name": "abilities",
-            "type": "array"
+            "type": "ability[]"
         },
         {
             "name": "itemCapacity",
@@ -76,43 +76,43 @@
         },
         {
             "name": "parts",
-            "type": "array"
+            "type": "part[]"
         },
         {
             "name": "stepShake",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "envEnabled",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "envDisabled",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "controller",
-            "type": "string"
+            "type": "controller"
         },
         {
             "name": "drownTimeMultiplier",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "outlineColor",
-            "type": "string"
+            "type": "color"
         },
         {
             "name": "legPairOffset",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "rippleScale",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "legSpeed",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "name",
@@ -132,7 +132,7 @@
         },
         {
             "name": "legLengthScl",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "template",
@@ -144,19 +144,19 @@
         },
         {
             "name": "stepSoundVolume",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "legSplashDamage",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "legSplashRange",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "legExtension",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "buildSpeed",
@@ -172,7 +172,7 @@
         },
         {
             "name": "stepSoundPitch",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "range",
@@ -180,7 +180,7 @@
         },
         {
             "name": "research",
-            "type": "string"
+            "type": "research"
         },
         {
             "name": "localizedName",
@@ -200,7 +200,7 @@
         },
         {
             "name": "buildRange",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "isEnemy",
@@ -220,7 +220,7 @@
         },
         {
             "name": "fallSpeed",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "drawMinimap",
@@ -248,11 +248,11 @@
         },
         {
             "name": "legGroupSize",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "legStraightness",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "lockLegBase",
@@ -260,27 +260,27 @@
         },
         {
             "name": "softShadowScl",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "tepSoundPitch",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "legMovespace",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "legLenghtScl",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "legMaxLength",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "maxRange",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "targetAir",

@@ -8,7 +8,7 @@
         },
         {
             "name": "category",
-            "type": "string"
+            "type": "category"
         },
         {
             "name": "range",
@@ -16,7 +16,7 @@
         },
         {
             "name": "maxPayloadSize",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "reload",
@@ -24,11 +24,11 @@
         },
         {
             "name": "chargeTime",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "payloadSpeed",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "outlineIcon",
@@ -40,11 +40,11 @@
         },
         {
             "name": "research",
-            "type": "string"
+            "type": "research"
         },
         {
             "name": "requirements",
-            "type": "array"
+            "type": "StackRequirement[]"
         },
         {
             "name": "breakEffect",

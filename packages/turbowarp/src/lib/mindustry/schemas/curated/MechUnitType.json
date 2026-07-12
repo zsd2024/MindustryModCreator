@@ -12,7 +12,7 @@
         },
         {
             "name": "weapons",
-            "type": "array"
+            "type": "weapon[]"
         },
         {
             "name": "hitSize",
@@ -40,11 +40,11 @@
         },
         {
             "name": "mechSideSway",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "outlineColor",
-            "type": "string"
+            "type": "color"
         },
         {
             "name": "mechLegColor",
@@ -56,11 +56,11 @@
         },
         {
             "name": "boostMultiplier",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "stepSoundVolume",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "itemCapacity",
@@ -72,11 +72,11 @@
         },
         {
             "name": "mechFrontSway",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "shadowElevationScl",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "mechStepParticles",
@@ -88,7 +88,7 @@
         },
         {
             "name": "parts",
-            "type": "array"
+            "type": "part[]"
         },
         {
             "name": "defaultCommand",
@@ -108,11 +108,11 @@
         },
         {
             "name": "immunities",
-            "type": "array"
+            "type": "StatusEffect[]"
         },
         {
             "name": "research",
-            "type": "string"
+            "type": "research"
         }
     ]
 }

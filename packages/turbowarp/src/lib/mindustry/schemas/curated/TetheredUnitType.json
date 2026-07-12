@@ -32,7 +32,7 @@
         },
         {
             "name": "controller",
-            "type": "string"
+            "type": "controller"
         },
         {
             "name": "defaultController",
@@ -52,7 +52,7 @@
         },
         {
             "name": "buildBeamOffset",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "engineSize",
@@ -68,11 +68,11 @@
         },
         {
             "name": "weapons",
-            "type": "array"
+            "type": "weapon[]"
         },
         {
             "name": "abilities",
-            "type": "array"
+            "type": "ability[]"
         },
         {
             "name": "engineOffset",
@@ -88,15 +88,15 @@
         },
         {
             "name": "groundLayer",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "immunities",
-            "type": "array"
+            "type": "StatusEffect[]"
         },
         {
             "name": "parts",
-            "type": "array"
+            "type": "part[]"
         },
         {
             "name": "targetable",
@@ -116,7 +116,7 @@
         },
         {
             "name": "payloadCapacity",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "drawBody",
@@ -128,7 +128,7 @@
         },
         {
             "name": "deathShake",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "shieldColor",
@@ -152,7 +152,7 @@
         },
         {
             "name": "loopSoundVolume",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "deathExplosionEffect",
@@ -172,7 +172,7 @@
                 },
                 {
                     "name": "sides",
-                    "type": "string"
+                    "type": "int"
                 },
                 {
                     "name": "sizeFrom",
@@ -194,11 +194,11 @@
         },
         {
             "name": "buildRange",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "envDisabled",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "faceTarget",
@@ -206,15 +206,15 @@
         },
         {
             "name": "intemCapacity",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "shadowElevation",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "shadowElevationScl",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "controlSelectGlobal",
@@ -230,7 +230,7 @@
         },
         {
             "name": "envEnabled",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "defaultCommand",
@@ -254,7 +254,7 @@
         },
         {
             "name": "outlineColor",
-            "type": "string"
+            "type": "color"
         },
         {
             "name": "itemCapacity",

@@ -16,46 +16,74 @@
         },
         {
             "name": "consumes",
-            "type": "object",
+            "type": "consumes",
             "fields": [
                 {
+                    "name": "power",
+                    "type": "float"
+                },
+                {
+                    "name": "powerBuffered",
+                    "type": "float"
+                },
+                {
                     "name": "items",
-                    "type": "string"
+                    "type": "object",
+                    "fields": [
+                        {
+                            "name": "items",
+                            "type": "array",
+                            "items": {
+                                "$ref": "types/StackRequirement"
+                            }
+                        }
+                    ]
                 },
                 {
                     "name": "liquid",
-                    "type": "string"
+                    "type": "object",
+                    "fields": [
+                        {
+                            "name": "liquid",
+                            "type": "Liquid"
+                        },
+                        {
+                            "name": "amount",
+                            "type": "float"
+                        },
+                        {
+                            "name": "update",
+                            "type": "boolean"
+                        },
+                        {
+                            "name": "optional",
+                            "type": "boolean"
+                        },
+                        {
+                            "name": "booster",
+                            "type": "boolean"
+                        }
+                    ]
                 },
                 {
-                    "name": "liquids",
-                    "type": "string"
-                },
-                {
-                    "name": "power",
-                    "type": "string"
+                    "name": "coolant",
+                    "type": "object",
+                    "fields": [
+                        {
+                            "name": "amount",
+                            "type": "float"
+                        }
+                    ]
                 }
             ]
         },
         {
             "name": "requirements",
-            "type": "array",
-            "items": {
-                "type": "object",
-                "fields": [
-                    {
-                        "name": "amount",
-                        "type": "int"
-                    },
-                    {
-                        "name": "item",
-                        "type": "string"
-                    }
-                ]
-            }
+            "type": "StackRequirement[]"
         },
         {
             "name": "category",
-            "type": "string"
+            "type": "category"
         },
         {
             "name": "hasLiquids",
@@ -67,20 +95,7 @@
         },
         {
             "name": "drawer",
-            "type": "array",
-            "items": {
-                "type": "object",
-                "fields": [
-                    {
-                        "name": "drawers",
-                        "type": "string"
-                    },
-                    {
-                        "name": "type",
-                        "type": "string"
-                    }
-                ]
-            }
+            "type": "drawer"
         },
         {
             "name": "ambientSound",
@@ -88,25 +103,15 @@
         },
         {
             "name": "ambientSoundVolume",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "research",
-            "type": "object",
-            "fields": [
-                {
-                    "name": "objectives",
-                    "type": "string"
-                },
-                {
-                    "name": "parent",
-                    "type": "string"
-                }
-            ]
+            "type": "research"
         },
         {
             "name": "itemDuration",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "health",
@@ -114,7 +119,7 @@
         },
         {
             "name": "explosionRadius",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "explodeSound",
@@ -134,23 +139,23 @@
         },
         {
             "name": "unitCapModifier",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "baseExplosiveness",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "explosivenessScale",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "baseShake",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "explosinDamage",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "explodeEffect",
@@ -162,11 +167,11 @@
         },
         {
             "name": "buildTime",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "forceTeam",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "name",
@@ -186,11 +191,11 @@
         },
         {
             "name": "explosionShake",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "lightColor",
-            "type": "string"
+            "type": "color"
         },
         {
             "name": "itemCapacity",
@@ -198,7 +203,7 @@
         },
         {
             "name": "explosionDamage",
-            "type": "float"
+            "type": "int"
         }
     ]
 }

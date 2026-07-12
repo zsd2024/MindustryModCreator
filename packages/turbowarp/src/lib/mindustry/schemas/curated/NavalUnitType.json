@@ -28,7 +28,7 @@
         },
         {
             "name": "weapons",
-            "type": "array"
+            "type": "weapon[]"
         },
         {
             "name": "accel",
@@ -36,7 +36,7 @@
         },
         {
             "name": "waveTrailX",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "trailLength",
@@ -44,7 +44,7 @@
         },
         {
             "name": "trailScl",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "outlines",
@@ -52,11 +52,11 @@
         },
         {
             "name": "waveTrailY",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "abilities",
-            "type": "array"
+            "type": "ability[]"
         },
         {
             "name": "name",
@@ -72,19 +72,19 @@
         },
         {
             "name": "research",
-            "type": "string"
+            "type": "research"
         },
         {
             "name": "shadowElevationScl",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "immunities",
-            "type": "array"
+            "type": "StatusEffect[]"
         },
         {
             "name": "parts",
-            "type": "array"
+            "type": "part[]"
         },
         {
             "name": "range",
@@ -120,7 +120,7 @@
         },
         {
             "name": "flyingLayer",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "engineSize",
@@ -128,7 +128,7 @@
         },
         {
             "name": "shadowElevation",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "canBoost",
@@ -136,15 +136,15 @@
         },
         {
             "name": "boostMultiplier",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "riseSpeed",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "aimDst",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "engines",
@@ -177,11 +177,11 @@
         },
         {
             "name": "envRequired",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "envDisabled",
-            "type": "float"
+            "type": "int"
         }
     ]
 }

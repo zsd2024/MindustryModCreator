@@ -4,7 +4,7 @@
     "fields": [
         {
             "name": "category",
-            "type": "string"
+            "type": "category"
         },
         {
             "name": "size",
@@ -12,101 +12,82 @@
         },
         {
             "name": "consumes",
-            "type": "object",
+            "type": "consumes",
             "fields": [
                 {
-                    "name": "items",
-                    "type": "string"
-                },
-                {
-                    "name": "liquid",
-                    "type": "string"
-                },
-                {
-                    "name": "liquids",
-                    "type": "string"
-                },
-                {
                     "name": "power",
-                    "type": "string"
+                    "type": "float"
                 },
                 {
                     "name": "powerBuffered",
-                    "type": "string"
+                    "type": "float"
+                },
+                {
+                    "name": "items",
+                    "type": "object",
+                    "fields": [
+                        {
+                            "name": "items",
+                            "type": "array",
+                            "items": {
+                                "$ref": "types/StackRequirement"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "liquid",
+                    "type": "object",
+                    "fields": [
+                        {
+                            "name": "liquid",
+                            "type": "Liquid"
+                        },
+                        {
+                            "name": "amount",
+                            "type": "float"
+                        },
+                        {
+                            "name": "update",
+                            "type": "boolean"
+                        },
+                        {
+                            "name": "optional",
+                            "type": "boolean"
+                        },
+                        {
+                            "name": "booster",
+                            "type": "boolean"
+                        }
+                    ]
+                },
+                {
+                    "name": "coolant",
+                    "type": "object",
+                    "fields": [
+                        {
+                            "name": "amount",
+                            "type": "float"
+                        }
+                    ]
                 }
             ]
         },
         {
             "name": "requirements",
-            "type": "array",
-            "items": {
-                "type": "object",
-                "fields": [
-                    {
-                        "name": "amount",
-                        "type": "int"
-                    },
-                    {
-                        "name": "item",
-                        "type": "string"
-                    }
-                ]
-            }
+            "type": "StackRequirement[]"
         },
         {
             "name": "craftTime",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "research",
-            "type": "object",
-            "fields": [
-                {
-                    "name": "objectives",
-                    "type": "string"
-                },
-                {
-                    "name": "parent",
-                    "type": "string"
-                },
-                {
-                    "name": "requirements",
-                    "type": "string"
-                }
-            ]
+            "type": "research"
         },
         {
             "name": "drawer",
-            "type": "array",
-            "items": {
-                "type": "object",
-                "fields": [
-                    {
-                        "name": "drawers",
-                        "type": "string"
-                    },
-                    {
-                        "name": "iconOverride",
-                        "type": "string"
-                    },
-                    {
-                        "name": "layer",
-                        "type": "string"
-                    },
-                    {
-                        "name": "parts",
-                        "type": "string"
-                    },
-                    {
-                        "name": "suffix",
-                        "type": "string"
-                    },
-                    {
-                        "name": "type",
-                        "type": "string"
-                    }
-                ]
-            }
+            "type": "drawer"
         },
         {
             "name": "outputItem",
@@ -186,7 +167,7 @@
         },
         {
             "name": "ambientSoundVolume",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "liquidOutputDirections",
@@ -206,7 +187,7 @@
         },
         {
             "name": "forceTeam",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "outputLiquids",
@@ -227,7 +208,7 @@
         },
         {
             "name": "scaledHealth",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "outputItems",
@@ -235,11 +216,11 @@
         },
         {
             "name": "liquidPressure",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "buildVisibility",
-            "type": "string"
+            "type": "buildVisibility"
         },
         {
             "name": "customShadow",
@@ -259,7 +240,7 @@
         },
         {
             "name": "updateEffectSpread",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "enableDrawStatus",
@@ -279,7 +260,7 @@
         },
         {
             "name": "updateEffectChance",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "ambiantSound",
@@ -327,7 +308,7 @@
         },
         {
             "name": "regionRotated1",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "loopSound",
@@ -335,19 +316,19 @@
         },
         {
             "name": "loopSoundVolume",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "envEnabled",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "envRequired",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "envDisabled",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "group",
@@ -355,7 +336,7 @@
         },
         {
             "name": "priority",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "solid",
@@ -367,7 +348,7 @@
         },
         {
             "name": "baseExplosiveness",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "placeablePlayer",
@@ -379,7 +360,7 @@
         },
         {
             "name": "buildTime",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "dumpExtraLiquid",
@@ -399,7 +380,7 @@
         },
         {
             "name": "dumpTime",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "drawLiquidLight",
@@ -407,28 +388,15 @@
         },
         {
             "name": "researchCostMultiplier",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "fogRadius",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "researchCost",
-            "type": "array",
-            "items": {
-                "type": "object",
-                "fields": [
-                    {
-                        "name": "amount",
-                        "type": "int"
-                    },
-                    {
-                        "name": "item",
-                        "type": "string"
-                    }
-                ]
-            }
+            "type": "StackRequirement[]"
         }
     ]
 }

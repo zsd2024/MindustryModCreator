@@ -8,43 +8,43 @@
         },
         {
             "name": "lobesMin",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "lobesMax",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "timeRange",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "sclMin",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "sclMax",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "magMin",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "magMax",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "buildVisibility",
-            "type": "string"
+            "type": "buildVisibility"
         },
         {
             "name": "botAngle",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "clipSize",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "breakSound",

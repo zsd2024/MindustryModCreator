@@ -45,11 +45,11 @@
         },
         {
             "name": "weapons",
-            "type": "array"
+            "type": "weapon[]"
         },
         {
             "name": "crushDamage",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "hitSize",
@@ -57,11 +57,11 @@
         },
         {
             "name": "treadPullOffset",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "shadowElevation",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "template",
@@ -81,19 +81,19 @@
         },
         {
             "name": "drownTimeMultiplier",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "treadFrames",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "outlineColor",
-            "type": "float"
+            "type": "color"
         },
         {
             "name": "groundLayer",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "name",
@@ -113,7 +113,7 @@
         },
         {
             "name": "research",
-            "type": "string"
+            "type": "research"
         },
         {
             "name": "squareShape",

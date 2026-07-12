@@ -8,24 +8,11 @@
         },
         {
             "name": "category",
-            "type": "string"
+            "type": "category"
         },
         {
             "name": "requirements",
-            "type": "array",
-            "items": {
-                "type": "object",
-                "fields": [
-                    {
-                        "name": "amount",
-                        "type": "int"
-                    },
-                    {
-                        "name": "item",
-                        "type": "string"
-                    }
-                ]
-            }
+            "type": "StackRequirement[]"
         },
         {
             "name": "baseEfficiency",
@@ -33,74 +20,86 @@
         },
         {
             "name": "minEfficiency",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "drawer",
-            "type": "array",
-            "items": {
-                "type": "object",
-                "fields": [
-                    {
-                        "name": "drawLiquid",
-                        "type": "string"
-                    },
-                    {
-                        "name": "drawers",
-                        "type": "string"
-                    },
-                    {
-                        "name": "iconOverride",
-                        "type": "string"
-                    },
-                    {
-                        "name": "layer",
-                        "type": "string"
-                    },
-                    {
-                        "name": "padding",
-                        "type": "string"
-                    },
-                    {
-                        "name": "type",
-                        "type": "string"
-                    }
-                ]
-            }
+            "type": "drawer"
         },
         {
             "name": "boostScale",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "craftTime",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "consumes",
-            "type": "object",
+            "type": "consumes",
             "fields": [
                 {
+                    "name": "power",
+                    "type": "float"
+                },
+                {
+                    "name": "powerBuffered",
+                    "type": "float"
+                },
+                {
                     "name": "items",
-                    "type": "string"
+                    "type": "object",
+                    "fields": [
+                        {
+                            "name": "items",
+                            "type": "array",
+                            "items": {
+                                "$ref": "types/StackRequirement"
+                            }
+                        }
+                    ]
                 },
                 {
                     "name": "liquid",
-                    "type": "string"
+                    "type": "object",
+                    "fields": [
+                        {
+                            "name": "liquid",
+                            "type": "Liquid"
+                        },
+                        {
+                            "name": "amount",
+                            "type": "float"
+                        },
+                        {
+                            "name": "update",
+                            "type": "boolean"
+                        },
+                        {
+                            "name": "optional",
+                            "type": "boolean"
+                        },
+                        {
+                            "name": "booster",
+                            "type": "boolean"
+                        }
+                    ]
                 },
                 {
-                    "name": "liquids",
-                    "type": "string"
-                },
-                {
-                    "name": "power",
-                    "type": "string"
+                    "name": "coolant",
+                    "type": "object",
+                    "fields": [
+                        {
+                            "name": "amount",
+                            "type": "float"
+                        }
+                    ]
                 }
             ]
         },
         {
             "name": "maxBoost",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "attribute",
@@ -134,21 +133,7 @@
         },
         {
             "name": "research",
-            "type": "object",
-            "fields": [
-                {
-                    "name": "objectives",
-                    "type": "string"
-                },
-                {
-                    "name": "parent",
-                    "type": "string"
-                },
-                {
-                    "name": "requirements",
-                    "type": "string"
-                }
-            ]
+            "type": "research"
         },
         {
             "name": "customShadow",
@@ -160,7 +145,7 @@
         },
         {
             "name": "ambientSoundVolume",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "hasLiquids",
@@ -196,7 +181,7 @@
         },
         {
             "name": "dumpTime",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "rotate",
@@ -212,15 +197,15 @@
         },
         {
             "name": "envEnabled",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "envDisabled",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "liquidPressure",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "hasPower",
@@ -232,7 +217,7 @@
         },
         {
             "name": "scaledHealth",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "armor",
@@ -310,23 +295,23 @@
         },
         {
             "name": "updateEffectChance",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "updateEffectSpread",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "regionRotated1",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "forceTeam",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "envRequired",
-            "type": "float"
+            "type": "int"
         }
     ]
 }

@@ -4,11 +4,11 @@
     "fields": [
         {
             "name": "requirements",
-            "type": "array"
+            "type": "StackRequirement[]"
         },
         {
             "name": "category",
-            "type": "string"
+            "type": "category"
         },
         {
             "name": "health",
@@ -16,7 +16,7 @@
         },
         {
             "name": "forceTeam",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "invert",
@@ -24,7 +24,7 @@
         },
         {
             "name": "buildCostMultiplier",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "squareSprite",
@@ -32,7 +32,7 @@
         },
         {
             "name": "buildVisibility",
-            "type": "string"
+            "type": "buildVisibility"
         }
     ]
 }

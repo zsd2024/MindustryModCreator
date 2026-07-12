@@ -12,19 +12,19 @@
         },
         {
             "name": "requirements",
-            "type": "array"
+            "type": "StackRequirement[]"
         },
         {
             "name": "category",
-            "type": "string"
+            "type": "category"
         },
         {
             "name": "research",
-            "type": "string"
+            "type": "research"
         },
         {
             "name": "researchCostMultiplier",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "size",
@@ -32,21 +32,11 @@
         },
         {
             "name": "drawer",
-            "type": "object",
-            "fields": [
-                {
-                    "name": "drawers",
-                    "type": "string"
-                },
-                {
-                    "name": "type",
-                    "type": "string"
-                }
-            ]
+            "type": "drawer"
         },
         {
             "name": "regionRotated1",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "splitHeat",

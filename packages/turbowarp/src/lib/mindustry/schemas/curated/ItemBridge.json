@@ -12,7 +12,7 @@
         },
         {
             "name": "transportTime",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "hasPower",
@@ -20,32 +20,19 @@
         },
         {
             "name": "requirements",
-            "type": "array",
-            "items": {
-                "type": "object",
-                "fields": [
-                    {
-                        "name": "amount",
-                        "type": "int"
-                    },
-                    {
-                        "name": "item",
-                        "type": "string"
-                    }
-                ]
-            }
+            "type": "StackRequirement[]"
         },
         {
             "name": "category",
-            "type": "string"
+            "type": "category"
         },
         {
             "name": "arrowPeriod",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "arrowTimeScl",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "pulse",
@@ -57,7 +44,7 @@
         },
         {
             "name": "forceTeam",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "name",
@@ -69,7 +56,7 @@
         },
         {
             "name": "research",
-            "type": "string"
+            "type": "research"
         },
         {
             "name": "squareSprite",

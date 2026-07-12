@@ -16,7 +16,7 @@
         },
         {
             "name": "weapons",
-            "type": "array"
+            "type": "weapon[]"
         },
         {
             "name": "hitSize",
@@ -48,7 +48,7 @@
         },
         {
             "name": "abilities",
-            "type": "array"
+            "type": "ability[]"
         },
         {
             "name": "outlines",
@@ -68,15 +68,15 @@
         },
         {
             "name": "parts",
-            "type": "array"
+            "type": "part[]"
         },
         {
             "name": "envDisabled",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "envEnabled",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "drawCell",
@@ -113,7 +113,7 @@
         },
         {
             "name": "strafePenalty",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "faceTarget",
@@ -121,15 +121,15 @@
         },
         {
             "name": "shadowElevationScl",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "maxRange",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "immunities",
-            "type": "array"
+            "type": "StatusEffect[]"
         },
         {
             "name": "drawBody",
@@ -149,7 +149,7 @@
         },
         {
             "name": "outlineColor",
-            "type": "string"
+            "type": "color"
         },
         {
             "name": "deathSound",
@@ -175,7 +175,7 @@
         },
         {
             "name": "engineColor",
-            "type": "string"
+            "type": "color"
         },
         {
             "name": "createWreck",
@@ -183,11 +183,11 @@
         },
         {
             "name": "lightRadius",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "fogRadius",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "createScorch",
@@ -199,7 +199,7 @@
         },
         {
             "name": "research",
-            "type": "string"
+            "type": "research"
         },
         {
             "name": "drawSoftShadow",
@@ -207,7 +207,7 @@
         },
         {
             "name": "controller",
-            "type": "string"
+            "type": "controller"
         },
         {
             "name": "circleTarget",
@@ -219,7 +219,7 @@
         },
         {
             "name": "engineLayer",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "targetFlags",
@@ -227,7 +227,7 @@
         },
         {
             "name": "deathShake",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "targetAir",
@@ -255,15 +255,15 @@
         },
         {
             "name": "fallSpeed",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "crashDamageMultiplier",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "buildBeamOffset",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "trailColor",
@@ -275,7 +275,7 @@
         },
         {
             "name": "loopSoundVolume",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "coreUnitDock",
@@ -287,7 +287,7 @@
         },
         {
             "name": "mineTier",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "details",
@@ -303,7 +303,7 @@
         },
         {
             "name": "lightColor",
-            "type": "string"
+            "type": "color"
         },
         {
             "name": "hittable",
@@ -331,7 +331,7 @@
         },
         {
             "name": "baseRotateSpeed",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "autoDropBombs",
@@ -351,7 +351,7 @@
         },
         {
             "name": "envRequired",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "fallEngineEffect",
@@ -367,7 +367,7 @@
         },
         {
             "name": "buildRange",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "ammoType",
@@ -405,11 +405,11 @@
         },
         {
             "name": "wreckHealthMultiplier",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "aimDst",
-            "type": "float"
+            "type": "int"
         }
     ]
 }

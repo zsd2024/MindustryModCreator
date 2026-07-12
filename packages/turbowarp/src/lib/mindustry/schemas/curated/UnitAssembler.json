@@ -8,7 +8,7 @@
         },
         {
             "name": "areaSize",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "liquidCapacity",
@@ -16,46 +16,74 @@
         },
         {
             "name": "consumes",
-            "type": "object",
+            "type": "consumes",
             "fields": [
                 {
-                    "name": "liquids",
-                    "type": "string"
+                    "name": "power",
+                    "type": "float"
                 },
                 {
-                    "name": "power",
-                    "type": "string"
+                    "name": "powerBuffered",
+                    "type": "float"
+                },
+                {
+                    "name": "items",
+                    "type": "object",
+                    "fields": [
+                        {
+                            "name": "items",
+                            "type": "array",
+                            "items": {
+                                "$ref": "types/StackRequirement"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "liquid",
+                    "type": "object",
+                    "fields": [
+                        {
+                            "name": "liquid",
+                            "type": "Liquid"
+                        },
+                        {
+                            "name": "amount",
+                            "type": "float"
+                        },
+                        {
+                            "name": "update",
+                            "type": "boolean"
+                        },
+                        {
+                            "name": "optional",
+                            "type": "boolean"
+                        },
+                        {
+                            "name": "booster",
+                            "type": "boolean"
+                        }
+                    ]
+                },
+                {
+                    "name": "coolant",
+                    "type": "object",
+                    "fields": [
+                        {
+                            "name": "amount",
+                            "type": "float"
+                        }
+                    ]
                 }
             ]
         },
         {
             "name": "plans",
-            "type": "array",
-            "items": {
-                "type": "object",
-                "fields": [
-                    {
-                        "name": "requirements",
-                        "type": "string"
-                    },
-                    {
-                        "name": "time",
-                        "type": "string"
-                    },
-                    {
-                        "name": "type",
-                        "type": "string"
-                    },
-                    {
-                        "name": "unit",
-                        "type": "string"
-                    }
-                ]
-            }
+            "type": "plan[]"
         },
         {
             "name": "category",
-            "type": "string"
+            "type": "category"
         },
         {
             "name": "droneType",
@@ -63,11 +91,11 @@
         },
         {
             "name": "payloadSpeed",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "dronesCreated",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "hasLiquids",
@@ -75,19 +103,19 @@
         },
         {
             "name": "buildVisibility",
-            "type": "string"
+            "type": "buildVisibility"
         },
         {
             "name": "scaledHealth",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "requirements",
-            "type": "array"
+            "type": "StackRequirement[]"
         },
         {
             "name": "forceTeam",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "floating",
@@ -99,7 +127,7 @@
         },
         {
             "name": "shownPlanets",
-            "type": "array"
+            "type": "Planet[]"
         }
     ]
 }

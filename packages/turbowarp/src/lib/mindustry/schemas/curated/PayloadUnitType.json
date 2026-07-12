@@ -12,7 +12,7 @@
         },
         {
             "name": "payloadCapacity",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "health",
@@ -28,7 +28,7 @@
         },
         {
             "name": "weapons",
-            "type": "array"
+            "type": "weapon[]"
         },
         {
             "name": "lowAltitude",
@@ -36,7 +36,7 @@
         },
         {
             "name": "abilities",
-            "type": "array"
+            "type": "ability[]"
         },
         {
             "name": "flying",
@@ -81,7 +81,7 @@
         },
         {
             "name": "strafePenalty",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "accel",
@@ -109,7 +109,7 @@
         },
         {
             "name": "riseSpeed",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "faceTarget",
@@ -117,7 +117,7 @@
         },
         {
             "name": "crawlSlowdown",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "drawShields",
@@ -141,7 +141,7 @@
         },
         {
             "name": "research",
-            "type": "string"
+            "type": "research"
         },
         {
             "name": "physics",
@@ -177,15 +177,15 @@
         },
         {
             "name": "envEnabled",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "envDisabled",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "engineColor",
-            "type": "string"
+            "type": "color"
         },
         {
             "name": "engineOffset",
@@ -193,7 +193,7 @@
         },
         {
             "name": "shadowElevationScl",
-            "type": "float"
+            "type": "int"
         }
     ]
 }

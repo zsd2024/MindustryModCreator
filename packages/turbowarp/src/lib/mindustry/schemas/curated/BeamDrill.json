@@ -20,49 +20,94 @@
         },
         {
             "name": "consumes",
-            "type": "object",
+            "type": "consumes",
             "fields": [
                 {
-                    "name": "liquid",
-                    "type": "string"
-                },
-                {
-                    "name": "liquids",
-                    "type": "string"
-                },
-                {
                     "name": "power",
-                    "type": "string"
+                    "type": "float"
+                },
+                {
+                    "name": "powerBuffered",
+                    "type": "float"
+                },
+                {
+                    "name": "items",
+                    "type": "object",
+                    "fields": [
+                        {
+                            "name": "items",
+                            "type": "array",
+                            "items": {
+                                "$ref": "types/StackRequirement"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "liquid",
+                    "type": "object",
+                    "fields": [
+                        {
+                            "name": "liquid",
+                            "type": "Liquid"
+                        },
+                        {
+                            "name": "amount",
+                            "type": "float"
+                        },
+                        {
+                            "name": "update",
+                            "type": "boolean"
+                        },
+                        {
+                            "name": "optional",
+                            "type": "boolean"
+                        },
+                        {
+                            "name": "booster",
+                            "type": "boolean"
+                        }
+                    ]
+                },
+                {
+                    "name": "coolant",
+                    "type": "object",
+                    "fields": [
+                        {
+                            "name": "amount",
+                            "type": "float"
+                        }
+                    ]
                 }
             ]
         },
         {
             "name": "requirements",
-            "type": "array"
+            "type": "StackRequirement[]"
         },
         {
             "name": "category",
-            "type": "string"
+            "type": "category"
         },
         {
             "name": "sparks",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "sparkRecurrence",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "sparkLife",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "sparkSpread",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "sparkRange",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "liquidCapacity",
@@ -70,21 +115,11 @@
         },
         {
             "name": "optionalBoostIntensity",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "research",
-            "type": "object",
-            "fields": [
-                {
-                    "name": "objectives",
-                    "type": "string"
-                },
-                {
-                    "name": "parent",
-                    "type": "string"
-                }
-            ]
+            "type": "research"
         },
         {
             "name": "itemCapacity",
@@ -100,15 +135,15 @@
         },
         {
             "name": "fogRadius",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "researchCost",
-            "type": "array"
+            "type": "StackRequirement[]"
         },
         {
             "name": "dumpTime",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "boostHeatColor",
@@ -120,7 +155,7 @@
         },
         {
             "name": "ambientSoundVolume",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "breakEffect",

@@ -4,19 +4,19 @@
     "fields": [
         {
             "name": "radius",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "shieldHealth",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "cooldownNormal",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "cooldownBrokenBase",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "size",
@@ -24,21 +24,70 @@
         },
         {
             "name": "consumes",
-            "type": "object",
+            "type": "consumes",
             "fields": [
                 {
-                    "name": "liquids",
-                    "type": "string"
+                    "name": "power",
+                    "type": "float"
                 },
                 {
-                    "name": "power",
-                    "type": "string"
+                    "name": "powerBuffered",
+                    "type": "float"
+                },
+                {
+                    "name": "items",
+                    "type": "object",
+                    "fields": [
+                        {
+                            "name": "items",
+                            "type": "array",
+                            "items": {
+                                "$ref": "types/StackRequirement"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "liquid",
+                    "type": "object",
+                    "fields": [
+                        {
+                            "name": "liquid",
+                            "type": "Liquid"
+                        },
+                        {
+                            "name": "amount",
+                            "type": "float"
+                        },
+                        {
+                            "name": "update",
+                            "type": "boolean"
+                        },
+                        {
+                            "name": "optional",
+                            "type": "boolean"
+                        },
+                        {
+                            "name": "booster",
+                            "type": "boolean"
+                        }
+                    ]
+                },
+                {
+                    "name": "coolant",
+                    "type": "object",
+                    "fields": [
+                        {
+                            "name": "amount",
+                            "type": "float"
+                        }
+                    ]
                 }
             ]
         },
         {
             "name": "sides",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "consumeCoolant",
@@ -46,7 +95,7 @@
         },
         {
             "name": "buildVisibility",
-            "type": "string"
+            "type": "buildVisibility"
         },
         {
             "name": "hasItems",
@@ -54,7 +103,7 @@
         },
         {
             "name": "shieldRotation",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "shieldBreakEffect",
@@ -88,32 +137,19 @@
         },
         {
             "name": "cooldownLiquid",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "coolantConsumption",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "requirements",
-            "type": "array",
-            "items": {
-                "type": "object",
-                "fields": [
-                    {
-                        "name": "amount",
-                        "type": "int"
-                    },
-                    {
-                        "name": "item",
-                        "type": "string"
-                    }
-                ]
-            }
+            "type": "StackRequirement[]"
         },
         {
             "name": "category",
-            "type": "string"
+            "type": "category"
         },
         {
             "name": "health",
@@ -129,11 +165,11 @@
         },
         {
             "name": "phaseRadiusBoost",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "phaseShieldBoost",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "itemConsumer",
@@ -155,7 +191,7 @@
         },
         {
             "name": "forceTeam",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "name",
@@ -167,7 +203,7 @@
         },
         {
             "name": "research",
-            "type": "string"
+            "type": "research"
         }
     ]
 }

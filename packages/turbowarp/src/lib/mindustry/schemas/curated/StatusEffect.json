@@ -4,11 +4,11 @@
     "fields": [
         {
             "name": "speedMultiplier",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "effect",
-            "type": "array"
+            "type": "Effect"
         },
         {
             "name": "damage",
@@ -16,15 +16,15 @@
         },
         {
             "name": "reloadMultiplier",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "effectChance",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "healthMultiplier",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "name",
@@ -32,11 +32,11 @@
         },
         {
             "name": "dragMultiplier",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "damageMultiplier",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "alwaysUnlocked",
@@ -44,7 +44,7 @@
         },
         {
             "name": "buildSpeedMultiplier",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "permanent",
@@ -52,7 +52,7 @@
         },
         {
             "name": "color",
-            "type": "string"
+            "type": "color"
         },
         {
             "name": "disarm",

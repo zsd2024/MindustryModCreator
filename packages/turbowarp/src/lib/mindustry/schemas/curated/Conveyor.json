@@ -12,32 +12,19 @@
         },
         {
             "name": "displayedSpeed",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "requirements",
-            "type": "array",
-            "items": {
-                "type": "object",
-                "fields": [
-                    {
-                        "name": "amount",
-                        "type": "int"
-                    },
-                    {
-                        "name": "item",
-                        "type": "string"
-                    }
-                ]
-            }
+            "type": "StackRequirement[]"
         },
         {
             "name": "category",
-            "type": "string"
+            "type": "category"
         },
         {
             "name": "buildCostMultiplier",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "itemCapacity",
@@ -45,7 +32,7 @@
         },
         {
             "name": "buildVisibility",
-            "type": "string"
+            "type": "buildVisibility"
         },
         {
             "name": "name",
@@ -61,7 +48,7 @@
         },
         {
             "name": "research",
-            "type": "string"
+            "type": "research"
         }
     ]
 }

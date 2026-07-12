@@ -4,11 +4,11 @@
     "fields": [
         {
             "name": "lifetime",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "weapons",
-            "type": "array"
+            "type": "weapon[]"
         },
         {
             "name": "template",
@@ -52,7 +52,7 @@
         },
         {
             "name": "controller",
-            "type": "string"
+            "type": "controller"
         },
         {
             "name": "hitSize",
@@ -64,7 +64,7 @@
         },
         {
             "name": "parts",
-            "type": "array"
+            "type": "part[]"
         },
         {
             "name": "flying",
@@ -80,11 +80,11 @@
         },
         {
             "name": "envEnabled",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "envDisabled",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "createScorch",
@@ -92,7 +92,7 @@
         },
         {
             "name": "deathShake",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "trailLength",
@@ -100,7 +100,7 @@
         },
         {
             "name": "abilities",
-            "type": "array"
+            "type": "ability[]"
         },
         {
             "name": "trailColor",
@@ -116,11 +116,11 @@
         },
         {
             "name": "immunities",
-            "type": "array"
+            "type": "StatusEffect[]"
         },
         {
             "name": "maxRange",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "lowAltitude",
@@ -128,7 +128,7 @@
         },
         {
             "name": "engineColor",
-            "type": "string"
+            "type": "color"
         },
         {
             "name": "health",
@@ -140,7 +140,7 @@
         },
         {
             "name": "groundLayer",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "useUnitCap",
@@ -148,11 +148,11 @@
         },
         {
             "name": "engineLayer",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "shadowElevationScl",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "loopSound",
@@ -172,7 +172,7 @@
         },
         {
             "name": "homingDelay",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "localizedName",
@@ -180,7 +180,7 @@
         },
         {
             "name": "outlineRadius",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "targetAir",
@@ -188,7 +188,7 @@
         },
         {
             "name": "trailWidth",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "trailEffect",
@@ -204,15 +204,15 @@
         },
         {
             "name": "loopSoundVolume",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "missileAccelTime",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "outlineColor",
-            "type": "string"
+            "type": "color"
         },
         {
             "name": "targetMissiles",
@@ -224,7 +224,7 @@
         },
         {
             "name": "fallSpeed",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "shieldColor",
@@ -256,11 +256,11 @@
         },
         {
             "name": "fogRadius",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "crashDamageMultiplier",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "engines",
@@ -301,7 +301,7 @@
         },
         {
             "name": "buildRange",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "fallEffect",
@@ -325,7 +325,7 @@
         },
         {
             "name": "targetPriority",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "targetUnderBlocks",
@@ -333,7 +333,7 @@
         },
         {
             "name": "loopSounfVolume",
-            "type": "float"
+            "type": "int"
         },
         {
             "name": "allowedIOnPayloads",
