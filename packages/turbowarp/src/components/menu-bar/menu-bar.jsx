@@ -804,13 +804,13 @@ class MenuBar extends React.Component {
                                         <MenuItem onClick={this.props.onToggleAdvancedMode}>
                                             {this.props.advancedMode ? (
                                                 <FormattedMessage
-                                                    defaultMessage="Turn off Advanced Mode"
+                                                    defaultMessage="关闭高级模式"
                                                     description="Menu bar item for turning off advanced mode"
                                                     id="gui.menuBar.advancedModeOff"
                                                 />
                                             ) : (
                                                 <FormattedMessage
-                                                    defaultMessage="Turn on Advanced Mode"
+                                                    defaultMessage="开启高级模式"
                                                     description="Menu bar item for turning on advanced mode"
                                                     id="gui.menuBar.advancedModeOn"
                                                 />
