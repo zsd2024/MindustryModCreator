@@ -159,6 +159,16 @@ const FIELD_TYPE_MAP = {
 
 // Known object field structures (name -> child fields with types)
 const OBJECT_FIELD_STRUCTURES = {
+  'research': {
+    fields: [
+      { name: 'parent', type: 'string' },
+      { name: 'requirements', type: 'array', items: { $ref: 'types/StackRequirement' } },
+      { name: 'objectives', type: 'array', items: { type: 'string' } },
+      { name: 'root', type: 'boolean' },
+      { name: 'name', type: 'string' },
+      { name: 'requiresUnlock', type: 'boolean' },
+    ],
+  },
   'consumes': {
     fields: [
       { name: 'power', type: 'float' },
@@ -438,6 +448,9 @@ function generateCurated(type) {
     }
     const parentType = getParentType(type);
     const fields = fallbackFields.map(n => {
+      if (n === 'research' && OBJECT_FIELD_STRUCTURES['research']) {
+        return { name: n, type: 'research', fields: OBJECT_FIELD_STRUCTURES['research'].fields };
+      }
       const refSchema = loadReflectionSchema(type);
       const refField = refSchema?.fields?.find(f => f.name === n);
       return { name: n, type: refField?.type || 'string' };

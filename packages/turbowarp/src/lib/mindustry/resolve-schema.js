@@ -146,7 +146,13 @@ const resolveFields = function (type, mode = 'curated', visited = new Set()) {
         sourceType: type
     }));
 
-    return [...parentFields, ...ownFields];
+    const merged = [...parentFields, ...ownFields];
+    const seen = new Set();
+    return merged.filter(f => {
+        if (seen.has(f.name)) return false;
+        seen.add(f.name);
+        return true;
+    });
 };
 
 const parseDefault = function (field) {

@@ -103,7 +103,39 @@
         },
         {
             "name": "research",
-            "type": "research"
+            "type": "research",
+            "fields": [
+                {
+                    "name": "parent",
+                    "type": "string"
+                },
+                {
+                    "name": "requirements",
+                    "type": "array",
+                    "items": {
+                        "$ref": "types/StackRequirement"
+                    }
+                },
+                {
+                    "name": "objectives",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "name": "root",
+                    "type": "boolean"
+                },
+                {
+                    "name": "name",
+                    "type": "string"
+                },
+                {
+                    "name": "requiresUnlock",
+                    "type": "boolean"
+                }
+            ]
         },
         {
             "name": "payloadSpeed",
