@@ -39,7 +39,7 @@ jobs:
           npm ci --ignore-scripts || {
             echo "⚠️ npm ci failed due to desynced lockfile or peer conflicts."
             echo "🔄 Falling back to standard npm install..."
-            npm install
+            npm install --legacy-peer-deps
           }
         working-directory: /tmp/turbowarp
 
