@@ -100,7 +100,8 @@ const base = {
                         loader: 'css-loader',
                         options: {
                             modules: {
-                                localIdentName: '[name]_[local]_[hash:base64:5]'
+                                localIdentName: '[name]_[local]_[hash:base64:5]',
+                                exportLocalsConvention: 'camelCase'
                             },
                             importLoaders: 1,
                             sourceMap: true
