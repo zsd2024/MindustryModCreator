@@ -73,13 +73,13 @@ const S = {
     arrayAdd: '+ 添加',
     noMatch: '无匹配',
     search: '搜索...',
-    emptyIcon: '📝',
+    emptyIcon: 'edit_note',
     emptyText: '在左侧资产区选择一个内容来编辑',
-    notFoundIcon: '❓',
+    notFoundIcon: 'search_off',
     notFoundPrefix: '未找到 ',
     notFoundSuffix: ' 的配置信息',
     itemIndexPrefix: '#',
-    removeBtn: '✕',
+    removeBtn: 'close',
     sizeLabel: 'x',
     defaultDisplay: '--'
 };
@@ -235,9 +235,80 @@ class MindustryJsonEditor extends React.Component {
         super(props);
         this.state = {
             data: this.initData(props.contentType, props.initialData || {}),
-            collapsedSections: this.initCollapsedSections(props.contentType)
+            collapsedSections: this.initCollapsedSections(props.contentType),
+            undoStack: [],
+            redoStack: []
         };
         this._onChangeMap = new Map();
+        this.editorFocused = false;
+        this._undoTimer = null;
+        this.handleKeyDown = this.handleKeyDown.bind(this);
+        this.handleFocus = this.handleFocus.bind(this);
+        this.handleBlur = this.handleBlur.bind(this);
+        this.handleUndo = this.handleUndo.bind(this);
+        this.handleRedo = this.handleRedo.bind(this);
+        this.handleResetField = this.handleResetField.bind(this);
+    }
+
+    pushUndo () {
+        this.setState(prev => {
+            const stack = [...prev.undoStack, {...prev.data}];
+            if (stack.length > 50) stack.shift();
+            return {undoStack: stack, redoStack: []};
+        });
+    }
+
+    handleKeyDown (e) {
+        if (!this.editorFocused) return;
+        if ((e.ctrlKey || e.metaKey) && e.key === 'z') {
+            if (e.shiftKey) {
+                e.preventDefault();
+                this.handleRedo();
+            } else {
+                e.preventDefault();
+                this.handleUndo();
+            }
+        }
+    }
+
+    handleFocus () {
+        this.editorFocused = true;
+    }
+
+    handleBlur () {
+        this.editorFocused = false;
+    }
+
+    handleUndo () {
+        const {undoStack, data} = this.state;
+        if (undoStack.length === 0) return;
+        const prev = undoStack[undoStack.length - 1];
+        this.setState(prevState => ({
+            data: prev,
+            undoStack: prevState.undoStack.slice(0, -1),
+            redoStack: [...prevState.redoStack, {...data}]
+        }), () => {
+            this.props.onChange(this.state.data);
+        });
+    }
+
+    handleRedo () {
+        const {redoStack, data} = this.state;
+        if (redoStack.length === 0) return;
+        const next = redoStack[redoStack.length - 1];
+        this.setState(prevState => ({
+            data: next,
+            redoStack: prevState.redoStack.slice(0, -1),
+            undoStack: [...prevState.undoStack, {...data}]
+        }), () => {
+            this.props.onChange(this.state.data);
+        });
+    }
+
+    handleResetField (fieldName, field) {
+        this.pushUndo();
+        const defaultVal = this.parseDefault(field);
+        this.handleChange(fieldName, defaultVal);
     }
 
     initCollapsedSections (contentType) {
@@ -273,12 +344,14 @@ class MindustryJsonEditor extends React.Component {
         return field.defaultValue;
     }
 
-    handleChange (fieldName, value) {
-        this.setState(prev => {
-            const data = {...prev.data, [fieldName]: value};
-            if (this.props.onChange) this.props.onChange(data);
-            return {data};
-        });
+    handleChange (name, val) {
+        if (this._undoTimer) clearTimeout(this._undoTimer);
+        this._undoTimer = null;
+        this.pushUndo();
+
+        const newData = {...this.state.data, [name]: val};
+        this.setState({data: newData});
+        if (this.props.onChange) this.props.onChange(newData);
     }
 
     handleCheckboxChange = e => {
@@ -563,6 +636,7 @@ class MindustryJsonEditor extends React.Component {
                 value={value}
                 data-ckey={ckey}
                 onChange={this.handleTextChange}
+                onBlur={() => this.pushUndo()}
                 className={styles.textInput}
             />
         );
@@ -605,7 +679,7 @@ class MindustryJsonEditor extends React.Component {
                                 data-idx={idx}
                                 onClick={this.handleArrayRemove}
                                 title={S.arrayRemoveTitle}
-                            >{S.removeBtn}</button>
+                            ><span className="material-symbols-outlined">{S.removeBtn}</span></button>
                         </div>
                         <div className={styles.arrayItemBody}>
                             {isObjectArray ? ((subFields || []).map(sf => {
@@ -709,7 +783,7 @@ class MindustryJsonEditor extends React.Component {
                                     onClick={() => removeItem(idx)}
                                     title={S.arrayRemoveTitle}
                                 >
-                                    {S.removeBtn}
+                                    <span className="material-symbols-outlined">{S.removeBtn}</span>
                                 </button>
                             </div>
                             <div className={styles.arrayItemBody}>
@@ -837,6 +911,13 @@ class MindustryJsonEditor extends React.Component {
                             <div className={styles.nestedFieldControl}>
                                  {this.renderSubFieldControl(enhanced, subValue, onSubChange, subCkey, field.name)}
                             </div>
+                            <button
+                                className={styles.resetBtn}
+                                onClick={() => this.handleResetField(enhanced.name, enhanced)}
+                                title="恢复默认"
+                            >
+                                <span className="material-symbols-outlined">settings_backup_restore</span>
+                            </button>
                         </div>
                     );
                 })}
@@ -897,6 +978,13 @@ class MindustryJsonEditor extends React.Component {
                 <div className={styles.fieldControl}>
                     {renderControl()}
                 </div>
+                <button
+                    className={styles.resetBtn}
+                    onClick={() => this.handleResetField(field.name, field)}
+                    title="恢复默认"
+                >
+                    <span className="material-symbols-outlined">settings_backup_restore</span>
+                </button>
             </div>
         );
     }
@@ -917,7 +1005,9 @@ class MindustryJsonEditor extends React.Component {
                     data-typename={typeName}
                     onClick={this.handleSectionToggle}
                 >
-                    <span className={styles.sectionArrow}>{isCollapsed ? '▶' : '▼'}</span>
+                    <span className={`${styles.sectionArrow} material-symbols-outlined`}>
+                            {isCollapsed ? 'chevron_right' : 'expand_more'}
+                        </span>
                     <span className={styles.sectionTitle}>{zhLabel}</span>
                     {zhDoc && <span className={styles.sectionDesc}>{renderMarkdown(zhDoc)}</span>}
                 </div>
@@ -935,7 +1025,7 @@ class MindustryJsonEditor extends React.Component {
         if (!contentType) {
             return (
                 <div className={styles.emptyState}>
-                    <div className={styles.emptyIcon}>{S.emptyIcon}</div>
+                    <div className={`${styles.emptyIcon} material-symbols-outlined`}>{S.emptyIcon}</div>
                     <p className={styles.emptyText}>{S.emptyText}</p>
                 </div>
             );
@@ -946,7 +1036,7 @@ class MindustryJsonEditor extends React.Component {
         if (fields.length === 0) {
             return (
                 <div className={styles.emptyState}>
-                    <div className={styles.emptyIcon}>{S.notFoundIcon}</div>
+                    <div className={`${styles.emptyIcon} material-symbols-outlined`}>{S.notFoundIcon}</div>
                     <p className={styles.emptyText}>{S.notFoundPrefix}{contentType}{S.notFoundSuffix}</p>
                 </div>
             );
@@ -964,9 +1054,33 @@ class MindustryJsonEditor extends React.Component {
             sections[f.sourceType].push(f);
         }
         return (
-            <div className={styles.editor}>
+            <div
+                className={styles.editor}
+                tabIndex={-1}
+                onKeyDown={this.handleKeyDown}
+                onFocus={this.handleFocus}
+                onBlur={this.handleBlur}
+            >
                 <div className={styles.editorHeader}>
                     <span className={styles.editorTitle}>{getZhLabel(contentType) || contentType}</span>
+                    <div className={styles.editorActions}>
+                        <button
+                            className={styles.undoBtn}
+                            onClick={this.handleUndo}
+                            disabled={this.state.undoStack.length === 0}
+                            title="撤销 (Ctrl+Z)"
+                        >
+                            <span className="material-symbols-outlined">undo</span>
+                        </button>
+                        <button
+                            className={styles.redoBtn}
+                            onClick={this.handleRedo}
+                            disabled={this.state.redoStack.length === 0}
+                            title="重做 (Ctrl+Shift+Z)"
+                        >
+                            <span className="material-symbols-outlined">redo</span>
+                        </button>
+                    </div>
                 </div>
                 <div className={styles.sectionsContainer}>
                     {Object.keys(sections).map(st => this.renderSection(st, sections[st]))}
