@@ -6,7 +6,7 @@ import {normalizeType} from '../../lib/mindustry/compound-types';
 import {VANILLA_CONTENT} from '../../lib/mindustry/vanilla-content';
 import styles from './mindustry-json-editor.css';
 
-import SearchableSelect from './searchable-select';
+import SearchableSelect from './searchable-select.jsx';
 import ReactMarkdown from 'react-markdown';
 
 const renderMarkdown = function (text) {
