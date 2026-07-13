@@ -306,7 +306,6 @@ class MindustryJsonEditor extends React.Component {
     }
 
     handleResetField (fieldName, field) {
-        this.pushUndo();
         const defaultVal = this.parseDefault(field);
         this.handleChange(fieldName, defaultVal);
     }
@@ -345,13 +344,18 @@ class MindustryJsonEditor extends React.Component {
     }
 
     handleChange (name, val) {
-        if (this._undoTimer) clearTimeout(this._undoTimer);
-        this._undoTimer = null;
-        this.pushUndo();
+        if (this._undoTimer) {
+            clearTimeout(this._undoTimer);
+        } else {
+            this.pushUndo();
+        }
+        this._undoTimer = setTimeout(() => {
+            this._undoTimer = null;
+        }, 0);
 
-        const newData = {...this.state.data, [name]: val};
-        this.setState({data: newData});
-        if (this.props.onChange) this.props.onChange(newData);
+        this.setState(prev => ({data: {...prev.data, [name]: val}}), () => {
+            if (this.props.onChange) this.props.onChange(this.state.data);
+        });
     }
 
     handleCheckboxChange = e => {
