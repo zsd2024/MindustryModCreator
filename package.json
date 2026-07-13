@@ -7,11 +7,11 @@
     "packages/backend"
   ],
   "scripts": {
-    "dev": "bun run --filter backend dev",
-    "build": "bun run --filter backend build",
-    "lint": "bun run --filter backend lint",
-    "test": "bun run --filter backend test",
-    "clean": "bun run --filter backend clean",
+    "dev": "bun run --filter @mindustry-mod-creator/backend dev",
+    "build": "bun run --filter @mindustry-mod-creator/backend build",
+    "lint": "bun run --filter @mindustry-mod-creator/backend lint",
+    "test": "bun run --filter @mindustry-mod-creator/backend test",
+    "clean": "bun run --filter @mindustry-mod-creator/backend clean",
     "turbowarp:install": "cd packages/turbowarp && npm install",
     "turbowarp:build": "cd packages/turbowarp && npm run build",
     "turbowarp:dev": "cd packages/turbowarp && npm start",
@@ -19,8 +19,6 @@
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
-    "@typescript-eslint/eslint-plugin": "^8.63.0",
-    "@typescript-eslint/parser": "^8.63.0",
     "eslint": "^10.7.0",
     "husky": "^9.1.7",
     "lint-staged": "^17.0.8",
