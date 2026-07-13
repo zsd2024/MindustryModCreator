@@ -75,7 +75,7 @@
   line-height: 1;
 }
 
-.sectionArrow:global(.material-symbols-outlined) {
+.sectionArrow svg {
   font-size: 16px;
   vertical-align: middle;
 }
@@ -578,7 +578,11 @@
 }
 
 .emptyIcon {
-  font-size: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
 }
 
 .emptyText {
@@ -673,8 +677,8 @@
   cursor: default;
 }
 
-.undoBtn :global(.material-symbols-outlined),
-.redoBtn :global(.material-symbols-outlined) {
+.undoBtn svg,
+.redoBtn svg {
   font-size: 20px;
 }
 
@@ -694,7 +698,7 @@
   opacity: 0.8;
 }
 
-.resetBtn :global(.material-symbols-outlined) {
+.resetBtn svg {
   font-size: 16px;
   vertical-align: middle;
 }

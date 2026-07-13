@@ -5,6 +5,7 @@ import {ContextMenu, MenuItem, DangerousMenuItem} from '../context-menu/context-
 import Modal from '../modal/modal.jsx';
 import {getZhLabel, getCuratedTypes} from '../../lib/mindustry/resolve-schema';
 import styles from './mindustry-asset-cards.css';
+import {Icon} from '../../lib/icon-map';
 
 const BUILTIN_IDS = new Set(['__mod_config__', '__bundle_en__', '__bundle_zh__']);
 
@@ -378,7 +379,7 @@ class AssetCards extends React.Component {
                         const cardContent = (
                             <React.Fragment>
                                 <div className={styles.cardIconArea}>
-                                    <span className={`${styles.cardIcon} material-symbols-outlined`}>{iconForAsset(asset)}</span>
+                                    <Icon name={iconForAsset(asset)} className={styles.cardIcon} />
                                     <span
                                         className={`${styles.cardBadge} ${
                                             asset.kind === 'content' ? styles.badgeJson :

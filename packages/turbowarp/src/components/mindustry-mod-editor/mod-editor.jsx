@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import styles from './mod-editor.css';
+import {Close} from '@nine-thirty-five/material-symbols-react/outlined';
 
 const FIELDS = [
   {key: 'name', label: '模组标识', hint: '唯一标识符，如 my-mod，不含空格和特殊字符', type: 'text'},
@@ -64,7 +65,7 @@ class ModEditor extends React.Component {
                     onChange(key, next);
                   }}
                 >
-                  <span className="material-symbols-outlined">close</span>
+                  <Close size={14} />
                 </span>
               </span>
             ))}

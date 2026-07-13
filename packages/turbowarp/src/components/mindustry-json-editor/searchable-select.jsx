@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import styles from './searchable-select.css';
+import {ArrowDropDown, ArrowDropUp} from '@nine-thirty-five/material-symbols-react/outlined';
 
 const DROPDOWN_ESTIMATED_HEIGHT = 260;
 
@@ -85,7 +86,7 @@ class SearchableSelect extends React.Component {
                         {selected ? selected.cn : (value || placeholder || '--')}
                     </span>
                     <span className={styles.selectArrow}>
-                        <span className="material-symbols-outlined">{open ? 'expand_less' : 'expand_more'}</span>
+                        {open ? <ArrowDropUp size={20} /> : <ArrowDropDown size={20} />}
                     </span>
                 </div>
             </div>

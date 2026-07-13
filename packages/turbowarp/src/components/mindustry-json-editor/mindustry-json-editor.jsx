@@ -8,6 +8,8 @@ import styles from './mindustry-json-editor.css';
 
 import SearchableSelect from './searchable-select.jsx';
 import ReactMarkdown from 'react-markdown';
+import {Undo, Redo, SettingsBackupRestore, EditNote, SearchOff} from '@nine-thirty-five/material-symbols-react/outlined';
+import {Icon} from '../../lib/icon-map';
 
 const renderMarkdown = function (text) {
     if (!text) return null;
@@ -683,7 +685,7 @@ class MindustryJsonEditor extends React.Component {
                                 data-idx={idx}
                                 onClick={this.handleArrayRemove}
                                 title={S.arrayRemoveTitle}
-                            ><span className="material-symbols-outlined">{S.removeBtn}</span></button>
+                            ><Icon name={S.removeBtn} size={20} /></button>
                         </div>
                         <div className={styles.arrayItemBody}>
                             {isObjectArray ? ((subFields || []).map(sf => {
@@ -787,7 +789,7 @@ class MindustryJsonEditor extends React.Component {
                                     onClick={() => removeItem(idx)}
                                     title={S.arrayRemoveTitle}
                                 >
-                                    <span className="material-symbols-outlined">{S.removeBtn}</span>
+                                    <Icon name={S.removeBtn} size={20} />
                                 </button>
                             </div>
                             <div className={styles.arrayItemBody}>
@@ -920,7 +922,7 @@ class MindustryJsonEditor extends React.Component {
                                 onClick={() => onSubChange(this.parseDefault(enhanced))}
                                 title="恢复默认"
                             >
-                                <span className="material-symbols-outlined">settings_backup_restore</span>
+                                <SettingsBackupRestore size={16} />
                             </button>
                         </div>
                     );
@@ -987,7 +989,7 @@ class MindustryJsonEditor extends React.Component {
                     onClick={() => this.handleResetField(field.name, field)}
                     title="恢复默认"
                 >
-                    <span className="material-symbols-outlined">settings_backup_restore</span>
+                    <SettingsBackupRestore size={16} />
                 </button>
             </div>
         );
@@ -1009,8 +1011,8 @@ class MindustryJsonEditor extends React.Component {
                     data-typename={typeName}
                     onClick={this.handleSectionToggle}
                 >
-                    <span className={`${styles.sectionArrow} material-symbols-outlined`}>
-                            {isCollapsed ? 'chevron_right' : 'expand_more'}
+                    <span className={styles.sectionArrow}>
+                            <Icon name={isCollapsed ? 'chevron_right' : 'expand_more'} />
                         </span>
                     <span className={styles.sectionTitle}>{zhLabel}</span>
                     {zhDoc && <span className={styles.sectionDesc}>{renderMarkdown(zhDoc)}</span>}
@@ -1029,7 +1031,7 @@ class MindustryJsonEditor extends React.Component {
         if (!contentType) {
             return (
                 <div className={styles.emptyState}>
-                    <div className={`${styles.emptyIcon} material-symbols-outlined`}>{S.emptyIcon}</div>
+                    <div className={styles.emptyIcon}><EditNote size={48} /></div>
                     <p className={styles.emptyText}>{S.emptyText}</p>
                 </div>
             );
@@ -1040,7 +1042,7 @@ class MindustryJsonEditor extends React.Component {
         if (fields.length === 0) {
             return (
                 <div className={styles.emptyState}>
-                    <div className={`${styles.emptyIcon} material-symbols-outlined`}>{S.notFoundIcon}</div>
+                    <div className={styles.emptyIcon}><SearchOff size={48} /></div>
                     <p className={styles.emptyText}>{S.notFoundPrefix}{contentType}{S.notFoundSuffix}</p>
                 </div>
             );
@@ -1074,7 +1076,7 @@ class MindustryJsonEditor extends React.Component {
                             disabled={this.state.undoStack.length === 0}
                             title="撤销 (Ctrl+Z)"
                         >
-                            <span className="material-symbols-outlined">undo</span>
+                            <Undo size={20} />
                         </button>
                         <button
                             className={styles.redoBtn}
@@ -1082,7 +1084,7 @@ class MindustryJsonEditor extends React.Component {
                             disabled={this.state.redoStack.length === 0}
                             title="重做 (Ctrl+Shift+Z)"
                         >
-                            <span className="material-symbols-outlined">redo</span>
+                            <Redo size={20} />
                         </button>
                     </div>
                 </div>
