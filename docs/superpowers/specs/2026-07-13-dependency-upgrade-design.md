@@ -6,7 +6,7 @@ Upgrade all upgradable dependencies across the monorepo to latest available vers
 
 ## Structure
 
-Four sequential batches, each verified before proceeding to the next.
+Six sequential batches, each verified before proceeding to the next.
 
 ### Batch 1: Root + Backend
 
@@ -37,7 +37,16 @@ Four sequential batches, each verified before proceeding to the next.
 - `chromedriver`, `selenium-webdriver`: latest compatible
 - `gh-pages`, `rimraf`, `mkdirp`, `raf`: latest
 
-### Batch 3: Turbowarp Runtime
+### Batch 3: Test Migration (Enzyme → React Testing Library)
+
+必须在升级 React 之前完成。将现有基于 Enzyme 的单元测试迁移到 `@testing-library/react`，RTL 兼容 React 16→19。
+
+- 移除 `enzyme`、`enzyme-adapter-react-16`、`react-test-renderer`（依赖 React 16 内部 API）
+- 添加 `@testing-library/react`、`@testing-library/jest-dom`、`@testing-library/user-event`
+- 重写 `test/helpers/enzyme-setup.js` → 移除 Enzyme 适配器配置
+- 重写所有 Enzyme 测试用例（`shallow`/`mount` → `render`/`screen`）
+
+### Batch 4: Turbowarp Runtime
 
 - `react` / `react-dom`: ^16.0.0 → ^19.x (createRoot, lifecycle migration)
 - `react-intl`: 2.9.0 → 7.x (API rewrite)
@@ -52,7 +61,7 @@ Four sequential batches, each verified before proceeding to the next.
 - `react-markdown`: ^8.0.7 → latest
 - `prop-types`: ^15.5.10 → latest
 
-### Batch 4: Remaining Small Packages
+### Batch 5: Remaining Small Packages
 
 - `classnames`: 2.2.6 → latest
 - `bowser`: 1.9.4 → latest
@@ -65,16 +74,21 @@ Four sequential batches, each verified before proceeding to the next.
 - `omggif`: 1.0.9 → latest
 - All other pinned deps with `^` prefix
 
-## Frozen Packages (NOT upgraded)
+## Removed Packages (during upgrade)
 
-- `enzyme` / `enzyme-adapter-react-16` (archived)
+- `enzyme` / `enzyme-adapter-react-16` — removed in Batch 3 (test migration)
+- `react-test-renderer` — removed in Batch 3
+- `url-loader` / `file-loader` / `raw-loader` — removed in Batch 2 (Webpack 5 asset modules)
+- `uglifyjs-webpack-plugin` — removed in Batch 2
+- `babel-eslint` — replaced by @babel/eslint-parser in Batch 2
+
+## Frozen Packages (NOT upgraded, kept as-is)
+
 - `react-contextmenu` (no React 18+ support)
 - `react-ga` (replaced by react-ga4, but not in scope)
-- `react-test-renderer` (pinned to 16.x for enzyme)
 - `scratch-*` GitHub deps (branches)
 - `material-symbols` (npm package, unused after react-icons migration)
 - `text-encoding` (deprecated polyfill)
-- `babel-eslint` (replaced by @babel/eslint-parser in Batch 2)
 - `redux-mock-store` (testing, pinned)
 - `web-audio-test-api` (testing, pinned)
 
