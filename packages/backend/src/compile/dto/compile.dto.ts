@@ -26,11 +26,11 @@ export class CompileRequestDto {
 
 export class CompileResponseDto {
   @ApiProperty({ description: '是否成功提交' })
-  success: boolean;
+  success!: boolean;
 
   @ApiProperty({ description: '任务 ID' })
-  jobId: string;
+  jobId!: string;
 
   @ApiProperty({ description: '提示信息' })
-  message: string;
+  message!: string;
 }

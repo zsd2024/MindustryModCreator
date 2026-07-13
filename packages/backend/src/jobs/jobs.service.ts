@@ -5,58 +5,60 @@ import { JobStatusDto } from './dto/job.dto';
 
 @Injectable()
 export class JobsService {
-  constructor(
-    @InjectQueue('compile') private compileQueue: Queue,
-  ) {}
+  constructor(@InjectQueue('compile') private compileQueue: Queue) {}
 
-  async findAll(status?: string, userId?: string): Promise<JobStatusDto[]> {
-    const jobs = await this.compileQueue.getJobs(['waiting', 'active', 'completed', 'failed', 'delayed']);
-    
+  async findAll(status?: string, _userId?: string): Promise<JobStatusDto[]> {
+    const jobs = await this.compileQueue.getJobs([
+      'waiting',
+      'active',
+      'completed',
+      'failed',
+      'delayed',
+    ]);
+
     let filteredJobs = jobs;
-    
+
     if (status) {
       filteredJobs = jobs.filter(job => {
         const jobState = this.getJobState(job);
         return jobState === status;
       });
     }
-    
-    return Promise.all(
-      filteredJobs.map(job => this.mapJobToDto(job)),
-    );
+
+    return Promise.all(filteredJobs.map(job => this.mapJobToDto(job)));
   }
 
   async findOne(id: string): Promise<JobStatusDto> {
     const job = await this.compileQueue.getJob(id);
-    
+
     if (!job) {
       throw new NotFoundException(`任务 ${id} 不存在`);
     }
-    
+
     return this.mapJobToDto(job);
   }
 
   async remove(id: string): Promise<void> {
     const job = await this.compileQueue.getJob(id);
-    
+
     if (!job) {
       throw new NotFoundException(`任务 ${id} 不存在`);
     }
-    
+
     const state = await job.getState();
-    
+
     if (state === 'active') {
       // 活跃任务无法直接删除，需要等待完成或失败
       throw new Error('无法删除正在执行的任务');
     }
-    
+
     await job.remove();
   }
 
   private async mapJobToDto(job: any): Promise<JobStatusDto> {
     const state = await job.getState();
-    const progress = job.progress as number || 0;
-    
+    const progress = (job.progress as number) || 0;
+
     return {
       id: job.id,
       status: this.mapJobState(state),
@@ -68,7 +70,7 @@ export class JobsService {
     };
   }
 
-  private getJobState(job: any): string {
+  private getJobState(_job: any): string {
     // 这里简化处理，实际应该使用 job.getState()
     return 'unknown';
   }

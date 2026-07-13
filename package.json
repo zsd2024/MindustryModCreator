@@ -14,16 +14,19 @@
     "clean": "bun run --filter backend clean",
     "turbowarp:install": "cd packages/turbowarp && npm install",
     "turbowarp:build": "cd packages/turbowarp && npm run build",
-    "turbowarp:dev": "cd packages/turbowarp && npm start"
+    "turbowarp:dev": "cd packages/turbowarp && npm start",
+    "prepare": "husky"
   },
   "devDependencies": {
-    "typescript": "^5.3.0",
-    "prettier": "^3.1.0",
-    "eslint": "^8.55.0",
-    "@typescript-eslint/eslint-plugin": "^6.15.0",
-    "@typescript-eslint/parser": "^6.15.0",
-    "husky": "^8.0.3",
-    "lint-staged": "^15.2.0"
+    "@eslint/js": "^10.0.1",
+    "@typescript-eslint/eslint-plugin": "^8.63.0",
+    "@typescript-eslint/parser": "^8.63.0",
+    "eslint": "^10.7.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^17.0.8",
+    "prettier": "^3.9.5",
+    "typescript": "~5.8.0",
+    "typescript-eslint": "^8.63.0"
   },
   "lint-staged": {
     "*.{ts,tsx}": [

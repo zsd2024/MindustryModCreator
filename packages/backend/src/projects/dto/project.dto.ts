@@ -4,11 +4,11 @@ import { IsString, IsOptional, IsObject } from 'class-validator';
 export class CreateProjectDto {
   @ApiProperty({ description: '项目名称' })
   @IsString()
-  name: string;
+  name!: string;
 
   @ApiProperty({ description: '显示名称' })
   @IsString()
-  displayName: string;
+  displayName!: string;
 
   @ApiPropertyOptional({ description: '项目描述' })
   @IsOptional()
@@ -49,13 +49,13 @@ export class UpdateProjectDto {
 
 export class ProjectResponseDto {
   @ApiProperty({ description: '项目 ID' })
-  id: string;
+  id!: string;
 
   @ApiProperty({ description: '项目名称' })
-  name: string;
+  name!: string;
 
   @ApiProperty({ description: '显示名称' })
-  displayName: string;
+  displayName!: string;
 
   @ApiPropertyOptional({ description: '项目描述' })
   description?: string;
@@ -67,8 +67,8 @@ export class ProjectResponseDto {
   manifest: any;
 
   @ApiProperty({ description: '创建时间' })
-  createdAt: string;
+  createdAt!: string;
 
   @ApiProperty({ description: '更新时间' })
-  updatedAt: string;
+  updatedAt!: string;
 }
