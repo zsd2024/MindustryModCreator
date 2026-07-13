@@ -130,7 +130,7 @@ const BlocksThemeMenu = ({
                     key={i}
                     id={i}
                     isSelected={theme.blocks === i}
-                    // eslint-disable-next-line react/jsx-no-bind
+                     
                     onClick={
                         i === BLOCKS_CUSTOM ?
                             onOpenCustomSettings :

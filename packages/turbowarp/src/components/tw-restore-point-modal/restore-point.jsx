@@ -126,7 +126,7 @@ class RestorePoint extends React.Component {
                         {', '}
                         <FormattedMessage
                             defaultMessage="{n} assets"
-                            // eslint-disable-next-line max-len
+                             
                             description="Describes how many assets (costumes and images) are in a restore point. {n} is replaced with a number like 406"
                             id="tw.restorePoints.assets"
                             values={{

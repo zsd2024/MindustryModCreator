@@ -52,7 +52,7 @@ const BrowserModal = ({intl, ...props}) => {
                         <FormattedMessage {...title} />
                     </h2>
 
-                    {/* eslint-disable max-len */}
+                    { }
                     {isNewFunctionSupported() ? null : (
                         // This message should only be seen by website operators, so we don't need to translate it
                         <p>
@@ -117,7 +117,7 @@ const BrowserModal = ({intl, ...props}) => {
                         </React.Fragment>
                     )}
 
-                    {/* eslint-enable max-len */}
+                    { }
                 </Box>
             </div>
         </ReactModal>

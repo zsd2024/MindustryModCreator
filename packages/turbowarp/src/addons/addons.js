@@ -88,7 +88,7 @@ const newAddons = [
     'expanded-backpack'
 ];
 
-// eslint-disable-next-line import/no-commonjs
+ 
 module.exports = {
     addons,
     newAddons

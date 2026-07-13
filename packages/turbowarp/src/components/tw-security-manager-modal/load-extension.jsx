@@ -46,7 +46,7 @@ const LoadExtensionModal = props => (
                 {props.unsandboxed && (
                     <div className={styles.unsandboxedWarning}>
                         <FormattedMessage
-                            // eslint-disable-next-line max-len
+                             
                             defaultMessage="Loading extensions without the sandbox is dangerous. It will be able to corrupt your project, delete your settings, phish for passwords, and other bad things. The {APP_NAME} developers are not responsible for any resulting issues."
                             description="Part of modal asking for permission to automatically load custom extension"
                             id="tw.loadExtension.unsandboxedWarning"
@@ -61,7 +61,7 @@ const LoadExtensionModal = props => (
         {!props.unsandboxed && (
             <div className={styles.sandboxed}>
                 <FormattedMessage
-                    // eslint-disable-next-line max-len
+                     
                     defaultMessage="While the code will be sandboxed, it will still have access to information about your device such as your IP and general location. Make sure you trust the author of this extension before continuing."
                     description="Part of modal asking for permission to automatically load custom extension"
                     id="tw.loadExtension.sandboxed"

@@ -21,7 +21,7 @@ import {generateRandomUsername} from './tw-username';
 import {setSearchParams} from './tw-navigation-utils';
 import {defaultStageSize} from '../reducers/custom-stage-size';
 
-/* eslint-disable no-alert */
+ 
 
 const messages = defineMessages({
     invalidFPS: {

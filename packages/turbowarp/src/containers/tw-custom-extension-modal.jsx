@@ -139,7 +139,7 @@ class CustomExtensionModal extends React.Component {
             }
         } catch (err) {
             log.error(err);
-            // eslint-disable-next-line no-alert
+             
             alert(err);
         }
     }

@@ -141,7 +141,7 @@ const SBFileUploaderHOC = function (WrappedComponent) {
                 // changed it, no need to confirm.)
                 let uploadAllowed = true;
                 if (userOwnsProject || (projectChanged && isShowingWithoutId)) {
-                    uploadAllowed = confirm( // eslint-disable-line no-alert
+                    uploadAllowed = confirm(  
                         intl.formatMessage(sharedMessages.replaceProjectWarning)
                     );
                 }

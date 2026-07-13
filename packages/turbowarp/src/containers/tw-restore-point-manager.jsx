@@ -12,7 +12,7 @@ import RestorePointAPI from '../lib/tw-restore-point-api';
 import log from '../lib/log';
 import downloadBlob from '../lib/download-blob.js';
 
-/* eslint-disable no-alert */
+ 
 
 const SAVE_DELAY = 250;
 const MINIMUM_SAVE_TIME = 1000;

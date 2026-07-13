@@ -1,5 +1,5 @@
 import JSZip from '@turbowarp/jszip';
-// eslint-disable-next-line import/no-unresolved
+ 
 import hjson from 'hjson';
 import downloadBlob from '../../lib/download-blob';
 import {diffData} from './resolve-schema';
@@ -40,8 +40,6 @@ const contentTypeToFolder = {
  * @param {string} contentType - content type name
  * @returns {string} folder name
  */
-const knownFolders = new Set(Object.values(contentTypeToFolder));
-
 const getContentFolder = function (contentType) {
     const folder = contentTypeToFolder[contentType];
     if (!folder) {

@@ -15,7 +15,6 @@ import CommunityButton from './community-button.jsx';
 import ShareButton from './share-button.jsx';
 import {ComingSoonTooltip} from '../coming-soon/coming-soon.jsx';
 import Divider from '../divider/divider.jsx';
-import SaveStatus from './save-status.jsx';
 import ProjectWatcher from '../../containers/project-watcher.jsx';
 import MenuBarMenu from './menu-bar-menu.jsx';
 import MenuLabel from './tw-menu-label.jsx';
@@ -85,9 +84,6 @@ import collectMetadata from '../../lib/collect-metadata';
 
 import styles from './menu-bar.css';
 
-import helpIcon from '../../lib/assets/icon--tutorials.svg';
-import mystuffIcon from './icon--mystuff.png';
-import profileIcon from './icon--profile.png';
 import remixIcon from './icon--remix.svg';
 import dropdownCaret from './dropdown-caret.svg';
 import aboutIcon from './icon--about.svg';
@@ -107,14 +103,6 @@ import sharedMessages from '../../lib/shared-messages';
 import SeeInsideButton from './tw-see-inside.jsx';
 import {notScratchDesktop} from '../../lib/isScratchDesktop.js';
 import {APP_NAME} from '../../lib/brand.js';
-
-const ariaMessages = defineMessages({
-    tutorials: {
-        id: 'gui.menuBar.tutorialsLibrary',
-        defaultMessage: 'Tutorials',
-        description: 'accessibility text for the tutorials button'
-    }
-});
 
 const twMessages = defineMessages({
     compileError: {
@@ -391,7 +379,7 @@ class MenuBar extends React.Component {
         default: {
             return (<FormattedMessage
                 defaultMessage="Restore"
-                description="Menu bar item for restoring the last deleted item in its disabled state." /* eslint-disable-line max-len */
+                description="Menu bar item for restoring the last deleted item in its disabled state."  
                 id="gui.menuBar.restore"
             />);
         }
@@ -562,7 +550,7 @@ class MenuBar extends React.Component {
                                 this.props.onClickDesktopSettings &&
                                 this.handleClickDesktopSettings
                             }
-                            // eslint-disable-next-line react/jsx-no-bind
+                             
                             onOpenCustomSettings={
                                 this.props.onClickAddonSettings &&
                                 this.props.onClickAddonSettings.bind(null, 'editor-theme3')
@@ -614,7 +602,7 @@ class MenuBar extends React.Component {
                                         >
                                             <FormattedMessage
                                                 defaultMessage="New window"
-                                                // eslint-disable-next-line max-len
+                                                 
                                                 description="Part of desktop app. Menu bar item that creates a new window."
                                                 id="tw.menuBar.newWindow"
                                             />
@@ -653,11 +641,11 @@ class MenuBar extends React.Component {
                                                     {extended.available && (
                                                         <React.Fragment>
                                                             {extended.name !== null && (
-                                                                // eslint-disable-next-line max-len
+                                                                 
                                                                 <MenuItem onClick={this.getSaveToComputerHandler(extended.saveToLastFile)}>
                                                                     <FormattedMessage
                                                                         defaultMessage="Save to {file}"
-                                                                        // eslint-disable-next-line max-len
+                                                                         
                                                                         description="Menu bar item to save project to an existing file on the user's computer"
                                                                         id="tw.saveTo"
                                                                         values={{
@@ -666,11 +654,11 @@ class MenuBar extends React.Component {
                                                                     />
                                                                 </MenuItem>
                                                             )}
-                                                            {/* eslint-disable-next-line max-len */}
+                                                            { }
                                                             <MenuItem onClick={this.getSaveToComputerHandler(extended.saveAsNew)}>
                                                                 <FormattedMessage
                                                                     defaultMessage="Save as..."
-                                                                    // eslint-disable-next-line max-len
+                                                                     
                                                                     description="Menu bar item to select a new file to save the project as"
                                                                     id="tw.saveAs"
                                                                 />
@@ -684,14 +672,14 @@ class MenuBar extends React.Component {
                                                             {extended.available ? (
                                                                 <FormattedMessage
                                                                     defaultMessage="Save to separate file..."
-                                                                    // eslint-disable-next-line max-len
+                                                                     
                                                                     description="Download the project once, without being able to easily save to the same spot"
                                                                     id="tw.oldDownload"
                                                                 />
                                                             ) : (
                                                                 <FormattedMessage
                                                                     defaultMessage="Save to your computer"
-                                                                    description="Menu bar item for downloading a project to your computer" // eslint-disable-line max-len
+                                                                    description="Menu bar item for downloading a project to your computer"  
                                                                     id="gui.menuBar.downloadToComputer"
                                                                 />
                                                             )}
@@ -708,7 +696,7 @@ class MenuBar extends React.Component {
                                             >
                                                 <FormattedMessage
                                                     defaultMessage="Package project"
-                                                    // eslint-disable-next-line max-len
+                                                     
                                                     description="Menu bar item to open the current project in the packager"
                                                     id="tw.menuBar.package"
                                                 />
@@ -865,7 +853,7 @@ class MenuBar extends React.Component {
                                             ) : (
                                                 <FormattedMessage
                                                     defaultMessage="Cloud Variables are not Available"
-                                                    // eslint-disable-next-line max-len
+                                                     
                                                     description="Menu bar item for when cloud variables are not available"
                                                     id="tw.menuBar.cloudUnavailable"
                                                 />
@@ -1002,11 +990,11 @@ class MenuBar extends React.Component {
                                             <ShareButton
                                                 className={styles.menuBarButton}
                                                 isShared={this.props.isShared}
-                                                /* eslint-disable react/jsx-no-bind */
+                                                 
                                                 onClick={() => {
                                                     this.handleClickShare(waitForUpdate);
                                                 }}
-                                                /* eslint-enable react/jsx-no-bind */
+                                                 
                                             />
                                         )
                                     }
@@ -1033,11 +1021,11 @@ class MenuBar extends React.Component {
                                         waitForUpdate => (
                                             <CommunityButton
                                                 className={styles.menuBarButton}
-                                                /* eslint-disable react/jsx-no-bind */
+                                                 
                                                 onClick={() => {
                                                     this.handleClickSeeCommunity(waitForUpdate);
                                                 }}
-                                                /* eslint-enable react/jsx-no-bind */
+                                                 
                                             />
                                         )
                                     }

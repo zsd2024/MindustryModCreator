@@ -41,7 +41,7 @@ class ProjectInput extends React.Component {
             } else {
                 this.input.blur();
             }
-            // eslint-disable-next-line react/no-did-update-set-state
+             
             this.setState({
                 projectId: this.props.projectId
             });

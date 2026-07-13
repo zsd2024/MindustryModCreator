@@ -1,4 +1,4 @@
-/* eslint-disable import/no-commonjs */
+ 
 
 const OLD_PRIMARY_COLOR = '#855cd6';
 

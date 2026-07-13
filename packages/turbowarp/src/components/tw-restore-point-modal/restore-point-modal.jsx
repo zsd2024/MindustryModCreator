@@ -22,13 +22,13 @@ const messages = defineMessages({
     oneMinute: {
         defaultMessage: 'every minute',
         id: 'tw.restorePoints.1minute',
-        // eslint-disable-next-line max-len
+         
         description: 'Part of restore point modal. Appears as dropdown in context "Restore points are created [every minute]"'
     },
     minutes: {
         defaultMessage: 'every {n} minutes',
         id: 'tw.restorePoints.minutes',
-        // eslint-disable-next-line max-len
+         
         description: 'Part of restore point modal. Appears as dropdown in context "Restore points are created [every 5 minutes]". {n} will be replaced with a number greater than 1.'
     }
 });
@@ -88,7 +88,7 @@ const RestorePointModal = props => (
         <div className={styles.body}>
             <p>
                 <FormattedMessage
-                    // eslint-disable-next-line max-len
+                     
                     defaultMessage="{APP_NAME} periodically saves restore points on your computer to help recover your project if you forget to save. This is intended as a last resort for recovery. Your computer may silently delete these restore points at any time. DO NOT rely on this feature."
                     id="tw.restorePoints.description"
                     values={{
@@ -101,7 +101,7 @@ const RestorePointModal = props => (
                 <FormattedMessage
                     defaultMessage="Restore points are created {time}."
                     id="tw.restorePoints.intervalOption"
-                    // eslint-disable-next-line max-len
+                     
                     description="{time} will be replaced with a dropdown with values such as [every 5 minutes] and [never]"
                     values={{
                         time: (
@@ -119,7 +119,7 @@ const RestorePointModal = props => (
                 <p className={styles.disabled}>
                     <FormattedMessage
                         defaultMessage="Disabling restore points is dangerous."
-                        // eslint-disable-next-line max-len
+                         
                         description="Warning that appears in restore point modal when the user has disabled restore points."
                         id="tw.restorePoints.off"
                     />
@@ -131,7 +131,7 @@ const RestorePointModal = props => (
                     <p>
                         <FormattedMessage
                             defaultMessage="Restore points are not available due to an error:"
-                            // eslint-disable-next-line max-len
+                             
                             description="Error message in restore point manager when the list of restore points cannot be loaded. Followed by an error message."
                             id="tw.restorePoints.error"
                             values={{
@@ -188,9 +188,9 @@ const RestorePointModal = props => (
                             </div>
                             <div className={styles.totalSizeDescription}>
                                 <FormattedMessage
-                                    // eslint-disable-next-line max-len
+                                     
                                     defaultMessage="Costumes or sounds used by multiple restore points are only stored once."
-                                    // eslint-disable-next-line max-len
+                                     
                                     description="Part of the restore point modal that explains why the total storage used is less than may be expected."
                                     id="tw.restorePoints.size2"
                                 />

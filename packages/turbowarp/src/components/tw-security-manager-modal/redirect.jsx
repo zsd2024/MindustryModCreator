@@ -14,7 +14,7 @@ const RedirectModal = props => (
         <URL url={props.url} />
         <p>
             <FormattedMessage
-                // eslint-disable-next-line max-len
+                 
                 defaultMessage="This website has not been reviewed by the {APP_NAME} developers. It may contain dangerous or malicious code."
                 description="Part of modal when a project attempts to navigate the current tab using an extension"
                 id="tw.redirect.dangerous"

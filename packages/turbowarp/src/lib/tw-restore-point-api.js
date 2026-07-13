@@ -684,8 +684,7 @@ const deleteLegacyRestorePoint = () => {
     const LEGACY_DATABASE_NAME = 'TW_AutoSave';
     try {
         if (typeof indexedDB !== 'undefined') {
-            const _request = indexedDB.deleteDatabase(LEGACY_DATABASE_NAME);
-            // don't really care what happens to the request at this point
+            indexedDB.deleteDatabase(LEGACY_DATABASE_NAME);
         }
     } catch (e) {
         // ignore

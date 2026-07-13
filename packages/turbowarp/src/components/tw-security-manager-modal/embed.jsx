@@ -31,7 +31,7 @@ const EmbedModal = props => (
         )}
         <p>
             <FormattedMessage
-                // eslint-disable-next-line max-len
+                 
                 defaultMessage="While the embed will be sandboxed, it will still have access to information about your device such as your IP and general location."
                 description="Part of modal when a project attempts to embed another page over the stage"
                 id="tw.embed.risks"

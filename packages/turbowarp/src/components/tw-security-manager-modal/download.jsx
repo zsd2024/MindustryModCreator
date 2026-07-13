@@ -146,7 +146,7 @@ const DownloadModal = props => (
     <div>
         <p>
             <FormattedMessage
-                // eslint-disable-next-line max-len
+                 
                 defaultMessage="The project wants to download a file to your computer. It will be saved as {name} in your downloads folder."
                 description="Part of modal when a project attempts to save a file to someone's downloads folder"
                 id="tw.download.file"
@@ -160,7 +160,7 @@ const DownloadModal = props => (
 
         <p>
             <FormattedMessage
-                // eslint-disable-next-line max-len
+                 
                 defaultMessage="This file has not been reviewed by the {APP_NAME} developers."
                 description="Part of modal when a project attempts to save a file to someone's downloads folder."
                 id="tw.download.danger"
@@ -173,7 +173,7 @@ const DownloadModal = props => (
         {isDefinitelyExecutable(props.name) && (
             <p>
                 <FormattedMessage
-                    // eslint-disable-next-line max-len
+                     
                     defaultMessage="This is an executable file format that may contain malicious code if you run it."
                     description="Part of modal when a project attempts to save a file to someone's downloads folder."
                     id="tw.download.executable"

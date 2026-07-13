@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import ReactDOM from 'react-dom';
 import {resolveFields, getFieldLabel, getFieldDoc, getZhLabel, getZhDoc} from '../../lib/mindustry/resolve-schema';
 import {normalizeType} from '../../lib/mindustry/compound-types';
 import {VANILLA_CONTENT} from '../../lib/mindustry/vanilla-content';

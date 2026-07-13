@@ -14,7 +14,7 @@ export const isNewFunctionSupported = () => {
     if (cachedNewFunctionSupport === null) {
         try {
             // This will throw if blocked by CSP
-            // eslint-disable-next-line no-new
+             
             new Function('');
             cachedNewFunctionSupport = true;
         } catch (e) {
@@ -25,7 +25,7 @@ export const isNewFunctionSupported = () => {
 };
 
 export const findIncompatibleUserscripts = () => {
-    /* eslint-disable max-len */
+     
 
     /** @type {string[]} */
     const errors = [];
@@ -45,7 +45,7 @@ export const findIncompatibleUserscripts = () => {
         }
     }
 
-    /* eslint-enable max-len */
+     
     return errors;
 };
 

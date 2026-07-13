@@ -30,7 +30,7 @@ const WebGlModal = ({intl, ...props}) => (
                     <FormattedMessage {...messages.label} />
                 </h2>
                 <p>
-                    { /* eslint-disable max-len */ }
+                    {   }
                     <FormattedMessage
                         defaultMessage="Unfortunately it looks like your browser or computer {webGlLink}. This technology is needed for Scratch 3.0 to run."
                         description="WebGL missing message"
@@ -50,7 +50,7 @@ const WebGlModal = ({intl, ...props}) => (
                             )
                         }}
                     />
-                    { /* eslint-enable max-len */ }
+                    {   }
                 </p>
 
                 <Box className={styles.buttonRow}>

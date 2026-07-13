@@ -180,7 +180,7 @@ class Backpack extends React.Component {
     async handleRename (id) {
         const item = this.findItemById(id);
         // prompt() returns Promise in desktop app
-        // eslint-disable-next-line no-alert
+         
         const newName = await prompt(this.props.intl.formatMessage(messages.rename), item.name);
         if (!newName) {
             return;

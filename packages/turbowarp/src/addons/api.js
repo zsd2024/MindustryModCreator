@@ -30,7 +30,7 @@ import * as conditionalStyles from './conditional-style';
 import getPrecedence from './addon-precedence';
 import reduxInstance from './redux';
 
-/* eslint-disable no-console */
+ 
 
 const escapeHTML = str => str.replace(/([<>'"&])/g, (_, l) => `&#${l.charCodeAt(0)};`);
 const kebabCaseToCamelCase = str => str.replace(/-([a-z])/g, g => g[1].toUpperCase());
@@ -107,7 +107,7 @@ const removeMutationObserverCallback = callback => {
 };
 
 const getEditorMode = () => {
-    // eslint-disable-next-line no-use-before-define
+     
     const mode = reduxInstance.state.scratchGui.mode;
     if (mode.isEmbedded) return 'embed';
     if (mode.isFullScreen) return 'fullscreen';
@@ -561,7 +561,7 @@ class Tab extends EventTargetShim {
                 const gesture = ScratchBlocks.mainWorkspace.currentGesture_;
                 const block = gesture.targetBlock_;
 
-                // eslint-disable-next-line no-shadow
+                 
                 for (const {callback, workspace, blocks, flyout, comments} of contextMenuCallbacks) {
                     const injectMenu =
                         // Workspace
@@ -605,7 +605,7 @@ class Tab extends EventTargetShim {
             return Promise.reject(new Error('Clipboard API not supported'));
         }
         const items = [
-            // eslint-disable-next-line no-undef
+             
             new ClipboardItem({
                 'image/png': dataURLToBlob(dataURL)
             })

@@ -19,7 +19,7 @@ const GuiThemeMenu = ({
     <MenuItem>
         <div
             className={styles.option}
-            // eslint-disable-next-line react/jsx-no-bind
+             
             onClick={() => onChangeTheme(theme.set('gui', theme.gui === GUI_DARK ? GUI_LIGHT : GUI_DARK))}
         >
             <img

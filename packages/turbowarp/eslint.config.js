@@ -40,7 +40,7 @@ module.exports = [
             'react-hooks': require('eslint-plugin-react-hooks')
         },
         rules: {
-            'no-unused-vars': 'warn',
+            'no-unused-vars': ['warn', {caughtErrors: 'none'}],
             'no-undef': 'error',
             'import/no-unresolved': 'off',
             'react/jsx-uses-vars': 'error',

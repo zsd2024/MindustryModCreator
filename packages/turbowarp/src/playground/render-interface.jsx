@@ -90,7 +90,7 @@ const Footer = () => (
         <div className={styles.footerContent}>
             <div className={styles.footerText}>
                 <FormattedMessage
-                    // eslint-disable-next-line max-len
+                     
                     defaultMessage="{APP_NAME} is not affiliated with Scratch, the Scratch Team, or the Scratch Foundation."
                     description="Disclaimer that TurboWarp is not connected to Scratch"
                     id="tw.footer.disclaimer"
@@ -102,7 +102,7 @@ const Footer = () => (
 
             <div className={styles.footerText}>
                 <FormattedMessage
-                    // eslint-disable-next-line max-len
+                     
                     defaultMessage="Scratch is a project of the Scratch Foundation. It is available for free at {scratchDotOrg}."
                     description="A disclaimer that Scratch requires when referring to Scratch. {scratchDotOrg} is a link with text 'https://scratch.org/'"
                     id="tw.footer.scratchDisclaimer"
@@ -229,8 +229,8 @@ class Interface extends React.Component {
             legacyCompatible: false,
             texturescale: 1.0
         };
-        const bundleEn = {id: '__bundle_en__', kind: 'bundle', name: 'bundle.properties', folderId: 'root_bundles'}; // eslint-disable-line max-len
-        const bundleZh = {id: '__bundle_zh__', kind: 'bundle', name: 'bundle_zh_CN.properties', folderId: 'root_bundles'}; // eslint-disable-line max-len
+        const bundleEn = {id: '__bundle_en__', kind: 'bundle', name: 'bundle.properties', folderId: 'root_bundles'};  
+        const bundleZh = {id: '__bundle_zh__', kind: 'bundle', name: 'bundle_zh_CN.properties', folderId: 'root_bundles'};  
         const bundleKeys = generateBundleKeys(initialAssets, modConfig);
         const initialState = {
             folders: [
@@ -762,7 +762,7 @@ class Interface extends React.Component {
                                 <ProjectInput />
                             </div>
                             {(
-                                // eslint-disable-next-line max-len
+                                 
                                 description.instructions === 'unshared' || description.credits === 'unshared'
                             ) && (
                                 <div className={classNames(styles.infobox, styles.unsharedUpdate)}>
@@ -793,7 +793,7 @@ class Interface extends React.Component {
                                     </p>
                                     <p>
                                         <FormattedMessage
-                                            // eslint-disable-next-line max-len
+                                             
                                             defaultMessage="If the project was shared recently, this message may appear incorrectly for a few minutes."
                                             description="Appears on unshared projects"
                                             id="tw.unshared.cache"
@@ -801,7 +801,7 @@ class Interface extends React.Component {
                                     </p>
                                     <p>
                                         <FormattedMessage
-                                            // eslint-disable-next-line max-len
+                                             
                                             defaultMessage="If this project is actually shared, please report a bug."
                                             description="Appears on unshared projects"
                                             id="tw.unshared.bug"
@@ -826,7 +826,7 @@ class Interface extends React.Component {
                             <div className={styles.section}>
                                 <p>
                                     <FormattedMessage
-                                        // eslint-disable-next-line max-len
+                                         
                                         defaultMessage="{APP_NAME} is a Scratch mod that compiles projects to JavaScript to make them run really fast. Try it out by inputting a project ID or URL above or choosing a featured project below."
                                         description="Description of TurboWarp on the homepage"
                                         id="tw.home.description"

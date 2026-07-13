@@ -44,7 +44,7 @@ const FontModal = props => (
                             </div>
                             <div className={styles.openButtonTextSub}>
                                 <FormattedMessage
-                                    // eslint-disable-next-line max-len
+                                     
                                     defaultMessage="May work in Scratch, but will not appear correctly for everyone."
                                     description="Part of font management modal"
                                     id="tw.fonts.system2"
@@ -72,7 +72,7 @@ const FontModal = props => (
                             <div className={styles.openButtonTextSub}>
                                 <FormattedMessage
                                     defaultMessage="Usually will not work in Scratch. Supported formats: {formats}."
-                                    // eslint-disable-next-line max-len
+                                     
                                     description="Part of font management modal. Appears under option to add a font from a local file. {formats} is replace with a comma-separated list of file formats like '.ttf, .otf'"
                                     id="tw.fonts.custom2"
                                     values={{

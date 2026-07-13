@@ -1,5 +1,5 @@
 import React from 'react';
-import {getBundlePrefix, generateBundleKeys} from '../../lib/mindustry/content-type-utils';
+import {generateBundleKeys} from '../../lib/mindustry/content-type-utils';
 import styles from './mindustry-bundle-editor.css';
 
 class BundleEditor extends React.Component {

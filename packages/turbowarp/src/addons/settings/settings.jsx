@@ -39,10 +39,10 @@ import {applyGuiColors} from '../../lib/themes/guiHelpers.js';
 import {APP_NAME} from '../../lib/brand.js';
 import '../../lib/normalize.css';
 
-/* eslint-disable no-alert */
-/* eslint-disable no-console */
-/* eslint-disable react/no-multi-comp */
-/* eslint-disable react/jsx-no-bind */
+ 
+ 
+ 
+ 
 
 // messagesByLocale only has the non-English strings, so we have to add English as a supported
 // locale so that a non-English device with their editor language set to English gets English.
@@ -485,7 +485,7 @@ Setting.propTypes = {
         })),
         if: PropTypes.shape({
             addonEnabled: PropTypes.oneOfType([PropTypes.string, PropTypes.arrayOf(PropTypes.string)]),
-            // eslint-disable-next-line react/forbid-prop-types
+             
             settings: PropTypes.object
         })
     }),
@@ -1160,7 +1160,7 @@ class AddonSettingsComponent extends React.Component {
                                 >
                                     {this.state.extended ?
                                         // Don't bother translating, pretty much no one will ever see this.
-                                        // eslint-disable-next-line max-len
+                                         
                                         `You have enabled debug mode. (Addons version ${upstreamMeta.commit})` :
                                         `Addons version ${upstreamMeta.commit}`}
                                 </span>

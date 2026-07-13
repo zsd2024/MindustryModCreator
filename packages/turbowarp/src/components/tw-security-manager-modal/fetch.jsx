@@ -13,7 +13,7 @@ const FetchModal = props => (
         <URL url={props.url} />
         <p>
             <FormattedMessage
-                // eslint-disable-next-line max-len
+                 
                 defaultMessage="This could be used to download images or sounds, implement multiplayer, access an API, or for malicious purposes. This will share your IP address, general location, and possibly other data with the website."
                 description="Part of modal shown when a project asks for permission to fetch a URL using an extension"
                 id="tw.securityManager.why"

@@ -1,7 +1,7 @@
 // This file is imported from
 // https://github.com/ScratchAddons/ScratchAddons/blob/master/addon-api/content-script/contextmenu.js
 
-/* eslint-disable */
+ 
 
 let initialized = false;
 let hasDynamicContextMenu = false;

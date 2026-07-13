@@ -25,7 +25,7 @@ const messages = defineMessages({
     }
 });
 
-/* eslint-disable react/prefer-stateless-function */
+ 
 class LibraryItemComponent extends React.PureComponent {
     render () {
         const favoriteMessage = this.props.intl.formatMessage(
@@ -105,7 +105,7 @@ class LibraryItemComponent extends React.PureComponent {
                             >
                                 <FormattedMessage
                                     defaultMessage="Documentation"
-                                    // eslint-disable-next-line max-len
+                                     
                                     description="Appears in the extension list. Links to additional extension documentation."
                                     id="tw.documentation"
                                 />
@@ -120,7 +120,7 @@ class LibraryItemComponent extends React.PureComponent {
                             >
                                 <FormattedMessage
                                     defaultMessage="Sample project"
-                                    // eslint-disable-next-line max-len
+                                     
                                     description="Appears in the extension list. Links to a sample project for an extension."
                                     id="tw.sample"
                                 />
@@ -249,7 +249,7 @@ class LibraryItemComponent extends React.PureComponent {
         );
     }
 }
-/* eslint-enable react/prefer-stateless-function */
+ 
 
 
 LibraryItemComponent.propTypes = {

@@ -1,4 +1,12 @@
-<!doctype html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="google" value="notranslate"><title>Embedded Project - TurboWarp</title><style>.splash-screen {
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="google" value="notranslate">
+    <title>Embedded Project - TurboWarp</title>
+    <style>
+      .splash-screen {
         position: absolute;
         width: 100%;
         height: 100%;
@@ -29,7 +37,22 @@
       @keyframes splash-spinner {
         0% { transform: rotate(0deg); }
         100% { transform: rotate(360deg); }
-      }</style></head><body><noscript><div class="splash-screen"><h1>This embed requires JavaScript</h1></div></noscript><div class="splash-screen" hidden id="splash-need-js"><div class="splash-spinner"></div></div><script>(function() {
+      }
+    </style>
+  <script defer src="js/vendors-node_modules_css-loader_dist_runtime_api_js-node_modules_css-loader_dist_runtime_sour-a51848.js"></script><script defer src="js/vendors-node_modules_lodash_defaultsdeep_index_js.js"></script><script defer src="js/vendors-node_modules_microbit_microbit-universal-hex_dist_esm5_universal-hex_js-node_modules_-123ae0.js"></script><script defer src="js/src_components_tw-fancy-checkbox_checkbox_jsx-src_lib_brand_js-src_lib_detect-locale_js-src_l-3f584e.js"></script><script defer src="js/src_addons_entry_js-src_containers_tw-windchime-submitter_jsx-src_lib_app-state-hoc_jsx-src_l-447b02.js"></script><script defer src="js/embed.js"></script></head>
+  <body>
+    <noscript>
+      <div class="splash-screen">
+        <h1>This embed requires JavaScript</h1>
+      </div>
+    </noscript>
+
+    <div class="splash-screen" hidden id="splash-need-js">
+      <div class="splash-spinner"></div>
+    </div>
+
+    <script>
+      (function() {
         'use strict';
 
         var splash = document.getElementById('splash-need-js');
@@ -38,4 +61,9 @@
         window.SplashEnd = () => {
           splash.hidden = true;
         };
-      }());</script><div id="app"></div><script src="js/pentapod/vendors~addon-settings~credits~editor~embed~fullscreen~mindustry~player.4e4dc7e6c061d12ea5b8.js"></script><script src="js/pentapod/vendors~addon-settings~credits~editor~embed~fullscreen~player.ebe753a2627c116b0deb.js"></script><script src="js/pentapod/vendors~editor~embed~fullscreen~player.0b6ccfc1f9977dcaf93d.js"></script><script src="js/pentapod/addon-settings~embed.2b64e57abf3dd79b4015.js"></script><script src="js/pentapod/embed.5738de37f1ae4c8fe342.js"></script></body></html>
+      }());
+    </script>
+
+    <div id="app"></div>
+  </body>
+</html>

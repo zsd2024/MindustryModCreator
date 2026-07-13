@@ -11,7 +11,6 @@ import VM from 'scratch-vm';
 
 import Blocks from '../../containers/blocks.jsx';
 import CostumeTab from '../../containers/costume-tab.jsx';
-import TargetPane from '../../containers/target-pane.jsx';
 import SoundTab from '../../containers/sound-tab.jsx';
 import StageWrapper from '../../containers/stage-wrapper.jsx';
 import Loader from '../loader/loader.jsx';
@@ -139,7 +138,6 @@ const GUIComponent = props => {
         onDeleteAsset,
         onExport,
         onImportProject,
-        contentType,
         folders,
         selectedFolderId,
         onSelectFolder,
@@ -175,7 +173,6 @@ const GUIComponent = props => {
         onTelemetryModalOptIn,
         onTelemetryModalOptOut,
         securityManager,
-        selectedContentType,
         selectedContentData,
         showComingSoon,
         showOpenFilePicker,
@@ -195,18 +192,6 @@ const GUIComponent = props => {
         vm,
         ...componentProps
     } = omit(props, 'dispatch');
-    if (children) {
-        return <Box {...componentProps}>{children}</Box>;
-    }
-
-    const tabClassNames = {
-        tabs: styles.tabs,
-        tab: classNames(tabStyles.reactTabsTab, styles.tab),
-        tabList: classNames(tabStyles.reactTabsTabList, styles.tabList),
-        tabPanel: classNames(tabStyles.reactTabsTabPanel, styles.tabPanel),
-        tabPanelSelected: classNames(tabStyles.reactTabsTabPanelSelected, styles.isSelected),
-        tabSelected: classNames(tabStyles.reactTabsTabSelected, styles.isSelected)
-    };
 
     const [rightWidth, setRightWidth] = useState(360);
     const dragStartX = useRef(0);
@@ -234,6 +219,19 @@ const GUIComponent = props => {
         document.addEventListener('mousemove', onMove);
         document.addEventListener('mouseup', onUp);
     }, [rightWidth]);
+
+    if (children) {
+        return <Box {...componentProps}>{children}</Box>;
+    }
+
+    const tabClassNames = {
+        tabs: styles.tabs,
+        tab: classNames(tabStyles.reactTabsTab, styles.tab),
+        tabList: classNames(tabStyles.reactTabsTabList, styles.tabList),
+        tabPanel: classNames(tabStyles.reactTabsTabPanel, styles.tabPanel),
+        tabPanelSelected: classNames(tabStyles.reactTabsTabPanelSelected, styles.isSelected),
+        tabSelected: classNames(tabStyles.reactTabsTabSelected, styles.isSelected)
+    };
 
     const unconstrainedWidth = (
         UNCONSTRAINED_NON_STAGE_WIDTH +

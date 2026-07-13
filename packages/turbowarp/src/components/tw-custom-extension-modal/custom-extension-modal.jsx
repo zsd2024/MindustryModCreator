@@ -38,7 +38,7 @@ const CustomExtensionModal = props => (
                 >
                     <FormattedMessage
                         defaultMessage="URL"
-                        // eslint-disable-next-line max-len
+                         
                         description="Button to choose to load an extension from a remote URL. Not much space, so keep this short."
                         id="tw.customExtensionModal.url"
                     />
@@ -51,7 +51,7 @@ const CustomExtensionModal = props => (
                 >
                     <FormattedMessage
                         defaultMessage="Files"
-                        // eslint-disable-next-line max-len
+                         
                         description="Button to choose to load an extension from one or more local files. Not much space, so keep this short."
                         id="tw.customExtensionModal.file"
                     />
@@ -64,7 +64,7 @@ const CustomExtensionModal = props => (
                 >
                     <FormattedMessage
                         defaultMessage="Text"
-                        // eslint-disable-next-line max-len
+                         
                         description="Button to choose to load an extension from a text input. Not much space, so keep this short."
                         id="tw.customExtensionModal.text"
                     />
@@ -142,13 +142,13 @@ const CustomExtensionModal = props => (
                     {props.unsandboxed && (
                         <p className={styles.unsandboxedWarning}>
                             <FormattedMessage
-                                // eslint-disable-next-line max-len
+                                 
                                 defaultMessage="Loading extensions without the sandbox is dangerous and should not be enabled if you don't know what you're doing."
                                 description="Warning that appears when disabling extension security sandbox"
                                 id="tw.customExtensionModal.unsandboxedWarning1"
                             />
                             <FormattedMessage
-                                // eslint-disable-next-line max-len
+                                 
                                 defaultMessage="Unsandboxed extensions can corrupt your project, delete your settings, phish for passwords, and other bad things. The {APP_NAME} developers are not responsible for any resulting issues."
                                 description="Warning that appears when disabling extension security sandbox"
                                 id="tw.customExtensionModal.unsandboxedWarning2"
@@ -163,7 +163,7 @@ const CustomExtensionModal = props => (
                 props.unsandboxed ? (
                     <p className={styles.trustedExtension}>
                         <FormattedMessage
-                            // eslint-disable-next-line max-len
+                             
                             defaultMessage="This extension will be loaded without the sandbox because it is from a trusted source."
                             description="Message that appears in custom extension prompt"
                             id="tw.customExtensionModal.trusted"
@@ -172,7 +172,7 @@ const CustomExtensionModal = props => (
                 ) : (
                     <p>
                         <FormattedMessage
-                            // eslint-disable-next-line max-len
+                             
                             defaultMessage="Extensions from untrusted URLs will always be loaded with the sandbox for security."
                             description="Message that appears in custom extension prompt"
                             id="tw.customExtensionModal.untrusted"

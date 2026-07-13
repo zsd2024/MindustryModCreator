@@ -7,7 +7,7 @@ import SecurityManagerModal from '../components/tw-security-manager-modal/securi
 import SecurityModals from '../lib/tw-security-manager-constants';
 import {getPersistedUnsandboxed, setPersistedUnsandboxed} from '../lib/tw-persisted-unsandboxed.js';
 
-/* eslint-disable require-atomic-updates */
+ 
 
 /**
  * Set of extension URLs that the user has manually trusted to load unsandboxed.
