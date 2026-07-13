@@ -47,7 +47,7 @@ const CONTENT_TYPE_LABELS = {
 
 const RESEARCH_CONTENT_TYPES = ['Block', 'Item', 'Liquid', 'UnitType', 'SectorPreset', 'Planet'];
 const ENHANCED_RESEARCH = {
-    parent: {type: 'Block', localizedName: '父节点'},
+    parent: {localizedName: '父节点'},
     objectives: {
         type: 'array',
         items: {
@@ -768,7 +768,7 @@ class MindustryJsonEditor extends React.Component {
         );
     }
 
-    renderSubFieldControl (enhanced, subValue, onChange, subCkey) {
+    renderSubFieldControl (enhanced, subValue, onChange, subCkey, parentFieldName) {
         const value = subValue === void 0 ? this.parseDefault(enhanced) : subValue;
         if (enhanced.name === 'objectives' && enhanced.type === 'array') {
             return this.renderObjectivesArray(enhanced, value, subCkey, (name, val) => {
@@ -782,6 +782,20 @@ class MindustryJsonEditor extends React.Component {
         }
         if (enhanced.type === 'object' && enhanced.fields) {
             return this.renderObjectField(enhanced, value, subCkey);
+        }
+        if (enhanced.name === 'parent' && parentFieldName === 'research') {
+            const allContent = this.getAllContentOptions();
+            const options = allContent.map(item => ({value: item.name, cn: item.cn, type: item.type}));
+            return (
+                <SearchableSelect
+                    options={options}
+                    value={value}
+                    onChange={onChange}
+                    ddKey={subCkey}
+                    labelMap={CONTENT_TYPE_LABELS}
+                    visibleTypes={RESEARCH_CONTENT_TYPES}
+                />
+            );
         }
         return this.renderControlInline(enhanced, value, onChange, subCkey);
     }
@@ -821,7 +835,7 @@ class MindustryJsonEditor extends React.Component {
                                     enhanced.localizedName || enhanced.name}
                             </span>
                             <div className={styles.nestedFieldControl}>
-                                {this.renderSubFieldControl(enhanced, subValue, onSubChange, subCkey)}
+                                 {this.renderSubFieldControl(enhanced, subValue, onSubChange, subCkey, field.name)}
                             </div>
                         </div>
                     );

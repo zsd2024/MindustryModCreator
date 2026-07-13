@@ -18,7 +18,8 @@ React class component. Key rendering flow:
 ### Key References
 - `REFERENCE_TYPES` (line 49-53): Set of content type names
 - `ENUM_VALUES` (line 14-23): Hardcoded enum options keyed by field name
-- `ENHANCED_RESEARCH` (line 24-28): Research field has `parent` (content ref) + `objectives` (custom type-discriminated editor) + `requirements`
+- `ENHANCED_RESEARCH` (line 49-67): Research field sub-field overrides: `parent` (all content types, localizedName: '父节点') + `objectives` (custom type-discriminated array) + `requirements` (StackRequirement array) + `root`/`requiresUnlock` (booleans with localizedName)
+- `RESEARCH_CONTENT_TYPES` (line 48): Filter categories for research-related fields: Block, Item, Liquid, UnitType, SectorPreset, Planet
 - `OBJECTIVE_TYPE_DEFS` (line 24-50): 5 objective types (Produce/Research/SectorComplete/OnSector/OnPlanet) each with type-specific sub-fields
 - `renderObjectivesArray()`: Custom array renderer for `objectives` — type dropdown + dynamic sub-fields based on selected type. Handles backward-compatible string items with convert-to-object button.
 
@@ -36,7 +37,9 @@ React class component. Key rendering flow:
 ### renderArrayField
 - For array of objects: shows nested field rows
 - For array of primitives: shows list with add/remove
-- `renderSubFieldControl` intercepts `name === 'objectives'` before generic array handling
+- `renderSubFieldControl(enhanced, subValue, onChange, subCkey, parentFieldName)` — 5th param `parentFieldName` identifies the parent object field (e.g., `'research'`)
+- When `name === 'parent' && parentFieldName === 'research'`: shows all researchable content (Block/Item/Liquid/UnitType/SectorPreset/Planet) with category filter tabs via SearchableSelect
+- Intercepts `name === 'objectives'` before generic array handling
 
 ### renderObjectivesArray
 - Type-discriminated renderer for `objectives` array

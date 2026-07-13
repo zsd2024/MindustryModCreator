@@ -2,6 +2,49 @@
 
 ## 2026-07-12
 
+### 新增: 中文翻译全面修校 (Pass 1-3)
+- 创建缺失的 TetheredUnitType.json zh_CN 文件
+- 修复 17 个空字段 zh_CN 文件
+- 新增 1797+ 个字段翻译（localizedName + notes）
+- 修复 488 处 notes 缺少 **Notes**: 标记的格式问题
+- 读取本地 Mindustry 源码 (`core/src/mindustry/`) 为所有字段添加准确的 JavaDoc 翻译和补充说明
+- 替换低质量占位 notes 为基于源码分析的正式中文文档
+- 覆盖 133 个 zh_CN 文件，共修改 10139 行
+
+### 修复: terminology 统一
+- "瓦片" → "图格"（更新 8 个文件，统一 Mindustry 社区术语）
+- research.json 补充 6 个科技树子字段翻译（parent, requirements, objectives, root, name, requiresUnlock）
+
+### 重构: 下拉框提取为 SearchableSelect 组件
+- 新建 `searchable-select.jsx` + `.css` 独立组件
+- 内聚管理 open/close/search 状态和 portal 定位
+- 替换 `renderSearchableSelect`、`renderContentSelect`、`getDropdownPortalStyle` 等旧代码
+- 替换全部 `_dd` 状态+`handleEnum*`/`handleContent*` 事件处理
+
+### 修复: 科技树目标编辑器增强
+- `root`/`requiresUnlock` 添加 localizedName（根节点/需要前置解锁）
+- 目标类型下拉改用 SearchableSelect，显示中文标签（生产/研究/通关关卡/在某关卡/在某行星）
+- 目标内容/关卡/行星字段改用 SearchableSelect，根据目标类型动态筛选内容列表（Produce→Item+UnitType+Block，Research→Block 等）
+
+### 新增: SearchableSelect 多类型分类筛选
+- 选项携带 `type` 字段时自动检测多类型
+- 类型 >= 2 时显示 pill 样式的分类筛选按钮
+- `visibleTypes` prop 控制显示的筛选类型（Research 字段只显示 Block/Item/Liquid/UnitType/SectorPreset/Planet）
+- `labelMap` prop 映射类型英文→中文标签
+
+## 2026-07-13
+
+### 修复: 补全 VANILLA_CONTENT 缺失内容类型
+- 新增 Planet (4 个行星), SectorPreset (51 个关卡), Weather (5 种天气), Sound (60+ 音效), BulletType (50+ 子弹类型)
+- 修复 SectorComplete/OnSector/OnPlanet 目标类型下拉为空的问题
+
+### 修复: research 父节点字段支持全内容筛选
+- 移除 `ENHANCED_RESEARCH.parent` 的 `type: 'Block'` 限制
+- `renderSubFieldControl` 新增 `parentFieldName` 参数
+- parent 字段现在显示全 Research 内容类型（Block/Item/Liquid/UnitType/SectorPreset/Planet）并支持分类筛选
+
+## 2026-07-12
+
 ### 新增: objectives 类型鉴别编辑器
 - `renderObjectivesArray` 自定义数组渲染器，根据 objective type 动态显示对应子字段
 - 支持 5 种 Mindustry 目标类型: Produce, Research, SectorComplete, OnSector, OnPlanet
