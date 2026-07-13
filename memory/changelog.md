@@ -98,6 +98,28 @@
 - WallCrafter: 贴壁钻机→墙壁粉碎机
 - BurstDrill: 脉冲钻机→冲击钻头
 
+## 2026-07-13
+
+### 新增: 撤销/重做 (Ctrl+Z/Ctrl+Shift+Z)
+- 编辑器内建 undoStack（最多 50 条）
+- 文本输入 blur 时保存快照，其他操作即时保存（debounce 模式）
+- 编辑器 focus 时生效，header 按钮显示撤销/重做
+- handleChange 使用 debounce 避免每字符快照
+
+### 新增: 字段恢复默认按钮
+- 每个字段（含嵌套字段）右侧显示 settings_backup_restore 图标
+- 点击恢复 parseDefault 值并记入撤销历史
+- 嵌套字段通过 onSubChange 正确更新父路径
+
+### 修复: 预览面板空列表过滤
+- diffData 跳过 `(Array.isArray(v) && v.length === 0)`
+- 清空数组后不再显示 `requirements: []`
+
+### 重构: Emoji → Material Icons
+- 新增 material-symbols 依赖
+- 替换全部 Mindustry 组件中的 emoji 为 Material Symbols
+- 影响文件: searchable-select, mod-editor, asset-cards, json-editor
+
 ## Earlier
 - forceTeam 初始实现（NAME_TO_TYPE 方式）
 - research 字段增强：parent 选择器显示所有内容类型
