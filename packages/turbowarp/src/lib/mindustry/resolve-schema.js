@@ -181,6 +181,8 @@ const diffData = function (contentType, currentData) {
     const defaults = computeDefaults(contentType);
     const result = {};
     for (const key of Object.keys(currentData)) {
+        const v = currentData[key];
+        if (Array.isArray(v) && v.length === 0) continue;
         const dv = defaults[key];
         if (dv === void 0) {
             result[key] = currentData[key];
