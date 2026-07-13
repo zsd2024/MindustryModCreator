@@ -213,3 +213,9 @@
 .arrayAddBtn:hover {
   opacity: 0.9;
 }
+
+.tagRemove :global(.material-symbols-outlined) {
+    font-size: 14px;
+    vertical-align: middle;
+    margin-left: 4px;
+}

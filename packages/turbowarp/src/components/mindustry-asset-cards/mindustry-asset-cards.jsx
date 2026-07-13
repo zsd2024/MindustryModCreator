@@ -115,32 +115,27 @@ const CATEGORIES = [
  * @returns {string} icon path
  */
 const iconForAsset = function (asset) {
-    if (asset.kind === 'modconfig') return '\u2699\uFE0F';
-    if (asset.kind === 'java') return '\u2615';
-    const ct = asset.contentType;
-    if (!ct) return '\uD83D\uDCC4';
-    if (['Wall', 'Block', 'Floor', 'Prop'].includes(ct)) return '\uD83E\uDDF1';
-    if (ct === 'Item' || ct === 'Liquid') return '\uD83D\uDC8E';
-    if (ct.includes('Turret') || ct === 'Weapon') return '\uD83C\uDFAF';
-    if (ct.includes('Bullet')) return '\uD83D\uDCA5';
-    if (ct.includes('Conveyor') || ct.includes('Duct') ||
-        ct.includes('Router') || ct.includes('Sorter')) return '\u2699\uFE0F';
-    if (ct.includes('Drill') || ct.includes('Pump')) return '\u26CF\uFE0F';
-    if (ct.includes('Generator') || ct.includes('Reactor') ||
-        ct.includes('Battery') || ct.includes('Power')) return '\u26A1';
-    if (ct.includes('Unit') || ct.includes('Factory') ||
-        ct.includes('Assembler') || ct.includes('Reconstructor')) return '\uD83E\uDD16';
-    if (ct.includes('Force') || ct.includes('Overdrive') ||
-        ct.includes('Shield') || ct.includes('Mine')) return '\uD83D\uDEE1\uFE0F';
-    if (ct.includes('Ability')) return '\u2728';
-    if (ct.includes('Crafter') || ct.includes('Separator') ||
-        ct.includes('Fracker') || ct.includes('Incinerator')) return '\uD83C\uDFED';
-    if (ct.includes('Bridge') || ct.includes('MassDriver') || ct.includes('Launch')) return '\uD83D\uDCE1';
-    if (ct.includes('Effect') || ct.includes('Weather')) return '\uD83C\uDF0A';
-    if (ct === 'SectorPreset') return '\uD83C\uDF0D';
-    if (ct === 'Planet') return '\uD83E\uDE90';
-    if (ct === 'TeamEntry') return '\uD83C\uDFC6';
-    return '\uD83D\uDCC4';
+    if (!asset) return 'description';
+    if (asset.kind === 'modconfig') return 'settings';
+    if (asset.kind === 'java') return 'code';
+    const ct = asset.contentType || '';
+    if (/^(Wall|Block|Floor|Prop|Ore|Overlay)/.test(ct)) return 'grid_view';
+    if (/^(Item|Liquid|CellLiquid)/.test(ct)) return 'diamond';
+    if (/(Turret|Weapon)/.test(ct)) return 'ads_click';
+    if (/Bullet/.test(ct)) return 'explosion';
+    if (/(Conveyor|Duct|Router|Sorter|Junction|Bridge)/.test(ct)) return 'alt_route';
+    if (/(Drill|Pump)/.test(ct)) return 'hardware';
+    if (/(Generator|Reactor|Battery|Power|Consumer)/.test(ct)) return 'bolt';
+    if (/(UnitType|Mech|Legs|Tank|Naval|Payload|Erekir|Factory|Assembler|Reconstructor)/.test(ct)) return 'smart_toy';
+    if (/(Force|Overdrive|Shield|Mine|Mend|Repair|Projector)/.test(ct)) return 'shield';
+    if (/Ability/.test(ct)) return 'auto_awesome';
+    if (/(Crafter|Separator|Fracker|Incinerator|Attribute)/.test(ct)) return 'factory';
+    if (/(MassDriver|Launch)/.test(ct)) return 'satellite_alt';
+    if (/(Effect|Weather|Particle)/.test(ct)) return 'water_drop';
+    if (/Sector/.test(ct)) return 'public';
+    if (/Planet/.test(ct)) return 'language';
+    if (/Team/.test(ct)) return 'emoji_events';
+    return 'description';
 };
 
 class AssetCards extends React.Component {
@@ -383,7 +378,7 @@ class AssetCards extends React.Component {
                         const cardContent = (
                             <React.Fragment>
                                 <div className={styles.cardIconArea}>
-                                    <span className={styles.cardIcon}>{iconForAsset(asset)}</span>
+                                    <span className={`${styles.cardIcon} material-symbols-outlined`}>{iconForAsset(asset)}</span>
                                     <span
                                         className={`${styles.cardBadge} ${
                                             asset.kind === 'content' ? styles.badgeJson :

@@ -64,7 +64,7 @@ class ModEditor extends React.Component {
                     onChange(key, next);
                   }}
                 >
-                  ✕
+                  <span className="material-symbols-outlined">close</span>
                 </span>
               </span>
             ))}

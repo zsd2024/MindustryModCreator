@@ -84,7 +84,9 @@ class SearchableSelect extends React.Component {
                     <span className={styles.selectDisplayLabel}>
                         {selected ? selected.cn : (value || placeholder || '--')}
                     </span>
-                    <span className={styles.selectArrow}>{open ? '▲' : '▼'}</span>
+                    <span className={styles.selectArrow}>
+                        <span className="material-symbols-outlined">{open ? 'expand_less' : 'expand_more'}</span>
+                    </span>
                 </div>
             </div>
         );

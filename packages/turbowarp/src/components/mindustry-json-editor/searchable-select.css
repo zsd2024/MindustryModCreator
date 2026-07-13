@@ -164,3 +164,9 @@
   color: $ui-white;
   opacity: 1;
 }
+
+.selectArrow :global(.material-symbols-outlined) {
+    font-size: 20px;
+    line-height: 1;
+    vertical-align: middle;
+}
