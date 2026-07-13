@@ -913,7 +913,7 @@ class MindustryJsonEditor extends React.Component {
                             </div>
                             <button
                                 className={styles.resetBtn}
-                                onClick={() => this.handleResetField(enhanced.name, enhanced)}
+                                onClick={() => onSubChange(this.parseDefault(enhanced))}
                                 title="恢复默认"
                             >
                                 <span className="material-symbols-outlined">settings_backup_restore</span>
