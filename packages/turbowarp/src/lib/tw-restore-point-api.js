@@ -265,7 +265,6 @@ const removeExtraneousRestorePoints = () => openDB().then(db => new Promise((res
     };
 }));
 
-// eslint-disable-next-line valid-jsdoc
 /**
  * @param {VirtualMachine} vm scratch-vm instance
  * @returns {Promise<{type: string; data: ArrayBuffer;}>} Thumbnail data
@@ -611,7 +610,6 @@ const loadRestorePoint = (vm, id) => openDB().then(db => new Promise((resolvePro
     loadProjectJSON();
 }));
 
-// eslint-disable-next-line valid-jsdoc
 /**
  * @returns {Promise<{totalSize: number; restorePoints: Array<Manifest & {id: number}>}>} Restore point information.
  */

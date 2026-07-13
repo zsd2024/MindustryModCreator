@@ -169,7 +169,6 @@ class TWSecurityManagerComponent extends React.Component {
         }
     }
 
-    // eslint-disable-next-line valid-jsdoc
     /**
      * @returns {Promise<() => Promise<boolean>>} Resolves with a function that you can call to show the modal.
      * The resolved function returns a promise that resolves with true if the request was approved.

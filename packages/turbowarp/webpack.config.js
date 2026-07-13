@@ -2,14 +2,8 @@ const defaultsDeep = require('lodash.defaultsdeep');
 const path = require('path');
 const webpack = require('webpack');
 
-// Plugins
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-
-// PostCss
-const autoprefixer = require('autoprefixer');
-const postcssVars = require('postcss-simple-vars');
-const postcssImport = require('postcss-import');
 
 const STATIC_PATH = process.env.STATIC_PATH || '/static';
 const {APP_NAME} = require('./src/lib/brand');
@@ -25,19 +19,18 @@ const htmlWebpackPluginCommon = {
     APP_NAME
 };
 
-// When this changes, the path for all JS files will change, bypassing any HTTP caches
 const CACHE_EPOCH = 'pentapod';
 
 const base = {
     mode: process.env.NODE_ENV === 'production' ? 'production' : 'development',
     devtool: process.env.SOURCEMAP || (process.env.NODE_ENV === 'production' ? false : 'cheap-module-source-map'),
     devServer: {
-        contentBase: path.resolve(__dirname, 'build'),
+        static: {
+            directory: path.resolve(__dirname, 'build')
+        },
         host: '0.0.0.0',
-        disableHostCheck: true,
         compress: true,
         port: process.env.PORT || 8601,
-        // allows ROUTING_STYLE=wildcard to work properly
         historyApiFallback: {
             rewrites: [
                 {from: /^\/\d+\/?$/, to: '/index.html'},
@@ -63,58 +56,64 @@ const base = {
     },
     resolve: {
         symlinks: false,
+        fallback: {
+            buffer: require.resolve('buffer'),
+            os: require.resolve('os-browserify'),
+            url: require.resolve('url/')
+        },
         alias: {
             'text-encoding$': path.resolve(__dirname, 'src/lib/tw-text-encoder'),
             'scratch-render-fonts$': path.resolve(__dirname, 'src/lib/tw-scratch-render-fonts')
         }
     },
+    resolveLoader: {
+        alias: {
+            'worker-loader': require.resolve('worker-loader')
+        }
+    },
     module: {
-        rules: [{
-            test: /\.jsx?$/,
-            loader: 'babel-loader',
-            include: [
-                path.resolve(__dirname, 'src'),
-                /node_modules[\\/]scratch-[^\\/]+[\\/]src/,
-                /node_modules[\\/]pify/,
-                /node_modules[\\/]@vernier[\\/]godirect/
-            ],
-            options: {
-                // Explicitly disable babelrc so we don't catch various config
-                // in much lower dependencies.
-                babelrc: false,
-                plugins: [
-                    ['react-intl', {
-                        messagesDir: './translations/messages/'
-                    }]],
-                presets: ['@babel/preset-env', '@babel/preset-react']
+        rules: [
+            {
+                test: /\.jsx?$/,
+                loader: 'babel-loader',
+                include: [
+                    path.resolve(__dirname, 'src'),
+                    /node_modules[\\/]scratch-[^\\/]+[\\/]src/,
+                    /node_modules[\\/]pify/,
+                    /node_modules[\\/]@vernier[\\/]godirect/
+                ],
+                options: {
+                    babelrc: false,
+                    plugins: [
+                        ['react-intl', {
+                            messagesDir: './translations/messages/'
+                        }]
+                    ],
+                    presets: ['@babel/preset-env', '@babel/preset-react']
+                }
+            },
+            {
+                test: /\.css$/,
+                use: [
+                    'style-loader',
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            modules: {
+                                localIdentName: '[name]_[local]_[hash:base64:5]'
+                            },
+                            importLoaders: 1,
+                            sourceMap: true
+                        }
+                    },
+                    'postcss-loader'
+                ]
+            },
+            {
+                test: /\.sb3$/,
+                use: [path.resolve(__dirname, 'webpack/loaders/arraybuffer-loader.js')]
             }
-        },
-        {
-            test: /\.css$/,
-            use: [{
-                loader: 'style-loader'
-            }, {
-                loader: 'css-loader',
-                options: {
-                    modules: true,
-                    importLoaders: 1,
-                    localIdentName: '[name]_[local]_[hash:base64:5]',
-                    camelCase: true
-                }
-            }, {
-                loader: 'postcss-loader',
-                options: {
-                    ident: 'postcss',
-                    plugins: function () {
-                        return [
-                            postcssImport,
-                            postcssVars,
-                            autoprefixer
-                        ];
-                    }
-                }
-            }]
-        }]
+        ]
     },
     plugins: [
         new CopyWebpackPlugin({
@@ -142,7 +141,6 @@ if (!process.env.CI) {
 }
 
 module.exports = [
-    // to run editor examples
     defaultsDeep({}, base, {
         entry: {
             'editor': './src/playground/editor.jsx',
@@ -160,11 +158,14 @@ module.exports = [
             rules: base.module.rules.concat([
                 {
                     test: /\.(svg|png|wav|mp3|gif|jpg|woff2|hex)$/,
-                    loader: 'url-loader',
-                    options: {
-                        limit: 2048,
-                        outputPath: 'static/assets/',
-                        esModule: false
+                    type: 'asset',
+                    parser: {
+                        dataUrlCondition: {
+                            maxSize: 2048
+                        }
+                    },
+                    generator: {
+                        filename: 'static/assets/[name].[contenthash:8][ext]'
                     }
                 }
             ])
@@ -198,7 +199,7 @@ module.exports = [
                 chunks: ['mindustry'],
                 template: 'src/playground/index.ejs',
                 filename: 'index.html',
-                title: 'Mindustry Mod Creator - 在线图形化 Mod 编辑器',
+                title: 'Mindustry Mod Creator - \u5728\u7EBF\u56FE\u5F62\u5316 Mod \u7F16\u8F91\u5668',
                 ...htmlWebpackPluginCommon
             }),
             new HtmlWebpackPlugin({
@@ -240,7 +241,7 @@ module.exports = [
                 chunks: ['mindustry'],
                 template: 'src/playground/index.ejs',
                 filename: 'mindustry.html',
-                title: 'Mindustry Mod Creator - 在线图形化 Mod 编辑器',
+                title: 'Mindustry Mod Creator - \u5728\u7EBF\u56FE\u5F62\u5316 Mod \u7F16\u8F91\u5668',
                 ...htmlWebpackPluginCommon
             }),
             new CopyWebpackPlugin({
@@ -264,7 +265,6 @@ module.exports = [
     })
 ].concat(
     process.env.NODE_ENV === 'production' || process.env.BUILD_MODE === 'dist' ? (
-        // export as library
         defaultsDeep({}, base, {
             target: 'web',
             entry: {
@@ -285,12 +285,15 @@ module.exports = [
                 rules: base.module.rules.concat([
                     {
                         test: /\.(svg|png|wav|mp3|gif|jpg|woff2|hex)$/,
-                        loader: 'url-loader',
-                        options: {
-                            limit: 2048,
-                            outputPath: 'static/assets/',
-                            publicPath: `${STATIC_PATH}/assets/`,
-                            esModule: false
+                        type: 'asset',
+                        parser: {
+                            dataUrlCondition: {
+                                maxSize: 2048
+                            }
+                        },
+                        generator: {
+                            filename: 'static/assets/[name].[contenthash:8][ext]',
+                            publicPath: `${STATIC_PATH}/assets/`
                         }
                     }
                 ])
@@ -305,13 +308,11 @@ module.exports = [
                         }
                     ]
                 }),
-                // Include library JSON files for scratch-desktop to use for downloading
                 new CopyWebpackPlugin({
                     patterns: [
                         {
                             from: 'src/lib/libraries/*.json',
-                            to: 'libraries',
-                            flatten: true
+                            to: 'libraries/[name][ext]'
                         }
                     ]
                 })
