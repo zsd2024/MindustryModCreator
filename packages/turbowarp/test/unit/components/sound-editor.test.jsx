@@ -1,11 +1,16 @@
 import React from 'react';
-import {renderWithIntl, componentWithIntl} from '../../helpers/intl-helpers.jsx';
+import {renderWithIntl} from '../../helpers/intl-helpers.jsx';
 import {fireEvent, screen} from '@testing-library/react';
+import {Provider} from 'react-redux';
+import configureStore from 'redux-mock-store';
 import SoundEditor from '../../../src/components/sound-editor/sound-editor';
 
 describe('Sound Editor Component', () => {
+    const mockStore = configureStore();
+    let store;
     let props;
     beforeEach(() => {
+        store = mockStore({scratchGui: {theme: {theme: {}}}});
         props = {
             isStereo: false,
             duration: 1,
@@ -36,12 +41,14 @@ describe('Sound Editor Component', () => {
     });
 
     test('matches snapshot', () => {
-        const component = componentWithIntl(<SoundEditor {...props} />);
-        expect(component.toJSON()).toMatchSnapshot();
+        const {container} = renderWithStore(<SoundEditor {...props} />);
+        expect(container.innerHTML).toMatchSnapshot();
     });
 
+    const renderWithStore = ui => renderWithIntl(<Provider store={store}>{ui}</Provider>);
+
     test('delete button appears when selection is not null', () => {
-        renderWithIntl(
+        renderWithStore(
             <SoundEditor
                 {...props}
                 trimEnd={0.75}
@@ -53,7 +60,7 @@ describe('Sound Editor Component', () => {
     });
 
     test('play button appears when playhead is null', () => {
-        renderWithIntl(
+        renderWithStore(
             <SoundEditor
                 {...props}
                 playhead={null}
@@ -64,7 +71,7 @@ describe('Sound Editor Component', () => {
     });
 
     test('stop button appears when playhead is not null', () => {
-        renderWithIntl(
+        renderWithStore(
             <SoundEditor
                 {...props}
                 playhead={0.5}
@@ -75,7 +82,7 @@ describe('Sound Editor Component', () => {
     });
 
     test('submitting name calls the callback', () => {
-        renderWithIntl(
+        renderWithStore(
             <SoundEditor {...props} />
         );
         const input = screen.getByDisplayValue('sound name');
@@ -85,7 +92,7 @@ describe('Sound Editor Component', () => {
     });
 
     test('effect buttons call the correct callbacks', () => {
-        renderWithIntl(
+        renderWithStore(
             <SoundEditor {...props} />
         );
 
@@ -109,7 +116,7 @@ describe('Sound Editor Component', () => {
     });
 
     test('undo and redo buttons can be disabled by canUndo/canRedo', () => {
-        const {unmount} = renderWithIntl(
+        const {unmount} = renderWithStore(
             <SoundEditor
                 {...props}
                 canUndo
@@ -120,7 +127,7 @@ describe('Sound Editor Component', () => {
         expect(screen.getByTitle('Redo')).toBeDisabled();
 
         unmount();
-        renderWithIntl(
+        renderWithStore(
             <SoundEditor
                 {...props}
                 canRedo

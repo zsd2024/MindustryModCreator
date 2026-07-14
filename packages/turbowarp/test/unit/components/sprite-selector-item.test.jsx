@@ -1,5 +1,5 @@
 import React from 'react';
-import {renderWithIntl, componentWithIntl} from '../../helpers/intl-helpers.jsx';
+import {renderWithIntl} from '../../helpers/intl-helpers.jsx';
 import {fireEvent, screen} from '@testing-library/react';
 import SpriteSelectorItemComponent from '../../../src/components/sprite-selector-item/sprite-selector-item';
 import DeleteButton from '../../../src/components/delete-button/delete-button';
@@ -43,15 +43,15 @@ describe('SpriteSelectorItemComponent', () => {
     });
 
     test('matches snapshot when selected', () => {
-        const component = componentWithIntl(getComponent());
-        expect(component.toJSON()).toMatchSnapshot();
+        const {container} = renderWithIntl(getComponent());
+        expect(container.innerHTML).toMatchSnapshot();
     });
 
     test('matches snapshot when given a number and details to show', () => {
         number = 5;
         details = '480 x 360';
-        const component = componentWithIntl(getComponent());
-        expect(component.toJSON()).toMatchSnapshot();
+        const {container} = renderWithIntl(getComponent());
+        expect(container.innerHTML).toMatchSnapshot();
     });
 
     test('does not have a close box when not selected', () => {
