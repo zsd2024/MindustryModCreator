@@ -5,6 +5,10 @@
 /node_modules
 npm-*
 
+# Pnpm (project uses npm, not pnpm)
+pnpm-lock.yaml
+pnpm-workspace.yaml
+
 # Testing
 /.nyc_output
 /coverage

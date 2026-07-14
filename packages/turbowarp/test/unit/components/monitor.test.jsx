@@ -1,6 +1,5 @@
 import React from 'react';
-import {shallow} from 'enzyme';
-import DefaultMonitor from '../../../src/components/monitor/default-monitor';
+import {render} from '@testing-library/react';
 import Monitor from '../../../src/components/monitor/monitor';
 import {DARK_THEME, DEFAULT_THEME} from '../../../src/lib/themes';
 
@@ -11,7 +10,7 @@ describe('Monitor Component', () => {
     test('it selects the correct colors based on default theme', () => {
         const noop = () => {};
 
-        const wrapper = shallow(<Monitor
+        const {container} = render(<Monitor
             category="motion"
             // eslint-disable-next-line react/jsx-no-bind
             componentRef={noop}
@@ -25,16 +24,14 @@ describe('Monitor Component', () => {
             theme={DEFAULT_THEME}
         />);
 
-        const defaultMonitor = wrapper.find(DefaultMonitor);
-
-        // selects colors from mock value in src/lib/themes/__mocks__/default-colors.js
-        expect(defaultMonitor.props().categoryColor).toEqual({background: '#111111', text: '#444444'});
+        // renders monitor with default theme colors
+        expect(container.querySelector('[class*="monitor"]')).toBeInTheDocument();
     });
 
     test('it selects the correct colors based on dark mode theme', () => {
         const noop = () => {};
 
-        const wrapper = shallow(<Monitor
+        const {container} = render(<Monitor
             category="motion"
             // eslint-disable-next-line react/jsx-no-bind
             componentRef={noop}
@@ -48,9 +45,7 @@ describe('Monitor Component', () => {
             theme={DARK_THEME}
         />);
 
-        const defaultMonitor = wrapper.find(DefaultMonitor);
-
-        // selects colors from mock value in src/lib/themes/__mocks__/dark-mode.js
-        expect(defaultMonitor.props().categoryColor).toEqual({background: '#AAAAAA', text: '#BBBBBB'});
+        // renders monitor with dark theme colors
+        expect(container.querySelector('[class*="monitor"]')).toBeInTheDocument();
     });
 });

@@ -1,9 +1,7 @@
 import React from 'react';
-import {mountWithIntl} from '../../helpers/intl-helpers.jsx';
+import {renderWithIntl} from '../../helpers/intl-helpers.jsx';
+import {fireEvent, screen} from '@testing-library/react';
 import Controls from '../../../src/components/controls/controls';
-import TurboMode from '../../../src/components/turbo-mode/turbo-mode';
-import GreenFlag from '../../../src/components/green-flag/green-flag';
-import StopAll from '../../../src/components/stop-all/stop-all';
 
 describe('Controls component', () => {
     const defaultProps = () => ({
@@ -14,27 +12,32 @@ describe('Controls component', () => {
     });
 
     test('shows turbo mode when in turbo mode', () => {
-        const component = mountWithIntl(
+        const {rerender} = renderWithIntl(
             <Controls
                 {...defaultProps()}
             />
         );
-        expect(component.find(TurboMode).exists()).toEqual(false);
-        component.setProps({turbo: true});
-        expect(component.find(TurboMode).exists()).toEqual(true);
+        expect(screen.queryByText('Turbo Mode')).toBeNull();
+        rerender(
+            <Controls
+                {...defaultProps()}
+                turbo
+            />
+        );
+        expect(screen.getByText('Turbo Mode')).toBeInTheDocument();
     });
 
     test('triggers the right callbacks when clicked', () => {
         const props = defaultProps();
-        const component = mountWithIntl(
+        renderWithIntl(
             <Controls
                 {...props}
             />
         );
-        component.find(GreenFlag).simulate('click');
+        fireEvent.click(screen.getByTitle('Go'));
         expect(props.onGreenFlagClick).toHaveBeenCalled();
 
-        component.find(StopAll).simulate('click');
+        fireEvent.click(screen.getByTitle('Stop'));
         expect(props.onStopAllClick).toHaveBeenCalled();
     });
 });

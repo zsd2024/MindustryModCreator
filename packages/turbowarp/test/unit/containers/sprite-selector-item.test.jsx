@@ -1,5 +1,6 @@
 import React from 'react';
-import {mountWithIntl} from '../../helpers/intl-helpers.jsx';
+import {renderWithIntl} from '../../helpers/intl-helpers.jsx';
+import {fireEvent, screen} from '@testing-library/react';
 import configureStore from 'redux-mock-store';
 import {Provider} from 'react-redux';
 
@@ -51,8 +52,8 @@ describe('SpriteSelectorItem Container', () => {
     });
 
     test('should delete the sprite', () => {
-        const wrapper = mountWithIntl(getContainer());
-        wrapper.find(DeleteButton).simulate('click');
+        renderWithIntl(getContainer());
+        fireEvent.click(screen.getByRole('button', {name: 'Delete'}));
         expect(onDeleteButtonClick).toHaveBeenCalledWith(1337);
     });
 });

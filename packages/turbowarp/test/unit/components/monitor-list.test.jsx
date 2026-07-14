@@ -2,7 +2,8 @@ import React from 'react';
 import {OrderedMap} from 'immutable';
 import configureStore from 'redux-mock-store';
 import {Provider} from 'react-redux';
-import {mountWithIntl} from '../../helpers/intl-helpers.jsx';
+import {renderWithIntl} from '../../helpers/intl-helpers.jsx';
+import {screen} from '@testing-library/react';
 import MonitorList from '../../../src/components/monitor-list/monitor-list.jsx';
 import {DEFAULT_THEME} from '../../../src/lib/themes';
 
@@ -58,9 +59,9 @@ describe('MonitorListComponent', () => {
                 isDiscrete: true
             }
         });
-        const wrapper = mountWithIntl(getComponent());
-        const input = wrapper.find('input');
-        expect(input.props().step).toBe(1);
+        renderWithIntl(getComponent());
+        const input = screen.getByRole('slider');
+        expect(input).toHaveAttribute('step', '1');
     });
 
     test('it renders the correct step size for non-discrete sliders', () => {
@@ -71,8 +72,8 @@ describe('MonitorListComponent', () => {
                 isDiscrete: false
             }
         });
-        const wrapper = mountWithIntl(getComponent());
-        const input = wrapper.find('input');
-        expect(input.props().step).toBe(0.01);
+        renderWithIntl(getComponent());
+        const input = screen.getByRole('slider');
+        expect(input).toHaveAttribute('step', '0.01');
     });
 });

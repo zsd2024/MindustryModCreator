@@ -1,5 +1,6 @@
 import React from 'react';
-import {mountWithIntl, componentWithIntl} from '../../helpers/intl-helpers.jsx';
+import {renderWithIntl, componentWithIntl} from '../../helpers/intl-helpers.jsx';
+import {fireEvent, screen} from '@testing-library/react';
 import SoundEditor from '../../../src/components/sound-editor/sound-editor';
 
 describe('Sound Editor Component', () => {
@@ -40,107 +41,93 @@ describe('Sound Editor Component', () => {
     });
 
     test('delete button appears when selection is not null', () => {
-        const wrapper = mountWithIntl(
+        renderWithIntl(
             <SoundEditor
                 {...props}
                 trimEnd={0.75}
                 trimStart={0.25}
             />
         );
-        wrapper.find('[children="Delete"]').simulate('click');
+        fireEvent.click(screen.getByText('Delete'));
         expect(props.onDelete).toHaveBeenCalled();
     });
 
     test('play button appears when playhead is null', () => {
-        const wrapper = mountWithIntl(
+        renderWithIntl(
             <SoundEditor
                 {...props}
                 playhead={null}
             />
         );
-        wrapper.find('button[title="Play"]').simulate('click');
+        fireEvent.click(screen.getByTitle('Play'));
         expect(props.onPlay).toHaveBeenCalled();
     });
 
     test('stop button appears when playhead is not null', () => {
-        const wrapper = mountWithIntl(
+        renderWithIntl(
             <SoundEditor
                 {...props}
                 playhead={0.5}
             />
         );
-        wrapper.find('button[title="Stop"]').simulate('click');
+        fireEvent.click(screen.getByTitle('Stop'));
         expect(props.onStop).toHaveBeenCalled();
     });
 
     test('submitting name calls the callback', () => {
-        const wrapper = mountWithIntl(
+        renderWithIntl(
             <SoundEditor {...props} />
         );
-        wrapper.find('input')
-            .simulate('change', {target: {value: 'hello'}})
-            .simulate('blur');
+        const input = screen.getByDisplayValue('sound name');
+        fireEvent.change(input, {target: {value: 'hello'}});
+        fireEvent.blur(input);
         expect(props.onChangeName).toHaveBeenCalled();
     });
 
     test('effect buttons call the correct callbacks', () => {
-        const wrapper = mountWithIntl(
+        renderWithIntl(
             <SoundEditor {...props} />
         );
 
-        wrapper.find('[children="Reverse"]').simulate('click');
+        fireEvent.click(screen.getByText('Reverse'));
         expect(props.onReverse).toHaveBeenCalled();
 
-        wrapper.find('[children="Robot"]').simulate('click');
+        fireEvent.click(screen.getByText('Robot'));
         expect(props.onRobot).toHaveBeenCalled();
 
-        wrapper.find('[children="Faster"]').simulate('click');
+        fireEvent.click(screen.getByText('Faster'));
         expect(props.onFaster).toHaveBeenCalled();
 
-        wrapper.find('[children="Slower"]').simulate('click');
+        fireEvent.click(screen.getByText('Slower'));
         expect(props.onSlower).toHaveBeenCalled();
 
-        wrapper.find('[children="Louder"]').simulate('click');
+        fireEvent.click(screen.getByText('Louder'));
         expect(props.onLouder).toHaveBeenCalled();
 
-        wrapper.find('[children="Softer"]').simulate('click');
+        fireEvent.click(screen.getByText('Softer'));
         expect(props.onSofter).toHaveBeenCalled();
     });
 
     test('undo and redo buttons can be disabled by canUndo/canRedo', () => {
-        let wrapper = mountWithIntl(
+        const {unmount} = renderWithIntl(
             <SoundEditor
                 {...props}
                 canUndo
                 canRedo={false}
             />
         );
-        expect(wrapper.find('button[title="Undo"]').prop('disabled')).toBe(false);
-        expect(wrapper.find('button[title="Redo"]').prop('disabled')).toBe(true);
+        expect(screen.getByTitle('Undo')).not.toBeDisabled();
+        expect(screen.getByTitle('Redo')).toBeDisabled();
 
-        wrapper = mountWithIntl(
+        unmount();
+        renderWithIntl(
             <SoundEditor
                 {...props}
                 canRedo
                 canUndo={false}
             />
         );
-        expect(wrapper.find('button[title="Undo"]').prop('disabled')).toBe(true);
-        expect(wrapper.find('button[title="Redo"]').prop('disabled')).toBe(false);
-    });
-
-    test.skip('undo/redo buttons call the correct callback', () => {
-        const wrapper = mountWithIntl(
-            <SoundEditor
-                {...props}
-                canRedo
-                canUndo
-            />
-        );
-        wrapper.find('button[title="Undo"]').simulate('click');
-        expect(props.onUndo).toHaveBeenCalled();
-
-        wrapper.find('button[title="Redo"]').simulate('click');
-        expect(props.onRedo).toHaveBeenCalled();
+        expect(screen.getByTitle('Undo')).toBeDisabled();
+        expect(screen.getByTitle('Redo')).not.toBeDisabled();
     });
 });

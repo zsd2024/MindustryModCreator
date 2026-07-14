@@ -1,10 +1,10 @@
 import React from 'react';
-import {shallow} from 'enzyme';
+import {render, fireEvent, screen} from '@testing-library/react';
 import ToggleButtons from '../../../src/components/toggle-buttons/toggle-buttons';
 
 describe('ToggleButtons', () => {
     test('renders multiple buttons', () => {
-        const component = shallow(<ToggleButtons
+        render(<ToggleButtons
             buttons={[
                 {
                     title: 'Button 1',
@@ -19,17 +19,16 @@ describe('ToggleButtons', () => {
             ]}
         />);
 
-        const buttons = component.find('button');
-
+        const buttons = screen.getAllByRole('button');
         expect(buttons).toHaveLength(2);
-        expect(buttons.get(0).props.title).toBe('Button 1');
-        expect(buttons.get(1).props.title).toBe('Button 2');
+        expect(buttons[0]).toHaveAttribute('title', 'Button 1');
+        expect(buttons[1]).toHaveAttribute('title', 'Button 2');
     });
 
     test('calls correct click handler', () => {
         const onClick1 = jest.fn();
         const onClick2 = jest.fn();
-        const component = shallow(<ToggleButtons
+        render(<ToggleButtons
             buttons={[
                 {
                     title: 'Button 1',
@@ -43,8 +42,7 @@ describe('ToggleButtons', () => {
                 }
             ]}
         />);
-        const button2 = component.find('button[title="Button 2"]');
-        button2.simulate('click');
+        fireEvent.click(screen.getByTitle('Button 2'));
 
         expect(onClick2).toHaveBeenCalled();
         expect(onClick1).not.toHaveBeenCalled();

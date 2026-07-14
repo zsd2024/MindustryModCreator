@@ -1,23 +1,22 @@
 import React from 'react';
-import {shallow} from 'enzyme';
+import {render, fireEvent, screen} from '@testing-library/react';
 import ButtonComponent from '../../../src/components/button/button';
-import renderer from 'react-test-renderer';
 
 describe('ButtonComponent', () => {
     test('matches snapshot', () => {
         const onClick = jest.fn();
-        const component = renderer.create(
+        const {container} = render(
             <ButtonComponent onClick={onClick} />
         );
-        expect(component.toJSON()).toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
     test('triggers callback when clicked', () => {
         const onClick = jest.fn();
-        const componentShallowWrapper = shallow(
+        render(
             <ButtonComponent onClick={onClick} />
         );
-        componentShallowWrapper.simulate('click');
+        fireEvent.click(screen.getByRole('button'));
         expect(onClick).toHaveBeenCalled();
     });
 });

@@ -1,7 +1,6 @@
 import React from 'react';
-import {shallow} from 'enzyme';
+import {render, fireEvent, screen} from '@testing-library/react';
 import SliderPrompt from '../../../src/containers/slider-prompt.jsx';
-import SliderPromptComponent from '../../../src/components/slider-prompt/slider-prompt.jsx';
 
 describe('Slider Prompt Container', () => {
     let onCancel;
@@ -13,7 +12,7 @@ describe('Slider Prompt Container', () => {
     });
 
     test('Min/max are shown with decimal when isDiscrete is false', () => {
-        const wrapper = shallow(
+        render(
             <SliderPrompt
                 isDiscrete={false}
                 maxValue={100}
@@ -22,13 +21,14 @@ describe('Slider Prompt Container', () => {
                 onOk={onOk}
             />
         );
-        const componentProps = wrapper.find(SliderPromptComponent).props();
-        expect(componentProps.minValue).toBe('0.00');
-        expect(componentProps.maxValue).toBe('100.00');
+        const minInput = screen.getByDisplayValue('0.00');
+        const maxInput = screen.getByDisplayValue('100.00');
+        expect(minInput).toBeInTheDocument();
+        expect(maxInput).toBeInTheDocument();
     });
 
     test('Min/max are NOT shown with decimal when isDiscrete is true', () => {
-        const wrapper = shallow(
+        render(
             <SliderPrompt
                 isDiscrete
                 maxValue={100}
@@ -37,13 +37,12 @@ describe('Slider Prompt Container', () => {
                 onOk={onOk}
             />
         );
-        const componentProps = wrapper.find(SliderPromptComponent).props();
-        expect(componentProps.minValue).toBe('0');
-        expect(componentProps.maxValue).toBe('100');
+        expect(screen.getByDisplayValue('0')).toBeInTheDocument();
+        expect(screen.getByDisplayValue('100')).toBeInTheDocument();
     });
 
     test('Entering a number with a decimal submits with isDiscrete=false', () => {
-        const wrapper = shallow(
+        render(
             <SliderPrompt
                 isDiscrete
                 maxValue={100}
@@ -52,14 +51,13 @@ describe('Slider Prompt Container', () => {
                 onOk={onOk}
             />
         );
-        const componentProps = wrapper.find(SliderPromptComponent).props();
-        componentProps.onChangeMin({target: {value: '1.0'}});
-        componentProps.onOk();
+        fireEvent.change(screen.getByDisplayValue('0'), {target: {value: '1.0'}});
+        fireEvent.click(screen.getByText('OK'));
         expect(onOk).toHaveBeenCalledWith(1, 100, false);
     });
 
     test('Entering integers submits with isDiscrete=true', () => {
-        const wrapper = shallow(
+        render(
             <SliderPrompt
                 isDiscrete={false}
                 maxValue={100.1}
@@ -68,15 +66,15 @@ describe('Slider Prompt Container', () => {
                 onOk={onOk}
             />
         );
-        const componentProps = wrapper.find(SliderPromptComponent).props();
-        componentProps.onChangeMin({target: {value: '1'}});
-        componentProps.onChangeMax({target: {value: '2'}});
-        componentProps.onOk();
+        const inputs = screen.getAllByRole('spinbutton');
+        fireEvent.change(inputs[0], {target: {value: '1'}});
+        fireEvent.change(inputs[1], {target: {value: '2'}});
+        fireEvent.click(screen.getByText('OK'));
         expect(onOk).toHaveBeenCalledWith(1, 2, true);
     });
 
     test('Enter button submits the form', () => {
-        const wrapper = shallow(
+        render(
             <SliderPrompt
                 isDiscrete={false}
                 maxValue={100.1}
@@ -85,15 +83,15 @@ describe('Slider Prompt Container', () => {
                 onOk={onOk}
             />
         );
-        const componentProps = wrapper.find(SliderPromptComponent).props();
-        componentProps.onChangeMin({target: {value: '1'}});
-        componentProps.onChangeMax({target: {value: '2'}});
-        componentProps.onKeyPress({key: 'Enter'});
+        const inputs = screen.getAllByRole('spinbutton');
+        fireEvent.change(inputs[0], {target: {value: '1'}});
+        fireEvent.change(inputs[1], {target: {value: '2'}});
+        fireEvent.keyDown(inputs[1], {key: 'Enter', code: 'Enter'});
         expect(onOk).toHaveBeenCalledWith(1, 2, true);
     });
 
     test('Validates number-ness before submitting', () => {
-        const wrapper = shallow(
+        render(
             <SliderPrompt
                 isDiscrete={false}
                 maxValue={100.1}
@@ -102,9 +100,9 @@ describe('Slider Prompt Container', () => {
                 onOk={onOk}
             />
         );
-        const componentProps = wrapper.find(SliderPromptComponent).props();
-        componentProps.onChangeMin({target: {value: 'hello'}});
-        componentProps.onOk();
+        const inputs = screen.getAllByRole('spinbutton');
+        fireEvent.change(inputs[0], {target: {value: 'hello'}});
+        fireEvent.click(screen.getByText('OK'));
         expect(onOk).not.toHaveBeenCalled();
         expect(onCancel).toHaveBeenCalled();
     });

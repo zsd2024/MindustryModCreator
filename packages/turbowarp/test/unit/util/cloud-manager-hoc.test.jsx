@@ -1,8 +1,8 @@
 import 'web-audio-test-api';
 
 import React from 'react';
+import {render} from '@testing-library/react';
 import configureStore from 'redux-mock-store';
-import {mountWithIntl} from '../../helpers/intl-helpers.jsx';
 import VM from 'scratch-vm';
 import {LoadingState} from '../../../src/reducers/project-state';
 import CloudProvider from '../../../src/lib/cloud-provider';
@@ -62,16 +62,8 @@ describe.skip('CloudManagerHOC', () => {
         const WrappedComponent = cloudManagerHOC(Component);
         const onShowCloudInfo = jest.fn();
 
-        mountWithIntl(
-            <WrappedComponent
-                hasCloudPermission
-                cloudHost="nonEmpty"
-                store={store}
-                username="user"
-                vm={vm}
-                onShowCloudInfo={onShowCloudInfo}
-            />
-        );
+        // TODO: migrate to RTL
+
         expect(vm.setCloudProvider.mock.calls.length).toBe(1);
         expect(CloudProvider).toHaveBeenCalledTimes(1);
         expect(vm.setCloudProvider).toHaveBeenCalledWith(mockCloudProviderInstance);
@@ -81,7 +73,8 @@ describe.skip('CloudManagerHOC', () => {
     test('when cloudHost is missing, the cloud provider is not set on the vm', () => {
         const Component = () => (<div />);
         const WrappedComponent = cloudManagerHOC(Component);
-        mountWithIntl(
+        // TODO: migrate to RTL
+        render(
             <WrappedComponent
                 hasCloudPermission
                 store={store}
@@ -98,7 +91,8 @@ describe.skip('CloudManagerHOC', () => {
 
         const Component = () => (<div />);
         const WrappedComponent = cloudManagerHOC(Component);
-        mountWithIntl(
+        // TODO: migrate to RTL
+        render(
             <WrappedComponent
                 hasCloudPermission
                 cloudHost="nonEmpty"
@@ -114,7 +108,8 @@ describe.skip('CloudManagerHOC', () => {
 
         const Component = () => (<div />);
         const WrappedComponent = cloudManagerHOC(Component);
-        mountWithIntl(
+        // TODO: migrate to RTL
+        render(
             <WrappedComponent
                 hasCloudPermission
                 cloudHost="nonEmpty"
@@ -130,7 +125,8 @@ describe.skip('CloudManagerHOC', () => {
     test('when hasCloudPermission is false, the cloud provider is not set on the vm', () => {
         const Component = () => <div />;
         const WrappedComponent = cloudManagerHOC(Component);
-        mountWithIntl(
+        // TODO: migrate to RTL
+        render(
             <WrappedComponent
                 cloudHost="nonEmpty"
                 hasCloudPermission={false}
@@ -149,15 +145,7 @@ describe.skip('CloudManagerHOC', () => {
         const WrappedComponent = cloudManagerHOC(Component);
         vm.extensionManager.isExtensionLoaded = jest.fn(extension => extension === 'videoSensing');
 
-        mount(
-            <WrappedComponent
-                hasCloudPermission
-                cloudHost="nonEmpty"
-                store={store}
-                username="user"
-                vm={vm}
-            />
-        );
+        // TODO: migrate to RTL
 
         expect(vm.setCloudProvider.mock.calls.length).toBe(0);
         expect(CloudProvider).not.toHaveBeenCalled();
@@ -169,7 +157,8 @@ describe.skip('CloudManagerHOC', () => {
         const onShowCloudInfo = jest.fn();
         vm.runtime.hasCloudData = jest.fn(() => false);
 
-        const mounted = mountWithIntl(
+        const mounted = // TODO: migrate to RTL
+        render(
             <WrappedComponent
                 hasCloudPermission
                 cloudHost="nonEmpty"
@@ -197,7 +186,8 @@ describe.skip('CloudManagerHOC', () => {
     test('projectId change should not trigger cloudProvider connection unless isShowingWithId becomes true', () => {
         const Component = () => <div />;
         const WrappedComponent = cloudManagerHOC(Component);
-        const mounted = mountWithIntl(
+        const mounted = // TODO: migrate to RTL
+        render(
             <WrappedComponent
                 hasCloudPermission
                 cloudHost="nonEmpty"
@@ -223,7 +213,8 @@ describe.skip('CloudManagerHOC', () => {
     test('when it unmounts, the cloud provider is reset to null on the vm', () => {
         const Component = () => (<div />);
         const WrappedComponent = cloudManagerHOC(Component);
-        const mounted = mountWithIntl(
+        const mounted = // TODO: migrate to RTL
+        render(
             <WrappedComponent
                 hasCloudPermission
                 cloudHost="nonEmpty"
@@ -248,7 +239,8 @@ describe.skip('CloudManagerHOC', () => {
     test('projectId changing should trigger cloudProvider disconnection', () => {
         const Component = () => <div />;
         const WrappedComponent = cloudManagerHOC(Component);
-        const mounted = mountWithIntl(
+        const mounted = // TODO: migrate to RTL
+        render(
             <WrappedComponent
                 hasCloudPermission
                 cloudHost="nonEmpty"
@@ -274,7 +266,8 @@ describe.skip('CloudManagerHOC', () => {
     test('username changing should trigger cloudProvider disconnection', () => {
         const Component = () => <div />;
         const WrappedComponent = cloudManagerHOC(Component);
-        const mounted = mountWithIntl(
+        const mounted = // TODO: migrate to RTL
+        render(
             <WrappedComponent
                 hasCloudPermission
                 cloudHost="nonEmpty"
@@ -304,7 +297,8 @@ describe.skip('CloudManagerHOC', () => {
 
         const Component = () => <div />;
         const WrappedComponent = cloudManagerHOC(Component);
-        mountWithIntl(
+        // TODO: migrate to RTL
+        render(
             <WrappedComponent
                 hasCloudPermission
                 cloudHost="nonEmpty"
@@ -325,7 +319,8 @@ describe.skip('CloudManagerHOC', () => {
 
         const Component = () => <div />;
         const WrappedComponent = cloudManagerHOC(Component);
-        mountWithIntl(
+        // TODO: migrate to RTL
+        render(
             <WrappedComponent
                 hasCloudPermission
                 cloudHost="nonEmpty"
@@ -352,7 +347,8 @@ describe.skip('CloudManagerHOC', () => {
     test('projectHasCloudDataUpdate becoming false should trigger cloudProvider disconnection', () => {
         const Component = () => <div />;
         const WrappedComponent = cloudManagerHOC(Component);
-        mountWithIntl(
+        // TODO: migrate to RTL
+        render(
             <WrappedComponent
                 hasCloudPermission
                 cloudHost="nonEmpty"
@@ -377,7 +373,8 @@ describe.skip('CloudManagerHOC', () => {
     test('Entering editor mode and can\'t save project should disconnect cloud provider', () => {
         const Component = () => <div />;
         const WrappedComponent = cloudManagerHOC(Component);
-        const mounted = mountWithIntl(
+        const mounted = // TODO: migrate to RTL
+        render(
             <WrappedComponent
                 hasCloudPermission
                 cloudHost="nonEmpty"

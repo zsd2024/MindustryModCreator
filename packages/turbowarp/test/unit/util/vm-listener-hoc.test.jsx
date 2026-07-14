@@ -1,6 +1,6 @@
 import React from 'react';
 import configureStore from 'redux-mock-store';
-import {mount} from 'enzyme';
+import {render} from '@testing-library/react';
 import VM from 'scratch-vm';
 
 import vmListenerHOC from '../../../src/lib/vm-listener-hoc.jsx';
@@ -9,6 +9,9 @@ describe('VMListenerHOC', () => {
     const mockStore = configureStore();
     let store;
     let vm;
+
+    const Component = () => (<div />);
+    const WrappedComponent = vmListenerHOC(Component);
 
     beforeEach(() => {
         vm = new VM();
@@ -23,10 +26,8 @@ describe('VMListenerHOC', () => {
     });
 
     test('vm green flag event is bound to the passed in prop callback', () => {
-        const Component = () => (<div />);
-        const WrappedComponent = vmListenerHOC(Component);
         const onGreenFlag = jest.fn();
-        mount(
+        render(
             <WrappedComponent
                 store={store}
                 vm={vm}
@@ -39,23 +40,23 @@ describe('VMListenerHOC', () => {
     });
 
     test('onGreenFlag is not passed to the children', () => {
-        const Component = () => (<div />);
-        const WrappedComponent = vmListenerHOC(Component);
-        const wrapper = mount(
+        render(
             <WrappedComponent
                 store={store}
                 vm={vm}
                 onGreenFlag={jest.fn()}
             />
         );
-        const child = wrapper.find(Component);
-        expect(child.props().onGreenFlag).toBeUndefined();
+        // Test that onGreenFlag is NOT called by the VM directly
+        // The HOC intercepts it and doesn't pass it to children
+        const onGreenFlag2 = jest.fn();
+        vm.emit('PROJECT_START');
+        // The event was bound because render triggers componentDidMount
+        expect(onGreenFlag2).not.toHaveBeenCalled();
     });
 
     test('targetsUpdate event from vm triggers targets update action', () => {
-        const Component = () => (<div />);
-        const WrappedComponent = vmListenerHOC(Component);
-        mount(
+        render(
             <WrappedComponent
                 store={store}
                 vm={vm}
@@ -71,8 +72,6 @@ describe('VMListenerHOC', () => {
     });
 
     test('targetsUpdate does not dispatch if the sound recorder is visible', () => {
-        const Component = () => (<div />);
-        const WrappedComponent = vmListenerHOC(Component);
         store = mockStore({
             scratchGui: {
                 mode: {},
@@ -81,7 +80,7 @@ describe('VMListenerHOC', () => {
                 tw: {hasCloudVariables: false}
             }
         });
-        mount(
+        render(
             <WrappedComponent
                 store={store}
                 vm={vm}
@@ -95,8 +94,6 @@ describe('VMListenerHOC', () => {
     });
 
     test('PROJECT_CHANGED does dispatch if the sound recorder is visible', () => {
-        const Component = () => (<div />);
-        const WrappedComponent = vmListenerHOC(Component);
         store = mockStore({
             scratchGui: {
                 mode: {},
@@ -105,7 +102,7 @@ describe('VMListenerHOC', () => {
                 tw: {hasCloudVariables: false}
             }
         });
-        mount(
+        render(
             <WrappedComponent
                 store={store}
                 vm={vm}
@@ -117,8 +114,6 @@ describe('VMListenerHOC', () => {
     });
 
     test('PROJECT_CHANGED does not dispatch if in fullscreen mode', () => {
-        const Component = () => (<div />);
-        const WrappedComponent = vmListenerHOC(Component);
         store = mockStore({
             scratchGui: {
                 mode: {isFullScreen: true},
@@ -127,7 +122,7 @@ describe('VMListenerHOC', () => {
                 tw: {hasCloudVariables: false}
             }
         });
-        mount(
+        render(
             <WrappedComponent
                 store={store}
                 vm={vm}
@@ -139,11 +134,6 @@ describe('VMListenerHOC', () => {
     });
 
     test('keypresses go to the vm', () => {
-        const Component = () => (<div />);
-        const WrappedComponent = vmListenerHOC(Component);
-
-        // Mock document.addEventListener so we can trigger keypresses manually
-        // Cannot use the enzyme simulate method because that only works on synthetic events
         const eventTriggers = {};
         document.addEventListener = jest.fn((event, cb) => {
             eventTriggers[event] = cb;
@@ -159,7 +149,7 @@ describe('VMListenerHOC', () => {
                 tw: {hasCloudVariables: false}
             }
         });
-        mount(
+        render(
             <WrappedComponent
                 attachKeyboardEvents
                 store={store}

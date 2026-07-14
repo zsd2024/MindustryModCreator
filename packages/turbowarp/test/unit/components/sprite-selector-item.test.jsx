@@ -1,5 +1,6 @@
 import React from 'react';
-import {mountWithIntl, shallowWithIntl, componentWithIntl} from '../../helpers/intl-helpers.jsx';
+import {renderWithIntl, componentWithIntl} from '../../helpers/intl-helpers.jsx';
+import {fireEvent, screen} from '@testing-library/react';
 import SpriteSelectorItemComponent from '../../../src/components/sprite-selector-item/sprite-selector-item';
 import DeleteButton from '../../../src/components/delete-button/delete-button';
 
@@ -55,29 +56,27 @@ describe('SpriteSelectorItemComponent', () => {
 
     test('does not have a close box when not selected', () => {
         selected = false;
-        const wrapper = shallowWithIntl(getComponent());
-        expect(wrapper.find(DeleteButton).exists()).toBe(false);
+        renderWithIntl(getComponent());
+        expect(screen.queryByRole('button', {name: 'Delete'})).toBeNull();
     });
 
     test('triggers callback when Box component is clicked', () => {
-        // Use `mount` here because of the way ContextMenuTrigger consumes onClick
-        const wrapper = mountWithIntl(getComponent());
-        wrapper.simulate('click');
+        renderWithIntl(getComponent());
+        fireEvent.click(screen.getByText('Pony sprite'));
         expect(onClick).toHaveBeenCalled();
     });
 
     test('triggers callback when CloseButton component is clicked', () => {
-        const wrapper = shallowWithIntl(getComponent());
-        wrapper.find(DeleteButton).simulate('click');
+        renderWithIntl(getComponent());
+        fireEvent.click(screen.getByRole('button', {name: 'Delete'}));
         expect(onDeleteButtonClick).toHaveBeenCalled();
     });
 
     test('it has a context menu with delete menu item and callback', () => {
-        const wrapper = mountWithIntl(getComponent());
-        const contextMenu = wrapper.find('ContextMenu');
-        expect(contextMenu.exists()).toBe(true);
-
-        contextMenu.find('[children="delete"]').simulate('click');
+        renderWithIntl(getComponent());
+        const deleteItem = screen.getByText('delete');
+        expect(deleteItem).toBeInTheDocument();
+        fireEvent.click(deleteItem);
         expect(onDeleteButtonClick).toHaveBeenCalled();
     });
 });

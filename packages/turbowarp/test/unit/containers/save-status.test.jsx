@@ -1,9 +1,9 @@
 import React from 'react';
 import {Provider} from 'react-redux';
 import configureStore from 'redux-mock-store';
-import {mountWithIntl} from '../../helpers/intl-helpers.jsx';
+import {renderWithIntl} from '../../helpers/intl-helpers.jsx';
+import {fireEvent, screen} from '@testing-library/react';
 import SaveStatus from '../../../src/components/menu-bar/save-status.jsx';
-import InlineMessages from '../../../src/containers/inline-messages.jsx';
 import {AlertTypes} from '../../../src/lib/alerts/index.jsx';
 
 // Stub the manualUpdateProject action creator for later testing
@@ -25,13 +25,12 @@ describe('SaveStatus container', () => {
                 }
             }
         });
-        const wrapper = mountWithIntl(
+        renderWithIntl(
             <Provider store={store}>
                 <SaveStatus />
             </Provider>
         );
-        expect(wrapper.find(InlineMessages).exists()).toBe(true);
-        expect(wrapper.contains('Save Now')).not.toBe(true);
+        expect(screen.queryByText('Save Now')).toBeNull();
     });
 
     test('save now is shown if there are project changes and no inline messages', () => {
@@ -43,16 +42,16 @@ describe('SaveStatus container', () => {
                 }
             }
         });
-        const wrapper = mountWithIntl(
+        renderWithIntl(
             <Provider store={store}>
                 <SaveStatus />
             </Provider>
         );
-        expect(wrapper.find(InlineMessages).exists()).not.toBe(true);
-        expect(wrapper.contains('Save Now')).toBe(true);
+
+        expect(screen.getByText('Save Now')).toBeInTheDocument();
 
         // Clicking save now should dispatch the manualUpdateProject action (stubbed above)
-        wrapper.find('[children="Save Now"]').simulate('click');
+        fireEvent.click(screen.getByText('Save Now'));
         expect(store.getActions()[0].type).toEqual('stubbed');
     });
 
@@ -65,12 +64,11 @@ describe('SaveStatus container', () => {
                 }
             }
         });
-        const wrapper = mountWithIntl(
+        renderWithIntl(
             <Provider store={store}>
                 <SaveStatus />
             </Provider>
         );
-        expect(wrapper.find(InlineMessages).exists()).not.toBe(true);
-        expect(wrapper.contains('Save Now')).not.toBe(true);
+        expect(screen.queryByText('Save Now')).toBeNull();
     });
 });

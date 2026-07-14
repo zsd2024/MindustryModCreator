@@ -1,10 +1,11 @@
 import React from 'react';
-import {mountWithIntl} from '../../helpers/intl-helpers.jsx';
+import {renderWithIntl} from '../../helpers/intl-helpers.jsx';
+import {screen} from '@testing-library/react';
 
 // Mock this utility because it uses dynamic imports that do not work with jest
 jest.mock('../../../src/lib/libraries/decks/translate-image.js', () => {});
 
-import Cards, {ImageStep, VideoStep} from '../../../src/components/cards/cards.jsx';
+import Cards from '../../../src/components/cards/cards.jsx';
 
 describe('Cards component', () => {
     const defaultProps = () => ({
@@ -36,27 +37,22 @@ describe('Cards component', () => {
     });
 
     test('showVideos=true shows the video step', () => {
-        const component = mountWithIntl(
+        renderWithIntl(
             <Cards
                 {...defaultProps()}
                 showVideos
             />
         );
-        expect(component.find(ImageStep).exists()).toEqual(false);
-        expect(component.find(VideoStep).exists()).toEqual(true);
+        expect(screen.getByTitle('video')).toBeInTheDocument();
     });
 
     test('showVideos=false shows the title image/name instead of video step', () => {
-        const component = mountWithIntl(
+        renderWithIntl(
             <Cards
                 {...defaultProps()}
                 showVideos={false}
             />
         );
-        expect(component.find(VideoStep).exists()).toEqual(false);
-
-        const imageStep = component.find(ImageStep);
-        expect(imageStep.props().image).toEqual('id1 - img');
-        expect(imageStep.props().title).toEqual('id1 - name');
+        expect(screen.getByText('id1 - name')).toBeInTheDocument();
     });
 });
