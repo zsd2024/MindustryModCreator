@@ -1,7 +1,7 @@
 import bindAll from 'lodash.bindall';
 import React from 'react';
 import PropTypes from 'prop-types';
-import {injectIntl, intlShape} from 'react-intl';
+import {injectIntl} from 'react-intl';
 
 import {connect} from 'react-redux';
 import {moveMonitorRect, resetMonitorLayout} from '../reducers/monitor-layout';
@@ -22,7 +22,7 @@ class MonitorList extends React.Component {
             key: 0
         };
     }
-    componentWillReceiveProps (nextProps) {
+    UNSAFE_componentWillReceiveProps (nextProps) {
         // TW: When stage size changes, we'll force all monitors to re-render completely
         // This is important because the VM moves monitors after resize to preserve locations but
         // Scratch's monitor layout logic is very complex and it won't notice that
@@ -48,7 +48,7 @@ class MonitorList extends React.Component {
 }
 
 MonitorList.propTypes = {
-    intl: intlShape.isRequired,
+    intl: PropTypes.object.isRequired,
     customStageSize: PropTypes.shape({
         width: PropTypes.number,
         height: PropTypes.number

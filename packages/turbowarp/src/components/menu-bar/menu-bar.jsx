@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import {connect} from 'react-redux';
 import {compose} from 'redux';
-import {defineMessages, FormattedMessage, injectIntl, intlShape} from 'react-intl';
+import {defineMessages, FormattedMessage, injectIntl} from 'react-intl';
 import PropTypes from 'prop-types';
 import bindAll from 'lodash.bindall';
 import bowser from 'bowser';
@@ -1119,7 +1119,7 @@ MenuBar.propTypes = {
     onToggleAdvancedMode: PropTypes.func,
     fileMenuOpen: PropTypes.bool,
     handleSaveProject: PropTypes.func,
-    intl: intlShape,
+    intl: PropTypes.object,
     isPlayerOnly: PropTypes.bool,
     isRtl: PropTypes.bool,
     isShared: PropTypes.bool,

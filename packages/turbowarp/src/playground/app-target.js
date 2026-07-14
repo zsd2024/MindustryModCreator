@@ -1,4 +1,4 @@
-import ReactDOM from 'react-dom';
+import {createRoot} from 'react-dom/client';
 import {setAppElement} from 'react-modal';
 
 const appTarget = document.getElementById('app');
@@ -10,8 +10,10 @@ while (appTarget.firstChild) {
 
 setAppElement(appTarget);
 
+const root = createRoot(appTarget);
+
 const render = children => {
-    ReactDOM.render(children, appTarget);
+    root.render(children);
 
     if (window.SplashEnd) {
         window.SplashEnd();

@@ -19,7 +19,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import {connect} from 'react-redux';
 import {compose} from 'redux';
-import {FormattedMessage, defineMessages, injectIntl, intlShape} from 'react-intl';
+import {FormattedMessage, defineMessages, injectIntl} from 'react-intl';
 import {getIsLoading} from '../reducers/project-state.js';
 import AppStateHOC from '../lib/app-state-hoc.jsx';
 import ErrorBoundaryHOC from '../lib/error-boundary-hoc.jsx';
@@ -1008,7 +1008,7 @@ class Interface extends React.Component {
 }
 
 Interface.propTypes = {
-    intl: intlShape,
+    intl: PropTypes.object,
     vm: PropTypes.object,
     hasCloudVariables: PropTypes.bool,
     customStageSize: PropTypes.shape({

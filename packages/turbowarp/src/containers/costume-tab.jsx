@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import bindAll from 'lodash.bindall';
-import {defineMessages, intlShape, injectIntl} from 'react-intl';
+import {defineMessages, injectIntl} from 'react-intl';
 import VM from 'scratch-vm';
 
 import AssetPanel from '../components/asset-panel/asset-panel.jsx';
@@ -100,7 +100,7 @@ class CostumeTab extends React.Component {
             this.state = {selectedCostumeIndex: 0};
         }
     }
-    componentWillReceiveProps (nextProps) {
+    UNSAFE_componentWillReceiveProps (nextProps) {
         const {
             editingTarget,
             sprites,
@@ -331,7 +331,7 @@ class CostumeTab extends React.Component {
 CostumeTab.propTypes = {
     dispatchUpdateRestore: PropTypes.func,
     editingTarget: PropTypes.string,
-    intl: intlShape,
+    intl: PropTypes.object,
     isRtl: PropTypes.bool,
     onActivateSoundsTab: PropTypes.func.isRequired,
     onCloseImporting: PropTypes.func.isRequired,

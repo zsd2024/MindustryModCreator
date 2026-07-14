@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {Provider} from 'react-redux';
-import {createStore, combineReducers, compose} from 'redux';
+import {legacy_createStore as createStore, combineReducers, compose} from 'redux';
 import ConnectedIntlProvider from './connected-intl-provider.jsx';
 import AddonHooks from '../addons/hooks';
 

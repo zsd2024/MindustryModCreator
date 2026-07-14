@@ -2,7 +2,7 @@ import classNames from 'classnames';
 import omit from 'lodash.omit';
 import PropTypes from 'prop-types';
 import React, {useState, useCallback, useRef, useEffect} from 'react';
-import {defineMessages, FormattedMessage, injectIntl, intlShape} from 'react-intl';
+import {defineMessages, FormattedMessage, injectIntl} from 'react-intl';
 import {connect} from 'react-redux';
 import MediaQuery from 'react-responsive';
 import {Tab, Tabs, TabList, TabPanel} from 'react-tabs';
@@ -604,7 +604,7 @@ GUIComponent.propTypes = {
         height: PropTypes.number
     }),
     enableCommunity: PropTypes.bool,
-    intl: intlShape.isRequired,
+    intl: PropTypes.object.isRequired,
     isCreating: PropTypes.bool,
     isEmbedded: PropTypes.bool,
     isFullScreen: PropTypes.bool,

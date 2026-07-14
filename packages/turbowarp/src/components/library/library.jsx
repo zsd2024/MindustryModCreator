@@ -2,7 +2,7 @@ import classNames from 'classnames';
 import bindAll from 'lodash.bindall';
 import PropTypes from 'prop-types';
 import React from 'react';
-import {defineMessages, injectIntl, intlShape} from 'react-intl';
+import {defineMessages, injectIntl} from 'react-intl';
 
 import LibraryItem from '../../containers/library-item.jsx';
 import Modal from '../../containers/modal.jsx';
@@ -387,7 +387,7 @@ LibraryComponent.propTypes = {
     filterable: PropTypes.bool,
     id: PropTypes.string.isRequired,
     persistableKey: PropTypes.string,
-    intl: intlShape.isRequired,
+    intl: PropTypes.object.isRequired,
     onItemMouseEnter: PropTypes.func,
     onItemMouseLeave: PropTypes.func,
     onItemSelected: PropTypes.func,
