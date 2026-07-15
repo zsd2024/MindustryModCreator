@@ -11,7 +11,7 @@ class SliderPrompt extends React.Component {
             'handleCancel',
             'handleChangeMin',
             'handleChangeMax',
-            'handleKeyPress',
+            'handleKeyDown',
             'validates',
             'shouldBeDiscrete'
         ]);
@@ -24,7 +24,7 @@ class SliderPrompt extends React.Component {
             maxValue: isDiscrete ? maxValue.toFixed(0) : maxValue.toFixed(2)
         };
     }
-    handleKeyPress (event) {
+    handleKeyDown (event) {
         if (event.key === 'Enter') this.handleOk();
     }
     handleOk () {
@@ -61,7 +61,7 @@ class SliderPrompt extends React.Component {
                 onCancel={this.handleCancel}
                 onChangeMax={this.handleChangeMax}
                 onChangeMin={this.handleChangeMin}
-                onKeyPress={this.handleKeyPress}
+                onKeyDown={this.handleKeyDown}
                 onOk={this.handleOk}
             />
         );

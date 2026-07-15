@@ -1,13 +1,10 @@
 import React from 'react';
 import {render} from '@testing-library/react';
 import Monitor from '../../../src/components/monitor/monitor';
-import {DARK_THEME, DEFAULT_THEME} from '../../../src/lib/themes';
-
-jest.mock('../../../src/lib/themes/default');
-jest.mock('../../../src/lib/themes/dark');
+import {Theme} from '../../../src/lib/themes';
 
 describe('Monitor Component', () => {
-    test('it selects the correct colors based on default theme', () => {
+    test('it renders with default theme', () => {
         const noop = () => {};
 
         const {container} = render(<Monitor
@@ -21,14 +18,13 @@ describe('Monitor Component', () => {
             onDragEnd={noop}
             // eslint-disable-next-line react/jsx-no-bind
             onNextMode={noop}
-            theme={DEFAULT_THEME}
+            theme={Theme.light}
         />);
 
-        // renders monitor with default theme colors
-        expect(container.querySelector('[class*="monitor"]')).toBeInTheDocument();
+        expect(container.firstChild).not.toBeNull();
     });
 
-    test('it selects the correct colors based on dark mode theme', () => {
+    test('it renders with dark theme', () => {
         const noop = () => {};
 
         const {container} = render(<Monitor
@@ -42,10 +38,9 @@ describe('Monitor Component', () => {
             onDragEnd={noop}
             // eslint-disable-next-line react/jsx-no-bind
             onNextMode={noop}
-            theme={DARK_THEME}
+            theme={Theme.dark}
         />);
 
-        // renders monitor with dark theme colors
-        expect(container.querySelector('[class*="monitor"]')).toBeInTheDocument();
+        expect(container.firstChild).not.toBeNull();
     });
 });

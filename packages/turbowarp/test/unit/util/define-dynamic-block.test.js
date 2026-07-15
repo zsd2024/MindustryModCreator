@@ -1,4 +1,5 @@
 import defineDynamicBlock from '../../../src/lib/define-dynamic-block';
+import {Theme} from '../../../src/lib/themes';
 
 import BlockType from 'scratch-vm/src/extension-support/block-type';
 
@@ -21,28 +22,46 @@ const testBlockInfo = {
     commandWithIcon: {
         blockType: BlockType.COMMAND,
         blockIconURI: penIconURI,
-        text: 'command with icon'
+        text: 'command with icon',
+        colour: '#111',
+        colourSecondary: '#222',
+        colourTertiary: '#333'
     },
     commandWithoutIcon: {
         blockType: BlockType.COMMAND,
-        text: 'command without icon'
+        text: 'command without icon',
+        colour: '#111',
+        colourSecondary: '#222',
+        colourTertiary: '#333'
     },
     terminalCommand: {
         blockType: BlockType.COMMAND,
         isTerminal: true,
-        text: 'terminal command'
+        text: 'terminal command',
+        colour: '#111',
+        colourSecondary: '#222',
+        colourTertiary: '#333'
     },
     reporter: {
         blockType: BlockType.REPORTER,
-        text: 'reporter'
+        text: 'reporter',
+        colour: '#111',
+        colourSecondary: '#222',
+        colourTertiary: '#333'
     },
     boolean: {
         blockType: BlockType.BOOLEAN,
-        text: 'Boolean'
+        text: 'Boolean',
+        colour: '#111',
+        colourSecondary: '#222',
+        colourTertiary: '#333'
     },
     hat: {
         blockType: BlockType.HAT,
-        text: 'hat'
+        text: 'hat',
+        colour: '#111',
+        colourSecondary: '#222',
+        colourTertiary: '#333'
     }
 };
 
@@ -57,7 +76,10 @@ class MockBlock {
     constructor (blockInfo, extendedOpcode) {
         // mimic Closure-style inheritance by mixing in `defineDynamicBlock` output as this instance's prototype
         // see also the `Blockly.Block` constructor
-        const prototype = defineDynamicBlock(MockScratchBlocks, categoryInfo, blockInfo, extendedOpcode);
+        const prototype = defineDynamicBlock(MockScratchBlocks, categoryInfo, {
+            json: blockInfo,
+            blockIconURI: blockInfo.blockIconURI
+        }, extendedOpcode, Theme.light);
         mixin(this, prototype);
         this.init();
 
@@ -104,6 +126,7 @@ describe('defineDynamicBlock', () => {
             colour: categoryInfo.color1,
             colourSecondary: categoryInfo.color2,
             colourTertiary: categoryInfo.color3,
+            colourQuaternary: categoryInfo.color3,
             extensions: ['scratch_extension'],
             inputsInline: true,
             nextConnection: true,
@@ -120,6 +143,7 @@ describe('defineDynamicBlock', () => {
             colour: categoryInfo.color1,
             colourSecondary: categoryInfo.color2,
             colourTertiary: categoryInfo.color3,
+            colourQuaternary: categoryInfo.color3,
             // extensions: undefined, // no icon means no extension
             inputsInline: true,
             nextConnection: true,
@@ -136,6 +160,7 @@ describe('defineDynamicBlock', () => {
             colour: categoryInfo.color1,
             colourSecondary: categoryInfo.color2,
             colourTertiary: categoryInfo.color3,
+            colourQuaternary: categoryInfo.color3,
             // extensions: undefined, // no icon means no extension
             inputsInline: true,
             nextConnection: false, // terminal
@@ -153,6 +178,7 @@ describe('defineDynamicBlock', () => {
             colour: categoryInfo.color1,
             colourSecondary: categoryInfo.color2,
             colourTertiary: categoryInfo.color3,
+            colourQuaternary: categoryInfo.color3,
             // extensions: undefined, // no icon means no extension
             inputsInline: true,
             // nextConnection: undefined, // reporter
@@ -171,6 +197,7 @@ describe('defineDynamicBlock', () => {
             colour: categoryInfo.color1,
             colourSecondary: categoryInfo.color2,
             colourTertiary: categoryInfo.color3,
+            colourQuaternary: categoryInfo.color3,
             // extensions: undefined, // no icon means no extension
             inputsInline: true,
             // nextConnection: undefined, // reporter
@@ -188,6 +215,7 @@ describe('defineDynamicBlock', () => {
             colour: categoryInfo.color1,
             colourSecondary: categoryInfo.color2,
             colourTertiary: categoryInfo.color3,
+            colourQuaternary: categoryInfo.color3,
             // extensions: undefined, // no icon means no extension
             inputsInline: true,
             nextConnection: true,

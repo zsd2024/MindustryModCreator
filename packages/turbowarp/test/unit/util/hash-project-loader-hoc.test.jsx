@@ -72,6 +72,7 @@ describe('HashParserHOC', () => {
             />
         );
         window.location.hash = '#1234567';
+        window.dispatchEvent(new window.Event('hashchange'));
         expect(mockSetProjectIdFunc).toHaveBeenCalledTimes(2);
     });
 });

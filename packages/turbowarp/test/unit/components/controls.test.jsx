@@ -12,13 +12,14 @@ describe('Controls component', () => {
     });
 
     test('shows turbo mode when in turbo mode', () => {
-        const {rerender} = renderWithIntl(
+        const {unmount} = renderWithIntl(
             <Controls
                 {...defaultProps()}
             />
         );
         expect(screen.queryByText('Turbo Mode')).toBeNull();
-        rerender(
+        unmount();
+        renderWithIntl(
             <Controls
                 {...defaultProps()}
                 turbo

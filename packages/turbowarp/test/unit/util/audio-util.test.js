@@ -93,7 +93,7 @@ describe('dropEveryOtherSample', () => {
     });
     test('result contains only even-index items', () => {
         const {samples} = dropEveryOtherSample(buffer);
-        expect(samples).toEqual(new Float32Array([1, 2, 3]));
+        expect(Array.from(samples)).toEqual([1, 2, 3]);
     });
     test('result sampleRate is given sampleRate / 2', () => {
         const {sampleRate} = dropEveryOtherSample(buffer);

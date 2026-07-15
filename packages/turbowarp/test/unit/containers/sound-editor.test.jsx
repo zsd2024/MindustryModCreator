@@ -1,16 +1,27 @@
 import React from 'react';
-import {renderWithIntl} from '../../helpers/intl-helpers.jsx';
+import {act, render} from '@testing-library/react';
+import {IntlProvider} from 'react-intl';
+import {Provider} from 'react-redux';
 import {fireEvent, screen} from '@testing-library/react';
 import configureStore from 'redux-mock-store';
 import mockAudioBufferPlayer from '../../__mocks__/audio-buffer-player.js';
 import mockAudioEffects from '../../__mocks__/audio-effects.js';
 
 import SoundEditor from '../../../src/containers/sound-editor';
-import SoundEditorComponent from '../../../src/components/sound-editor/sound-editor';
 
 jest.mock('react-ga');
 jest.mock('../../../src/lib/audio/audio-buffer-player', () => mockAudioBufferPlayer);
 jest.mock('../../../src/lib/audio/audio-effects', () => mockAudioEffects);
+
+const renderWithIntl = (ui, options = {}) => {
+    const {locale = 'en', messages = {}, ...renderOptions} = options;
+    return render(
+        <IntlProvider locale={locale} messages={messages}>
+            {ui}
+        </IntlProvider>,
+        renderOptions
+    );
+};
 
 describe('Sound Editor Container', () => {
     const mockStore = configureStore();
@@ -37,43 +48,52 @@ describe('Sound Editor Container', () => {
                 }
             }
         };
-        store = mockStore({scratchGui: {vm: vm, mode: {isFullScreen: false}}});
+        store = mockStore({scratchGui: {
+            vm: vm,
+            mode: {isFullScreen: false},
+            theme: {theme: {id: 1}}
+        }});
     });
 
+    const renderWithStore = (ui) => renderWithIntl(
+        <Provider store={store}>{ui}</Provider>
+    );
+
     test('should pass the correct data to the component from the store', () => {
-        renderWithIntl(
+        renderWithStore(
             <SoundEditor
                 soundIndex={soundIndex}
-                store={store}
             />
         );
         expect(screen.getByDisplayValue('first name')).toBeInTheDocument();
     });
 
     test('it plays when clicked and stops when clicked again', () => {
-        renderWithIntl(
+        renderWithStore(
             <SoundEditor
                 soundIndex={soundIndex}
-                store={store}
             />
         );
         expect(mockAudioBufferPlayer.instance.play.mock.calls).toEqual([]);
         expect(mockAudioBufferPlayer.instance.stop.mock.calls).toEqual([]);
 
-        fireEvent.click(screen.getByText('Play'));
+        const playBtn = screen.getByTitle('Play');
+        fireEvent.click(playBtn);
         expect(mockAudioBufferPlayer.instance.play).toHaveBeenCalled();
 
-        mockAudioBufferPlayer.instance.onUpdate(0.5);
+        act(() => {
+            mockAudioBufferPlayer.instance.onUpdate(0.5);
+        });
 
-        fireEvent.click(screen.getByText('Stop'));
+        const stopBtn = screen.getByTitle('Stop');
+        fireEvent.click(stopBtn);
         expect(mockAudioBufferPlayer.instance.stop).toHaveBeenCalled();
     });
 
     test('it submits name changes to the vm', () => {
-        renderWithIntl(
+        renderWithStore(
             <SoundEditor
                 soundIndex={soundIndex}
-                store={store}
             />
         );
         const input = screen.getByDisplayValue('first name');
@@ -83,10 +103,9 @@ describe('Sound Editor Container', () => {
     });
 
     test('it handles an effect by submitting the result and playing', async () => {
-        renderWithIntl(
+        renderWithStore(
             <SoundEditor
                 soundIndex={soundIndex}
-                store={store}
             />
         );
         fireEvent.click(screen.getByText('Reverse'));
@@ -96,10 +115,9 @@ describe('Sound Editor Container', () => {
     });
 
     test('it handles reverse effect correctly', () => {
-        renderWithIntl(
+        renderWithStore(
             <SoundEditor
                 soundIndex={soundIndex}
-                store={store}
             />
         );
         fireEvent.click(screen.getByText('Reverse'));
@@ -108,10 +126,9 @@ describe('Sound Editor Container', () => {
     });
 
     test('it handles louder effect correctly', () => {
-        renderWithIntl(
+        renderWithStore(
             <SoundEditor
                 soundIndex={soundIndex}
-                store={store}
             />
         );
         fireEvent.click(screen.getByText('Louder'));
@@ -120,10 +137,9 @@ describe('Sound Editor Container', () => {
     });
 
     test('it handles softer effect correctly', () => {
-        renderWithIntl(
+        renderWithStore(
             <SoundEditor
                 soundIndex={soundIndex}
-                store={store}
             />
         );
         fireEvent.click(screen.getByText('Softer'));
@@ -132,10 +148,9 @@ describe('Sound Editor Container', () => {
     });
 
     test('it handles faster effect correctly', () => {
-        renderWithIntl(
+        renderWithStore(
             <SoundEditor
                 soundIndex={soundIndex}
-                store={store}
             />
         );
         fireEvent.click(screen.getByText('Faster'));
@@ -144,10 +159,9 @@ describe('Sound Editor Container', () => {
     });
 
     test('it handles slower effect correctly', () => {
-        renderWithIntl(
+        renderWithStore(
             <SoundEditor
                 soundIndex={soundIndex}
-                store={store}
             />
         );
         fireEvent.click(screen.getByText('Slower'));
@@ -156,10 +170,9 @@ describe('Sound Editor Container', () => {
     });
 
     test('it handles echo effect correctly', () => {
-        renderWithIntl(
+        renderWithStore(
             <SoundEditor
                 soundIndex={soundIndex}
-                store={store}
             />
         );
         fireEvent.click(screen.getByText('Echo'));
@@ -168,10 +181,9 @@ describe('Sound Editor Container', () => {
     });
 
     test('it handles robot effect correctly', () => {
-        renderWithIntl(
+        renderWithStore(
             <SoundEditor
                 soundIndex={soundIndex}
-                store={store}
             />
         );
         fireEvent.click(screen.getByText('Robot'));
@@ -180,10 +192,9 @@ describe('Sound Editor Container', () => {
     });
 
     test('undo/redo stack state', async () => {
-        renderWithIntl(
+        renderWithStore(
             <SoundEditor
                 soundIndex={soundIndex}
-                store={store}
             />
         );
 
@@ -191,7 +202,7 @@ describe('Sound Editor Container', () => {
         await mockAudioEffects.instance._finishProcessing(soundBuffer);
 
         // Undo should update the sound buffer and play
-        fireEvent.click(screen.getByText('Undo'));
+        fireEvent.click(screen.getByTitle('Undo'));
         expect(mockAudioBufferPlayer.instance.play).toHaveBeenCalled();
         expect(vm.updateSoundBuffer).toHaveBeenCalled();
 
@@ -199,30 +210,32 @@ describe('Sound Editor Container', () => {
         mockAudioBufferPlayer.instance.play.mockClear();
 
         // Redo should also update the sound buffer and play
-        fireEvent.click(screen.getByText('Redo'));
+        await act(async () => {
+            fireEvent.click(screen.getByTitle('Redo'));
+            // Allow async operations (WavEncoder, downsampleIfNeeded) to settle
+            await new Promise(resolve => setTimeout(resolve, 0));
+        });
         expect(mockAudioBufferPlayer.instance.play).toHaveBeenCalled();
         expect(vm.updateSoundBuffer).toHaveBeenCalled();
     });
 
     test('isStereo numberOfChannels=1', () => {
         soundBuffer.numberOfChannels = 1;
-        renderWithIntl(
+        renderWithStore(
             <SoundEditor
                 soundIndex={soundIndex}
-                store={store}
             />
         );
-        expect(screen.getByText('Stereo')).toBeInTheDocument();
+        expect(screen.getByText(/^Mono/)).toBeInTheDocument();
     });
 
     test('isStereo numberOfChannels=2', () => {
         soundBuffer.numberOfChannels = 2;
-        renderWithIntl(
+        renderWithStore(
             <SoundEditor
                 soundIndex={soundIndex}
-                store={store}
             />
         );
-        expect(screen.getByText('Stereo')).toBeInTheDocument();
+        expect(screen.getByText(/^Stereo/)).toBeInTheDocument();
     });
 });

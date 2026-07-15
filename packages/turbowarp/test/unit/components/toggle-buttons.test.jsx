@@ -1,10 +1,23 @@
 import React from 'react';
 import {render, fireEvent, screen} from '@testing-library/react';
+import configureStore from 'redux-mock-store';
+import {Provider} from 'react-redux';
 import ToggleButtons from '../../../src/components/toggle-buttons/toggle-buttons';
 
+const mockStore = configureStore();
+const store = mockStore({
+    scratchGui: {
+        theme: {theme: {id: 1}}
+    }
+});
+
 describe('ToggleButtons', () => {
+    const renderWithStore = (ui) => render(
+        <Provider store={store}>{ui}</Provider>
+    );
+
     test('renders multiple buttons', () => {
-        render(<ToggleButtons
+        renderWithStore(<ToggleButtons
             buttons={[
                 {
                     title: 'Button 1',
@@ -28,7 +41,7 @@ describe('ToggleButtons', () => {
     test('calls correct click handler', () => {
         const onClick1 = jest.fn();
         const onClick2 = jest.fn();
-        render(<ToggleButtons
+        renderWithStore(<ToggleButtons
             buttons={[
                 {
                     title: 'Button 1',

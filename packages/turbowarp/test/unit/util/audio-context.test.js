@@ -7,24 +7,20 @@ WebAudioTestAPI.setState({
 import SharedAudioContext from '../../../src/lib/audio/shared-audio-context';
 
 describe('Shared Audio Context', () => {
-    const audioContext = new AudioContext();
-
-    test('returns empty object without user gesture', () => {
-        const sharedAudioContext = new SharedAudioContext();
-        expect(sharedAudioContext).toMatchObject({});
+    test('returns undefined without user gesture', () => {
+        const audioContext = SharedAudioContext();
+        expect(audioContext).toBeUndefined();
     });
 
-    test('returns AudioContext when mousedown is triggered', () => {
-        const sharedAudioContext = new SharedAudioContext();
-        const event = new Event('mousedown');
+    test('returns AudioContext after user gesture', () => {
+        SharedAudioContext();
+        // In jsdom ontouchstart is defined, so the module registers for touchstart
+        const gestureEvent = typeof document.ontouchstart === 'undefined' ? 'mousedown' : 'touchstart';
+        const event = new Event(gestureEvent);
         document.dispatchEvent(event);
-        expect(sharedAudioContext).toMatchObject(audioContext);
-    });
-
-    test('returns AudioContext when touchstart is triggered', () => {
-        const sharedAudioContext = new SharedAudioContext();
-        const event = new Event('touchstart');
-        document.dispatchEvent(event);
-        expect(sharedAudioContext).toMatchObject(audioContext);
+        const audioContext = SharedAudioContext();
+        expect(audioContext).toBeDefined();
+        expect(audioContext.destination).toBeDefined();
+        expect(audioContext.sampleRate).toBeDefined();
     });
 });

@@ -476,15 +476,23 @@ test('parseUrlParameter', () => {
 test('Settings migration 1 -> 2', () => {
     const store = new SettingStore();
 
-    // eslint-disable-next-line max-len
-    global.localStorage.getItem = () => `{"_":1,"tw-project-info":{"enabled":false},"tw-interface-customization":{"enabled":false,"removeFeedback":true,"removeBackpack":true}}`;
+    // Use setItem like localStorage normally works, don't override getItem
+    const settingsKey = 'tw:addons';
+    global.localStorage.setItem(settingsKey, JSON.stringify({
+        '_': 1,
+        'tw-project-info': {enabled: false},
+        'tw-interface-customization': {enabled: false, removeFeedback: true, removeBackpack: true}
+    }));
     store.readLocalStorage();
     expect(store.getAddonEnabled('block-count')).toBe(false);
     expect(store.getAddonEnabled('tw-remove-backpack')).toBe(false);
     expect(store.getAddonEnabled('tw-remove-feedback')).toBe(false);
 
-    // eslint-disable-next-line max-len
-    global.localStorage.getItem = () => `{"_":1,"tw-project-info":{"enabled":true},"tw-interface-customization":{"enabled":true,"removeFeedback":true,"removeBackpack":true}}`;
+    global.localStorage.setItem(settingsKey, JSON.stringify({
+        '_': 1,
+        'tw-project-info': {enabled: true},
+        'tw-interface-customization': {enabled: true, removeFeedback: true, removeBackpack: true}
+    }));
     store.readLocalStorage();
     expect(store.getAddonEnabled('block-count')).toBe(true);
     expect(store.getAddonEnabled('tw-remove-backpack')).toBe(true);
@@ -493,34 +501,36 @@ test('Settings migration 1 -> 2', () => {
 
 test('Settings migration 2 -> 3', () => {
     const store = new SettingStore();
+    const settingsKey = 'tw:addons';
 
-    global.localStorage.getItem = () => JSON.stringify({
+    global.localStorage.setItem(settingsKey, JSON.stringify({
         '_': 2,
         'hide-flyout': {
             enabled: true
         }
-    });
+    }));
     store.readLocalStorage();
     expect(store.getAddonSetting('hide-flyout', 'toggle')).toBe('hover');
 });
 
 test('Settings migration 3 -> 4', () => {
     const store = new SettingStore();
+    const settingsKey = 'tw:addons';
 
-    global.localStorage.getItem = () => JSON.stringify({
+    global.localStorage.setItem(settingsKey, JSON.stringify({
         _: 3
-    });
+    }));
     store.readLocalStorage();
     expect(store.getAddonEnabled('editor-devtools')).toBe(true);
     expect(store.getAddonEnabled('find-bar')).toBe(true);
     expect(store.getAddonEnabled('middle-click-popup')).toBe(true);
 
-    global.localStorage.getItem = () => JSON.stringify({
+    global.localStorage.setItem(settingsKey, JSON.stringify({
         '_': 3,
         'editor-devtools': {
             enabled: false
         }
-    });
+    }));
     store.readLocalStorage();
     expect(store.getAddonEnabled('editor-devtools')).toBe(false);
     expect(store.getAddonEnabled('find-bar')).toBe(false);
@@ -645,61 +655,62 @@ test('if', () => {
 
 test('Settings migration 4 -> 5', () => {
     const store = new SettingStore();
+    const settingsKey = 'tw:addons';
 
     // implied default settings
-    global.localStorage.getItem = () => JSON.stringify({
+    global.localStorage.setItem(settingsKey, JSON.stringify({
         _: 4
-    });
+    }));
     store.readLocalStorage();
     expect(store.getAddonSetting('fullscreen', 'toolbar')).toBe('show');
 
     // also implied default settings
-    global.localStorage.getItem = () => JSON.stringify({
+    global.localStorage.setItem(settingsKey, JSON.stringify({
         _: 4,
         fullscreen: {}
-    });
+    }));
     store.readLocalStorage();
     expect(store.getAddonSetting('fullscreen', 'toolbar')).toBe('show');
 
     // explicit default settings
-    global.localStorage.getItem = () => JSON.stringify({
+    global.localStorage.setItem(settingsKey, JSON.stringify({
         '_': 4,
         'fullscreen': {
             hideToolbar: false
         }
-    });
+    }));
     store.readLocalStorage();
     expect(store.getAddonSetting('fullscreen', 'toolbar')).toBe('show');
 
     // explicit hide, implied default hover setting
-    global.localStorage.getItem = () => JSON.stringify({
+    global.localStorage.setItem(settingsKey, JSON.stringify({
         '_': 4,
         'fullscreen': {
             hideToolbar: true
         }
-    });
+    }));
     store.readLocalStorage();
     expect(store.getAddonSetting('fullscreen', 'toolbar')).toBe('hover');
 
     // explicit hide and default hover
-    global.localStorage.getItem = () => JSON.stringify({
+    global.localStorage.setItem(settingsKey, JSON.stringify({
         '_': 4,
         'fullscreen': {
             hideToolbar: true,
             hoverToolbar: true
         }
-    });
+    }));
     store.readLocalStorage();
     expect(store.getAddonSetting('fullscreen', 'toolbar')).toBe('hover');
 
     // explicit hide, no hover
-    global.localStorage.getItem = () => JSON.stringify({
+    global.localStorage.setItem(settingsKey, JSON.stringify({
         '_': 4,
         'fullscreen': {
             hideToolbar: true,
             hoverToolbar: false
         }
-    });
+    }));
     store.readLocalStorage();
     expect(store.getAddonSetting('fullscreen', 'toolbar')).toBe('hide');
 });

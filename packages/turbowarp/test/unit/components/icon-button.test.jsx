@@ -1,6 +1,17 @@
 import React from 'react';
 import {render, fireEvent, screen} from '@testing-library/react';
+import configureStore from 'redux-mock-store';
+import {Provider} from 'react-redux';
 import IconButton from '../../../src/components/icon-button/icon-button';
+
+const mockStore = configureStore();
+const store = mockStore({
+    scratchGui: {
+        theme: {theme: {id: 1}}
+    }
+});
+
+const renderWithStore = (ui) => render(<Provider store={store}>{ui}</Provider>);
 
 describe('IconButtonComponent', () => {
     test('matches snapshot', () => {
@@ -8,7 +19,7 @@ describe('IconButtonComponent', () => {
         const title = <div>Text</div>;
         const imgSrc = 'imgSrc';
         const className = 'custom-class-name';
-        const {container} = render(
+        const {container} = renderWithStore(
             <IconButton
                 className={className}
                 img={imgSrc}
@@ -21,7 +32,7 @@ describe('IconButtonComponent', () => {
 
     test('triggers callback when clicked', () => {
         const onClick = jest.fn();
-        render(
+        renderWithStore(
             <IconButton
                 img={'imgSrc'}
                 title={<div>Text</div>}

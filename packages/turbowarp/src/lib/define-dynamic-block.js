@@ -3,6 +3,7 @@
 import ArgumentType from 'scratch-vm/src/extension-support/argument-type';
 import BlockType from 'scratch-vm/src/extension-support/block-type';
 import {injectExtensionBlockTheme} from './themes/blockHelpers';
+import {Theme} from './themes';
 
 /**
  * Define a block using extension info which has the ability to dynamically determine (and update) its layout.
@@ -16,7 +17,7 @@ import {injectExtensionBlockTheme} from './themes/blockHelpers';
  * @param {Theme} theme - the current theme
  */
 // TODO: grow this until it can fully replace `_convertForScratchBlocks` in the VM runtime
-const defineDynamicBlock = (ScratchBlocks, categoryInfo, staticBlockInfo, extendedOpcode, theme) => ({
+const defineDynamicBlock = (ScratchBlocks, categoryInfo, staticBlockInfo, extendedOpcode, theme = Theme.light) => ({
     init: function () {
         const colors = injectExtensionBlockTheme(staticBlockInfo.json, theme);
         const blockJson = {
@@ -26,7 +27,7 @@ const defineDynamicBlock = (ScratchBlocks, categoryInfo, staticBlockInfo, extend
             colour: colors.colour,
             colourSecondary: colors.colourSecondary,
             colourTertiary: colors.colourTertiary,
-            colourQuaternary: colors.colourQuaternary
+            colourQuaternary: colors.colourQuaternary || colors.colourTertiary
         };
         // There is a scratch-blocks / Blockly extension called "scratch_extension" which adjusts the styling of
         // blocks to allow for an icon, a feature of Scratch extension blocks. However, Scratch "core" extension

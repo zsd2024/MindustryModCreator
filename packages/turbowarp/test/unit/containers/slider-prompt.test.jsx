@@ -1,6 +1,17 @@
 import React from 'react';
 import {render, fireEvent, screen} from '@testing-library/react';
+import {IntlProvider} from 'react-intl';
+import {Provider} from 'react-redux';
+import configureStore from 'redux-mock-store';
 import SliderPrompt from '../../../src/containers/slider-prompt.jsx';
+
+const mockStore = configureStore();
+const store = mockStore({locales: {isRtl: false}});
+const renderWithIntl = (ui) => render(
+    <Provider store={store}>
+        <IntlProvider locale="en">{ui}</IntlProvider>
+    </Provider>
+);
 
 describe('Slider Prompt Container', () => {
     let onCancel;
@@ -12,7 +23,7 @@ describe('Slider Prompt Container', () => {
     });
 
     test('Min/max are shown with decimal when isDiscrete is false', () => {
-        render(
+        renderWithIntl(
             <SliderPrompt
                 isDiscrete={false}
                 maxValue={100}
@@ -28,7 +39,7 @@ describe('Slider Prompt Container', () => {
     });
 
     test('Min/max are NOT shown with decimal when isDiscrete is true', () => {
-        render(
+        renderWithIntl(
             <SliderPrompt
                 isDiscrete
                 maxValue={100}
@@ -42,7 +53,7 @@ describe('Slider Prompt Container', () => {
     });
 
     test('Entering a number with a decimal submits with isDiscrete=false', () => {
-        render(
+        renderWithIntl(
             <SliderPrompt
                 isDiscrete
                 maxValue={100}
@@ -57,7 +68,7 @@ describe('Slider Prompt Container', () => {
     });
 
     test('Entering integers submits with isDiscrete=true', () => {
-        render(
+        renderWithIntl(
             <SliderPrompt
                 isDiscrete={false}
                 maxValue={100.1}
@@ -66,7 +77,7 @@ describe('Slider Prompt Container', () => {
                 onOk={onOk}
             />
         );
-        const inputs = screen.getAllByRole('spinbutton');
+        const inputs = screen.getAllByRole('textbox');
         fireEvent.change(inputs[0], {target: {value: '1'}});
         fireEvent.change(inputs[1], {target: {value: '2'}});
         fireEvent.click(screen.getByText('OK'));
@@ -74,7 +85,7 @@ describe('Slider Prompt Container', () => {
     });
 
     test('Enter button submits the form', () => {
-        render(
+        renderWithIntl(
             <SliderPrompt
                 isDiscrete={false}
                 maxValue={100.1}
@@ -83,7 +94,7 @@ describe('Slider Prompt Container', () => {
                 onOk={onOk}
             />
         );
-        const inputs = screen.getAllByRole('spinbutton');
+        const inputs = screen.getAllByRole('textbox');
         fireEvent.change(inputs[0], {target: {value: '1'}});
         fireEvent.change(inputs[1], {target: {value: '2'}});
         fireEvent.keyDown(inputs[1], {key: 'Enter', code: 'Enter'});
@@ -91,7 +102,7 @@ describe('Slider Prompt Container', () => {
     });
 
     test('Validates number-ness before submitting', () => {
-        render(
+        renderWithIntl(
             <SliderPrompt
                 isDiscrete={false}
                 maxValue={100.1}
@@ -100,7 +111,7 @@ describe('Slider Prompt Container', () => {
                 onOk={onOk}
             />
         );
-        const inputs = screen.getAllByRole('spinbutton');
+        const inputs = screen.getAllByRole('textbox');
         fireEvent.change(inputs[0], {target: {value: 'hello'}});
         fireEvent.click(screen.getByText('OK'));
         expect(onOk).not.toHaveBeenCalled();

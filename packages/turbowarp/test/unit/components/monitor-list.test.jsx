@@ -5,7 +5,7 @@ import {Provider} from 'react-redux';
 import {renderWithIntl} from '../../helpers/intl-helpers.jsx';
 import {screen} from '@testing-library/react';
 import MonitorList from '../../../src/components/monitor-list/monitor-list.jsx';
-import {DEFAULT_THEME} from '../../../src/lib/themes';
+import {Theme} from '../../../src/lib/themes';
 
 describe('MonitorListComponent', () => {
     const store = configureStore()({scratchGui: {
@@ -14,7 +14,7 @@ describe('MonitorListComponent', () => {
             savedMonitorPositions: {}
         },
         theme: {
-            theme: DEFAULT_THEME
+            theme: Theme.light
         },
         toolbox: {
             toolboxXML: ''

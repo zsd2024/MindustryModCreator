@@ -45,7 +45,7 @@ const SliderPromptComponent = props => (
                     type="text"
                     value={props.minValue}
                     onChange={props.onChangeMin}
-                    onKeyPress={props.onKeyPress}
+                    onKeyDown={props.onKeyDown}
                 />
             </Box>
             <Box className={styles.label}>
@@ -59,7 +59,7 @@ const SliderPromptComponent = props => (
                     type="text"
                     value={props.maxValue}
                     onChange={props.onChangeMax}
-                    onKeyPress={props.onKeyPress}
+                    onKeyDown={props.onKeyDown}
                 />
             </Box>
             <Box className={styles.buttonRow}>
@@ -95,7 +95,7 @@ SliderPromptComponent.propTypes = {
     onCancel: PropTypes.func.isRequired,
     onChangeMax: PropTypes.func.isRequired,
     onChangeMin: PropTypes.func.isRequired,
-    onKeyPress: PropTypes.func.isRequired,
+    onKeyDown: PropTypes.func.isRequired,
     onOk: PropTypes.func.isRequired
 };
 
