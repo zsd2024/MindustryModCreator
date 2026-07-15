@@ -102,7 +102,7 @@ SpriteSelectorItem.propTypes = {
     componentRef: PropTypes.func,
     costumeURL: PropTypes.string,
     details: PropTypes.string,
-     
+
     name: PropTypes.any,
     number: PropTypes.number,
     onClick: PropTypes.func,

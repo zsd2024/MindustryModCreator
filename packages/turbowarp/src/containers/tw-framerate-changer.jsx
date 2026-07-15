@@ -23,7 +23,7 @@ class FramerateChanger extends React.Component {
     async changeFramerate (e) {
         if (e && (e.ctrlKey || e.shiftKey)) {
             // prompt() returns Promise in desktop app
-             
+
             const newFPS = await prompt(this.props.intl.formatMessage(messages.newFramerate), this.props.framerate);
             if (newFPS === null) {
                 return;

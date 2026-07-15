@@ -1,4 +1,4 @@
- 
+
 import soundThumbnail from '!base64-loader!./sound-thumbnail.png';
 
 const soundPayload = sound => {
@@ -26,7 +26,7 @@ const soundPayload = sound => {
         payload.body = assetDataUrl.replace('data:audio/x-wav;base64,', '');
         break;
     default:
-        alert(`Cannot serialize for format: ${assetDataFormat}`);  
+        alert(`Cannot serialize for format: ${assetDataFormat}`);
     }
 
     // Return a promise to make it consistent with other payload constructors like costume-payload

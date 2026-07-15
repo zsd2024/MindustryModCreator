@@ -43,7 +43,7 @@ class RecordingStep extends React.Component {
     }
     handleRecordingError (error) {
         log.error(error);
-        alert(this.props.intl.formatMessage(messages.alertMsg));  
+        alert(this.props.intl.formatMessage(messages.alertMsg));
     }
     handleLevelUpdate (level) {
         this.setState({

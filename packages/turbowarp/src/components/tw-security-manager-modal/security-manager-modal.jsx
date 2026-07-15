@@ -21,7 +21,7 @@ import styles from './security-manager-modal.css';
 const messages = defineMessages({
     title: {
         defaultMessage: 'Extension Security',
-         
+
         description: 'Title of modal thats asks the user for permission to let the project load an extension, fetch a resource, open a window, etc.',
         id: 'tw.securityManager.title'
     }
@@ -94,7 +94,7 @@ SecurityManagerModalComponent.propTypes = {
     type: PropTypes.oneOf(Object.values(SecurityModals)),
     enableButtons: PropTypes.bool,
     // Each modal may have different type of data
-     
+
     data: PropTypes.object.isRequired,
     onAllowed: PropTypes.func.isRequired,
     onDenied: PropTypes.func.isRequired

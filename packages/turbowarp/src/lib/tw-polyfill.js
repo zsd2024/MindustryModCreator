@@ -1,4 +1,4 @@
- 
+
 
 if (!Blob.prototype.text) {
     Blob.prototype.text = function () {

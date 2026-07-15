@@ -181,7 +181,7 @@ class Monitor extends React.Component {
             if (numberOfColumns > 1) {
                 const msg = this.props.intl.formatMessage(messages.columnPrompt, {numberOfColumns});
                 // prompt() returns Promise in desktop app
-                columnNumber = parseInt(await prompt(msg), 10);  
+                columnNumber = parseInt(await prompt(msg), 10);
             }
             let newListValue;
             if (isNaN(columnNumber) || numberOfColumns === 1) {
@@ -253,18 +253,18 @@ Monitor.propTypes = {
     min: PropTypes.number,
     mode: PropTypes.oneOf(['default', 'slider', 'large', 'list']),
     monitorLayout: PropTypes.shape({
-        monitors: PropTypes.object,  
-        savedMonitorPositions: PropTypes.object  
+        monitors: PropTypes.object,
+        savedMonitorPositions: PropTypes.object
     }).isRequired,
     onDragEnd: PropTypes.func.isRequired,
-    opcode: PropTypes.string.isRequired,  
-    params: PropTypes.object,  
+    opcode: PropTypes.string.isRequired,
+    params: PropTypes.object,
     removeMonitorRect: PropTypes.func.isRequired,
     resizeMonitorRect: PropTypes.func.isRequired,
-    spriteName: PropTypes.string,  
+    spriteName: PropTypes.string,
     targetId: PropTypes.string,
     theme: PropTypes.instanceOf(Theme),
-    toolboxXML: PropTypes.string,  
+    toolboxXML: PropTypes.string,
     value: PropTypes.oneOfType([
         PropTypes.string,
         PropTypes.number,
@@ -272,7 +272,7 @@ Monitor.propTypes = {
             PropTypes.string,
             PropTypes.number
         ]))
-    ]),  
+    ]),
     vm: PropTypes.instanceOf(VM),
     width: PropTypes.number,
     x: PropTypes.number,

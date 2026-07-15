@@ -13,7 +13,7 @@ import styles from './settings-modal.css';
 import helpIcon from './help-icon.svg';
 import {APP_NAME} from '../../lib/brand.js';
 
- 
+
 
 const BufferedInput = BufferedInputHOC(Input);
 
@@ -54,7 +54,7 @@ class UnwrappedSetting extends React.Component {
     }
     componentDidUpdate (prevProps) {
         if (this.props.active && !prevProps.active) {
-             
+
             this.setState({
                 helpVisible: true
             });
@@ -140,7 +140,7 @@ const HighQualityPen = props => (
         }
         help={
             <FormattedMessage
-                 
+
                 defaultMessage="Allows pen projects to render at higher resolutions and disables some coordinate rounding in the editor. Not all projects benefit from this setting and it may impact performance."
                 description="High quality pen setting help"
                 id="tw.settingsModal.highQualityPenHelp"
@@ -163,7 +163,7 @@ const CustomFPS = props => (
         }
         help={
             <FormattedMessage
-                 
+
                 defaultMessage="Runs scripts 60 times per second instead of 30. Most projects will not work properly with this enabled. You should try Interpolation with 60 FPS mode disabled if that is the case. {customFramerate}."
                 description="FPS setting help"
                 id="tw.settingsModal.fpsHelp"
@@ -204,7 +204,7 @@ const Interpolation = props => (
         }
         help={
             <FormattedMessage
-                 
+
                 defaultMessage="Makes projects appear smoother by interpolating sprite motion. Interpolation should not be used on 3D projects, raytracers, pen projects, and laggy projects as interpolation will make them run slower without making them appear smoother."
                 description="Interpolation setting help"
                 id="tw.settingsModal.interpolationHelp"
@@ -247,7 +247,7 @@ const RemoveFencing = props => (
         }
         help={
             <FormattedMessage
-                 
+
                 defaultMessage="Allows sprites to move offscreen, become as large or as small as they want, and makes touching blocks work offscreen."
                 description="Remove Fencing setting help"
                 id="tw.settingsModal.removeFencingHelp"
@@ -290,7 +290,7 @@ const WarpTimer = props => (
         }
         help={
             <FormattedMessage
-                 
+
                 defaultMessage="Makes scripts check if they are stuck in a long or infinite loop and run at a low framerate instead of getting stuck until the loop finishes. This fixes most crashes but has a significant performance impact, so it's only enabled by default in the editor."
                 description="Warp Timer help"
                 id="tw.settingsModal.warpTimerHelp"
@@ -312,7 +312,7 @@ const DisableCompiler = props => (
         }
         help={
             <FormattedMessage
-                 
+
                 defaultMessage="Disables the {APP_NAME} compiler. You may want to enable this while editing projects so that scripts update immediately. Otherwise, you should never enable this."
                 description="Disable Compiler help"
                 id="tw.settingsModal.disableCompilerHelp"
@@ -366,7 +366,7 @@ const CustomStageSize = ({
             (stageWidth >= 1000 || stageHeight >= 1000) && (
                 <div className={styles.warning}>
                     <FormattedMessage
-                         
+
                         defaultMessage="Using a custom stage size this large is not recommended! Instead, use a lower size with the same aspect ratio and let fullscreen mode upscale it to match the user's display."
                         description="Warning about using stages that are too large in settings modal"
                         id="tw.settingsModal.largeStageWarning"
@@ -377,7 +377,7 @@ const CustomStageSize = ({
         }
         help={(
             <FormattedMessage
-                 
+
                 defaultMessage="Changes the size of the Scratch stage from 480x360 to something else. Try 640x360 to make the stage widescreen. Very few projects will handle this properly."
                 description="Custom Stage Size option"
                 id="tw.settingsModal.customStageSizeHelp"
@@ -409,7 +409,7 @@ const StoreProjectOptions = ({onStoreProjectOptions}) => (
             </button>
             <p>
                 <FormattedMessage
-                     
+
                     defaultMessage="Stores the selected settings in the project so they will be automatically applied when TurboWarp loads this project. Warp timer and disable compiler will not be saved."
                     description="Help text for the store settings in project button"
                     id="tw.settingsModal.storeProjectOptionsHelp"

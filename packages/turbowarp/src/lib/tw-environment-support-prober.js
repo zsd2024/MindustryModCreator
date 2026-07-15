@@ -14,7 +14,7 @@ export const isNewFunctionSupported = () => {
     if (cachedNewFunctionSupport === null) {
         try {
             // This will throw if blocked by CSP
-             
+
             new Function('');
             cachedNewFunctionSupport = true;
         } catch (e) {
@@ -25,7 +25,7 @@ export const isNewFunctionSupported = () => {
 };
 
 export const findIncompatibleUserscripts = () => {
-     
+
 
     /** @type {string[]} */
     const errors = [];
@@ -45,7 +45,7 @@ export const findIncompatibleUserscripts = () => {
         }
     }
 
-     
+
     return errors;
 };
 

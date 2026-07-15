@@ -339,9 +339,9 @@ class MenuBar extends React.Component {
         if (modifier) {
             if (event.key.toLowerCase() === 's') {
                 this.props.handleSaveProject();
-                event.preventDefault();    
+                event.preventDefault();
             } else if (event.key.toLowerCase() === 'o') {
-                event.preventDefault();    
+                event.preventDefault();
                 this.props.onStartSelectingFileUpload();
             }
         }
@@ -379,7 +379,7 @@ class MenuBar extends React.Component {
         default: {
             return (<FormattedMessage
                 defaultMessage="Restore"
-                description="Menu bar item for restoring the last deleted item in its disabled state."  
+                description="Menu bar item for restoring the last deleted item in its disabled state."
                 id="gui.menuBar.restore"
             />);
         }
@@ -550,7 +550,7 @@ class MenuBar extends React.Component {
                                 this.props.onClickDesktopSettings &&
                                 this.handleClickDesktopSettings
                             }
-                             
+
                             onOpenCustomSettings={
                                 this.props.onClickAddonSettings &&
                                 this.props.onClickAddonSettings.bind(null, 'editor-theme3')
@@ -602,7 +602,7 @@ class MenuBar extends React.Component {
                                         >
                                             <FormattedMessage
                                                 defaultMessage="New window"
-                                                 
+
                                                 description="Part of desktop app. Menu bar item that creates a new window."
                                                 id="tw.menuBar.newWindow"
                                             />
@@ -641,11 +641,11 @@ class MenuBar extends React.Component {
                                                     {extended.available && (
                                                         <React.Fragment>
                                                             {extended.name !== null && (
-                                                                 
+
                                                                 <MenuItem onClick={this.getSaveToComputerHandler(extended.saveToLastFile)}>
                                                                     <FormattedMessage
                                                                         defaultMessage="Save to {file}"
-                                                                         
+
                                                                         description="Menu bar item to save project to an existing file on the user's computer"
                                                                         id="tw.saveTo"
                                                                         values={{
@@ -658,7 +658,7 @@ class MenuBar extends React.Component {
                                                             <MenuItem onClick={this.getSaveToComputerHandler(extended.saveAsNew)}>
                                                                 <FormattedMessage
                                                                     defaultMessage="Save as..."
-                                                                     
+
                                                                     description="Menu bar item to select a new file to save the project as"
                                                                     id="tw.saveAs"
                                                                 />
@@ -672,14 +672,14 @@ class MenuBar extends React.Component {
                                                             {extended.available ? (
                                                                 <FormattedMessage
                                                                     defaultMessage="Save to separate file..."
-                                                                     
+
                                                                     description="Download the project once, without being able to easily save to the same spot"
                                                                     id="tw.oldDownload"
                                                                 />
                                                             ) : (
                                                                 <FormattedMessage
                                                                     defaultMessage="Save to your computer"
-                                                                    description="Menu bar item for downloading a project to your computer"  
+                                                                    description="Menu bar item for downloading a project to your computer"
                                                                     id="gui.menuBar.downloadToComputer"
                                                                 />
                                                             )}
@@ -696,7 +696,7 @@ class MenuBar extends React.Component {
                                             >
                                                 <FormattedMessage
                                                     defaultMessage="Package project"
-                                                     
+
                                                     description="Menu bar item to open the current project in the packager"
                                                     id="tw.menuBar.package"
                                                 />
@@ -853,7 +853,7 @@ class MenuBar extends React.Component {
                                             ) : (
                                                 <FormattedMessage
                                                     defaultMessage="Cloud Variables are not Available"
-                                                     
+
                                                     description="Menu bar item for when cloud variables are not available"
                                                     id="tw.menuBar.cloudUnavailable"
                                                 />
@@ -990,11 +990,11 @@ class MenuBar extends React.Component {
                                             <ShareButton
                                                 className={styles.menuBarButton}
                                                 isShared={this.props.isShared}
-                                                 
+
                                                 onClick={() => {
                                                     this.handleClickShare(waitForUpdate);
                                                 }}
-                                                 
+
                                             />
                                         )
                                     }
@@ -1021,11 +1021,11 @@ class MenuBar extends React.Component {
                                         waitForUpdate => (
                                             <CommunityButton
                                                 className={styles.menuBarButton}
-                                                 
+
                                                 onClick={() => {
                                                     this.handleClickSeeCommunity(waitForUpdate);
                                                 }}
-                                                 
+
                                             />
                                         )
                                     }

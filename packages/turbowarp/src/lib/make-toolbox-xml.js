@@ -12,7 +12,7 @@ const translate = (id, english) => {
     return english;
 };
 
- 
+
 const motion = function (isInitialSetup, isStage, targetId, colors) {
     const stageSelected = translate(
         'MOTION_STAGE_SELECTED',
@@ -746,12 +746,12 @@ const myBlocks = function (isInitialSetup, isStage, targetId, colors) {
     `;
 };
 
- 
+
 const extraTurboWarpBlocks = `
 <block type="argument_reporter_boolean"><field name="VALUE">is compiled?</field></block>
 <block type="argument_reporter_boolean"><field name="VALUE">is TurboWarp?</field></block>
 `;
- 
+
 
 const xmlOpen = '<xml style="display: none">';
 const xmlClose = '</xml>';

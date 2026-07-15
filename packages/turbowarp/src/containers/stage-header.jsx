@@ -11,7 +11,7 @@ import {connect} from 'react-redux';
 
 import StageHeaderComponent from '../components/stage-header/stage-header.jsx';
 
- 
+
 class StageHeader extends React.Component {
     constructor (props) {
         super(props);

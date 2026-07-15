@@ -22,7 +22,7 @@ class FeaturedProjects extends React.Component {
     }
     componentDidUpdate (prevProps) {
         if (this.props.projectId === '0' && prevProps.projectId === null) {
-             
+
             this.setState({
                 opened: true,
                 transition: false

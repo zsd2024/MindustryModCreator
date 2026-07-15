@@ -12,7 +12,7 @@ const ReadClipboard = () => (
         </p>
         <p>
             <FormattedMessage
-                 
+
                 defaultMessage="If your clipboard contains things like passwords, the project may be able to share those with other users or servers."
                 description="Part of modal that appears when a project tries to access the clipboard using an extension"
                 id="tw.clipboard.danger"
@@ -20,9 +20,9 @@ const ReadClipboard = () => (
         </p>
         <p>
             <FormattedMessage
-                 
+
                 defaultMessage="Clipboard access may not work in some browsers. If allowed, further clipboard reads will be automatically allowed."
-                 
+
                 description="Part of modal that appears when a project tries to access the clipboard using an extension"
                 id="tw.clipboard.permission"
             />

@@ -43,7 +43,7 @@ class AddSystemFont extends React.Component {
             <React.Fragment>
                 <p>
                     <FormattedMessage
-                         
+
                         defaultMessage="Type in the name of any font built in to your computer. The font may not appear correctly for everyone."
                         description="Part of font management modal."
                         id="tw.fonts.system.name"

@@ -44,7 +44,7 @@ class FileInput extends React.Component {
                 {this.props.files ? (
                     <FormattedMessage
                         defaultMessage="Selected: {names}"
-                         
+
                         description="Appears in a file selector when a file is selected. {names} could be a string like 'fetch.js, network.js'"
                         id="tw.fileInput.selected"
                         values={{

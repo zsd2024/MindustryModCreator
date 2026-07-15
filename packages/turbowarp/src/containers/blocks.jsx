@@ -49,25 +49,25 @@ import {gentlyRequestPersistentStorage} from '../lib/tw-persistent-storage.js';
 const messages = defineMessages({
     PROCEDURES_RETURN: {
         defaultMessage: 'return {v}',
-         
+
         description: 'The name of the "return" block from the Custom Reporters extension. {v} is replaced with a slot to insert a value.',
         id: 'tw.blocks.PROCEDURES_RETURN'
     },
     PROCEDURES_TO_REPORTER: {
         defaultMessage: 'Change To Reporter',
-         
+
         description: 'Context menu item to change a command-shaped custom block into a reporter. Part of the Custom Reporters extension.',
         id: 'tw.blocks.PROCEDURES_TO_REPORTER'
     },
     PROCEDURES_TO_STATEMENT: {
         defaultMessage: 'Change To Statement',
-         
+
         description: 'Context menu item to change a reporter-shaped custom block into a statement/command. Part of the Custom Reporters extension.',
         id: 'tw.blocks.PROCEDURES_TO_STATEMENT'
     },
     PROCEDURES_DOCS: {
         defaultMessage: 'How to use return',
-         
+
         description: 'Button in extension list to learn how to use the "return" block from the Custom Reporters extension.',
         id: 'tw.blocks.PROCEDURES_DOCS'
     }

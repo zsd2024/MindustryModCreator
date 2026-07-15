@@ -19,7 +19,7 @@ const GuiThemeMenu = ({
     <MenuItem>
         <div
             className={styles.option}
-             
+
             onClick={() => onChangeTheme(theme.set('gui', theme.gui === GUI_DARK ? GUI_LIGHT : GUI_DARK))}
         >
             <img

@@ -83,7 +83,7 @@ class ListMonitorScroller extends React.Component {
     render () {
         const {height, values, width, activeIndex, activeValue} = this.props;
         // Keep the active index in view if defined, else must be undefined for List component
-        const scrollToIndex = activeIndex === null ? undefined : activeIndex;  
+        const scrollToIndex = activeIndex === null ? undefined : activeIndex;
         return (
             <List
                 activeIndex={activeIndex}
@@ -93,7 +93,7 @@ class ListMonitorScroller extends React.Component {
                 rowCount={values.length}
                 rowHeight={24 /* Row size is same for all rows */}
                 rowRenderer={this.rowRenderer}
-                scrollToIndex={scrollToIndex}  
+                scrollToIndex={scrollToIndex}
                 values={values}
                 width={width}
             />

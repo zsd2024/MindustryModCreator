@@ -130,7 +130,7 @@ const BlocksThemeMenu = ({
                     key={i}
                     id={i}
                     isSelected={theme.blocks === i}
-                     
+
                     onClick={
                         i === BLOCKS_CUSTOM ?
                             onOpenCustomSettings :

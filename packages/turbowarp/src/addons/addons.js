@@ -88,7 +88,7 @@ const newAddons = [
     'expanded-backpack'
 ];
 
- 
+
 module.exports = {
     addons,
     newAddons

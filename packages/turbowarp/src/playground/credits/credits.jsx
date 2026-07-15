@@ -8,7 +8,7 @@ import {applyGuiColors} from '../../lib/themes/guiHelpers';
 import {detectTheme} from '../../lib/themes/themePersistance';
 import UserData from './users';
 
- 
+
 
 applyGuiColors(detectTheme());
 document.documentElement.lang = 'en';

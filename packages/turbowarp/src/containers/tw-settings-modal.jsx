@@ -38,7 +38,7 @@ class UsernameModal extends React.Component {
     }
     async handleCustomizeFramerate () {
         // prompt() returns Promise in desktop app
-         
+
         const newFramerate = await prompt(this.props.intl.formatMessage(messages.newFramerate), this.props.framerate);
         const parsed = parseFloat(newFramerate);
         if (isFinite(parsed)) {

@@ -33,7 +33,7 @@ class ProjectWatcher extends React.Component {
     }
     fulfill () {
         this.props.onDoneUpdating();
-        this.setState({  
+        this.setState({
             waiting: false
         });
     }

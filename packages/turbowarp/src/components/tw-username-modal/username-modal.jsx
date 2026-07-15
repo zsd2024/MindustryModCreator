@@ -27,7 +27,7 @@ const UsernameModalComponent = props => (
             {props.mustChangeUsername && <React.Fragment>
                 <p className={classNames(styles.helpText, styles.mustChange)}>
                     <FormattedMessage
-                         
+
                         defaultMessage="Sorry, the cloud variable server thinks your username may be unsafe. Please change it to something else or {resetIt}."
                         description="Text in change username modal"
                         id="tw.usernameModal.mustChange"
@@ -76,7 +76,7 @@ const UsernameModalComponent = props => (
                 <React.Fragment>
                     <p className={styles.helpText}>
                         <FormattedMessage
-                             
+
                             defaultMessage="This value will be stored in your browser's storage. It may be logged when you interact with projects that contain cloud variables."
                             description="Text in change username modal"
                             id="tw.usernameModal.help"
@@ -84,7 +84,7 @@ const UsernameModalComponent = props => (
                     </p>
                     <p className={styles.helpText}>
                         <FormattedMessage
-                             
+
                             defaultMessage="Values that do not correspond to a valid Scratch account will typically be rejected by the cloud variable server. We recommend leaving it as-is or changing it to your Scratch username."
                             description="Text in change username modal"
                             id="tw.usernameModal.help2"

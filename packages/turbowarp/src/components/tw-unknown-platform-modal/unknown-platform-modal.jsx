@@ -38,7 +38,7 @@ const UnknownPlatformModal = props => (
             <p>
                 <FormattedMessage
                     defaultMessage="The project was made for a different platform:"
-                     
+
                     description="Text in modal that appears when loading a project made for another mod. Followed by some information about the other mod."
                     id="tw.unknownPlatform.1"
                 />
@@ -50,9 +50,9 @@ const UnknownPlatformModal = props => (
 
             <p>
                 <FormattedMessage
-                     
+
                     defaultMessage="Compatibility with {APP_NAME} is not guaranteed. You can continue at your own risk, but we may not be able to help if you encounter any problems."
-                     
+
                     description="Text in modal that appears when loading a project made for another mod."
                     id="tw.unknownPlatform.2"
                     values={{
@@ -68,7 +68,7 @@ const UnknownPlatformModal = props => (
             >
                 <FormattedMessage
                     defaultMessage="I understand"
-                     
+
                     description="Button in modal that appears when loading a project made for another mod. Allows ignoring the warning."
                     id="tw.unknownPlatform.continue"
                 />

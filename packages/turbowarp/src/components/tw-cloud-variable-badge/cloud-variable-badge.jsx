@@ -27,17 +27,17 @@ const CloudVariableBadge = props => {
                     draggable={false}
                 />
                 <FormattedMessage
-                     
+
                     defaultMessage="This project uses cloud variables."
                     description="Cloud variable information shown under projects with cloud variables"
                     id="tw.usesCloudVariables"
                 />
             </div>
-    
+
             <FormattedMessage
-                 
+
                 defaultMessage="{APP_NAME}'s cloud variables are not connected to Scratch's. Anyone can {changeTheirUsername} to anything, so beware of impersonation."
-                 
+
                 description="Cloud variable information shown under projects with cloud variables. {changeTheirUsername} will be replaced with a link with text 'change their username' (translated)"
                 id="tw.usesCloudVariables2"
                 values={{
@@ -46,7 +46,7 @@ const CloudVariableBadge = props => {
                         <a onClick={props.onOpenChangeUsername}>
                             <FormattedMessage
                                 defaultMessage="change their username"
-                                 
+
                                 description="Link that opens modal to change one's username. Used in the context 'Anyone can change their username'"
                                 id="tw.usesCloudVariables2.change"
                             />
@@ -54,7 +54,7 @@ const CloudVariableBadge = props => {
                     )
                 }}
             />
-    
+
             {selectedHost && hosts.length > 1 ? (
                 <div className={styles.servers}>
                     <FormattedMessage
@@ -78,7 +78,7 @@ const CloudVariableBadge = props => {
             ) : (
                 <FormattedMessage
                     defaultMessage="Using a custom cloud variable server: {server}"
-                     
+
                     description="Appears when using a non-TurboWarp provided cloud variable server. {server} is replaced with the server's URL, eg. wss://clouddata.turbowarp.org"
                     id="tw.customCloudServer"
                     values={{
@@ -105,7 +105,7 @@ const CloudVariableBadge = props => {
                     }}
                 />
             )}
-    
+
             <a
                 target="_blank"
                 rel="noreferrer"

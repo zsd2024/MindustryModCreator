@@ -1,4 +1,4 @@
- 
+
 
 const SansSerif = require('./NotoSans-Medium.woff2');
 const Serif = require('./SourceSerifPro-Regular.woff2');

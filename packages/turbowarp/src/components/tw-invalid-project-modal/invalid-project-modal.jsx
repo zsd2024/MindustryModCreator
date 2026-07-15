@@ -41,7 +41,7 @@ const InvalidProjectModal = props => (
             <p>
                 <FormattedMessage
                     defaultMessage="Could not load project:"
-                     
+
                     description="Part of modal that appears when a project could not be loaded. Followed by error message."
                     id="tw.invalidProject.error"
                 />
@@ -58,9 +58,9 @@ const InvalidProjectModal = props => (
             {isZipCorruptionWithSignatureIntact(props.error) ? (
                 <p>
                     <FormattedMessage
-                         
+
                         defaultMessage="This error often means that the file was corrupted, possibly due to a faulty storage device, power outage, or unplugging a USB drive without ejecting. Try {usingSb3fix} as it can fix this type of error."
-                         
+
                         description="Part of modal that appears when a project could not be loaded. {usingSb3fix} becomes a link 'using sb3fix to recover your project'. sb3fix refers to https://turbowarp.github.io/sb3fix/"
                         id="tw.invalidProject.zipCorruption"
                         values={{
@@ -72,7 +72,7 @@ const InvalidProjectModal = props => (
                                 >
                                     <FormattedMessage
                                         defaultMessage="using sb3fix to recover your project"
-                                         
+
                                         description="Part of modal that appears when a project could not be loaded. Used in context 'Try using sb3fix to recover your project as it can fix this type of error'. sb3fix referes to https://turbowarp.github.io/sb3fix/"
                                         id="tw.invalidProject.sb3fix"
                                     />
@@ -84,9 +84,9 @@ const InvalidProjectModal = props => (
             ) : isJSONValidationError(props.error) ? (
                 <p>
                     <FormattedMessage
-                         
+
                         defaultMessage="This error often means that a small part of the project has been corrupted, but that it is otherwise valid. This can be easy to fix, so please {reportIt}."
-                         
+
                         description="Part of modal that appears when a project could not be loaded. {reportIt} becomes a link 'report it'."
                         id="tw.invalidProject.validationError"
                         values={{
@@ -98,7 +98,7 @@ const InvalidProjectModal = props => (
                                 >
                                     <FormattedMessage
                                         defaultMessage="report it"
-                                         
+
                                         description="Part of modal that appears when a project could not be loaded. Used in context 'Please report this as this is ...'"
                                         id="tw.invalidProject.reportIt"
                                     />
@@ -111,7 +111,7 @@ const InvalidProjectModal = props => (
 
             <p>
                 <FormattedMessage
-                     
+
                     defaultMessage="You may be able to recover an older version of the project from automatic restore points or other backups."
                     description="Part of modal that appears when a project could not be loaded."
                     id="tw.invalidProject.options"
@@ -124,7 +124,7 @@ const InvalidProjectModal = props => (
             >
                 <FormattedMessage
                     defaultMessage="View Restore Points"
-                     
+
                     description="Part of modal that appears when a project could not be loaded. This is a button that opens the restore point menu."
                     id="tw.invalidProject.restorePoints"
                 />

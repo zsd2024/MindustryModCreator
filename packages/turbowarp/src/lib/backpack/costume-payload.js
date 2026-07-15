@@ -28,7 +28,7 @@ const costumePayload = (costume, vm) => {
         payload.body = assetDataUrl;
         break;
     default:
-        alert(`Cannot serialize for format: ${assetDataFormat}`);  
+        alert(`Cannot serialize for format: ${assetDataFormat}`);
     }
 
     // Do not generate the thumbnail from the raw asset. Instead use the getCostumeUrl

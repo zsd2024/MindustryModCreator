@@ -154,18 +154,18 @@ class SpriteSelectorItem extends React.PureComponent {
 }
 
 SpriteSelectorItem.propTypes = {
-     
+
     asset: PropTypes.any,
     costumeURL: PropTypes.string,
     dispatchSetHoveredSprite: PropTypes.func.isRequired,
-     
+
     dragPayload: PropTypes.any,
     dragType: PropTypes.string,
     dragging: PropTypes.bool,
-     
+
     id: PropTypes.any,
     index: PropTypes.number,
-     
+
     name: PropTypes.any,
     onClick: PropTypes.func,
     onDeleteButtonClick: PropTypes.func,

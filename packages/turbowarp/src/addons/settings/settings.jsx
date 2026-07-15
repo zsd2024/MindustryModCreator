@@ -39,10 +39,10 @@ import {applyGuiColors} from '../../lib/themes/guiHelpers.js';
 import {APP_NAME} from '../../lib/brand.js';
 import '../../lib/normalize.css';
 
- 
- 
- 
- 
+
+
+
+
 
 // messagesByLocale only has the non-English strings, so we have to add English as a supported
 // locale so that a non-English device with their editor language set to English gets English.
@@ -128,7 +128,7 @@ const groupedAddons = groupAddons();
 
 const getInitialSearch = () => {
     const hash = location.hash.substring(1);
-    
+
     // If the query is an addon ID, it's a better user experience to show the name of the addon
     // in the search bar instead of a ID they won't understand.
     if (Object.prototype.hasOwnProperty.call(importedAddons, hash)) {
@@ -485,7 +485,7 @@ Setting.propTypes = {
         })),
         if: PropTypes.shape({
             addonEnabled: PropTypes.oneOfType([PropTypes.string, PropTypes.arrayOf(PropTypes.string)]),
-             
+
             settings: PropTypes.object
         })
     }),
@@ -1160,7 +1160,7 @@ class AddonSettingsComponent extends React.Component {
                                 >
                                     {this.state.extended ?
                                         // Don't bother translating, pretty much no one will ever see this.
-                                         
+
                                         `You have enabled debug mode. (Addons version ${upstreamMeta.commit})` :
                                         `Addons version ${upstreamMeta.commit}`}
                                 </span>

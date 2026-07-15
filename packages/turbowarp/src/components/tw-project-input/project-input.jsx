@@ -41,7 +41,7 @@ class ProjectInput extends React.Component {
             } else {
                 this.input.blur();
             }
-             
+
             this.setState({
                 projectId: this.props.projectId
             });

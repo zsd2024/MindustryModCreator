@@ -120,7 +120,7 @@ const AccentThemeMenu = ({
                     key={item}
                     id={item}
                     isSelected={theme.accent === item}
-                     
+
                     onClick={() => onChangeTheme(theme.set('accent', item))}
                 />
             ))}

@@ -117,7 +117,7 @@ class AddCustomFont extends React.Component {
             this.props.onClose();
         };
         fr.onerror = () => {
-             
+
             alert(this.props.intl.formatMessage(messages.error), {
                 error: fr.error
             });
@@ -190,7 +190,7 @@ AddCustomFont.propTypes = {
     fontManager: PropTypes.shape({
         addCustomFont: PropTypes.func,
         runtime: PropTypes.shape({
-             
+
             storage: PropTypes.any
         })
     }),

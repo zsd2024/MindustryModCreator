@@ -10,7 +10,7 @@ import exportIcon from './export.svg';
 
 const messages = defineMessages({
     delete: {
-         
+
         defaultMessage: 'Are you sure you want to delete "{font}"? Any vector costumes will use the fallback font instead.',
         description: 'Part of font management modal. {font} is replaced with the name of a font like "Arial"',
         id: 'tw.fonts.delete'
@@ -34,7 +34,7 @@ class ManageFont extends React.Component {
     }
 
     handleDelete () {
-         
+
         const allowed = confirm(this.props.intl.formatMessage(messages.delete, {
             font: this.props.name
         }));

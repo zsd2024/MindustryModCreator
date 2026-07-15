@@ -105,7 +105,7 @@ const TargetPane = ({
 const spriteShape = PropTypes.shape({
     costume: PropTypes.shape({
         // asset is defined in scratch-storage's Asset.js
-        asset: PropTypes.object,  
+        asset: PropTypes.object,
         url: PropTypes.string,
         name: PropTypes.string.isRequired,
         // The following are optional because costumes uploaded from disk

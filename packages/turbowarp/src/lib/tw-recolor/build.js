@@ -1,4 +1,4 @@
- 
+
 
 const OLD_PRIMARY_COLOR = '#855cd6';
 

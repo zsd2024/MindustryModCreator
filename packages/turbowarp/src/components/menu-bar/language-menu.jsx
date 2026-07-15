@@ -96,7 +96,7 @@ class LanguageMenu extends React.PureComponent {
                                 <MenuItem
                                     key={locale}
                                     className={styles.languageMenuItem}
-                                     
+
                                     onClick={() => this.props.onChangeLanguage(locale)}
                                 >
                                     <img

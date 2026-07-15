@@ -13,7 +13,7 @@ const getDimensions = () => {
     }
     const match = dimensionsQuery.match(/^(\d+)[^\d]+(\d+)$/);
     if (!match) {
-         
+
         alert('Could not parse custom stage size');
         return null;
     }

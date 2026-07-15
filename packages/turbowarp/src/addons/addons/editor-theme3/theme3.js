@@ -268,11 +268,11 @@ export default async function ({ addon, console, msg }) {
     if (!addon.self.disabled) {
       // Fix color of the text in the dropdown
       this.textElement_.style.setProperty("fill", fieldTextColor(this), "important");
-  
+
       // Fix dropdown arrow color
       this.arrow_.remove();
       this.arrow_ = makeDropdownArrow(fieldTextColor(this));
-  
+
       // Redraw arrow
       const text = this.text_;
       this.text_ = null;

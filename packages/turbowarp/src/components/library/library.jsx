@@ -368,7 +368,7 @@ class LibraryComponent extends React.Component {
 LibraryComponent.propTypes = {
     data: PropTypes.oneOfType([
         PropTypes.arrayOf(PropTypes.oneOfType([
-             
+
             // An item in the library
             PropTypes.shape({
                 // @todo remove md5/rawURL prop from library, refactor to use storage
@@ -380,7 +380,7 @@ LibraryComponent.propTypes = {
                 rawURL: PropTypes.string
             }),
             PropTypes.string
-             
+
         ])),
         PropTypes.instanceOf(Promise)
     ]),

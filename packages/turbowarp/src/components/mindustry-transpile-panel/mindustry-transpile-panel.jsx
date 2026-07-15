@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import {diffData} from '../../lib/mindustry/resolve-schema';
- 
+
 import hjson from 'hjson';
 import styles from './mindustry-transpile-panel.css';
 

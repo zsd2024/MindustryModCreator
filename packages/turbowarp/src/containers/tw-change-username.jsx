@@ -24,7 +24,7 @@ class ChangeUsername extends React.Component {
     }
     changeUsername () {
         if (this.props.running && !isScratchDesktop()) {
-             
+
             alert(this.props.intl.formatMessage(messages.cannotChangeWhileRunning));
             return;
         }

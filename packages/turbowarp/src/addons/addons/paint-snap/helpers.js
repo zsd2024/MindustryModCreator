@@ -63,7 +63,7 @@ export function loadModules(paper, vm) {
       -ART_BOARD_HEIGHT / 4,
       ART_BOARD_WIDTH * 1.5,
       ART_BOARD_HEIGHT * 1.5
-    );  
+    );
   };
   vm.on("STAGE_SIZE_CHANGED", updateStageSize);
   updateStageSize();

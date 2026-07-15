@@ -30,7 +30,7 @@ import * as conditionalStyles from './conditional-style';
 import getPrecedence from './addon-precedence';
 import reduxInstance from './redux';
 
- 
+
 
 const escapeHTML = str => str.replace(/([<>'"&])/g, (_, l) => `&#${l.charCodeAt(0)};`);
 const kebabCaseToCamelCase = str => str.replace(/-([a-z])/g, g => g[1].toUpperCase());
@@ -107,7 +107,7 @@ const removeMutationObserverCallback = callback => {
 };
 
 const getEditorMode = () => {
-     
+
     const mode = reduxInstance.state.scratchGui.mode;
     if (mode.isEmbedded) return 'embed';
     if (mode.isFullScreen) return 'fullscreen';
@@ -382,16 +382,16 @@ class Tab extends EventTargetShim {
                           const wrapper = Object.assign(document.createElement('div'), {
                               className: 'sa-paintEditorZoomControls-wrapper'
                           });
-          
+
                           wrapper.style.display = 'flex';
                           wrapper.style.flexDirection = 'row-reverse';
                           wrapper.style.height = 'calc(1.95rem + 2px)';
-          
+
                           const zoomControls = q("[class^='paint-editor_zoom-controls']");
-          
+
                           zoomControls.replaceWith(wrapper);
                           wrapper.appendChild(zoomControls);
-          
+
                           return wrapper;
                       })()
                 ),
@@ -561,7 +561,7 @@ class Tab extends EventTargetShim {
                 const gesture = ScratchBlocks.mainWorkspace.currentGesture_;
                 const block = gesture.targetBlock_;
 
-                 
+
                 for (const {callback, workspace, blocks, flyout, comments} of contextMenuCallbacks) {
                     const injectMenu =
                         // Workspace
@@ -605,7 +605,7 @@ class Tab extends EventTargetShim {
             return Promise.reject(new Error('Clipboard API not supported'));
         }
         const items = [
-             
+
             new ClipboardItem({
                 'image/png': dataURLToBlob(dataURL)
             })

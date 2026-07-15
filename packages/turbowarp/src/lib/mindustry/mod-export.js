@@ -1,5 +1,5 @@
 import JSZip from '@turbowarp/jszip';
- 
+
 import hjson from 'hjson';
 import downloadBlob from '../../lib/download-blob';
 import {diffData} from './resolve-schema';

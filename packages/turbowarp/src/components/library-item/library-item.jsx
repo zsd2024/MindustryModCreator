@@ -25,7 +25,7 @@ const messages = defineMessages({
     }
 });
 
- 
+
 class LibraryItemComponent extends React.PureComponent {
     render () {
         const favoriteMessage = this.props.intl.formatMessage(
@@ -105,7 +105,7 @@ class LibraryItemComponent extends React.PureComponent {
                             >
                                 <FormattedMessage
                                     defaultMessage="Documentation"
-                                     
+
                                     description="Appears in the extension list. Links to additional extension documentation."
                                     id="tw.documentation"
                                 />
@@ -120,7 +120,7 @@ class LibraryItemComponent extends React.PureComponent {
                             >
                                 <FormattedMessage
                                     defaultMessage="Sample project"
-                                     
+
                                     description="Appears in the extension list. Links to a sample project for an extension."
                                     id="tw.sample"
                                 />
@@ -249,7 +249,7 @@ class LibraryItemComponent extends React.PureComponent {
         );
     }
 }
- 
+
 
 
 LibraryItemComponent.propTypes = {
