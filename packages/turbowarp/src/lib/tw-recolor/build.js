@@ -12,7 +12,8 @@ const loader = source => `
         return 'data:image/svg+xml;,' + encodeURIComponent(recolored);
     };
 
-    export default getSRC;
+    // CJS export so default import is the function itself (webpack 5 ESM interop breaks export default here)
+    module.exports = getSRC;
 `;
 
 module.exports = loader;

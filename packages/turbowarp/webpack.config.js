@@ -36,12 +36,20 @@ const base = {
                 {from: /^\/\d+\/?$/, to: '/index.html'},
                 {from: /^\/\d+\/fullscreen\/?$/, to: '/fullscreen.html'},
                 {from: /^\/\d+\/editor\/?$/, to: '/editor.html'},
+                {from: /^\/editor\/?$/, to: '/editor.html'},
                 {from: /^\/\d+\/embed\/?$/, to: '/embed.html'},
                 {from: /^\/addons\/?$/, to: '/addons.html'},
                 {from: /^\/$/, to: '/mindustry.html'},
                 {from: /^\/mindustry\/?$/, to: '/mindustry.html'},
                 {from: /^\/home\/?$/, to: '/mindustry.html'}
             ]
+        },
+        // scratch-paint still imports removed intlShape; warnings only — don't block the UI overlay
+        client: {
+            overlay: {
+                errors: true,
+                warnings: false
+            }
         }
     },
     output: {
@@ -59,11 +67,16 @@ const base = {
         fallback: {
             buffer: require.resolve('buffer'),
             os: require.resolve('os-browserify'),
-            url: require.resolve('url/')
+            url: require.resolve('url/'),
+            events: require.resolve('events/')
         },
         alias: {
             'text-encoding$': path.resolve(__dirname, 'src/lib/tw-text-encoder'),
-            'scratch-render-fonts$': path.resolve(__dirname, 'src/lib/tw-scratch-render-fonts')
+            'scratch-render-fonts$': path.resolve(__dirname, 'src/lib/tw-scratch-render-fonts'),
+            '@formatjs/intl$': path.resolve(__dirname, 'node_modules/.pnpm/@formatjs+intl@3.0.0/node_modules/@formatjs/intl'),
+            'intl-messageformat$': path.resolve(__dirname, 'node_modules/.pnpm/intl-messageformat@10.7.7/node_modules/intl-messageformat'),
+            // query-string@5 requires CJS decode-uri-component; 0.5+ is ESM-only
+            'decode-uri-component$': path.resolve(__dirname, 'node_modules/.pnpm/decode-uri-component@0.2.0/node_modules/decode-uri-component')
         }
     },
     resolveLoader: {
@@ -100,6 +113,7 @@ const base = {
                         loader: 'css-loader',
                         options: {
                             modules: {
+                                namedExport: false,
                                 localIdentName: '[name]_[local]_[hash:base64:5]',
                                 exportLocalsConvention: 'camelCase'
                             },
@@ -158,7 +172,29 @@ module.exports = [
         module: {
             rules: base.module.rules.concat([
                 {
-                    test: /\.(svg|png|wav|mp3|gif|jpg|woff2|hex)$/,
+                    test: /\.svg$/,
+                    oneOf: [
+                        {
+                            // tw-recolor loader returns JS (getSRC function); must not use asset modules
+                            resourceQuery: /recolor/,
+                            type: 'javascript/auto',
+                            use: [path.resolve(__dirname, 'src/lib/tw-recolor/build.js')]
+                        },
+                        {
+                            type: 'asset',
+                            parser: {
+                                dataUrlCondition: {
+                                    maxSize: 2048
+                                }
+                            },
+                            generator: {
+                                filename: 'static/assets/[name].[contenthash:8][ext]'
+                            }
+                        }
+                    ]
+                },
+                {
+                    test: /\.(png|wav|mp3|gif|jpg|woff2|hex)$/,
                     type: 'asset',
                     parser: {
                         dataUrlCondition: {
@@ -285,7 +321,29 @@ module.exports = [
             module: {
                 rules: base.module.rules.concat([
                     {
-                        test: /\.(svg|png|wav|mp3|gif|jpg|woff2|hex)$/,
+                        test: /\.svg$/,
+                        oneOf: [
+                            {
+                                resourceQuery: /recolor/,
+                                type: 'javascript/auto',
+                                use: [path.resolve(__dirname, 'src/lib/tw-recolor/build.js')]
+                            },
+                            {
+                                type: 'asset',
+                                parser: {
+                                    dataUrlCondition: {
+                                        maxSize: 2048
+                                    }
+                                },
+                                generator: {
+                                    filename: 'static/assets/[name].[contenthash:8][ext]',
+                                    publicPath: `${STATIC_PATH}/assets/`
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        test: /\.(png|wav|mp3|gif|jpg|woff2|hex)$/,
                         type: 'asset',
                         parser: {
                             dataUrlCondition: {

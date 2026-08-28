@@ -11,9 +11,15 @@ importers:
       '@floating-ui/dom':
         specifier: ^1.8.0
         version: 1.8.0
+      '@formatjs/fast-memoize':
+        specifier: 2.2.3
+        version: 2.2.3
+      '@formatjs/icu-messageformat-parser':
+        specifier: 2.9.4
+        version: 2.9.4
       '@formatjs/intl':
-        specifier: ^4.1.16
-        version: 4.1.16
+        specifier: 3.0.0
+        version: 3.0.0
       '@microbit/microbit-universal-hex':
         specifier: 0.2.2
         version: 0.2.2(tslib@2.8.1)
@@ -72,11 +78,14 @@ importers:
         specifier: 2.3.0
         version: 2.3.0
       decode-uri-component:
-        specifier: ^0.5.0
-        version: 0.5.0
+        specifier: 0.2.0
+        version: 0.2.0
       es6-object-assign:
         specifier: 1.1.0
         version: 1.1.0
+      events:
+        specifier: ^3.3.0
+        version: 3.3.0
       filter-obj:
         specifier: ^6.1.0
         version: 6.1.0
@@ -92,12 +101,9 @@ importers:
       hoist-non-react-statics:
         specifier: ^3.3.2
         version: 3.3.2
-      intl:
-        specifier: 1.2.5
-        version: 1.2.5
       intl-messageformat:
-        specifier: ^2.2.0
-        version: 2.2.0
+        specifier: ^10.7.7
+        version: 10.7.7
       js-base64:
         specifier: 3.8.1
         version: 3.8.1
