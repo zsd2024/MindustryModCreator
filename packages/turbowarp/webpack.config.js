@@ -79,11 +79,6 @@ const base = {
             'decode-uri-component$': path.resolve(__dirname, 'node_modules/.pnpm/decode-uri-component@0.2.0/node_modules/decode-uri-component')
         }
     },
-    resolveLoader: {
-        alias: {
-            'worker-loader': require.resolve('worker-loader')
-        }
-    },
     module: {
         rules: [
             {
