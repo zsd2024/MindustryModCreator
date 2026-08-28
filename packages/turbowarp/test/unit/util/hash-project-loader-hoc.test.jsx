@@ -4,8 +4,6 @@ import {render} from '@testing-library/react';
 
 import HashParserHOC from '../../../src/lib/hash-parser-hoc.jsx';
 
-jest.mock('react-ga');
-
 describe('HashParserHOC', () => {
     const mockStore = configureStore();
     let store;
