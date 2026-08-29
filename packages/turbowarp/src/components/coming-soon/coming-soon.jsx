@@ -84,7 +84,7 @@ class ComingSoonContent extends React.Component {
                         [styles.bottom]: (this.props.place === 'bottom')
                     }
                 )}
-                content={this.getRandomMessage}
+                content={this.getRandomMessage()}
                 id={this.props.tooltipId}
                 place={this.props.place}
             />
