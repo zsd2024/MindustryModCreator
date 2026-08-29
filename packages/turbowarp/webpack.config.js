@@ -74,9 +74,7 @@ const base = {
             'text-encoding$': path.resolve(__dirname, 'src/lib/tw-text-encoder'),
             'scratch-render-fonts$': path.resolve(__dirname, 'src/lib/tw-scratch-render-fonts'),
             '@formatjs/intl$': path.resolve(__dirname, 'node_modules/.pnpm/@formatjs+intl@3.0.0/node_modules/@formatjs/intl'),
-            'intl-messageformat$': path.resolve(__dirname, 'node_modules/.pnpm/intl-messageformat@10.7.7/node_modules/intl-messageformat'),
-            // query-string@5 requires CJS decode-uri-component; 0.5+ is ESM-only
-            'decode-uri-component$': path.resolve(__dirname, 'node_modules/.pnpm/decode-uri-component@0.2.0/node_modules/decode-uri-component')
+            'intl-messageformat$': path.resolve(__dirname, 'node_modules/.pnpm/intl-messageformat@10.7.7/node_modules/intl-messageformat')
         }
     },
     module: {

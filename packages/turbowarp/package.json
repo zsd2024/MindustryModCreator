@@ -55,7 +55,6 @@
     "core-js": "3.49.0",
     "css-loader": "^7.0.0",
     "dapjs": "2.3.0",
-    "decode-uri-component": "0.2.0",
     "es6-object-assign": "1.1.0",
     "events": "^3.3.0",
     "filter-obj": "^6.1.0",
@@ -81,7 +80,7 @@
     "postcss-loader": "^8.0.0",
     "postcss-simple-vars": "^7.0.0",
     "prop-types": "^15.8.1",
-    "query-string": "^5.1.1",
+    "query-string": "^9.4.1",
     "react": "^19.2.7",
     "react-contextmenu": "2.9.4",
     "react-dom": "^19.2.7",
@@ -185,7 +184,7 @@
       "^scratch-audio$": "<rootDir>/test/__mocks__/scratch-audio.js"
     },
     "transformIgnorePatterns": [
-      "/node_modules/(?!uuid|scratch-vm|@turbowarp/scratch-svg-renderer|turbowarp-|tapable|scratch-parser|scratch-render-fonts|scratch-storage|scratch-svg-renderer)"
+      "/node_modules/(?!\\.pnpm/)(?:\\.pnpm/[^/]+/node_modules/)?(?!uuid|scratch-vm|@turbowarp/scratch-svg-renderer|turbowarp-|tapable|scratch-parser|scratch-render-fonts|scratch-storage|scratch-svg-renderer|query-string|decode-uri-component|filter-obj|split-on-first)[^/]+/"
     ]
   }
 }
