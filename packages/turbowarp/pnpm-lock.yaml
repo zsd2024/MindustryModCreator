@@ -201,8 +201,8 @@ importers:
         specifier: 6.1.1
         version: 6.1.1(react@19.2.7)
       react-tooltip:
-        specifier: 4.5.0
-        version: 4.5.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
+        specifier: ^6.0.8
+        version: 6.0.8(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       react-virtualized:
         specifier: 9.22.6
         version: 9.22.6(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
@@ -223,7 +223,7 @@ importers:
         version: https://codeload.github.com/TurboWarp/scratch-blocks/tar.gz/4113c5348e6b4c76da9071a1800a62ab96ef793f
       scratch-paint:
         specifier: github:TurboWarp/scratch-paint#develop
-        version: https://codeload.github.com/TurboWarp/scratch-paint/tar.gz/91d109564917e4df31705611a657e773fb23abbb(react-dom@19.2.7(react@19.2.7))(react-intl-redux@0.7.0(react-intl@7.0.0(react@19.2.7))(react-redux@9.3.0(@types/react@18.3.31)(react@19.2.7)(redux@5.0.1)))(react-intl@7.0.0(react@19.2.7))(react-popover@0.5.10)(react-redux@9.3.0(@types/react@18.3.31)(react@19.2.7)(redux@5.0.1))(react-responsive@10.0.1(react@19.2.7))(react-style-proptype@3.2.2)(react-tooltip@4.5.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react@19.2.7)(redux@5.0.1)
+        version: https://codeload.github.com/TurboWarp/scratch-paint/tar.gz/91d109564917e4df31705611a657e773fb23abbb(react-dom@19.2.7(react@19.2.7))(react-intl-redux@0.7.0(react-intl@7.0.0(react@19.2.7))(react-redux@9.3.0(@types/react@18.3.31)(react@19.2.7)(redux@5.0.1)))(react-intl@7.0.0(react@19.2.7))(react-popover@0.5.10)(react-redux@9.3.0(@types/react@18.3.31)(react@19.2.7)(redux@5.0.1))(react-responsive@10.0.1(react@19.2.7))(react-style-proptype@3.2.2)(react-tooltip@6.0.8(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react@19.2.7)(redux@5.0.1)
       scratch-render:
         specifier: github:TurboWarp/scratch-render#develop
         version: https://codeload.github.com/TurboWarp/scratch-render/tar.gz/a67f7c9c07d459582c227d4fd3fae8f59d8fc9ce
@@ -1111,6 +1111,9 @@ packages:
 
   '@floating-ui/core@1.8.0':
     resolution: {integrity: sha512-0CIZ5itps/8x7BG8dEIhs53BvCUH2PCoogtakwRTut+Arm58sJooJ0AuZhLw2HJYIR5cMLNPBSS728sPho2khQ==}
+
+  '@floating-ui/dom@1.7.6':
+    resolution: {integrity: sha512-9gZSAI5XM36880PPMm//9dfiEngYoC6Am2izES1FF406YFsjvyBMmeJ2g4SAju3xWwtuynNRFL2s9hgxpLI5SQ==}
 
   '@floating-ui/dom@1.8.0':
     resolution: {integrity: sha512-yXSrzeHZBTZadLOlfyhCkJHNeLJnHRnRInwdZ40L7ZiaAtrBwoYlsDrX3v5zB1Utk7CLfzcOVnVVWoXEky7Ceg==}
@@ -5454,12 +5457,11 @@ packages:
     peerDependencies:
       react: ^18.0.0 || ^19.0.0
 
-  react-tooltip@4.5.0:
-    resolution: {integrity: sha512-mJNurq29atce+TJc9Xe+/FHrcEs3K9J7wkjZZXwbK5Yq6uG5SZeKSFHwd0wcRPUipVwx5crmgzSW8Zu1xyvLTQ==}
-    engines: {npm: '>=6.13'}
+  react-tooltip@6.0.8:
+    resolution: {integrity: sha512-VPjtBPyoFwq72QVE6GYB/LtfEg/mnFBHqL0nD0oNNmjH8EZYFyBwgnFKNCOp5zCte45k1weXjKc0wXE6NICpfg==}
     peerDependencies:
-      react: '>=16.0.0'
-      react-dom: '>=16.0.0'
+      react: '>=16.14.0'
+      react-dom: '>=16.14.0'
 
   react-virtualized@9.22.6:
     resolution: {integrity: sha512-U5j7KuUQt3AaMatlMJ0UJddqSiX+Km0YJxSqbAzIiGw5EmNz0khMyqP2hzgu4+QUtm+QPIrxzUX4raJxmVJnHg==}
@@ -6387,10 +6389,6 @@ packages:
   uuid@3.3.2:
     resolution: {integrity: sha512-yXJmeNaw3DnnKAOKJE51sL/ZaYfWJRl1pK9dr19YFCu0ObS231AB1/LbqTKRAQ5kw8A90rA6fr4riOUpTZvQZA==}
     deprecated: Please upgrade  to version 7 or higher.  Older versions may use Math.random() in certain circumstances, which is known to be problematic.  See https://v8.dev/blog/math-random for details.
-    hasBin: true
-
-  uuid@7.0.3:
-    resolution: {integrity: sha512-DPSke0pXhTZgoF/d+WSt2QaKMCFSfx7QegxEWT+JOuHF5aWrKEn0G+ztjuJg/gG8/ItK+rbPCD/yNv8yyih6Cg==}
     hasBin: true
 
   uuid@8.3.2:
@@ -7556,6 +7554,11 @@ snapshots:
 
   '@floating-ui/core@1.8.0':
     dependencies:
+      '@floating-ui/utils': 0.2.12
+
+  '@floating-ui/dom@1.7.6':
+    dependencies:
+      '@floating-ui/core': 1.8.0
       '@floating-ui/utils': 0.2.12
 
   '@floating-ui/dom@1.8.0':
@@ -12773,12 +12776,12 @@ snapshots:
       prop-types: 15.8.1
       react: 19.2.7
 
-  react-tooltip@4.5.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7):
+  react-tooltip@6.0.8(react-dom@19.2.7(react@19.2.7))(react@19.2.7):
     dependencies:
-      prop-types: 15.8.1
+      '@floating-ui/dom': 1.7.6
+      clsx: 2.1.1
       react: 19.2.7
       react-dom: 19.2.7(react@19.2.7)
-      uuid: 7.0.3
 
   react-virtualized@9.22.6(react-dom@19.2.7(react@19.2.7))(react@19.2.7):
     dependencies:
@@ -13064,7 +13067,7 @@ snapshots:
       exports-loader: 0.7.0
       imports-loader: 0.8.0
 
-  scratch-paint@https://codeload.github.com/TurboWarp/scratch-paint/tar.gz/91d109564917e4df31705611a657e773fb23abbb(react-dom@19.2.7(react@19.2.7))(react-intl-redux@0.7.0(react-intl@7.0.0(react@19.2.7))(react-redux@9.3.0(@types/react@18.3.31)(react@19.2.7)(redux@5.0.1)))(react-intl@7.0.0(react@19.2.7))(react-popover@0.5.10)(react-redux@9.3.0(@types/react@18.3.31)(react@19.2.7)(redux@5.0.1))(react-responsive@10.0.1(react@19.2.7))(react-style-proptype@3.2.2)(react-tooltip@4.5.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react@19.2.7)(redux@5.0.1):
+  scratch-paint@https://codeload.github.com/TurboWarp/scratch-paint/tar.gz/91d109564917e4df31705611a657e773fb23abbb(react-dom@19.2.7(react@19.2.7))(react-intl-redux@0.7.0(react-intl@7.0.0(react@19.2.7))(react-redux@9.3.0(@types/react@18.3.31)(react@19.2.7)(redux@5.0.1)))(react-intl@7.0.0(react@19.2.7))(react-popover@0.5.10)(react-redux@9.3.0(@types/react@18.3.31)(react@19.2.7)(redux@5.0.1))(react-responsive@10.0.1(react@19.2.7))(react-style-proptype@3.2.2)(react-tooltip@6.0.8(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react@19.2.7)(redux@5.0.1):
     dependencies:
       '@turbowarp/nanolog': 0.2.0
       '@turbowarp/paper': 0.13.0
@@ -13082,7 +13085,7 @@ snapshots:
       react-redux: 9.3.0(@types/react@18.3.31)(react@19.2.7)(redux@5.0.1)
       react-responsive: 10.0.1(react@19.2.7)
       react-style-proptype: 3.2.2
-      react-tooltip: 4.5.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
+      react-tooltip: 6.0.8(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       redux: 5.0.1
 
   scratch-parser@https://codeload.github.com/TurboWarp/scratch-parser/tar.gz/fb65ba09d78ab6a0d19ce908d64b72d1a122312f:
@@ -13905,8 +13908,6 @@ snapshots:
   uuid@14.0.1: {}
 
   uuid@3.3.2: {}
-
-  uuid@7.0.3: {}
 
   uuid@8.3.2: {}
 

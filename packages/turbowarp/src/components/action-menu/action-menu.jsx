@@ -2,7 +2,8 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
 import bindAll from 'lodash.bindall';
-import ReactTooltip from 'react-tooltip';
+import {Tooltip} from 'react-tooltip';
+import 'react-tooltip/dist/react-tooltip.css';
 
 import styles from './action-menu.css';
 
@@ -67,7 +68,6 @@ class ActionMenu extends React.Component {
     handleTouchOutside (e) {
         if (this.state.isOpen && !this.containerRef.contains(e.target)) {
             this.setState({isOpen: false});
-            ReactTooltip.hide();
         }
     }
     clickDelayer (fn) {
@@ -76,7 +76,6 @@ class ActionMenu extends React.Component {
         // for now all this work is to ensure the menu closes BEFORE the
         // (possibly slow) action is started.
         return event => {
-            ReactTooltip.hide();
             if (fn) fn(event);
             // Blur the button so it does not keep focus after being clicked
             // This prevents keyboard events from triggering the button
@@ -122,8 +121,8 @@ class ActionMenu extends React.Component {
                 <button
                     aria-label={mainTitle}
                     className={classNames(styles.button, styles.mainButton)}
-                    data-for={this.mainTooltipId}
-                    data-tip={mainTitle}
+                    data-tooltip-id={this.mainTooltipId}
+                    data-tooltip-content={mainTitle}
                     ref={this.setButtonRef}
                     onClick={this.clickDelayer(onClick)}
                 >
@@ -133,9 +132,8 @@ class ActionMenu extends React.Component {
                         src={mainImg}
                     />
                 </button>
-                <ReactTooltip
+                <Tooltip
                     className={styles.tooltip}
-                    effect="solid"
                     id={this.mainTooltipId}
                     place={tooltipPlace || 'left'}
                 />
@@ -153,8 +151,8 @@ class ActionMenu extends React.Component {
                                         className={classNames(styles.button, styles.moreButton, {
                                             [styles.comingSoon]: isComingSoon
                                         })}
-                                        data-for={tooltipId}
-                                        data-tip={title}
+                                        data-tooltip-id={tooltipId}
+                                        data-tooltip-content={title}
                                         onClick={hasFileInput ? handleClick : this.clickDelayer(handleClick)}
                                     >
                                         <img
@@ -172,11 +170,10 @@ class ActionMenu extends React.Component {
                                                 onChange={fileChange}
                                             />) : null}
                                     </button>
-                                    <ReactTooltip
+                                    <Tooltip
                                         className={classNames(styles.tooltip, {
                                             [styles.comingSoonTooltip]: isComingSoon
                                         })}
-                                        effect="solid"
                                         id={tooltipId}
                                         place={tooltipPlace || 'left'}
                                     />
